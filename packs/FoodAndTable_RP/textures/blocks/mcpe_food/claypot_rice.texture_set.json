@@ -1,7 +1,0 @@
-{
-  "format_version": "1.21.30",
-  "minecraft:texture_set": {
-    "color": "claypot_rice",
-    "metalness_emissive_roughness": "claypot_rice_mer"
-  }
-}

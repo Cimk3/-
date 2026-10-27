@@ -4,317 +4,260 @@
   "padding": 8,
   "num_mip_levels": 4,
   "texture_data": {
-    "mcpe_food_egg_fried_rice": {
-      "textures": "textures/blocks/mcpe_food/egg_fried_rice"
+    "mcpe_food_ware_plate": {
+      "textures": "textures/blocks/mcpe_food/ware_plate"
     },
-    "mcpe_food_egg_fried_rice_serving": {
-      "textures": "textures/blocks/mcpe_food/egg_fried_rice_serving"
+    "mcpe_food_ware_bowl": {
+      "textures": "textures/blocks/mcpe_food/ware_bowl"
     },
-    "mcpe_food_green_tea": {
-      "textures": "textures/blocks/mcpe_food/green_tea"
+    "mcpe_food_ware_glass": {
+      "textures": "textures/blocks/mcpe_food/ware_glass"
     },
-    "mcpe_food_green_tea_serving": {
-      "textures": "textures/blocks/mcpe_food/green_tea_serving"
+    "mcpe_food_ware_mug": {
+      "textures": "textures/blocks/mcpe_food/ware_mug"
     },
-    "mcpe_food_kung_pao_chicken": {
-      "textures": "textures/blocks/mcpe_food/kung_pao_chicken"
+    "mcpe_food_ware_black_gold_bowl": {
+      "textures": "textures/blocks/mcpe_food/ware_black_gold_bowl"
     },
-    "mcpe_food_kung_pao_chicken_serving": {
-      "textures": "textures/blocks/mcpe_food/kung_pao_chicken_serving"
+    "mcpe_food_ware_burgundy_bowl": {
+      "textures": "textures/blocks/mcpe_food/ware_burgundy_bowl"
     },
-    "mcpe_food_mapo_tofu": {
-      "textures": "textures/blocks/mcpe_food/mapo_tofu"
+    "mcpe_food_ware_black_gold_plate": {
+      "textures": "textures/blocks/mcpe_food/ware_black_gold_plate"
     },
-    "mcpe_food_mapo_tofu_serving": {
-      "textures": "textures/blocks/mcpe_food/mapo_tofu_serving"
+    "mcpe_food_ware_burgundy_platter": {
+      "textures": "textures/blocks/mcpe_food/ware_burgundy_platter"
     },
-    "mcpe_food_braised_pork": {
-      "textures": "textures/blocks/mcpe_food/braised_pork"
+    "mcpe_food_ware_chopsticks": {
+      "textures": "textures/blocks/mcpe_food/ware_chopsticks"
     },
-    "mcpe_food_braised_pork_serving": {
-      "textures": "textures/blocks/mcpe_food/braised_pork_serving"
+    "mcpe_food_ware_table_knife": {
+      "textures": "textures/blocks/mcpe_food/ware_table_knife"
     },
-    "mcpe_food_tomato_eggs": {
-      "textures": "textures/blocks/mcpe_food/tomato_eggs"
+    "mcpe_food_ware_fork": {
+      "textures": "textures/blocks/mcpe_food/ware_fork"
     },
-    "mcpe_food_tomato_eggs_serving": {
-      "textures": "textures/blocks/mcpe_food/tomato_eggs_serving"
+    "mcpe_food_ware_spoon": {
+      "textures": "textures/blocks/mcpe_food/ware_spoon"
     },
-    "mcpe_food_sweet_sour_pork": {
-      "textures": "textures/blocks/mcpe_food/sweet_sour_pork"
+    "mcpe_food_ware_copper_hotpot": {
+      "textures": "textures/blocks/mcpe_food/ware_copper_hotpot"
     },
-    "mcpe_food_sweet_sour_pork_serving": {
-      "textures": "textures/blocks/mcpe_food/sweet_sour_pork_serving"
+    "mcpe_food_food_hotpot_broth": {
+      "textures": "textures/blocks/mcpe_food/food_hotpot_broth"
     },
-    "mcpe_food_beef_noodle_soup": {
-      "textures": "textures/blocks/mcpe_food/beef_noodle_soup"
+    "mcpe_food_food_egg_fried_rice": {
+      "textures": "textures/blocks/mcpe_food/food_egg_fried_rice"
     },
-    "mcpe_food_beef_noodle_soup_serving": {
-      "textures": "textures/blocks/mcpe_food/beef_noodle_soup_serving"
+    "mcpe_food_food_kung_pao_chicken": {
+      "textures": "textures/blocks/mcpe_food/food_kung_pao_chicken"
     },
-    "mcpe_food_dumplings": {
-      "textures": "textures/blocks/mcpe_food/dumplings"
+    "mcpe_food_food_mapo_tofu": {
+      "textures": "textures/blocks/mcpe_food/food_mapo_tofu"
     },
-    "mcpe_food_dumplings_serving": {
-      "textures": "textures/blocks/mcpe_food/dumplings_serving"
+    "mcpe_food_food_braised_pork": {
+      "textures": "textures/blocks/mcpe_food/food_braised_pork"
     },
-    "mcpe_food_white_cut_chicken": {
-      "textures": "textures/blocks/mcpe_food/white_cut_chicken"
+    "mcpe_food_food_tomato_eggs": {
+      "textures": "textures/blocks/mcpe_food/food_tomato_eggs"
     },
-    "mcpe_food_white_cut_chicken_serving": {
-      "textures": "textures/blocks/mcpe_food/white_cut_chicken_serving"
+    "mcpe_food_food_sweet_sour_pork": {
+      "textures": "textures/blocks/mcpe_food/food_sweet_sour_pork"
     },
-    "mcpe_food_char_siu": {
-      "textures": "textures/blocks/mcpe_food/char_siu"
+    "mcpe_food_food_beef_noodle_soup": {
+      "textures": "textures/blocks/mcpe_food/food_beef_noodle_soup"
     },
-    "mcpe_food_char_siu_serving": {
-      "textures": "textures/blocks/mcpe_food/char_siu_serving"
+    "mcpe_food_food_dumplings": {
+      "textures": "textures/blocks/mcpe_food/food_dumplings"
     },
-    "mcpe_food_black_bean_ribs": {
-      "textures": "textures/blocks/mcpe_food/black_bean_ribs"
+    "mcpe_food_food_white_cut_chicken": {
+      "textures": "textures/blocks/mcpe_food/food_white_cut_chicken"
     },
-    "mcpe_food_black_bean_ribs_serving": {
-      "textures": "textures/blocks/mcpe_food/black_bean_ribs_serving"
+    "mcpe_food_food_char_siu": {
+      "textures": "textures/blocks/mcpe_food/food_char_siu"
     },
-    "mcpe_food_claypot_rice": {
-      "textures": "textures/blocks/mcpe_food/claypot_rice"
+    "mcpe_food_food_black_bean_ribs": {
+      "textures": "textures/blocks/mcpe_food/food_black_bean_ribs"
     },
-    "mcpe_food_claypot_rice_serving": {
-      "textures": "textures/blocks/mcpe_food/claypot_rice_serving"
+    "mcpe_food_food_claypot_rice": {
+      "textures": "textures/blocks/mcpe_food/food_claypot_rice"
     },
-    "mcpe_food_lions_head": {
-      "textures": "textures/blocks/mcpe_food/lions_head"
+    "mcpe_food_food_lions_head": {
+      "textures": "textures/blocks/mcpe_food/food_lions_head"
     },
-    "mcpe_food_lions_head_serving": {
-      "textures": "textures/blocks/mcpe_food/lions_head_serving"
+    "mcpe_food_food_boiled_tofu_shreds": {
+      "textures": "textures/blocks/mcpe_food/food_boiled_tofu_shreds"
     },
-    "mcpe_food_boiled_tofu_shreds": {
-      "textures": "textures/blocks/mcpe_food/boiled_tofu_shreds"
+    "mcpe_food_food_wensi_tofu": {
+      "textures": "textures/blocks/mcpe_food/food_wensi_tofu"
     },
-    "mcpe_food_boiled_tofu_shreds_serving": {
-      "textures": "textures/blocks/mcpe_food/boiled_tofu_shreds_serving"
+    "mcpe_food_food_huaiyang_eel": {
+      "textures": "textures/blocks/mcpe_food/food_huaiyang_eel"
     },
-    "mcpe_food_wensi_tofu": {
-      "textures": "textures/blocks/mcpe_food/wensi_tofu"
+    "mcpe_food_food_guo_bao_rou": {
+      "textures": "textures/blocks/mcpe_food/food_guo_bao_rou"
     },
-    "mcpe_food_wensi_tofu_serving": {
-      "textures": "textures/blocks/mcpe_food/wensi_tofu_serving"
+    "mcpe_food_food_steamed_sea_bass": {
+      "textures": "textures/blocks/mcpe_food/food_steamed_sea_bass"
     },
-    "mcpe_food_huaiyang_eel": {
-      "textures": "textures/blocks/mcpe_food/huaiyang_eel"
+    "mcpe_food_food_garlic_scallops": {
+      "textures": "textures/blocks/mcpe_food/food_garlic_scallops"
     },
-    "mcpe_food_huaiyang_eel_serving": {
-      "textures": "textures/blocks/mcpe_food/huaiyang_eel_serving"
+    "mcpe_food_food_braised_prawns": {
+      "textures": "textures/blocks/mcpe_food/food_braised_prawns"
     },
-    "mcpe_food_guo_bao_rou": {
-      "textures": "textures/blocks/mcpe_food/guo_bao_rou"
+    "mcpe_food_food_steak": {
+      "textures": "textures/blocks/mcpe_food/food_steak"
     },
-    "mcpe_food_guo_bao_rou_serving": {
-      "textures": "textures/blocks/mcpe_food/guo_bao_rou_serving"
+    "mcpe_food_food_burger": {
+      "textures": "textures/blocks/mcpe_food/food_burger"
     },
-    "mcpe_food_steamed_sea_bass": {
-      "textures": "textures/blocks/mcpe_food/steamed_sea_bass"
+    "mcpe_food_food_pizza": {
+      "textures": "textures/blocks/mcpe_food/food_pizza"
     },
-    "mcpe_food_steamed_sea_bass_serving": {
-      "textures": "textures/blocks/mcpe_food/steamed_sea_bass_serving"
+    "mcpe_food_food_spaghetti": {
+      "textures": "textures/blocks/mcpe_food/food_spaghetti"
     },
-    "mcpe_food_garlic_scallops": {
-      "textures": "textures/blocks/mcpe_food/garlic_scallops"
+    "mcpe_food_food_sandwich": {
+      "textures": "textures/blocks/mcpe_food/food_sandwich"
     },
-    "mcpe_food_garlic_scallops_serving": {
-      "textures": "textures/blocks/mcpe_food/garlic_scallops_serving"
+    "mcpe_food_food_roast_chicken": {
+      "textures": "textures/blocks/mcpe_food/food_roast_chicken"
     },
-    "mcpe_food_braised_prawns": {
-      "textures": "textures/blocks/mcpe_food/braised_prawns"
+    "mcpe_food_food_mushroom_soup": {
+      "textures": "textures/blocks/mcpe_food/food_mushroom_soup"
     },
-    "mcpe_food_braised_prawns_serving": {
-      "textures": "textures/blocks/mcpe_food/braised_prawns_serving"
+    "mcpe_food_food_salad": {
+      "textures": "textures/blocks/mcpe_food/food_salad"
     },
-    "mcpe_food_steak": {
-      "textures": "textures/blocks/mcpe_food/steak"
+    "mcpe_food_food_baozi": {
+      "textures": "textures/blocks/mcpe_food/food_baozi"
     },
-    "mcpe_food_steak_serving": {
-      "textures": "textures/blocks/mcpe_food/steak_serving"
+    "mcpe_food_food_spring_rolls": {
+      "textures": "textures/blocks/mcpe_food/food_spring_rolls"
     },
-    "mcpe_food_burger": {
-      "textures": "textures/blocks/mcpe_food/burger"
+    "mcpe_food_food_chicken_nuggets": {
+      "textures": "textures/blocks/mcpe_food/food_chicken_nuggets"
     },
-    "mcpe_food_burger_serving": {
-      "textures": "textures/blocks/mcpe_food/burger_serving"
+    "mcpe_food_food_fries": {
+      "textures": "textures/blocks/mcpe_food/food_fries"
     },
-    "mcpe_food_pizza": {
-      "textures": "textures/blocks/mcpe_food/pizza"
+    "mcpe_food_food_hotdog": {
+      "textures": "textures/blocks/mcpe_food/food_hotdog"
     },
-    "mcpe_food_pizza_serving": {
-      "textures": "textures/blocks/mcpe_food/pizza_serving"
+    "mcpe_food_food_skewers": {
+      "textures": "textures/blocks/mcpe_food/food_skewers"
     },
-    "mcpe_food_spaghetti": {
-      "textures": "textures/blocks/mcpe_food/spaghetti"
+    "mcpe_food_food_green_tea": {
+      "textures": "textures/blocks/mcpe_food/food_green_tea"
     },
-    "mcpe_food_spaghetti_serving": {
-      "textures": "textures/blocks/mcpe_food/spaghetti_serving"
+    "mcpe_food_food_black_coffee": {
+      "textures": "textures/blocks/mcpe_food/food_black_coffee"
     },
-    "mcpe_food_sandwich": {
-      "textures": "textures/blocks/mcpe_food/sandwich"
+    "mcpe_food_food_milk_tea": {
+      "textures": "textures/blocks/mcpe_food/food_milk_tea"
     },
-    "mcpe_food_sandwich_serving": {
-      "textures": "textures/blocks/mcpe_food/sandwich_serving"
+    "mcpe_food_food_strawberry_shake": {
+      "textures": "textures/blocks/mcpe_food/food_strawberry_shake"
     },
-    "mcpe_food_roast_chicken": {
-      "textures": "textures/blocks/mcpe_food/roast_chicken"
+    "mcpe_food_food_tomato_juice": {
+      "textures": "textures/blocks/mcpe_food/food_tomato_juice"
     },
-    "mcpe_food_roast_chicken_serving": {
-      "textures": "textures/blocks/mcpe_food/roast_chicken_serving"
+    "mcpe_food_food_hot_chocolate": {
+      "textures": "textures/blocks/mcpe_food/food_hot_chocolate"
     },
-    "mcpe_food_mushroom_soup": {
-      "textures": "textures/blocks/mcpe_food/mushroom_soup"
+    "mcpe_food_food_strawberry_cake": {
+      "textures": "textures/blocks/mcpe_food/food_strawberry_cake"
     },
-    "mcpe_food_mushroom_soup_serving": {
-      "textures": "textures/blocks/mcpe_food/mushroom_soup_serving"
+    "mcpe_food_food_chocolate_cake": {
+      "textures": "textures/blocks/mcpe_food/food_chocolate_cake"
     },
-    "mcpe_food_salad": {
-      "textures": "textures/blocks/mcpe_food/salad"
+    "mcpe_food_food_cheesecake": {
+      "textures": "textures/blocks/mcpe_food/food_cheesecake"
     },
-    "mcpe_food_salad_serving": {
-      "textures": "textures/blocks/mcpe_food/salad_serving"
+    "mcpe_food_food_pudding": {
+      "textures": "textures/blocks/mcpe_food/food_pudding"
     },
-    "mcpe_food_baozi": {
-      "textures": "textures/blocks/mcpe_food/baozi"
+    "mcpe_food_food_ice_cream": {
+      "textures": "textures/blocks/mcpe_food/food_ice_cream"
     },
-    "mcpe_food_baozi_serving": {
-      "textures": "textures/blocks/mcpe_food/baozi_serving"
+    "mcpe_food_food_donut": {
+      "textures": "textures/blocks/mcpe_food/food_donut"
     },
-    "mcpe_food_spring_rolls": {
-      "textures": "textures/blocks/mcpe_food/spring_rolls"
+    "mcpe_food_food_cookies": {
+      "textures": "textures/blocks/mcpe_food/food_cookies"
     },
-    "mcpe_food_spring_rolls_serving": {
-      "textures": "textures/blocks/mcpe_food/spring_rolls_serving"
+    "mcpe_food_food_egg_tart": {
+      "textures": "textures/blocks/mcpe_food/food_egg_tart"
     },
-    "mcpe_food_chicken_nuggets": {
-      "textures": "textures/blocks/mcpe_food/chicken_nuggets"
+    "mcpe_food_food_roast_goose": {
+      "textures": "textures/blocks/mcpe_food/food_roast_goose"
     },
-    "mcpe_food_chicken_nuggets_serving": {
-      "textures": "textures/blocks/mcpe_food/chicken_nuggets_serving"
+    "mcpe_food_food_shrimp_rice_rolls": {
+      "textures": "textures/blocks/mcpe_food/food_shrimp_rice_rolls"
     },
-    "mcpe_food_fries": {
-      "textures": "textures/blocks/mcpe_food/fries"
+    "mcpe_food_food_dongpo_pork": {
+      "textures": "textures/blocks/mcpe_food/food_dongpo_pork"
     },
-    "mcpe_food_fries_serving": {
-      "textures": "textures/blocks/mcpe_food/fries_serving"
+    "mcpe_food_food_peking_duck": {
+      "textures": "textures/blocks/mcpe_food/food_peking_duck"
     },
-    "mcpe_food_hotdog": {
-      "textures": "textures/blocks/mcpe_food/hotdog"
+    "mcpe_food_food_buddha_jumps_wall": {
+      "textures": "textures/blocks/mcpe_food/food_buddha_jumps_wall"
     },
-    "mcpe_food_hotdog_serving": {
-      "textures": "textures/blocks/mcpe_food/hotdog_serving"
+    "mcpe_food_food_boeuf_bourguignon": {
+      "textures": "textures/blocks/mcpe_food/food_boeuf_bourguignon"
     },
-    "mcpe_food_skewers": {
-      "textures": "textures/blocks/mcpe_food/skewers"
+    "mcpe_food_food_french_onion_soup": {
+      "textures": "textures/blocks/mcpe_food/food_french_onion_soup"
     },
-    "mcpe_food_skewers_serving": {
-      "textures": "textures/blocks/mcpe_food/skewers_serving"
+    "mcpe_food_food_sushi_platter": {
+      "textures": "textures/blocks/mcpe_food/food_sushi_platter"
     },
-    "mcpe_food_black_coffee": {
-      "textures": "textures/blocks/mcpe_food/black_coffee"
+    "mcpe_food_food_sashimi_platter": {
+      "textures": "textures/blocks/mcpe_food/food_sashimi_platter"
     },
-    "mcpe_food_black_coffee_serving": {
-      "textures": "textures/blocks/mcpe_food/black_coffee_serving"
+    "mcpe_food_food_tempura": {
+      "textures": "textures/blocks/mcpe_food/food_tempura"
     },
-    "mcpe_food_milk_tea": {
-      "textures": "textures/blocks/mcpe_food/milk_tea"
+    "mcpe_food_food_tonkotsu_ramen": {
+      "textures": "textures/blocks/mcpe_food/food_tonkotsu_ramen"
     },
-    "mcpe_food_milk_tea_serving": {
-      "textures": "textures/blocks/mcpe_food/milk_tea_serving"
+    "mcpe_food_food_unagi_don": {
+      "textures": "textures/blocks/mcpe_food/food_unagi_don"
     },
-    "mcpe_food_strawberry_shake": {
-      "textures": "textures/blocks/mcpe_food/strawberry_shake"
+    "mcpe_food_food_okonomiyaki": {
+      "textures": "textures/blocks/mcpe_food/food_okonomiyaki"
     },
-    "mcpe_food_strawberry_shake_serving": {
-      "textures": "textures/blocks/mcpe_food/strawberry_shake_serving"
+    "mcpe_food_food_hotpot_lamb": {
+      "textures": "textures/blocks/mcpe_food/food_hotpot_lamb"
     },
-    "mcpe_food_tomato_juice": {
-      "textures": "textures/blocks/mcpe_food/tomato_juice"
+    "mcpe_food_food_hotpot_beef": {
+      "textures": "textures/blocks/mcpe_food/food_hotpot_beef"
     },
-    "mcpe_food_tomato_juice_serving": {
-      "textures": "textures/blocks/mcpe_food/tomato_juice_serving"
+    "mcpe_food_food_lamb_slices": {
+      "textures": "textures/blocks/mcpe_food/food_lamb_slices"
     },
-    "mcpe_food_hot_chocolate": {
-      "textures": "textures/blocks/mcpe_food/hot_chocolate"
+    "mcpe_food_food_beef_slices": {
+      "textures": "textures/blocks/mcpe_food/food_beef_slices"
     },
-    "mcpe_food_hot_chocolate_serving": {
-      "textures": "textures/blocks/mcpe_food/hot_chocolate_serving"
+    "mcpe_food_food_tripe_platter": {
+      "textures": "textures/blocks/mcpe_food/food_tripe_platter"
     },
-    "mcpe_food_strawberry_cake": {
-      "textures": "textures/blocks/mcpe_food/strawberry_cake"
+    "mcpe_food_food_frozen_tofu_platter": {
+      "textures": "textures/blocks/mcpe_food/food_frozen_tofu_platter"
     },
-    "mcpe_food_strawberry_cake_serving": {
-      "textures": "textures/blocks/mcpe_food/strawberry_cake_serving"
+    "mcpe_food_food_mushroom_platter": {
+      "textures": "textures/blocks/mcpe_food/food_mushroom_platter"
     },
-    "mcpe_food_chocolate_cake": {
-      "textures": "textures/blocks/mcpe_food/chocolate_cake"
+    "mcpe_food_food_greens_platter": {
+      "textures": "textures/blocks/mcpe_food/food_greens_platter"
     },
-    "mcpe_food_chocolate_cake_serving": {
-      "textures": "textures/blocks/mcpe_food/chocolate_cake_serving"
+    "mcpe_food_food_vermicelli_platter": {
+      "textures": "textures/blocks/mcpe_food/food_vermicelli_platter"
     },
-    "mcpe_food_cheesecake": {
-      "textures": "textures/blocks/mcpe_food/cheesecake"
-    },
-    "mcpe_food_cheesecake_serving": {
-      "textures": "textures/blocks/mcpe_food/cheesecake_serving"
-    },
-    "mcpe_food_pudding": {
-      "textures": "textures/blocks/mcpe_food/pudding"
-    },
-    "mcpe_food_pudding_serving": {
-      "textures": "textures/blocks/mcpe_food/pudding_serving"
-    },
-    "mcpe_food_ice_cream": {
-      "textures": "textures/blocks/mcpe_food/ice_cream"
-    },
-    "mcpe_food_ice_cream_serving": {
-      "textures": "textures/blocks/mcpe_food/ice_cream_serving"
-    },
-    "mcpe_food_donut": {
-      "textures": "textures/blocks/mcpe_food/donut"
-    },
-    "mcpe_food_donut_serving": {
-      "textures": "textures/blocks/mcpe_food/donut_serving"
-    },
-    "mcpe_food_cookies": {
-      "textures": "textures/blocks/mcpe_food/cookies"
-    },
-    "mcpe_food_cookies_serving": {
-      "textures": "textures/blocks/mcpe_food/cookies_serving"
-    },
-    "mcpe_food_egg_tart": {
-      "textures": "textures/blocks/mcpe_food/egg_tart"
-    },
-    "mcpe_food_egg_tart_serving": {
-      "textures": "textures/blocks/mcpe_food/egg_tart_serving"
-    },
-    "mcpe_food_plate": {
-      "textures": "textures/blocks/mcpe_food/plate"
-    },
-    "mcpe_food_bowl": {
-      "textures": "textures/blocks/mcpe_food/bowl"
-    },
-    "mcpe_food_glass": {
-      "textures": "textures/blocks/mcpe_food/glass"
-    },
-    "mcpe_food_mug": {
-      "textures": "textures/blocks/mcpe_food/mug"
-    },
-    "mcpe_food_chopsticks": {
-      "textures": "textures/blocks/mcpe_food/chopsticks"
-    },
-    "mcpe_food_table_knife": {
-      "textures": "textures/blocks/mcpe_food/table_knife"
-    },
-    "mcpe_food_fork": {
-      "textures": "textures/blocks/mcpe_food/fork"
-    },
-    "mcpe_food_spoon": {
-      "textures": "textures/blocks/mcpe_food/spoon"
+    "mcpe_food_food_sesame_dip": {
+      "textures": "textures/blocks/mcpe_food/food_sesame_dip"
     },
     "mcpe_food_prep_counter": {
       "textures": "textures/blocks/mcpe_food/prep_counter"

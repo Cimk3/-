@@ -20,7 +20,19 @@
       },
       "minecraft:material_instances": {
         "*": {
-          "texture": "mcpe_food_boiled_tofu_shreds_serving",
+          "texture": "mcpe_food_food_boiled_tofu_shreds",
+          "render_method": "opaque",
+          "ambient_occlusion": 1,
+          "face_dimming": true
+        },
+        "food": {
+          "texture": "mcpe_food_food_boiled_tofu_shreds",
+          "render_method": "opaque",
+          "ambient_occlusion": 1,
+          "face_dimming": true
+        },
+        "ware": {
+          "texture": "mcpe_food_ware_bowl",
           "render_method": "opaque",
           "ambient_occlusion": 1,
           "face_dimming": true
@@ -34,14 +46,14 @@
       "minecraft:collision_box": false,
       "minecraft:selection_box": {
         "origin": [
-          -6,
+          -4.905,
           0,
-          -6
+          -4.905
         ],
         "size": [
-          12,
-          12,
-          12
+          9.81,
+          5.75,
+          9.81
         ]
       },
       "minecraft:destructible_by_mining": {

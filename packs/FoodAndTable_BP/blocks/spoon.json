@@ -20,7 +20,13 @@
       },
       "minecraft:material_instances": {
         "*": {
-          "texture": "mcpe_food_spoon",
+          "texture": "mcpe_food_ware_spoon",
+          "render_method": "opaque",
+          "ambient_occlusion": 1,
+          "face_dimming": true
+        },
+        "ware": {
+          "texture": "mcpe_food_ware_spoon",
           "render_method": "opaque",
           "ambient_occlusion": 1,
           "face_dimming": true
@@ -34,14 +40,14 @@
       "minecraft:collision_box": false,
       "minecraft:selection_box": {
         "origin": [
-          -6,
+          -1.7200000000000002,
           0,
-          -6
+          -5.82
         ],
         "size": [
-          12,
-          2,
-          12
+          3.4400000000000004,
+          1,
+          11.029974874213242
         ]
       },
       "minecraft:destructible_by_mining": {

@@ -1,8 +1,8 @@
 {
-  "version": "0.2.0",
-  "archive": "FoodAndTable-0.2.0.mcaddon",
-  "sha256": "078dc509ffb6404dc2daa5cf388d7a2968d3d48c0191976eb14b8f1eec289ebd",
-  "packFiles": 1205,
+  "version": "0.3.0",
+  "archive": "FoodAndTable-0.3.0.mcaddon",
+  "sha256": "c956f1f5f9ad266932b09830612a3421f6887480b0d8082f7758b967dbfac7d6",
+  "packFiles": 1523,
   "historyKind": "recovered release payload",
   "originalDevelopmentTimestampAvailable": false,
   "historicalFullSourceAvailable": false

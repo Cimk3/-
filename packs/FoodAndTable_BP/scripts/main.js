@@ -1,6 +1,6 @@
 import { BlockPermutation, GameMode, ItemStack, system, world } from "@minecraft/server";
 import { ActionFormData, MessageFormData } from "@minecraft/server-ui";
-import { categories, cropByBlock, foodById, foodByServing, id, label, recipes, stations, vessels } from "./catalog.js";
+import { categories, cropByBlock, foodById, foodByServing, id, label, recipes, servingKey, stations, vesselByKey, vessels } from "./catalog.js";
 import { count, MenuSessions, planCraft, planInsert, planServe } from "./inventory.js";
 import { supportBlocks } from "./supports.js";
 const sessions = new MenuSessions();
@@ -150,13 +150,13 @@ function tableInteract(p, block) {
                 return;
             }
             const before = snapshot(container);
-            const plan = planInsert(before.slots, id(served.key), 1, new ItemStack(id(served.key)).maxAmount);
+            const plan = planInsert(before.slots, id(served.food.key), 1, new ItemStack(id(served.food.key)).maxAmount);
             if (!plan.ok) {
                 notify(p, "背包已满，料理仍在桌上。", "Inventory full. Your serving stays on the table.");
                 return;
             }
             const old = block.permutation;
-            swapVessel(block, id(served.vessel));
+            swapVessel(block, id(served.vessel.key));
             try {
                 commit(container, before, plan.slots);
             }
@@ -164,14 +164,14 @@ function tableInteract(p, block) {
                 block.setPermutation(old);
                 throw error;
             }
-            notify(p, `已取餐：${served.zh}`, `Taken: ${served.en}`);
+            notify(p, `已取餐：${served.food.zh}`, `Taken: ${served.food.en}`);
             return;
         }
         const vessel = vessels.find(v => id(v.key) === block.typeId);
         if (!vessel)
             return;
         const food = hand && foodById.get(hand.typeId);
-        if (!food || food.vessel !== vessel.key) {
+        if (!food || vesselByKey.get(food.vessel)?.family !== vessel.family) {
             notify(p, `手持适合${vessel.zh}的成品交互即可盛装。`, `Hold a prepared dish matching this ${vessel.en.toLowerCase()}.`);
             return;
         }
@@ -180,7 +180,7 @@ function tableInteract(p, block) {
         if (!plan.ok)
             return;
         const old = block.permutation;
-        swapVessel(block, id(`${food.key}_serving`));
+        swapVessel(block, id(servingKey(food, vessel.key)));
         try {
             commit(container, before, plan.slots);
         }

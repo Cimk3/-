@@ -1,7 +1,0 @@
-{
-  "format_version": "1.21.30",
-  "minecraft:texture_set": {
-    "color": "hotdog_serving",
-    "metalness_emissive_roughness": "hotdog_serving_mer"
-  }
-}

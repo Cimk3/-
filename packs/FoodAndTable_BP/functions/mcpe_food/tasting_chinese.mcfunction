@@ -6,3 +6,6 @@ give @s mcpe_food:tomato_eggs 4
 give @s mcpe_food:sweet_sour_pork 4
 give @s mcpe_food:beef_noodle_soup 4
 give @s mcpe_food:dumplings 4
+give @s mcpe_food:dongpo_pork 4
+give @s mcpe_food:peking_duck 4
+give @s mcpe_food:buddha_jumps_wall 4

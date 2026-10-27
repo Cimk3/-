@@ -6,7 +6,8 @@ export const categories = {
     huaiyang: ["淮扬名菜", "Huaiyang"], northeast: ["东北风味", "Northeastern"],
     seafood: ["海鲜料理", "Seafood"], western: ["经典西餐", "Western Classics"],
     snack: ["街头小吃", "Snacks"], drink: ["茶饮与饮品", "Drinks"], dessert: ["甜点时光", "Desserts"],
-    processing: ["基础备料", "Preparation"]
+    processing: ["基础备料", "Preparation"],
+    french: ["法国料理", "French Cuisine"], japanese: ["经典日料", "Japanese Cuisine"], hotpot: ["铜锅涮肉", "Copper Hotpot"]
 };
 export const stations = [
     { key: "prep_counter", zh: "料理台", en: "Preparation Counter", colors: ["#d8cdb5", "#82614b", "#496b58"] },
@@ -15,10 +16,19 @@ export const stations = [
     { key: "drink_counter", zh: "饮品台", en: "Drink Counter", colors: ["#76a49a", "#405c51", "#d3b78a"] }
 ];
 export const vessels = [
-    { key: "plate", zh: "白瓷盘", en: "Porcelain Plate", color: "#e1e3d8" },
-    { key: "bowl", zh: "青边瓷碗", en: "Celadon Bowl", color: "#b8d5c6" },
-    { key: "glass", zh: "玻璃杯", en: "Glass", color: "#b6dfde" },
-    { key: "mug", zh: "陶瓷马克杯", en: "Ceramic Mug", color: "#c3926b" }
+    { key: "plate", family: "plate", zh: "白瓷盘", en: "Porcelain Plate", color: "#e1e3d8", theme: "porcelain", radiusX: 5.7, radiusZ: 5.7, height: 1.05, surface: 0.85 },
+    { key: "bowl", family: "bowl", zh: "青边瓷碗", en: "Celadon Bowl", color: "#b8d5c6", theme: "celadon", radiusX: 4.8, radiusZ: 4.8, height: 4.8, surface: 4 },
+    { key: "glass", family: "glass", zh: "玻璃杯", en: "Glass", color: "#b6dfde", theme: "glass", radiusX: 2.25, radiusZ: 2.25, height: 7.5, surface: 6 },
+    { key: "mug", family: "mug", zh: "陶瓷马克杯", en: "Ceramic Mug", color: "#c3926b", theme: "earthen", radiusX: 2.625, radiusZ: 2.625, height: 6, surface: 4.8 },
+    { key: "black_gold_bowl", family: "bowl", zh: "黑金汤盅", en: "Black and Gold Soup Bowl", color: "#292d32", theme: "black_gold", radiusX: 4.8, radiusZ: 4.8, height: 5.8, surface: 4.9 },
+    { key: "burgundy_bowl", family: "bowl", zh: "酒红小碗", en: "Burgundy Small Bowl", color: "#71363e", theme: "burgundy", radiusX: 3.6, radiusZ: 3.6, height: 3.6, surface: 2.9 },
+    { key: "black_gold_plate", family: "plate", zh: "黑金圆盘", en: "Black and Gold Plate", color: "#292d32", theme: "black_gold", radiusX: 5.8, radiusZ: 5.8, height: 1.05, surface: 0.85 },
+    { key: "burgundy_platter", family: "plate", zh: "酒红长盘", en: "Burgundy Oval Platter", color: "#71363e", theme: "burgundy", radiusX: 6.6, radiusZ: 4.5, height: 1.05, surface: 0.85 }
+];
+export const vesselByKey = new Map(vessels.map(v => [v.key, v]));
+export const hotpots = [
+    { key: "copper_hotpot_empty", zh: "空铜锅", en: "Empty Copper Hotpot", filled: false },
+    { key: "copper_hotpot_broth", zh: "清汤铜锅", en: "Clear Broth Copper Hotpot", filled: true }
 ];
 export const cutlery = [
     { key: "chopsticks", zh: "竹筷", en: "Bamboo Chopsticks", color: "#b18450" },
@@ -112,14 +122,51 @@ const rows = [
     ["cookies", "曲奇", "Chocolate Chip Cookies", "dessert", "oven", "plate", "cookies", 6, ["#d4ad68", "#77503a", "#edd198"], [["dough", 1], ["minecraft:cocoa_beans", 1], ["minecraft:sugar", 1]]],
     ["egg_tart", "蛋挞", "Egg Tarts", "dessert", "oven", "plate", "tarts", 6, ["#d5a354", "#f0d36a", "#edddaa"], [["dough", 1], ["minecraft:egg", 1], ["cream", 1], ["minecraft:sugar", 1]]]
 ];
-export const foods = rows.map(([key, zh, en, category, station, vessel, shape, nutrition, colors, pairs]) => ({
-    key, zh, en, category, station, vessel, shape, nutrition,
+export const legacyFoods = rows.map(([key, zh, en, category, station, vessel, shape, nutrition, colors, pairs]) => ({
+    key, zh: key === "egg_tart" ? "广式酥皮蛋挞" : zh, en: key === "egg_tart" ? "Cantonese Flaky Egg Tarts" : en,
+    category, vessel, shape, nutrition, edible: true,
     saturation: category === "drink" ? 0.25 : category === "dessert" ? 0.4 : 0.6,
-    colors, inputs: inputs(pairs).map(i => i.item === "minecraft:honey_bottle" ? { ...i, returns: "minecraft:glass_bottle" } : i), output: 1
+    colors, recipe: { key, zh, en, category, station, inputs: inputs(pairs).map(i => i.item === "minecraft:honey_bottle" ? { ...i, returns: "minecraft:glass_bottle" } : i), output: 1 }
 }));
-export const recipes = [...processing, ...foods];
-export const foodById = new Map(foods.map(f => [id(f.key), f]));
-export const foodByServing = new Map(foods.map(f => [id(`${f.key}_serving`), f]));
+const additions = [
+    ["roast_goose", "烧鹅", "Cantonese Roast Goose", "cantonese", "burgundy_platter", "goose", ["#a45129", "#d59245", "#69934d"]],
+    ["shrimp_rice_rolls", "鲜虾肠粉", "Shrimp Rice Noodle Rolls", "cantonese", "black_gold_plate", "rice_rolls", ["#efe9d6", "#dfa28d", "#93643f"]],
+    ["dongpo_pork", "东坡肉", "Dongpo Pork", "chinese", "burgundy_platter", "dongpo", ["#98442b", "#e5bc94", "#5e8a49"]],
+    ["peking_duck", "北京烤鸭", "Peking Roast Duck", "chinese", "burgundy_platter", "peking_duck", ["#a9542b", "#eed9ae", "#739654"]],
+    ["buddha_jumps_wall", "佛跳墙", "Buddha Jumps Over the Wall", "chinese", "black_gold_bowl", "buddha", ["#ac7e44", "#dfbb79", "#6d8550"]],
+    ["boeuf_bourguignon", "红酒炖牛肉", "Boeuf Bourguignon", "french", "black_gold_bowl", "bourguignon", ["#6f3e32", "#be854d", "#869b56"]],
+    ["french_onion_soup", "法式洋葱汤", "French Onion Soup", "french", "black_gold_bowl", "onion_soup", ["#ae7940", "#ead19a", "#a07845"]],
+    ["sushi_platter", "寿司拼盘", "Sushi Platter", "japanese", "black_gold_plate", "sushi", ["#e39172", "#f1e5c9", "#344a39"]],
+    ["sashimi_platter", "刺身拼盘", "Sashimi Platter", "japanese", "burgundy_platter", "sashimi", ["#e88971", "#b75159", "#8da66b"]],
+    ["tempura", "天妇罗", "Tempura", "japanese", "black_gold_plate", "tempura", ["#e3c17d", "#eca17b", "#789452"]],
+    ["tonkotsu_ramen", "豚骨拉面", "Tonkotsu Ramen", "japanese", "black_gold_bowl", "ramen", ["#ddc99d", "#b87957", "#b3c573"]],
+    ["unagi_don", "鳗鱼饭", "Unagi Don", "japanese", "burgundy_bowl", "unagi", ["#915331", "#eee0bd", "#809855"]],
+    ["okonomiyaki", "大阪烧", "Okonomiyaki", "japanese", "black_gold_plate", "okonomiyaki", ["#c28b47", "#704736", "#f1dfb9"]],
+    ["hotpot_lamb", "涮羊肉", "Poached Hotpot Lamb", "hotpot", "black_gold_plate", "cooked_lamb", ["#bd9c88", "#ead5be", "#7a9256"]],
+    ["hotpot_beef", "涮牛肉", "Poached Hotpot Beef", "hotpot", "black_gold_plate", "cooked_beef", ["#987b65", "#d8c6a8", "#739255"]]
+];
+const displayRows = [
+    ["lamb_slices", "羊肉片盘", "Lamb Slice Platter", "hotpot", "burgundy_platter", "raw_lamb", ["#d58c93", "#f1dacc", "#729052"]],
+    ["beef_slices", "牛肉片盘", "Beef Slice Platter", "hotpot", "burgundy_platter", "raw_beef", ["#b95460", "#eed4c3", "#6e8f54"]],
+    ["tripe_platter", "毛肚盘", "Tripe Platter", "hotpot", "black_gold_plate", "tripe", ["#606461", "#b8b7a5", "#7c9756"]],
+    ["frozen_tofu_platter", "冻豆腐盘", "Frozen Tofu Platter", "hotpot", "black_gold_plate", "frozen_tofu", ["#e4d6a5", "#c5b080", "#799254"]],
+    ["mushroom_platter", "菌菇拼盘", "Mushroom Platter", "hotpot", "burgundy_platter", "mushrooms", ["#a0815f", "#e9ddc5", "#736247"]],
+    ["greens_platter", "青菜拼盘", "Leafy Greens Platter", "hotpot", "burgundy_platter", "greens", ["#6b9853", "#b8ca85", "#e4dcb8"]],
+    ["vermicelli_platter", "粉丝盘", "Vermicelli Platter", "hotpot", "black_gold_plate", "vermicelli", ["#e1e3d5", "#f1ecda", "#94a373"]],
+    ["sesame_dip", "麻酱蘸碟", "Sesame Dipping Sauce", "hotpot", "burgundy_bowl", "sesame", ["#b99a6c", "#dfc99b", "#709455"]]
+];
+function creativeDishes(list, edible) {
+    return list.map(([key, zh, en, category, vessel, shape, colors]) => ({ key, zh, en, category, vessel, shape, colors, edible, nutrition: edible ? 8 : 0, saturation: 0.6 }));
+}
+export const foods = [...legacyFoods, ...creativeDishes(additions, true)];
+export const displays = creativeDishes(displayRows, false);
+export const dishes = [...foods, ...displays];
+export const recipes = [...processing, ...legacyFoods.map(f => f.recipe)];
+export const foodById = new Map(dishes.map(f => [id(f.key), f]));
+export const compatibleVessels = (food) => vessels.filter(v => v.family === vesselByKey.get(food.vessel).family);
+export const servingKey = (food, vessel) => vessel === food.vessel ? `${food.key}_serving` : `${food.key}_on_${vessel}`;
+export const servings = dishes.flatMap(food => compatibleVessels(food).map(vessel => ({ key: servingKey(food, vessel.key), food, vessel })));
+export const foodByServing = new Map(servings.map(s => [id(s.key), s]));
 export const cropByBlock = new Map(crops.map(c => [id(`${c.key}_crop`), c]));
 export const materialById = new Map(materials.map(m => [id(m.key), m]));
 export function label(item, english = false) {

@@ -1,7 +1,7 @@
 /** The single source of truth. IDs are save-file interfaces: do not rename them. */
 export const NS = "mcpe_food";
 export const id = (key) => `${NS}:${key}`;
-export const categories = {
+export const legacyCategories = {
     chinese: ["家常中餐", "Chinese Classics"], cantonese: ["经典粤菜", "Cantonese"],
     huaiyang: ["淮扬名菜", "Huaiyang"], northeast: ["东北风味", "Northeastern"],
     seafood: ["海鲜料理", "Seafood"], western: ["经典西餐", "Western Classics"],
@@ -9,6 +9,24 @@ export const categories = {
     processing: ["基础备料", "Preparation"],
     french: ["法国料理", "French Cuisine"], japanese: ["经典日料", "Japanese Cuisine"], hotpot: ["铜锅涮肉", "Copper Hotpot"]
 };
+export const categories = {
+    chinese: ["中餐", "Chinese"], western: ["西餐", "Western"], japanese: ["日料", "Japanese"],
+    dessert: ["甜品", "Desserts"], drink: ["饮品", "Drinks"]
+};
+export function categoryFor(key, category) {
+    if (category === "snack")
+        return ["chicken_nuggets", "fries", "hotdog"].includes(key) ? "western" : "chinese";
+    if (category === "french")
+        return "western";
+    return ["western", "japanese", "dessert", "drink"].includes(category) ? category : "chinese";
+}
+export const recipeCategory = (recipe) => recipe.category === "processing" ? "processing" : categoryFor(recipe.key, recipe.category);
+export const menuCategories = { ...categories, processing: ["基础备料", "Preparation"] };
+export const bottleProps = [
+    { key: "baijiu_bottle", zh: "白酒瓶（摆件）", en: "Baijiu Bottle (Display)", style: "ceramic", color: "#e5dfcc" },
+    { key: "premium_baijiu_bottle", zh: "珍品白酒瓶（摆件）", en: "Premium Baijiu Bottle (Display)", style: "premium", color: "#713b40" },
+    { key: "premium_red_wine_bottle", zh: "珍品红酒瓶（摆件）", en: "Premium Red Wine Bottle (Display)", style: "wine", color: "#283c32" }
+];
 export const stations = [
     { key: "prep_counter", zh: "料理台", en: "Preparation Counter", colors: ["#d8cdb5", "#82614b", "#496b58"] },
     { key: "stove", zh: "炉灶", en: "Cooking Stove", colors: ["#59646a", "#303b40", "#e8a25b"] },
@@ -124,7 +142,7 @@ const rows = [
 ];
 export const legacyFoods = rows.map(([key, zh, en, category, station, vessel, shape, nutrition, colors, pairs]) => ({
     key, zh: key === "egg_tart" ? "广式酥皮蛋挞" : zh, en: key === "egg_tart" ? "Cantonese Flaky Egg Tarts" : en,
-    category, vessel, shape, nutrition, edible: true,
+    category: categoryFor(key, category), legacyCategory: category, vessel, shape, nutrition, edible: true,
     saturation: category === "drink" ? 0.25 : category === "dessert" ? 0.4 : 0.6,
     colors, recipe: { key, zh, en, category, station, inputs: inputs(pairs).map(i => i.item === "minecraft:honey_bottle" ? { ...i, returns: "minecraft:glass_bottle" } : i), output: 1 }
 }));
@@ -155,11 +173,38 @@ const displayRows = [
     ["vermicelli_platter", "粉丝盘", "Vermicelli Platter", "hotpot", "black_gold_plate", "vermicelli", ["#e1e3d5", "#f1ecda", "#94a373"]],
     ["sesame_dip", "麻酱蘸碟", "Sesame Dipping Sauce", "hotpot", "burgundy_bowl", "sesame", ["#b99a6c", "#dfc99b", "#709455"]]
 ];
+const banquetAdditions = [
+    ["peacock_platter", "孔雀开屏花拼", "Peacock Banquet Platter", "chinese", "black_gold_plate", "peacock", ["#956548", "#e6c59a", "#668d52"]],
+    ["stir_fried_yellow_beef", "小炒黄牛肉", "Stir Fried Yellow Beef", "chinese", "burgundy_platter", "yellow_beef", ["#865039", "#d4472d", "#719651"]],
+    ["truffle_abalone", "松露鲍鱼", "Truffle Abalone", "chinese", "black_gold_plate", "abalone", ["#c4a075", "#635045", "#d6b675"]],
+    ["huaiyang_sanding_bao", "淮扬三丁包", "Huaiyang Three Dice Buns", "chinese", "plate", "sanding_bao", ["#f0e0be", "#aa7349", "#7b9b58"]],
+    ["fruit_platter", "鲜果拼盘", "Fresh Fruit Platter", "chinese", "burgundy_platter", "fruit", ["#df6754", "#edc46a", "#8bad58"]],
+    ["snow_pear_tremella", "冰糖银耳炖雪梨", "Rock Sugar Pear and Tremella", "chinese", "black_gold_bowl", "pear_tremella", ["#e5d5a2", "#f2e4c5", "#c19651"]],
+    ["pickled_greens_pork", "咸菜炖猪肉", "Pork Stew with Pickled Greens", "chinese", "bowl", "pickled_pork", ["#a17753", "#7c804f", "#d9bb8e"]],
+    ["jujube_lotus_soup", "红枣莲子甜汤", "Jujube and Lotus Seed Soup", "chinese", "burgundy_bowl", "lotus_soup", ["#bb9763", "#8f3e36", "#e9d7ad"]],
+    ["takoyaki", "章鱼烧", "Takoyaki", "japanese", "plate", "takoyaki", ["#c29651", "#704534", "#efe0b9"]],
+    ["yakisoba", "日式炒面", "Yakisoba", "japanese", "burgundy_platter", "yakisoba", ["#b28a4f", "#82613f", "#8da369"]],
+    ["grilled_squid", "烤鱿鱼", "Grilled Squid", "japanese", "burgundy_platter", "squid", ["#c6997c", "#a96a4d", "#ead4af"]],
+    ["oden", "关东煮", "Oden", "japanese", "black_gold_bowl", "oden", ["#c2a06d", "#e5d4aa", "#856c51"]],
+    ["dorayaki", "铜锣烧", "Dorayaki", "japanese", "plate", "dorayaki", ["#c58e43", "#713e3d", "#edd8a8"]],
+    ["wagyu_rice", "和牛饭", "Wagyu Rice Bowl", "japanese", "burgundy_bowl", "wagyu", ["#986144", "#ead9b9", "#6d9252"]],
+    ["gunkan_sushi", "军舰寿司", "Gunkan Sushi", "japanese", "black_gold_plate", "gunkan", ["#334c3a", "#efddba", "#dd8453"]],
+    ["red_bean_cake", "红豆糕", "Red Bean Cake", "dessert", "plate", "red_bean_cake", ["#a26768", "#d8b39c", "#743e43"]],
+    ["mung_bean_soup", "绿豆汤", "Mung Bean Sweet Soup", "dessert", "bowl", "mung_soup", ["#92935e", "#b7b582", "#e0d5ad"]],
+    ["baijiu", "白酒", "Baijiu", "drink", "glass", "clear_spirit", ["#e5dfc9", "#f1eddc", "#d0cbb8"]],
+    ["premium_baijiu", "珍品白酒", "Premium Baijiu", "drink", "glass", "clear_spirit", ["#e7ddbd", "#f1e7d0", "#d7c59f"]],
+    ["premium_red_wine", "珍品红酒", "Premium Red Wine", "drink", "glass", "red_wine", ["#752c3d", "#a84e5e", "#dfb4ae"]],
+    ["cola", "可乐", "Cola", "drink", "glass", "cola", ["#50362c", "#b98d57", "#e9d6a9"]]
+];
 function creativeDishes(list, edible) {
-    return list.map(([key, zh, en, category, vessel, shape, colors]) => ({ key, zh, en, category, vessel, shape, colors, edible, nutrition: edible ? 8 : 0, saturation: 0.6 }));
+    return list.map(([key, zh, en, category, vessel, shape, colors]) => ({ key, zh, en, category: categoryFor(key, category), legacyCategory: category, vessel, shape, colors, edible,
+        nutrition: !edible || /baijiu|red_wine/.test(key) ? 0 : category === "drink" ? 2 : category === "dessert" ? 6 : 8,
+        saturation: category === "drink" ? 0.25 : category === "dessert" ? 0.4 : 0.6 }));
 }
-export const foods = [...legacyFoods, ...creativeDishes(additions, true)];
-export const displays = creativeDishes(displayRows, false);
+export const newFoods = creativeDishes(banquetAdditions, true);
+export const previousDishes = [...legacyFoods, ...creativeDishes(additions, true), ...creativeDishes(displayRows, false)];
+export const foods = [...legacyFoods, ...creativeDishes(additions, true), ...newFoods];
+export const displays = creativeDishes(displayRows, false).map(f => ({ ...f, zh: `${f.zh}（展示）`, en: `${f.en} (Display)` }));
 export const dishes = [...foods, ...displays];
 export const recipes = [...processing, ...legacyFoods.map(f => f.recipe)];
 export const foodById = new Map(dishes.map(f => [id(f.key), f]));

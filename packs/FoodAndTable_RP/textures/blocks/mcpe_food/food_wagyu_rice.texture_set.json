@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "food_wagyu_rice",
+    "metalness_emissive_roughness": "food_wagyu_rice_mer"
+  }
+}

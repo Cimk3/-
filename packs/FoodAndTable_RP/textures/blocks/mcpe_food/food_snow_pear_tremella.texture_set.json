@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "food_snow_pear_tremella",
+    "metalness_emissive_roughness": "food_snow_pear_tremella_mer"
+  }
+}

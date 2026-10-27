@@ -235,6 +235,69 @@
     "mcpe_food_food_hotpot_beef": {
       "textures": "textures/blocks/mcpe_food/food_hotpot_beef"
     },
+    "mcpe_food_food_peacock_platter": {
+      "textures": "textures/blocks/mcpe_food/food_peacock_platter"
+    },
+    "mcpe_food_food_stir_fried_yellow_beef": {
+      "textures": "textures/blocks/mcpe_food/food_stir_fried_yellow_beef"
+    },
+    "mcpe_food_food_truffle_abalone": {
+      "textures": "textures/blocks/mcpe_food/food_truffle_abalone"
+    },
+    "mcpe_food_food_huaiyang_sanding_bao": {
+      "textures": "textures/blocks/mcpe_food/food_huaiyang_sanding_bao"
+    },
+    "mcpe_food_food_fruit_platter": {
+      "textures": "textures/blocks/mcpe_food/food_fruit_platter"
+    },
+    "mcpe_food_food_snow_pear_tremella": {
+      "textures": "textures/blocks/mcpe_food/food_snow_pear_tremella"
+    },
+    "mcpe_food_food_pickled_greens_pork": {
+      "textures": "textures/blocks/mcpe_food/food_pickled_greens_pork"
+    },
+    "mcpe_food_food_jujube_lotus_soup": {
+      "textures": "textures/blocks/mcpe_food/food_jujube_lotus_soup"
+    },
+    "mcpe_food_food_takoyaki": {
+      "textures": "textures/blocks/mcpe_food/food_takoyaki"
+    },
+    "mcpe_food_food_yakisoba": {
+      "textures": "textures/blocks/mcpe_food/food_yakisoba"
+    },
+    "mcpe_food_food_grilled_squid": {
+      "textures": "textures/blocks/mcpe_food/food_grilled_squid"
+    },
+    "mcpe_food_food_oden": {
+      "textures": "textures/blocks/mcpe_food/food_oden"
+    },
+    "mcpe_food_food_dorayaki": {
+      "textures": "textures/blocks/mcpe_food/food_dorayaki"
+    },
+    "mcpe_food_food_wagyu_rice": {
+      "textures": "textures/blocks/mcpe_food/food_wagyu_rice"
+    },
+    "mcpe_food_food_gunkan_sushi": {
+      "textures": "textures/blocks/mcpe_food/food_gunkan_sushi"
+    },
+    "mcpe_food_food_red_bean_cake": {
+      "textures": "textures/blocks/mcpe_food/food_red_bean_cake"
+    },
+    "mcpe_food_food_mung_bean_soup": {
+      "textures": "textures/blocks/mcpe_food/food_mung_bean_soup"
+    },
+    "mcpe_food_food_baijiu": {
+      "textures": "textures/blocks/mcpe_food/food_baijiu"
+    },
+    "mcpe_food_food_premium_baijiu": {
+      "textures": "textures/blocks/mcpe_food/food_premium_baijiu"
+    },
+    "mcpe_food_food_premium_red_wine": {
+      "textures": "textures/blocks/mcpe_food/food_premium_red_wine"
+    },
+    "mcpe_food_food_cola": {
+      "textures": "textures/blocks/mcpe_food/food_cola"
+    },
     "mcpe_food_food_lamb_slices": {
       "textures": "textures/blocks/mcpe_food/food_lamb_slices"
     },
@@ -258,6 +321,15 @@
     },
     "mcpe_food_food_sesame_dip": {
       "textures": "textures/blocks/mcpe_food/food_sesame_dip"
+    },
+    "mcpe_food_ware_baijiu_bottle": {
+      "textures": "textures/blocks/mcpe_food/ware_baijiu_bottle"
+    },
+    "mcpe_food_ware_premium_baijiu_bottle": {
+      "textures": "textures/blocks/mcpe_food/ware_premium_baijiu_bottle"
+    },
+    "mcpe_food_ware_premium_red_wine_bottle": {
+      "textures": "textures/blocks/mcpe_food/ware_premium_red_wine_bottle"
     },
     "mcpe_food_prep_counter": {
       "textures": "textures/blocks/mcpe_food/prep_counter"

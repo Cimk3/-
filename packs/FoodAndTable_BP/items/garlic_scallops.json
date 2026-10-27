@@ -5,7 +5,7 @@
       "identifier": "mcpe_food:garlic_scallops",
       "menu_category": {
         "category": "items",
-        "group": "minecraft:itemGroup.name.food"
+        "group": "mcpe_food:group_chinese"
       }
     },
     "components": {

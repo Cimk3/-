@@ -1,0 +1,147 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:crafting_items_catalog": {
+    "categories": [
+      {
+        "category_name": "items",
+        "groups": [
+          {
+            "group_identifier": {
+              "name": "mcpe_food:group_chinese",
+              "icon": "mcpe_food:egg_fried_rice"
+            },
+            "items": [
+              "mcpe_food:egg_fried_rice",
+              "mcpe_food:kung_pao_chicken",
+              "mcpe_food:mapo_tofu",
+              "mcpe_food:braised_pork",
+              "mcpe_food:tomato_eggs",
+              "mcpe_food:sweet_sour_pork",
+              "mcpe_food:beef_noodle_soup",
+              "mcpe_food:dumplings",
+              "mcpe_food:white_cut_chicken",
+              "mcpe_food:char_siu",
+              "mcpe_food:black_bean_ribs",
+              "mcpe_food:claypot_rice",
+              "mcpe_food:lions_head",
+              "mcpe_food:boiled_tofu_shreds",
+              "mcpe_food:wensi_tofu",
+              "mcpe_food:huaiyang_eel",
+              "mcpe_food:guo_bao_rou",
+              "mcpe_food:steamed_sea_bass",
+              "mcpe_food:garlic_scallops",
+              "mcpe_food:braised_prawns",
+              "mcpe_food:baozi",
+              "mcpe_food:spring_rolls",
+              "mcpe_food:skewers",
+              "mcpe_food:roast_goose",
+              "mcpe_food:shrimp_rice_rolls",
+              "mcpe_food:dongpo_pork",
+              "mcpe_food:peking_duck",
+              "mcpe_food:buddha_jumps_wall",
+              "mcpe_food:hotpot_lamb",
+              "mcpe_food:hotpot_beef",
+              "mcpe_food:peacock_platter",
+              "mcpe_food:stir_fried_yellow_beef",
+              "mcpe_food:truffle_abalone",
+              "mcpe_food:huaiyang_sanding_bao",
+              "mcpe_food:fruit_platter",
+              "mcpe_food:snow_pear_tremella",
+              "mcpe_food:pickled_greens_pork",
+              "mcpe_food:jujube_lotus_soup",
+              "mcpe_food:lamb_slices",
+              "mcpe_food:beef_slices",
+              "mcpe_food:tripe_platter",
+              "mcpe_food:frozen_tofu_platter",
+              "mcpe_food:mushroom_platter",
+              "mcpe_food:greens_platter",
+              "mcpe_food:vermicelli_platter",
+              "mcpe_food:sesame_dip"
+            ]
+          },
+          {
+            "group_identifier": {
+              "name": "mcpe_food:group_western",
+              "icon": "mcpe_food:steak"
+            },
+            "items": [
+              "mcpe_food:steak",
+              "mcpe_food:burger",
+              "mcpe_food:pizza",
+              "mcpe_food:spaghetti",
+              "mcpe_food:sandwich",
+              "mcpe_food:roast_chicken",
+              "mcpe_food:mushroom_soup",
+              "mcpe_food:salad",
+              "mcpe_food:chicken_nuggets",
+              "mcpe_food:fries",
+              "mcpe_food:hotdog",
+              "mcpe_food:boeuf_bourguignon",
+              "mcpe_food:french_onion_soup"
+            ]
+          },
+          {
+            "group_identifier": {
+              "name": "mcpe_food:group_japanese",
+              "icon": "mcpe_food:sushi_platter"
+            },
+            "items": [
+              "mcpe_food:sushi_platter",
+              "mcpe_food:sashimi_platter",
+              "mcpe_food:tempura",
+              "mcpe_food:tonkotsu_ramen",
+              "mcpe_food:unagi_don",
+              "mcpe_food:okonomiyaki",
+              "mcpe_food:takoyaki",
+              "mcpe_food:yakisoba",
+              "mcpe_food:grilled_squid",
+              "mcpe_food:oden",
+              "mcpe_food:dorayaki",
+              "mcpe_food:wagyu_rice",
+              "mcpe_food:gunkan_sushi"
+            ]
+          },
+          {
+            "group_identifier": {
+              "name": "mcpe_food:group_dessert",
+              "icon": "mcpe_food:egg_tart"
+            },
+            "items": [
+              "mcpe_food:strawberry_cake",
+              "mcpe_food:chocolate_cake",
+              "mcpe_food:cheesecake",
+              "mcpe_food:pudding",
+              "mcpe_food:ice_cream",
+              "mcpe_food:donut",
+              "mcpe_food:cookies",
+              "mcpe_food:egg_tart",
+              "mcpe_food:red_bean_cake",
+              "mcpe_food:mung_bean_soup"
+            ]
+          },
+          {
+            "group_identifier": {
+              "name": "mcpe_food:group_drink",
+              "icon": "mcpe_food:green_tea"
+            },
+            "items": [
+              "mcpe_food:green_tea",
+              "mcpe_food:black_coffee",
+              "mcpe_food:milk_tea",
+              "mcpe_food:strawberry_shake",
+              "mcpe_food:tomato_juice",
+              "mcpe_food:hot_chocolate",
+              "mcpe_food:baijiu",
+              "mcpe_food:premium_baijiu",
+              "mcpe_food:premium_red_wine",
+              "mcpe_food:cola",
+              "mcpe_food:baijiu_bottle",
+              "mcpe_food:premium_baijiu_bottle",
+              "mcpe_food:premium_red_wine_bottle"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

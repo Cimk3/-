@@ -535,6 +535,171 @@
   "mcpe_food:hotpot_beef_on_burgundy_platter": {
     "sound": "glass"
   },
+  "mcpe_food:peacock_platter_on_plate": {
+    "sound": "glass"
+  },
+  "mcpe_food:peacock_platter_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:peacock_platter_on_burgundy_platter": {
+    "sound": "glass"
+  },
+  "mcpe_food:stir_fried_yellow_beef_on_plate": {
+    "sound": "glass"
+  },
+  "mcpe_food:stir_fried_yellow_beef_on_black_gold_plate": {
+    "sound": "glass"
+  },
+  "mcpe_food:stir_fried_yellow_beef_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:truffle_abalone_on_plate": {
+    "sound": "glass"
+  },
+  "mcpe_food:truffle_abalone_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:truffle_abalone_on_burgundy_platter": {
+    "sound": "glass"
+  },
+  "mcpe_food:huaiyang_sanding_bao_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:huaiyang_sanding_bao_on_black_gold_plate": {
+    "sound": "glass"
+  },
+  "mcpe_food:huaiyang_sanding_bao_on_burgundy_platter": {
+    "sound": "glass"
+  },
+  "mcpe_food:fruit_platter_on_plate": {
+    "sound": "glass"
+  },
+  "mcpe_food:fruit_platter_on_black_gold_plate": {
+    "sound": "glass"
+  },
+  "mcpe_food:fruit_platter_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:snow_pear_tremella_on_bowl": {
+    "sound": "glass"
+  },
+  "mcpe_food:snow_pear_tremella_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:snow_pear_tremella_on_burgundy_bowl": {
+    "sound": "glass"
+  },
+  "mcpe_food:pickled_greens_pork_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:pickled_greens_pork_on_black_gold_bowl": {
+    "sound": "glass"
+  },
+  "mcpe_food:pickled_greens_pork_on_burgundy_bowl": {
+    "sound": "glass"
+  },
+  "mcpe_food:jujube_lotus_soup_on_bowl": {
+    "sound": "glass"
+  },
+  "mcpe_food:jujube_lotus_soup_on_black_gold_bowl": {
+    "sound": "glass"
+  },
+  "mcpe_food:jujube_lotus_soup_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:takoyaki_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:takoyaki_on_black_gold_plate": {
+    "sound": "glass"
+  },
+  "mcpe_food:takoyaki_on_burgundy_platter": {
+    "sound": "glass"
+  },
+  "mcpe_food:yakisoba_on_plate": {
+    "sound": "glass"
+  },
+  "mcpe_food:yakisoba_on_black_gold_plate": {
+    "sound": "glass"
+  },
+  "mcpe_food:yakisoba_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:grilled_squid_on_plate": {
+    "sound": "glass"
+  },
+  "mcpe_food:grilled_squid_on_black_gold_plate": {
+    "sound": "glass"
+  },
+  "mcpe_food:grilled_squid_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:oden_on_bowl": {
+    "sound": "glass"
+  },
+  "mcpe_food:oden_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:oden_on_burgundy_bowl": {
+    "sound": "glass"
+  },
+  "mcpe_food:dorayaki_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:dorayaki_on_black_gold_plate": {
+    "sound": "glass"
+  },
+  "mcpe_food:dorayaki_on_burgundy_platter": {
+    "sound": "glass"
+  },
+  "mcpe_food:wagyu_rice_on_bowl": {
+    "sound": "glass"
+  },
+  "mcpe_food:wagyu_rice_on_black_gold_bowl": {
+    "sound": "glass"
+  },
+  "mcpe_food:wagyu_rice_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:gunkan_sushi_on_plate": {
+    "sound": "glass"
+  },
+  "mcpe_food:gunkan_sushi_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:gunkan_sushi_on_burgundy_platter": {
+    "sound": "glass"
+  },
+  "mcpe_food:red_bean_cake_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:red_bean_cake_on_black_gold_plate": {
+    "sound": "glass"
+  },
+  "mcpe_food:red_bean_cake_on_burgundy_platter": {
+    "sound": "glass"
+  },
+  "mcpe_food:mung_bean_soup_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:mung_bean_soup_on_black_gold_bowl": {
+    "sound": "glass"
+  },
+  "mcpe_food:mung_bean_soup_on_burgundy_bowl": {
+    "sound": "glass"
+  },
+  "mcpe_food:baijiu_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:premium_baijiu_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:premium_red_wine_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:cola_serving": {
+    "sound": "glass"
+  },
   "mcpe_food:lamb_slices_on_plate": {
     "sound": "glass"
   },
@@ -647,6 +812,15 @@
     "sound": "glass"
   },
   "mcpe_food:copper_hotpot_broth": {
+    "sound": "glass"
+  },
+  "mcpe_food:baijiu_bottle": {
+    "sound": "glass"
+  },
+  "mcpe_food:premium_baijiu_bottle": {
+    "sound": "glass"
+  },
+  "mcpe_food:premium_red_wine_bottle": {
     "sound": "glass"
   },
   "mcpe_food:prep_counter": {

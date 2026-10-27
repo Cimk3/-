@@ -5,7 +5,7 @@
       "identifier": "mcpe_food:donut",
       "menu_category": {
         "category": "items",
-        "group": "minecraft:itemGroup.name.food"
+        "group": "mcpe_food:group_dessert"
       }
     },
     "components": {

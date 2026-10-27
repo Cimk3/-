@@ -1,6 +1,6 @@
 import { BlockPermutation, GameMode, ItemStack, system, world } from "@minecraft/server";
 import { ActionFormData, MessageFormData } from "@minecraft/server-ui";
-import { categories, cropByBlock, foodById, foodByServing, id, label, recipes, servingKey, stations, vesselByKey, vessels } from "./catalog.js";
+import { menuCategories, recipeCategory, cropByBlock, foodById, foodByServing, id, label, recipes, servingKey, stations, vesselByKey, vessels } from "./catalog.js";
 import { count, MenuSessions, planCraft, planInsert, planServe } from "./inventory.js";
 import { supportBlocks } from "./supports.js";
 const sessions = new MenuSessions();
@@ -70,17 +70,17 @@ async function openKitchen(p, block, station) {
     const english = p.hasTag(EN_TAG);
     try {
         const relevant = recipes.filter(r => r.station === station);
-        const groups = [...new Set(relevant.map(r => r.category))];
+        const groups = Object.keys(menuCategories).filter(g => relevant.some(r => recipeCategory(r) === g));
         const stationInfo = stations.find(s => s.key === station);
         const menu = new ActionFormData().title(english ? stationInfo.en : stationInfo.zh)
             .body(tr(p, "方寸食光 · 选一道今天想做的料理。\n创造限定原料须从创造物品栏取得。", "Food & Table · What shall we make today?\nCreative-only ingredients must be supplied from Creative inventory."));
-        groups.forEach(g => menu.button(categories[g][english ? 1 : 0]));
+        groups.forEach(g => menu.button(menuCategories[g][english ? 1 : 0]));
         const category = await menu.show(p);
         if (category.canceled || category.selection === undefined)
             return;
         const group = groups[category.selection];
-        const choices = relevant.filter(r => r.category === group);
-        const list = new ActionFormData().title(categories[group][english ? 1 : 0]);
+        const choices = relevant.filter(r => recipeCategory(r) === group);
+        const list = new ActionFormData().title(menuCategories[group][english ? 1 : 0]);
         choices.forEach(r => list.button(english ? r.en : r.zh, `textures/items/mcpe_food/${r.key}`));
         const selection = await list.show(p);
         if (selection.canceled || selection.selection === undefined)

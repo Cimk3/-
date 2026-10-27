@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "ware_premium_red_wine_bottle",
+    "metalness_emissive_roughness": "ware_premium_red_wine_bottle_mer"
+  }
+}

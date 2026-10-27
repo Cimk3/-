@@ -14,8 +14,8 @@ give @s mcpe_food:chopsticks 4
 give @s mcpe_food:table_knife 4
 give @s mcpe_food:fork 4
 give @s mcpe_food:spoon 4
-give @s mcpe_food:egg_fried_rice 4
-give @s mcpe_food:green_tea 4
-give @s mcpe_food:roast_goose 4
-give @s mcpe_food:egg_tart 4
+give @s mcpe_food:peacock_platter 4
+give @s mcpe_food:takoyaki 4
+give @s mcpe_food:premium_red_wine 4
+give @s mcpe_food:premium_red_wine_bottle 4
 give @s mcpe_food:copper_hotpot_broth 4

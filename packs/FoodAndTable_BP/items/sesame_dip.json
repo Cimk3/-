@@ -4,7 +4,8 @@
     "description": {
       "identifier": "mcpe_food:sesame_dip",
       "menu_category": {
-        "category": "items"
+        "category": "items",
+        "group": "mcpe_food:group_chinese"
       }
     },
     "components": {

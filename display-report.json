@@ -1714,7 +1714,7 @@
     },
     {
       "key": "surface_silver_laptop_open",
-      "cubes": 18,
+      "cubes": 136,
       "resolution": 128
     },
     {
@@ -1724,7 +1724,7 @@
     },
     {
       "key": "surface_gaming_laptop_open",
-      "cubes": 20,
+      "cubes": 146,
       "resolution": 128
     },
     {
@@ -1734,7 +1734,7 @@
     },
     {
       "key": "surface_thinkpad_open",
-      "cubes": 22,
+      "cubes": 140,
       "resolution": 128
     },
     {
@@ -1744,7 +1744,7 @@
     },
     {
       "key": "surface_macbook_open",
-      "cubes": 18,
+      "cubes": 136,
       "resolution": 128
     },
     {
@@ -1764,7 +1764,7 @@
     },
     {
       "key": "surface_ipad_air_magic_keyboard",
-      "cubes": 17,
+      "cubes": 165,
       "resolution": 128
     },
     {
@@ -1779,7 +1779,7 @@
     },
     {
       "key": "surface_dell_laptop_open",
-      "cubes": 20,
+      "cubes": 150,
       "resolution": 128
     },
     {
@@ -1789,7 +1789,7 @@
     },
     {
       "key": "surface_macbook_pro_gpt_open",
-      "cubes": 19,
+      "cubes": 151,
       "resolution": 128
     },
     {

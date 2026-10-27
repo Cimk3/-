@@ -170,11 +170,11 @@ test('creative electronics placement retains held inventory and support removal 
   state.breakBlock({player,block:base,cancel:false});await tick();assert.equal(saved().length,0);assert.equal(dimension.drops.length,0);assert.equal(base.typeId,'minecraft:bookshelf');
 });
 
-test('arbitrary screen facing follows player position and remains frozen through movement, support changes and reload',async()=>{
+test('cardinal screen facing follows player position and remains frozen through movement, support changes and reload',async()=>{
   for(const d of electronics.filter(d=>d.screenFront)){
     const{dimension,player,base}=setup('minecraft:oak_slab');player.location={x:3.1,y:1,z:-1.3};player.getRotation=()=>({x:0,y:143});
     const r=await place(player,base,d.key),e=entityFor(dimension,r),normal=screenNormal(r.yaw,d.screenFront),dx=player.location.x-.5,dz=player.location.z-.5;
-    assert.ok((normal.x*dx+normal.z*dz)/Math.hypot(dx,dz)>.999999);assert.equal(e.rotation.y,r.yaw);
+    assert.equal(Math.abs(r.yaw%90),0);assert.ok((normal.x*dx+normal.z*dz)/Math.hypot(dx,dz)>=Math.SQRT1_2-1e-8);assert.equal(e.rotation.y,r.yaw);
     player.location={x:-3,y:1,z:2};base.setPermutation({typeId:'minecraft:oak_double_slab',getAllStates:()=>({})});reconcileDecor();assert.equal(e.rotation.y,r.yaw);assert.equal(e.location.y,1);
     e.remove();loadDecorRecords();reconcileDecor();assert.equal(entityFor(dimension,r).rotation.y,r.yaw);removeDecor(r,false);
   }
@@ -182,6 +182,12 @@ test('arbitrary screen facing follows player position and remains frozen through
 
 test('legacy screen records without yaw keep their stored cardinal direction after upgrade',async()=>{
   const{dimension,player,base}=setup(),r=await place(player,base,'macbook_open');delete r.yaw;r.direction='east';world.setDynamicProperty('mcpe_food:decor:'+r.uid,JSON.stringify(r));loadDecorRecords();reconcileDecor();assert.equal(saved()[0].yaw,undefined);assert.equal(entityFor(dimension,r).rotation.y,-90);
+});
+
+test('0.5.1 diagonal device records snap once on load without losing their identity or inventory',async()=>{
+  const{dimension,player,base}=setup(),r=await place(player,base,'macbook_open'),e=entityFor(dimension,r);r.yaw=37;world.setDynamicProperty('mcpe_food:decor:'+r.uid,JSON.stringify(r));e.teleport(e.location,{rotation:{x:0,y:37}});e.setDynamicProperty('mcpe_food:yaw',37);
+  loadDecorRecords();reconcileDecor();const next=saved()[0];assert.equal(next.uid,r.uid);assert.equal(next.definition,r.definition);assert.equal(next.yaw,0);assert.equal(next.revision,r.revision+1);assert.equal(entityFor(dimension,r).rotation.y,0);assert.equal(dimension.drops.length,0);const revision=next.revision;
+  loadDecorRecords();reconcileDecor();assert.equal(saved()[0].revision,revision);assert.equal(player.container.count(r.definition),0);
 });
 
 test('tableware now places on newly supported interactive/full surfaces without opening their UI',async()=>{

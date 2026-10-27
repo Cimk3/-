@@ -4,7 +4,7 @@ import { compatibleVessels, foodById, foodByServing, id, servingKey, vesselByKey
 import { adById, adSize, advertisements, surfaceIndex, tableItemById, tray, trayFoods } from './decor-catalog.js';
 import { electronicsById } from './electronics-catalog.js';
 import { refrigeratorById } from './appliance-catalog.js';
-import { screenYaw } from './device-facing.js';
+import { screenYaw, cardinalYaw } from './device-facing.js';
 import { planInsert, planServe } from './inventory.js';
 import { isWallSupport, surfaceHeight } from './supports.js';
 let io;
@@ -610,8 +610,17 @@ export function loadDecorRecords() {
     for (const key of world.getDynamicPropertyIds().filter(k => k.startsWith(PREFIX))) {
         try {
             const r = JSON.parse(String(world.getDynamicProperty(key)));
-            if (r.version === 1 && r.uid && r.support)
+            if (r.version === 1 && r.uid && r.support) {
+                if (r.kind === 'surface' && electronicsById.has(r.definition) && Number.isFinite(r.yaw)) {
+                    const snapped = cardinalYaw(r.yaw);
+                    if (snapped !== r.yaw) {
+                        r.yaw = snapped;
+                        r.revision++;
+                        save(r);
+                    }
+                }
                 records.set(r.uid, r);
+            }
         }
         catch {
             console.warn(`[Food & Table] invalid decor record ${key}`);

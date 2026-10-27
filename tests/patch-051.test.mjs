@@ -1,3 +1,4 @@
+import {emittedLidAngle} from '../tools/device-geometry.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync,readdirSync} from 'node:fs';
@@ -46,18 +47,17 @@ test('every pinned vanilla block has an explicit surface classification and unsa
   assert.equal(surfaceHeight(block('oak_slab',{'minecraft:vertical_half':'bottom'})),.5);assert.equal(isWallSupport(block('oak_slab',{'minecraft:vertical_half':'top'})),false);assert.equal(isWallSupport(block('oak_double_slab')),true);
 });
 
-test('screen normals face the placer at arbitrary angles independent of look direction',()=>{
-  for(const d of electronics.filter(d=>d.screenFront))for(let angle=0;angle<360;angle+=17){const t=angle*Math.PI/180,target={x:3*Math.sin(t),z:3*Math.cos(t)},yaw=screenYaw('mcpe_food:'+d.key,{x:0,z:0},target,123),normal=screenNormal(yaw,d.screenFront);assert.ok((normal.x*target.x+normal.z*target.z)/3>.999999);}
+test('screen normals choose the nearest cardinal facing independent of look direction',()=>{
+  for(const d of electronics.filter(d=>d.screenFront))for(let angle=0;angle<360;angle+=17){const t=angle*Math.PI/180,target={x:3*Math.sin(t),z:3*Math.cos(t)},yaw=screenYaw('mcpe_food:'+d.key,{x:0,z:0},target,123),normal=screenNormal(yaw,d.screenFront);assert.equal(Math.abs(yaw%90),0);assert.ok((normal.x*target.x+normal.z*target.z)/3>=Math.SQRT1_2-1e-8);}
   for(const d of electronics.filter(d=>!d.screenFront))assert.equal(screenYaw('mcpe_food:'+d.key,{x:0,z:0},{x:2,z:3},0),undefined);
   assert.ok(Number.isFinite(screenYaw('mcpe_food:macbook_open',{x:0,z:0},{x:0,z:0},37)));
 });
 
 test('all six open laptops and the floating tablet have a geometric interior angle of 110 degrees',()=>{
   const devices=electronics.filter(d=>d.openAngle);assert.equal(devices.length,7);
-  for(const d of devices){const screen=electronicCubes(d).find(c=>c.tag==='screen'),rotation=screen.rotation[0]*Math.PI/180;
-    // Model +Z is reversed in entity world space; keyboard front points -Z.
-    const upwardWorld={y:Math.cos(rotation),z:-Math.sin(rotation)},interior=Math.acos(-upwardWorld.z)*180/Math.PI;
-    assert.ok(Math.abs(interior-110)<1e-8,d.key);assert.equal(d.openAngle,110);
+  for(const d of devices){
+    const cubes=electronicCubes(d);assert.ok(Math.abs(emittedLidAngle(cubes)-110)<1e-8,d.key);
+    assert.ok(cubes.filter(c=>c.tag==='screen').every(c=>!c.rotation));assert.equal(d.openAngle,110);
   }
 });
 

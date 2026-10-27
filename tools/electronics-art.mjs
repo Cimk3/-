@@ -1,6 +1,7 @@
 /** Original 128px UV atlases and modeled electronics; units are sixteenths of a block. */
 import {canvas,rect,text,png} from './art.mjs';
 import {modelBounds,pruneFaces} from './detail-art.mjs';
+import {bakeDeviceTilts} from './device-geometry.mjs';
 export const electronicUV = {
   screen:[0,0,96,56], keyboard:[0,64,80,40], logo:[96,0,32,32],
   vents:[96,32,32,24], ports:[0,112,80,16], trackpad:[80,64,16,24]
@@ -23,11 +24,14 @@ export function electronicCubes(device){
   }
   function mouse(x,y,z,body=1){const start=a.length;put(x+.08,y,z,.9,.25,1.5,body);put(x,y+.25,z+.15,1.06,.3,1.3,body);put(x+.48,y+.555,z+.3,.09,.06,.5,7);put(x+.515,y+.25,z+.12,.02,.27,.6,5);for(const c of a.slice(start))c.tag='mouse';}
   function monitor(x,y,z,w,h,body=1,rot,pivot){
+    const start=a.length;
     put(x,y,z,w,h,.5,body,{},rot,pivot);
     put(x+.32,y+.35,z+.505,w-.64,h-.72,.025,3,{south:electronicUV.screen,only:['south']},rot,pivot).tag='screen';
     put(x+w*.48,y+h-.16,z+.532,.12,.08,.025,5,{},rot,pivot);
     put(x+w*.48,y+.08,z+.532,.11,.065,.025,13,{},rot,pivot);
     put(x+w*.34,y+h*.38,z-.025,w*.32,h*.3,.025,body,{north:electronicUV.logo,only:['north']},rot,pivot);
+    // Keep the lid's side faces off the base's side plane at the hinge join.
+    if(rot?.[0])for(const c of a.slice(start)){c.origin[0]*=.995;c.size[0]*=.995;}
   }
   switch(device.model){
     case 'desktop':{
@@ -93,7 +97,7 @@ export function electronicCubes(device){
       keyboard(-5.3,.43,-1.8,10.6,3.4,8);put(-1.7,.44,2,3.4,.035,1.7,0,{up:electronicUV.trackpad,only:['up']});
       put(-4.8,.43,-3.85,9.6,.38,.65,7);
       put(-4.65,.8,-3.8,9.3,3.5,.22,8,{},[-6,0,0],[0,.8,-3.7]);
-      put(-4.65,4.05,-4.23,9.3,.25,.3,7);
+      put(-4.63,4.05,-4.23,9.26,.25,.3,7);
       const rotation=[-20,0,0],pivot=[0,3,-3.5];
       monitor(-5.5,3,-3.7,11,7.1,7,rotation,pivot);
       put(4.7,9.4,-3.73,.35,.35,.07,1,{},rotation,pivot);
@@ -122,7 +126,7 @@ export function electronicCubes(device){
     [c.uv.east,c.uv.west]=[c.uv.west,c.uv.east];
     if(c.faces)c.faces=c.faces.map(f=>f==='east'?'west':f==='west'?'east':f);
   }
-  const cubes=pruneFaces(a),bounds=modelBounds(cubes);
+  const cubes=pruneFaces(bakeDeviceTilts(a)),bounds=modelBounds(cubes);
   if(cubes.length>256||bounds.low.some((n,i)=>n<(i===1?0:-8)-1e-6)||bounds.high.some((n,i)=>n>(i===1?16:8)+1e-6))throw new Error(`Electronic geometry exceeds one block: ${device.key}`);
   return cubes;
 }

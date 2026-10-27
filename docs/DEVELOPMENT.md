@@ -1,4 +1,4 @@
-# 0.5.1维护说明
+# 0.5.2维护说明
 
 ## 内容与兼容接口
 
@@ -46,7 +46,7 @@ npm run package
 python tools/verify_archive.py
 ```
 
-包版本来自package.json，并同步package-lock。BP/RP的UUID保持不变。capture-compat.mjs在变更前捕获旧包基线，禁止覆盖已有文件；本次新增v0.5.0基线。
+包版本来自package.json，并同步package-lock。BP/RP的UUID保持不变。capture-compat.mjs在变更前捕获旧包基线，禁止覆盖已有文件；本次新增v0.5.1基线。
 
 package生成两个mcpack、嵌套mcaddon及source.zip，源码归档仅收录代码、测试、文档和美术源，不收录node_modules和整个工作目录。Python独立核对嵌套包、私有实体PBR、CRC及SHA-256。
 
@@ -64,10 +64,18 @@ emission-policy.mjs仅放行目录中设备的私有device_纹理名，校验屏
 
 ## 0.5.1接口与结构
 
-设备screenFront定义模型正面基准，openAngle仅用于静态造型说明；screenYaw根据玩家相对锚点的位置计算新放置角度。DecorRecord追加可选yaw，旧记录按direction恢复；模型、广告、无屏设备不使用全局旋转修正。旋转只在创建时计算，并在位置／角度变化时更新展示实体。原354项surfaceVisuals顺序保留，新增7项外观追加。
+设备screenFront定义模型正面基准，openAngle仅用于静态造型说明；screenYaw根据玩家相对锚点的位置计算并吸附四向的新放置角度。DecorRecord追加可选yaw，旧记录按direction恢复；模型、广告、无屏设备不使用全局旋转修正。旋转只在创建时计算，并在位置／角度变化时更新展示实体。原354项surfaceVisuals顺序保留，新增7项外观追加。
 
 generate-surfaces.mjs依据固定vanilla-data 1.26.52清单和审定形状族生成vanilla-surfaces.ts；每个登记ID必须明确属于完整表面、半砖或排除项，未知ID使生成失败。保持稳定API 2.0.0，不使用isSolid预发行属性。原来已支持的泥巴保留兼容判定，并在分类中注明例外。
 
 冰箱目录独立于可盛装器皿；6个库存物品对应9个私有部件方块，统一放入电子设备组。DecorRecord增加kind=appliance，按定义推导竖向部件位置；记录先发布再写部件，写方块或背包失败时还原。部件原生掉落表为空，所有正常拆除由拥有者记录统一返还一次。拆除同时清理以部件为支撑的摆件和广告画，继承创造／生存掉落模式。
 
 冰箱部件关闭活塞移动；辅助块不提供库存物品。区块未加载时跳过检查，命令放置的底座由tick建立实例，孤立上部只清除、不生成物品。茶盘是单件surface摆件，铁观音沿用双杯盛装逻辑，没有新增配方或茶盘取茶交互。
+
+## 0.5.2几何与四向迁移
+
+屏幕、边框、背板及iPad支撑的绕X轴倾斜经device-geometry.mjs转成1/8模型单位的水平条带；每条带以实际坐标定义，不输出原生X旋转。UV按屏幕原行分配，条带竖向不重叠；边框宽度略小于基座，避免铰链侧面共面。其他设备、餐具的旋转规则不变。
+
+emittedLidAngle从实际屏幕条带中段的中心坐标测量110°，回归测试另外读取最终方块与实体几何，核查顶缘向键盘后方退让。不能用源rotation参数代替发行几何检查，也不能将软件预览当作真实客户端证据。
+
+cardinalYaw只输出0、90、-90、-180。放置仍使用玩家位置确定屏幕正面；斜角位置选择最近四向。loadDecorRecords对已存电子设备数值yaw一次性吸附并递增revision，不改动位置、内容和UID；已经四向的记录不重复修改，没有yaw的旧记录保留direction。

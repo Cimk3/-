@@ -111,8 +111,8 @@
       },
       "mcpe_food:ipad_air_magic_keyboard": {
         "minecraft:collision_box": {
-          "width": 0.7795351927211788,
-          "height": 0.6209014781611031
+          "width": 0.7795351927211787,
+          "height": 0.6209014781611032
         }
       },
       "mcpe_food:crt_monitor": {

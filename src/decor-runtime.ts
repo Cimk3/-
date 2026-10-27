@@ -6,7 +6,7 @@ import {adById,adSize,advertisements,surfaceIndex,tableItemById,tray,trayFoods} 
 import type {AdKey} from './decor-catalog.js';
 import {electronicsById} from './electronics-catalog.js';
 import {refrigeratorById} from './appliance-catalog.js';
-import {screenYaw} from './device-facing.js';
+import {screenYaw,cardinalYaw} from './device-facing.js';
 import {MenuSessions,planInsert,planServe} from './inventory.js';
 import type {Plan,Slots} from './inventory.js';
 import {isWallSupport,surfaceHeight} from './supports.js';
@@ -272,7 +272,10 @@ export function reconcileDecor():void {
 }
 export function loadDecorRecords():void {
     records.clear();
-    for(const key of world.getDynamicPropertyIds().filter(k=>k.startsWith(PREFIX))){try{const r=JSON.parse(String(world.getDynamicProperty(key))) as DecorRecord;if(r.version===1&&r.uid&&r.support)records.set(r.uid,r);}catch{console.warn(`[Food & Table] invalid decor record ${key}`);}}
+    for(const key of world.getDynamicPropertyIds().filter(k=>k.startsWith(PREFIX))){try{const r=JSON.parse(String(world.getDynamicProperty(key))) as DecorRecord;if(r.version===1&&r.uid&&r.support){
+      if(r.kind==='surface'&&electronicsById.has(r.definition)&&Number.isFinite(r.yaw)){const snapped=cardinalYaw(r.yaw!);if(snapped!==r.yaw){r.yaw=snapped;r.revision++;save(r);}}
+      records.set(r.uid,r);
+    }}catch{console.warn(`[Food & Table] invalid decor record ${key}`);}}
 }
 export function installDecor(adapter:IO):void {
   io=adapter;

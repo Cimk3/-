@@ -1,5 +1,5 @@
 {
-  "version": "0.5.1",
+  "version": "0.5.2",
   "foods": 102,
   "displayDishes": 8,
   "hotpots": 2,
@@ -36,5 +36,5 @@
   "customDestructionParticles": 0,
   "staticStatus": "passed",
   "gameStatus": "NOT TESTED — Windows / Android / multiplayer / Vibrant Visuals",
-  "staticChecks": 1504446
+  "staticChecks": 1519998
 }

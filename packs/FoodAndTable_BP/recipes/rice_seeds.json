@@ -1,0 +1,23 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "mcpe_food:recipe_rice_seeds"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "ingredients": [
+      {
+        "item": "minecraft:wheat_seeds"
+      },
+      {
+        "item": "minecraft:wheat"
+      }
+    ],
+    "result": {
+      "item": "mcpe_food:rice_seeds",
+      "count": 2
+    }
+  }
+}

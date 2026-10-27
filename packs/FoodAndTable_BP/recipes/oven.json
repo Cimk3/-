@@ -1,0 +1,31 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "mcpe_food:recipe_oven"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "III",
+      "IFI",
+      "BBB"
+    ],
+    "key": {
+      "I": {
+        "item": "minecraft:iron_ingot"
+      },
+      "F": {
+        "item": "minecraft:furnace"
+      },
+      "B": {
+        "item": "minecraft:brick"
+      }
+    },
+    "result": {
+      "item": "mcpe_food:oven",
+      "count": 1
+    }
+  }
+}

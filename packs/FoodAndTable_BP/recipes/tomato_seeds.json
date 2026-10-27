@@ -1,0 +1,23 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "mcpe_food:recipe_tomato_seeds"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "ingredients": [
+      {
+        "item": "minecraft:wheat_seeds"
+      },
+      {
+        "item": "minecraft:beetroot"
+      }
+    ],
+    "result": {
+      "item": "mcpe_food:tomato_seeds",
+      "count": 2
+    }
+  }
+}

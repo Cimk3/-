@@ -1,0 +1,22 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "mcpe_food:fork",
+      "menu_category": {
+        "category": "construction"
+      }
+    },
+    "components": {
+      "minecraft:display_name": {
+        "value": "item.mcpe_food:fork.name"
+      },
+      "minecraft:icon": "mcpe_food_fork",
+      "minecraft:max_stack_size": 64,
+      "minecraft:block_placer": {
+        "block": "mcpe_food:fork",
+        "replace_block_item": true
+      }
+    }
+  }
+}

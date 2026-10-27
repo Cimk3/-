@@ -1,0 +1,31 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "mcpe_food:recipe_drink_counter"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "GGG",
+      "PBP",
+      "PPP"
+    ],
+    "key": {
+      "G": {
+        "item": "minecraft:glass"
+      },
+      "P": {
+        "item": "minecraft:oak_planks"
+      },
+      "B": {
+        "item": "minecraft:bucket"
+      }
+    },
+    "result": {
+      "item": "mcpe_food:drink_counter",
+      "count": 1
+    }
+  }
+}

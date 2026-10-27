@@ -1,0 +1,205 @@
+{
+  "format_version": [
+    1,
+    1,
+    0
+  ],
+  "mcpe_food:egg_fried_rice_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:green_tea_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:kung_pao_chicken_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:mapo_tofu_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:braised_pork_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:tomato_eggs_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:sweet_sour_pork_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:beef_noodle_soup_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:dumplings_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:white_cut_chicken_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:char_siu_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:black_bean_ribs_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:claypot_rice_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:lions_head_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:boiled_tofu_shreds_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:wensi_tofu_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:huaiyang_eel_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:guo_bao_rou_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:steamed_sea_bass_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:garlic_scallops_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:braised_prawns_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:steak_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:burger_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:pizza_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:spaghetti_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:sandwich_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:roast_chicken_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:mushroom_soup_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:salad_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:baozi_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:spring_rolls_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:chicken_nuggets_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:fries_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:hotdog_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:skewers_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:black_coffee_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:milk_tea_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:strawberry_shake_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:tomato_juice_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:hot_chocolate_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:strawberry_cake_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:chocolate_cake_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:cheesecake_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:pudding_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:ice_cream_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:donut_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:cookies_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:egg_tart_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:plate": {
+    "sound": "glass"
+  },
+  "mcpe_food:bowl": {
+    "sound": "glass"
+  },
+  "mcpe_food:glass": {
+    "sound": "glass"
+  },
+  "mcpe_food:mug": {
+    "sound": "glass"
+  },
+  "mcpe_food:chopsticks": {
+    "sound": "glass"
+  },
+  "mcpe_food:table_knife": {
+    "sound": "glass"
+  },
+  "mcpe_food:fork": {
+    "sound": "glass"
+  },
+  "mcpe_food:spoon": {
+    "sound": "glass"
+  },
+  "mcpe_food:prep_counter": {
+    "sound": "wood"
+  },
+  "mcpe_food:stove": {
+    "sound": "wood"
+  },
+  "mcpe_food:oven": {
+    "sound": "wood"
+  },
+  "mcpe_food:drink_counter": {
+    "sound": "wood"
+  },
+  "mcpe_food:rice_crop": {
+    "sound": "grass"
+  },
+  "mcpe_food:tomato_crop": {
+    "sound": "grass"
+  },
+  "mcpe_food:soybean_crop": {
+    "sound": "grass"
+  },
+  "mcpe_food:tea_crop": {
+    "sound": "grass"
+  },
+  "mcpe_food:strawberry_crop": {
+    "sound": "grass"
+  },
+  "mcpe_food:coffee_crop": {
+    "sound": "grass"
+  }
+}

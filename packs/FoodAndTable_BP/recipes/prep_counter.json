@@ -1,0 +1,31 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "mcpe_food:recipe_prep_counter"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "PPP",
+      "SCS",
+      "PPP"
+    ],
+    "key": {
+      "P": {
+        "item": "minecraft:oak_planks"
+      },
+      "S": {
+        "item": "minecraft:stick"
+      },
+      "C": {
+        "item": "minecraft:crafting_table"
+      }
+    },
+    "result": {
+      "item": "mcpe_food:prep_counter",
+      "count": 1
+    }
+  }
+}

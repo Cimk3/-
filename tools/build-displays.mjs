@@ -1,10 +1,12 @@
 import {readFileSync,copyFileSync,existsSync} from 'node:fs';
 import path from 'node:path';
 import {advertisements,surfaceVisuals,trayFoods,tray,paperCups} from '../.build/decor-catalog.js';
+import {electronics} from '../.build/electronics-catalog.js';
+import {electronicCubes} from './electronics-art.mjs';
 import {id,servings} from '../.build/catalog.js';
 import {decodeRGBA} from './png-inspect.mjs';
 import {png,canvas,blit,saveImage,text} from './art.mjs';
-import {detailGeometry,renderDetail,paintedTexture,textureSpec} from './detail-art.mjs';
+import {detailGeometry,renderDetail,paintedTexture,textureSpec,modelBounds} from './detail-art.mjs';
 import {miniature,trayCubes} from './decor-art.mjs';
 import {blockTextureSet} from './rendering.mjs';
 
@@ -60,7 +62,8 @@ export function buildDisplays({root,BP,RP,json,write,icon,item,localize,modelRec
     }
     json(RP,`entity/mcpe_food/${type}.entity.json`,{format_version:'1.10.0','minecraft:client_entity':{description:{identifier,materials:{default:'entity_alphatest'},textures,geometry:geometries,render_controllers:renderNames,...(poster?{animations:{size:'animation.mcpe_food.poster_size'},scripts:{animate:['size']}}:{})}}});
     const shapes={},events={};
-    for(const[name,width,height]of[['flat',.95,.12],['medium',.65,.6],['tall',.65,.9]]){shapes[`mcpe_food:${name}`]={'minecraft:collision_box':{width,height}};events[`mcpe_food:shape_${name}`]={remove:{component_groups:['mcpe_food:flat','mcpe_food:medium','mcpe_food:tall']},add:{component_groups:[`mcpe_food:${name}`]}};}
+    const specs=[['flat',.95,.12],['medium',.65,.6],['tall',.65,.9],...(interactive?electronics.map(d=>{const b=modelBounds(electronicCubes(d));return[d.key,Math.max(...[b.low[0],b.low[2],b.high[0],b.high[2]].map(Math.abs))/8+.015,b.high[1]/16+.01];}):[])];
+    for(const[name,width,height]of specs){shapes[`mcpe_food:${name}`]={'minecraft:collision_box':{width,height}};events[`mcpe_food:shape_${name}`]={remove:{component_groups:specs.map(([n])=>`mcpe_food:${n}`)},add:{component_groups:[`mcpe_food:${name}`]}};}
     json(BP,`entities/${type}.json`,{format_version:'1.21.0','minecraft:entity':{description:{identifier,is_spawnable:false,is_summonable:true,is_experimental:false,properties:{'mcpe_food:index':{type:'int',range:[0,max],default:0,client_sync:true},...(poster?{'mcpe_food:size':{type:'int',range:[0,2],default:0,client_sync:true}}:{})}},component_groups:shapes,components:{'minecraft:type_family':{family:['mcpe_food_display']},'minecraft:physics':{has_gravity:false,has_collision:false},'minecraft:pushable':{is_pushable:false,is_pushable_by_piston:false},'minecraft:persistent':{},'minecraft:collision_box':{width:interactive?.65:0,height:interactive?.7:0},'minecraft:health':{value:1,max:1},'minecraft:damage_sensor':{triggers:[{cause:'all',deals_damage:false}]},'minecraft:knockback_resistance':{value:1}},events}});
   }
   entity('surface_display',definitions,{ware:true,interactive:true});entity('tray_food_display',mini);entity('advert_display',posters,{poster:true});

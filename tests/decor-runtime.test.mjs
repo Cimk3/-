@@ -6,6 +6,7 @@ registerHooks({resolve(specifier,context,next){const mock=specifier==='@minecraf
 await import('../.build/main.js');
 const {removeDecor,reconcileDecor,loadDecorRecords}=await import('../.build/decor-runtime.js');
 const {surfaceHeight}=await import('../.build/supports.js');
+const {electronics}=await import('../.build/electronics-catalog.js');
 const idle=()=>new Promise(resolve=>setImmediate(resolve));
 async function tick(){flush();await idle();flush();await idle();}
 await tick();
@@ -112,4 +113,57 @@ test('creative destruction of a slab display produces no drops, while survival p
 test('hitting a custom display removes only its owning record and returns the correct prop once',async()=>{
   const{dimension,player,base}=setup('minecraft:oak_slab'),r=await place(player,base,'pepsi_paper_cup'),e=entityFor(dimension,r);
   state.hitEntity({damagingEntity:player,hitEntity:e});state.hitEntity({damagingEntity:player,hitEntity:e});assert.equal(saved().length,0);assert.equal(dimension.drops.length,1);assert.equal(dimension.drops[0].item.typeId,'mcpe_food:pepsi_paper_cup');assert.equal(base.typeId,'minecraft:oak_slab');
+});
+
+test('all fifteen electronics sit on full blocks, bookshelves and wood/stone/copper slab heights without replacing supports',async()=>{
+  const supports=[['minecraft:stone',{},1],['minecraft:bookshelf',{},1],['minecraft:chiseled_bookshelf',{},1],...[
+    ['minecraft:oak_slab','minecraft:oak_double_slab'],['minecraft:normal_stone_slab','minecraft:normal_stone_double_slab'],['minecraft:cut_copper_slab','minecraft:double_cut_copper_slab']
+  ].flatMap(([single,double])=>[[single,{'minecraft:vertical_half':'bottom'},.5],[single,{'minecraft:vertical_half':'top'},1],[double,{},1]])];
+  for(const d of electronics)for(const[type,states,height]of supports){
+    const{dimension,player,base}=setup(type,states),r=await place(player,base,d.key),e=entityFor(dimension,r);
+    assert.ok(r,d.key);assert.equal(base.typeId,type);assert.equal(r.definition,`mcpe_food:${d.key}`);assert.equal(r.kind,'surface');assert.equal(r.native,false);assert.equal(e.location.y,height);assert.equal(e.getDynamicProperty('mcpe_food:shape'),d.key);assert.equal(player.container.count(r.definition),0);removeDecor(r,false);
+  }
+});
+
+test('electronic placement preserves the four chosen directions',async()=>{
+  for(const[rotation,direction,yaw]of [[0,'south',180],[90,'west',90],[180,'north',0],[270,'east',-90]]){
+    const{dimension,player,base}=setup();player.getRotation=()=>({x:0,y:rotation});const r=await place(player,base,'desktop_computer');assert.equal(r.direction,direction);assert.equal(entityFor(dimension,r).rotation.y,yaw);removeDecor(r,false);
+  }
+});
+
+test('two players placing electronics on the same surface create one owner and charge only the successful player',async()=>{
+  const{dimension,player,base}=setup(),other=new FakePlayer(dimension);player.container.setItem(0,new ItemStack('mcpe_food:router'));other.container.setItem(0,new ItemStack('mcpe_food:server_cabinet'));
+  interact(player,base);interact(other,base);await tick();assert.equal(saved().length,1);assert.equal(dimension.getEntities().length,1);assert.equal(player.container.count('mcpe_food:router')+other.container.count('mcpe_food:server_cabinet'),1);
+  interact(player,base);await tick();assert.equal(saved().length,1);assert.equal(other.container.count('mcpe_food:server_cabinet'),1);
+});
+
+test('blocked electronics, deferred hand changes and distant placement never consume inventory',async()=>{
+  const{dimension,player,base}=setup();dimension.put('minecraft:stone',{x:0,y:1,z:0});await place(player,base,'macbook_closed');assert.equal(saved().length,0);assert.equal(player.container.count('mcpe_food:macbook_closed'),1);
+  dimension.put('minecraft:air',{x:0,y:1,z:0});interact(player,base);player.container.setItem(0,new ItemStack('mcpe_food:router'));await tick();assert.equal(saved().length,0);assert.equal(player.container.count('mcpe_food:router'),1);
+  player.location={x:100,y:1,z:100};interact(player,base);await tick();assert.equal(saved().length,0);assert.equal(player.container.count('mcpe_food:router'),1);
+});
+
+test('electronic entity spawn failure restores the exact item and removes the persistent owner',async()=>{
+  const{dimension,player,base}=setup();dimension.failSpawn=true;await place(player,base,'thinkpad_open');assert.equal(saved().length,0);assert.equal(player.container.count('mcpe_food:thinkpad_open'),1);assert.equal(base.typeId,'minecraft:stone');dimension.failSpawn=false;
+});
+
+test('electronics keep their style and pose across slab height changes, saved records, unloaded chunks and duplicate repair',async()=>{
+  const{dimension,player,base}=setup('minecraft:oak_slab'),r=await place(player,base,'macbook_closed');const e=entityFor(dimension,r),index=e.getProperty('mcpe_food:index');
+  base.setPermutation({typeId:'minecraft:oak_double_slab',getAllStates:()=>({})});reconcileDecor();assert.equal(e.location.y,1);
+  dimension.unloaded=true;reconcileDecor();assert.equal(saved().length,1);assert.equal(dimension.drops.length,0);dimension.unloaded=false;
+  e.remove();loadDecorRecords();reconcileDecor();let current=entityFor(dimension,r);assert.equal(current.getProperty('mcpe_food:index'),index);assert.equal(current.location.y,1);assert.equal(saved()[0].definition,'mcpe_food:macbook_closed');
+  const duplicate=dimension.spawnEntity(current.typeId,current.location);duplicate.setDynamicProperty('mcpe_food:owner',r.uid);duplicate.setDynamicProperty('mcpe_food:part','base');reconcileDecor();assert.equal(dimension.getEntities().length,1);
+  base.setPermutation({typeId:'minecraft:oak_slab',getAllStates:()=>({'minecraft:vertical_half':'bottom'})});reconcileDecor();current=entityFor(dimension,r);assert.equal(current.location.y,.5);assert.equal(current.getProperty('mcpe_food:index'),index);
+});
+
+test('electronic props ignore serving and clicking, and repeated destruction returns the exact pose once in survival',async()=>{
+  const{dimension,player,base}=setup(),r=await place(player,base,'gaming_laptop_closed'),e=entityFor(dimension,r);
+  player.container.setItem(0,new ItemStack('mcpe_food:steak'));await useEntity(player,e);assert.equal(saved()[0].definition,r.definition);assert.equal(player.container.count('mcpe_food:steak'),1);
+  player.container.setItem(0);await useEntity(player,e);assert.equal(saved()[0].definition,r.definition);
+  state.hitEntity({damagingEntity:player,hitEntity:e});state.hitEntity({damagingEntity:player,hitEntity:e});assert.equal(saved().length,0);assert.equal(dimension.drops.length,1);assert.equal(dimension.drops[0].item.typeId,r.definition);
+});
+
+test('creative electronics placement retains held inventory and support removal creates no drops',async()=>{
+  const{dimension,player,base}=setup('minecraft:bookshelf');player.mode='Creative';const r=await place(player,base,'ipad_air_magic_keyboard');assert.equal(player.container.count(r.definition),1);
+  state.breakBlock({player,block:base,cancel:false});await tick();assert.equal(saved().length,0);assert.equal(dimension.drops.length,0);assert.equal(base.typeId,'minecraft:bookshelf');
 });

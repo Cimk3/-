@@ -343,7 +343,22 @@
             "Geometry.g335",
             "Geometry.g336",
             "Geometry.g337",
-            "Geometry.g338"
+            "Geometry.g338",
+            "Geometry.g339",
+            "Geometry.g340",
+            "Geometry.g341",
+            "Geometry.g342",
+            "Geometry.g343",
+            "Geometry.g344",
+            "Geometry.g345",
+            "Geometry.g346",
+            "Geometry.g347",
+            "Geometry.g348",
+            "Geometry.g349",
+            "Geometry.g350",
+            "Geometry.g351",
+            "Geometry.g352",
+            "Geometry.g353"
           ]
         },
         "textures": {
@@ -686,7 +701,22 @@
             "Texture.f335",
             "Texture.f336",
             "Texture.f337",
-            "Texture.f338"
+            "Texture.f338",
+            "Texture.f339",
+            "Texture.f340",
+            "Texture.f341",
+            "Texture.f342",
+            "Texture.f343",
+            "Texture.f344",
+            "Texture.f345",
+            "Texture.f346",
+            "Texture.f347",
+            "Texture.f348",
+            "Texture.f349",
+            "Texture.f350",
+            "Texture.f351",
+            "Texture.f352",
+            "Texture.f353"
           ],
           "Array.ware": [
             "Texture.w0",
@@ -1027,7 +1057,22 @@
             "Texture.w335",
             "Texture.w336",
             "Texture.w337",
-            "Texture.w338"
+            "Texture.w338",
+            "Texture.w339",
+            "Texture.w340",
+            "Texture.w341",
+            "Texture.w342",
+            "Texture.w343",
+            "Texture.w344",
+            "Texture.w345",
+            "Texture.w346",
+            "Texture.w347",
+            "Texture.w348",
+            "Texture.w349",
+            "Texture.w350",
+            "Texture.w351",
+            "Texture.w352",
+            "Texture.w353"
           ]
         }
       },

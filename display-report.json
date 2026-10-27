@@ -1,7 +1,7 @@
 {
   "advertisements": 12,
   "advertisementSizes": 36,
-  "surfaceDefinitions": 339,
+  "surfaceDefinitions": 354,
   "trayFoods": 70,
   "trayCubes": 65,
   "maxMiniCubes": 39,
@@ -1703,6 +1703,81 @@
       "resolution": 128
     },
     {
+      "key": "surface_desktop_computer",
+      "cubes": 27,
+      "resolution": 128
+    },
+    {
+      "key": "surface_all_in_one_computer",
+      "cubes": 18,
+      "resolution": 128
+    },
+    {
+      "key": "surface_silver_laptop_open",
+      "cubes": 18,
+      "resolution": 128
+    },
+    {
+      "key": "surface_silver_laptop_closed",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "surface_gaming_laptop_open",
+      "cubes": 20,
+      "resolution": 128
+    },
+    {
+      "key": "surface_gaming_laptop_closed",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "surface_thinkpad_open",
+      "cubes": 22,
+      "resolution": 128
+    },
+    {
+      "key": "surface_thinkpad_closed",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "surface_macbook_open",
+      "cubes": 18,
+      "resolution": 128
+    },
+    {
+      "key": "surface_macbook_closed",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "surface_router",
+      "cubes": 20,
+      "resolution": 128
+    },
+    {
+      "key": "surface_server_cabinet",
+      "cubes": 39,
+      "resolution": 128
+    },
+    {
+      "key": "surface_ipad_air_magic_keyboard",
+      "cubes": 16,
+      "resolution": 128
+    },
+    {
+      "key": "surface_crt_monitor",
+      "cubes": 24,
+      "resolution": 128
+    },
+    {
+      "key": "surface_keyboard_mouse_set",
+      "cubes": 6,
+      "resolution": 128
+    },
+    {
       "key": "mini_kung_pao_chicken",
       "cubes": 31,
       "resolution": 128
@@ -2114,5 +2189,5 @@
     }
   ],
   "entityTypes": 3,
-  "entityTextureSets": 142
+  "entityTextureSets": 157
 }

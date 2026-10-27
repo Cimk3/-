@@ -1,4 +1,4 @@
-# 0.4.3 菜品与器皿索引
+# 0.5.0 菜品与器皿索引
 
 101 种可食成品，8 种不可食展示配菜，2 款静态铜锅，14 种餐具，3 款酒瓶摆件。新增内容通过创造物品栏或分组试用命令获取。
 
@@ -244,3 +244,25 @@
 ## 完整支撑方块
 
 `minecraft:stone`、`minecraft:cobblestone`、`minecraft:mossy_cobblestone`、`minecraft:smooth_stone`、`minecraft:stone_bricks`、`minecraft:mossy_stone_bricks`、`minecraft:cracked_stone_bricks`、`minecraft:chiseled_stone_bricks`、`minecraft:granite`、`minecraft:polished_granite`、`minecraft:diorite`、`minecraft:polished_diorite`、`minecraft:andesite`、`minecraft:polished_andesite`、`minecraft:deepslate`、`minecraft:cobbled_deepslate`、`minecraft:polished_deepslate`、`minecraft:deepslate_bricks`、`minecraft:deepslate_tiles`、`minecraft:blackstone`、`minecraft:polished_blackstone`、`minecraft:polished_blackstone_bricks`、`minecraft:brick_block`、`minecraft:mud_bricks`、`minecraft:packed_mud`、`minecraft:end_stone`、`minecraft:end_bricks`、`minecraft:obsidian`、`minecraft:crying_obsidian`、`minecraft:sandstone`、`minecraft:smooth_sandstone`、`minecraft:cut_sandstone`、`minecraft:red_sandstone`、`minecraft:smooth_red_sandstone`、`minecraft:cut_red_sandstone`、`minecraft:quartz_block`、`minecraft:smooth_quartz`、`minecraft:quartz_bricks`、`minecraft:iron_block`、`minecraft:gold_block`、`minecraft:diamond_block`、`minecraft:emerald_block`、`minecraft:copper_block`、`minecraft:netherite_block`、`minecraft:coal_block`、`minecraft:redstone_block`、`minecraft:lapis_block`、`minecraft:hardened_clay`、`minecraft:clay`、`minecraft:dirt`、`minecraft:grass_block`、`minecraft:coarse_dirt`、`minecraft:mud`、`minecraft:podzol`、`minecraft:mycelium`、`minecraft:dirt_with_roots`、`minecraft:glass`、`minecraft:tinted_glass`、`minecraft:bookshelf`、`minecraft:chiseled_bookshelf`、`minecraft:crafting_table`、`minecraft:furnace`、`minecraft:smoker`、`minecraft:blast_furnace`、`minecraft:melon_block`、`minecraft:pumpkin`、`minecraft:hay_block`、`minecraft:dried_kelp_block`、`minecraft:bone_block`、`minecraft:snow`、`minecraft:ice`、`minecraft:packed_ice`、`minecraft:blue_ice`、`minecraft:oak_planks`、`minecraft:spruce_planks`、`minecraft:birch_planks`、`minecraft:jungle_planks`、`minecraft:acacia_planks`、`minecraft:dark_oak_planks`、`minecraft:mangrove_planks`、`minecraft:cherry_planks`、`minecraft:pale_oak_planks`、`minecraft:bamboo_planks`、`minecraft:crimson_planks`、`minecraft:warped_planks`、`minecraft:oak_log`、`minecraft:spruce_log`、`minecraft:birch_log`、`minecraft:jungle_log`、`minecraft:acacia_log`、`minecraft:dark_oak_log`、`minecraft:mangrove_log`、`minecraft:cherry_log`、`minecraft:pale_oak_log`、`minecraft:crimson_stem`、`minecraft:warped_stem`、`minecraft:bamboo_block`、`minecraft:white_wool`、`minecraft:white_concrete`、`minecraft:white_terracotta`、`minecraft:white_stained_glass`、`minecraft:orange_wool`、`minecraft:orange_concrete`、`minecraft:orange_terracotta`、`minecraft:orange_stained_glass`、`minecraft:magenta_wool`、`minecraft:magenta_concrete`、`minecraft:magenta_terracotta`、`minecraft:magenta_stained_glass`、`minecraft:light_blue_wool`、`minecraft:light_blue_concrete`、`minecraft:light_blue_terracotta`、`minecraft:light_blue_stained_glass`、`minecraft:yellow_wool`、`minecraft:yellow_concrete`、`minecraft:yellow_terracotta`、`minecraft:yellow_stained_glass`、`minecraft:lime_wool`、`minecraft:lime_concrete`、`minecraft:lime_terracotta`、`minecraft:lime_stained_glass`、`minecraft:pink_wool`、`minecraft:pink_concrete`、`minecraft:pink_terracotta`、`minecraft:pink_stained_glass`、`minecraft:gray_wool`、`minecraft:gray_concrete`、`minecraft:gray_terracotta`、`minecraft:gray_stained_glass`、`minecraft:light_gray_wool`、`minecraft:light_gray_concrete`、`minecraft:light_gray_terracotta`、`minecraft:light_gray_stained_glass`、`minecraft:cyan_wool`、`minecraft:cyan_concrete`、`minecraft:cyan_terracotta`、`minecraft:cyan_stained_glass`、`minecraft:purple_wool`、`minecraft:purple_concrete`、`minecraft:purple_terracotta`、`minecraft:purple_stained_glass`、`minecraft:blue_wool`、`minecraft:blue_concrete`、`minecraft:blue_terracotta`、`minecraft:blue_stained_glass`、`minecraft:brown_wool`、`minecraft:brown_concrete`、`minecraft:brown_terracotta`、`minecraft:brown_stained_glass`、`minecraft:green_wool`、`minecraft:green_concrete`、`minecraft:green_terracotta`、`minecraft:green_stained_glass`、`minecraft:red_wool`、`minecraft:red_concrete`、`minecraft:red_terracotta`、`minecraft:red_stained_glass`、`minecraft:black_wool`、`minecraft:black_concrete`、`minecraft:black_terracotta`、`minecraft:black_stained_glass`、`mcpe_food:prep_counter`、`mcpe_food:stove`、`mcpe_food:oven`、`mcpe_food:drink_counter`
+
+## 电子设备
+
+15款静态摆件；打开与合起为独立物品。所有设备占一格，不提供运行系统或开合操作。
+
+| 名称 | ID | 姿态 |
+|---|---|---|
+| 台式电脑套装 | mcpe_food:desktop_computer | fixed |
+| 一体机电脑套装 | mcpe_food:all_in_one_computer | fixed |
+| 银色轻薄本（打开） | mcpe_food:silver_laptop_open | open |
+| 银色轻薄本（合起） | mcpe_food:silver_laptop_closed | closed |
+| 游戏本（打开） | mcpe_food:gaming_laptop_open | open |
+| 游戏本（合起） | mcpe_food:gaming_laptop_closed | closed |
+| ThinkPad（打开） | mcpe_food:thinkpad_open | open |
+| ThinkPad（合起） | mcpe_food:thinkpad_closed | closed |
+| MacBook（打开） | mcpe_food:macbook_open | open |
+| MacBook（合起） | mcpe_food:macbook_closed | closed |
+| 四天线路由器 | mcpe_food:router | fixed |
+| 小型服务器机柜 | mcpe_food:server_cabinet | fixed |
+| iPad Air与妙控键盘 | mcpe_food:ipad_air_magic_keyboard | fixed |
+| 老式CRT显示器 | mcpe_food:crt_monitor | fixed |
+| 键鼠套装 | mcpe_food:keyboard_mouse_set | fixed |

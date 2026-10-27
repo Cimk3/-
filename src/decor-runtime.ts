@@ -4,6 +4,7 @@ import {ActionFormData} from '@minecraft/server-ui';
 import {compatibleVessels,foodById,foodByServing,id,servingKey,vesselByKey} from './catalog.js';
 import {adById,adSize,advertisements,surfaceIndex,tableItemById,tray,trayFoods} from './decor-catalog.js';
 import type {AdKey} from './decor-catalog.js';
+import {electronicsById} from './electronics-catalog.js';
 import {MenuSessions,planInsert,planServe} from './inventory.js';
 import type {Plan,Slots} from './inventory.js';
 import {isWallSupport,surfaceHeight} from './supports.js';
@@ -80,7 +81,8 @@ function visual(r:DecorRecord,type:string,part:string,index:number,position:Vect
   if(entity.getDynamicProperty('mcpe_food:part')!==part)entity.setDynamicProperty('mcpe_food:part',part);
   if(entity.getProperty('mcpe_food:index')!==index)entity.setProperty('mcpe_food:index',index);
   if(type==='mcpe_food:surface_display'){
-    const shape=r.kind==='tray'||/chopsticks|table_knife|fork|spoon/.test(r.definition)?'flat':/wine_glass|hotpot|bottle/.test(r.definition)?'tall':'medium';
+    const device=electronicsById.get(r.definition);
+    const shape=device?device.key:r.kind==='tray'||/chopsticks|table_knife|fork|spoon/.test(r.definition)?'flat':/wine_glass|hotpot|bottle/.test(r.definition)?'tall':'medium';
     if(entity.getDynamicProperty('mcpe_food:shape')!==shape){entity.triggerEvent(`mcpe_food:shape_${shape}`);entity.setDynamicProperty('mcpe_food:shape',shape);}
   }
   if(r.kind==='ad'&&entity.getProperty('mcpe_food:size')!==(r.size??0))entity.setProperty('mcpe_food:size',r.size??0);
@@ -208,7 +210,7 @@ export function handleDecorBlock(event:PlayerInteractWithBlockBeforeEvent):boole
   if(poster){event.cancel=true;if(event.isFirstEvent&&!hand)run(p,()=>posterMenu(p,copy(poster)));return true;}
   if(block.typeId===id(tray.key)){event.cancel=true;if(event.isFirstEvent)run(p,()=>trayMenu(p,copy(nativeTray(block))));return true;}
   if(hand&&tableItemById.has(hand.typeId)&&face==='up'&&recordForSupport(block.dimension.id,block.location)){event.cancel=true;return true;}
-  if(hand&&tableItemById.has(hand.typeId)&&face==='up'&&surfaceHeight(block)>0&&(surfaceHeight(block)===.5||hand.typeId===id(tray.key)||block.typeId.endsWith('bookshelf'))){
+  if(hand&&tableItemById.has(hand.typeId)&&face==='up'&&surfaceHeight(block)>0&&(surfaceHeight(block)===.5||hand.typeId===id(tray.key)||electronicsById.has(hand.typeId)||block.typeId.endsWith('bookshelf'))){
     event.cancel=true;if(event.isFirstEvent){const definition=hand.typeId;run(p,()=>{if(io.inventory(p)?.getItem(p.selectedSlotIndex)?.typeId===definition)createSurface(p,block,definition);});}return true;
   }
   return false;

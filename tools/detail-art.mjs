@@ -315,7 +315,7 @@ export function pruneFaces(cubes){
   const normals={north:[0,0,-1],south:[0,0,1],east:[1,0,0],west:[-1,0,0],up:[0,1,0],down:[0,-1,0]};
   return cubes.map((c,index)=>{
     if(c.rotation?.some(v=>Math.abs(v)>.001))return c;
-    const faces=FACE_NAMES.filter(name=>{
+    const faces=(c.faces??FACE_NAMES).filter(name=>{
       const points=faceVertices(c,name).map(p=>p.map((v,i)=>v+normals[name][i]*.002));
       return !cubes.some((other,j)=>j!==index&&!other.rotation?.some(v=>Math.abs(v)>.001)&&points.every(p=>p.every((v,i)=>v>=other.origin[i]-.0001&&v<=other.origin[i]+other.size[i]+.0001)));
     });return{...c,faces};

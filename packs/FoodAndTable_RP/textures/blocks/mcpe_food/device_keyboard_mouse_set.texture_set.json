@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "device_keyboard_mouse_set",
+    "metalness_emissive_roughness": "device_keyboard_mouse_set_mer"
+  }
+}

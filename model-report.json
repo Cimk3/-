@@ -1,5 +1,5 @@
 {
-  "version": "0.4.3",
+  "version": "0.5.0",
   "models": [
     {
       "key": "egg_fried_rice_serving",
@@ -3026,6 +3026,126 @@
       }
     },
     {
+      "key": "desktop_computer",
+      "resolution": 128,
+      "cubes": 27,
+      "slots": {
+        "ware": "device_desktop_computer"
+      }
+    },
+    {
+      "key": "all_in_one_computer",
+      "resolution": 128,
+      "cubes": 18,
+      "slots": {
+        "ware": "device_all_in_one_computer"
+      }
+    },
+    {
+      "key": "silver_laptop_open",
+      "resolution": 128,
+      "cubes": 18,
+      "slots": {
+        "ware": "device_silver_laptop_open"
+      }
+    },
+    {
+      "key": "silver_laptop_closed",
+      "resolution": 128,
+      "cubes": 10,
+      "slots": {
+        "ware": "device_silver_laptop_closed"
+      }
+    },
+    {
+      "key": "gaming_laptop_open",
+      "resolution": 128,
+      "cubes": 20,
+      "slots": {
+        "ware": "device_gaming_laptop_open"
+      }
+    },
+    {
+      "key": "gaming_laptop_closed",
+      "resolution": 128,
+      "cubes": 10,
+      "slots": {
+        "ware": "device_gaming_laptop_closed"
+      }
+    },
+    {
+      "key": "thinkpad_open",
+      "resolution": 128,
+      "cubes": 22,
+      "slots": {
+        "ware": "device_thinkpad_open"
+      }
+    },
+    {
+      "key": "thinkpad_closed",
+      "resolution": 128,
+      "cubes": 10,
+      "slots": {
+        "ware": "device_thinkpad_closed"
+      }
+    },
+    {
+      "key": "macbook_open",
+      "resolution": 128,
+      "cubes": 18,
+      "slots": {
+        "ware": "device_macbook_open"
+      }
+    },
+    {
+      "key": "macbook_closed",
+      "resolution": 128,
+      "cubes": 10,
+      "slots": {
+        "ware": "device_macbook_closed"
+      }
+    },
+    {
+      "key": "router",
+      "resolution": 128,
+      "cubes": 20,
+      "slots": {
+        "ware": "device_router"
+      }
+    },
+    {
+      "key": "server_cabinet",
+      "resolution": 128,
+      "cubes": 39,
+      "slots": {
+        "ware": "device_server_cabinet"
+      }
+    },
+    {
+      "key": "ipad_air_magic_keyboard",
+      "resolution": 128,
+      "cubes": 16,
+      "slots": {
+        "ware": "device_ipad_air_magic_keyboard"
+      }
+    },
+    {
+      "key": "crt_monitor",
+      "resolution": 128,
+      "cubes": 24,
+      "slots": {
+        "ware": "device_crt_monitor"
+      }
+    },
+    {
+      "key": "keyboard_mouse_set",
+      "resolution": 128,
+      "cubes": 6,
+      "slots": {
+        "ware": "device_keyboard_mouse_set"
+      }
+    },
+    {
       "key": "triple_tray",
       "resolution": 128,
       "cubes": 65,
@@ -5147,6 +5267,81 @@
       "resolution": 128
     },
     {
+      "key": "surface_desktop_computer",
+      "cubes": 27,
+      "resolution": 128
+    },
+    {
+      "key": "surface_all_in_one_computer",
+      "cubes": 18,
+      "resolution": 128
+    },
+    {
+      "key": "surface_silver_laptop_open",
+      "cubes": 18,
+      "resolution": 128
+    },
+    {
+      "key": "surface_silver_laptop_closed",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "surface_gaming_laptop_open",
+      "cubes": 20,
+      "resolution": 128
+    },
+    {
+      "key": "surface_gaming_laptop_closed",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "surface_thinkpad_open",
+      "cubes": 22,
+      "resolution": 128
+    },
+    {
+      "key": "surface_thinkpad_closed",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "surface_macbook_open",
+      "cubes": 18,
+      "resolution": 128
+    },
+    {
+      "key": "surface_macbook_closed",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "surface_router",
+      "cubes": 20,
+      "resolution": 128
+    },
+    {
+      "key": "surface_server_cabinet",
+      "cubes": 39,
+      "resolution": 128
+    },
+    {
+      "key": "surface_ipad_air_magic_keyboard",
+      "cubes": 16,
+      "resolution": 128
+    },
+    {
+      "key": "surface_crt_monitor",
+      "cubes": 24,
+      "resolution": 128
+    },
+    {
+      "key": "surface_keyboard_mouse_set",
+      "cubes": 6,
+      "resolution": 128
+    },
+    {
       "key": "mini_kung_pao_chicken",
       "cubes": 31,
       "resolution": 128
@@ -5687,6 +5882,21 @@
     "mcpe_food_premium_red_wine_bottle": 128,
     "mcpe_food_coca_cola_paper_cup": 128,
     "mcpe_food_pepsi_paper_cup": 128,
+    "mcpe_food_desktop_computer": 128,
+    "mcpe_food_all_in_one_computer": 128,
+    "mcpe_food_silver_laptop_open": 128,
+    "mcpe_food_silver_laptop_closed": 128,
+    "mcpe_food_gaming_laptop_open": 128,
+    "mcpe_food_gaming_laptop_closed": 128,
+    "mcpe_food_thinkpad_open": 128,
+    "mcpe_food_thinkpad_closed": 128,
+    "mcpe_food_macbook_open": 128,
+    "mcpe_food_macbook_closed": 128,
+    "mcpe_food_router": 128,
+    "mcpe_food_server_cabinet": 128,
+    "mcpe_food_ipad_air_magic_keyboard": 128,
+    "mcpe_food_crt_monitor": 128,
+    "mcpe_food_keyboard_mouse_set": 128,
     "mcpe_food_triple_tray": 128,
     "mcpe_food_prep_counter": 32,
     "mcpe_food_stove": 32,

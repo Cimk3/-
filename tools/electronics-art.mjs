@@ -1,0 +1,187 @@
+/** Original 128px UV atlases and modeled electronics; units are sixteenths of a block. */
+import {canvas,rect,text,png} from './art.mjs';
+import {modelBounds,pruneFaces} from './detail-art.mjs';
+export const electronicUV = {
+  screen:[0,0,96,56], keyboard:[0,64,80,40], logo:[96,0,32,32],
+  vents:[96,32,32,24], ports:[0,112,80,16], trackpad:[80,64,16,24]
+};
+const faceNames=['north','south','east','west','up','down'];
+const uv=(region)=>({uv:region.slice(0,2),uv_size:region.slice(2),material_instance:'ware'});
+const swatch=role=>[96+(role%2)*16,64+Math.floor(role/2)*8,16,8];
+function part(x,y,z,w,h,d,role=0,overrides={},rotation,pivot){
+  return {origin:[x,y,z],size:[w,h,d],color:role,material:'ware',
+    uv:Object.fromEntries(faceNames.map(face=>[face,uv(overrides[face]??swatch(role))])),
+    ...(rotation?{rotation,pivot}:{}),...(overrides.only?{faces:overrides.only}:{})};
+}
+export function electronicCubes(device){
+  const a=[],put=(...args)=>{const p=part(...args);a.push(p);return p;};
+  function feet(x,z,w,d,y=.02){for(const px of[x+.35,x+w-.75])for(const pz of[z+.3,z+d-.7])put(px,y,pz,.4,.16,.4,5);}
+  function keyboard(x,y,z,w,d,body=1){
+    put(x,y,z,w,.28,d,body);put(x+.2,y+.285,z+.2,w-.4,.025,d-.4,2,{up:electronicUV.keyboard,only:['up']});
+  }
+  function mouse(x,y,z,body=1){put(x+.08,y,z,.9,.25,1.5,body);put(x,y+.25,z+.15,1.06,.3,1.3,body);put(x+.48,y+.555,z+.3,.09,.06,.5,7);put(x+.515,y+.25,z+.12,.02,.27,.6,5);}
+  function monitor(x,y,z,w,h,body=1,rot,pivot){
+    put(x,y,z,w,h,.5,body,{},rot,pivot);
+    put(x+.32,y+.35,z+.505,w-.64,h-.72,.025,3,{south:electronicUV.screen,only:['south']},rot,pivot);
+    put(x+w*.48,y+h-.16,z+.532,.12,.08,.025,5,{},rot,pivot);
+    put(x+w*.48,y+.08,z+.532,.11,.065,.025,13,{},rot,pivot);
+    put(x+w*.34,y+h*.38,z-.025,w*.32,h*.3,.025,body,{north:electronicUV.logo,only:['north']},rot,pivot);
+  }
+  switch(device.model){
+    case 'desktop':{
+      feet(-4.7,-4.3,4.4,2.5);put(-4.7,.17,-4.3,4.4,.22,2.5,1);put(-3.05,.39,-4.1,1.1,3.8,.8,7);
+      monitor(-6.7,4.12,-4.5,9.2,6.15);
+      keyboard(-6.3,.2,1.8,8.6,3.7);mouse(2.9,.15,4.6);
+      feet(4,-4.8,3.1,7.1);put(4,.18,-4.8,3.1,9.5,7.1,0);
+      put(4.15,.4,2.31,2.8,8.9,.12,1);put(4.5,1.3,2.44,2.1,5.9,.04,1,{south:electronicUV.vents,only:['south']});
+      put(4.45,8.45,2.44,2.2,.35,.06,1,{south:electronicUV.ports,only:['south']});put(5.35,7.65,2.48,.45,.2,.05,13);
+      put(7.11,1,-4.1,.025,6.5,5.6,1,{east:electronicUV.vents,only:['east']});break;
+    }
+    case 'all_in_one':
+      feet(-3,-4.8,6,3.6);put(-3,.17,-4.8,6,.23,3.6,7);put(-.55,.4,-4.2,1.1,3.1,.6,7);
+      monitor(-6.5,3.5,-4.6,13,8.65,7);put(-6.1,3.55,-4.05,12.2,.85,.035,7);
+      keyboard(-6,.2,2.1,9.6,3.8,7);mouse(4.2,.15,3.6,7);break;
+    case 'laptop':{
+      const gaming=device.style==='gaming',thick=gaming?.84:device.style==='thinkpad'?.6:.35;
+      const body=['silver','macbook'].includes(device.style)?7:1,w=gaming?12:11.4,d=8.3,x=-w/2,z=-4.15;
+      feet(x,z,w,d);put(x,.18,z,w,thick,d,body);
+      put(x+.3,.3,z-.025,w-.6,Math.max(.12,thick-.12),.025,1,{north:electronicUV.ports,only:['north']});
+      put(x-.025,.28,z+1,.025,Math.max(.13,thick-.16),5,1,{west:electronicUV.ports,only:['west']});
+      put(x+w+.005,.28,z+1,.025,Math.max(.13,thick-.16),5,1,{east:electronicUV.ports,only:['east']});
+      if(device.pose==='closed'){
+        put(x,.18+thick+.035,z,w,gaming?.5:.25,d,body);
+        put(-1.55,.18+thick+.035+(gaming?.505:.255),-.9,3.1,.02,2.7,body,{up:electronicUV.logo,only:['up']});
+      }else{
+        const y=.18+thick;
+        keyboard(x+.35,y+.015,-2.95,w-.7,3.5,body);
+        put(-1.7,y+.03,1.1,3.4,.035,2.05,0,{up:electronicUV.trackpad,only:['up']});
+        if(device.style==='thinkpad'){
+          put(-.14,y+.33,-1.15,.28,.09,.28,6);
+          for(let i=0;i<3;i++)put(-1.65+i*1.12,y+.05,.67,1.02,.06,.28,i===0?6:2);
+        }
+        for(const side of[-1,1])put(side*3.8-.5,y-.03,-4.1,1,.33,.5,body);
+        const pivot=[0,y,-4],rotation=[-12,0,0];
+        monitor(x,y,-4.18,w,gaming?7.6:7.1,body,rotation,pivot);
+        if(gaming)for(const side of[-1,1])put(side*4.2-.7,y+.015,.85,1.4,.025,2.2,1,{up:electronicUV.vents,only:['up']});
+      }
+      break;
+    }
+    case 'router':
+      feet(-4.8,-2.9,9.6,5.8);put(-4.8,.18,-2.9,9.6,1.25,5.8,1);put(-4.45,1.44,-2.55,8.9,.12,4.9,1,{up:electronicUV.vents});
+      for(let i=0;i<5;i++)put(-2.1+i,1.05,2.91,.23,.13,.04,i===4?9:4);
+      put(-3.8,.52,-2.94,7.6,.55,.03,1,{north:electronicUV.ports,only:['north']});
+      for(const x of[-4.35,-2.45,2.45,4.35]){put(x-.23,1.42,-2.65,.46,.5,.46,1);put(x-.16,1.85,-2.58,.32,5.85,.32,1,{},[0,0,x<0?6:-6],[x,1.85,-2.42]);}
+      break;
+    case 'server':
+      feet(-4.8,-4.5,9.6,9);put(-4.8,.18,-4.5,9.6,15,9,0);
+      put(-4.5,.45,4.51,.35,14.4,.22,7);put(4.15,.45,4.51,.35,14.4,.22,7);
+      for(let i=0;i<5;i++){
+        const y=1+i*2.65;put(-4.07,y,4.52,8.14,2.45,.14,1);
+        put(-3.8,y+.28,4.67,6.1,1.8,.025,1,{south:electronicUV.vents,only:['south']});
+        put(2.7,y+.4,4.68,.22,.18,.03,4);put(3.15,y+.4,4.68,.22,.18,.03,i%2?9:13);
+        for(const x of[-3.93,3.58]){put(x,y+.45,4.69,.2,1.25,.32,7);}
+      }
+      put(-3.6,14.4,4.67,7.2,.45,.025,1,{south:electronicUV.ports,only:['south']});
+      put(4.81,1.3,-3.5,.025,12.3,7,0,{east:electronicUV.vents,only:['east']});break;
+    case 'tablet':{
+      feet(-5.7,-4,11.4,8.4);put(-5.7,.18,-4,11.4,.24,8.4,7);
+      keyboard(-5.3,.43,-1.8,10.6,3.4,8);put(-1.7,.44,2,3.4,.035,1.7,0,{up:electronicUV.trackpad,only:['up']});
+      put(-4.8,.43,-3.85,9.6,.38,.65,7);
+      put(-4.65,.8,-3.8,9.3,3.5,.22,8,{},[-21,0,0],[0,.8,-3.7]);
+      const rotation=[-13,0,0],pivot=[0,3,-3.5];
+      monitor(-5.5,3,-3.7,11,7.1,7,rotation,pivot);
+      put(4.7,9.4,-3.73,.35,.35,.07,1,{},rotation,pivot);
+      break;
+    }
+    case 'crt':{
+      feet(-4.3,-2.6,8.6,5.8);put(-4.3,.18,-2.6,8.6,.55,5.8,8);put(-2.7,.73,-1.8,5.4,1.1,3.4,8);
+      put(-5.8,1.83,-3.4,11.6,8.55,6.5,8);put(-4.9,2.45,-5,9.8,7.1,1.6,8);
+      put(-5.5,2.2,3.11,11,7.8,.34,8);put(-4.8,3.45,3.46,9.6,5.8,.03,1);
+      for(let i=0;i<8;i++){
+        const x0=-4.6+i*1.15,x1=x0+1.15,z0=3.65+.35*Math.sin(i*Math.PI/8),z1=3.65+.35*Math.sin((i+1)*Math.PI/8);
+        const length=Math.hypot(x1-x0,z1-z0),cx=(x0+x1)/2,cz=(z0+z1)/2,angle=-Math.atan2(z1-z0,x1-x0)*180/Math.PI;
+        put(cx-length/2,3.63,cz-.025,length,5.4,.025,3,{south:[i*12,0,12,56],only:['south']},[0,angle,0],[cx,3.63,cz]);
+      }
+      for(let i=0;i<3;i++)put(2.1+i*.7,2.55,3.48,.45,.25,.16,1);
+      put(4.55,2.6,3.48,.26,.16,.08,4);put(-1.5,2.4,3.46,3,.55,.025,8,{south:electronicUV.logo,only:['south']});
+      put(5.81,3,-2.9,.025,6.2,4.8,8,{east:electronicUV.vents,only:['east']});break;
+    }
+    case 'keyboard':keyboard(-6.8,.18,-2.6,10.9,5.2);mouse(5,.18,.3);break;
+    default:throw new Error(`Unknown electronic model ${device.model}`);
+  }
+  const cubes=pruneFaces(a),bounds=modelBounds(cubes);
+  if(cubes.length>256||bounds.low.some((n,i)=>n<(i===1?0:-8)-1e-6)||bounds.high.some((n,i)=>n>(i===1?16:8)+1e-6))throw new Error(`Electronic geometry exceeds one block: ${device.key}`);
+  return cubes;
+}
+
+const rgb=hex=>hex.match(/\w\w/g).map(v=>parseInt(v,16));
+export function electronicTexture(device){
+  const color=canvas(128,128,[24,27,32,255]),mer=canvas(128,128,[0,0,195,255]);
+  const metallic=['silver','macbook','ipad'].includes(device.style);
+  const colors=[metallic?'#b8c0c8':'#3b424b','#20242b','#171b21','#162332','#58ca8c','#10141a','#c83343','#c4cad0','#d4d0be','#e6b65c','#bc63e5','#59616b','#323941','#83c7f1','#13181e','#4a5058'];
+  const properties=colors.map((_,i)=>[i===7||i===11||i===0?190:0,[4,9,13].includes(i)&&device.pose!=='closed'?20:0,[0,7,11].includes(i)?104:i===3?36:i===5?230:190,255]);
+  if(!metallic&&device.model!=='desktop'&&device.model!=='server')properties[0][0]=0;
+  function fill(region,c,profile){rect(color,...region,c.length===3?[...c,255]:c);rect(mer,...region,profile);}
+  for(let i=0;i<16;i++){
+    const region=swatch(i),base=rgb(colors[i]);fill(region,base,properties[i]);
+    for(let y=region[1];y<region[1]+region[3];y++)for(let x=region[0];x<region[0]+region[2];x++){
+      const n=((x*17+y*13)%7)-3,at=(y*128+x)*4;
+      for(let k=0;k<3;k++)color.data[at+k]=Math.max(0,Math.min(255,base[k]+n));
+    }
+  }
+  // Painted 80x40 keyboard island: legends, staggered rows, space bar, arrows.
+  fill(electronicUV.keyboard,[49,54,61],[0,0,205,255]);
+  for(let row=0;row<5;row++)for(let col=0;col<13;col++){
+    const x=2+col*6+(row%2),y=65+row*7,c=device.style==='gaming'?[42+(col%3)*35,56+(row%2)*24,90+(col%4)*28,255]:[17,21,27,255];
+    rect(color,x,y,5,6,c);rect(color,x+1,y+1,2,1,device.style==='gaming'?[124,209,225,255]:[179,185,190,255]);
+  }
+  rect(color,20,94,31,7,[19,23,29,255]);rect(color,64,95,5,4,[170,180,188,255]);
+  if(device.style==='thinkpad')rect(color,36,79,3,3,[204,41,50,255]);
+  fill(electronicUV.trackpad,[145,152,163],[0,0,130,255]);
+  rect(color,81,65,14,1,[190,197,203,255]);rect(color,81,86,14,1,[88,97,108,255]);
+  // Dedicated grille and IO islands: never shared with food or vanilla maps.
+  fill(electronicUV.vents,device.style==='crt'?[173,171,155]:[39,45,53],[0,0,210,255]);
+  for(let y=34;y<55;y+=3)for(let x=98;x<126;x+=4)rect(color,x,y,2,1,[8,13,19,255]);
+  fill(electronicUV.ports,[40,46,55],[0,0,165,255]);
+  for(let x=3;x<78;x+=13){rect(color,x,115,10,7,[7,12,17,255]);rect(color,x+2,117,6,2,[116,130,143,255]);}
+  // Logo island has its own non-emissive profile, independent of the screen.
+  fill(electronicUV.logo,rgb(colors[device.style==='crt'?8:metallic?7:1]),properties[metallic?7:1].map((n,i)=>i===1?0:n));
+  if(['macbook','ipad'].includes(device.style)){
+    const apple=['000001100000','000011000000','001110111000','011111111100','111111111100','111111110000','111111110000','111111111100','011111111100','001110111000'];
+    apple.forEach((row,y)=>[...row].forEach((v,x)=>{if(v==='1')rect(color,100+x*2,6+y*2,2,2,[82,89,98,255]);}));
+  }else if(device.style==='thinkpad'){
+    text(color,'THINK',97,7,1,[220,222,225,255]);text(color,'PAD',104,17,1,[220,222,225,255]);rect(color,111,3,2,2,[209,45,55,255]);
+  }else if(device.style==='gaming'){
+    for(let i=0;i<10;i++){rect(color,101+i,6+i,2,2,[193,79,221,255]);rect(color,119-i,6+i,2,2,[110,177,230,255]);}
+  }else text(color,device.style==='crt'?'CRT':'FT',device.style==='crt'?102:106,12,1,[device.style==='crt'?100:160,163,169,255]);
+  const hasScreen=['desktop','all_in_one','laptop','tablet','crt'].includes(device.model)&&device.pose!=='closed';
+  fill(electronicUV.screen,[14,24,39],[0,hasScreen?22:0,42,255]);
+  if(hasScreen){
+    for(let y=0;y<56;y++)for(let x=0;x<96;x++){
+      let c;
+      if(device.style==='crt')c=[10+Math.round(y*.08),30+Math.round(x*.08),24+Math.round(y*.1)];
+      else if(device.style==='gaming')c=[25+Math.round(x*.48),15+Math.round(y*.35),50+Math.round((x+y)*.5)];
+      else if(device.style==='thinkpad')c=[22+Math.round(y*.2),30+Math.round(x*.3),47+Math.round(y*.65)];
+      else if(device.style==='ipad')c=[100+Math.round(70*Math.sin(x/25+y/20)),97+Math.round(y*.9),166+Math.round(55*Math.cos(x/28))];
+      else if(device.style==='macbook')c=[52+Math.round(x*.9),79+Math.round(y*.9),135+Math.round(32*Math.sin(x/20+y/15))];
+      else if(device.model==='all_in_one')c=[30+Math.round(y*.8),90+Math.round(x*.9),120+Math.round(y*1.1)];
+      else c=[35+Math.round(x*.55),77+Math.round(y*.95),122+Math.round((x+y)*.55)];
+      color.data.set([...c,255],(y*128+x)*4);
+    }
+    if(device.style==='crt'){
+      text(color,'FOOD OS',5,5,1,[120,222,160,255]);text(color,'READY',5,17,1,[120,222,160,255]);
+      for(let i=0;i<4;i++)rect(color,6,29+i*5,25+i*8,1,[61,143,97,255]);rect(color,6,49,4,2,[156,234,167,255]);
+    }else if(device.style==='ipad'){
+      for(let row=0;row<3;row++)for(let col=0;col<5;col++){const x=9+col*17,y=7+row*14;rect(color,x,y,9,9,[65+col*28,165-row*30,215-col*18,255]);rect(color,x+2,y+3,5,2,[235,238,247,255]);}
+      rect(color,25,50,46,3,[220,222,232,255]);
+    }else{
+      rect(color,0,0,96,4,[28,36,47,255]);rect(color,0,51,96,5,[29,37,49,255]);
+      for(let i=0;i<4;i++){rect(color,5,8+i*10,5,5,[105+i*25,174,207,255]);rect(color,4,14+i*10,10,1,[199,212,222,255]);}
+      rect(color,30,13,53,29,[213,221,229,255]);rect(color,30,13,53,5,[47,67,90,255]);
+      for(let i=0;i<4;i++)rect(color,35,22+i*4,20+(i%2)*17,1,[99,119,141,255]);
+      for(let i=0;i<5;i++)rect(color,34+i*7,53,4,2,[143+i*15,188,214,255]);
+      if(device.style==='gaming'){rect(color,33,20,47,19,[35,23,61,255]);text(color,'PLAY',40,25,1,[217,160,234,255]);}
+    }
+  }
+  return {width:128,height:128,pixels:color.data,png:png(128,128,color.data),mer:png(128,128,mer.data),merPixels:mer.data};
+}

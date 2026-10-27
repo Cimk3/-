@@ -1,3 +1,4 @@
+import {electronics} from '../.build/electronics-catalog.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync,readdirSync} from 'node:fs';
@@ -28,12 +29,12 @@ test('old tasting commands keep exactly their original series while new complete
     assert.deepEqual(lines,[...dishes.filter(f=>f.category===key),...(key==='drink'?[...bottleProps,...paperCups]:[])].map(f=>`give @s ${id(f.key)} 4`));
   }
 });
-test('creative inventory has five food groups plus private tableware and advertisement groups',()=>{
+test('creative inventory has five food groups plus private tableware, advertisement and electronics groups',()=>{
   const groups=read(`${bp}/item_catalog/crafting_item_catalog.json`)['minecraft:crafting_items_catalog'].categories;
   assert.equal(groups.length,1);assert.equal(groups[0].category_name,'items');
-  assert.deepEqual(groups[0].groups.map(g=>g.group_identifier.name),[...Object.keys(categories).map(k=>`mcpe_food:group_${k}`),'mcpe_food:group_tableware','mcpe_food:group_advertisements']);
+  assert.deepEqual(groups[0].groups.map(g=>g.group_identifier.name),[...Object.keys(categories).map(k=>`mcpe_food:group_${k}`),'mcpe_food:group_tableware','mcpe_food:group_advertisements','mcpe_food:group_electronics']);
   const all=groups[0].groups.flatMap(g=>g.items);assert.equal(new Set(all).size,all.length);
-  assert.deepEqual([...all].sort(),[...dishes,...bottleProps,...paperCups,...vessels,...cutlery,tray,...advertisements].map(f=>id(f.key)).sort());
+  assert.deepEqual([...all].sort(),[...dishes,...bottleProps,...paperCups,...vessels,...cutlery,tray,...advertisements,...electronics].map(f=>id(f.key)).sort());
   for(const locale of['zh_CN','en_US']){const source=readFileSync(`${rp}/texts/${locale}.lang`,'utf8');for(const g of groups[0].groups)assert.ok(source.includes(`${g.group_identifier.name}=`));}
 });
 test('approved category counts and intentional cross-cuisine placements are exact',()=>{

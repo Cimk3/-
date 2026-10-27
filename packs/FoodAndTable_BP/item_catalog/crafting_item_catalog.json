@@ -200,6 +200,29 @@
               "mcpe_food:ad_home_cooking",
               "mcpe_food:ad_dessert"
             ]
+          },
+          {
+            "group_identifier": {
+              "name": "mcpe_food:group_electronics",
+              "icon": "mcpe_food:desktop_computer"
+            },
+            "items": [
+              "mcpe_food:desktop_computer",
+              "mcpe_food:all_in_one_computer",
+              "mcpe_food:silver_laptop_open",
+              "mcpe_food:silver_laptop_closed",
+              "mcpe_food:gaming_laptop_open",
+              "mcpe_food:gaming_laptop_closed",
+              "mcpe_food:thinkpad_open",
+              "mcpe_food:thinkpad_closed",
+              "mcpe_food:macbook_open",
+              "mcpe_food:macbook_closed",
+              "mcpe_food:router",
+              "mcpe_food:server_cabinet",
+              "mcpe_food:ipad_air_magic_keyboard",
+              "mcpe_food:crt_monitor",
+              "mcpe_food:keyboard_mouse_set"
+            ]
           }
         ]
       }

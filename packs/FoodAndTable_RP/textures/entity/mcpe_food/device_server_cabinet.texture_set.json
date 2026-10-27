@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "device_server_cabinet",
+    "metalness_emissive_roughness": "device_server_cabinet_mer"
+  }
+}

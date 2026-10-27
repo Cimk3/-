@@ -1,5 +1,5 @@
 {
-  "version": "0.4.3",
+  "version": "0.5.0",
   "foods": 101,
   "displayDishes": 8,
   "hotpots": 2,
@@ -15,18 +15,19 @@
   "advertisements": 12,
   "advertisementSizes": 36,
   "paperCups": 2,
-  "entityGeometryCount": 421,
+  "electronics": 15,
+  "entityGeometryCount": 436,
   "stations": 4,
   "crops": 6,
   "menuRecipes": 53,
   "servingVariants": 318,
-  "geometryCount": 812,
-  "blockGeometryCount": 391,
-  "pbrTextureSets": 495,
-  "highDetailModels": 339,
+  "geometryCount": 842,
+  "blockGeometryCount": 406,
+  "pbrTextureSets": 540,
+  "highDetailModels": 354,
   "maxDetailCubes": 251,
   "customDestructionParticles": 0,
   "staticStatus": "passed",
   "gameStatus": "NOT TESTED — Windows / Android / multiplayer / Vibrant Visuals",
-  "staticChecks": 1318744
+  "staticChecks": 1331238
 }

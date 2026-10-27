@@ -389,6 +389,51 @@
     "mcpe_food_pepsi_paper_cup": {
       "textures": "textures/items/mcpe_food/pepsi_paper_cup"
     },
+    "mcpe_food_desktop_computer": {
+      "textures": "textures/items/mcpe_food/desktop_computer"
+    },
+    "mcpe_food_all_in_one_computer": {
+      "textures": "textures/items/mcpe_food/all_in_one_computer"
+    },
+    "mcpe_food_silver_laptop_open": {
+      "textures": "textures/items/mcpe_food/silver_laptop_open"
+    },
+    "mcpe_food_silver_laptop_closed": {
+      "textures": "textures/items/mcpe_food/silver_laptop_closed"
+    },
+    "mcpe_food_gaming_laptop_open": {
+      "textures": "textures/items/mcpe_food/gaming_laptop_open"
+    },
+    "mcpe_food_gaming_laptop_closed": {
+      "textures": "textures/items/mcpe_food/gaming_laptop_closed"
+    },
+    "mcpe_food_thinkpad_open": {
+      "textures": "textures/items/mcpe_food/thinkpad_open"
+    },
+    "mcpe_food_thinkpad_closed": {
+      "textures": "textures/items/mcpe_food/thinkpad_closed"
+    },
+    "mcpe_food_macbook_open": {
+      "textures": "textures/items/mcpe_food/macbook_open"
+    },
+    "mcpe_food_macbook_closed": {
+      "textures": "textures/items/mcpe_food/macbook_closed"
+    },
+    "mcpe_food_router": {
+      "textures": "textures/items/mcpe_food/router"
+    },
+    "mcpe_food_server_cabinet": {
+      "textures": "textures/items/mcpe_food/server_cabinet"
+    },
+    "mcpe_food_ipad_air_magic_keyboard": {
+      "textures": "textures/items/mcpe_food/ipad_air_magic_keyboard"
+    },
+    "mcpe_food_crt_monitor": {
+      "textures": "textures/items/mcpe_food/crt_monitor"
+    },
+    "mcpe_food_keyboard_mouse_set": {
+      "textures": "textures/items/mcpe_food/keyboard_mouse_set"
+    },
     "mcpe_food_triple_tray": {
       "textures": "textures/items/mcpe_food/triple_tray"
     },

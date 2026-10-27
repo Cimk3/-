@@ -1018,6 +1018,51 @@
   "mcpe_food:pepsi_paper_cup": {
     "sound": "glass"
   },
+  "mcpe_food:desktop_computer": {
+    "sound": "glass"
+  },
+  "mcpe_food:all_in_one_computer": {
+    "sound": "glass"
+  },
+  "mcpe_food:silver_laptop_open": {
+    "sound": "glass"
+  },
+  "mcpe_food:silver_laptop_closed": {
+    "sound": "glass"
+  },
+  "mcpe_food:gaming_laptop_open": {
+    "sound": "glass"
+  },
+  "mcpe_food:gaming_laptop_closed": {
+    "sound": "glass"
+  },
+  "mcpe_food:thinkpad_open": {
+    "sound": "glass"
+  },
+  "mcpe_food:thinkpad_closed": {
+    "sound": "glass"
+  },
+  "mcpe_food:macbook_open": {
+    "sound": "glass"
+  },
+  "mcpe_food:macbook_closed": {
+    "sound": "glass"
+  },
+  "mcpe_food:router": {
+    "sound": "glass"
+  },
+  "mcpe_food:server_cabinet": {
+    "sound": "glass"
+  },
+  "mcpe_food:ipad_air_magic_keyboard": {
+    "sound": "glass"
+  },
+  "mcpe_food:crt_monitor": {
+    "sound": "glass"
+  },
+  "mcpe_food:keyboard_mouse_set": {
+    "sound": "glass"
+  },
   "mcpe_food:triple_tray": {
     "sound": "glass"
   },

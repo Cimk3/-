@@ -74,7 +74,7 @@ def verify():
     assert any(dep.get("uuid") == manifests[1]["header"]["uuid"] for dep in manifests[0]["dependencies"])
     build = json.loads((ROOT / "build-report.json").read_text(encoding="utf-8"))
     assert pbr_sets == build["pbrTextureSets"]
-    assert quiet_blocks == build["servingVariants"] + build["tableware"] + build.get("paperCups", 0) + build["hotpots"] + build.get("bottleProps", 0) + build["stations"] + build["crops"]
+    assert quiet_blocks == build["servingVariants"] + build["tableware"] + build.get("paperCups", 0) + build["hotpots"] + build.get("bottleProps", 0) + build["stations"] + build["crops"] + build.get("electronics", 0)
     for line in (DIST / "SHA256SUMS.txt").read_text(encoding="utf-8").splitlines():
         checksum, name = line.split("  ", 1)
         assert hashlib.sha256((DIST / name).read_bytes()).hexdigest() == checksum
@@ -82,6 +82,8 @@ def verify():
         assert source.testzip() is None, "Source ZIP failed CRC"
         assert json.loads(source.read("package.json"))["version"] == VERSION
         assert "src/decor-runtime.ts" in source.namelist()
+        assert "src/electronics-catalog.ts" in source.namelist()
+        assert len([f for f in source.namelist() if f.startswith("assets/electronics/") and f.endswith(".png")]) == 30
         assert len([f for f in source.namelist() if f.startswith("assets/posters/originals/") and f.endswith(".png")]) == 12
         assert len([f for f in source.namelist() if f.startswith("assets/posters/masters/") and f.endswith(".png")]) == 12
     report = {"status": "passed", "outerCRC": "passed", "nestedCRC": "passed", "standaloneMatchesNested": True,

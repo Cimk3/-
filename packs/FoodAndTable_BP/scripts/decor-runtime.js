@@ -2,6 +2,7 @@ import { BlockPermutation, GameMode, ItemStack, system, world } from '@minecraft
 import { ActionFormData } from '@minecraft/server-ui';
 import { compatibleVessels, foodById, foodByServing, id, servingKey, vesselByKey } from './catalog.js';
 import { adById, adSize, advertisements, surfaceIndex, tableItemById, tray, trayFoods } from './decor-catalog.js';
+import { electronicsById } from './electronics-catalog.js';
 import { planInsert, planServe } from './inventory.js';
 import { isWallSupport, surfaceHeight } from './supports.js';
 let io;
@@ -100,7 +101,8 @@ function visual(r, type, part, index, position) {
     if (entity.getProperty('mcpe_food:index') !== index)
         entity.setProperty('mcpe_food:index', index);
     if (type === 'mcpe_food:surface_display') {
-        const shape = r.kind === 'tray' || /chopsticks|table_knife|fork|spoon/.test(r.definition) ? 'flat' : /wine_glass|hotpot|bottle/.test(r.definition) ? 'tall' : 'medium';
+        const device = electronicsById.get(r.definition);
+        const shape = device ? device.key : r.kind === 'tray' || /chopsticks|table_knife|fork|spoon/.test(r.definition) ? 'flat' : /wine_glass|hotpot|bottle/.test(r.definition) ? 'tall' : 'medium';
         if (entity.getDynamicProperty('mcpe_food:shape') !== shape) {
             entity.triggerEvent(`mcpe_food:shape_${shape}`);
             entity.setDynamicProperty('mcpe_food:shape', shape);
@@ -456,7 +458,7 @@ export function handleDecorBlock(event) {
         event.cancel = true;
         return true;
     }
-    if (hand && tableItemById.has(hand.typeId) && face === 'up' && surfaceHeight(block) > 0 && (surfaceHeight(block) === .5 || hand.typeId === id(tray.key) || block.typeId.endsWith('bookshelf'))) {
+    if (hand && tableItemById.has(hand.typeId) && face === 'up' && surfaceHeight(block) > 0 && (surfaceHeight(block) === .5 || hand.typeId === id(tray.key) || electronicsById.has(hand.typeId) || block.typeId.endsWith('bookshelf'))) {
         event.cancel = true;
         if (event.isFirstEvent) {
             const definition = hand.typeId;

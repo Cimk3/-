@@ -391,6 +391,51 @@
     "mcpe_food_ware_pepsi_paper_cup": {
       "textures": "textures/blocks/mcpe_food/ware_pepsi_paper_cup"
     },
+    "mcpe_food_device_desktop_computer": {
+      "textures": "textures/blocks/mcpe_food/device_desktop_computer"
+    },
+    "mcpe_food_device_all_in_one_computer": {
+      "textures": "textures/blocks/mcpe_food/device_all_in_one_computer"
+    },
+    "mcpe_food_device_silver_laptop_open": {
+      "textures": "textures/blocks/mcpe_food/device_silver_laptop_open"
+    },
+    "mcpe_food_device_silver_laptop_closed": {
+      "textures": "textures/blocks/mcpe_food/device_silver_laptop_closed"
+    },
+    "mcpe_food_device_gaming_laptop_open": {
+      "textures": "textures/blocks/mcpe_food/device_gaming_laptop_open"
+    },
+    "mcpe_food_device_gaming_laptop_closed": {
+      "textures": "textures/blocks/mcpe_food/device_gaming_laptop_closed"
+    },
+    "mcpe_food_device_thinkpad_open": {
+      "textures": "textures/blocks/mcpe_food/device_thinkpad_open"
+    },
+    "mcpe_food_device_thinkpad_closed": {
+      "textures": "textures/blocks/mcpe_food/device_thinkpad_closed"
+    },
+    "mcpe_food_device_macbook_open": {
+      "textures": "textures/blocks/mcpe_food/device_macbook_open"
+    },
+    "mcpe_food_device_macbook_closed": {
+      "textures": "textures/blocks/mcpe_food/device_macbook_closed"
+    },
+    "mcpe_food_device_router": {
+      "textures": "textures/blocks/mcpe_food/device_router"
+    },
+    "mcpe_food_device_server_cabinet": {
+      "textures": "textures/blocks/mcpe_food/device_server_cabinet"
+    },
+    "mcpe_food_device_ipad_air_magic_keyboard": {
+      "textures": "textures/blocks/mcpe_food/device_ipad_air_magic_keyboard"
+    },
+    "mcpe_food_device_crt_monitor": {
+      "textures": "textures/blocks/mcpe_food/device_crt_monitor"
+    },
+    "mcpe_food_device_keyboard_mouse_set": {
+      "textures": "textures/blocks/mcpe_food/device_keyboard_mouse_set"
+    },
     "mcpe_food_ware_triple_tray": {
       "textures": "textures/blocks/mcpe_food/ware_triple_tray"
     },

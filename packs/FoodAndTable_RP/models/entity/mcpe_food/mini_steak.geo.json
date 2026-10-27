@@ -1004,17 +1004,6 @@
                   ],
                   "material_instance": "food"
                 },
-                "west": {
-                  "uv": [
-                    79,
-                    47
-                  ],
-                  "uv_size": [
-                    2,
-                    2
-                  ],
-                  "material_instance": "food"
-                },
                 "up": {
                   "uv": [
                     78.70833333333333,

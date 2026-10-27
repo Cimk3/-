@@ -700,6 +700,96 @@
   "mcpe_food:cola_serving": {
     "sound": "glass"
   },
+  "mcpe_food:steamed_grouper_on_plate": {
+    "sound": "glass"
+  },
+  "mcpe_food:steamed_grouper_on_black_gold_plate": {
+    "sound": "glass"
+  },
+  "mcpe_food:steamed_grouper_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:poached_tiger_prawns_on_plate": {
+    "sound": "glass"
+  },
+  "mcpe_food:poached_tiger_prawns_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:poached_tiger_prawns_on_burgundy_platter": {
+    "sound": "glass"
+  },
+  "mcpe_food:smashed_cucumber_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:smashed_cucumber_on_black_gold_plate": {
+    "sound": "glass"
+  },
+  "mcpe_food:smashed_cucumber_on_burgundy_platter": {
+    "sound": "glass"
+  },
+  "mcpe_food:vegetables_in_superior_broth_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:vegetables_in_superior_broth_on_black_gold_bowl": {
+    "sound": "glass"
+  },
+  "mcpe_food:vegetables_in_superior_broth_on_burgundy_bowl": {
+    "sound": "glass"
+  },
+  "mcpe_food:tiramisu_on_plate": {
+    "sound": "glass"
+  },
+  "mcpe_food:tiramisu_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:tiramisu_on_burgundy_platter": {
+    "sound": "glass"
+  },
+  "mcpe_food:daifuku_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:daifuku_on_black_gold_plate": {
+    "sound": "glass"
+  },
+  "mcpe_food:daifuku_on_burgundy_platter": {
+    "sound": "glass"
+  },
+  "mcpe_food:mille_feuille_on_plate": {
+    "sound": "glass"
+  },
+  "mcpe_food:mille_feuille_on_black_gold_plate": {
+    "sound": "glass"
+  },
+  "mcpe_food:mille_feuille_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:lobster_bisque_on_bowl": {
+    "sound": "glass"
+  },
+  "mcpe_food:lobster_bisque_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:lobster_bisque_on_burgundy_bowl": {
+    "sound": "glass"
+  },
+  "mcpe_food:chicken_cordon_bleu_on_plate": {
+    "sound": "glass"
+  },
+  "mcpe_food:chicken_cordon_bleu_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:chicken_cordon_bleu_on_burgundy_platter": {
+    "sound": "glass"
+  },
+  "mcpe_food:pan_seared_sole_on_plate": {
+    "sound": "glass"
+  },
+  "mcpe_food:pan_seared_sole_on_black_gold_plate": {
+    "sound": "glass"
+  },
+  "mcpe_food:pan_seared_sole_serving": {
+    "sound": "glass"
+  },
   "mcpe_food:lamb_slices_on_plate": {
     "sound": "glass"
   },

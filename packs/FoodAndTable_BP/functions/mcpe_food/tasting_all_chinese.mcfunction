@@ -36,6 +36,10 @@ give @s mcpe_food:fruit_platter 4
 give @s mcpe_food:snow_pear_tremella 4
 give @s mcpe_food:pickled_greens_pork 4
 give @s mcpe_food:jujube_lotus_soup 4
+give @s mcpe_food:steamed_grouper 4
+give @s mcpe_food:poached_tiger_prawns 4
+give @s mcpe_food:smashed_cucumber 4
+give @s mcpe_food:vegetables_in_superior_broth 4
 give @s mcpe_food:lamb_slices 4
 give @s mcpe_food:beef_slices 4
 give @s mcpe_food:tripe_platter 4

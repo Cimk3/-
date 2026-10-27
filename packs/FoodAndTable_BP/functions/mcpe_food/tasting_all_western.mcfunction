@@ -11,3 +11,6 @@ give @s mcpe_food:fries 4
 give @s mcpe_food:hotdog 4
 give @s mcpe_food:boeuf_bourguignon 4
 give @s mcpe_food:french_onion_soup 4
+give @s mcpe_food:lobster_bisque 4
+give @s mcpe_food:chicken_cordon_bleu 4
+give @s mcpe_food:pan_seared_sole 4

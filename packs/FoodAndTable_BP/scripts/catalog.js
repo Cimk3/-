@@ -201,9 +201,22 @@ function creativeDishes(list, edible) {
         nutrition: !edible || /baijiu|red_wine/.test(key) ? 0 : category === "drink" ? 2 : category === "dessert" ? 6 : 8,
         saturation: category === "drink" ? 0.25 : category === "dessert" ? 0.4 : 0.6 }));
 }
-export const newFoods = creativeDishes(banquetAdditions, true);
+const restaurantAdditions = [
+    ["steamed_grouper", "清蒸石斑鱼", "Steamed Grouper with Ginger and Scallions", "chinese", "burgundy_platter", "grouper", ["#7e8b7b", "#e8e1c9", "#79472d"]],
+    ["poached_tiger_prawns", "白灼九节虾", "Poached Tiger Prawns", "chinese", "black_gold_plate", "tiger_prawns", ["#e27e5c", "#f1d9bb", "#9b4e38"]],
+    ["smashed_cucumber", "拍黄瓜", "Smashed Cucumber", "chinese", "plate", "cucumber", ["#6c9c44", "#c5d896", "#d7b66f"]],
+    ["vegetables_in_superior_broth", "上汤鲜蔬", "Vegetables in Superior Broth", "chinese", "bowl", "superior_vegetables", ["#bcd38b", "#698c48", "#e4d6a7"]],
+    ["tiramisu", "提拉米苏", "Tiramisu", "dessert", "black_gold_plate", "tiramisu", ["#e5cfaa", "#79503c", "#4b332b"]],
+    ["daifuku", "大福", "Daifuku", "dessert", "plate", "daifuku", ["#f0e5d2", "#b8666c", "#723e43"]],
+    ["mille_feuille", "千层酥", "Mille Feuille", "dessert", "burgundy_platter", "mille_feuille", ["#c99752", "#f0dfb9", "#a96b39"]],
+    ["lobster_bisque", "龙虾浓汤", "Lobster Bisque", "western", "black_gold_bowl", "lobster_bisque", ["#cd8757", "#e9b09a", "#f1dcc0"]],
+    ["chicken_cordon_bleu", "蓝带鸡肉卷", "Chicken Cordon Bleu", "western", "black_gold_plate", "cordon_bleu", ["#ce9a4c", "#e9d4a5", "#bc7880"]],
+    ["pan_seared_sole", "香煎龙利鱼", "Pan Seared Sole", "western", "burgundy_platter", "sole", ["#d4aa6b", "#eee0c1", "#8ba35f"]]
+];
+export const banquetFoods = creativeDishes(banquetAdditions, true);
+export const newFoods = creativeDishes(restaurantAdditions, true);
 export const previousDishes = [...legacyFoods, ...creativeDishes(additions, true), ...creativeDishes(displayRows, false)];
-export const foods = [...legacyFoods, ...creativeDishes(additions, true), ...newFoods];
+export const foods = [...legacyFoods, ...creativeDishes(additions, true), ...banquetFoods, ...newFoods];
 export const displays = creativeDishes(displayRows, false).map(f => ({ ...f, zh: `${f.zh}（展示）`, en: `${f.en} (Display)` }));
 export const dishes = [...foods, ...displays];
 export const recipes = [...processing, ...legacyFoods.map(f => f.recipe)];

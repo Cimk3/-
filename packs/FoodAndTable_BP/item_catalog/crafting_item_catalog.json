@@ -49,6 +49,10 @@
               "mcpe_food:snow_pear_tremella",
               "mcpe_food:pickled_greens_pork",
               "mcpe_food:jujube_lotus_soup",
+              "mcpe_food:steamed_grouper",
+              "mcpe_food:poached_tiger_prawns",
+              "mcpe_food:smashed_cucumber",
+              "mcpe_food:vegetables_in_superior_broth",
               "mcpe_food:lamb_slices",
               "mcpe_food:beef_slices",
               "mcpe_food:tripe_platter",
@@ -77,7 +81,10 @@
               "mcpe_food:fries",
               "mcpe_food:hotdog",
               "mcpe_food:boeuf_bourguignon",
-              "mcpe_food:french_onion_soup"
+              "mcpe_food:french_onion_soup",
+              "mcpe_food:lobster_bisque",
+              "mcpe_food:chicken_cordon_bleu",
+              "mcpe_food:pan_seared_sole"
             ]
           },
           {
@@ -116,7 +123,10 @@
               "mcpe_food:cookies",
               "mcpe_food:egg_tart",
               "mcpe_food:red_bean_cake",
-              "mcpe_food:mung_bean_soup"
+              "mcpe_food:mung_bean_soup",
+              "mcpe_food:tiramisu",
+              "mcpe_food:daifuku",
+              "mcpe_food:mille_feuille"
             ]
           },
           {

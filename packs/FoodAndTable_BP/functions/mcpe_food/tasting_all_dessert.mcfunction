@@ -8,3 +8,6 @@ give @s mcpe_food:cookies 4
 give @s mcpe_food:egg_tart 4
 give @s mcpe_food:red_bean_cake 4
 give @s mcpe_food:mung_bean_soup 4
+give @s mcpe_food:tiramisu 4
+give @s mcpe_food:daifuku 4
+give @s mcpe_food:mille_feuille 4

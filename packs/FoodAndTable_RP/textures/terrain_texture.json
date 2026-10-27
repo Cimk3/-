@@ -298,6 +298,36 @@
     "mcpe_food_food_cola": {
       "textures": "textures/blocks/mcpe_food/food_cola"
     },
+    "mcpe_food_food_steamed_grouper": {
+      "textures": "textures/blocks/mcpe_food/food_steamed_grouper"
+    },
+    "mcpe_food_food_poached_tiger_prawns": {
+      "textures": "textures/blocks/mcpe_food/food_poached_tiger_prawns"
+    },
+    "mcpe_food_food_smashed_cucumber": {
+      "textures": "textures/blocks/mcpe_food/food_smashed_cucumber"
+    },
+    "mcpe_food_food_vegetables_in_superior_broth": {
+      "textures": "textures/blocks/mcpe_food/food_vegetables_in_superior_broth"
+    },
+    "mcpe_food_food_tiramisu": {
+      "textures": "textures/blocks/mcpe_food/food_tiramisu"
+    },
+    "mcpe_food_food_daifuku": {
+      "textures": "textures/blocks/mcpe_food/food_daifuku"
+    },
+    "mcpe_food_food_mille_feuille": {
+      "textures": "textures/blocks/mcpe_food/food_mille_feuille"
+    },
+    "mcpe_food_food_lobster_bisque": {
+      "textures": "textures/blocks/mcpe_food/food_lobster_bisque"
+    },
+    "mcpe_food_food_chicken_cordon_bleu": {
+      "textures": "textures/blocks/mcpe_food/food_chicken_cordon_bleu"
+    },
+    "mcpe_food_food_pan_seared_sole": {
+      "textures": "textures/blocks/mcpe_food/food_pan_seared_sole"
+    },
     "mcpe_food_food_lamb_slices": {
       "textures": "textures/blocks/mcpe_food/food_lamb_slices"
     },

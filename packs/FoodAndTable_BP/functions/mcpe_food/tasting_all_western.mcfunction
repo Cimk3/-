@@ -14,3 +14,10 @@ give @s mcpe_food:french_onion_soup 4
 give @s mcpe_food:lobster_bisque 4
 give @s mcpe_food:chicken_cordon_bleu 4
 give @s mcpe_food:pan_seared_sole 4
+give @s mcpe_food:beef_wellington 4
+give @s mcpe_food:herb_roasted_lamb_rack 4
+give @s mcpe_food:wild_mushroom_risotto 4
+give @s mcpe_food:lobster_thermidor 4
+give @s mcpe_food:caviar_blini 4
+give @s mcpe_food:creme_brulee 4
+give @s mcpe_food:black_truffle_foie_gras 4

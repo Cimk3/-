@@ -213,10 +213,20 @@ const restaurantAdditions = [
     ["chicken_cordon_bleu", "蓝带鸡肉卷", "Chicken Cordon Bleu", "western", "black_gold_plate", "cordon_bleu", ["#ce9a4c", "#e9d4a5", "#bc7880"]],
     ["pan_seared_sole", "香煎龙利鱼", "Pan Seared Sole", "western", "burgundy_platter", "sole", ["#d4aa6b", "#eee0c1", "#8ba35f"]]
 ];
+const fineDiningAdditions = [
+    ["beef_wellington", "惠灵顿牛排", "Beef Wellington", "western", "burgundy_platter", "wellington", ["#cc9851", "#a45b53", "#63513f"]],
+    ["herb_roasted_lamb_rack", "香草烤羊排", "Herb Roasted Lamb Rack", "western", "burgundy_platter", "lamb_rack", ["#966148", "#d6b597", "#6e9451"]],
+    ["wild_mushroom_risotto", "野菌烩饭", "Wild Mushroom Risotto", "western", "black_gold_bowl", "risotto", ["#d9c593", "#977854", "#eee0bb"]],
+    ["lobster_thermidor", "奶油焗龙虾", "Lobster Thermidor", "western", "burgundy_platter", "thermidor", ["#bd6042", "#edcf86", "#e7b993"]],
+    ["caviar_blini", "鱼子酱配薄饼", "Caviar with Blini", "western", "black_gold_plate", "caviar_blini", ["#c6a267", "#eee4cc", "#384344"]],
+    ["creme_brulee", "焦糖布蕾", "Creme Brulee", "western", "burgundy_bowl", "brulee", ["#e9d4a1", "#c48a3c", "#8b5531"]],
+    ["black_truffle_foie_gras", "黑松露鹅肝", "Black Truffle Foie Gras", "western", "black_gold_plate", "truffle_foie", ["#b98b64", "#dfc098", "#4a413a"]]
+];
 export const banquetFoods = creativeDishes(banquetAdditions, true);
-export const newFoods = creativeDishes(restaurantAdditions, true);
+export const restaurantFoods = creativeDishes(restaurantAdditions, true);
+export const newFoods = creativeDishes(fineDiningAdditions, true);
 export const previousDishes = [...legacyFoods, ...creativeDishes(additions, true), ...creativeDishes(displayRows, false)];
-export const foods = [...legacyFoods, ...creativeDishes(additions, true), ...banquetFoods, ...newFoods];
+export const foods = [...legacyFoods, ...creativeDishes(additions, true), ...banquetFoods, ...restaurantFoods, ...newFoods];
 export const displays = creativeDishes(displayRows, false).map(f => ({ ...f, zh: `${f.zh}（展示）`, en: `${f.en} (Display)` }));
 export const dishes = [...foods, ...displays];
 export const recipes = [...processing, ...legacyFoods.map(f => f.recipe)];

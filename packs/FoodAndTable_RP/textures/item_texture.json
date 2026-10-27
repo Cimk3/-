@@ -284,6 +284,27 @@
     "mcpe_food_pan_seared_sole": {
       "textures": "textures/items/mcpe_food/pan_seared_sole"
     },
+    "mcpe_food_beef_wellington": {
+      "textures": "textures/items/mcpe_food/beef_wellington"
+    },
+    "mcpe_food_herb_roasted_lamb_rack": {
+      "textures": "textures/items/mcpe_food/herb_roasted_lamb_rack"
+    },
+    "mcpe_food_wild_mushroom_risotto": {
+      "textures": "textures/items/mcpe_food/wild_mushroom_risotto"
+    },
+    "mcpe_food_lobster_thermidor": {
+      "textures": "textures/items/mcpe_food/lobster_thermidor"
+    },
+    "mcpe_food_caviar_blini": {
+      "textures": "textures/items/mcpe_food/caviar_blini"
+    },
+    "mcpe_food_creme_brulee": {
+      "textures": "textures/items/mcpe_food/creme_brulee"
+    },
+    "mcpe_food_black_truffle_foie_gras": {
+      "textures": "textures/items/mcpe_food/black_truffle_foie_gras"
+    },
     "mcpe_food_lamb_slices": {
       "textures": "textures/items/mcpe_food/lamb_slices"
     },

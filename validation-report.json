@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "checks": 1318744,
+  "jsonFiles": 2217,
+  "pngFiles": 821,
+  "items": 170,
+  "blocks": 349,
+  "models": 812,
+  "edible": 101,
+  "displayDishes": 8,
+  "servingVariants": 318,
+  "pbrTextureSets": 495,
+  "destructionParticles": "disabled on all 349 custom blocks; isolated neutral fallback",
+  "vibrantVisuals": "pbr manifest and texture-set data validated; engine rendering untested",
+  "resourceIsolation": "passed — private keys, paths and IDs; no vanilla overrides",
+  "officialVanillaDefinitions": "1.26.52",
+  "engineTested": false
+}

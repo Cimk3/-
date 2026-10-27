@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "ad_japanese_snacks",
+    "metalness_emissive_roughness": "ad_japanese_snacks_mer"
+  }
+}

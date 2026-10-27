@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "food_fruit_platter",
+    "metalness_emissive_roughness": "food_fruit_platter_mer"
+  }
+}

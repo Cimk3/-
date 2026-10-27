@@ -10,10 +10,14 @@ give @s mcpe_food:black_gold_bowl 4
 give @s mcpe_food:burgundy_bowl 4
 give @s mcpe_food:black_gold_plate 4
 give @s mcpe_food:burgundy_platter 4
+give @s mcpe_food:wine_glass 4
 give @s mcpe_food:chopsticks 4
 give @s mcpe_food:table_knife 4
 give @s mcpe_food:fork 4
 give @s mcpe_food:spoon 4
+give @s mcpe_food:triple_tray 4
+give @s mcpe_food:coca_cola_paper_cup 4
+give @s mcpe_food:pepsi_paper_cup 4
 give @s mcpe_food:peacock_platter 4
 give @s mcpe_food:takoyaki 4
 give @s mcpe_food:premium_red_wine 4

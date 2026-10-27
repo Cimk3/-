@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "ad_cantonese_roast",
+    "metalness_emissive_roughness": "ad_cantonese_roast_mer"
+  }
+}

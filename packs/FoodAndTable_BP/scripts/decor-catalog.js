@@ -1,0 +1,33 @@
+import { bottleProps, cutlery, dishes, hotpots, id, servings, vesselByKey, vessels } from './catalog.js';
+export const tray = { key: 'triple_tray', zh: '三菜连体托盘', en: 'Three Dish Tray' };
+export const paperCups = [
+    { key: 'coca_cola_paper_cup', zh: '可口可乐纸杯（摆件）', en: 'Coca-Cola Paper Cup (Display)', color: '#c52e35' },
+    { key: 'pepsi_paper_cup', zh: '百事可乐纸杯（摆件）', en: 'Pepsi Paper Cup (Display)', color: '#2358ac' }
+];
+export const advertisements = [
+    { key: 'ad_japanese_snacks', series: 'japanese', zh: '日式小食', en: 'Japanese Snacks', aspect: 'wide' },
+    { key: 'ad_japanese_night', series: 'japanese', zh: '日式夜食', en: 'Japanese Night Bites', aspect: 'portrait' },
+    { key: 'ad_wellington', series: 'western', zh: '惠灵顿牛排', en: 'Beef Wellington', aspect: 'wide' },
+    { key: 'ad_lamb', series: 'western', zh: '香草烤羊排', en: 'Herb Roasted Lamb', aspect: 'square' },
+    { key: 'ad_lobster', series: 'western', zh: '奶油焗龙虾', en: 'Lobster Thermidor', aspect: 'portrait' },
+    { key: 'ad_cantonese_roast', series: 'cantonese', zh: '广府烧味', en: 'Cantonese Roast', aspect: 'wide' },
+    { key: 'ad_dim_sum', series: 'cantonese', zh: '早茶时光', en: 'Cantonese Morning Tea', aspect: 'portrait' },
+    { key: 'ad_hotpot', series: 'hotpot', zh: '铜锅涮肉', en: 'Copper Hotpot', aspect: 'wide' },
+    { key: 'ad_banquet', series: 'chinese', zh: '中式盛宴', en: 'Chinese Banquet', aspect: 'wide' },
+    { key: 'ad_grouper', series: 'chinese', zh: '清蒸鲜味', en: 'Steamed Grouper', aspect: 'wide' },
+    { key: 'ad_home_cooking', series: 'chinese', zh: '家常好味', en: 'Chinese Bistro', aspect: 'square' },
+    { key: 'ad_dessert', series: 'dessert', zh: '甜品时光', en: 'Patisserie Moments', aspect: 'portrait' }
+];
+export const adById = new Map(advertisements.map(a => [id(a.key), a]));
+export function adSize(ad, size) {
+    const n = Math.max(0, Math.min(2, size)) + 1;
+    return ad.aspect === 'wide' ? [n * 2, n] : ad.aspect === 'portrait' ? [n, n * 2] : [n, n];
+}
+export const tableItems = [...vessels, ...cutlery, ...hotpots, ...bottleProps, ...paperCups, tray];
+export const tableItemById = new Map(tableItems.map(t => [id(t.key), t]));
+export const trayFoods = dishes.filter(f => vesselByKey.get(f.vessel)?.family === 'plate');
+export const surfaceVisuals = [
+    ...tableItems.map(t => ({ key: t.key, zh: t.zh, en: t.en })),
+    ...servings.map(s => ({ key: s.key, zh: s.food.zh, en: s.food.en }))
+];
+export const surfaceIndex = new Map(surfaceVisuals.map((t, i) => [id(t.key), i]));

@@ -28,6 +28,9 @@
     "mcpe_food_ware_burgundy_platter": {
       "textures": "textures/blocks/mcpe_food/ware_burgundy_platter"
     },
+    "mcpe_food_ware_wine_glass": {
+      "textures": "textures/blocks/mcpe_food/ware_wine_glass"
+    },
     "mcpe_food_ware_chopsticks": {
       "textures": "textures/blocks/mcpe_food/ware_chopsticks"
     },
@@ -381,6 +384,15 @@
     },
     "mcpe_food_ware_premium_red_wine_bottle": {
       "textures": "textures/blocks/mcpe_food/ware_premium_red_wine_bottle"
+    },
+    "mcpe_food_ware_coca_cola_paper_cup": {
+      "textures": "textures/blocks/mcpe_food/ware_coca_cola_paper_cup"
+    },
+    "mcpe_food_ware_pepsi_paper_cup": {
+      "textures": "textures/blocks/mcpe_food/ware_pepsi_paper_cup"
+    },
+    "mcpe_food_ware_triple_tray": {
+      "textures": "textures/blocks/mcpe_food/ware_triple_tray"
     },
     "mcpe_food_prep_counter": {
       "textures": "textures/blocks/mcpe_food/prep_counter"

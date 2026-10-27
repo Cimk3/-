@@ -41,7 +41,8 @@ export const vessels = [
     { key: "black_gold_bowl", family: "bowl", zh: "黑金汤盅", en: "Black and Gold Soup Bowl", color: "#292d32", theme: "black_gold", radiusX: 4.8, radiusZ: 4.8, height: 5.8, surface: 4.9 },
     { key: "burgundy_bowl", family: "bowl", zh: "酒红小碗", en: "Burgundy Small Bowl", color: "#71363e", theme: "burgundy", radiusX: 3.6, radiusZ: 3.6, height: 3.6, surface: 2.9 },
     { key: "black_gold_plate", family: "plate", zh: "黑金圆盘", en: "Black and Gold Plate", color: "#292d32", theme: "black_gold", radiusX: 5.8, radiusZ: 5.8, height: 1.05, surface: 0.85 },
-    { key: "burgundy_platter", family: "plate", zh: "酒红长盘", en: "Burgundy Oval Platter", color: "#71363e", theme: "burgundy", radiusX: 6.6, radiusZ: 4.5, height: 1.05, surface: 0.85 }
+    { key: "burgundy_platter", family: "plate", zh: "酒红长盘", en: "Burgundy Oval Platter", color: "#71363e", theme: "burgundy", radiusX: 6.6, radiusZ: 4.5, height: 1.05, surface: 0.85 },
+    { key: "wine_glass", family: "wine_glass", zh: "高脚杯", en: "Stemmed Wine Glass", color: "#c4dfdc", theme: "glass", radiusX: 2.25, radiusZ: 2.25, height: 9.8, surface: 8.1 }
 ];
 export const vesselByKey = new Map(vessels.map(v => [v.key, v]));
 export const hotpots = [
@@ -231,7 +232,9 @@ export const displays = creativeDishes(displayRows, false).map(f => ({ ...f, zh:
 export const dishes = [...foods, ...displays];
 export const recipes = [...processing, ...legacyFoods.map(f => f.recipe)];
 export const foodById = new Map(dishes.map(f => [id(f.key), f]));
-export const compatibleVessels = (food) => vessels.filter(v => v.family === vesselByKey.get(food.vessel).family);
+export const compatibleVessels = (food) => vessels.filter(v => food.category === "drink"
+    ? v.key === "glass" || v.key === "mug" || (food.key === "premium_red_wine" && v.key === "wine_glass")
+    : v.family === vesselByKey.get(food.vessel).family);
 export const servingKey = (food, vessel) => vessel === food.vessel ? `${food.key}_serving` : `${food.key}_on_${vessel}`;
 export const servings = dishes.flatMap(food => compatibleVessels(food).map(vessel => ({ key: servingKey(food, vessel.key), food, vessel })));
 export const foodByServing = new Map(servings.map(s => [id(s.key), s]));

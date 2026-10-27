@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "ad_dessert",
+    "metalness_emissive_roughness": "ad_dessert_mer"
+  }
+}

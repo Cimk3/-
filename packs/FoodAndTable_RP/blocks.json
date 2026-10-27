@@ -310,7 +310,13 @@
   "mcpe_food:skewers_on_burgundy_platter": {
     "sound": "glass"
   },
+  "mcpe_food:green_tea_on_glass": {
+    "sound": "glass"
+  },
   "mcpe_food:green_tea_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:black_coffee_on_glass": {
     "sound": "glass"
   },
   "mcpe_food:black_coffee_serving": {
@@ -319,10 +325,22 @@
   "mcpe_food:milk_tea_serving": {
     "sound": "glass"
   },
+  "mcpe_food:milk_tea_on_mug": {
+    "sound": "glass"
+  },
   "mcpe_food:strawberry_shake_serving": {
     "sound": "glass"
   },
+  "mcpe_food:strawberry_shake_on_mug": {
+    "sound": "glass"
+  },
   "mcpe_food:tomato_juice_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:tomato_juice_on_mug": {
+    "sound": "glass"
+  },
+  "mcpe_food:hot_chocolate_on_glass": {
     "sound": "glass"
   },
   "mcpe_food:hot_chocolate_serving": {
@@ -691,13 +709,28 @@
   "mcpe_food:baijiu_serving": {
     "sound": "glass"
   },
+  "mcpe_food:baijiu_on_mug": {
+    "sound": "glass"
+  },
   "mcpe_food:premium_baijiu_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:premium_baijiu_on_mug": {
     "sound": "glass"
   },
   "mcpe_food:premium_red_wine_serving": {
     "sound": "glass"
   },
+  "mcpe_food:premium_red_wine_on_mug": {
+    "sound": "glass"
+  },
+  "mcpe_food:premium_red_wine_on_wine_glass": {
+    "sound": "glass"
+  },
   "mcpe_food:cola_serving": {
+    "sound": "glass"
+  },
+  "mcpe_food:cola_on_mug": {
     "sound": "glass"
   },
   "mcpe_food:steamed_grouper_on_plate": {
@@ -949,6 +982,9 @@
   "mcpe_food:burgundy_platter": {
     "sound": "glass"
   },
+  "mcpe_food:wine_glass": {
+    "sound": "glass"
+  },
   "mcpe_food:chopsticks": {
     "sound": "glass"
   },
@@ -974,6 +1010,15 @@
     "sound": "glass"
   },
   "mcpe_food:premium_red_wine_bottle": {
+    "sound": "glass"
+  },
+  "mcpe_food:coca_cola_paper_cup": {
+    "sound": "glass"
+  },
+  "mcpe_food:pepsi_paper_cup": {
+    "sound": "glass"
+  },
+  "mcpe_food:triple_tray": {
     "sound": "glass"
   },
   "mcpe_food:prep_counter": {

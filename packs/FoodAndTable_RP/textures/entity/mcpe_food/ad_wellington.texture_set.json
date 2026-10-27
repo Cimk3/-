@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "ad_wellington",
+    "metalness_emissive_roughness": "ad_wellington_mer"
+  }
+}

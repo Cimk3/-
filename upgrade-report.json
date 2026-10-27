@@ -1,0 +1,19 @@
+{
+  "version": "0.4.3",
+  "baseline": "0.4.2",
+  "status": "passed by 112 automated tests",
+  "preservedItemIds": 154,
+  "preservedBlockIds": 334,
+  "stableUUIDs": true,
+  "legacyRecipes": 53,
+  "craftingRecipes": 18,
+  "legacyLootTables": 340,
+  "cropStatesPreserved": true,
+  "edibleFoods": 101,
+  "tableware": 14,
+  "advertisements": 12,
+  "advertisementSizes": 36,
+  "paperCups": 2,
+  "servingVariants": 318,
+  "engineUpgradeTested": false
+}

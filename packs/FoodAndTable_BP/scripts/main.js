@@ -1,13 +1,14 @@
 import { BlockPermutation, GameMode, ItemStack, system, world } from "@minecraft/server";
 import { ActionFormData, MessageFormData } from "@minecraft/server-ui";
-import { menuCategories, recipeCategory, cropByBlock, foodById, foodByServing, id, label, recipes, servingKey, stations, vesselByKey, vessels } from "./catalog.js";
+import { compatibleVessels, menuCategories, recipeCategory, cropByBlock, foodById, foodByServing, id, label, recipes, servingKey, stations, vessels } from "./catalog.js";
 import { count, MenuSessions, planCraft, planInsert, planServe } from "./inventory.js";
-import { supportBlocks } from "./supports.js";
+import { surfaceHeight } from "./supports.js";
+import { handleDecorBlock, installDecor, migrateLowSurface, nativeTray } from './decor-runtime.js';
+import { tray } from './decor-catalog.js';
 const sessions = new MenuSessions();
 const busyBlocks = new Set();
 const cooldown = new Map();
 const EN_TAG = "food_english";
-const supports = new Set(supportBlocks);
 const growth = (b) => Number(b.permutation.getAllStates()["mcpe_food:growth"]);
 const growthPermutation = (b, age) => BlockPermutation.resolve(b.typeId, { ...b.permutation.getAllStates(), "mcpe_food:growth": age });
 const tr = (p, zh, en) => p.hasTag(EN_TAG) ? en : zh;
@@ -171,7 +172,7 @@ function tableInteract(p, block) {
         if (!vessel)
             return;
         const food = hand && foodById.get(hand.typeId);
-        if (!food || vesselByKey.get(food.vessel)?.family !== vessel.family) {
+        if (!food || !compatibleVessels(food).some(v => v.key === vessel.key)) {
             notify(p, `手持适合${vessel.zh}的成品交互即可盛装。`, `Hold a prepared dish matching this ${vessel.en.toLowerCase()}.`);
             return;
         }
@@ -243,12 +244,14 @@ system.beforeEvents.startup.subscribe(event => {
     });
     event.blockComponentRegistry.registerCustomComponent("mcpe_food:table", {
         beforeOnPlayerPlace(event) {
-            // Non-full supports (stairs, slabs, leaves, etc.) are intentionally rejected.
-            if (!supports.has(event.block.below()?.typeId ?? ""))
+            if (surfaceHeight(event.block.below()) !== 1)
                 event.cancel = true;
         },
         onPlayerInteract({ player, block }) { if (player && !player.isSneaking)
-            tableInteract(player, block); }
+            tableInteract(player, block); },
+        onPlace({ block }) { if (block.typeId === id(tray.key))
+            nativeTray(block); },
+        onTick({ block }) { migrateLowSurface(block); }
     });
     event.blockComponentRegistry.registerCustomComponent("mcpe_food:crop", {
         onRandomTick({ block }) {
@@ -264,6 +267,8 @@ world.afterEvents.playerLeave.subscribe(({ playerId }) => sessions.finish(player
 // Cancel native item use first: serving must not also eat the held food, drink a
 // milk bucket, or place the held block. Re-read the world in the next writable tick.
 world.beforeEvents.playerInteractWithBlock.subscribe(event => {
+    if (handleDecorBlock(event))
+        return;
     if (event.player.isSneaking)
         return; // Preserve vanilla sneak-place on a counter top.
     const initialType = event.block.typeId;
@@ -301,3 +306,4 @@ system.runInterval(() => {
         if (system.currentTick - tick > 200)
             cooldown.delete(key);
 }, 200);
+installDecor({ inventory, snapshot, commit, notify, sessions });

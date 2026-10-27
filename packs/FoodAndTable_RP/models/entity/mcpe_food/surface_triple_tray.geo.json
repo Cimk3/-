@@ -1,0 +1,5336 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.mcpe_food.surface.triple_tray",
+        "texture_width": 128,
+        "texture_height": 128,
+        "visible_bounds_width": 2,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [
+          0,
+          0.6,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "food",
+          "pivot": [
+            0,
+            0,
+            0
+          ],
+          "cubes": []
+        },
+        {
+          "name": "ware",
+          "pivot": [
+            0,
+            0,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -7.6,
+                0.1,
+                -3.2
+              ],
+              "size": [
+                15.2,
+                0.3,
+                6.4
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    3,
+                    15
+                  ],
+                  "uv_size": [
+                    26,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    3,
+                    15
+                  ],
+                  "uv_size": [
+                    26,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    3,
+                    15
+                  ],
+                  "uv_size": [
+                    26,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    3,
+                    15
+                  ],
+                  "uv_size": [
+                    26,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    3,
+                    3
+                  ],
+                  "uv_size": [
+                    26,
+                    26
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    3,
+                    3
+                  ],
+                  "uv_size": [
+                    26,
+                    26
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -7.6,
+                0.4,
+                -3.25
+              ],
+              "size": [
+                15.2,
+                0.25,
+                0.2
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    99,
+                    15
+                  ],
+                  "uv_size": [
+                    26,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    99,
+                    15
+                  ],
+                  "uv_size": [
+                    26,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    111,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    111,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    99,
+                    15
+                  ],
+                  "uv_size": [
+                    26,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    99,
+                    15
+                  ],
+                  "uv_size": [
+                    26,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -7.6,
+                0.4,
+                3.05
+              ],
+              "size": [
+                15.2,
+                0.25,
+                0.2
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    99,
+                    15
+                  ],
+                  "uv_size": [
+                    26,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    99,
+                    15
+                  ],
+                  "uv_size": [
+                    26,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    111,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    111,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    99,
+                    15
+                  ],
+                  "uv_size": [
+                    26,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    99,
+                    15
+                  ],
+                  "uv_size": [
+                    26,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -7.65,
+                0.4,
+                -3.1
+              ],
+              "size": [
+                0.25,
+                0.25,
+                6.2
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    111,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    111,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    99,
+                    15
+                  ],
+                  "uv_size": [
+                    26,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    99,
+                    15
+                  ],
+                  "uv_size": [
+                    26,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    111,
+                    3
+                  ],
+                  "uv_size": [
+                    2,
+                    26
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    111,
+                    3
+                  ],
+                  "uv_size": [
+                    2,
+                    26
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                7.4,
+                0.4,
+                -3.1
+              ],
+              "size": [
+                0.25,
+                0.25,
+                6.2
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    111,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    111,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    99,
+                    15
+                  ],
+                  "uv_size": [
+                    26,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    99,
+                    15
+                  ],
+                  "uv_size": [
+                    26,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    111,
+                    3
+                  ],
+                  "uv_size": [
+                    2,
+                    26
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    111,
+                    3
+                  ],
+                  "uv_size": [
+                    2,
+                    26
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -6.6,
+                0.43,
+                -0.9682458365518543
+              ],
+              "size": [
+                0.5,
+                0.16,
+                1.9364916731037085
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    11.158770817240729,
+                    47
+                  ],
+                  "uv_size": [
+                    9.682458365518542,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    14.75,
+                    43.15877081724073
+                  ],
+                  "uv_size": [
+                    2.5,
+                    9.682458365518542
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    14.75,
+                    43.15877081724073
+                  ],
+                  "uv_size": [
+                    2.5,
+                    9.682458365518542
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -6.1,
+                0.43,
+                -1.5612494995995996
+              ],
+              "size": [
+                0.5,
+                0.16,
+                3.122498999199199
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    8.193752502002003,
+                    47
+                  ],
+                  "uv_size": [
+                    15.612494995995995,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    14.75,
+                    40.193752502002
+                  ],
+                  "uv_size": [
+                    2.5,
+                    15.612494995995995
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    14.75,
+                    40.193752502002
+                  ],
+                  "uv_size": [
+                    2.5,
+                    15.612494995995995
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -5.6,
+                0.43,
+                -1.8540496217739157
+              ],
+              "size": [
+                0.5,
+                0.16,
+                3.7080992435478315
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    6.729751891130421,
+                    47
+                  ],
+                  "uv_size": [
+                    18.540496217739157,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    14.75,
+                    38.72975189113042
+                  ],
+                  "uv_size": [
+                    2.5,
+                    18.540496217739157
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    14.75,
+                    38.72975189113042
+                  ],
+                  "uv_size": [
+                    2.5,
+                    18.540496217739157
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -5.1,
+                0.43,
+                -1.984313483298443
+              ],
+              "size": [
+                0.5,
+                0.16,
+                3.968626966596886
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    6.0784325835077855,
+                    47
+                  ],
+                  "uv_size": [
+                    19.84313483298443,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    14.75,
+                    38.078432583507784
+                  ],
+                  "uv_size": [
+                    2.5,
+                    19.84313483298443
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    14.75,
+                    38.078432583507784
+                  ],
+                  "uv_size": [
+                    2.5,
+                    19.84313483298443
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -4.6,
+                0.43,
+                -1.984313483298443
+              ],
+              "size": [
+                0.5,
+                0.16,
+                3.968626966596886
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    6.0784325835077855,
+                    47
+                  ],
+                  "uv_size": [
+                    19.84313483298443,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    14.75,
+                    38.078432583507784
+                  ],
+                  "uv_size": [
+                    2.5,
+                    19.84313483298443
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    14.75,
+                    38.078432583507784
+                  ],
+                  "uv_size": [
+                    2.5,
+                    19.84313483298443
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -4.1,
+                0.43,
+                -1.8540496217739157
+              ],
+              "size": [
+                0.5,
+                0.16,
+                3.7080992435478315
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    6.729751891130421,
+                    47
+                  ],
+                  "uv_size": [
+                    18.540496217739157,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    14.75,
+                    38.72975189113042
+                  ],
+                  "uv_size": [
+                    2.5,
+                    18.540496217739157
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    14.75,
+                    38.72975189113042
+                  ],
+                  "uv_size": [
+                    2.5,
+                    18.540496217739157
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -3.5999999999999996,
+                0.43,
+                -1.5612494995995996
+              ],
+              "size": [
+                0.5,
+                0.16,
+                3.122498999199199
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    8.193752502002003,
+                    47
+                  ],
+                  "uv_size": [
+                    15.612494995995995,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    14.75,
+                    40.193752502002
+                  ],
+                  "uv_size": [
+                    2.5,
+                    15.612494995995995
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    14.75,
+                    40.193752502002
+                  ],
+                  "uv_size": [
+                    2.5,
+                    15.612494995995995
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -3.0999999999999996,
+                0.43,
+                -0.9682458365518543
+              ],
+              "size": [
+                0.5,
+                0.16,
+                1.9364916731037085
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    11.158770817240729,
+                    47
+                  ],
+                  "uv_size": [
+                    9.682458365518542,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    14.75,
+                    43.15877081724073
+                  ],
+                  "uv_size": [
+                    2.5,
+                    9.682458365518542
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    14.75,
+                    43.15877081724073
+                  ],
+                  "uv_size": [
+                    2.5,
+                    9.682458365518542
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -5.117418836818383,
+                0.6,
+                1.825
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                0,
+                0
+              ],
+              "pivot": [
+                -4.6,
+                0.6749999999999999,
+                1.9
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -4.167418836818384,
+                0.6,
+                1.5704482671904336
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                29.99999999999999,
+                0
+              ],
+              "pivot": [
+                -3.6500000000000004,
+                0.6749999999999999,
+                1.6454482671904336
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -3.47197056962795,
+                0.6,
+                0.8750000000000002
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                59.99999999999999,
+                0
+              ],
+              "pivot": [
+                -2.9545517328095663,
+                0.6749999999999999,
+                0.9500000000000002
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -3.217418836818384,
+                0.6,
+                -0.07499999999999989
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                90,
+                0
+              ],
+              "pivot": [
+                -2.7,
+                0.6749999999999999,
+                1.1102230246251565e-16
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -3.47197056962795,
+                0.6,
+                -1.0249999999999995
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                119.99999999999999,
+                0
+              ],
+              "pivot": [
+                -2.9545517328095663,
+                0.6749999999999999,
+                -0.9499999999999995
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -4.167418836818384,
+                0.6,
+                -1.7204482671904335
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                150,
+                0
+              ],
+              "pivot": [
+                -3.6500000000000004,
+                0.6749999999999999,
+                -1.6454482671904336
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -5.117418836818383,
+                0.6,
+                -1.9749999999999999
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                180,
+                0
+              ],
+              "pivot": [
+                -4.6,
+                0.6749999999999999,
+                -1.9
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -6.067418836818383,
+                0.6,
+                -1.7204482671904335
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                -150.00000000000003,
+                0
+              ],
+              "pivot": [
+                -5.549999999999999,
+                0.6749999999999999,
+                -1.6454482671904336
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -6.762867104008817,
+                0.6,
+                -1.0250000000000008
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                -120.00000000000004,
+                0
+              ],
+              "pivot": [
+                -6.245448267190433,
+                0.6749999999999999,
+                -0.9500000000000008
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -7.017418836818384,
+                0.6,
+                -0.07500000000000034
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                -90.00000000000003,
+                0
+              ],
+              "pivot": [
+                -6.5,
+                0.6749999999999999,
+                -3.469446951953614e-16
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -6.762867104008817,
+                0.6,
+                0.8750000000000002
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                -59.99999999999999,
+                0
+              ],
+              "pivot": [
+                -6.245448267190433,
+                0.6749999999999999,
+                0.9500000000000002
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -6.067418836818384,
+                0.6,
+                1.570448267190433
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                -30.00000000000003,
+                0
+              ],
+              "pivot": [
+                -5.550000000000001,
+                0.6749999999999999,
+                1.645448267190433
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -2,
+                0.43,
+                -0.9682458365518543
+              ],
+              "size": [
+                0.5,
+                0.16,
+                1.9364916731037085
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    11.158770817240729,
+                    47
+                  ],
+                  "uv_size": [
+                    9.682458365518542,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    14.75,
+                    43.15877081724073
+                  ],
+                  "uv_size": [
+                    2.5,
+                    9.682458365518542
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    14.75,
+                    43.15877081724073
+                  ],
+                  "uv_size": [
+                    2.5,
+                    9.682458365518542
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -1.5,
+                0.43,
+                -1.5612494995995996
+              ],
+              "size": [
+                0.5,
+                0.16,
+                3.122498999199199
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    8.193752502002003,
+                    47
+                  ],
+                  "uv_size": [
+                    15.612494995995995,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    14.75,
+                    40.193752502002
+                  ],
+                  "uv_size": [
+                    2.5,
+                    15.612494995995995
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    14.75,
+                    40.193752502002
+                  ],
+                  "uv_size": [
+                    2.5,
+                    15.612494995995995
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -1,
+                0.43,
+                -1.8540496217739157
+              ],
+              "size": [
+                0.5,
+                0.16,
+                3.7080992435478315
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    6.729751891130421,
+                    47
+                  ],
+                  "uv_size": [
+                    18.540496217739157,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    14.75,
+                    38.72975189113042
+                  ],
+                  "uv_size": [
+                    2.5,
+                    18.540496217739157
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    14.75,
+                    38.72975189113042
+                  ],
+                  "uv_size": [
+                    2.5,
+                    18.540496217739157
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -0.5,
+                0.43,
+                -1.984313483298443
+              ],
+              "size": [
+                0.5,
+                0.16,
+                3.968626966596886
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    6.0784325835077855,
+                    47
+                  ],
+                  "uv_size": [
+                    19.84313483298443,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    14.75,
+                    38.078432583507784
+                  ],
+                  "uv_size": [
+                    2.5,
+                    19.84313483298443
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    14.75,
+                    38.078432583507784
+                  ],
+                  "uv_size": [
+                    2.5,
+                    19.84313483298443
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                0,
+                0.43,
+                -1.984313483298443
+              ],
+              "size": [
+                0.5,
+                0.16,
+                3.968626966596886
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    6.0784325835077855,
+                    47
+                  ],
+                  "uv_size": [
+                    19.84313483298443,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    14.75,
+                    38.078432583507784
+                  ],
+                  "uv_size": [
+                    2.5,
+                    19.84313483298443
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    14.75,
+                    38.078432583507784
+                  ],
+                  "uv_size": [
+                    2.5,
+                    19.84313483298443
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                0.5,
+                0.43,
+                -1.8540496217739157
+              ],
+              "size": [
+                0.5,
+                0.16,
+                3.7080992435478315
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    6.729751891130421,
+                    47
+                  ],
+                  "uv_size": [
+                    18.540496217739157,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    14.75,
+                    38.72975189113042
+                  ],
+                  "uv_size": [
+                    2.5,
+                    18.540496217739157
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    14.75,
+                    38.72975189113042
+                  ],
+                  "uv_size": [
+                    2.5,
+                    18.540496217739157
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                1,
+                0.43,
+                -1.5612494995995996
+              ],
+              "size": [
+                0.5,
+                0.16,
+                3.122498999199199
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    8.193752502002003,
+                    47
+                  ],
+                  "uv_size": [
+                    15.612494995995995,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    14.75,
+                    40.193752502002
+                  ],
+                  "uv_size": [
+                    2.5,
+                    15.612494995995995
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    14.75,
+                    40.193752502002
+                  ],
+                  "uv_size": [
+                    2.5,
+                    15.612494995995995
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                1.5,
+                0.43,
+                -0.9682458365518543
+              ],
+              "size": [
+                0.5,
+                0.16,
+                1.9364916731037085
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    11.158770817240729,
+                    47
+                  ],
+                  "uv_size": [
+                    9.682458365518542,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    14.75,
+                    43.15877081724073
+                  ],
+                  "uv_size": [
+                    2.5,
+                    9.682458365518542
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    14.75,
+                    43.15877081724073
+                  ],
+                  "uv_size": [
+                    2.5,
+                    9.682458365518542
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -0.5174188368183839,
+                0.6,
+                1.825
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                0,
+                0
+              ],
+              "pivot": [
+                0,
+                0.6749999999999999,
+                1.9
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                0.432581163181616,
+                0.6,
+                1.5704482671904336
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                29.99999999999999,
+                0
+              ],
+              "pivot": [
+                0.9499999999999998,
+                0.6749999999999999,
+                1.6454482671904336
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                1.1280294303720495,
+                0.6,
+                0.8750000000000002
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                59.99999999999999,
+                0
+              ],
+              "pivot": [
+                1.6454482671904334,
+                0.6749999999999999,
+                0.9500000000000002
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                1.382581163181616,
+                0.6,
+                -0.07499999999999989
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                90,
+                0
+              ],
+              "pivot": [
+                1.9,
+                0.6749999999999999,
+                1.1102230246251565e-16
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                1.1280294303720497,
+                0.6,
+                -1.0249999999999995
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                119.99999999999999,
+                0
+              ],
+              "pivot": [
+                1.6454482671904336,
+                0.6749999999999999,
+                -0.9499999999999995
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                0.432581163181616,
+                0.6,
+                -1.7204482671904335
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                150,
+                0
+              ],
+              "pivot": [
+                0.9499999999999998,
+                0.6749999999999999,
+                -1.6454482671904336
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -0.5174188368183836,
+                0.6,
+                -1.9749999999999999
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                180,
+                0
+              ],
+              "pivot": [
+                2.220446049250313e-16,
+                0.6749999999999999,
+                -1.9
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -1.4674188368183834,
+                0.6,
+                -1.7204482671904335
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                -150.00000000000003,
+                0
+              ],
+              "pivot": [
+                -0.9499999999999995,
+                0.6749999999999999,
+                -1.6454482671904336
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -2.162867104008817,
+                0.6,
+                -1.0250000000000008
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                -120.00000000000004,
+                0
+              ],
+              "pivot": [
+                -1.6454482671904331,
+                0.6749999999999999,
+                -0.9500000000000008
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -2.417418836818384,
+                0.6,
+                -0.07500000000000034
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                -90.00000000000003,
+                0
+              ],
+              "pivot": [
+                -1.9000000000000001,
+                0.6749999999999999,
+                -3.469446951953614e-16
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -2.162867104008817,
+                0.6,
+                0.8750000000000002
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                -59.99999999999999,
+                0
+              ],
+              "pivot": [
+                -1.6454482671904331,
+                0.6749999999999999,
+                0.9500000000000002
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                -1.4674188368183847,
+                0.6,
+                1.570448267190433
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                -30.00000000000003,
+                0
+              ],
+              "pivot": [
+                -0.9500000000000008,
+                0.6749999999999999,
+                1.645448267190433
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                2.5999999999999996,
+                0.43,
+                -0.9682458365518543
+              ],
+              "size": [
+                0.5,
+                0.16,
+                1.9364916731037085
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    11.158770817240729,
+                    47
+                  ],
+                  "uv_size": [
+                    9.682458365518542,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    14.75,
+                    43.15877081724073
+                  ],
+                  "uv_size": [
+                    2.5,
+                    9.682458365518542
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    14.75,
+                    43.15877081724073
+                  ],
+                  "uv_size": [
+                    2.5,
+                    9.682458365518542
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                3.0999999999999996,
+                0.43,
+                -1.5612494995995996
+              ],
+              "size": [
+                0.5,
+                0.16,
+                3.122498999199199
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    8.193752502002003,
+                    47
+                  ],
+                  "uv_size": [
+                    15.612494995995995,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    14.75,
+                    40.193752502002
+                  ],
+                  "uv_size": [
+                    2.5,
+                    15.612494995995995
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    14.75,
+                    40.193752502002
+                  ],
+                  "uv_size": [
+                    2.5,
+                    15.612494995995995
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                3.5999999999999996,
+                0.43,
+                -1.8540496217739157
+              ],
+              "size": [
+                0.5,
+                0.16,
+                3.7080992435478315
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    6.729751891130421,
+                    47
+                  ],
+                  "uv_size": [
+                    18.540496217739157,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    14.75,
+                    38.72975189113042
+                  ],
+                  "uv_size": [
+                    2.5,
+                    18.540496217739157
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    14.75,
+                    38.72975189113042
+                  ],
+                  "uv_size": [
+                    2.5,
+                    18.540496217739157
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                4.1,
+                0.43,
+                -1.984313483298443
+              ],
+              "size": [
+                0.5,
+                0.16,
+                3.968626966596886
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    6.0784325835077855,
+                    47
+                  ],
+                  "uv_size": [
+                    19.84313483298443,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    14.75,
+                    38.078432583507784
+                  ],
+                  "uv_size": [
+                    2.5,
+                    19.84313483298443
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    14.75,
+                    38.078432583507784
+                  ],
+                  "uv_size": [
+                    2.5,
+                    19.84313483298443
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                4.6,
+                0.43,
+                -1.984313483298443
+              ],
+              "size": [
+                0.5,
+                0.16,
+                3.968626966596886
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    6.0784325835077855,
+                    47
+                  ],
+                  "uv_size": [
+                    19.84313483298443,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    14.75,
+                    38.078432583507784
+                  ],
+                  "uv_size": [
+                    2.5,
+                    19.84313483298443
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    14.75,
+                    38.078432583507784
+                  ],
+                  "uv_size": [
+                    2.5,
+                    19.84313483298443
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                5.1,
+                0.43,
+                -1.8540496217739157
+              ],
+              "size": [
+                0.5,
+                0.16,
+                3.7080992435478315
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    6.729751891130421,
+                    47
+                  ],
+                  "uv_size": [
+                    18.540496217739157,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    14.75,
+                    38.72975189113042
+                  ],
+                  "uv_size": [
+                    2.5,
+                    18.540496217739157
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    14.75,
+                    38.72975189113042
+                  ],
+                  "uv_size": [
+                    2.5,
+                    18.540496217739157
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                5.6,
+                0.43,
+                -1.5612494995995996
+              ],
+              "size": [
+                0.5,
+                0.16,
+                3.122498999199199
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    8.193752502002003,
+                    47
+                  ],
+                  "uv_size": [
+                    15.612494995995995,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    14.75,
+                    40.193752502002
+                  ],
+                  "uv_size": [
+                    2.5,
+                    15.612494995995995
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    14.75,
+                    40.193752502002
+                  ],
+                  "uv_size": [
+                    2.5,
+                    15.612494995995995
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                6.1,
+                0.43,
+                -0.9682458365518543
+              ],
+              "size": [
+                0.5,
+                0.16,
+                1.9364916731037085
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    14.75,
+                    47
+                  ],
+                  "uv_size": [
+                    2.5,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    11.158770817240729,
+                    47
+                  ],
+                  "uv_size": [
+                    9.682458365518542,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    14.75,
+                    43.15877081724073
+                  ],
+                  "uv_size": [
+                    2.5,
+                    9.682458365518542
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    14.75,
+                    43.15877081724073
+                  ],
+                  "uv_size": [
+                    2.5,
+                    9.682458365518542
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                4.082581163181616,
+                0.6,
+                1.825
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                0,
+                0
+              ],
+              "pivot": [
+                4.6,
+                0.6749999999999999,
+                1.9
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                5.032581163181616,
+                0.6,
+                1.5704482671904336
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                29.99999999999999,
+                0
+              ],
+              "pivot": [
+                5.55,
+                0.6749999999999999,
+                1.6454482671904336
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                5.728029430372049,
+                0.6,
+                0.8750000000000002
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                59.99999999999999,
+                0
+              ],
+              "pivot": [
+                6.245448267190433,
+                0.6749999999999999,
+                0.9500000000000002
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                5.982581163181616,
+                0.6,
+                -0.07499999999999989
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                90,
+                0
+              ],
+              "pivot": [
+                6.5,
+                0.6749999999999999,
+                1.1102230246251565e-16
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                5.728029430372049,
+                0.6,
+                -1.0249999999999995
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                119.99999999999999,
+                0
+              ],
+              "pivot": [
+                6.245448267190433,
+                0.6749999999999999,
+                -0.9499999999999995
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                5.032581163181616,
+                0.6,
+                -1.7204482671904335
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                150,
+                0
+              ],
+              "pivot": [
+                5.55,
+                0.6749999999999999,
+                -1.6454482671904336
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                4.082581163181616,
+                0.6,
+                -1.9749999999999999
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                180,
+                0
+              ],
+              "pivot": [
+                4.6,
+                0.6749999999999999,
+                -1.9
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                3.1325811631816167,
+                0.6,
+                -1.7204482671904335
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                -150.00000000000003,
+                0
+              ],
+              "pivot": [
+                3.6500000000000004,
+                0.6749999999999999,
+                -1.6454482671904336
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                2.4371328959911827,
+                0.6,
+                -1.0250000000000008
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                -120.00000000000004,
+                0
+              ],
+              "pivot": [
+                2.9545517328095663,
+                0.6749999999999999,
+                -0.9500000000000008
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                2.1825811631816157,
+                0.6,
+                -0.07500000000000034
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                -90.00000000000003,
+                0
+              ],
+              "pivot": [
+                2.6999999999999993,
+                0.6749999999999999,
+                -3.469446951953614e-16
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                2.4371328959911827,
+                0.6,
+                0.8750000000000002
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                -59.99999999999999,
+                0
+              ],
+              "pivot": [
+                2.9545517328095663,
+                0.6749999999999999,
+                0.9500000000000002
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            },
+            {
+              "origin": [
+                3.132581163181615,
+                0.6,
+                1.570448267190433
+              ],
+              "size": [
+                1.0348376736367677,
+                0.15,
+                0.15
+              ],
+              "rotation": [
+                0,
+                -30.00000000000003,
+                0
+              ],
+              "pivot": [
+                3.6499999999999986,
+                0.6749999999999999,
+                1.645448267190433
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "south": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "west": {
+                  "uv": [
+                    47,
+                    15
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "up": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                },
+                "down": {
+                  "uv": [
+                    45.41290581590808,
+                    15
+                  ],
+                  "uv_size": [
+                    5.174188368183838,
+                    2
+                  ],
+                  "material_instance": "ware"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

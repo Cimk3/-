@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "outerCRC": "passed",
+  "nestedCRC": "passed",
+  "standaloneMatchesNested": true,
+  "checksums": "passed",
+  "packs": [
+    {
+      "name": "FoodAndTable_BP.mcpack",
+      "files": 928
+    },
+    {
+      "name": "FoodAndTable_RP.mcpack",
+      "files": 2143
+    }
+  ],
+  "totalPackFiles": 3071,
+  "pbrTextureSets": 495,
+  "customBlocksWithoutDestructionDebris": 349,
+  "sourceCRC": "passed",
+  "sourceArtworks": 12,
+  "gameEngineTested": false
+}

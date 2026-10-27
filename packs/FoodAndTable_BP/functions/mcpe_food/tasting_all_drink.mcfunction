@@ -11,3 +11,5 @@ give @s mcpe_food:cola 4
 give @s mcpe_food:baijiu_bottle 4
 give @s mcpe_food:premium_baijiu_bottle 4
 give @s mcpe_food:premium_red_wine_bottle 4
+give @s mcpe_food:coca_cola_paper_cup 4
+give @s mcpe_food:pepsi_paper_cup 4

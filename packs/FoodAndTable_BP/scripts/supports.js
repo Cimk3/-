@@ -1,3 +1,4 @@
+import { slabIds } from './slabs.js';
 /** Explicit full-cube supports: stable API 2.0 has no Block.isSolid property.
  * The same list drives placement AND survival filters (including support loss).
  */
@@ -9,7 +10,7 @@ const base = ["stone", "cobblestone", "mossy_cobblestone", "smooth_stone", "ston
     "sandstone", "smooth_sandstone", "cut_sandstone", "red_sandstone", "smooth_red_sandstone", "cut_red_sandstone", "quartz_block", "smooth_quartz", "quartz_bricks",
     "iron_block", "gold_block", "diamond_block", "emerald_block", "copper_block", "netherite_block", "coal_block", "redstone_block", "lapis_block",
     "hardened_clay", "clay", "dirt", "grass_block", "coarse_dirt", "mud", "podzol", "mycelium", "dirt_with_roots", "glass", "tinted_glass",
-    "bookshelf", "crafting_table", "furnace", "smoker", "blast_furnace", "melon_block", "pumpkin", "hay_block", "dried_kelp_block", "bone_block", "snow", "ice", "packed_ice", "blue_ice"];
+    "bookshelf", "chiseled_bookshelf", "crafting_table", "furnace", "smoker", "blast_furnace", "melon_block", "pumpkin", "hay_block", "dried_kelp_block", "bone_block", "snow", "ice", "packed_ice", "blue_ice"];
 export const supportBlocks = [...new Set([
         ...base,
         ...woods.map(w => `${w}_planks`),
@@ -17,3 +18,18 @@ export const supportBlocks = [...new Set([
         "crimson_stem", "warped_stem", "bamboo_block",
         ...colors.flatMap(c => [`${c}_wool`, `${c}_concrete`, `${c}_terracotta`, `${c}_stained_glass`])
     ].map(k => `minecraft:${k}`)), ...["prep_counter", "stove", "oven", "drink_counter"].map(k => `mcpe_food:${k}`)];
+const full = new Set(supportBlocks), slabs = new Set(slabIds);
+export const placementSupports = [...new Set([...supportBlocks, ...slabIds])];
+export function surfaceHeight(block) {
+    if (!block)
+        return 0;
+    if (full.has(block.typeId))
+        return 1;
+    if (!slabs.has(block.typeId))
+        return 0;
+    if (block.typeId.includes('double'))
+        return 1;
+    const s = block.permutation.getAllStates();
+    return s['minecraft:vertical_half'] === 'top' || s['top_slot_bit'] === true ? 1 : .5;
+}
+export const isWallSupport = (block) => !!block && (full.has(block.typeId) || (slabs.has(block.typeId) && block.typeId.includes('double')));

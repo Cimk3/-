@@ -353,6 +353,9 @@
     "mcpe_food_burgundy_platter": {
       "textures": "textures/items/mcpe_food/burgundy_platter"
     },
+    "mcpe_food_wine_glass": {
+      "textures": "textures/items/mcpe_food/wine_glass"
+    },
     "mcpe_food_chopsticks": {
       "textures": "textures/items/mcpe_food/chopsticks"
     },
@@ -379,6 +382,15 @@
     },
     "mcpe_food_premium_red_wine_bottle": {
       "textures": "textures/items/mcpe_food/premium_red_wine_bottle"
+    },
+    "mcpe_food_coca_cola_paper_cup": {
+      "textures": "textures/items/mcpe_food/coca_cola_paper_cup"
+    },
+    "mcpe_food_pepsi_paper_cup": {
+      "textures": "textures/items/mcpe_food/pepsi_paper_cup"
+    },
+    "mcpe_food_triple_tray": {
+      "textures": "textures/items/mcpe_food/triple_tray"
     },
     "mcpe_food_prep_counter": {
       "textures": "textures/items/mcpe_food/prep_counter"
@@ -463,6 +475,42 @@
     },
     "mcpe_food_coffee_seeds": {
       "textures": "textures/items/mcpe_food/coffee_seeds"
+    },
+    "mcpe_food_ad_japanese_snacks": {
+      "textures": "textures/items/mcpe_food/ad_japanese_snacks"
+    },
+    "mcpe_food_ad_japanese_night": {
+      "textures": "textures/items/mcpe_food/ad_japanese_night"
+    },
+    "mcpe_food_ad_wellington": {
+      "textures": "textures/items/mcpe_food/ad_wellington"
+    },
+    "mcpe_food_ad_lamb": {
+      "textures": "textures/items/mcpe_food/ad_lamb"
+    },
+    "mcpe_food_ad_lobster": {
+      "textures": "textures/items/mcpe_food/ad_lobster"
+    },
+    "mcpe_food_ad_cantonese_roast": {
+      "textures": "textures/items/mcpe_food/ad_cantonese_roast"
+    },
+    "mcpe_food_ad_dim_sum": {
+      "textures": "textures/items/mcpe_food/ad_dim_sum"
+    },
+    "mcpe_food_ad_hotpot": {
+      "textures": "textures/items/mcpe_food/ad_hotpot"
+    },
+    "mcpe_food_ad_banquet": {
+      "textures": "textures/items/mcpe_food/ad_banquet"
+    },
+    "mcpe_food_ad_grouper": {
+      "textures": "textures/items/mcpe_food/ad_grouper"
+    },
+    "mcpe_food_ad_home_cooking": {
+      "textures": "textures/items/mcpe_food/ad_home_cooking"
+    },
+    "mcpe_food_ad_dessert": {
+      "textures": "textures/items/mcpe_food/ad_dessert"
     }
   }
 }

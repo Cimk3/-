@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "food_jujube_lotus_soup",
+    "metalness_emissive_roughness": "food_jujube_lotus_soup_mer"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "food_black_bean_ribs",
+    "metalness_emissive_roughness": "food_black_bean_ribs_mer"
+  }
+}

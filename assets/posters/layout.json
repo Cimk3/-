@@ -1,0 +1,86 @@
+[
+  {
+    "key": "ad_japanese_snacks",
+    "series": "japanese",
+    "zh": "日式小食",
+    "en": "Japanese Snacks",
+    "aspect": "wide"
+  },
+  {
+    "key": "ad_japanese_night",
+    "series": "japanese",
+    "zh": "日式夜食",
+    "en": "Japanese Night Bites",
+    "aspect": "portrait"
+  },
+  {
+    "key": "ad_wellington",
+    "series": "western",
+    "zh": "惠灵顿牛排",
+    "en": "Beef Wellington",
+    "aspect": "wide"
+  },
+  {
+    "key": "ad_lamb",
+    "series": "western",
+    "zh": "香草烤羊排",
+    "en": "Herb Roasted Lamb",
+    "aspect": "square"
+  },
+  {
+    "key": "ad_lobster",
+    "series": "western",
+    "zh": "奶油焗龙虾",
+    "en": "Lobster Thermidor",
+    "aspect": "portrait"
+  },
+  {
+    "key": "ad_cantonese_roast",
+    "series": "cantonese",
+    "zh": "广府烧味",
+    "en": "Cantonese Roast",
+    "aspect": "wide"
+  },
+  {
+    "key": "ad_dim_sum",
+    "series": "cantonese",
+    "zh": "早茶时光",
+    "en": "Cantonese Morning Tea",
+    "aspect": "portrait"
+  },
+  {
+    "key": "ad_hotpot",
+    "series": "hotpot",
+    "zh": "铜锅涮肉",
+    "en": "Copper Hotpot",
+    "aspect": "wide"
+  },
+  {
+    "key": "ad_banquet",
+    "series": "chinese",
+    "zh": "中式盛宴",
+    "en": "Chinese Banquet",
+    "aspect": "wide"
+  },
+  {
+    "key": "ad_grouper",
+    "series": "chinese",
+    "zh": "清蒸鲜味",
+    "en": "Steamed Grouper",
+    "aspect": "wide"
+  },
+  {
+    "key": "ad_home_cooking",
+    "series": "chinese",
+    "zh": "家常好味",
+    "en": "Chinese Bistro",
+    "aspect": "square"
+  },
+  {
+    "key": "ad_dessert",
+    "series": "dessert",
+    "zh": "甜品时光",
+    "en": "Patisserie Moments",
+    "aspect": "portrait"
+  }
+]

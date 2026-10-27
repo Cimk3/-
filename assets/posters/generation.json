@@ -1,0 +1,98 @@
+[
+  {
+    "key": "ad_japanese_snacks",
+    "source": "assets/posters/originals/ad_japanese_snacks.png",
+    "subject": "A premium Japanese street-food platter of takoyaki with delicate mayonnaise lines and bonito flakes alongside yakisoba noodles, lacquer black serving plate, warm amber restaurant light.",
+    "ratio": "wide 2:1",
+    "tool": "built-in image_gen",
+    "prompt": "Create ONE original refined commercial restaurant advertising food photograph/illustration, wide 2:1 composition. A premium Japanese street-food platter of takoyaki with delicate mayonnaise lines and bonito flakes alongside yakisoba noodles, lacquer black serving plate, warm amber restaurant light. Rich realistic edible textures, polished editorial food photography, dark forest green and warm champagne accents, tasteful modern restaurant campaign. Leave a clean dark negative-space header occupying top 24% for typography added separately; subject fills lower 72%, with safe margins for wide 2:1. No text, no letters, no logo, no watermark, no menu prices, no people. Flat artwork only, no picture frame or room mockup."
+  },
+  {
+    "key": "ad_japanese_night",
+    "source": "assets/posters/originals/ad_japanese_night.png",
+    "subject": "Grilled whole squid with scored surface and tentacles, alongside a ceramic bowl of oden skewers, atmospheric Japanese night restaurant.",
+    "ratio": "portrait 1:2",
+    "tool": "built-in image_gen",
+    "prompt": "Create ONE original refined commercial restaurant advertising food photograph/illustration, portrait 1:2 composition. Grilled whole squid with scored surface and tentacles, alongside a ceramic bowl of oden skewers, atmospheric Japanese night restaurant. Rich realistic edible textures, polished editorial food photography, dark forest green and warm champagne accents, tasteful modern restaurant campaign. Leave a clean dark negative-space header occupying top 24% for typography added separately; subject fills lower 72%, with safe margins for portrait 1:2. No text, no letters, no logo, no watermark, no menu prices, no people. Flat artwork only, no picture frame or room mockup."
+  },
+  {
+    "key": "ad_wellington",
+    "source": "assets/posters/originals/ad_wellington.png",
+    "subject": "An elegant Beef Wellington with golden lattice pastry, a detached cut slice showing rosy beef and mushroom duxelles, rich brown sauce, burgundy plate.",
+    "ratio": "wide 2:1",
+    "tool": "built-in image_gen",
+    "prompt": "Create ONE original refined commercial restaurant advertising food photograph/illustration, wide 2:1 composition. An elegant Beef Wellington with golden lattice pastry, a detached cut slice showing rosy beef and mushroom duxelles, rich brown sauce, burgundy plate. Rich realistic edible textures, polished editorial food photography, dark forest green and warm champagne accents, tasteful modern restaurant campaign. Leave a clean dark negative-space header occupying top 24% for typography added separately; subject fills lower 72%, with safe margins for wide 2:1. No text, no letters, no logo, no watermark, no menu prices, no people. Flat artwork only, no picture frame or room mockup."
+  },
+  {
+    "key": "ad_lamb",
+    "source": "assets/posters/originals/ad_lamb.png",
+    "subject": "Three beautifully plated herb-crusted lamb cutlets with connected elegant rib bones, roasted potatoes, refined fine dining.",
+    "ratio": "square 1:1",
+    "tool": "built-in image_gen",
+    "prompt": "Create ONE original refined commercial restaurant advertising food photograph/illustration, square 1:1 composition. Three beautifully plated herb-crusted lamb cutlets with connected elegant rib bones, roasted potatoes, refined fine dining. Rich realistic edible textures, polished editorial food photography, dark forest green and warm champagne accents, tasteful modern restaurant campaign. Leave a clean dark negative-space header occupying top 24% for typography added separately; subject fills lower 72%, with safe margins for square 1:1. No text, no letters, no logo, no watermark, no menu prices, no people. Flat artwork only, no picture frame or room mockup."
+  },
+  {
+    "key": "ad_lobster",
+    "source": "assets/posters/originals/ad_lobster.png",
+    "subject": "Two split lobster halves with red shells and golden creamy gratin, herbs and lemon, fine dining presentation.",
+    "ratio": "portrait 1:2",
+    "tool": "built-in image_gen",
+    "prompt": "Create ONE original refined commercial restaurant advertising food photograph/illustration, portrait 1:2 composition. Two split lobster halves with red shells and golden creamy gratin, herbs and lemon, fine dining presentation. Rich realistic edible textures, polished editorial food photography, dark forest green and warm champagne accents, tasteful modern restaurant campaign. Leave a clean dark negative-space header occupying top 24% for typography added separately; subject fills lower 72%, with safe margins for portrait 1:2. No text, no letters, no logo, no watermark, no menu prices, no people. Flat artwork only, no picture frame or room mockup."
+  },
+  {
+    "key": "ad_cantonese_roast",
+    "source": "assets/posters/originals/ad_cantonese_roast.png",
+    "subject": "Cantonese roast goose with glossy amber skin and sliced char siu, dark oval platter, refined Hong Kong roast meat restaurant.",
+    "ratio": "wide 2:1",
+    "tool": "built-in image_gen",
+    "prompt": "Create ONE original refined commercial restaurant advertising food photograph/illustration, wide 2:1 composition. Cantonese roast goose with glossy amber skin and sliced char siu, dark oval platter, refined Hong Kong roast meat restaurant. Rich realistic edible textures, polished editorial food photography, dark forest green and warm champagne accents, tasteful modern restaurant campaign. Leave a clean dark negative-space header occupying top 24% for typography added separately; subject fills lower 72%, with safe margins for wide 2:1. No text, no letters, no logo, no watermark, no menu prices, no people. Flat artwork only, no picture frame or room mockup."
+  },
+  {
+    "key": "ad_dim_sum",
+    "source": "assets/posters/originals/ad_dim_sum.png",
+    "subject": "Silky shrimp rice rolls and Cantonese flaky egg tarts, porcelain tea table, refined Cantonese morning tea.",
+    "ratio": "portrait 1:2",
+    "tool": "built-in image_gen",
+    "prompt": "Create ONE original refined commercial restaurant advertising food photograph/illustration, portrait 1:2 composition. Silky shrimp rice rolls and Cantonese flaky egg tarts, porcelain tea table, refined Cantonese morning tea. Rich realistic edible textures, polished editorial food photography, dark forest green and warm champagne accents, tasteful modern restaurant campaign. Leave a clean dark negative-space header occupying top 24% for typography added separately; subject fills lower 72%, with safe margins for portrait 1:2. No text, no letters, no logo, no watermark, no menu prices, no people. Flat artwork only, no picture frame or room mockup."
+  },
+  {
+    "key": "ad_hotpot",
+    "source": "assets/posters/originals/ad_hotpot.png",
+    "subject": "A polished traditional copper chimney hotpot with clear broth, beautifully rolled lamb and beef slices and leafy greens around it, sophisticated warm restaurant table.",
+    "ratio": "wide 2:1",
+    "tool": "built-in image_gen",
+    "prompt": "Create ONE original refined commercial restaurant advertising food photograph/illustration, wide 2:1 composition. A polished traditional copper chimney hotpot with clear broth, beautifully rolled lamb and beef slices and leafy greens around it, sophisticated warm restaurant table. Rich realistic edible textures, polished editorial food photography, dark forest green and warm champagne accents, tasteful modern restaurant campaign. Leave a clean dark negative-space header occupying top 24% for typography added separately; subject fills lower 72%, with safe margins for wide 2:1. No text, no letters, no logo, no watermark, no menu prices, no people. Flat artwork only, no picture frame or room mockup."
+  },
+  {
+    "key": "ad_banquet",
+    "source": "assets/posters/originals/ad_banquet.png",
+    "subject": "An exquisite Chinese banquet peacock appetizer platter with fan-arranged spiced sliced beef, scallops with sea greens, layered tofu skin, braised wheat gluten and amber walnuts. Green cucumber peacock head and neck, black gold round platter.",
+    "ratio": "wide 2:1",
+    "tool": "built-in image_gen",
+    "prompt": "Create ONE original refined commercial restaurant advertising food photograph/illustration, wide 2:1 composition. An exquisite Chinese banquet peacock appetizer platter with fan-arranged spiced sliced beef, scallops with sea greens, layered tofu skin, braised wheat gluten and amber walnuts. Green cucumber peacock head and neck, black gold round platter. Rich realistic edible textures, polished editorial food photography, dark forest green and warm champagne accents, tasteful modern restaurant campaign. Leave a clean dark negative-space header occupying top 24% for typography added separately; subject fills lower 72%, with safe margins for wide 2:1. No text, no letters, no logo, no watermark, no menu prices, no people. Flat artwork only, no picture frame or room mockup."
+  },
+  {
+    "key": "ad_grouper",
+    "source": "assets/posters/originals/ad_grouper.png",
+    "subject": "A whole steamed grouper with visible ginger julienne, chopped scallions and soy sauce, elegant Chinese restaurant oval porcelain platter.",
+    "ratio": "wide 2:1",
+    "tool": "built-in image_gen",
+    "prompt": "Create ONE original refined commercial restaurant advertising food photograph/illustration, wide 2:1 composition. A whole steamed grouper with visible ginger julienne, chopped scallions and soy sauce, elegant Chinese restaurant oval porcelain platter. Rich realistic edible textures, polished editorial food photography, dark forest green and warm champagne accents, tasteful modern restaurant campaign. Leave a clean dark negative-space header occupying top 24% for typography added separately; subject fills lower 72%, with safe margins for wide 2:1. No text, no letters, no logo, no watermark, no menu prices, no people. Flat artwork only, no picture frame or room mockup."
+  },
+  {
+    "key": "ad_home_cooking",
+    "source": "assets/posters/originals/ad_home_cooking.png",
+    "subject": "Wok-fried sliced beef with red and green peppers alongside smashed cucumber salad, premium Chinese bistro presentation.",
+    "ratio": "square 1:1",
+    "tool": "built-in image_gen",
+    "prompt": "Create ONE original refined commercial restaurant advertising food photograph/illustration, square 1:1 composition. Wok-fried sliced beef with red and green peppers alongside smashed cucumber salad, premium Chinese bistro presentation. Rich realistic edible textures, polished editorial food photography, dark forest green and warm champagne accents, tasteful modern restaurant campaign. Leave a clean dark negative-space header occupying top 24% for typography added separately; subject fills lower 72%, with safe margins for square 1:1. No text, no letters, no logo, no watermark, no menu prices, no people. Flat artwork only, no picture frame or room mockup."
+  },
+  {
+    "key": "ad_dessert",
+    "source": "assets/posters/originals/ad_dessert.png",
+    "subject": "Tiramisu with coffee layers, white daifuku with strawberry and red bean cross-section, mille feuille puff pastry layers, a luxurious patisserie still life.",
+    "ratio": "portrait 1:2",
+    "tool": "built-in image_gen",
+    "prompt": "Create ONE original refined commercial restaurant advertising food photograph/illustration, portrait 1:2 composition. Tiramisu with coffee layers, white daifuku with strawberry and red bean cross-section, mille feuille puff pastry layers, a luxurious patisserie still life. Rich realistic edible textures, polished editorial food photography, dark forest green and warm champagne accents, tasteful modern restaurant campaign. Leave a clean dark negative-space header occupying top 24% for typography added separately; subject fills lower 72%, with safe margins for portrait 1:2. No text, no letters, no logo, no watermark, no menu prices, no people. Flat artwork only, no picture frame or room mockup."
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "food_beef_slices",
+    "metalness_emissive_roughness": "food_beef_slices_mer"
+  }
+}

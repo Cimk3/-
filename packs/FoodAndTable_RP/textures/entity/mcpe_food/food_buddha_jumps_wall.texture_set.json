@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "food_buddha_jumps_wall",
+    "metalness_emissive_roughness": "food_buddha_jumps_wall_mer"
+  }
+}

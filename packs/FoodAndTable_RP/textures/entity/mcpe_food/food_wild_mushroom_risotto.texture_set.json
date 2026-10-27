@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "food_wild_mushroom_risotto",
+    "metalness_emissive_roughness": "food_wild_mushroom_risotto_mer"
+  }
+}

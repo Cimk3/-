@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "food_herb_roasted_lamb_rack",
+    "metalness_emissive_roughness": "food_herb_roasted_lamb_rack_mer"
+  }
+}

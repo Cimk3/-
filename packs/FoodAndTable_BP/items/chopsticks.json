@@ -4,7 +4,8 @@
     "description": {
       "identifier": "mcpe_food:chopsticks",
       "menu_category": {
-        "category": "construction"
+        "category": "items",
+        "group": "mcpe_food:group_tableware"
       }
     },
     "components": {

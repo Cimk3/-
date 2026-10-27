@@ -154,7 +154,51 @@
               "mcpe_food:cola",
               "mcpe_food:baijiu_bottle",
               "mcpe_food:premium_baijiu_bottle",
-              "mcpe_food:premium_red_wine_bottle"
+              "mcpe_food:premium_red_wine_bottle",
+              "mcpe_food:coca_cola_paper_cup",
+              "mcpe_food:pepsi_paper_cup"
+            ]
+          },
+          {
+            "group_identifier": {
+              "name": "mcpe_food:group_tableware",
+              "icon": "mcpe_food:plate"
+            },
+            "items": [
+              "mcpe_food:plate",
+              "mcpe_food:bowl",
+              "mcpe_food:glass",
+              "mcpe_food:mug",
+              "mcpe_food:black_gold_bowl",
+              "mcpe_food:burgundy_bowl",
+              "mcpe_food:black_gold_plate",
+              "mcpe_food:burgundy_platter",
+              "mcpe_food:wine_glass",
+              "mcpe_food:chopsticks",
+              "mcpe_food:table_knife",
+              "mcpe_food:fork",
+              "mcpe_food:spoon",
+              "mcpe_food:triple_tray"
+            ]
+          },
+          {
+            "group_identifier": {
+              "name": "mcpe_food:group_advertisements",
+              "icon": "mcpe_food:ad_japanese_snacks"
+            },
+            "items": [
+              "mcpe_food:ad_japanese_snacks",
+              "mcpe_food:ad_japanese_night",
+              "mcpe_food:ad_wellington",
+              "mcpe_food:ad_lamb",
+              "mcpe_food:ad_lobster",
+              "mcpe_food:ad_cantonese_roast",
+              "mcpe_food:ad_dim_sum",
+              "mcpe_food:ad_hotpot",
+              "mcpe_food:ad_banquet",
+              "mcpe_food:ad_grouper",
+              "mcpe_food:ad_home_cooking",
+              "mcpe_food:ad_dessert"
             ]
           }
         ]

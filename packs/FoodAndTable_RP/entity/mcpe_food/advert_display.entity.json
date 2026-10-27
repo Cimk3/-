@@ -1,0 +1,62 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "mcpe_food:advert_display",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "f0": "textures/entity/mcpe_food/ad_japanese_snacks",
+        "w0": "textures/entity/mcpe_food/ad_japanese_snacks",
+        "f1": "textures/entity/mcpe_food/ad_japanese_night",
+        "w1": "textures/entity/mcpe_food/ad_japanese_night",
+        "f2": "textures/entity/mcpe_food/ad_wellington",
+        "w2": "textures/entity/mcpe_food/ad_wellington",
+        "f3": "textures/entity/mcpe_food/ad_lamb",
+        "w3": "textures/entity/mcpe_food/ad_lamb",
+        "f4": "textures/entity/mcpe_food/ad_lobster",
+        "w4": "textures/entity/mcpe_food/ad_lobster",
+        "f5": "textures/entity/mcpe_food/ad_cantonese_roast",
+        "w5": "textures/entity/mcpe_food/ad_cantonese_roast",
+        "f6": "textures/entity/mcpe_food/ad_dim_sum",
+        "w6": "textures/entity/mcpe_food/ad_dim_sum",
+        "f7": "textures/entity/mcpe_food/ad_hotpot",
+        "w7": "textures/entity/mcpe_food/ad_hotpot",
+        "f8": "textures/entity/mcpe_food/ad_banquet",
+        "w8": "textures/entity/mcpe_food/ad_banquet",
+        "f9": "textures/entity/mcpe_food/ad_grouper",
+        "w9": "textures/entity/mcpe_food/ad_grouper",
+        "f10": "textures/entity/mcpe_food/ad_home_cooking",
+        "w10": "textures/entity/mcpe_food/ad_home_cooking",
+        "f11": "textures/entity/mcpe_food/ad_dessert",
+        "w11": "textures/entity/mcpe_food/ad_dessert"
+      },
+      "geometry": {
+        "g0": "geometry.mcpe_food.ad_japanese_snacks",
+        "g1": "geometry.mcpe_food.ad_japanese_night",
+        "g2": "geometry.mcpe_food.ad_wellington",
+        "g3": "geometry.mcpe_food.ad_lamb",
+        "g4": "geometry.mcpe_food.ad_lobster",
+        "g5": "geometry.mcpe_food.ad_cantonese_roast",
+        "g6": "geometry.mcpe_food.ad_dim_sum",
+        "g7": "geometry.mcpe_food.ad_hotpot",
+        "g8": "geometry.mcpe_food.ad_banquet",
+        "g9": "geometry.mcpe_food.ad_grouper",
+        "g10": "geometry.mcpe_food.ad_home_cooking",
+        "g11": "geometry.mcpe_food.ad_dessert"
+      },
+      "render_controllers": [
+        "controller.render.mcpe_food.advert_display_food"
+      ],
+      "animations": {
+        "size": "animation.mcpe_food.poster_size"
+      },
+      "scripts": {
+        "animate": [
+          "size"
+        ]
+      }
+    }
+  }
+}

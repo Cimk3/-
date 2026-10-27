@@ -1,0 +1,5732 @@
+{
+  "version": "0.4.3",
+  "models": [
+    {
+      "key": "egg_fried_rice_serving",
+      "resolution": 128,
+      "cubes": 147,
+      "slots": {
+        "food": "food_egg_fried_rice",
+        "ware": "ware_bowl"
+      }
+    },
+    {
+      "key": "egg_fried_rice_on_black_gold_bowl",
+      "resolution": 128,
+      "cubes": 147,
+      "slots": {
+        "food": "food_egg_fried_rice",
+        "ware": "ware_black_gold_bowl"
+      }
+    },
+    {
+      "key": "egg_fried_rice_on_burgundy_bowl",
+      "resolution": 128,
+      "cubes": 147,
+      "slots": {
+        "food": "food_egg_fried_rice",
+        "ware": "ware_burgundy_bowl"
+      }
+    },
+    {
+      "key": "kung_pao_chicken_serving",
+      "resolution": 128,
+      "cubes": 91,
+      "slots": {
+        "food": "food_kung_pao_chicken",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "kung_pao_chicken_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 91,
+      "slots": {
+        "food": "food_kung_pao_chicken",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "kung_pao_chicken_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 91,
+      "slots": {
+        "food": "food_kung_pao_chicken",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "mapo_tofu_serving",
+      "resolution": 128,
+      "cubes": 130,
+      "slots": {
+        "food": "food_mapo_tofu",
+        "ware": "ware_bowl"
+      }
+    },
+    {
+      "key": "mapo_tofu_on_black_gold_bowl",
+      "resolution": 128,
+      "cubes": 130,
+      "slots": {
+        "food": "food_mapo_tofu",
+        "ware": "ware_black_gold_bowl"
+      }
+    },
+    {
+      "key": "mapo_tofu_on_burgundy_bowl",
+      "resolution": 128,
+      "cubes": 130,
+      "slots": {
+        "food": "food_mapo_tofu",
+        "ware": "ware_burgundy_bowl"
+      }
+    },
+    {
+      "key": "braised_pork_serving",
+      "resolution": 128,
+      "cubes": 123,
+      "slots": {
+        "food": "food_braised_pork",
+        "ware": "ware_bowl"
+      }
+    },
+    {
+      "key": "braised_pork_on_black_gold_bowl",
+      "resolution": 128,
+      "cubes": 123,
+      "slots": {
+        "food": "food_braised_pork",
+        "ware": "ware_black_gold_bowl"
+      }
+    },
+    {
+      "key": "braised_pork_on_burgundy_bowl",
+      "resolution": 128,
+      "cubes": 123,
+      "slots": {
+        "food": "food_braised_pork",
+        "ware": "ware_burgundy_bowl"
+      }
+    },
+    {
+      "key": "tomato_eggs_serving",
+      "resolution": 128,
+      "cubes": 94,
+      "slots": {
+        "food": "food_tomato_eggs",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "tomato_eggs_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 94,
+      "slots": {
+        "food": "food_tomato_eggs",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "tomato_eggs_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 94,
+      "slots": {
+        "food": "food_tomato_eggs",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "sweet_sour_pork_serving",
+      "resolution": 128,
+      "cubes": 85,
+      "slots": {
+        "food": "food_sweet_sour_pork",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "sweet_sour_pork_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 85,
+      "slots": {
+        "food": "food_sweet_sour_pork",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "sweet_sour_pork_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 85,
+      "slots": {
+        "food": "food_sweet_sour_pork",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "beef_noodle_soup_serving",
+      "resolution": 128,
+      "cubes": 154,
+      "slots": {
+        "food": "food_beef_noodle_soup",
+        "ware": "ware_bowl"
+      }
+    },
+    {
+      "key": "beef_noodle_soup_on_black_gold_bowl",
+      "resolution": 128,
+      "cubes": 154,
+      "slots": {
+        "food": "food_beef_noodle_soup",
+        "ware": "ware_black_gold_bowl"
+      }
+    },
+    {
+      "key": "beef_noodle_soup_on_burgundy_bowl",
+      "resolution": 128,
+      "cubes": 154,
+      "slots": {
+        "food": "food_beef_noodle_soup",
+        "ware": "ware_burgundy_bowl"
+      }
+    },
+    {
+      "key": "dumplings_serving",
+      "resolution": 128,
+      "cubes": 166,
+      "slots": {
+        "food": "food_dumplings",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "dumplings_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 166,
+      "slots": {
+        "food": "food_dumplings",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "dumplings_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 166,
+      "slots": {
+        "food": "food_dumplings",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "white_cut_chicken_serving",
+      "resolution": 128,
+      "cubes": 89,
+      "slots": {
+        "food": "food_white_cut_chicken",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "white_cut_chicken_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 89,
+      "slots": {
+        "food": "food_white_cut_chicken",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "white_cut_chicken_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 89,
+      "slots": {
+        "food": "food_white_cut_chicken",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "char_siu_serving",
+      "resolution": 128,
+      "cubes": 89,
+      "slots": {
+        "food": "food_char_siu",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "char_siu_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 89,
+      "slots": {
+        "food": "food_char_siu",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "char_siu_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 89,
+      "slots": {
+        "food": "food_char_siu",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "black_bean_ribs_serving",
+      "resolution": 128,
+      "cubes": 125,
+      "slots": {
+        "food": "food_black_bean_ribs",
+        "ware": "ware_bowl"
+      }
+    },
+    {
+      "key": "black_bean_ribs_on_black_gold_bowl",
+      "resolution": 128,
+      "cubes": 125,
+      "slots": {
+        "food": "food_black_bean_ribs",
+        "ware": "ware_black_gold_bowl"
+      }
+    },
+    {
+      "key": "black_bean_ribs_on_burgundy_bowl",
+      "resolution": 128,
+      "cubes": 125,
+      "slots": {
+        "food": "food_black_bean_ribs",
+        "ware": "ware_burgundy_bowl"
+      }
+    },
+    {
+      "key": "claypot_rice_serving",
+      "resolution": 128,
+      "cubes": 122,
+      "slots": {
+        "food": "food_claypot_rice",
+        "ware": "ware_bowl"
+      }
+    },
+    {
+      "key": "claypot_rice_on_black_gold_bowl",
+      "resolution": 128,
+      "cubes": 122,
+      "slots": {
+        "food": "food_claypot_rice",
+        "ware": "ware_black_gold_bowl"
+      }
+    },
+    {
+      "key": "claypot_rice_on_burgundy_bowl",
+      "resolution": 128,
+      "cubes": 122,
+      "slots": {
+        "food": "food_claypot_rice",
+        "ware": "ware_burgundy_bowl"
+      }
+    },
+    {
+      "key": "lions_head_serving",
+      "resolution": 128,
+      "cubes": 173,
+      "slots": {
+        "food": "food_lions_head",
+        "ware": "ware_bowl"
+      }
+    },
+    {
+      "key": "lions_head_on_black_gold_bowl",
+      "resolution": 128,
+      "cubes": 173,
+      "slots": {
+        "food": "food_lions_head",
+        "ware": "ware_black_gold_bowl"
+      }
+    },
+    {
+      "key": "lions_head_on_burgundy_bowl",
+      "resolution": 128,
+      "cubes": 173,
+      "slots": {
+        "food": "food_lions_head",
+        "ware": "ware_burgundy_bowl"
+      }
+    },
+    {
+      "key": "boiled_tofu_shreds_serving",
+      "resolution": 128,
+      "cubes": 154,
+      "slots": {
+        "food": "food_boiled_tofu_shreds",
+        "ware": "ware_bowl"
+      }
+    },
+    {
+      "key": "boiled_tofu_shreds_on_black_gold_bowl",
+      "resolution": 128,
+      "cubes": 154,
+      "slots": {
+        "food": "food_boiled_tofu_shreds",
+        "ware": "ware_black_gold_bowl"
+      }
+    },
+    {
+      "key": "boiled_tofu_shreds_on_burgundy_bowl",
+      "resolution": 128,
+      "cubes": 154,
+      "slots": {
+        "food": "food_boiled_tofu_shreds",
+        "ware": "ware_burgundy_bowl"
+      }
+    },
+    {
+      "key": "wensi_tofu_serving",
+      "resolution": 128,
+      "cubes": 158,
+      "slots": {
+        "food": "food_wensi_tofu",
+        "ware": "ware_bowl"
+      }
+    },
+    {
+      "key": "wensi_tofu_on_black_gold_bowl",
+      "resolution": 128,
+      "cubes": 158,
+      "slots": {
+        "food": "food_wensi_tofu",
+        "ware": "ware_black_gold_bowl"
+      }
+    },
+    {
+      "key": "wensi_tofu_on_burgundy_bowl",
+      "resolution": 128,
+      "cubes": 158,
+      "slots": {
+        "food": "food_wensi_tofu",
+        "ware": "ware_burgundy_bowl"
+      }
+    },
+    {
+      "key": "huaiyang_eel_serving",
+      "resolution": 128,
+      "cubes": 90,
+      "slots": {
+        "food": "food_huaiyang_eel",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "huaiyang_eel_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 90,
+      "slots": {
+        "food": "food_huaiyang_eel",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "huaiyang_eel_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 90,
+      "slots": {
+        "food": "food_huaiyang_eel",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "guo_bao_rou_serving",
+      "resolution": 128,
+      "cubes": 85,
+      "slots": {
+        "food": "food_guo_bao_rou",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "guo_bao_rou_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 85,
+      "slots": {
+        "food": "food_guo_bao_rou",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "guo_bao_rou_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 85,
+      "slots": {
+        "food": "food_guo_bao_rou",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "steamed_sea_bass_serving",
+      "resolution": 128,
+      "cubes": 85,
+      "slots": {
+        "food": "food_steamed_sea_bass",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "steamed_sea_bass_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 85,
+      "slots": {
+        "food": "food_steamed_sea_bass",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "steamed_sea_bass_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 85,
+      "slots": {
+        "food": "food_steamed_sea_bass",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "garlic_scallops_serving",
+      "resolution": 128,
+      "cubes": 101,
+      "slots": {
+        "food": "food_garlic_scallops",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "garlic_scallops_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 101,
+      "slots": {
+        "food": "food_garlic_scallops",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "garlic_scallops_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 101,
+      "slots": {
+        "food": "food_garlic_scallops",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "braised_prawns_serving",
+      "resolution": 128,
+      "cubes": 92,
+      "slots": {
+        "food": "food_braised_prawns",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "braised_prawns_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 92,
+      "slots": {
+        "food": "food_braised_prawns",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "braised_prawns_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 92,
+      "slots": {
+        "food": "food_braised_prawns",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "steak_serving",
+      "resolution": 128,
+      "cubes": 84,
+      "slots": {
+        "food": "food_steak",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "steak_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 84,
+      "slots": {
+        "food": "food_steak",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "steak_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 84,
+      "slots": {
+        "food": "food_steak",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "burger_serving",
+      "resolution": 128,
+      "cubes": 90,
+      "slots": {
+        "food": "food_burger",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "burger_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 90,
+      "slots": {
+        "food": "food_burger",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "burger_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 90,
+      "slots": {
+        "food": "food_burger",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "pizza_serving",
+      "resolution": 128,
+      "cubes": 91,
+      "slots": {
+        "food": "food_pizza",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "pizza_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 91,
+      "slots": {
+        "food": "food_pizza",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "pizza_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 91,
+      "slots": {
+        "food": "food_pizza",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "spaghetti_serving",
+      "resolution": 128,
+      "cubes": 117,
+      "slots": {
+        "food": "food_spaghetti",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "spaghetti_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 117,
+      "slots": {
+        "food": "food_spaghetti",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "spaghetti_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 117,
+      "slots": {
+        "food": "food_spaghetti",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "sandwich_serving",
+      "resolution": 128,
+      "cubes": 90,
+      "slots": {
+        "food": "food_sandwich",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "sandwich_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 90,
+      "slots": {
+        "food": "food_sandwich",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "sandwich_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 90,
+      "slots": {
+        "food": "food_sandwich",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "roast_chicken_serving",
+      "resolution": 128,
+      "cubes": 147,
+      "slots": {
+        "food": "food_roast_chicken",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "roast_chicken_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 147,
+      "slots": {
+        "food": "food_roast_chicken",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "roast_chicken_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 147,
+      "slots": {
+        "food": "food_roast_chicken",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "mushroom_soup_serving",
+      "resolution": 128,
+      "cubes": 123,
+      "slots": {
+        "food": "food_mushroom_soup",
+        "ware": "ware_bowl"
+      }
+    },
+    {
+      "key": "mushroom_soup_on_black_gold_bowl",
+      "resolution": 128,
+      "cubes": 123,
+      "slots": {
+        "food": "food_mushroom_soup",
+        "ware": "ware_black_gold_bowl"
+      }
+    },
+    {
+      "key": "mushroom_soup_on_burgundy_bowl",
+      "resolution": 128,
+      "cubes": 123,
+      "slots": {
+        "food": "food_mushroom_soup",
+        "ware": "ware_burgundy_bowl"
+      }
+    },
+    {
+      "key": "salad_serving",
+      "resolution": 128,
+      "cubes": 123,
+      "slots": {
+        "food": "food_salad",
+        "ware": "ware_bowl"
+      }
+    },
+    {
+      "key": "salad_on_black_gold_bowl",
+      "resolution": 128,
+      "cubes": 123,
+      "slots": {
+        "food": "food_salad",
+        "ware": "ware_black_gold_bowl"
+      }
+    },
+    {
+      "key": "salad_on_burgundy_bowl",
+      "resolution": 128,
+      "cubes": 123,
+      "slots": {
+        "food": "food_salad",
+        "ware": "ware_burgundy_bowl"
+      }
+    },
+    {
+      "key": "baozi_serving",
+      "resolution": 128,
+      "cubes": 168,
+      "slots": {
+        "food": "food_baozi",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "baozi_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 168,
+      "slots": {
+        "food": "food_baozi",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "baozi_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 168,
+      "slots": {
+        "food": "food_baozi",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "spring_rolls_serving",
+      "resolution": 128,
+      "cubes": 82,
+      "slots": {
+        "food": "food_spring_rolls",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "spring_rolls_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 82,
+      "slots": {
+        "food": "food_spring_rolls",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "spring_rolls_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 82,
+      "slots": {
+        "food": "food_spring_rolls",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "chicken_nuggets_serving",
+      "resolution": 128,
+      "cubes": 88,
+      "slots": {
+        "food": "food_chicken_nuggets",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "chicken_nuggets_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 88,
+      "slots": {
+        "food": "food_chicken_nuggets",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "chicken_nuggets_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 88,
+      "slots": {
+        "food": "food_chicken_nuggets",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "fries_serving",
+      "resolution": 128,
+      "cubes": 84,
+      "slots": {
+        "food": "food_fries",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "fries_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 84,
+      "slots": {
+        "food": "food_fries",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "fries_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 84,
+      "slots": {
+        "food": "food_fries",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "hotdog_serving",
+      "resolution": 128,
+      "cubes": 81,
+      "slots": {
+        "food": "food_hotdog",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "hotdog_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 81,
+      "slots": {
+        "food": "food_hotdog",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "hotdog_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 81,
+      "slots": {
+        "food": "food_hotdog",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "skewers_serving",
+      "resolution": 128,
+      "cubes": 92,
+      "slots": {
+        "food": "food_skewers",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "skewers_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 92,
+      "slots": {
+        "food": "food_skewers",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "skewers_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 92,
+      "slots": {
+        "food": "food_skewers",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "green_tea_on_glass",
+      "resolution": 128,
+      "cubes": 52,
+      "slots": {
+        "food": "food_green_tea",
+        "ware": "ware_glass"
+      }
+    },
+    {
+      "key": "green_tea_serving",
+      "resolution": 128,
+      "cubes": 55,
+      "slots": {
+        "food": "food_green_tea",
+        "ware": "ware_mug"
+      }
+    },
+    {
+      "key": "black_coffee_on_glass",
+      "resolution": 128,
+      "cubes": 52,
+      "slots": {
+        "food": "food_black_coffee",
+        "ware": "ware_glass"
+      }
+    },
+    {
+      "key": "black_coffee_serving",
+      "resolution": 128,
+      "cubes": 55,
+      "slots": {
+        "food": "food_black_coffee",
+        "ware": "ware_mug"
+      }
+    },
+    {
+      "key": "milk_tea_serving",
+      "resolution": 128,
+      "cubes": 57,
+      "slots": {
+        "food": "food_milk_tea",
+        "ware": "ware_glass"
+      }
+    },
+    {
+      "key": "milk_tea_on_mug",
+      "resolution": 128,
+      "cubes": 60,
+      "slots": {
+        "food": "food_milk_tea",
+        "ware": "ware_mug"
+      }
+    },
+    {
+      "key": "strawberry_shake_serving",
+      "resolution": 128,
+      "cubes": 59,
+      "slots": {
+        "food": "food_strawberry_shake",
+        "ware": "ware_glass"
+      }
+    },
+    {
+      "key": "strawberry_shake_on_mug",
+      "resolution": 128,
+      "cubes": 62,
+      "slots": {
+        "food": "food_strawberry_shake",
+        "ware": "ware_mug"
+      }
+    },
+    {
+      "key": "tomato_juice_serving",
+      "resolution": 128,
+      "cubes": 53,
+      "slots": {
+        "food": "food_tomato_juice",
+        "ware": "ware_glass"
+      }
+    },
+    {
+      "key": "tomato_juice_on_mug",
+      "resolution": 128,
+      "cubes": 56,
+      "slots": {
+        "food": "food_tomato_juice",
+        "ware": "ware_mug"
+      }
+    },
+    {
+      "key": "hot_chocolate_on_glass",
+      "resolution": 128,
+      "cubes": 57,
+      "slots": {
+        "food": "food_hot_chocolate",
+        "ware": "ware_glass"
+      }
+    },
+    {
+      "key": "hot_chocolate_serving",
+      "resolution": 128,
+      "cubes": 60,
+      "slots": {
+        "food": "food_hot_chocolate",
+        "ware": "ware_mug"
+      }
+    },
+    {
+      "key": "strawberry_cake_serving",
+      "resolution": 128,
+      "cubes": 119,
+      "slots": {
+        "food": "food_strawberry_cake",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "strawberry_cake_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 119,
+      "slots": {
+        "food": "food_strawberry_cake",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "strawberry_cake_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 119,
+      "slots": {
+        "food": "food_strawberry_cake",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "chocolate_cake_serving",
+      "resolution": 128,
+      "cubes": 116,
+      "slots": {
+        "food": "food_chocolate_cake",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "chocolate_cake_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 116,
+      "slots": {
+        "food": "food_chocolate_cake",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "chocolate_cake_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 116,
+      "slots": {
+        "food": "food_chocolate_cake",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "cheesecake_serving",
+      "resolution": 128,
+      "cubes": 115,
+      "slots": {
+        "food": "food_cheesecake",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "cheesecake_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 115,
+      "slots": {
+        "food": "food_cheesecake",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "cheesecake_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 115,
+      "slots": {
+        "food": "food_cheesecake",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "pudding_serving",
+      "resolution": 128,
+      "cubes": 154,
+      "slots": {
+        "food": "food_pudding",
+        "ware": "ware_bowl"
+      }
+    },
+    {
+      "key": "pudding_on_black_gold_bowl",
+      "resolution": 128,
+      "cubes": 154,
+      "slots": {
+        "food": "food_pudding",
+        "ware": "ware_black_gold_bowl"
+      }
+    },
+    {
+      "key": "pudding_on_burgundy_bowl",
+      "resolution": 128,
+      "cubes": 154,
+      "slots": {
+        "food": "food_pudding",
+        "ware": "ware_burgundy_bowl"
+      }
+    },
+    {
+      "key": "ice_cream_serving",
+      "resolution": 128,
+      "cubes": 155,
+      "slots": {
+        "food": "food_ice_cream",
+        "ware": "ware_bowl"
+      }
+    },
+    {
+      "key": "ice_cream_on_black_gold_bowl",
+      "resolution": 128,
+      "cubes": 155,
+      "slots": {
+        "food": "food_ice_cream",
+        "ware": "ware_black_gold_bowl"
+      }
+    },
+    {
+      "key": "ice_cream_on_burgundy_bowl",
+      "resolution": 128,
+      "cubes": 155,
+      "slots": {
+        "food": "food_ice_cream",
+        "ware": "ware_burgundy_bowl"
+      }
+    },
+    {
+      "key": "donut_serving",
+      "resolution": 128,
+      "cubes": 85,
+      "slots": {
+        "food": "food_donut",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "donut_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 85,
+      "slots": {
+        "food": "food_donut",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "donut_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 85,
+      "slots": {
+        "food": "food_donut",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "cookies_serving",
+      "resolution": 128,
+      "cubes": 87,
+      "slots": {
+        "food": "food_cookies",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "cookies_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 87,
+      "slots": {
+        "food": "food_cookies",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "cookies_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 87,
+      "slots": {
+        "food": "food_cookies",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "egg_tart_serving",
+      "resolution": 128,
+      "cubes": 192,
+      "slots": {
+        "food": "food_egg_tart",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "egg_tart_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 192,
+      "slots": {
+        "food": "food_egg_tart",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "egg_tart_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 192,
+      "slots": {
+        "food": "food_egg_tart",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "roast_goose_on_plate",
+      "resolution": 128,
+      "cubes": 189,
+      "slots": {
+        "food": "food_roast_goose",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "roast_goose_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 189,
+      "slots": {
+        "food": "food_roast_goose",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "roast_goose_serving",
+      "resolution": 128,
+      "cubes": 189,
+      "slots": {
+        "food": "food_roast_goose",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "shrimp_rice_rolls_on_plate",
+      "resolution": 128,
+      "cubes": 128,
+      "slots": {
+        "food": "food_shrimp_rice_rolls",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "shrimp_rice_rolls_serving",
+      "resolution": 128,
+      "cubes": 128,
+      "slots": {
+        "food": "food_shrimp_rice_rolls",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "shrimp_rice_rolls_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 128,
+      "slots": {
+        "food": "food_shrimp_rice_rolls",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "dongpo_pork_on_plate",
+      "resolution": 128,
+      "cubes": 80,
+      "slots": {
+        "food": "food_dongpo_pork",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "dongpo_pork_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 80,
+      "slots": {
+        "food": "food_dongpo_pork",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "dongpo_pork_serving",
+      "resolution": 128,
+      "cubes": 80,
+      "slots": {
+        "food": "food_dongpo_pork",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "peking_duck_on_plate",
+      "resolution": 128,
+      "cubes": 108,
+      "slots": {
+        "food": "food_peking_duck",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "peking_duck_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 108,
+      "slots": {
+        "food": "food_peking_duck",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "peking_duck_serving",
+      "resolution": 128,
+      "cubes": 108,
+      "slots": {
+        "food": "food_peking_duck",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "buddha_jumps_wall_on_bowl",
+      "resolution": 128,
+      "cubes": 183,
+      "slots": {
+        "food": "food_buddha_jumps_wall",
+        "ware": "ware_bowl"
+      }
+    },
+    {
+      "key": "buddha_jumps_wall_serving",
+      "resolution": 128,
+      "cubes": 183,
+      "slots": {
+        "food": "food_buddha_jumps_wall",
+        "ware": "ware_black_gold_bowl"
+      }
+    },
+    {
+      "key": "buddha_jumps_wall_on_burgundy_bowl",
+      "resolution": 128,
+      "cubes": 183,
+      "slots": {
+        "food": "food_buddha_jumps_wall",
+        "ware": "ware_burgundy_bowl"
+      }
+    },
+    {
+      "key": "boeuf_bourguignon_on_bowl",
+      "resolution": 128,
+      "cubes": 135,
+      "slots": {
+        "food": "food_boeuf_bourguignon",
+        "ware": "ware_bowl"
+      }
+    },
+    {
+      "key": "boeuf_bourguignon_serving",
+      "resolution": 128,
+      "cubes": 135,
+      "slots": {
+        "food": "food_boeuf_bourguignon",
+        "ware": "ware_black_gold_bowl"
+      }
+    },
+    {
+      "key": "boeuf_bourguignon_on_burgundy_bowl",
+      "resolution": 128,
+      "cubes": 135,
+      "slots": {
+        "food": "food_boeuf_bourguignon",
+        "ware": "ware_burgundy_bowl"
+      }
+    },
+    {
+      "key": "french_onion_soup_on_bowl",
+      "resolution": 128,
+      "cubes": 139,
+      "slots": {
+        "food": "food_french_onion_soup",
+        "ware": "ware_bowl"
+      }
+    },
+    {
+      "key": "french_onion_soup_serving",
+      "resolution": 128,
+      "cubes": 139,
+      "slots": {
+        "food": "food_french_onion_soup",
+        "ware": "ware_black_gold_bowl"
+      }
+    },
+    {
+      "key": "french_onion_soup_on_burgundy_bowl",
+      "resolution": 128,
+      "cubes": 139,
+      "slots": {
+        "food": "food_french_onion_soup",
+        "ware": "ware_burgundy_bowl"
+      }
+    },
+    {
+      "key": "sushi_platter_on_plate",
+      "resolution": 128,
+      "cubes": 156,
+      "slots": {
+        "food": "food_sushi_platter",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "sushi_platter_serving",
+      "resolution": 128,
+      "cubes": 156,
+      "slots": {
+        "food": "food_sushi_platter",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "sushi_platter_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 156,
+      "slots": {
+        "food": "food_sushi_platter",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "sashimi_platter_on_plate",
+      "resolution": 128,
+      "cubes": 104,
+      "slots": {
+        "food": "food_sashimi_platter",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "sashimi_platter_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 104,
+      "slots": {
+        "food": "food_sashimi_platter",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "sashimi_platter_serving",
+      "resolution": 128,
+      "cubes": 104,
+      "slots": {
+        "food": "food_sashimi_platter",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "tempura_on_plate",
+      "resolution": 128,
+      "cubes": 110,
+      "slots": {
+        "food": "food_tempura",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "tempura_serving",
+      "resolution": 128,
+      "cubes": 110,
+      "slots": {
+        "food": "food_tempura",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "tempura_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 110,
+      "slots": {
+        "food": "food_tempura",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "tonkotsu_ramen_on_bowl",
+      "resolution": 128,
+      "cubes": 220,
+      "slots": {
+        "food": "food_tonkotsu_ramen",
+        "ware": "ware_bowl"
+      }
+    },
+    {
+      "key": "tonkotsu_ramen_serving",
+      "resolution": 128,
+      "cubes": 220,
+      "slots": {
+        "food": "food_tonkotsu_ramen",
+        "ware": "ware_black_gold_bowl"
+      }
+    },
+    {
+      "key": "tonkotsu_ramen_on_burgundy_bowl",
+      "resolution": 128,
+      "cubes": 220,
+      "slots": {
+        "food": "food_tonkotsu_ramen",
+        "ware": "ware_burgundy_bowl"
+      }
+    },
+    {
+      "key": "unagi_don_on_bowl",
+      "resolution": 128,
+      "cubes": 135,
+      "slots": {
+        "food": "food_unagi_don",
+        "ware": "ware_bowl"
+      }
+    },
+    {
+      "key": "unagi_don_on_black_gold_bowl",
+      "resolution": 128,
+      "cubes": 135,
+      "slots": {
+        "food": "food_unagi_don",
+        "ware": "ware_black_gold_bowl"
+      }
+    },
+    {
+      "key": "unagi_don_serving",
+      "resolution": 128,
+      "cubes": 135,
+      "slots": {
+        "food": "food_unagi_don",
+        "ware": "ware_burgundy_bowl"
+      }
+    },
+    {
+      "key": "okonomiyaki_on_plate",
+      "resolution": 128,
+      "cubes": 113,
+      "slots": {
+        "food": "food_okonomiyaki",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "okonomiyaki_serving",
+      "resolution": 128,
+      "cubes": 113,
+      "slots": {
+        "food": "food_okonomiyaki",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "okonomiyaki_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 113,
+      "slots": {
+        "food": "food_okonomiyaki",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "hotpot_lamb_on_plate",
+      "resolution": 128,
+      "cubes": 153,
+      "slots": {
+        "food": "food_hotpot_lamb",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "hotpot_lamb_serving",
+      "resolution": 128,
+      "cubes": 153,
+      "slots": {
+        "food": "food_hotpot_lamb",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "hotpot_lamb_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 153,
+      "slots": {
+        "food": "food_hotpot_lamb",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "hotpot_beef_on_plate",
+      "resolution": 128,
+      "cubes": 153,
+      "slots": {
+        "food": "food_hotpot_beef",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "hotpot_beef_serving",
+      "resolution": 128,
+      "cubes": 153,
+      "slots": {
+        "food": "food_hotpot_beef",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "hotpot_beef_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 153,
+      "slots": {
+        "food": "food_hotpot_beef",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "peacock_platter_on_plate",
+      "resolution": 128,
+      "cubes": 156,
+      "slots": {
+        "food": "food_peacock_platter",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "peacock_platter_serving",
+      "resolution": 128,
+      "cubes": 156,
+      "slots": {
+        "food": "food_peacock_platter",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "peacock_platter_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 156,
+      "slots": {
+        "food": "food_peacock_platter",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "stir_fried_yellow_beef_on_plate",
+      "resolution": 128,
+      "cubes": 97,
+      "slots": {
+        "food": "food_stir_fried_yellow_beef",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "stir_fried_yellow_beef_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 97,
+      "slots": {
+        "food": "food_stir_fried_yellow_beef",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "stir_fried_yellow_beef_serving",
+      "resolution": 128,
+      "cubes": 97,
+      "slots": {
+        "food": "food_stir_fried_yellow_beef",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "truffle_abalone_on_plate",
+      "resolution": 128,
+      "cubes": 181,
+      "slots": {
+        "food": "food_truffle_abalone",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "truffle_abalone_serving",
+      "resolution": 128,
+      "cubes": 181,
+      "slots": {
+        "food": "food_truffle_abalone",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "truffle_abalone_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 181,
+      "slots": {
+        "food": "food_truffle_abalone",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "huaiyang_sanding_bao_serving",
+      "resolution": 128,
+      "cubes": 187,
+      "slots": {
+        "food": "food_huaiyang_sanding_bao",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "huaiyang_sanding_bao_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 187,
+      "slots": {
+        "food": "food_huaiyang_sanding_bao",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "huaiyang_sanding_bao_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 187,
+      "slots": {
+        "food": "food_huaiyang_sanding_bao",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "fruit_platter_on_plate",
+      "resolution": 128,
+      "cubes": 165,
+      "slots": {
+        "food": "food_fruit_platter",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "fruit_platter_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 165,
+      "slots": {
+        "food": "food_fruit_platter",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "fruit_platter_serving",
+      "resolution": 128,
+      "cubes": 165,
+      "slots": {
+        "food": "food_fruit_platter",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "snow_pear_tremella_on_bowl",
+      "resolution": 128,
+      "cubes": 181,
+      "slots": {
+        "food": "food_snow_pear_tremella",
+        "ware": "ware_bowl"
+      }
+    },
+    {
+      "key": "snow_pear_tremella_serving",
+      "resolution": 128,
+      "cubes": 181,
+      "slots": {
+        "food": "food_snow_pear_tremella",
+        "ware": "ware_black_gold_bowl"
+      }
+    },
+    {
+      "key": "snow_pear_tremella_on_burgundy_bowl",
+      "resolution": 128,
+      "cubes": 181,
+      "slots": {
+        "food": "food_snow_pear_tremella",
+        "ware": "ware_burgundy_bowl"
+      }
+    },
+    {
+      "key": "pickled_greens_pork_serving",
+      "resolution": 128,
+      "cubes": 129,
+      "slots": {
+        "food": "food_pickled_greens_pork",
+        "ware": "ware_bowl"
+      }
+    },
+    {
+      "key": "pickled_greens_pork_on_black_gold_bowl",
+      "resolution": 128,
+      "cubes": 129,
+      "slots": {
+        "food": "food_pickled_greens_pork",
+        "ware": "ware_black_gold_bowl"
+      }
+    },
+    {
+      "key": "pickled_greens_pork_on_burgundy_bowl",
+      "resolution": 128,
+      "cubes": 129,
+      "slots": {
+        "food": "food_pickled_greens_pork",
+        "ware": "ware_burgundy_bowl"
+      }
+    },
+    {
+      "key": "jujube_lotus_soup_on_bowl",
+      "resolution": 128,
+      "cubes": 200,
+      "slots": {
+        "food": "food_jujube_lotus_soup",
+        "ware": "ware_bowl"
+      }
+    },
+    {
+      "key": "jujube_lotus_soup_on_black_gold_bowl",
+      "resolution": 128,
+      "cubes": 200,
+      "slots": {
+        "food": "food_jujube_lotus_soup",
+        "ware": "ware_black_gold_bowl"
+      }
+    },
+    {
+      "key": "jujube_lotus_soup_serving",
+      "resolution": 128,
+      "cubes": 200,
+      "slots": {
+        "food": "food_jujube_lotus_soup",
+        "ware": "ware_burgundy_bowl"
+      }
+    },
+    {
+      "key": "takoyaki_serving",
+      "resolution": 128,
+      "cubes": 238,
+      "slots": {
+        "food": "food_takoyaki",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "takoyaki_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 238,
+      "slots": {
+        "food": "food_takoyaki",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "takoyaki_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 238,
+      "slots": {
+        "food": "food_takoyaki",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "yakisoba_on_plate",
+      "resolution": 128,
+      "cubes": 148,
+      "slots": {
+        "food": "food_yakisoba",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "yakisoba_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 148,
+      "slots": {
+        "food": "food_yakisoba",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "yakisoba_serving",
+      "resolution": 128,
+      "cubes": 148,
+      "slots": {
+        "food": "food_yakisoba",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "grilled_squid_on_plate",
+      "resolution": 128,
+      "cubes": 119,
+      "slots": {
+        "food": "food_grilled_squid",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "grilled_squid_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 119,
+      "slots": {
+        "food": "food_grilled_squid",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "grilled_squid_serving",
+      "resolution": 128,
+      "cubes": 119,
+      "slots": {
+        "food": "food_grilled_squid",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "oden_on_bowl",
+      "resolution": 128,
+      "cubes": 133,
+      "slots": {
+        "food": "food_oden",
+        "ware": "ware_bowl"
+      }
+    },
+    {
+      "key": "oden_serving",
+      "resolution": 128,
+      "cubes": 133,
+      "slots": {
+        "food": "food_oden",
+        "ware": "ware_black_gold_bowl"
+      }
+    },
+    {
+      "key": "oden_on_burgundy_bowl",
+      "resolution": 128,
+      "cubes": 133,
+      "slots": {
+        "food": "food_oden",
+        "ware": "ware_burgundy_bowl"
+      }
+    },
+    {
+      "key": "dorayaki_serving",
+      "resolution": 128,
+      "cubes": 180,
+      "slots": {
+        "food": "food_dorayaki",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "dorayaki_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 180,
+      "slots": {
+        "food": "food_dorayaki",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "dorayaki_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 180,
+      "slots": {
+        "food": "food_dorayaki",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "wagyu_rice_on_bowl",
+      "resolution": 128,
+      "cubes": 146,
+      "slots": {
+        "food": "food_wagyu_rice",
+        "ware": "ware_bowl"
+      }
+    },
+    {
+      "key": "wagyu_rice_on_black_gold_bowl",
+      "resolution": 128,
+      "cubes": 146,
+      "slots": {
+        "food": "food_wagyu_rice",
+        "ware": "ware_black_gold_bowl"
+      }
+    },
+    {
+      "key": "wagyu_rice_serving",
+      "resolution": 128,
+      "cubes": 146,
+      "slots": {
+        "food": "food_wagyu_rice",
+        "ware": "ware_burgundy_bowl"
+      }
+    },
+    {
+      "key": "gunkan_sushi_on_plate",
+      "resolution": 128,
+      "cubes": 222,
+      "slots": {
+        "food": "food_gunkan_sushi",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "gunkan_sushi_serving",
+      "resolution": 128,
+      "cubes": 222,
+      "slots": {
+        "food": "food_gunkan_sushi",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "gunkan_sushi_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 222,
+      "slots": {
+        "food": "food_gunkan_sushi",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "red_bean_cake_serving",
+      "resolution": 128,
+      "cubes": 114,
+      "slots": {
+        "food": "food_red_bean_cake",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "red_bean_cake_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 114,
+      "slots": {
+        "food": "food_red_bean_cake",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "red_bean_cake_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 114,
+      "slots": {
+        "food": "food_red_bean_cake",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "mung_bean_soup_serving",
+      "resolution": 128,
+      "cubes": 200,
+      "slots": {
+        "food": "food_mung_bean_soup",
+        "ware": "ware_bowl"
+      }
+    },
+    {
+      "key": "mung_bean_soup_on_black_gold_bowl",
+      "resolution": 128,
+      "cubes": 200,
+      "slots": {
+        "food": "food_mung_bean_soup",
+        "ware": "ware_black_gold_bowl"
+      }
+    },
+    {
+      "key": "mung_bean_soup_on_burgundy_bowl",
+      "resolution": 128,
+      "cubes": 200,
+      "slots": {
+        "food": "food_mung_bean_soup",
+        "ware": "ware_burgundy_bowl"
+      }
+    },
+    {
+      "key": "baijiu_serving",
+      "resolution": 128,
+      "cubes": 89,
+      "slots": {
+        "food": "food_baijiu",
+        "ware": "ware_glass"
+      }
+    },
+    {
+      "key": "baijiu_on_mug",
+      "resolution": 128,
+      "cubes": 92,
+      "slots": {
+        "food": "food_baijiu",
+        "ware": "ware_mug"
+      }
+    },
+    {
+      "key": "premium_baijiu_serving",
+      "resolution": 128,
+      "cubes": 89,
+      "slots": {
+        "food": "food_premium_baijiu",
+        "ware": "ware_glass"
+      }
+    },
+    {
+      "key": "premium_baijiu_on_mug",
+      "resolution": 128,
+      "cubes": 92,
+      "slots": {
+        "food": "food_premium_baijiu",
+        "ware": "ware_mug"
+      }
+    },
+    {
+      "key": "premium_red_wine_serving",
+      "resolution": 128,
+      "cubes": 89,
+      "slots": {
+        "food": "food_premium_red_wine",
+        "ware": "ware_glass"
+      }
+    },
+    {
+      "key": "premium_red_wine_on_mug",
+      "resolution": 128,
+      "cubes": 92,
+      "slots": {
+        "food": "food_premium_red_wine",
+        "ware": "ware_mug"
+      }
+    },
+    {
+      "key": "premium_red_wine_on_wine_glass",
+      "resolution": 128,
+      "cubes": 168,
+      "slots": {
+        "food": "food_premium_red_wine",
+        "ware": "ware_wine_glass"
+      }
+    },
+    {
+      "key": "cola_serving",
+      "resolution": 128,
+      "cubes": 137,
+      "slots": {
+        "food": "food_cola",
+        "ware": "ware_glass"
+      }
+    },
+    {
+      "key": "cola_on_mug",
+      "resolution": 128,
+      "cubes": 140,
+      "slots": {
+        "food": "food_cola",
+        "ware": "ware_mug"
+      }
+    },
+    {
+      "key": "steamed_grouper_on_plate",
+      "resolution": 128,
+      "cubes": 154,
+      "slots": {
+        "food": "food_steamed_grouper",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "steamed_grouper_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 154,
+      "slots": {
+        "food": "food_steamed_grouper",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "steamed_grouper_serving",
+      "resolution": 128,
+      "cubes": 154,
+      "slots": {
+        "food": "food_steamed_grouper",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "poached_tiger_prawns_on_plate",
+      "resolution": 128,
+      "cubes": 251,
+      "slots": {
+        "food": "food_poached_tiger_prawns",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "poached_tiger_prawns_serving",
+      "resolution": 128,
+      "cubes": 251,
+      "slots": {
+        "food": "food_poached_tiger_prawns",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "poached_tiger_prawns_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 251,
+      "slots": {
+        "food": "food_poached_tiger_prawns",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "smashed_cucumber_serving",
+      "resolution": 128,
+      "cubes": 103,
+      "slots": {
+        "food": "food_smashed_cucumber",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "smashed_cucumber_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 103,
+      "slots": {
+        "food": "food_smashed_cucumber",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "smashed_cucumber_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 103,
+      "slots": {
+        "food": "food_smashed_cucumber",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "vegetables_in_superior_broth_serving",
+      "resolution": 128,
+      "cubes": 180,
+      "slots": {
+        "food": "food_vegetables_in_superior_broth",
+        "ware": "ware_bowl"
+      }
+    },
+    {
+      "key": "vegetables_in_superior_broth_on_black_gold_bowl",
+      "resolution": 128,
+      "cubes": 180,
+      "slots": {
+        "food": "food_vegetables_in_superior_broth",
+        "ware": "ware_black_gold_bowl"
+      }
+    },
+    {
+      "key": "vegetables_in_superior_broth_on_burgundy_bowl",
+      "resolution": 128,
+      "cubes": 180,
+      "slots": {
+        "food": "food_vegetables_in_superior_broth",
+        "ware": "ware_burgundy_bowl"
+      }
+    },
+    {
+      "key": "tiramisu_on_plate",
+      "resolution": 128,
+      "cubes": 88,
+      "slots": {
+        "food": "food_tiramisu",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "tiramisu_serving",
+      "resolution": 128,
+      "cubes": 88,
+      "slots": {
+        "food": "food_tiramisu",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "tiramisu_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 88,
+      "slots": {
+        "food": "food_tiramisu",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "daifuku_serving",
+      "resolution": 128,
+      "cubes": 199,
+      "slots": {
+        "food": "food_daifuku",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "daifuku_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 199,
+      "slots": {
+        "food": "food_daifuku",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "daifuku_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 199,
+      "slots": {
+        "food": "food_daifuku",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "mille_feuille_on_plate",
+      "resolution": 128,
+      "cubes": 97,
+      "slots": {
+        "food": "food_mille_feuille",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "mille_feuille_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 97,
+      "slots": {
+        "food": "food_mille_feuille",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "mille_feuille_serving",
+      "resolution": 128,
+      "cubes": 97,
+      "slots": {
+        "food": "food_mille_feuille",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "lobster_bisque_on_bowl",
+      "resolution": 128,
+      "cubes": 135,
+      "slots": {
+        "food": "food_lobster_bisque",
+        "ware": "ware_bowl"
+      }
+    },
+    {
+      "key": "lobster_bisque_serving",
+      "resolution": 128,
+      "cubes": 135,
+      "slots": {
+        "food": "food_lobster_bisque",
+        "ware": "ware_black_gold_bowl"
+      }
+    },
+    {
+      "key": "lobster_bisque_on_burgundy_bowl",
+      "resolution": 128,
+      "cubes": 135,
+      "slots": {
+        "food": "food_lobster_bisque",
+        "ware": "ware_burgundy_bowl"
+      }
+    },
+    {
+      "key": "chicken_cordon_bleu_on_plate",
+      "resolution": 128,
+      "cubes": 197,
+      "slots": {
+        "food": "food_chicken_cordon_bleu",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "chicken_cordon_bleu_serving",
+      "resolution": 128,
+      "cubes": 197,
+      "slots": {
+        "food": "food_chicken_cordon_bleu",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "chicken_cordon_bleu_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 197,
+      "slots": {
+        "food": "food_chicken_cordon_bleu",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "pan_seared_sole_on_plate",
+      "resolution": 128,
+      "cubes": 137,
+      "slots": {
+        "food": "food_pan_seared_sole",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "pan_seared_sole_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 137,
+      "slots": {
+        "food": "food_pan_seared_sole",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "pan_seared_sole_serving",
+      "resolution": 128,
+      "cubes": 137,
+      "slots": {
+        "food": "food_pan_seared_sole",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "beef_wellington_on_plate",
+      "resolution": 128,
+      "cubes": 181,
+      "slots": {
+        "food": "food_beef_wellington",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "beef_wellington_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 181,
+      "slots": {
+        "food": "food_beef_wellington",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "beef_wellington_serving",
+      "resolution": 128,
+      "cubes": 181,
+      "slots": {
+        "food": "food_beef_wellington",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "herb_roasted_lamb_rack_on_plate",
+      "resolution": 128,
+      "cubes": 194,
+      "slots": {
+        "food": "food_herb_roasted_lamb_rack",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "herb_roasted_lamb_rack_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 194,
+      "slots": {
+        "food": "food_herb_roasted_lamb_rack",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "herb_roasted_lamb_rack_serving",
+      "resolution": 128,
+      "cubes": 194,
+      "slots": {
+        "food": "food_herb_roasted_lamb_rack",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "wild_mushroom_risotto_on_bowl",
+      "resolution": 128,
+      "cubes": 188,
+      "slots": {
+        "food": "food_wild_mushroom_risotto",
+        "ware": "ware_bowl"
+      }
+    },
+    {
+      "key": "wild_mushroom_risotto_serving",
+      "resolution": 128,
+      "cubes": 188,
+      "slots": {
+        "food": "food_wild_mushroom_risotto",
+        "ware": "ware_black_gold_bowl"
+      }
+    },
+    {
+      "key": "wild_mushroom_risotto_on_burgundy_bowl",
+      "resolution": 128,
+      "cubes": 188,
+      "slots": {
+        "food": "food_wild_mushroom_risotto",
+        "ware": "ware_burgundy_bowl"
+      }
+    },
+    {
+      "key": "lobster_thermidor_on_plate",
+      "resolution": 128,
+      "cubes": 179,
+      "slots": {
+        "food": "food_lobster_thermidor",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "lobster_thermidor_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 179,
+      "slots": {
+        "food": "food_lobster_thermidor",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "lobster_thermidor_serving",
+      "resolution": 128,
+      "cubes": 179,
+      "slots": {
+        "food": "food_lobster_thermidor",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "caviar_blini_on_plate",
+      "resolution": 128,
+      "cubes": 228,
+      "slots": {
+        "food": "food_caviar_blini",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "caviar_blini_serving",
+      "resolution": 128,
+      "cubes": 228,
+      "slots": {
+        "food": "food_caviar_blini",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "caviar_blini_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 228,
+      "slots": {
+        "food": "food_caviar_blini",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "creme_brulee_on_bowl",
+      "resolution": 128,
+      "cubes": 151,
+      "slots": {
+        "food": "food_creme_brulee",
+        "ware": "ware_bowl"
+      }
+    },
+    {
+      "key": "creme_brulee_on_black_gold_bowl",
+      "resolution": 128,
+      "cubes": 151,
+      "slots": {
+        "food": "food_creme_brulee",
+        "ware": "ware_black_gold_bowl"
+      }
+    },
+    {
+      "key": "creme_brulee_serving",
+      "resolution": 128,
+      "cubes": 151,
+      "slots": {
+        "food": "food_creme_brulee",
+        "ware": "ware_burgundy_bowl"
+      }
+    },
+    {
+      "key": "black_truffle_foie_gras_on_plate",
+      "resolution": 128,
+      "cubes": 169,
+      "slots": {
+        "food": "food_black_truffle_foie_gras",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "black_truffle_foie_gras_serving",
+      "resolution": 128,
+      "cubes": 169,
+      "slots": {
+        "food": "food_black_truffle_foie_gras",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "black_truffle_foie_gras_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 169,
+      "slots": {
+        "food": "food_black_truffle_foie_gras",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "lamb_slices_on_plate",
+      "resolution": 128,
+      "cubes": 146,
+      "slots": {
+        "food": "food_lamb_slices",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "lamb_slices_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 146,
+      "slots": {
+        "food": "food_lamb_slices",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "lamb_slices_serving",
+      "resolution": 128,
+      "cubes": 146,
+      "slots": {
+        "food": "food_lamb_slices",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "beef_slices_on_plate",
+      "resolution": 128,
+      "cubes": 146,
+      "slots": {
+        "food": "food_beef_slices",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "beef_slices_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 146,
+      "slots": {
+        "food": "food_beef_slices",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "beef_slices_serving",
+      "resolution": 128,
+      "cubes": 146,
+      "slots": {
+        "food": "food_beef_slices",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "tripe_platter_on_plate",
+      "resolution": 128,
+      "cubes": 102,
+      "slots": {
+        "food": "food_tripe_platter",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "tripe_platter_serving",
+      "resolution": 128,
+      "cubes": 102,
+      "slots": {
+        "food": "food_tripe_platter",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "tripe_platter_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 102,
+      "slots": {
+        "food": "food_tripe_platter",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "frozen_tofu_platter_on_plate",
+      "resolution": 128,
+      "cubes": 102,
+      "slots": {
+        "food": "food_frozen_tofu_platter",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "frozen_tofu_platter_serving",
+      "resolution": 128,
+      "cubes": 102,
+      "slots": {
+        "food": "food_frozen_tofu_platter",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "frozen_tofu_platter_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 102,
+      "slots": {
+        "food": "food_frozen_tofu_platter",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "mushroom_platter_on_plate",
+      "resolution": 128,
+      "cubes": 159,
+      "slots": {
+        "food": "food_mushroom_platter",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "mushroom_platter_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 159,
+      "slots": {
+        "food": "food_mushroom_platter",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "mushroom_platter_serving",
+      "resolution": 128,
+      "cubes": 159,
+      "slots": {
+        "food": "food_mushroom_platter",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "greens_platter_on_plate",
+      "resolution": 128,
+      "cubes": 170,
+      "slots": {
+        "food": "food_greens_platter",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "greens_platter_on_black_gold_plate",
+      "resolution": 128,
+      "cubes": 170,
+      "slots": {
+        "food": "food_greens_platter",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "greens_platter_serving",
+      "resolution": 128,
+      "cubes": 170,
+      "slots": {
+        "food": "food_greens_platter",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "vermicelli_platter_on_plate",
+      "resolution": 128,
+      "cubes": 164,
+      "slots": {
+        "food": "food_vermicelli_platter",
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "vermicelli_platter_serving",
+      "resolution": 128,
+      "cubes": 164,
+      "slots": {
+        "food": "food_vermicelli_platter",
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "vermicelli_platter_on_burgundy_platter",
+      "resolution": 128,
+      "cubes": 164,
+      "slots": {
+        "food": "food_vermicelli_platter",
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "sesame_dip_on_bowl",
+      "resolution": 128,
+      "cubes": 120,
+      "slots": {
+        "food": "food_sesame_dip",
+        "ware": "ware_bowl"
+      }
+    },
+    {
+      "key": "sesame_dip_on_black_gold_bowl",
+      "resolution": 128,
+      "cubes": 120,
+      "slots": {
+        "food": "food_sesame_dip",
+        "ware": "ware_black_gold_bowl"
+      }
+    },
+    {
+      "key": "sesame_dip_serving",
+      "resolution": 128,
+      "cubes": 120,
+      "slots": {
+        "food": "food_sesame_dip",
+        "ware": "ware_burgundy_bowl"
+      }
+    },
+    {
+      "key": "plate",
+      "resolution": 128,
+      "cubes": 66,
+      "slots": {
+        "ware": "ware_plate"
+      }
+    },
+    {
+      "key": "bowl",
+      "resolution": 128,
+      "cubes": 94,
+      "slots": {
+        "ware": "ware_bowl"
+      }
+    },
+    {
+      "key": "glass",
+      "resolution": 128,
+      "cubes": 49,
+      "slots": {
+        "ware": "ware_glass"
+      }
+    },
+    {
+      "key": "mug",
+      "resolution": 128,
+      "cubes": 52,
+      "slots": {
+        "ware": "ware_mug"
+      }
+    },
+    {
+      "key": "black_gold_bowl",
+      "resolution": 128,
+      "cubes": 94,
+      "slots": {
+        "ware": "ware_black_gold_bowl"
+      }
+    },
+    {
+      "key": "burgundy_bowl",
+      "resolution": 128,
+      "cubes": 94,
+      "slots": {
+        "ware": "ware_burgundy_bowl"
+      }
+    },
+    {
+      "key": "black_gold_plate",
+      "resolution": 128,
+      "cubes": 66,
+      "slots": {
+        "ware": "ware_black_gold_plate"
+      }
+    },
+    {
+      "key": "burgundy_platter",
+      "resolution": 128,
+      "cubes": 66,
+      "slots": {
+        "ware": "ware_burgundy_platter"
+      }
+    },
+    {
+      "key": "wine_glass",
+      "resolution": 128,
+      "cubes": 106,
+      "slots": {
+        "ware": "ware_wine_glass"
+      }
+    },
+    {
+      "key": "chopsticks",
+      "resolution": 128,
+      "cubes": 18,
+      "slots": {
+        "ware": "ware_chopsticks"
+      }
+    },
+    {
+      "key": "table_knife",
+      "resolution": 128,
+      "cubes": 16,
+      "slots": {
+        "ware": "ware_table_knife"
+      }
+    },
+    {
+      "key": "fork",
+      "resolution": 128,
+      "cubes": 14,
+      "slots": {
+        "ware": "ware_fork"
+      }
+    },
+    {
+      "key": "spoon",
+      "resolution": 128,
+      "cubes": 35,
+      "slots": {
+        "ware": "ware_spoon"
+      }
+    },
+    {
+      "key": "copper_hotpot_empty",
+      "resolution": 128,
+      "cubes": 120,
+      "slots": {
+        "ware": "ware_copper_hotpot",
+        "food": "food_hotpot_broth"
+      }
+    },
+    {
+      "key": "copper_hotpot_broth",
+      "resolution": 128,
+      "cubes": 153,
+      "slots": {
+        "ware": "ware_copper_hotpot",
+        "food": "food_hotpot_broth"
+      }
+    },
+    {
+      "key": "baijiu_bottle",
+      "resolution": 128,
+      "cubes": 104,
+      "slots": {
+        "ware": "ware_baijiu_bottle"
+      }
+    },
+    {
+      "key": "premium_baijiu_bottle",
+      "resolution": 128,
+      "cubes": 136,
+      "slots": {
+        "ware": "ware_premium_baijiu_bottle"
+      }
+    },
+    {
+      "key": "premium_red_wine_bottle",
+      "resolution": 128,
+      "cubes": 104,
+      "slots": {
+        "ware": "ware_premium_red_wine_bottle"
+      }
+    },
+    {
+      "key": "coca_cola_paper_cup",
+      "resolution": 128,
+      "cubes": 70,
+      "slots": {
+        "ware": "ware_coca_cola_paper_cup"
+      }
+    },
+    {
+      "key": "pepsi_paper_cup",
+      "resolution": 128,
+      "cubes": 70,
+      "slots": {
+        "ware": "ware_pepsi_paper_cup"
+      }
+    },
+    {
+      "key": "triple_tray",
+      "resolution": 128,
+      "cubes": 65,
+      "slots": {
+        "ware": "ware_triple_tray"
+      }
+    },
+    {
+      "key": "prep_counter",
+      "resolution": 64,
+      "cubes": 7,
+      "slots": {
+        "*": "prep_counter"
+      }
+    },
+    {
+      "key": "stove",
+      "resolution": 64,
+      "cubes": 15,
+      "slots": {
+        "*": "stove"
+      }
+    },
+    {
+      "key": "oven",
+      "resolution": 64,
+      "cubes": 6,
+      "slots": {
+        "*": "oven"
+      }
+    },
+    {
+      "key": "drink_counter",
+      "resolution": 64,
+      "cubes": 8,
+      "slots": {
+        "*": "drink_counter"
+      }
+    },
+    {
+      "key": "rice",
+      "resolution": 64,
+      "cubes": 2,
+      "slots": {
+        "*": "rice"
+      }
+    },
+    {
+      "key": "tomato",
+      "resolution": 64,
+      "cubes": 2,
+      "slots": {
+        "*": "tomato"
+      }
+    },
+    {
+      "key": "soybean",
+      "resolution": 64,
+      "cubes": 2,
+      "slots": {
+        "*": "soybean"
+      }
+    },
+    {
+      "key": "tea",
+      "resolution": 64,
+      "cubes": 2,
+      "slots": {
+        "*": "tea"
+      }
+    },
+    {
+      "key": "strawberry",
+      "resolution": 64,
+      "cubes": 2,
+      "slots": {
+        "*": "strawberry"
+      }
+    },
+    {
+      "key": "coffee",
+      "resolution": 64,
+      "cubes": 2,
+      "slots": {
+        "*": "coffee"
+      }
+    },
+    {
+      "key": "tofu",
+      "resolution": 64,
+      "cubes": 2,
+      "slots": {
+        "*": "tofu"
+      }
+    },
+    {
+      "key": "dough",
+      "resolution": 64,
+      "cubes": 2,
+      "slots": {
+        "*": "dough"
+      }
+    },
+    {
+      "key": "noodles",
+      "resolution": 64,
+      "cubes": 6,
+      "slots": {
+        "*": "noodles"
+      }
+    },
+    {
+      "key": "cheese",
+      "resolution": 64,
+      "cubes": 2,
+      "slots": {
+        "*": "cheese"
+      }
+    },
+    {
+      "key": "cream",
+      "resolution": 64,
+      "cubes": 2,
+      "slots": {
+        "*": "cream"
+      }
+    },
+    {
+      "key": "sea_bass",
+      "resolution": 64,
+      "cubes": 10,
+      "slots": {
+        "*": "sea_bass"
+      }
+    },
+    {
+      "key": "shrimp",
+      "resolution": 64,
+      "cubes": 12,
+      "slots": {
+        "*": "shrimp"
+      }
+    },
+    {
+      "key": "scallop",
+      "resolution": 64,
+      "cubes": 3,
+      "slots": {
+        "*": "scallop"
+      }
+    },
+    {
+      "key": "eel",
+      "resolution": 64,
+      "cubes": 3,
+      "slots": {
+        "*": "eel"
+      }
+    },
+    {
+      "key": "seasoning",
+      "resolution": 64,
+      "cubes": 3,
+      "slots": {
+        "*": "seasoning"
+      }
+    },
+    {
+      "key": "garlic",
+      "resolution": 64,
+      "cubes": 3,
+      "slots": {
+        "*": "garlic"
+      }
+    },
+    {
+      "key": "vermicelli",
+      "resolution": 64,
+      "cubes": 6,
+      "slots": {
+        "*": "vermicelli"
+      }
+    },
+    {
+      "key": "rice_seeds",
+      "resolution": 64,
+      "cubes": 3,
+      "slots": {
+        "*": "rice_seeds"
+      }
+    },
+    {
+      "key": "rice_crop_0",
+      "resolution": 64,
+      "cubes": 8,
+      "slots": {
+        "*": "rice_crop_0"
+      }
+    },
+    {
+      "key": "rice_crop_1",
+      "resolution": 64,
+      "cubes": 12,
+      "slots": {
+        "*": "rice_crop_1"
+      }
+    },
+    {
+      "key": "rice_crop_2",
+      "resolution": 64,
+      "cubes": 12,
+      "slots": {
+        "*": "rice_crop_2"
+      }
+    },
+    {
+      "key": "rice_crop_3",
+      "resolution": 64,
+      "cubes": 20,
+      "slots": {
+        "*": "rice_crop_3"
+      }
+    },
+    {
+      "key": "tomato_seeds",
+      "resolution": 64,
+      "cubes": 3,
+      "slots": {
+        "*": "tomato_seeds"
+      }
+    },
+    {
+      "key": "tomato_crop_0",
+      "resolution": 64,
+      "cubes": 8,
+      "slots": {
+        "*": "tomato_crop_0"
+      }
+    },
+    {
+      "key": "tomato_crop_1",
+      "resolution": 64,
+      "cubes": 12,
+      "slots": {
+        "*": "tomato_crop_1"
+      }
+    },
+    {
+      "key": "tomato_crop_2",
+      "resolution": 64,
+      "cubes": 12,
+      "slots": {
+        "*": "tomato_crop_2"
+      }
+    },
+    {
+      "key": "tomato_crop_3",
+      "resolution": 64,
+      "cubes": 16,
+      "slots": {
+        "*": "tomato_crop_3"
+      }
+    },
+    {
+      "key": "soybean_seeds",
+      "resolution": 64,
+      "cubes": 3,
+      "slots": {
+        "*": "soybean_seeds"
+      }
+    },
+    {
+      "key": "soybean_crop_0",
+      "resolution": 64,
+      "cubes": 8,
+      "slots": {
+        "*": "soybean_crop_0"
+      }
+    },
+    {
+      "key": "soybean_crop_1",
+      "resolution": 64,
+      "cubes": 12,
+      "slots": {
+        "*": "soybean_crop_1"
+      }
+    },
+    {
+      "key": "soybean_crop_2",
+      "resolution": 64,
+      "cubes": 12,
+      "slots": {
+        "*": "soybean_crop_2"
+      }
+    },
+    {
+      "key": "soybean_crop_3",
+      "resolution": 64,
+      "cubes": 16,
+      "slots": {
+        "*": "soybean_crop_3"
+      }
+    },
+    {
+      "key": "tea_seeds",
+      "resolution": 64,
+      "cubes": 3,
+      "slots": {
+        "*": "tea_seeds"
+      }
+    },
+    {
+      "key": "tea_crop_0",
+      "resolution": 64,
+      "cubes": 8,
+      "slots": {
+        "*": "tea_crop_0"
+      }
+    },
+    {
+      "key": "tea_crop_1",
+      "resolution": 64,
+      "cubes": 12,
+      "slots": {
+        "*": "tea_crop_1"
+      }
+    },
+    {
+      "key": "tea_crop_2",
+      "resolution": 64,
+      "cubes": 12,
+      "slots": {
+        "*": "tea_crop_2"
+      }
+    },
+    {
+      "key": "tea_crop_3",
+      "resolution": 64,
+      "cubes": 16,
+      "slots": {
+        "*": "tea_crop_3"
+      }
+    },
+    {
+      "key": "strawberry_seeds",
+      "resolution": 64,
+      "cubes": 3,
+      "slots": {
+        "*": "strawberry_seeds"
+      }
+    },
+    {
+      "key": "strawberry_crop_0",
+      "resolution": 64,
+      "cubes": 8,
+      "slots": {
+        "*": "strawberry_crop_0"
+      }
+    },
+    {
+      "key": "strawberry_crop_1",
+      "resolution": 64,
+      "cubes": 12,
+      "slots": {
+        "*": "strawberry_crop_1"
+      }
+    },
+    {
+      "key": "strawberry_crop_2",
+      "resolution": 64,
+      "cubes": 12,
+      "slots": {
+        "*": "strawberry_crop_2"
+      }
+    },
+    {
+      "key": "strawberry_crop_3",
+      "resolution": 64,
+      "cubes": 16,
+      "slots": {
+        "*": "strawberry_crop_3"
+      }
+    },
+    {
+      "key": "coffee_seeds",
+      "resolution": 64,
+      "cubes": 3,
+      "slots": {
+        "*": "coffee_seeds"
+      }
+    },
+    {
+      "key": "coffee_crop_0",
+      "resolution": 64,
+      "cubes": 8,
+      "slots": {
+        "*": "coffee_crop_0"
+      }
+    },
+    {
+      "key": "coffee_crop_1",
+      "resolution": 64,
+      "cubes": 12,
+      "slots": {
+        "*": "coffee_crop_1"
+      }
+    },
+    {
+      "key": "coffee_crop_2",
+      "resolution": 64,
+      "cubes": 12,
+      "slots": {
+        "*": "coffee_crop_2"
+      }
+    },
+    {
+      "key": "coffee_crop_3",
+      "resolution": 64,
+      "cubes": 16,
+      "slots": {
+        "*": "coffee_crop_3"
+      }
+    }
+  ],
+  "entityModels": [
+    {
+      "key": "surface_plate",
+      "cubes": 66,
+      "resolution": 128
+    },
+    {
+      "key": "surface_bowl",
+      "cubes": 94,
+      "resolution": 128
+    },
+    {
+      "key": "surface_glass",
+      "cubes": 49,
+      "resolution": 128
+    },
+    {
+      "key": "surface_mug",
+      "cubes": 52,
+      "resolution": 128
+    },
+    {
+      "key": "surface_black_gold_bowl",
+      "cubes": 94,
+      "resolution": 128
+    },
+    {
+      "key": "surface_burgundy_bowl",
+      "cubes": 94,
+      "resolution": 128
+    },
+    {
+      "key": "surface_black_gold_plate",
+      "cubes": 66,
+      "resolution": 128
+    },
+    {
+      "key": "surface_burgundy_platter",
+      "cubes": 66,
+      "resolution": 128
+    },
+    {
+      "key": "surface_wine_glass",
+      "cubes": 106,
+      "resolution": 128
+    },
+    {
+      "key": "surface_chopsticks",
+      "cubes": 18,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_knife",
+      "cubes": 16,
+      "resolution": 128
+    },
+    {
+      "key": "surface_fork",
+      "cubes": 14,
+      "resolution": 128
+    },
+    {
+      "key": "surface_spoon",
+      "cubes": 35,
+      "resolution": 128
+    },
+    {
+      "key": "surface_copper_hotpot_empty",
+      "cubes": 120,
+      "resolution": 128
+    },
+    {
+      "key": "surface_copper_hotpot_broth",
+      "cubes": 153,
+      "resolution": 128
+    },
+    {
+      "key": "surface_baijiu_bottle",
+      "cubes": 104,
+      "resolution": 128
+    },
+    {
+      "key": "surface_premium_baijiu_bottle",
+      "cubes": 136,
+      "resolution": 128
+    },
+    {
+      "key": "surface_premium_red_wine_bottle",
+      "cubes": 104,
+      "resolution": 128
+    },
+    {
+      "key": "surface_coca_cola_paper_cup",
+      "cubes": 70,
+      "resolution": 128
+    },
+    {
+      "key": "surface_pepsi_paper_cup",
+      "cubes": 70,
+      "resolution": 128
+    },
+    {
+      "key": "surface_triple_tray",
+      "cubes": 65,
+      "resolution": 128
+    },
+    {
+      "key": "surface_egg_fried_rice_serving",
+      "cubes": 147,
+      "resolution": 128
+    },
+    {
+      "key": "surface_egg_fried_rice_on_black_gold_bowl",
+      "cubes": 147,
+      "resolution": 128
+    },
+    {
+      "key": "surface_egg_fried_rice_on_burgundy_bowl",
+      "cubes": 147,
+      "resolution": 128
+    },
+    {
+      "key": "surface_kung_pao_chicken_serving",
+      "cubes": 91,
+      "resolution": 128
+    },
+    {
+      "key": "surface_kung_pao_chicken_on_black_gold_plate",
+      "cubes": 91,
+      "resolution": 128
+    },
+    {
+      "key": "surface_kung_pao_chicken_on_burgundy_platter",
+      "cubes": 91,
+      "resolution": 128
+    },
+    {
+      "key": "surface_mapo_tofu_serving",
+      "cubes": 130,
+      "resolution": 128
+    },
+    {
+      "key": "surface_mapo_tofu_on_black_gold_bowl",
+      "cubes": 130,
+      "resolution": 128
+    },
+    {
+      "key": "surface_mapo_tofu_on_burgundy_bowl",
+      "cubes": 130,
+      "resolution": 128
+    },
+    {
+      "key": "surface_braised_pork_serving",
+      "cubes": 123,
+      "resolution": 128
+    },
+    {
+      "key": "surface_braised_pork_on_black_gold_bowl",
+      "cubes": 123,
+      "resolution": 128
+    },
+    {
+      "key": "surface_braised_pork_on_burgundy_bowl",
+      "cubes": 123,
+      "resolution": 128
+    },
+    {
+      "key": "surface_tomato_eggs_serving",
+      "cubes": 94,
+      "resolution": 128
+    },
+    {
+      "key": "surface_tomato_eggs_on_black_gold_plate",
+      "cubes": 94,
+      "resolution": 128
+    },
+    {
+      "key": "surface_tomato_eggs_on_burgundy_platter",
+      "cubes": 94,
+      "resolution": 128
+    },
+    {
+      "key": "surface_sweet_sour_pork_serving",
+      "cubes": 85,
+      "resolution": 128
+    },
+    {
+      "key": "surface_sweet_sour_pork_on_black_gold_plate",
+      "cubes": 85,
+      "resolution": 128
+    },
+    {
+      "key": "surface_sweet_sour_pork_on_burgundy_platter",
+      "cubes": 85,
+      "resolution": 128
+    },
+    {
+      "key": "surface_beef_noodle_soup_serving",
+      "cubes": 154,
+      "resolution": 128
+    },
+    {
+      "key": "surface_beef_noodle_soup_on_black_gold_bowl",
+      "cubes": 154,
+      "resolution": 128
+    },
+    {
+      "key": "surface_beef_noodle_soup_on_burgundy_bowl",
+      "cubes": 154,
+      "resolution": 128
+    },
+    {
+      "key": "surface_dumplings_serving",
+      "cubes": 166,
+      "resolution": 128
+    },
+    {
+      "key": "surface_dumplings_on_black_gold_plate",
+      "cubes": 166,
+      "resolution": 128
+    },
+    {
+      "key": "surface_dumplings_on_burgundy_platter",
+      "cubes": 166,
+      "resolution": 128
+    },
+    {
+      "key": "surface_white_cut_chicken_serving",
+      "cubes": 89,
+      "resolution": 128
+    },
+    {
+      "key": "surface_white_cut_chicken_on_black_gold_plate",
+      "cubes": 89,
+      "resolution": 128
+    },
+    {
+      "key": "surface_white_cut_chicken_on_burgundy_platter",
+      "cubes": 89,
+      "resolution": 128
+    },
+    {
+      "key": "surface_char_siu_serving",
+      "cubes": 89,
+      "resolution": 128
+    },
+    {
+      "key": "surface_char_siu_on_black_gold_plate",
+      "cubes": 89,
+      "resolution": 128
+    },
+    {
+      "key": "surface_char_siu_on_burgundy_platter",
+      "cubes": 89,
+      "resolution": 128
+    },
+    {
+      "key": "surface_black_bean_ribs_serving",
+      "cubes": 125,
+      "resolution": 128
+    },
+    {
+      "key": "surface_black_bean_ribs_on_black_gold_bowl",
+      "cubes": 125,
+      "resolution": 128
+    },
+    {
+      "key": "surface_black_bean_ribs_on_burgundy_bowl",
+      "cubes": 125,
+      "resolution": 128
+    },
+    {
+      "key": "surface_claypot_rice_serving",
+      "cubes": 122,
+      "resolution": 128
+    },
+    {
+      "key": "surface_claypot_rice_on_black_gold_bowl",
+      "cubes": 122,
+      "resolution": 128
+    },
+    {
+      "key": "surface_claypot_rice_on_burgundy_bowl",
+      "cubes": 122,
+      "resolution": 128
+    },
+    {
+      "key": "surface_lions_head_serving",
+      "cubes": 173,
+      "resolution": 128
+    },
+    {
+      "key": "surface_lions_head_on_black_gold_bowl",
+      "cubes": 173,
+      "resolution": 128
+    },
+    {
+      "key": "surface_lions_head_on_burgundy_bowl",
+      "cubes": 173,
+      "resolution": 128
+    },
+    {
+      "key": "surface_boiled_tofu_shreds_serving",
+      "cubes": 154,
+      "resolution": 128
+    },
+    {
+      "key": "surface_boiled_tofu_shreds_on_black_gold_bowl",
+      "cubes": 154,
+      "resolution": 128
+    },
+    {
+      "key": "surface_boiled_tofu_shreds_on_burgundy_bowl",
+      "cubes": 154,
+      "resolution": 128
+    },
+    {
+      "key": "surface_wensi_tofu_serving",
+      "cubes": 158,
+      "resolution": 128
+    },
+    {
+      "key": "surface_wensi_tofu_on_black_gold_bowl",
+      "cubes": 158,
+      "resolution": 128
+    },
+    {
+      "key": "surface_wensi_tofu_on_burgundy_bowl",
+      "cubes": 158,
+      "resolution": 128
+    },
+    {
+      "key": "surface_huaiyang_eel_serving",
+      "cubes": 90,
+      "resolution": 128
+    },
+    {
+      "key": "surface_huaiyang_eel_on_black_gold_plate",
+      "cubes": 90,
+      "resolution": 128
+    },
+    {
+      "key": "surface_huaiyang_eel_on_burgundy_platter",
+      "cubes": 90,
+      "resolution": 128
+    },
+    {
+      "key": "surface_guo_bao_rou_serving",
+      "cubes": 85,
+      "resolution": 128
+    },
+    {
+      "key": "surface_guo_bao_rou_on_black_gold_plate",
+      "cubes": 85,
+      "resolution": 128
+    },
+    {
+      "key": "surface_guo_bao_rou_on_burgundy_platter",
+      "cubes": 85,
+      "resolution": 128
+    },
+    {
+      "key": "surface_steamed_sea_bass_serving",
+      "cubes": 85,
+      "resolution": 128
+    },
+    {
+      "key": "surface_steamed_sea_bass_on_black_gold_plate",
+      "cubes": 85,
+      "resolution": 128
+    },
+    {
+      "key": "surface_steamed_sea_bass_on_burgundy_platter",
+      "cubes": 85,
+      "resolution": 128
+    },
+    {
+      "key": "surface_garlic_scallops_serving",
+      "cubes": 101,
+      "resolution": 128
+    },
+    {
+      "key": "surface_garlic_scallops_on_black_gold_plate",
+      "cubes": 101,
+      "resolution": 128
+    },
+    {
+      "key": "surface_garlic_scallops_on_burgundy_platter",
+      "cubes": 101,
+      "resolution": 128
+    },
+    {
+      "key": "surface_braised_prawns_serving",
+      "cubes": 92,
+      "resolution": 128
+    },
+    {
+      "key": "surface_braised_prawns_on_black_gold_plate",
+      "cubes": 92,
+      "resolution": 128
+    },
+    {
+      "key": "surface_braised_prawns_on_burgundy_platter",
+      "cubes": 92,
+      "resolution": 128
+    },
+    {
+      "key": "surface_steak_serving",
+      "cubes": 84,
+      "resolution": 128
+    },
+    {
+      "key": "surface_steak_on_black_gold_plate",
+      "cubes": 84,
+      "resolution": 128
+    },
+    {
+      "key": "surface_steak_on_burgundy_platter",
+      "cubes": 84,
+      "resolution": 128
+    },
+    {
+      "key": "surface_burger_serving",
+      "cubes": 90,
+      "resolution": 128
+    },
+    {
+      "key": "surface_burger_on_black_gold_plate",
+      "cubes": 90,
+      "resolution": 128
+    },
+    {
+      "key": "surface_burger_on_burgundy_platter",
+      "cubes": 90,
+      "resolution": 128
+    },
+    {
+      "key": "surface_pizza_serving",
+      "cubes": 91,
+      "resolution": 128
+    },
+    {
+      "key": "surface_pizza_on_black_gold_plate",
+      "cubes": 91,
+      "resolution": 128
+    },
+    {
+      "key": "surface_pizza_on_burgundy_platter",
+      "cubes": 91,
+      "resolution": 128
+    },
+    {
+      "key": "surface_spaghetti_serving",
+      "cubes": 117,
+      "resolution": 128
+    },
+    {
+      "key": "surface_spaghetti_on_black_gold_plate",
+      "cubes": 117,
+      "resolution": 128
+    },
+    {
+      "key": "surface_spaghetti_on_burgundy_platter",
+      "cubes": 117,
+      "resolution": 128
+    },
+    {
+      "key": "surface_sandwich_serving",
+      "cubes": 90,
+      "resolution": 128
+    },
+    {
+      "key": "surface_sandwich_on_black_gold_plate",
+      "cubes": 90,
+      "resolution": 128
+    },
+    {
+      "key": "surface_sandwich_on_burgundy_platter",
+      "cubes": 90,
+      "resolution": 128
+    },
+    {
+      "key": "surface_roast_chicken_serving",
+      "cubes": 147,
+      "resolution": 128
+    },
+    {
+      "key": "surface_roast_chicken_on_black_gold_plate",
+      "cubes": 147,
+      "resolution": 128
+    },
+    {
+      "key": "surface_roast_chicken_on_burgundy_platter",
+      "cubes": 147,
+      "resolution": 128
+    },
+    {
+      "key": "surface_mushroom_soup_serving",
+      "cubes": 123,
+      "resolution": 128
+    },
+    {
+      "key": "surface_mushroom_soup_on_black_gold_bowl",
+      "cubes": 123,
+      "resolution": 128
+    },
+    {
+      "key": "surface_mushroom_soup_on_burgundy_bowl",
+      "cubes": 123,
+      "resolution": 128
+    },
+    {
+      "key": "surface_salad_serving",
+      "cubes": 123,
+      "resolution": 128
+    },
+    {
+      "key": "surface_salad_on_black_gold_bowl",
+      "cubes": 123,
+      "resolution": 128
+    },
+    {
+      "key": "surface_salad_on_burgundy_bowl",
+      "cubes": 123,
+      "resolution": 128
+    },
+    {
+      "key": "surface_baozi_serving",
+      "cubes": 168,
+      "resolution": 128
+    },
+    {
+      "key": "surface_baozi_on_black_gold_plate",
+      "cubes": 168,
+      "resolution": 128
+    },
+    {
+      "key": "surface_baozi_on_burgundy_platter",
+      "cubes": 168,
+      "resolution": 128
+    },
+    {
+      "key": "surface_spring_rolls_serving",
+      "cubes": 82,
+      "resolution": 128
+    },
+    {
+      "key": "surface_spring_rolls_on_black_gold_plate",
+      "cubes": 82,
+      "resolution": 128
+    },
+    {
+      "key": "surface_spring_rolls_on_burgundy_platter",
+      "cubes": 82,
+      "resolution": 128
+    },
+    {
+      "key": "surface_chicken_nuggets_serving",
+      "cubes": 88,
+      "resolution": 128
+    },
+    {
+      "key": "surface_chicken_nuggets_on_black_gold_plate",
+      "cubes": 88,
+      "resolution": 128
+    },
+    {
+      "key": "surface_chicken_nuggets_on_burgundy_platter",
+      "cubes": 88,
+      "resolution": 128
+    },
+    {
+      "key": "surface_fries_serving",
+      "cubes": 84,
+      "resolution": 128
+    },
+    {
+      "key": "surface_fries_on_black_gold_plate",
+      "cubes": 84,
+      "resolution": 128
+    },
+    {
+      "key": "surface_fries_on_burgundy_platter",
+      "cubes": 84,
+      "resolution": 128
+    },
+    {
+      "key": "surface_hotdog_serving",
+      "cubes": 81,
+      "resolution": 128
+    },
+    {
+      "key": "surface_hotdog_on_black_gold_plate",
+      "cubes": 81,
+      "resolution": 128
+    },
+    {
+      "key": "surface_hotdog_on_burgundy_platter",
+      "cubes": 81,
+      "resolution": 128
+    },
+    {
+      "key": "surface_skewers_serving",
+      "cubes": 92,
+      "resolution": 128
+    },
+    {
+      "key": "surface_skewers_on_black_gold_plate",
+      "cubes": 92,
+      "resolution": 128
+    },
+    {
+      "key": "surface_skewers_on_burgundy_platter",
+      "cubes": 92,
+      "resolution": 128
+    },
+    {
+      "key": "surface_green_tea_on_glass",
+      "cubes": 52,
+      "resolution": 128
+    },
+    {
+      "key": "surface_green_tea_serving",
+      "cubes": 55,
+      "resolution": 128
+    },
+    {
+      "key": "surface_black_coffee_on_glass",
+      "cubes": 52,
+      "resolution": 128
+    },
+    {
+      "key": "surface_black_coffee_serving",
+      "cubes": 55,
+      "resolution": 128
+    },
+    {
+      "key": "surface_milk_tea_serving",
+      "cubes": 57,
+      "resolution": 128
+    },
+    {
+      "key": "surface_milk_tea_on_mug",
+      "cubes": 60,
+      "resolution": 128
+    },
+    {
+      "key": "surface_strawberry_shake_serving",
+      "cubes": 59,
+      "resolution": 128
+    },
+    {
+      "key": "surface_strawberry_shake_on_mug",
+      "cubes": 62,
+      "resolution": 128
+    },
+    {
+      "key": "surface_tomato_juice_serving",
+      "cubes": 53,
+      "resolution": 128
+    },
+    {
+      "key": "surface_tomato_juice_on_mug",
+      "cubes": 56,
+      "resolution": 128
+    },
+    {
+      "key": "surface_hot_chocolate_on_glass",
+      "cubes": 57,
+      "resolution": 128
+    },
+    {
+      "key": "surface_hot_chocolate_serving",
+      "cubes": 60,
+      "resolution": 128
+    },
+    {
+      "key": "surface_strawberry_cake_serving",
+      "cubes": 119,
+      "resolution": 128
+    },
+    {
+      "key": "surface_strawberry_cake_on_black_gold_plate",
+      "cubes": 119,
+      "resolution": 128
+    },
+    {
+      "key": "surface_strawberry_cake_on_burgundy_platter",
+      "cubes": 119,
+      "resolution": 128
+    },
+    {
+      "key": "surface_chocolate_cake_serving",
+      "cubes": 116,
+      "resolution": 128
+    },
+    {
+      "key": "surface_chocolate_cake_on_black_gold_plate",
+      "cubes": 116,
+      "resolution": 128
+    },
+    {
+      "key": "surface_chocolate_cake_on_burgundy_platter",
+      "cubes": 116,
+      "resolution": 128
+    },
+    {
+      "key": "surface_cheesecake_serving",
+      "cubes": 115,
+      "resolution": 128
+    },
+    {
+      "key": "surface_cheesecake_on_black_gold_plate",
+      "cubes": 115,
+      "resolution": 128
+    },
+    {
+      "key": "surface_cheesecake_on_burgundy_platter",
+      "cubes": 115,
+      "resolution": 128
+    },
+    {
+      "key": "surface_pudding_serving",
+      "cubes": 154,
+      "resolution": 128
+    },
+    {
+      "key": "surface_pudding_on_black_gold_bowl",
+      "cubes": 154,
+      "resolution": 128
+    },
+    {
+      "key": "surface_pudding_on_burgundy_bowl",
+      "cubes": 154,
+      "resolution": 128
+    },
+    {
+      "key": "surface_ice_cream_serving",
+      "cubes": 155,
+      "resolution": 128
+    },
+    {
+      "key": "surface_ice_cream_on_black_gold_bowl",
+      "cubes": 155,
+      "resolution": 128
+    },
+    {
+      "key": "surface_ice_cream_on_burgundy_bowl",
+      "cubes": 155,
+      "resolution": 128
+    },
+    {
+      "key": "surface_donut_serving",
+      "cubes": 85,
+      "resolution": 128
+    },
+    {
+      "key": "surface_donut_on_black_gold_plate",
+      "cubes": 85,
+      "resolution": 128
+    },
+    {
+      "key": "surface_donut_on_burgundy_platter",
+      "cubes": 85,
+      "resolution": 128
+    },
+    {
+      "key": "surface_cookies_serving",
+      "cubes": 87,
+      "resolution": 128
+    },
+    {
+      "key": "surface_cookies_on_black_gold_plate",
+      "cubes": 87,
+      "resolution": 128
+    },
+    {
+      "key": "surface_cookies_on_burgundy_platter",
+      "cubes": 87,
+      "resolution": 128
+    },
+    {
+      "key": "surface_egg_tart_serving",
+      "cubes": 192,
+      "resolution": 128
+    },
+    {
+      "key": "surface_egg_tart_on_black_gold_plate",
+      "cubes": 192,
+      "resolution": 128
+    },
+    {
+      "key": "surface_egg_tart_on_burgundy_platter",
+      "cubes": 192,
+      "resolution": 128
+    },
+    {
+      "key": "surface_roast_goose_on_plate",
+      "cubes": 189,
+      "resolution": 128
+    },
+    {
+      "key": "surface_roast_goose_on_black_gold_plate",
+      "cubes": 189,
+      "resolution": 128
+    },
+    {
+      "key": "surface_roast_goose_serving",
+      "cubes": 189,
+      "resolution": 128
+    },
+    {
+      "key": "surface_shrimp_rice_rolls_on_plate",
+      "cubes": 128,
+      "resolution": 128
+    },
+    {
+      "key": "surface_shrimp_rice_rolls_serving",
+      "cubes": 128,
+      "resolution": 128
+    },
+    {
+      "key": "surface_shrimp_rice_rolls_on_burgundy_platter",
+      "cubes": 128,
+      "resolution": 128
+    },
+    {
+      "key": "surface_dongpo_pork_on_plate",
+      "cubes": 80,
+      "resolution": 128
+    },
+    {
+      "key": "surface_dongpo_pork_on_black_gold_plate",
+      "cubes": 80,
+      "resolution": 128
+    },
+    {
+      "key": "surface_dongpo_pork_serving",
+      "cubes": 80,
+      "resolution": 128
+    },
+    {
+      "key": "surface_peking_duck_on_plate",
+      "cubes": 108,
+      "resolution": 128
+    },
+    {
+      "key": "surface_peking_duck_on_black_gold_plate",
+      "cubes": 108,
+      "resolution": 128
+    },
+    {
+      "key": "surface_peking_duck_serving",
+      "cubes": 108,
+      "resolution": 128
+    },
+    {
+      "key": "surface_buddha_jumps_wall_on_bowl",
+      "cubes": 183,
+      "resolution": 128
+    },
+    {
+      "key": "surface_buddha_jumps_wall_serving",
+      "cubes": 183,
+      "resolution": 128
+    },
+    {
+      "key": "surface_buddha_jumps_wall_on_burgundy_bowl",
+      "cubes": 183,
+      "resolution": 128
+    },
+    {
+      "key": "surface_boeuf_bourguignon_on_bowl",
+      "cubes": 135,
+      "resolution": 128
+    },
+    {
+      "key": "surface_boeuf_bourguignon_serving",
+      "cubes": 135,
+      "resolution": 128
+    },
+    {
+      "key": "surface_boeuf_bourguignon_on_burgundy_bowl",
+      "cubes": 135,
+      "resolution": 128
+    },
+    {
+      "key": "surface_french_onion_soup_on_bowl",
+      "cubes": 139,
+      "resolution": 128
+    },
+    {
+      "key": "surface_french_onion_soup_serving",
+      "cubes": 139,
+      "resolution": 128
+    },
+    {
+      "key": "surface_french_onion_soup_on_burgundy_bowl",
+      "cubes": 139,
+      "resolution": 128
+    },
+    {
+      "key": "surface_sushi_platter_on_plate",
+      "cubes": 156,
+      "resolution": 128
+    },
+    {
+      "key": "surface_sushi_platter_serving",
+      "cubes": 156,
+      "resolution": 128
+    },
+    {
+      "key": "surface_sushi_platter_on_burgundy_platter",
+      "cubes": 156,
+      "resolution": 128
+    },
+    {
+      "key": "surface_sashimi_platter_on_plate",
+      "cubes": 104,
+      "resolution": 128
+    },
+    {
+      "key": "surface_sashimi_platter_on_black_gold_plate",
+      "cubes": 104,
+      "resolution": 128
+    },
+    {
+      "key": "surface_sashimi_platter_serving",
+      "cubes": 104,
+      "resolution": 128
+    },
+    {
+      "key": "surface_tempura_on_plate",
+      "cubes": 110,
+      "resolution": 128
+    },
+    {
+      "key": "surface_tempura_serving",
+      "cubes": 110,
+      "resolution": 128
+    },
+    {
+      "key": "surface_tempura_on_burgundy_platter",
+      "cubes": 110,
+      "resolution": 128
+    },
+    {
+      "key": "surface_tonkotsu_ramen_on_bowl",
+      "cubes": 220,
+      "resolution": 128
+    },
+    {
+      "key": "surface_tonkotsu_ramen_serving",
+      "cubes": 220,
+      "resolution": 128
+    },
+    {
+      "key": "surface_tonkotsu_ramen_on_burgundy_bowl",
+      "cubes": 220,
+      "resolution": 128
+    },
+    {
+      "key": "surface_unagi_don_on_bowl",
+      "cubes": 135,
+      "resolution": 128
+    },
+    {
+      "key": "surface_unagi_don_on_black_gold_bowl",
+      "cubes": 135,
+      "resolution": 128
+    },
+    {
+      "key": "surface_unagi_don_serving",
+      "cubes": 135,
+      "resolution": 128
+    },
+    {
+      "key": "surface_okonomiyaki_on_plate",
+      "cubes": 113,
+      "resolution": 128
+    },
+    {
+      "key": "surface_okonomiyaki_serving",
+      "cubes": 113,
+      "resolution": 128
+    },
+    {
+      "key": "surface_okonomiyaki_on_burgundy_platter",
+      "cubes": 113,
+      "resolution": 128
+    },
+    {
+      "key": "surface_hotpot_lamb_on_plate",
+      "cubes": 153,
+      "resolution": 128
+    },
+    {
+      "key": "surface_hotpot_lamb_serving",
+      "cubes": 153,
+      "resolution": 128
+    },
+    {
+      "key": "surface_hotpot_lamb_on_burgundy_platter",
+      "cubes": 153,
+      "resolution": 128
+    },
+    {
+      "key": "surface_hotpot_beef_on_plate",
+      "cubes": 153,
+      "resolution": 128
+    },
+    {
+      "key": "surface_hotpot_beef_serving",
+      "cubes": 153,
+      "resolution": 128
+    },
+    {
+      "key": "surface_hotpot_beef_on_burgundy_platter",
+      "cubes": 153,
+      "resolution": 128
+    },
+    {
+      "key": "surface_peacock_platter_on_plate",
+      "cubes": 156,
+      "resolution": 128
+    },
+    {
+      "key": "surface_peacock_platter_serving",
+      "cubes": 156,
+      "resolution": 128
+    },
+    {
+      "key": "surface_peacock_platter_on_burgundy_platter",
+      "cubes": 156,
+      "resolution": 128
+    },
+    {
+      "key": "surface_stir_fried_yellow_beef_on_plate",
+      "cubes": 97,
+      "resolution": 128
+    },
+    {
+      "key": "surface_stir_fried_yellow_beef_on_black_gold_plate",
+      "cubes": 97,
+      "resolution": 128
+    },
+    {
+      "key": "surface_stir_fried_yellow_beef_serving",
+      "cubes": 97,
+      "resolution": 128
+    },
+    {
+      "key": "surface_truffle_abalone_on_plate",
+      "cubes": 181,
+      "resolution": 128
+    },
+    {
+      "key": "surface_truffle_abalone_serving",
+      "cubes": 181,
+      "resolution": 128
+    },
+    {
+      "key": "surface_truffle_abalone_on_burgundy_platter",
+      "cubes": 181,
+      "resolution": 128
+    },
+    {
+      "key": "surface_huaiyang_sanding_bao_serving",
+      "cubes": 187,
+      "resolution": 128
+    },
+    {
+      "key": "surface_huaiyang_sanding_bao_on_black_gold_plate",
+      "cubes": 187,
+      "resolution": 128
+    },
+    {
+      "key": "surface_huaiyang_sanding_bao_on_burgundy_platter",
+      "cubes": 187,
+      "resolution": 128
+    },
+    {
+      "key": "surface_fruit_platter_on_plate",
+      "cubes": 165,
+      "resolution": 128
+    },
+    {
+      "key": "surface_fruit_platter_on_black_gold_plate",
+      "cubes": 165,
+      "resolution": 128
+    },
+    {
+      "key": "surface_fruit_platter_serving",
+      "cubes": 165,
+      "resolution": 128
+    },
+    {
+      "key": "surface_snow_pear_tremella_on_bowl",
+      "cubes": 181,
+      "resolution": 128
+    },
+    {
+      "key": "surface_snow_pear_tremella_serving",
+      "cubes": 181,
+      "resolution": 128
+    },
+    {
+      "key": "surface_snow_pear_tremella_on_burgundy_bowl",
+      "cubes": 181,
+      "resolution": 128
+    },
+    {
+      "key": "surface_pickled_greens_pork_serving",
+      "cubes": 129,
+      "resolution": 128
+    },
+    {
+      "key": "surface_pickled_greens_pork_on_black_gold_bowl",
+      "cubes": 129,
+      "resolution": 128
+    },
+    {
+      "key": "surface_pickled_greens_pork_on_burgundy_bowl",
+      "cubes": 129,
+      "resolution": 128
+    },
+    {
+      "key": "surface_jujube_lotus_soup_on_bowl",
+      "cubes": 200,
+      "resolution": 128
+    },
+    {
+      "key": "surface_jujube_lotus_soup_on_black_gold_bowl",
+      "cubes": 200,
+      "resolution": 128
+    },
+    {
+      "key": "surface_jujube_lotus_soup_serving",
+      "cubes": 200,
+      "resolution": 128
+    },
+    {
+      "key": "surface_takoyaki_serving",
+      "cubes": 238,
+      "resolution": 128
+    },
+    {
+      "key": "surface_takoyaki_on_black_gold_plate",
+      "cubes": 238,
+      "resolution": 128
+    },
+    {
+      "key": "surface_takoyaki_on_burgundy_platter",
+      "cubes": 238,
+      "resolution": 128
+    },
+    {
+      "key": "surface_yakisoba_on_plate",
+      "cubes": 148,
+      "resolution": 128
+    },
+    {
+      "key": "surface_yakisoba_on_black_gold_plate",
+      "cubes": 148,
+      "resolution": 128
+    },
+    {
+      "key": "surface_yakisoba_serving",
+      "cubes": 148,
+      "resolution": 128
+    },
+    {
+      "key": "surface_grilled_squid_on_plate",
+      "cubes": 119,
+      "resolution": 128
+    },
+    {
+      "key": "surface_grilled_squid_on_black_gold_plate",
+      "cubes": 119,
+      "resolution": 128
+    },
+    {
+      "key": "surface_grilled_squid_serving",
+      "cubes": 119,
+      "resolution": 128
+    },
+    {
+      "key": "surface_oden_on_bowl",
+      "cubes": 133,
+      "resolution": 128
+    },
+    {
+      "key": "surface_oden_serving",
+      "cubes": 133,
+      "resolution": 128
+    },
+    {
+      "key": "surface_oden_on_burgundy_bowl",
+      "cubes": 133,
+      "resolution": 128
+    },
+    {
+      "key": "surface_dorayaki_serving",
+      "cubes": 180,
+      "resolution": 128
+    },
+    {
+      "key": "surface_dorayaki_on_black_gold_plate",
+      "cubes": 180,
+      "resolution": 128
+    },
+    {
+      "key": "surface_dorayaki_on_burgundy_platter",
+      "cubes": 180,
+      "resolution": 128
+    },
+    {
+      "key": "surface_wagyu_rice_on_bowl",
+      "cubes": 146,
+      "resolution": 128
+    },
+    {
+      "key": "surface_wagyu_rice_on_black_gold_bowl",
+      "cubes": 146,
+      "resolution": 128
+    },
+    {
+      "key": "surface_wagyu_rice_serving",
+      "cubes": 146,
+      "resolution": 128
+    },
+    {
+      "key": "surface_gunkan_sushi_on_plate",
+      "cubes": 222,
+      "resolution": 128
+    },
+    {
+      "key": "surface_gunkan_sushi_serving",
+      "cubes": 222,
+      "resolution": 128
+    },
+    {
+      "key": "surface_gunkan_sushi_on_burgundy_platter",
+      "cubes": 222,
+      "resolution": 128
+    },
+    {
+      "key": "surface_red_bean_cake_serving",
+      "cubes": 114,
+      "resolution": 128
+    },
+    {
+      "key": "surface_red_bean_cake_on_black_gold_plate",
+      "cubes": 114,
+      "resolution": 128
+    },
+    {
+      "key": "surface_red_bean_cake_on_burgundy_platter",
+      "cubes": 114,
+      "resolution": 128
+    },
+    {
+      "key": "surface_mung_bean_soup_serving",
+      "cubes": 200,
+      "resolution": 128
+    },
+    {
+      "key": "surface_mung_bean_soup_on_black_gold_bowl",
+      "cubes": 200,
+      "resolution": 128
+    },
+    {
+      "key": "surface_mung_bean_soup_on_burgundy_bowl",
+      "cubes": 200,
+      "resolution": 128
+    },
+    {
+      "key": "surface_baijiu_serving",
+      "cubes": 89,
+      "resolution": 128
+    },
+    {
+      "key": "surface_baijiu_on_mug",
+      "cubes": 92,
+      "resolution": 128
+    },
+    {
+      "key": "surface_premium_baijiu_serving",
+      "cubes": 89,
+      "resolution": 128
+    },
+    {
+      "key": "surface_premium_baijiu_on_mug",
+      "cubes": 92,
+      "resolution": 128
+    },
+    {
+      "key": "surface_premium_red_wine_serving",
+      "cubes": 89,
+      "resolution": 128
+    },
+    {
+      "key": "surface_premium_red_wine_on_mug",
+      "cubes": 92,
+      "resolution": 128
+    },
+    {
+      "key": "surface_premium_red_wine_on_wine_glass",
+      "cubes": 168,
+      "resolution": 128
+    },
+    {
+      "key": "surface_cola_serving",
+      "cubes": 137,
+      "resolution": 128
+    },
+    {
+      "key": "surface_cola_on_mug",
+      "cubes": 140,
+      "resolution": 128
+    },
+    {
+      "key": "surface_steamed_grouper_on_plate",
+      "cubes": 154,
+      "resolution": 128
+    },
+    {
+      "key": "surface_steamed_grouper_on_black_gold_plate",
+      "cubes": 154,
+      "resolution": 128
+    },
+    {
+      "key": "surface_steamed_grouper_serving",
+      "cubes": 154,
+      "resolution": 128
+    },
+    {
+      "key": "surface_poached_tiger_prawns_on_plate",
+      "cubes": 251,
+      "resolution": 128
+    },
+    {
+      "key": "surface_poached_tiger_prawns_serving",
+      "cubes": 251,
+      "resolution": 128
+    },
+    {
+      "key": "surface_poached_tiger_prawns_on_burgundy_platter",
+      "cubes": 251,
+      "resolution": 128
+    },
+    {
+      "key": "surface_smashed_cucumber_serving",
+      "cubes": 103,
+      "resolution": 128
+    },
+    {
+      "key": "surface_smashed_cucumber_on_black_gold_plate",
+      "cubes": 103,
+      "resolution": 128
+    },
+    {
+      "key": "surface_smashed_cucumber_on_burgundy_platter",
+      "cubes": 103,
+      "resolution": 128
+    },
+    {
+      "key": "surface_vegetables_in_superior_broth_serving",
+      "cubes": 180,
+      "resolution": 128
+    },
+    {
+      "key": "surface_vegetables_in_superior_broth_on_black_gold_bowl",
+      "cubes": 180,
+      "resolution": 128
+    },
+    {
+      "key": "surface_vegetables_in_superior_broth_on_burgundy_bowl",
+      "cubes": 180,
+      "resolution": 128
+    },
+    {
+      "key": "surface_tiramisu_on_plate",
+      "cubes": 88,
+      "resolution": 128
+    },
+    {
+      "key": "surface_tiramisu_serving",
+      "cubes": 88,
+      "resolution": 128
+    },
+    {
+      "key": "surface_tiramisu_on_burgundy_platter",
+      "cubes": 88,
+      "resolution": 128
+    },
+    {
+      "key": "surface_daifuku_serving",
+      "cubes": 199,
+      "resolution": 128
+    },
+    {
+      "key": "surface_daifuku_on_black_gold_plate",
+      "cubes": 199,
+      "resolution": 128
+    },
+    {
+      "key": "surface_daifuku_on_burgundy_platter",
+      "cubes": 199,
+      "resolution": 128
+    },
+    {
+      "key": "surface_mille_feuille_on_plate",
+      "cubes": 97,
+      "resolution": 128
+    },
+    {
+      "key": "surface_mille_feuille_on_black_gold_plate",
+      "cubes": 97,
+      "resolution": 128
+    },
+    {
+      "key": "surface_mille_feuille_serving",
+      "cubes": 97,
+      "resolution": 128
+    },
+    {
+      "key": "surface_lobster_bisque_on_bowl",
+      "cubes": 135,
+      "resolution": 128
+    },
+    {
+      "key": "surface_lobster_bisque_serving",
+      "cubes": 135,
+      "resolution": 128
+    },
+    {
+      "key": "surface_lobster_bisque_on_burgundy_bowl",
+      "cubes": 135,
+      "resolution": 128
+    },
+    {
+      "key": "surface_chicken_cordon_bleu_on_plate",
+      "cubes": 197,
+      "resolution": 128
+    },
+    {
+      "key": "surface_chicken_cordon_bleu_serving",
+      "cubes": 197,
+      "resolution": 128
+    },
+    {
+      "key": "surface_chicken_cordon_bleu_on_burgundy_platter",
+      "cubes": 197,
+      "resolution": 128
+    },
+    {
+      "key": "surface_pan_seared_sole_on_plate",
+      "cubes": 137,
+      "resolution": 128
+    },
+    {
+      "key": "surface_pan_seared_sole_on_black_gold_plate",
+      "cubes": 137,
+      "resolution": 128
+    },
+    {
+      "key": "surface_pan_seared_sole_serving",
+      "cubes": 137,
+      "resolution": 128
+    },
+    {
+      "key": "surface_beef_wellington_on_plate",
+      "cubes": 181,
+      "resolution": 128
+    },
+    {
+      "key": "surface_beef_wellington_on_black_gold_plate",
+      "cubes": 181,
+      "resolution": 128
+    },
+    {
+      "key": "surface_beef_wellington_serving",
+      "cubes": 181,
+      "resolution": 128
+    },
+    {
+      "key": "surface_herb_roasted_lamb_rack_on_plate",
+      "cubes": 194,
+      "resolution": 128
+    },
+    {
+      "key": "surface_herb_roasted_lamb_rack_on_black_gold_plate",
+      "cubes": 194,
+      "resolution": 128
+    },
+    {
+      "key": "surface_herb_roasted_lamb_rack_serving",
+      "cubes": 194,
+      "resolution": 128
+    },
+    {
+      "key": "surface_wild_mushroom_risotto_on_bowl",
+      "cubes": 188,
+      "resolution": 128
+    },
+    {
+      "key": "surface_wild_mushroom_risotto_serving",
+      "cubes": 188,
+      "resolution": 128
+    },
+    {
+      "key": "surface_wild_mushroom_risotto_on_burgundy_bowl",
+      "cubes": 188,
+      "resolution": 128
+    },
+    {
+      "key": "surface_lobster_thermidor_on_plate",
+      "cubes": 179,
+      "resolution": 128
+    },
+    {
+      "key": "surface_lobster_thermidor_on_black_gold_plate",
+      "cubes": 179,
+      "resolution": 128
+    },
+    {
+      "key": "surface_lobster_thermidor_serving",
+      "cubes": 179,
+      "resolution": 128
+    },
+    {
+      "key": "surface_caviar_blini_on_plate",
+      "cubes": 228,
+      "resolution": 128
+    },
+    {
+      "key": "surface_caviar_blini_serving",
+      "cubes": 228,
+      "resolution": 128
+    },
+    {
+      "key": "surface_caviar_blini_on_burgundy_platter",
+      "cubes": 228,
+      "resolution": 128
+    },
+    {
+      "key": "surface_creme_brulee_on_bowl",
+      "cubes": 151,
+      "resolution": 128
+    },
+    {
+      "key": "surface_creme_brulee_on_black_gold_bowl",
+      "cubes": 151,
+      "resolution": 128
+    },
+    {
+      "key": "surface_creme_brulee_serving",
+      "cubes": 151,
+      "resolution": 128
+    },
+    {
+      "key": "surface_black_truffle_foie_gras_on_plate",
+      "cubes": 169,
+      "resolution": 128
+    },
+    {
+      "key": "surface_black_truffle_foie_gras_serving",
+      "cubes": 169,
+      "resolution": 128
+    },
+    {
+      "key": "surface_black_truffle_foie_gras_on_burgundy_platter",
+      "cubes": 169,
+      "resolution": 128
+    },
+    {
+      "key": "surface_lamb_slices_on_plate",
+      "cubes": 146,
+      "resolution": 128
+    },
+    {
+      "key": "surface_lamb_slices_on_black_gold_plate",
+      "cubes": 146,
+      "resolution": 128
+    },
+    {
+      "key": "surface_lamb_slices_serving",
+      "cubes": 146,
+      "resolution": 128
+    },
+    {
+      "key": "surface_beef_slices_on_plate",
+      "cubes": 146,
+      "resolution": 128
+    },
+    {
+      "key": "surface_beef_slices_on_black_gold_plate",
+      "cubes": 146,
+      "resolution": 128
+    },
+    {
+      "key": "surface_beef_slices_serving",
+      "cubes": 146,
+      "resolution": 128
+    },
+    {
+      "key": "surface_tripe_platter_on_plate",
+      "cubes": 102,
+      "resolution": 128
+    },
+    {
+      "key": "surface_tripe_platter_serving",
+      "cubes": 102,
+      "resolution": 128
+    },
+    {
+      "key": "surface_tripe_platter_on_burgundy_platter",
+      "cubes": 102,
+      "resolution": 128
+    },
+    {
+      "key": "surface_frozen_tofu_platter_on_plate",
+      "cubes": 102,
+      "resolution": 128
+    },
+    {
+      "key": "surface_frozen_tofu_platter_serving",
+      "cubes": 102,
+      "resolution": 128
+    },
+    {
+      "key": "surface_frozen_tofu_platter_on_burgundy_platter",
+      "cubes": 102,
+      "resolution": 128
+    },
+    {
+      "key": "surface_mushroom_platter_on_plate",
+      "cubes": 159,
+      "resolution": 128
+    },
+    {
+      "key": "surface_mushroom_platter_on_black_gold_plate",
+      "cubes": 159,
+      "resolution": 128
+    },
+    {
+      "key": "surface_mushroom_platter_serving",
+      "cubes": 159,
+      "resolution": 128
+    },
+    {
+      "key": "surface_greens_platter_on_plate",
+      "cubes": 170,
+      "resolution": 128
+    },
+    {
+      "key": "surface_greens_platter_on_black_gold_plate",
+      "cubes": 170,
+      "resolution": 128
+    },
+    {
+      "key": "surface_greens_platter_serving",
+      "cubes": 170,
+      "resolution": 128
+    },
+    {
+      "key": "surface_vermicelli_platter_on_plate",
+      "cubes": 164,
+      "resolution": 128
+    },
+    {
+      "key": "surface_vermicelli_platter_serving",
+      "cubes": 164,
+      "resolution": 128
+    },
+    {
+      "key": "surface_vermicelli_platter_on_burgundy_platter",
+      "cubes": 164,
+      "resolution": 128
+    },
+    {
+      "key": "surface_sesame_dip_on_bowl",
+      "cubes": 120,
+      "resolution": 128
+    },
+    {
+      "key": "surface_sesame_dip_on_black_gold_bowl",
+      "cubes": 120,
+      "resolution": 128
+    },
+    {
+      "key": "surface_sesame_dip_serving",
+      "cubes": 120,
+      "resolution": 128
+    },
+    {
+      "key": "mini_kung_pao_chicken",
+      "cubes": 31,
+      "resolution": 128
+    },
+    {
+      "key": "mini_tomato_eggs",
+      "cubes": 16,
+      "resolution": 128
+    },
+    {
+      "key": "mini_sweet_sour_pork",
+      "cubes": 17,
+      "resolution": 128
+    },
+    {
+      "key": "mini_dumplings",
+      "cubes": 23,
+      "resolution": 128
+    },
+    {
+      "key": "mini_white_cut_chicken",
+      "cubes": 23,
+      "resolution": 128
+    },
+    {
+      "key": "mini_char_siu",
+      "cubes": 22,
+      "resolution": 128
+    },
+    {
+      "key": "mini_huaiyang_eel",
+      "cubes": 21,
+      "resolution": 128
+    },
+    {
+      "key": "mini_guo_bao_rou",
+      "cubes": 16,
+      "resolution": 128
+    },
+    {
+      "key": "mini_steamed_sea_bass",
+      "cubes": 16,
+      "resolution": 128
+    },
+    {
+      "key": "mini_garlic_scallops",
+      "cubes": 15,
+      "resolution": 128
+    },
+    {
+      "key": "mini_braised_prawns",
+      "cubes": 20,
+      "resolution": 128
+    },
+    {
+      "key": "mini_steak",
+      "cubes": 23,
+      "resolution": 128
+    },
+    {
+      "key": "mini_burger",
+      "cubes": 20,
+      "resolution": 128
+    },
+    {
+      "key": "mini_pizza",
+      "cubes": 24,
+      "resolution": 128
+    },
+    {
+      "key": "mini_spaghetti",
+      "cubes": 21,
+      "resolution": 128
+    },
+    {
+      "key": "mini_sandwich",
+      "cubes": 9,
+      "resolution": 128
+    },
+    {
+      "key": "mini_roast_chicken",
+      "cubes": 26,
+      "resolution": 128
+    },
+    {
+      "key": "mini_baozi",
+      "cubes": 30,
+      "resolution": 128
+    },
+    {
+      "key": "mini_spring_rolls",
+      "cubes": 16,
+      "resolution": 128
+    },
+    {
+      "key": "mini_chicken_nuggets",
+      "cubes": 29,
+      "resolution": 128
+    },
+    {
+      "key": "mini_fries",
+      "cubes": 24,
+      "resolution": 128
+    },
+    {
+      "key": "mini_hotdog",
+      "cubes": 26,
+      "resolution": 128
+    },
+    {
+      "key": "mini_skewers",
+      "cubes": 28,
+      "resolution": 128
+    },
+    {
+      "key": "mini_strawberry_cake",
+      "cubes": 33,
+      "resolution": 128
+    },
+    {
+      "key": "mini_chocolate_cake",
+      "cubes": 31,
+      "resolution": 128
+    },
+    {
+      "key": "mini_cheesecake",
+      "cubes": 25,
+      "resolution": 128
+    },
+    {
+      "key": "mini_donut",
+      "cubes": 14,
+      "resolution": 128
+    },
+    {
+      "key": "mini_cookies",
+      "cubes": 5,
+      "resolution": 128
+    },
+    {
+      "key": "mini_egg_tart",
+      "cubes": 35,
+      "resolution": 128
+    },
+    {
+      "key": "mini_roast_goose",
+      "cubes": 28,
+      "resolution": 128
+    },
+    {
+      "key": "mini_shrimp_rice_rolls",
+      "cubes": 21,
+      "resolution": 128
+    },
+    {
+      "key": "mini_dongpo_pork",
+      "cubes": 13,
+      "resolution": 128
+    },
+    {
+      "key": "mini_peking_duck",
+      "cubes": 16,
+      "resolution": 128
+    },
+    {
+      "key": "mini_sushi_platter",
+      "cubes": 31,
+      "resolution": 128
+    },
+    {
+      "key": "mini_sashimi_platter",
+      "cubes": 9,
+      "resolution": 128
+    },
+    {
+      "key": "mini_tempura",
+      "cubes": 25,
+      "resolution": 128
+    },
+    {
+      "key": "mini_okonomiyaki",
+      "cubes": 18,
+      "resolution": 128
+    },
+    {
+      "key": "mini_hotpot_lamb",
+      "cubes": 25,
+      "resolution": 128
+    },
+    {
+      "key": "mini_hotpot_beef",
+      "cubes": 25,
+      "resolution": 128
+    },
+    {
+      "key": "mini_peacock_platter",
+      "cubes": 14,
+      "resolution": 128
+    },
+    {
+      "key": "mini_stir_fried_yellow_beef",
+      "cubes": 12,
+      "resolution": 128
+    },
+    {
+      "key": "mini_truffle_abalone",
+      "cubes": 30,
+      "resolution": 128
+    },
+    {
+      "key": "mini_huaiyang_sanding_bao",
+      "cubes": 19,
+      "resolution": 128
+    },
+    {
+      "key": "mini_fruit_platter",
+      "cubes": 15,
+      "resolution": 128
+    },
+    {
+      "key": "mini_takoyaki",
+      "cubes": 12,
+      "resolution": 128
+    },
+    {
+      "key": "mini_yakisoba",
+      "cubes": 21,
+      "resolution": 128
+    },
+    {
+      "key": "mini_grilled_squid",
+      "cubes": 17,
+      "resolution": 128
+    },
+    {
+      "key": "mini_dorayaki",
+      "cubes": 23,
+      "resolution": 128
+    },
+    {
+      "key": "mini_gunkan_sushi",
+      "cubes": 20,
+      "resolution": 128
+    },
+    {
+      "key": "mini_red_bean_cake",
+      "cubes": 16,
+      "resolution": 128
+    },
+    {
+      "key": "mini_steamed_grouper",
+      "cubes": 16,
+      "resolution": 128
+    },
+    {
+      "key": "mini_poached_tiger_prawns",
+      "cubes": 16,
+      "resolution": 128
+    },
+    {
+      "key": "mini_smashed_cucumber",
+      "cubes": 21,
+      "resolution": 128
+    },
+    {
+      "key": "mini_tiramisu",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "mini_daifuku",
+      "cubes": 27,
+      "resolution": 128
+    },
+    {
+      "key": "mini_mille_feuille",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "mini_chicken_cordon_bleu",
+      "cubes": 21,
+      "resolution": 128
+    },
+    {
+      "key": "mini_pan_seared_sole",
+      "cubes": 4,
+      "resolution": 128
+    },
+    {
+      "key": "mini_beef_wellington",
+      "cubes": 12,
+      "resolution": 128
+    },
+    {
+      "key": "mini_herb_roasted_lamb_rack",
+      "cubes": 21,
+      "resolution": 128
+    },
+    {
+      "key": "mini_lobster_thermidor",
+      "cubes": 18,
+      "resolution": 128
+    },
+    {
+      "key": "mini_caviar_blini",
+      "cubes": 17,
+      "resolution": 128
+    },
+    {
+      "key": "mini_black_truffle_foie_gras",
+      "cubes": 13,
+      "resolution": 128
+    },
+    {
+      "key": "mini_lamb_slices",
+      "cubes": 25,
+      "resolution": 128
+    },
+    {
+      "key": "mini_beef_slices",
+      "cubes": 25,
+      "resolution": 128
+    },
+    {
+      "key": "mini_tripe_platter",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "mini_frozen_tofu_platter",
+      "cubes": 16,
+      "resolution": 128
+    },
+    {
+      "key": "mini_mushroom_platter",
+      "cubes": 39,
+      "resolution": 128
+    },
+    {
+      "key": "mini_greens_platter",
+      "cubes": 8,
+      "resolution": 128
+    },
+    {
+      "key": "mini_vermicelli_platter",
+      "cubes": 8,
+      "resolution": 128
+    },
+    {
+      "key": "ad_japanese_snacks",
+      "cubes": 1,
+      "resolution": 2048
+    },
+    {
+      "key": "ad_japanese_night",
+      "cubes": 1,
+      "resolution": 1024
+    },
+    {
+      "key": "ad_wellington",
+      "cubes": 1,
+      "resolution": 2048
+    },
+    {
+      "key": "ad_lamb",
+      "cubes": 1,
+      "resolution": 1024
+    },
+    {
+      "key": "ad_lobster",
+      "cubes": 1,
+      "resolution": 1024
+    },
+    {
+      "key": "ad_cantonese_roast",
+      "cubes": 1,
+      "resolution": 2048
+    },
+    {
+      "key": "ad_dim_sum",
+      "cubes": 1,
+      "resolution": 1024
+    },
+    {
+      "key": "ad_hotpot",
+      "cubes": 1,
+      "resolution": 2048
+    },
+    {
+      "key": "ad_banquet",
+      "cubes": 1,
+      "resolution": 2048
+    },
+    {
+      "key": "ad_grouper",
+      "cubes": 1,
+      "resolution": 2048
+    },
+    {
+      "key": "ad_home_cooking",
+      "cubes": 1,
+      "resolution": 1024
+    },
+    {
+      "key": "ad_dessert",
+      "cubes": 1,
+      "resolution": 1024
+    }
+  ],
+  "iconSizes": {
+    "mcpe_food_egg_fried_rice": 128,
+    "mcpe_food_kung_pao_chicken": 128,
+    "mcpe_food_mapo_tofu": 128,
+    "mcpe_food_braised_pork": 128,
+    "mcpe_food_tomato_eggs": 128,
+    "mcpe_food_sweet_sour_pork": 128,
+    "mcpe_food_beef_noodle_soup": 128,
+    "mcpe_food_dumplings": 128,
+    "mcpe_food_white_cut_chicken": 128,
+    "mcpe_food_char_siu": 128,
+    "mcpe_food_black_bean_ribs": 128,
+    "mcpe_food_claypot_rice": 128,
+    "mcpe_food_lions_head": 128,
+    "mcpe_food_boiled_tofu_shreds": 128,
+    "mcpe_food_wensi_tofu": 128,
+    "mcpe_food_huaiyang_eel": 128,
+    "mcpe_food_guo_bao_rou": 128,
+    "mcpe_food_steamed_sea_bass": 128,
+    "mcpe_food_garlic_scallops": 128,
+    "mcpe_food_braised_prawns": 128,
+    "mcpe_food_steak": 128,
+    "mcpe_food_burger": 128,
+    "mcpe_food_pizza": 128,
+    "mcpe_food_spaghetti": 128,
+    "mcpe_food_sandwich": 128,
+    "mcpe_food_roast_chicken": 128,
+    "mcpe_food_mushroom_soup": 128,
+    "mcpe_food_salad": 128,
+    "mcpe_food_baozi": 128,
+    "mcpe_food_spring_rolls": 128,
+    "mcpe_food_chicken_nuggets": 128,
+    "mcpe_food_fries": 128,
+    "mcpe_food_hotdog": 128,
+    "mcpe_food_skewers": 128,
+    "mcpe_food_green_tea": 128,
+    "mcpe_food_black_coffee": 128,
+    "mcpe_food_milk_tea": 128,
+    "mcpe_food_strawberry_shake": 128,
+    "mcpe_food_tomato_juice": 128,
+    "mcpe_food_hot_chocolate": 128,
+    "mcpe_food_strawberry_cake": 128,
+    "mcpe_food_chocolate_cake": 128,
+    "mcpe_food_cheesecake": 128,
+    "mcpe_food_pudding": 128,
+    "mcpe_food_ice_cream": 128,
+    "mcpe_food_donut": 128,
+    "mcpe_food_cookies": 128,
+    "mcpe_food_egg_tart": 128,
+    "mcpe_food_roast_goose": 128,
+    "mcpe_food_shrimp_rice_rolls": 128,
+    "mcpe_food_dongpo_pork": 128,
+    "mcpe_food_peking_duck": 128,
+    "mcpe_food_buddha_jumps_wall": 128,
+    "mcpe_food_boeuf_bourguignon": 128,
+    "mcpe_food_french_onion_soup": 128,
+    "mcpe_food_sushi_platter": 128,
+    "mcpe_food_sashimi_platter": 128,
+    "mcpe_food_tempura": 128,
+    "mcpe_food_tonkotsu_ramen": 128,
+    "mcpe_food_unagi_don": 128,
+    "mcpe_food_okonomiyaki": 128,
+    "mcpe_food_hotpot_lamb": 128,
+    "mcpe_food_hotpot_beef": 128,
+    "mcpe_food_peacock_platter": 128,
+    "mcpe_food_stir_fried_yellow_beef": 128,
+    "mcpe_food_truffle_abalone": 128,
+    "mcpe_food_huaiyang_sanding_bao": 128,
+    "mcpe_food_fruit_platter": 128,
+    "mcpe_food_snow_pear_tremella": 128,
+    "mcpe_food_pickled_greens_pork": 128,
+    "mcpe_food_jujube_lotus_soup": 128,
+    "mcpe_food_takoyaki": 128,
+    "mcpe_food_yakisoba": 128,
+    "mcpe_food_grilled_squid": 128,
+    "mcpe_food_oden": 128,
+    "mcpe_food_dorayaki": 128,
+    "mcpe_food_wagyu_rice": 128,
+    "mcpe_food_gunkan_sushi": 128,
+    "mcpe_food_red_bean_cake": 128,
+    "mcpe_food_mung_bean_soup": 128,
+    "mcpe_food_baijiu": 128,
+    "mcpe_food_premium_baijiu": 128,
+    "mcpe_food_premium_red_wine": 128,
+    "mcpe_food_cola": 128,
+    "mcpe_food_steamed_grouper": 128,
+    "mcpe_food_poached_tiger_prawns": 128,
+    "mcpe_food_smashed_cucumber": 128,
+    "mcpe_food_vegetables_in_superior_broth": 128,
+    "mcpe_food_tiramisu": 128,
+    "mcpe_food_daifuku": 128,
+    "mcpe_food_mille_feuille": 128,
+    "mcpe_food_lobster_bisque": 128,
+    "mcpe_food_chicken_cordon_bleu": 128,
+    "mcpe_food_pan_seared_sole": 128,
+    "mcpe_food_beef_wellington": 128,
+    "mcpe_food_herb_roasted_lamb_rack": 128,
+    "mcpe_food_wild_mushroom_risotto": 128,
+    "mcpe_food_lobster_thermidor": 128,
+    "mcpe_food_caviar_blini": 128,
+    "mcpe_food_creme_brulee": 128,
+    "mcpe_food_black_truffle_foie_gras": 128,
+    "mcpe_food_lamb_slices": 128,
+    "mcpe_food_beef_slices": 128,
+    "mcpe_food_tripe_platter": 128,
+    "mcpe_food_frozen_tofu_platter": 128,
+    "mcpe_food_mushroom_platter": 128,
+    "mcpe_food_greens_platter": 128,
+    "mcpe_food_vermicelli_platter": 128,
+    "mcpe_food_sesame_dip": 128,
+    "mcpe_food_plate": 128,
+    "mcpe_food_bowl": 128,
+    "mcpe_food_glass": 128,
+    "mcpe_food_mug": 128,
+    "mcpe_food_black_gold_bowl": 128,
+    "mcpe_food_burgundy_bowl": 128,
+    "mcpe_food_black_gold_plate": 128,
+    "mcpe_food_burgundy_platter": 128,
+    "mcpe_food_wine_glass": 128,
+    "mcpe_food_chopsticks": 128,
+    "mcpe_food_table_knife": 128,
+    "mcpe_food_fork": 128,
+    "mcpe_food_spoon": 128,
+    "mcpe_food_copper_hotpot_empty": 128,
+    "mcpe_food_copper_hotpot_broth": 128,
+    "mcpe_food_baijiu_bottle": 128,
+    "mcpe_food_premium_baijiu_bottle": 128,
+    "mcpe_food_premium_red_wine_bottle": 128,
+    "mcpe_food_coca_cola_paper_cup": 128,
+    "mcpe_food_pepsi_paper_cup": 128,
+    "mcpe_food_triple_tray": 128,
+    "mcpe_food_prep_counter": 32,
+    "mcpe_food_stove": 32,
+    "mcpe_food_oven": 32,
+    "mcpe_food_drink_counter": 32,
+    "mcpe_food_rice": 32,
+    "mcpe_food_tomato": 32,
+    "mcpe_food_soybean": 32,
+    "mcpe_food_tea": 32,
+    "mcpe_food_strawberry": 32,
+    "mcpe_food_coffee": 32,
+    "mcpe_food_tofu": 32,
+    "mcpe_food_dough": 32,
+    "mcpe_food_noodles": 32,
+    "mcpe_food_cheese": 32,
+    "mcpe_food_cream": 32,
+    "mcpe_food_sea_bass": 32,
+    "mcpe_food_shrimp": 32,
+    "mcpe_food_scallop": 32,
+    "mcpe_food_eel": 32,
+    "mcpe_food_seasoning": 32,
+    "mcpe_food_garlic": 32,
+    "mcpe_food_vermicelli": 32,
+    "mcpe_food_rice_seeds": 32,
+    "mcpe_food_tomato_seeds": 32,
+    "mcpe_food_soybean_seeds": 32,
+    "mcpe_food_tea_seeds": 32,
+    "mcpe_food_strawberry_seeds": 32,
+    "mcpe_food_coffee_seeds": 32,
+    "mcpe_food_ad_japanese_snacks": 128,
+    "mcpe_food_ad_japanese_night": 128,
+    "mcpe_food_ad_wellington": 128,
+    "mcpe_food_ad_lamb": 128,
+    "mcpe_food_ad_lobster": 128,
+    "mcpe_food_ad_cantonese_roast": 128,
+    "mcpe_food_ad_dim_sum": 128,
+    "mcpe_food_ad_hotpot": 128,
+    "mcpe_food_ad_banquet": 128,
+    "mcpe_food_ad_grouper": 128,
+    "mcpe_food_ad_home_cooking": 128,
+    "mcpe_food_ad_dessert": 128
+  }
+}

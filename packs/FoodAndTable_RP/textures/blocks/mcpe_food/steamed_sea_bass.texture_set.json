@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "steamed_sea_bass",
+    "metalness_emissive_roughness": "steamed_sea_bass_mer"
+  }
+}

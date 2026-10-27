@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "roast_chicken",
+    "metalness_emissive_roughness": "roast_chicken_mer"
+  }
+}

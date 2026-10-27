@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "char_siu_serving",
+    "metalness_emissive_roughness": "char_siu_serving_mer"
+  }
+}

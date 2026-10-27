@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "coffee_seeds",
+    "metalness_emissive_roughness": "coffee_seeds_mer"
+  }
+}

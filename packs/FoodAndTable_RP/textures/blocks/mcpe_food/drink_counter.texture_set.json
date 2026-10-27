@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "drink_counter",
+    "metalness_emissive_roughness": "drink_counter_mer"
+  }
+}

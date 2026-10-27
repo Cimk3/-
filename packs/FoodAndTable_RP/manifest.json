@@ -2,12 +2,12 @@
   "format_version": 2,
   "header": {
     "name": "方寸食光 · Food & Table 资源包",
-    "description": "立体像素料理与餐具 | Voxel meals, tableware and kitchen",
+    "description": "立体像素料理与餐具 · 灵动视效 PBR | Voxel kitchen with Vibrant Visuals PBR",
     "uuid": "1a31bbad-5ab0-4860-aa36-1dded1fb5689",
     "version": [
       0,
-      1,
-      1
+      2,
+      0
     ],
     "min_engine_version": [
       1,
@@ -21,10 +21,13 @@
       "uuid": "f52c1cef-a4fd-4d0b-ae75-f66cb93d6386",
       "version": [
         0,
-        1,
-        1
+        2,
+        0
       ]
     }
+  ],
+  "capabilities": [
+    "pbr"
   ],
   "metadata": {
     "authors": [

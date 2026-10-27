@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "tea_seeds",
+    "metalness_emissive_roughness": "tea_seeds_mer"
+  }
+}

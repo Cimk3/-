@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "hot_chocolate",
+    "metalness_emissive_roughness": "hot_chocolate_mer"
+  }
+}

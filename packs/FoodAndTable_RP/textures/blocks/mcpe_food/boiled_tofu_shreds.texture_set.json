@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "boiled_tofu_shreds",
+    "metalness_emissive_roughness": "boiled_tofu_shreds_mer"
+  }
+}

@@ -471,6 +471,9 @@
     },
     "mcpe_food_coffee_crop_3": {
       "textures": "textures/blocks/mcpe_food/coffee_crop_3"
+    },
+    "mcpe_food_break_dust": {
+      "textures": "textures/blocks/mcpe_food/break_dust"
     }
   }
 }

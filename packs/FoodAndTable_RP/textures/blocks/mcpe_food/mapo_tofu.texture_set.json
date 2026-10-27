@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "mapo_tofu",
+    "metalness_emissive_roughness": "mapo_tofu_mer"
+  }
+}

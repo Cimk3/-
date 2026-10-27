@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "burger_serving",
+    "metalness_emissive_roughness": "burger_serving_mer"
+  }
+}

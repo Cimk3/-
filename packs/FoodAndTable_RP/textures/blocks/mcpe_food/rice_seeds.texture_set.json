@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "rice_seeds",
+    "metalness_emissive_roughness": "rice_seeds_mer"
+  }
+}

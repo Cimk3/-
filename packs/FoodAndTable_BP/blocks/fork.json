@@ -21,9 +21,15 @@
       "minecraft:material_instances": {
         "*": {
           "texture": "mcpe_food_fork",
-          "render_method": "alpha_test",
-          "ambient_occlusion": 0
+          "render_method": "opaque",
+          "ambient_occlusion": 1,
+          "face_dimming": true
         }
+      },
+      "minecraft:destruction_particles": {
+        "texture": "mcpe_food_break_dust",
+        "tint_method": "none",
+        "particle_count": 0
       },
       "minecraft:collision_box": false,
       "minecraft:selection_box": {

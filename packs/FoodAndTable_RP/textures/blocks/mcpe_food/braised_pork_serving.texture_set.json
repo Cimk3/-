@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "braised_pork_serving",
+    "metalness_emissive_roughness": "braised_pork_serving_mer"
+  }
+}

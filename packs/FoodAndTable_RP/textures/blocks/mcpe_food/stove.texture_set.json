@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "stove",
+    "metalness_emissive_roughness": "stove_mer"
+  }
+}

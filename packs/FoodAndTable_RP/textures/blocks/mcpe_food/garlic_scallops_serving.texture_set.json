@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "garlic_scallops_serving",
+    "metalness_emissive_roughness": "garlic_scallops_serving_mer"
+  }
+}

@@ -46,9 +46,10 @@
       "model": "desktop",
       "style": "desktop",
       "pose": "fixed",
+      "screenFront": 180,
       "selection": {
         "origin": [
-          -6.82,
+          -7.255000000000001,
           0,
           -4.92
         ],
@@ -66,6 +67,7 @@
       "model": "all_in_one",
       "style": "silver",
       "pose": "fixed",
+      "screenFront": 180,
       "selection": {
         "origin": [
           -6.62,
@@ -86,16 +88,18 @@
       "model": "laptop",
       "style": "silver",
       "pose": "open",
+      "screenFront": 180,
+      "openAngle": 110,
       "selection": {
         "origin": [
           -5.845000000000001,
           0,
-          -5.772239572938176
+          -6.717487689353711
         ],
         "size": [
           11.695,
-          7.691379706271704,
-          10.042239572938175
+          7.4612640534441645,
+          10.987487689353712
         ]
       }
     },
@@ -106,6 +110,7 @@
       "model": "laptop",
       "style": "silver",
       "pose": "closed",
+      "screenFront": 0,
       "selection": {
         "origin": [
           -5.845000000000001,
@@ -126,16 +131,18 @@
       "model": "laptop",
       "style": "gaming",
       "pose": "open",
+      "screenFront": 180,
+      "openAngle": 110,
       "selection": {
         "origin": [
           -6.1450000000000005,
           0,
-          -5.876195418347056
+          -6.888497761016546
         ],
         "size": [
           12.295000000000002,
-          8.670453506638607,
-          10.146195418347055
+          8.421110363837117,
+          11.158497761016546
         ]
       }
     },
@@ -146,6 +153,7 @@
       "model": "laptop",
       "style": "gaming",
       "pose": "closed",
+      "screenFront": 0,
       "selection": {
         "origin": [
           -6.1450000000000005,
@@ -166,16 +174,18 @@
       "model": "laptop",
       "style": "thinkpad",
       "pose": "open",
+      "screenFront": 180,
+      "openAngle": 110,
       "selection": {
         "origin": [
           -5.845000000000001,
           0,
-          -5.772239572938176
+          -6.717487689353711
         ],
         "size": [
           11.695,
-          7.941379706271704,
-          10.042239572938175
+          7.7112640534441645,
+          10.987487689353712
         ]
       }
     },
@@ -186,6 +196,7 @@
       "model": "laptop",
       "style": "thinkpad",
       "pose": "closed",
+      "screenFront": 0,
       "selection": {
         "origin": [
           -5.845000000000001,
@@ -206,16 +217,18 @@
       "model": "laptop",
       "style": "macbook",
       "pose": "open",
+      "screenFront": 180,
+      "openAngle": 110,
       "selection": {
         "origin": [
           -5.845000000000001,
           0,
-          -5.772239572938176
+          -6.717487689353711
         ],
         "size": [
           11.695,
-          7.691379706271704,
-          10.042239572938175
+          7.4612640534441645,
+          10.987487689353712
         ]
       }
     },
@@ -226,6 +239,7 @@
       "model": "laptop",
       "style": "macbook",
       "pose": "closed",
+      "screenFront": 0,
       "selection": {
         "origin": [
           -5.845000000000001,
@@ -246,6 +260,7 @@
       "model": "router",
       "style": "router",
       "pose": "fixed",
+      "screenFront": 0,
       "selection": {
         "origin": [
           -5.240615013374696,
@@ -266,6 +281,7 @@
       "model": "server",
       "style": "server",
       "pose": "fixed",
+      "screenFront": 0,
       "selection": {
         "origin": [
           -4.92,
@@ -286,16 +302,18 @@
       "model": "tablet",
       "style": "ipad",
       "pose": "fixed",
+      "screenFront": 180,
+      "openAngle": 110,
       "selection": {
         "origin": [
           -5.82,
           0,
-          -5.412026498798489
+          -6.23628154176943
         ],
         "size": [
           11.64,
-          10.13551277627833,
-          9.93202649879849
+          9.92442365057765,
+          10.75628154176943
         ]
       }
     },
@@ -306,6 +324,7 @@
       "model": "crt",
       "style": "crt",
       "pose": "fixed",
+      "screenFront": 180,
       "selection": {
         "origin": [
           -5.92,
@@ -326,6 +345,7 @@
       "model": "keyboard",
       "style": "keyboard",
       "pose": "fixed",
+      "screenFront": 0,
       "selection": {
         "origin": [
           -6.92,
@@ -336,6 +356,92 @@
           13.100000000000001,
           0.9450000000000002,
           5.44
+        ]
+      }
+    },
+    {
+      "key": "dell_laptop_open",
+      "zh": "戴尔银色轻薄本（打开）",
+      "en": "Dell Silver Ultrabook (Open)",
+      "model": "laptop",
+      "style": "dell",
+      "pose": "open",
+      "screenFront": 180,
+      "openAngle": 110,
+      "selection": {
+        "origin": [
+          -6.2700000000000005,
+          0,
+          -6.956901789681679
+        ],
+        "size": [
+          12.545000000000002,
+          8.169048887994299,
+          11.626901789681678
+        ]
+      }
+    },
+    {
+      "key": "dell_laptop_closed",
+      "zh": "戴尔银色轻薄本（合起）",
+      "en": "Dell Silver Ultrabook (Closed)",
+      "model": "laptop",
+      "style": "dell",
+      "pose": "closed",
+      "screenFront": 0,
+      "selection": {
+        "origin": [
+          -6.2700000000000005,
+          0,
+          -4.295000000000001
+        ],
+        "size": [
+          12.545000000000002,
+          1.04,
+          8.965
+        ]
+      }
+    },
+    {
+      "key": "macbook_pro_gpt_open",
+      "zh": "MacBook Pro · GPT（打开）",
+      "en": "MacBook Pro with GPT (Open)",
+      "model": "laptop",
+      "style": "macbook_pro",
+      "pose": "open",
+      "screenFront": 180,
+      "openAngle": 110,
+      "selection": {
+        "origin": [
+          -6.345000000000001,
+          0,
+          -6.956901789681679
+        ],
+        "size": [
+          12.695,
+          8.419048887994299,
+          11.22690178968168
+        ]
+      }
+    },
+    {
+      "key": "macbook_pro_gpt_closed",
+      "zh": "MacBook Pro · GPT（合起）",
+      "en": "MacBook Pro with GPT (Closed)",
+      "model": "laptop",
+      "style": "macbook_pro",
+      "pose": "closed",
+      "screenFront": 0,
+      "selection": {
+        "origin": [
+          -6.345000000000001,
+          0,
+          -4.295000000000001
+        ],
+        "size": [
+          12.695,
+          1.29,
+          8.565000000000001
         ]
       }
     }

@@ -12,3 +12,4 @@ give @s mcpe_food:table_knife 4
 give @s mcpe_food:fork 4
 give @s mcpe_food:spoon 4
 give @s mcpe_food:triple_tray 4
+give @s mcpe_food:gongfu_tea_tray 4

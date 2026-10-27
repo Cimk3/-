@@ -11,7 +11,7 @@
           "type": "int",
           "range": [
             0,
-            353
+            360
           ],
           "default": 0,
           "client_sync": true
@@ -51,8 +51,8 @@
       },
       "mcpe_food:silver_laptop_open": {
         "minecraft:collision_box": {
-          "width": 0.7312500000000001,
-          "height": 0.48133623164198147
+          "width": 0.8396859611692139,
+          "height": 0.46695400334026027
         }
       },
       "mcpe_food:silver_laptop_closed": {
@@ -63,8 +63,8 @@
       },
       "mcpe_food:gaming_laptop_open": {
         "minecraft:collision_box": {
-          "width": 0.76875,
-          "height": 0.5425283441649129
+          "width": 0.8610622201270682,
+          "height": 0.5269443977398198
         }
       },
       "mcpe_food:gaming_laptop_closed": {
@@ -75,8 +75,8 @@
       },
       "mcpe_food:thinkpad_open": {
         "minecraft:collision_box": {
-          "width": 0.7312500000000001,
-          "height": 0.49696123164198147
+          "width": 0.8396859611692139,
+          "height": 0.48257900334026027
         }
       },
       "mcpe_food:thinkpad_closed": {
@@ -87,8 +87,8 @@
       },
       "mcpe_food:macbook_open": {
         "minecraft:collision_box": {
-          "width": 0.7312500000000001,
-          "height": 0.48133623164198147
+          "width": 0.8396859611692139,
+          "height": 0.46695400334026027
         }
       },
       "mcpe_food:macbook_closed": {
@@ -111,8 +111,8 @@
       },
       "mcpe_food:ipad_air_magic_keyboard": {
         "minecraft:collision_box": {
-          "width": 0.7275,
-          "height": 0.6340945485173957
+          "width": 0.7795351927211788,
+          "height": 0.6209014781611031
         }
       },
       "mcpe_food:crt_monitor": {
@@ -125,6 +125,30 @@
         "minecraft:collision_box": {
           "width": 0.865,
           "height": 0.05968750000000001
+        }
+      },
+      "mcpe_food:dell_laptop_open": {
+        "minecraft:collision_box": {
+          "width": 0.8696127237102099,
+          "height": 0.5111905554996437
+        }
+      },
+      "mcpe_food:dell_laptop_closed": {
+        "minecraft:collision_box": {
+          "width": 0.784375,
+          "height": 0.065625
+        }
+      },
+      "mcpe_food:macbook_pro_gpt_open": {
+        "minecraft:collision_box": {
+          "width": 0.8696127237102099,
+          "height": 0.5268155554996437
+        }
+      },
+      "mcpe_food:macbook_pro_gpt_closed": {
+        "minecraft:collision_box": {
+          "width": 0.7937500000000001,
+          "height": 0.08125
         }
       }
     },
@@ -184,7 +208,11 @@
             "mcpe_food:server_cabinet",
             "mcpe_food:ipad_air_magic_keyboard",
             "mcpe_food:crt_monitor",
-            "mcpe_food:keyboard_mouse_set"
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed"
           ]
         },
         "add": {
@@ -213,7 +241,11 @@
             "mcpe_food:server_cabinet",
             "mcpe_food:ipad_air_magic_keyboard",
             "mcpe_food:crt_monitor",
-            "mcpe_food:keyboard_mouse_set"
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed"
           ]
         },
         "add": {
@@ -242,7 +274,11 @@
             "mcpe_food:server_cabinet",
             "mcpe_food:ipad_air_magic_keyboard",
             "mcpe_food:crt_monitor",
-            "mcpe_food:keyboard_mouse_set"
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed"
           ]
         },
         "add": {
@@ -271,7 +307,11 @@
             "mcpe_food:server_cabinet",
             "mcpe_food:ipad_air_magic_keyboard",
             "mcpe_food:crt_monitor",
-            "mcpe_food:keyboard_mouse_set"
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed"
           ]
         },
         "add": {
@@ -300,7 +340,11 @@
             "mcpe_food:server_cabinet",
             "mcpe_food:ipad_air_magic_keyboard",
             "mcpe_food:crt_monitor",
-            "mcpe_food:keyboard_mouse_set"
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed"
           ]
         },
         "add": {
@@ -329,7 +373,11 @@
             "mcpe_food:server_cabinet",
             "mcpe_food:ipad_air_magic_keyboard",
             "mcpe_food:crt_monitor",
-            "mcpe_food:keyboard_mouse_set"
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed"
           ]
         },
         "add": {
@@ -358,7 +406,11 @@
             "mcpe_food:server_cabinet",
             "mcpe_food:ipad_air_magic_keyboard",
             "mcpe_food:crt_monitor",
-            "mcpe_food:keyboard_mouse_set"
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed"
           ]
         },
         "add": {
@@ -387,7 +439,11 @@
             "mcpe_food:server_cabinet",
             "mcpe_food:ipad_air_magic_keyboard",
             "mcpe_food:crt_monitor",
-            "mcpe_food:keyboard_mouse_set"
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed"
           ]
         },
         "add": {
@@ -416,7 +472,11 @@
             "mcpe_food:server_cabinet",
             "mcpe_food:ipad_air_magic_keyboard",
             "mcpe_food:crt_monitor",
-            "mcpe_food:keyboard_mouse_set"
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed"
           ]
         },
         "add": {
@@ -445,7 +505,11 @@
             "mcpe_food:server_cabinet",
             "mcpe_food:ipad_air_magic_keyboard",
             "mcpe_food:crt_monitor",
-            "mcpe_food:keyboard_mouse_set"
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed"
           ]
         },
         "add": {
@@ -474,7 +538,11 @@
             "mcpe_food:server_cabinet",
             "mcpe_food:ipad_air_magic_keyboard",
             "mcpe_food:crt_monitor",
-            "mcpe_food:keyboard_mouse_set"
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed"
           ]
         },
         "add": {
@@ -503,7 +571,11 @@
             "mcpe_food:server_cabinet",
             "mcpe_food:ipad_air_magic_keyboard",
             "mcpe_food:crt_monitor",
-            "mcpe_food:keyboard_mouse_set"
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed"
           ]
         },
         "add": {
@@ -532,7 +604,11 @@
             "mcpe_food:server_cabinet",
             "mcpe_food:ipad_air_magic_keyboard",
             "mcpe_food:crt_monitor",
-            "mcpe_food:keyboard_mouse_set"
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed"
           ]
         },
         "add": {
@@ -561,7 +637,11 @@
             "mcpe_food:server_cabinet",
             "mcpe_food:ipad_air_magic_keyboard",
             "mcpe_food:crt_monitor",
-            "mcpe_food:keyboard_mouse_set"
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed"
           ]
         },
         "add": {
@@ -590,7 +670,11 @@
             "mcpe_food:server_cabinet",
             "mcpe_food:ipad_air_magic_keyboard",
             "mcpe_food:crt_monitor",
-            "mcpe_food:keyboard_mouse_set"
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed"
           ]
         },
         "add": {
@@ -619,7 +703,11 @@
             "mcpe_food:server_cabinet",
             "mcpe_food:ipad_air_magic_keyboard",
             "mcpe_food:crt_monitor",
-            "mcpe_food:keyboard_mouse_set"
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed"
           ]
         },
         "add": {
@@ -648,7 +736,11 @@
             "mcpe_food:server_cabinet",
             "mcpe_food:ipad_air_magic_keyboard",
             "mcpe_food:crt_monitor",
-            "mcpe_food:keyboard_mouse_set"
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed"
           ]
         },
         "add": {
@@ -677,12 +769,148 @@
             "mcpe_food:server_cabinet",
             "mcpe_food:ipad_air_magic_keyboard",
             "mcpe_food:crt_monitor",
-            "mcpe_food:keyboard_mouse_set"
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed"
           ]
         },
         "add": {
           "component_groups": [
             "mcpe_food:keyboard_mouse_set"
+          ]
+        }
+      },
+      "mcpe_food:shape_dell_laptop_open": {
+        "remove": {
+          "component_groups": [
+            "mcpe_food:flat",
+            "mcpe_food:medium",
+            "mcpe_food:tall",
+            "mcpe_food:desktop_computer",
+            "mcpe_food:all_in_one_computer",
+            "mcpe_food:silver_laptop_open",
+            "mcpe_food:silver_laptop_closed",
+            "mcpe_food:gaming_laptop_open",
+            "mcpe_food:gaming_laptop_closed",
+            "mcpe_food:thinkpad_open",
+            "mcpe_food:thinkpad_closed",
+            "mcpe_food:macbook_open",
+            "mcpe_food:macbook_closed",
+            "mcpe_food:router",
+            "mcpe_food:server_cabinet",
+            "mcpe_food:ipad_air_magic_keyboard",
+            "mcpe_food:crt_monitor",
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "mcpe_food:dell_laptop_open"
+          ]
+        }
+      },
+      "mcpe_food:shape_dell_laptop_closed": {
+        "remove": {
+          "component_groups": [
+            "mcpe_food:flat",
+            "mcpe_food:medium",
+            "mcpe_food:tall",
+            "mcpe_food:desktop_computer",
+            "mcpe_food:all_in_one_computer",
+            "mcpe_food:silver_laptop_open",
+            "mcpe_food:silver_laptop_closed",
+            "mcpe_food:gaming_laptop_open",
+            "mcpe_food:gaming_laptop_closed",
+            "mcpe_food:thinkpad_open",
+            "mcpe_food:thinkpad_closed",
+            "mcpe_food:macbook_open",
+            "mcpe_food:macbook_closed",
+            "mcpe_food:router",
+            "mcpe_food:server_cabinet",
+            "mcpe_food:ipad_air_magic_keyboard",
+            "mcpe_food:crt_monitor",
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "mcpe_food:dell_laptop_closed"
+          ]
+        }
+      },
+      "mcpe_food:shape_macbook_pro_gpt_open": {
+        "remove": {
+          "component_groups": [
+            "mcpe_food:flat",
+            "mcpe_food:medium",
+            "mcpe_food:tall",
+            "mcpe_food:desktop_computer",
+            "mcpe_food:all_in_one_computer",
+            "mcpe_food:silver_laptop_open",
+            "mcpe_food:silver_laptop_closed",
+            "mcpe_food:gaming_laptop_open",
+            "mcpe_food:gaming_laptop_closed",
+            "mcpe_food:thinkpad_open",
+            "mcpe_food:thinkpad_closed",
+            "mcpe_food:macbook_open",
+            "mcpe_food:macbook_closed",
+            "mcpe_food:router",
+            "mcpe_food:server_cabinet",
+            "mcpe_food:ipad_air_magic_keyboard",
+            "mcpe_food:crt_monitor",
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "mcpe_food:macbook_pro_gpt_open"
+          ]
+        }
+      },
+      "mcpe_food:shape_macbook_pro_gpt_closed": {
+        "remove": {
+          "component_groups": [
+            "mcpe_food:flat",
+            "mcpe_food:medium",
+            "mcpe_food:tall",
+            "mcpe_food:desktop_computer",
+            "mcpe_food:all_in_one_computer",
+            "mcpe_food:silver_laptop_open",
+            "mcpe_food:silver_laptop_closed",
+            "mcpe_food:gaming_laptop_open",
+            "mcpe_food:gaming_laptop_closed",
+            "mcpe_food:thinkpad_open",
+            "mcpe_food:thinkpad_closed",
+            "mcpe_food:macbook_open",
+            "mcpe_food:macbook_closed",
+            "mcpe_food:router",
+            "mcpe_food:server_cabinet",
+            "mcpe_food:ipad_air_magic_keyboard",
+            "mcpe_food:crt_monitor",
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "mcpe_food:macbook_pro_gpt_closed"
           ]
         }
       }

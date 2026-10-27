@@ -886,6 +886,12 @@
   "mcpe_food:black_truffle_foie_gras_on_burgundy_platter": {
     "sound": "glass"
   },
+  "mcpe_food:tieguanyin_on_glass": {
+    "sound": "glass"
+  },
+  "mcpe_food:tieguanyin_serving": {
+    "sound": "glass"
+  },
   "mcpe_food:lamb_slices_on_plate": {
     "sound": "glass"
   },
@@ -1018,6 +1024,36 @@
   "mcpe_food:pepsi_paper_cup": {
     "sound": "glass"
   },
+  "mcpe_food:gongfu_tea_tray": {
+    "sound": "glass"
+  },
+  "mcpe_food:fridge_single_rose_gold": {
+    "sound": "glass"
+  },
+  "mcpe_food:fridge_single_white": {
+    "sound": "glass"
+  },
+  "mcpe_food:fridge_single_black": {
+    "sound": "glass"
+  },
+  "mcpe_food:fridge_double_rose_gold": {
+    "sound": "glass"
+  },
+  "mcpe_food:fridge_double_rose_gold_upper": {
+    "sound": "glass"
+  },
+  "mcpe_food:fridge_double_white": {
+    "sound": "glass"
+  },
+  "mcpe_food:fridge_double_white_upper": {
+    "sound": "glass"
+  },
+  "mcpe_food:fridge_double_black": {
+    "sound": "glass"
+  },
+  "mcpe_food:fridge_double_black_upper": {
+    "sound": "glass"
+  },
   "mcpe_food:desktop_computer": {
     "sound": "glass"
   },
@@ -1061,6 +1097,18 @@
     "sound": "glass"
   },
   "mcpe_food:keyboard_mouse_set": {
+    "sound": "glass"
+  },
+  "mcpe_food:dell_laptop_open": {
+    "sound": "glass"
+  },
+  "mcpe_food:dell_laptop_closed": {
+    "sound": "glass"
+  },
+  "mcpe_food:macbook_pro_gpt_open": {
+    "sound": "glass"
+  },
+  "mcpe_food:macbook_pro_gpt_closed": {
     "sound": "glass"
   },
   "mcpe_food:triple_tray": {

@@ -1,0 +1,20 @@
+{
+  "version": "0.5.0",
+  "deviceColorSHA256": {
+    "desktop_computer": "15f9868ea28166681ba51299d8ab7acf556bf0fe8200e9ad8b42487ed763b575",
+    "all_in_one_computer": "306f8d504d383a3d5455662cc6953c3aa9d74096f2011132321fc1a1bbc5f09d",
+    "silver_laptop_open": "f28a85c40bb38df6205079d64ac581c6b131746d22747bdc29848977a842b417",
+    "silver_laptop_closed": "84146ae7c01b3f22d93f7b45ea6f76b857b3f25220348851a81c8340d740b951",
+    "gaming_laptop_open": "58327e9a4057f6413f473de8e470298f51a45d047cac534d621fec40c5e10630",
+    "gaming_laptop_closed": "76240de0f491d57f6baec8ed555194b6ccb498d5f7858c7f88a1a9f33a171b52",
+    "thinkpad_open": "fcbc3bceb0cfa93f63b3762099a0f2b7bd8df3dafbdbaf2d361f7c8c4f05bcad",
+    "thinkpad_closed": "ccfd43304f909ea85ab2d0169f05b3e35d60689aacf8d07e95119e0b6207c9f5",
+    "macbook_open": "71116ffaa2e31397fccdabf3b55f7577a8092f80e64157e487c31ba6cf2ce2fb",
+    "macbook_closed": "9224be456e39f835f68098ecb8e4b12b34aca95e7ad9bab4150dff7976a8a796",
+    "router": "253017518792a09031f886eaa13169919da63157cfb64a07ebb0972891a5cd76",
+    "server_cabinet": "253017518792a09031f886eaa13169919da63157cfb64a07ebb0972891a5cd76",
+    "ipad_air_magic_keyboard": "978b21f490212c66f7be5f4bb78f54360db31a20528df383078d2730523ac010",
+    "crt_monitor": "dd6a7579fef286348853561df2b22198a8599f7239631b66685ffdf70dde3973",
+    "keyboard_mouse_set": "253017518792a09031f886eaa13169919da63157cfb64a07ebb0972891a5cd76"
+  }
+}

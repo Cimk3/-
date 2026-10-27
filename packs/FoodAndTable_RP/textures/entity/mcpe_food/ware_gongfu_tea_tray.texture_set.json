@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "ware_gongfu_tea_tray",
+    "metalness_emissive_roughness": "ware_gongfu_tea_tray_mer"
+  }
+}

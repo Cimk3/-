@@ -1,5 +1,6 @@
 import { bottleProps, cutlery, dishes, hotpots, id, servings, vesselByKey, vessels } from './catalog.js';
-import { electronics } from './electronics-catalog.js';
+import { electronics, originalElectronics, newElectronics } from './electronics-catalog.js';
+export const teaTray = { key: 'gongfu_tea_tray', zh: '功夫茶盘套装', en: 'Gongfu Tea Tray Set' };
 export const tray = { key: 'triple_tray', zh: '三菜连体托盘', en: 'Three Dish Tray' };
 export const paperCups = [
     { key: 'coca_cola_paper_cup', zh: '可口可乐纸杯（摆件）', en: 'Coca-Cola Paper Cup (Display)', color: '#c52e35' },
@@ -24,12 +25,14 @@ export function adSize(ad, size) {
     const n = Math.max(0, Math.min(2, size)) + 1;
     return ad.aspect === 'wide' ? [n * 2, n] : ad.aspect === 'portrait' ? [n, n * 2] : [n, n];
 }
-export const tableItems = [...vessels, ...cutlery, ...hotpots, ...bottleProps, ...paperCups, tray, ...electronics];
+export const tableItems = [...vessels, ...cutlery, ...hotpots, ...bottleProps, ...paperCups, tray, ...electronics, teaTray];
 export const tableItemById = new Map(tableItems.map(t => [id(t.key), t]));
 export const trayFoods = dishes.filter(f => vesselByKey.get(f.vessel)?.family === 'plate');
 export const surfaceVisuals = [
-    ...tableItems.filter(t => !electronics.some(e => e.key === t.key)).map(t => ({ key: t.key, zh: t.zh, en: t.en })),
-    ...servings.map(s => ({ key: s.key, zh: s.food.zh, en: s.food.en })),
-    ...electronics.map(t => ({ key: t.key, zh: t.zh, en: t.en }))
+    ...[...vessels, ...cutlery, ...hotpots, ...bottleProps, ...paperCups, tray].map(t => ({ key: t.key, zh: t.zh, en: t.en })),
+    ...servings.filter(s => s.food.key !== 'tieguanyin').map(s => ({ key: s.key, zh: s.food.zh, en: s.food.en })),
+    ...originalElectronics.map(t => ({ key: t.key, zh: t.zh, en: t.en })),
+    ...newElectronics.map(t => ({ key: t.key, zh: t.zh, en: t.en })), teaTray,
+    ...servings.filter(s => s.food.key === 'tieguanyin').map(s => ({ key: s.key, zh: s.food.zh, en: s.food.en }))
 ];
 export const surfaceIndex = new Map(surfaceVisuals.map((t, i) => [id(t.key), i]));

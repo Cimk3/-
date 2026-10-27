@@ -8,6 +8,7 @@ give @s mcpe_food:baijiu 4
 give @s mcpe_food:premium_baijiu 4
 give @s mcpe_food:premium_red_wine 4
 give @s mcpe_food:cola 4
+give @s mcpe_food:tieguanyin 4
 give @s mcpe_food:baijiu_bottle 4
 give @s mcpe_food:premium_baijiu_bottle 4
 give @s mcpe_food:premium_red_wine_bottle 4

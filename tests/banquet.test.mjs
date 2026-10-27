@@ -1,3 +1,4 @@
+import {refrigerators} from '../.build/appliance-catalog.js';
 import {electronics} from '../.build/electronics-catalog.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -5,7 +6,7 @@ import {readFileSync,readdirSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {categories,foods,dishes,displays,banquetFoods as newFoods,bottleProps,recipes,recipeCategory,id,vessels,cutlery} from '../.build/catalog.js';
 import {foodCubes,bottleCubes,detailGeometry,modelBounds} from '../tools/detail-art.mjs';
-import {advertisements,paperCups,tray} from '../.build/decor-catalog.js';
+import {advertisements,paperCups,tray,teaTray} from '../.build/decor-catalog.js';
 import {decodeRGBA} from '../tools/png-inspect.mjs';
 const bp='packs/FoodAndTable_BP',rp='packs/FoodAndTable_RP';
 const read=p=>JSON.parse(readFileSync(p,'utf8'));
@@ -34,11 +35,11 @@ test('creative inventory has five food groups plus private tableware, advertisem
   assert.equal(groups.length,1);assert.equal(groups[0].category_name,'items');
   assert.deepEqual(groups[0].groups.map(g=>g.group_identifier.name),[...Object.keys(categories).map(k=>`mcpe_food:group_${k}`),'mcpe_food:group_tableware','mcpe_food:group_advertisements','mcpe_food:group_electronics']);
   const all=groups[0].groups.flatMap(g=>g.items);assert.equal(new Set(all).size,all.length);
-  assert.deepEqual([...all].sort(),[...dishes,...bottleProps,...paperCups,...vessels,...cutlery,tray,...advertisements,...electronics].map(f=>id(f.key)).sort());
+  assert.deepEqual([...all].sort(),[...dishes,...bottleProps,...paperCups,...vessels,...cutlery,tray,teaTray,...advertisements,...electronics,...refrigerators].map(f=>id(f.key)).sort());
   for(const locale of['zh_CN','en_US']){const source=readFileSync(`${rp}/texts/${locale}.lang`,'utf8');for(const g of groups[0].groups)assert.ok(source.includes(`${g.group_identifier.name}=`));}
 });
 test('approved category counts and intentional cross-cuisine placements are exact',()=>{
-  assert.deepEqual(Object.fromEntries(Object.keys(categories).map(k=>[k,foods.filter(f=>f.category===k).length])),{chinese:42,western:23,japanese:13,dessert:13,drink:10});
+  assert.deepEqual(Object.fromEntries(Object.keys(categories).map(k=>[k,foods.filter(f=>f.category===k).length])),{chinese:42,western:23,japanese:13,dessert:13,drink:11});
   for(const key of['fruit_platter','snow_pear_tremella','jujube_lotus_soup'])assert.equal(foods.find(f=>f.key===key).category,'chinese');
   assert.equal(foods.find(f=>f.key==='dorayaki').category,'japanese');assert.equal(foods.find(f=>f.key==='mung_bean_soup').category,'dessert');
   for(const key of['chicken_nuggets','fries','hotdog','boeuf_bourguignon'])assert.equal(foods.find(f=>f.key===key).category,'western');

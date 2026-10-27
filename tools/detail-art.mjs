@@ -103,6 +103,11 @@ function poultry(a,goose){
   for(let i=0;i<5;i++)add(a,-2.6+i,5.04,-.8,.4,.06,.18,8);
 }
 function detailedContents(f){
+  if(f.key==='tieguanyin'){
+    const tea=[];disc(tea,0,.8,0,2.25,2.25,5.45,6,'food',12);
+    for(let i=0;i<3;i++)tea.push(cube(-.9+i*.85,6.29,-.3+i*.2,.65,.055,.22,9,'food',[0,i*28,0]));
+    return tea;
+  }
   const fineDining=fineDiningContents(f,{cube,disc,ring,ellipsoid,garnish});
   if(fineDining)return fineDining;
   const restaurant=restaurantContents(f,{cube,disc,ring,ellipsoid,garnish});
@@ -337,9 +342,9 @@ function rotate(p,c){
   }return[x+center[0],y+center[1],z+center[2]];
 }
 /** Software preview interpolates actual per-face UVs and samples the production color map. */
-export function renderDetail(source,textures,width=128,height=128,{worldScale,front=false}={}){
+export function renderDetail(source,textures,width=128,height=128,{worldScale,front=false,projection='isometric'}={}){
   const cubes=pruneFaces(source),target=canvas(width,height),depth=new Float64Array(width*height).fill(-Infinity),faces=[];
-  const project=([x,y,z])=>[.866*(x-z),.5*(x+z)-y,x+y+z];
+  const project=([x,y,z])=>projection==='side'?[-z,-y,x]:projection==='entity-front'?[-x,.45*z-y,y+z]:[.866*(x-z),.5*(x+z)-y,x+y+z];
   for(const c of cubes)for(const name of c.faces??FACE_NAMES){
     let points=faceVertices(c,name).map(p=>rotate(p,c));if(front)points=points.map(([x,y,z])=>[-x,y,-z]);
     const e1=points[1].map((v,i)=>v-points[0][i]),e2=points[2].map((v,i)=>v-points[1][i]);
@@ -354,7 +359,8 @@ export function renderDetail(source,textures,width=128,height=128,{worldScale,fr
   for(const face of faces){
     if(!face.texture)throw new Error('Missing preview material');
     const [u,v]=face.uv.uv,[du,dv]=face.uv.uv_size;
-    const uvs=face.name==='north'||face.name==='south'?[[u+du,v+dv],[u+du,v],[u,v],[u,v+dv]]:[[u,v+dv],[u,v],[u+du,v],[u+du,v+dv]];
+    let uvs=face.name==='north'||face.name==='south'?[[u+du,v+dv],[u+du,v],[u,v],[u,v+dv]]:[[u,v+dv],[u,v],[u+du,v],[u+du,v+dv]];
+    if(projection==='entity-front'&&(face.name==='north'||face.name==='south'))uvs=uvs.map(([x,y])=>[2*u+du-x,y]);
     const points=face.points.map(([x,y,z],i)=>[x*scale+ox,y*scale+oy,z,...uvs[i]]);
     for(const tri of[[0,1,2],[0,2,3]]){
       const[a,b,c]=tri.map(i=>points[i]),den=(b[1]-c[1])*(a[0]-c[0])+(c[0]-b[0])*(a[1]-c[1]);if(Math.abs(den)<.00001)continue;

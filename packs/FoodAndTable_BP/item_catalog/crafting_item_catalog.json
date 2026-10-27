@@ -152,6 +152,7 @@
               "mcpe_food:premium_baijiu",
               "mcpe_food:premium_red_wine",
               "mcpe_food:cola",
+              "mcpe_food:tieguanyin",
               "mcpe_food:baijiu_bottle",
               "mcpe_food:premium_baijiu_bottle",
               "mcpe_food:premium_red_wine_bottle",
@@ -178,7 +179,8 @@
               "mcpe_food:table_knife",
               "mcpe_food:fork",
               "mcpe_food:spoon",
-              "mcpe_food:triple_tray"
+              "mcpe_food:triple_tray",
+              "mcpe_food:gongfu_tea_tray"
             ]
           },
           {
@@ -221,7 +223,17 @@
               "mcpe_food:server_cabinet",
               "mcpe_food:ipad_air_magic_keyboard",
               "mcpe_food:crt_monitor",
-              "mcpe_food:keyboard_mouse_set"
+              "mcpe_food:keyboard_mouse_set",
+              "mcpe_food:dell_laptop_open",
+              "mcpe_food:dell_laptop_closed",
+              "mcpe_food:macbook_pro_gpt_open",
+              "mcpe_food:macbook_pro_gpt_closed",
+              "mcpe_food:fridge_single_rose_gold",
+              "mcpe_food:fridge_single_white",
+              "mcpe_food:fridge_single_black",
+              "mcpe_food:fridge_double_rose_gold",
+              "mcpe_food:fridge_double_white",
+              "mcpe_food:fridge_double_black"
             ]
           }
         ]

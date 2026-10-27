@@ -1,7 +1,7 @@
 {
   "advertisements": 12,
   "advertisementSizes": 36,
-  "surfaceDefinitions": 354,
+  "surfaceDefinitions": 361,
   "trayFoods": 70,
   "trayCubes": 65,
   "maxMiniCubes": 39,
@@ -1764,7 +1764,7 @@
     },
     {
       "key": "surface_ipad_air_magic_keyboard",
-      "cubes": 16,
+      "cubes": 17,
       "resolution": 128
     },
     {
@@ -1775,6 +1775,41 @@
     {
       "key": "surface_keyboard_mouse_set",
       "cubes": 6,
+      "resolution": 128
+    },
+    {
+      "key": "surface_dell_laptop_open",
+      "cubes": 20,
+      "resolution": 128
+    },
+    {
+      "key": "surface_dell_laptop_closed",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "surface_macbook_pro_gpt_open",
+      "cubes": 19,
+      "resolution": 128
+    },
+    {
+      "key": "surface_macbook_pro_gpt_closed",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "surface_gongfu_tea_tray",
+      "cubes": 230,
+      "resolution": 128
+    },
+    {
+      "key": "surface_tieguanyin_on_glass",
+      "cubes": 64,
+      "resolution": 128
+    },
+    {
+      "key": "surface_tieguanyin_serving",
+      "cubes": 67,
       "resolution": 128
     },
     {
@@ -2189,5 +2224,5 @@
     }
   ],
   "entityTypes": 3,
-  "entityTextureSets": 157
+  "entityTextureSets": 163
 }

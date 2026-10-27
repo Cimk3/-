@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync,readdirSync} from 'node:fs';
 import {createHash} from 'node:crypto';
-import {advertisements,adSize,paperCups,tray,surfaceVisuals,trayFoods} from '../.build/decor-catalog.js';
+import {advertisements,adSize,paperCups,tray,teaTray,surfaceVisuals,trayFoods} from '../.build/decor-catalog.js';
 import {vessels,cutlery,id,recipes,foods} from '../.build/catalog.js';
 import {decodeRGBA} from '../tools/png-inspect.mjs';
 const bp='packs/FoodAndTable_BP',rp='packs/FoodAndTable_RP',read=p=>JSON.parse(readFileSync(p,'utf8'));
@@ -12,11 +12,11 @@ test('0.4.2 IDs, UUIDs, recipe inputs, drop tables and crop states survive the u
   assert.deepEqual(recipes.map(({key,station,inputs,output,category})=>({key,station,inputs,output,category})),old.menuRecipes);
   for(const[file,sha]of Object.entries(old.loot))assert.equal(createHash('sha256').update(readFileSync(`${bp}/loot_tables/blocks/${file}`)).digest('hex'),sha,file);
   for(const[file,states]of Object.entries(old.cropStates))assert.deepEqual(read(`${bp}/blocks/${file}`)['minecraft:block'].description.states,states);
-  assert.equal(foods.length,101);
+  assert.equal(foods.length,102);
 });
-test('all fourteen tableware items are in the items group with no construction duplicates',()=>{
-  assert.equal(vessels.length+cutlery.length+1,14);
-  for(const v of [...vessels,...cutlery,tray]){const item=read(`${bp}/items/${v.key}.json`)['minecraft:item'],block=read(`${bp}/blocks/${v.key}.json`)['minecraft:block'];assert.deepEqual(item.description.menu_category,{category:'items',group:'mcpe_food:group_tableware'});assert.equal(block.description.menu_category.category,'none');}
+test('all fifteen tableware items are in the items group with no construction duplicates',()=>{
+  assert.equal(vessels.length+cutlery.length+2,15);
+  for(const v of [...vessels,...cutlery,tray,teaTray]){const item=read(`${bp}/items/${v.key}.json`)['minecraft:item'],block=read(`${bp}/blocks/${v.key}.json`)['minecraft:block'];assert.deepEqual(item.description.menu_category,{category:'items',group:'mcpe_food:group_tableware'});assert.equal(block.description.menu_category.category,'none');}
 });
 test('twelve independently generated posters have thirty-six non-stretched sizes, bilingual masters and matching matte MER',()=>{
   assert.equal(advertisements.length,12);assert.equal(advertisements.filter(a=>a.key.includes('japanese')).length,2);

@@ -305,6 +305,9 @@
     "mcpe_food_black_truffle_foie_gras": {
       "textures": "textures/items/mcpe_food/black_truffle_foie_gras"
     },
+    "mcpe_food_tieguanyin": {
+      "textures": "textures/items/mcpe_food/tieguanyin"
+    },
     "mcpe_food_lamb_slices": {
       "textures": "textures/items/mcpe_food/lamb_slices"
     },
@@ -389,6 +392,27 @@
     "mcpe_food_pepsi_paper_cup": {
       "textures": "textures/items/mcpe_food/pepsi_paper_cup"
     },
+    "mcpe_food_gongfu_tea_tray": {
+      "textures": "textures/items/mcpe_food/gongfu_tea_tray"
+    },
+    "mcpe_food_fridge_single_rose_gold": {
+      "textures": "textures/items/mcpe_food/fridge_single_rose_gold"
+    },
+    "mcpe_food_fridge_single_white": {
+      "textures": "textures/items/mcpe_food/fridge_single_white"
+    },
+    "mcpe_food_fridge_single_black": {
+      "textures": "textures/items/mcpe_food/fridge_single_black"
+    },
+    "mcpe_food_fridge_double_rose_gold": {
+      "textures": "textures/items/mcpe_food/fridge_double_rose_gold"
+    },
+    "mcpe_food_fridge_double_white": {
+      "textures": "textures/items/mcpe_food/fridge_double_white"
+    },
+    "mcpe_food_fridge_double_black": {
+      "textures": "textures/items/mcpe_food/fridge_double_black"
+    },
     "mcpe_food_desktop_computer": {
       "textures": "textures/items/mcpe_food/desktop_computer"
     },
@@ -433,6 +457,18 @@
     },
     "mcpe_food_keyboard_mouse_set": {
       "textures": "textures/items/mcpe_food/keyboard_mouse_set"
+    },
+    "mcpe_food_dell_laptop_open": {
+      "textures": "textures/items/mcpe_food/dell_laptop_open"
+    },
+    "mcpe_food_dell_laptop_closed": {
+      "textures": "textures/items/mcpe_food/dell_laptop_closed"
+    },
+    "mcpe_food_macbook_pro_gpt_open": {
+      "textures": "textures/items/mcpe_food/macbook_pro_gpt_open"
+    },
+    "mcpe_food_macbook_pro_gpt_closed": {
+      "textures": "textures/items/mcpe_food/macbook_pro_gpt_closed"
     },
     "mcpe_food_triple_tray": {
       "textures": "textures/items/mcpe_food/triple_tray"

@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "ware_fridge_black",
+    "metalness_emissive_roughness": "ware_fridge_black_mer"
+  }
+}

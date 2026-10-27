@@ -5,7 +5,8 @@ import { fileURLToPath } from 'node:url';
 import { MinecraftBlockTypes, MinecraftItemTypes } from '@minecraft/vanilla-data';
 import { categories, bottleProps, crops, cutlery, dishes, displays, foods, hotpots, id, materials, recipes, servings, stations, vessels } from '../.build/catalog.js';
 import { supportBlocks } from '../.build/supports.js';
-import {advertisements,paperCups,tray} from '../.build/decor-catalog.js';
+import {advertisements,paperCups,tray,teaTray} from '../.build/decor-catalog.js';
+import {refrigerators} from '../.build/appliance-catalog.js';
 import {electronics} from '../.build/electronics-catalog.js';
 import {emissionIsValid} from './emission-policy.mjs';
 import { crc32 } from './art.mjs';
@@ -128,8 +129,8 @@ for(const group of creative[0].groups){
     check(desc.menu_category.category==='items'&&desc.menu_category.group===group.group_identifier.name,`conflicting menu group ${key}`);
   }
 }
-for(const entry of [...dishes,...bottleProps,...paperCups,...vessels,...cutlery,tray,...advertisements,...electronics])check(grouped.has(id(entry.key)),`ungrouped new content ${entry.key}`);
-check(grouped.size===dishes.length+bottleProps.length+paperCups.length+vessels.length+cutlery.length+1+advertisements.length+electronics.length,'creative catalog contains unexpected entries');
+for(const entry of [...dishes,...bottleProps,...paperCups,...vessels,...cutlery,tray,teaTray,...advertisements,...electronics,...refrigerators])check(grouped.has(id(entry.key)),`ungrouped new content ${entry.key}`);
+check(grouped.size===dishes.length+bottleProps.length+paperCups.length+vessels.length+cutlery.length+2+advertisements.length+electronics.length+refrigerators.length,'creative catalog contains unexpected entries');
 for(const prop of bottleProps){
   const c=items.get(id(prop.key)).data['minecraft:item'].components;
   check(!c['minecraft:food']&&!c['minecraft:use_animation'],`bottle display is consumable ${prop.key}`);
@@ -186,7 +187,7 @@ for(const file of files.filter(f=>f.endsWith('.png'))){
   const bytes=readFileSync(file);check(bytes.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10])),`invalid PNG ${file}`);
   let p=8;while(p<bytes.length){const length=bytes.readUInt32BE(p),end=p+8+length;check(crc32(bytes.subarray(p+4,end))===bytes.readUInt32BE(end),`PNG checksum ${file}`);p=end+4;}
 }
-check(foods.length===101&&bottleProps.length===3&&displays.length===8&&hotpots.length===2&&cutlery.length+vessels.length+1===14&&advertisements.length===12&&paperCups.length===2&&stations.length===4&&crops.length===6&&electronics.length===15,'approved content count mismatch');
+check(foods.length===102&&bottleProps.length===3&&displays.length===8&&hotpots.length===2&&cutlery.length+vessels.length+2===15&&advertisements.length===12&&paperCups.length===2&&stations.length===4&&crops.length===6&&electronics.length===19&&refrigerators.length===6,'approved content count mismatch');
 const report={status:'passed',checks,jsonFiles:jsons.length,pngFiles:files.filter(f=>f.endsWith('.png')).length,items:items.size,blocks:blocks.size,models:models.size,edible:foods.length,displayDishes:displays.length,servingVariants:servings.length,pbrTextureSets:textureSets.length,destructionParticles:`disabled on all ${blocks.size} custom blocks; isolated neutral fallback`,vibrantVisuals:'pbr manifest and texture-set data validated; engine rendering untested',resourceIsolation:'passed — private keys, paths and IDs; no vanilla overrides',officialVanillaDefinitions:'1.26.52',engineTested:false};
 writeFileSync(path.join(root,'validation-report.json'),JSON.stringify(report,null,2)+'\n');
 const buildReport=path.join(root,'build-report.json');writeFileSync(buildReport,JSON.stringify({...parse(buildReport),staticStatus:'passed',staticChecks:checks},null,2)+'\n');

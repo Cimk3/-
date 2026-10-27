@@ -352,6 +352,9 @@
     "mcpe_food_food_black_truffle_foie_gras": {
       "textures": "textures/blocks/mcpe_food/food_black_truffle_foie_gras"
     },
+    "mcpe_food_food_tieguanyin": {
+      "textures": "textures/blocks/mcpe_food/food_tieguanyin"
+    },
     "mcpe_food_food_lamb_slices": {
       "textures": "textures/blocks/mcpe_food/food_lamb_slices"
     },
@@ -390,6 +393,18 @@
     },
     "mcpe_food_ware_pepsi_paper_cup": {
       "textures": "textures/blocks/mcpe_food/ware_pepsi_paper_cup"
+    },
+    "mcpe_food_ware_gongfu_tea_tray": {
+      "textures": "textures/blocks/mcpe_food/ware_gongfu_tea_tray"
+    },
+    "mcpe_food_ware_fridge_rose_gold": {
+      "textures": "textures/blocks/mcpe_food/ware_fridge_rose_gold"
+    },
+    "mcpe_food_ware_fridge_white": {
+      "textures": "textures/blocks/mcpe_food/ware_fridge_white"
+    },
+    "mcpe_food_ware_fridge_black": {
+      "textures": "textures/blocks/mcpe_food/ware_fridge_black"
     },
     "mcpe_food_device_desktop_computer": {
       "textures": "textures/blocks/mcpe_food/device_desktop_computer"
@@ -435,6 +450,18 @@
     },
     "mcpe_food_device_keyboard_mouse_set": {
       "textures": "textures/blocks/mcpe_food/device_keyboard_mouse_set"
+    },
+    "mcpe_food_device_dell_laptop_open": {
+      "textures": "textures/blocks/mcpe_food/device_dell_laptop_open"
+    },
+    "mcpe_food_device_dell_laptop_closed": {
+      "textures": "textures/blocks/mcpe_food/device_dell_laptop_closed"
+    },
+    "mcpe_food_device_macbook_pro_gpt_open": {
+      "textures": "textures/blocks/mcpe_food/device_macbook_pro_gpt_open"
+    },
+    "mcpe_food_device_macbook_pro_gpt_closed": {
+      "textures": "textures/blocks/mcpe_food/device_macbook_pro_gpt_closed"
     },
     "mcpe_food_ware_triple_tray": {
       "textures": "textures/blocks/mcpe_food/ware_triple_tray"

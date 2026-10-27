@@ -3,7 +3,7 @@ import { ActionFormData, MessageFormData } from "@minecraft/server-ui";
 import { compatibleVessels, menuCategories, recipeCategory, cropByBlock, foodById, foodByServing, id, label, recipes, servingKey, stations, vessels } from "./catalog.js";
 import { count, MenuSessions, planCraft, planInsert, planServe } from "./inventory.js";
 import { surfaceHeight } from "./supports.js";
-import { handleDecorBlock, installDecor, migrateLowSurface, nativeTray } from './decor-runtime.js';
+import { handleDecorBlock, installDecor, migrateLowSurface, nativeTray, applianceTick } from './decor-runtime.js';
 import { tray } from './decor-catalog.js';
 const sessions = new MenuSessions();
 const busyBlocks = new Set();
@@ -233,6 +233,7 @@ function cropInteract(p, b) {
     }
 }
 system.beforeEvents.startup.subscribe(event => {
+    event.blockComponentRegistry.registerCustomComponent('mcpe_food:appliance', { onTick({ block }) { applianceTick(block); } });
     event.blockComponentRegistry.registerCustomComponent("mcpe_food:kitchen", {
         onPlayerInteract({ player, block }) {
             if (!player || player.isSneaking || !debounce(player, block))

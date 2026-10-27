@@ -4,7 +4,9 @@ import {registerHooks} from 'node:module';
 import {state,FakeDimension,FakePlayer,ItemStack,interact,flush,reset,system,world} from './mock-server.mjs';
 registerHooks({resolve(specifier,context,next){const mock=specifier==='@minecraft/server'?'mock-server.mjs':specifier==='@minecraft/server-ui'?'mock-ui.mjs':undefined;return mock?{url:new URL(mock,import.meta.url).href,shortCircuit:true}:next(specifier,context);}});
 await import('../.build/main.js');
-const {removeDecor,reconcileDecor,loadDecorRecords}=await import('../.build/decor-runtime.js');
+const {removeDecor,reconcileDecor,loadDecorRecords,applianceTick}=await import('../.build/decor-runtime.js');
+const {screenNormal}=await import('../.build/device-facing.js');
+const {refrigerators}=await import('../.build/appliance-catalog.js');
 const {surfaceHeight}=await import('../.build/supports.js');
 const {electronics}=await import('../.build/electronics-catalog.js');
 const idle=()=>new Promise(resolve=>setImmediate(resolve));
@@ -127,7 +129,7 @@ test('all fifteen electronics sit on full blocks, bookshelves and wood/stone/cop
 
 test('electronic placement preserves the four chosen directions',async()=>{
   for(const[rotation,direction,yaw]of [[0,'south',180],[90,'west',90],[180,'north',0],[270,'east',-90]]){
-    const{dimension,player,base}=setup();player.getRotation=()=>({x:0,y:rotation});const r=await place(player,base,'desktop_computer');assert.equal(r.direction,direction);assert.equal(entityFor(dimension,r).rotation.y,yaw);removeDecor(r,false);
+    const{dimension,player,base}=setup();player.getRotation=()=>({x:0,y:rotation});const r=await place(player,base,'router');assert.equal(r.direction,direction);assert.equal(entityFor(dimension,r).rotation.y,yaw);removeDecor(r,false);
   }
 });
 
@@ -166,4 +168,92 @@ test('electronic props ignore serving and clicking, and repeated destruction ret
 test('creative electronics placement retains held inventory and support removal creates no drops',async()=>{
   const{dimension,player,base}=setup('minecraft:bookshelf');player.mode='Creative';const r=await place(player,base,'ipad_air_magic_keyboard');assert.equal(player.container.count(r.definition),1);
   state.breakBlock({player,block:base,cancel:false});await tick();assert.equal(saved().length,0);assert.equal(dimension.drops.length,0);assert.equal(base.typeId,'minecraft:bookshelf');
+});
+
+test('arbitrary screen facing follows player position and remains frozen through movement, support changes and reload',async()=>{
+  for(const d of electronics.filter(d=>d.screenFront)){
+    const{dimension,player,base}=setup('minecraft:oak_slab');player.location={x:3.1,y:1,z:-1.3};player.getRotation=()=>({x:0,y:143});
+    const r=await place(player,base,d.key),e=entityFor(dimension,r),normal=screenNormal(r.yaw,d.screenFront),dx=player.location.x-.5,dz=player.location.z-.5;
+    assert.ok((normal.x*dx+normal.z*dz)/Math.hypot(dx,dz)>.999999);assert.equal(e.rotation.y,r.yaw);
+    player.location={x:-3,y:1,z:2};base.setPermutation({typeId:'minecraft:oak_double_slab',getAllStates:()=>({})});reconcileDecor();assert.equal(e.rotation.y,r.yaw);assert.equal(e.location.y,1);
+    e.remove();loadDecorRecords();reconcileDecor();assert.equal(entityFor(dimension,r).rotation.y,r.yaw);removeDecor(r,false);
+  }
+});
+
+test('legacy screen records without yaw keep their stored cardinal direction after upgrade',async()=>{
+  const{dimension,player,base}=setup(),r=await place(player,base,'macbook_open');delete r.yaw;r.direction='east';world.setDynamicProperty('mcpe_food:decor:'+r.uid,JSON.stringify(r));loadDecorRecords();reconcileDecor();assert.equal(saved()[0].yaw,undefined);assert.equal(entityFor(dimension,r).rotation.y,-90);
+});
+
+test('tableware now places on newly supported interactive/full surfaces without opening their UI',async()=>{
+  for(const type of ['minecraft:barrel','minecraft:furnace','minecraft:crafting_table','minecraft:copper_bulb','minecraft:glass','minecraft:stripped_birch_wood']){
+    const{player,base}=setup(type);player.container.setItem(0,new ItemStack('mcpe_food:plate'));assert.equal(interact(player,base).cancel,true);await tick();assert.equal(saved().length,1);assert.equal(state.forms.length,0);assert.equal(base.typeId,type);removeDecor(saved()[0],false);
+  }
+});
+
+test('advertisements accept full transparent and ore walls while plants remain invalid',async()=>{
+  for(const type of ['minecraft:glass','minecraft:coal_ore','minecraft:polished_tuff']){
+    const{dimension,player}=setup();const base=wall(dimension,2,1);for(let x=0;x<2;x++)dimension.put(type,{x:-x,y:0,z:0});player.container.setItem(0,new ItemStack('mcpe_food:ad_wellington'));state.responses=[{selection:0}];interact(player,dimension.getBlock(base.location),true,'North');await tick();assert.equal(saved().length,1,type);removeDecor(saved()[0],false);
+  }
+  const{dimension,player}=setup();wall(dimension,2,1);dimension.put('minecraft:short_grass',{x:0,y:0,z:0});player.container.setItem(0,new ItemStack('mcpe_food:ad_wellington'));state.responses=[{selection:0}];interact(player,dimension.getBlock({x:0,y:0,z:0}),true,'North');await tick();assert.equal(saved().length,0);assert.equal(player.container.count('mcpe_food:ad_wellington'),1);
+});
+
+test('all six refrigerator items place their complete one/two-block columns and both break points drop only one',async()=>{
+  for(const fridge of refrigerators)for(const part of new Set([0,fridge.height-1])){
+    const{dimension,player,base}=setup(),r=await place(player,base,fridge.key);assert.equal(r.kind,'appliance');assert.equal(player.container.count(r.definition),0);
+    for(let i=0;i<fridge.height;i++)assert.equal(dimension.getBlock({x:0,y:1+i,z:0}).typeId,r.definition+(i?'_upper':''));
+    const target=dimension.getBlock({x:0,y:1+part,z:0});state.breakBlock({player,block:target,cancel:false});state.breakBlock({player,block:target,cancel:false});await tick();assert.equal(saved().length,0);assert.equal(dimension.drops.length,1);assert.equal(dimension.drops[0].item.typeId,r.definition);assert.equal(target.typeId,'minecraft:air');
+  }
+});
+
+test('refrigerator placement rejects blocked upper space, lower slabs and competing players without charging losers',async()=>{
+  let{dimension,player,base}=setup();dimension.put('minecraft:stone',{x:0,y:2,z:0});await place(player,base,'fridge_double_white');assert.equal(saved().length,0);assert.equal(player.container.count('mcpe_food:fridge_double_white'),1);assert.equal(dimension.getBlock({x:0,y:1,z:0}).typeId,'minecraft:air');
+  ({dimension,player,base}=setup('minecraft:oak_slab'));await place(player,base,'fridge_single_black');assert.equal(saved().length,0);assert.equal(player.container.count('mcpe_food:fridge_single_black'),1);
+  ({dimension,player,base}=setup());const other=new FakePlayer(dimension);player.container.setItem(0,new ItemStack('mcpe_food:fridge_double_white'));other.container.setItem(0,new ItemStack('mcpe_food:fridge_single_black'));interact(player,base);interact(other,base);await tick();assert.equal(saved().length,1);assert.equal(other.container.count('mcpe_food:fridge_single_black'),1);
+});
+
+test('refrigerator block-write and inventory-write failures restore inventory, both cells and owner records',async()=>{
+  for(const fault of ['upper','inventory']){
+    const{dimension,player,base}=setup(),upper=dimension.getBlock({x:0,y:2,z:0}),write=upper.setPermutation.bind(upper);let fail=true;
+    if(fault==='upper')upper.setPermutation=p=>{if(fail){fail=false;throw new Error('simulated upper part failure');}write(p);};else player.container.failOnce=true;
+    // Set held inventory before enabling the inventory fault.
+    if(fault==='inventory')player.container.failOnce=false;player.container.setItem(0,new ItemStack('mcpe_food:fridge_double_rose_gold'));if(fault==='inventory')player.container.failOnce=true;
+    interact(player,base);await tick();assert.equal(saved().length,0);assert.equal(player.container.count('mcpe_food:fridge_double_rose_gold'),1);assert.equal(upper.typeId,'minecraft:air');assert.equal(dimension.getBlock({x:0,y:1,z:0}).typeId,'minecraft:air');
+  }
+});
+
+test('fridge top supports tea/tableware and creative/survival destruction propagates its drop mode',async()=>{
+  for(const creative of [true,false]){
+    const{dimension,player,base}=setup(),fridge=await place(player,base,'fridge_double_black'),top=dimension.getBlock({x:0,y:2,z:0});
+    player.container.setItem(0,new ItemStack('mcpe_food:gongfu_tea_tray'));interact(player,top);await tick();assert.equal(saved().length,2);player.mode=creative?'Creative':'Survival';
+    state.breakBlock({player,block:dimension.getBlock({x:0,y:1,z:0}),cancel:false});await tick();assert.equal(saved().length,0);assert.equal(dimension.getEntities().length,0);assert.equal(dimension.drops.length,creative?0:2);if(!creative)assert.deepEqual(dimension.drops.map(d=>d.item.typeId).sort(),[fridge.definition,'mcpe_food:gongfu_tea_tray'].sort());
+  }
+});
+
+test('missing fridge parts clean once while unloaded cells and saved instances remain untouched',async()=>{
+  const{dimension,player,base}=setup(),r=await place(player,base,'fridge_double_white');dimension.unloaded=true;reconcileDecor();assert.equal(saved().length,1);assert.equal(dimension.drops.length,0);dimension.unloaded=false;loadDecorRecords();reconcileDecor();assert.equal(saved()[0].uid,r.uid);
+  dimension.put('minecraft:air',{x:0,y:2,z:0});reconcileDecor();reconcileDecor();assert.equal(saved().length,0);assert.equal(dimension.getBlock({x:0,y:1,z:0}).typeId,'minecraft:air');assert.equal(dimension.drops.length,1);
+});
+
+test('orphan helper cleanup does not invent items; command-created fridge bases establish one owner',()=>{
+  const{dimension}=setup();const helper=dimension.put('mcpe_food:fridge_double_white_upper',{x:2,y:1,z:0});applianceTick(helper);assert.equal(helper.typeId,'minecraft:air');assert.equal(dimension.drops.length,0);
+  const base=dimension.put('mcpe_food:fridge_double_white',{x:0,y:1,z:0});applianceTick(base);applianceTick(base);assert.equal(saved().length,1);assert.equal(dimension.getBlock({x:0,y:2,z:0}).typeId,'mcpe_food:fridge_double_white_upper');
+});
+
+test('Tieguanyin serves and returns through both cups, while the tea tray stays a static display',async()=>{
+  for(const vessel of ['glass','mug']){
+    const{dimension,player,base}=setup(),r=await place(player,base,vessel),e=entityFor(dimension,r);player.container.setItem(0,new ItemStack('mcpe_food:tieguanyin'));await useEntity(player,e);assert.ok(saved()[0].definition.includes('tieguanyin'));system.currentTick+=10;await useEntity(player,e);assert.equal(saved()[0].definition,'mcpe_food:'+vessel);assert.equal(player.container.count('mcpe_food:tieguanyin'),1);removeDecor(saved()[0],false);
+  }
+  const{dimension,player,base}=setup(),r=await place(player,base,'gongfu_tea_tray');player.container.setItem(0,new ItemStack('mcpe_food:tieguanyin'));await useEntity(player,entityFor(dimension,r));assert.equal(saved()[0].definition,r.definition);assert.equal(player.container.count('mcpe_food:tieguanyin'),1);
+});
+
+test('a refrigerator cannot displace an existing advertisement in its occupied column',async()=>{
+  const{dimension,player,base}=setup(),wall=dimension.put('minecraft:glass',{x:0,y:1,z:-1});player.container.setItem(0,new ItemStack('mcpe_food:ad_lamb'));state.responses=[{selection:0}];interact(player,wall,true,'South');await tick();assert.equal(saved().length,1);
+  await place(player,base,'fridge_double_white');assert.equal(saved().length,1);assert.equal(saved()[0].kind,'ad');assert.equal(player.container.count('mcpe_food:fridge_double_white'),1);assert.equal(dimension.getBlock({x:0,y:1,z:0}).typeId,'minecraft:air');
+});
+
+test('failed refrigerator removal restores both blocks and removes transient item drops before a safe retry',async()=>{
+  const{dimension,player,base}=setup(),r=await place(player,base,'fridge_double_black'),upper=dimension.getBlock({x:0,y:2,z:0}),write=upper.setPermutation.bind(upper);let fail=true;
+  upper.setPermutation=p=>{if(fail){fail=false;throw new Error('simulated clear failure');}write(p);};assert.throws(()=>removeDecor(r,true),/simulated clear failure/);
+  assert.equal(saved().length,1);assert.equal(dimension.getBlock({x:0,y:1,z:0}).typeId,r.definition);assert.equal(upper.typeId,r.definition+'_upper');assert.equal(dimension.drops.filter(d=>d.entity.isValid).length,0);
+  removeDecor(r,true);assert.equal(saved().length,0);assert.equal(dimension.drops.filter(d=>d.entity.isValid).length,1);
 });

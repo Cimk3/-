@@ -3,6 +3,8 @@ import { ActionFormData } from '@minecraft/server-ui';
 import { compatibleVessels, foodById, foodByServing, id, servingKey, vesselByKey } from './catalog.js';
 import { adById, adSize, advertisements, surfaceIndex, tableItemById, tray, trayFoods } from './decor-catalog.js';
 import { electronicsById } from './electronics-catalog.js';
+import { refrigeratorById } from './appliance-catalog.js';
+import { screenYaw } from './device-facing.js';
 import { planInsert, planServe } from './inventory.js';
 import { isWallSupport, surfaceHeight } from './supports.js';
 let io;
@@ -54,6 +56,18 @@ function surfaceValid(r) {
     const b = safeBlock(r);
     if (!b)
         return undefined;
+    if (r.kind === 'appliance') {
+        if (surfaceHeight(b) !== 1)
+            return false;
+        for (const [i, p] of applianceCells(r).entries()) {
+            const part = safeBlock(r, p);
+            if (!part)
+                return undefined;
+            if (part.typeId !== (i === 0 ? r.definition : r.definition + '_upper') || part.permutation.getState('minecraft:cardinal_direction') !== r.direction)
+                return false;
+        }
+        return true;
+    }
     if (!surfaceHeight(b))
         return false;
     const above = safeBlock(r, anchor(r));
@@ -110,12 +124,17 @@ function visual(r, type, part, index, position) {
     }
     if (r.kind === 'ad' && entity.getProperty('mcpe_food:size') !== (r.size ?? 0))
         entity.setProperty('mcpe_food:size', r.size ?? 0);
-    if (!found || !same(entity.location, position))
-        entity.teleport(position, { rotation: { x: 0, y: yaw[r.direction] ?? 0 } });
+    const facing = r.yaw ?? yaw[r.direction] ?? 0;
+    if (!found || !same(entity.location, position) || entity.getDynamicProperty('mcpe_food:yaw') !== facing) {
+        entity.teleport(position, { rotation: { x: 0, y: facing } });
+        entity.setDynamicProperty('mcpe_food:yaw', facing);
+    }
     return entity;
 }
 export function synchronize(r) {
     if (surfaceValid(r) !== true)
+        return;
+    if (r.kind === 'appliance')
         return;
     const wanted = new Set();
     if (r.kind === 'ad') {
@@ -194,11 +213,25 @@ export function removeDecor(requested, drop) {
     if (!r || locks.has(r.uid))
         return;
     locks.add(r.uid);
-    const spawned = [];
+    const spawned = [], changed = [];
     try {
+        if (r.kind === 'appliance') {
+            const cells = applianceCells(r);
+            for (const child of [...records.values()])
+                if (child.uid !== r.uid && child.dimension === r.dimension && ((child.kind !== 'ad' && cells.some(p => same(p, child.support))) || (child.kind === 'ad' && posterCells(child).some(p => cells.some(c => same(p, c))))))
+                    removeDecor(child, drop);
+        }
         if (drop)
             for (const key of drops(r))
                 spawned.push(dim(r).spawnItem(new ItemStack(key), { x: r.support.x + .5, y: r.support.y + 1, z: r.support.z + .5 }));
+        if (r.kind === 'appliance')
+            for (const [i, p] of applianceCells(r).entries()) {
+                const block = safeBlock(r, p);
+                if (block?.typeId === (i === 0 ? r.definition : r.definition + '_upper')) {
+                    changed.push({ block, permutation: block.permutation });
+                    block.setPermutation(BlockPermutation.resolve('minecraft:air'));
+                }
+            }
         if (r.native && safeBlock(r, anchor(r))?.typeId === id(tray.key))
             safeBlock(r, anchor(r)).setPermutation(BlockPermutation.resolve('minecraft:air'));
         world.setDynamicProperty(storageKey(r));
@@ -210,7 +243,9 @@ export function removeDecor(requested, drop) {
         for (const e of spawned)
             if (e.isValid)
                 e.remove();
-        if (r.native && safeBlock(r, anchor(r)))
+        for (const c of changed)
+            c.block.setPermutation(c.permutation);
+        if (r.kind === 'tray' && r.native && safeBlock(r, anchor(r)))
             safeBlock(r, anchor(r)).setPermutation(BlockPermutation.resolve(id(tray.key), { 'minecraft:cardinal_direction': r.direction }));
         save(r);
         throw error;
@@ -371,6 +406,7 @@ function createSurface(p, support, definition) {
     if (!empty(target))
         return;
     const r = { version: 1, uid: unique(), revision: 0, dimension: support.dimension.id, support: { ...support.location }, kind: definition === id(tray.key) ? 'tray' : 'surface', definition, direction: direction(p), native: definition === id(tray.key) && height === 1, slots: [null, null, null] };
+    r.yaw = screenYaw(definition, { x: support.location.x + .5, z: support.location.z + .5 }, p.location, p.getRotation().y);
     if (!near(p, r))
         return;
     const before = io.snapshot(c), plan = isCreative(p) ? { ok: true, slots: before.slots } : planServe(before.slots, p.selectedSlotIndex, definition);
@@ -401,6 +437,67 @@ export function nativeTray(block) {
     const r = { version: 1, uid: unique(), revision: 0, dimension: block.dimension.id, support: { ...support.location }, kind: 'tray', definition: id(tray.key), direction: String(block.permutation.getState('minecraft:cardinal_direction') ?? 'north'), native: true, slots: [null, null, null] };
     save(r);
     return r;
+}
+export function applianceCells(r) { return Array.from({ length: refrigeratorById.get(r.definition)?.height ?? 1 }, (_, i) => add(r.support, { x: 0, y: 1, z: 0 }, i + 1)); }
+function createAppliance(p, support, definition) {
+    const info = refrigeratorById.get(definition), c = io.inventory(p);
+    if (!info || !c || surfaceHeight(support) !== 1 || recordForSupport(support.dimension.id, support.location))
+        return;
+    const r = { version: 1, uid: unique(), revision: 0, dimension: support.dimension.id, support: { ...support.location }, kind: 'appliance', definition, direction: direction(p), native: false, slots: [] };
+    if (!near(p, r))
+        return;
+    const blocks = applianceCells(r).map(pos => safeBlock(r, pos));
+    if (blocks.some(b => !empty(b)))
+        return;
+    if ([...records.values()].some(other => other.kind === 'ad' && other.dimension === r.dimension && posterCells(other).some(wall => applianceCells(r).some(pos => same(pos, add(wall, normals[other.direction]))))))
+        return;
+    const before = io.snapshot(c), plan = isCreative(p) ? { ok: true, slots: before.slots } : planServe(before.slots, p.selectedSlotIndex, definition);
+    if (!plan.ok)
+        return;
+    const original = blocks.map(b => b.permutation);
+    try {
+        save(r);
+        blocks.forEach((b, i) => b.setPermutation(BlockPermutation.resolve(i === 0 ? definition : definition + '_upper', { 'minecraft:cardinal_direction': r.direction })));
+        io.commit(c, before, plan.slots);
+    }
+    catch (error) {
+        restore(c, before);
+        blocks.forEach((b, i) => b.setPermutation(original[i]));
+        world.setDynamicProperty(storageKey(r));
+        records.delete(r.uid);
+        throw error;
+    }
+}
+/** Tick recovery for commands/orphan helper parts; ordinary placement publishes its owner first. */
+export function applianceTick(block) {
+    const owned = [...records.values()].find(r => r.kind === 'appliance' && r.dimension === block.dimension.id && applianceCells(r).some(p => same(p, block.location)));
+    if (owned) {
+        if (surfaceValid(owned) === false)
+            removeDecor(owned, true);
+        return;
+    }
+    if (block.typeId.endsWith('_upper')) {
+        block.setPermutation(BlockPermutation.resolve('minecraft:air'));
+        return;
+    }
+    const info = refrigeratorById.get(block.typeId), support = block.below();
+    if (!info || !support)
+        return;
+    const r = { version: 1, uid: unique(), revision: 0, dimension: block.dimension.id, support: { ...support.location }, kind: 'appliance', definition: block.typeId, direction: String(block.permutation.getState('minecraft:cardinal_direction') ?? 'north'), native: false, slots: [] };
+    if (surfaceHeight(support) !== 1) {
+        block.setPermutation(BlockPermutation.resolve('minecraft:air'));
+        return;
+    }
+    const upper = info.height === 2 ? safeBlock(r, applianceCells(r)[1]) : undefined;
+    if (info.height === 2 && !upper)
+        return;
+    if (upper && !empty(upper)) {
+        block.setPermutation(BlockPermutation.resolve('minecraft:air'));
+        return;
+    }
+    save(r);
+    if (upper)
+        upper.setPermutation(BlockPermutation.resolve(r.definition + '_upper', { 'minecraft:cardinal_direction': r.direction }));
 }
 export function migrateLowSurface(block) {
     const below = block.below();
@@ -434,6 +531,15 @@ function run(p, work) { system.run(() => { Promise.resolve().then(work).catch(er
 export function handleDecorBlock(event) {
     const p = event.player, block = event.block, face = String(event.blockFace).toLowerCase(), c = io.inventory(p), hand = c?.getItem(p.selectedSlotIndex), ad = hand && adById.get(hand.typeId);
     const poster = posterAt(block, face);
+    if (hand && refrigeratorById.has(hand.typeId) && face === 'up') {
+        event.cancel = true;
+        if (event.isFirstEvent) {
+            const definition = hand.typeId;
+            run(p, () => { if (io.inventory(p)?.getItem(p.selectedSlotIndex)?.typeId === definition)
+                createAppliance(p, block, definition); });
+        }
+        return true;
+    }
     if (ad && normals[face]) {
         event.cancel = true;
         if (event.isFirstEvent) {
@@ -458,7 +564,9 @@ export function handleDecorBlock(event) {
         event.cancel = true;
         return true;
     }
-    if (hand && tableItemById.has(hand.typeId) && face === 'up' && surfaceHeight(block) > 0 && (surfaceHeight(block) === .5 || hand.typeId === id(tray.key) || electronicsById.has(hand.typeId) || block.typeId.endsWith('bookshelf'))) {
+    if (p.isSneaking && hand && tableItemById.has(hand.typeId) && !electronicsById.has(hand.typeId) && hand.typeId !== id(tray.key) && ['prep_counter', 'stove', 'oven', 'drink_counter'].some(k => block.typeId === id(k)))
+        return false;
+    if (hand && tableItemById.has(hand.typeId) && face === 'up' && surfaceHeight(block) > 0) {
         event.cancel = true;
         if (event.isFirstEvent) {
             const definition = hand.typeId;
@@ -523,7 +631,7 @@ export function installDecor(adapter) {
         run(event.player, () => r.kind === 'tray' ? trayMenu(event.player, copy(r)) : r.kind === 'ad' ? posterMenu(event.player, copy(r)) : surfaceInteract(event.player, copy(r)));
     });
     world.beforeEvents.playerBreakBlock.subscribe(event => {
-        const candidates = [...records.values()].filter(r => r.dimension === event.block.dimension.id && ((r.native && same(anchor(r), event.block.location)) || (r.kind === 'ad' && posterCells(r).some(p => same(p, event.block.location)))));
+        const candidates = [...records.values()].filter(r => r.dimension === event.block.dimension.id && ((r.kind === 'appliance' && applianceCells(r).some(p => same(p, event.block.location))) || (r.native && same(anchor(r), event.block.location)) || (r.kind === 'ad' && posterCells(r).some(p => same(p, event.block.location)))));
         const supportLost = candidates.length ? [] : [...records.values()].filter(r => r.kind !== 'ad' && r.dimension === event.block.dimension.id && same(r.support, event.block.location));
         if (!candidates.length && !supportLost.length)
             return;

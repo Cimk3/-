@@ -1,5 +1,5 @@
 {
-  "version": "0.5.0",
+  "version": "0.5.1",
   "models": [
     {
       "key": "egg_fried_rice_serving",
@@ -2648,6 +2648,24 @@
       }
     },
     {
+      "key": "tieguanyin_on_glass",
+      "resolution": 128,
+      "cubes": 64,
+      "slots": {
+        "food": "food_tieguanyin",
+        "ware": "ware_glass"
+      }
+    },
+    {
+      "key": "tieguanyin_serving",
+      "resolution": 128,
+      "cubes": 67,
+      "slots": {
+        "food": "food_tieguanyin",
+        "ware": "ware_mug"
+      }
+    },
+    {
       "key": "lamb_slices_on_plate",
       "resolution": 128,
       "cubes": 146,
@@ -3026,6 +3044,86 @@
       }
     },
     {
+      "key": "gongfu_tea_tray",
+      "resolution": 128,
+      "cubes": 230,
+      "slots": {
+        "ware": "ware_gongfu_tea_tray"
+      }
+    },
+    {
+      "key": "fridge_single_rose_gold",
+      "resolution": 128,
+      "cubes": 6,
+      "slots": {
+        "ware": "ware_fridge_rose_gold"
+      }
+    },
+    {
+      "key": "fridge_single_white",
+      "resolution": 128,
+      "cubes": 6,
+      "slots": {
+        "ware": "ware_fridge_white"
+      }
+    },
+    {
+      "key": "fridge_single_black",
+      "resolution": 128,
+      "cubes": 6,
+      "slots": {
+        "ware": "ware_fridge_black"
+      }
+    },
+    {
+      "key": "fridge_double_rose_gold",
+      "resolution": 128,
+      "cubes": 7,
+      "slots": {
+        "ware": "ware_fridge_rose_gold"
+      }
+    },
+    {
+      "key": "fridge_double_rose_gold_upper",
+      "resolution": 128,
+      "cubes": 7,
+      "slots": {
+        "ware": "ware_fridge_rose_gold"
+      }
+    },
+    {
+      "key": "fridge_double_white",
+      "resolution": 128,
+      "cubes": 7,
+      "slots": {
+        "ware": "ware_fridge_white"
+      }
+    },
+    {
+      "key": "fridge_double_white_upper",
+      "resolution": 128,
+      "cubes": 7,
+      "slots": {
+        "ware": "ware_fridge_white"
+      }
+    },
+    {
+      "key": "fridge_double_black",
+      "resolution": 128,
+      "cubes": 7,
+      "slots": {
+        "ware": "ware_fridge_black"
+      }
+    },
+    {
+      "key": "fridge_double_black_upper",
+      "resolution": 128,
+      "cubes": 7,
+      "slots": {
+        "ware": "ware_fridge_black"
+      }
+    },
+    {
       "key": "desktop_computer",
       "resolution": 128,
       "cubes": 27,
@@ -3124,7 +3222,7 @@
     {
       "key": "ipad_air_magic_keyboard",
       "resolution": 128,
-      "cubes": 16,
+      "cubes": 17,
       "slots": {
         "ware": "device_ipad_air_magic_keyboard"
       }
@@ -3143,6 +3241,38 @@
       "cubes": 6,
       "slots": {
         "ware": "device_keyboard_mouse_set"
+      }
+    },
+    {
+      "key": "dell_laptop_open",
+      "resolution": 128,
+      "cubes": 20,
+      "slots": {
+        "ware": "device_dell_laptop_open"
+      }
+    },
+    {
+      "key": "dell_laptop_closed",
+      "resolution": 128,
+      "cubes": 10,
+      "slots": {
+        "ware": "device_dell_laptop_closed"
+      }
+    },
+    {
+      "key": "macbook_pro_gpt_open",
+      "resolution": 128,
+      "cubes": 19,
+      "slots": {
+        "ware": "device_macbook_pro_gpt_open"
+      }
+    },
+    {
+      "key": "macbook_pro_gpt_closed",
+      "resolution": 128,
+      "cubes": 10,
+      "slots": {
+        "ware": "device_macbook_pro_gpt_closed"
       }
     },
     {
@@ -5328,7 +5458,7 @@
     },
     {
       "key": "surface_ipad_air_magic_keyboard",
-      "cubes": 16,
+      "cubes": 17,
       "resolution": 128
     },
     {
@@ -5339,6 +5469,41 @@
     {
       "key": "surface_keyboard_mouse_set",
       "cubes": 6,
+      "resolution": 128
+    },
+    {
+      "key": "surface_dell_laptop_open",
+      "cubes": 20,
+      "resolution": 128
+    },
+    {
+      "key": "surface_dell_laptop_closed",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "surface_macbook_pro_gpt_open",
+      "cubes": 19,
+      "resolution": 128
+    },
+    {
+      "key": "surface_macbook_pro_gpt_closed",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "surface_gongfu_tea_tray",
+      "cubes": 230,
+      "resolution": 128
+    },
+    {
+      "key": "surface_tieguanyin_on_glass",
+      "cubes": 64,
+      "resolution": 128
+    },
+    {
+      "key": "surface_tieguanyin_serving",
+      "cubes": 67,
       "resolution": 128
     },
     {
@@ -5854,6 +6019,7 @@
     "mcpe_food_caviar_blini": 128,
     "mcpe_food_creme_brulee": 128,
     "mcpe_food_black_truffle_foie_gras": 128,
+    "mcpe_food_tieguanyin": 128,
     "mcpe_food_lamb_slices": 128,
     "mcpe_food_beef_slices": 128,
     "mcpe_food_tripe_platter": 128,
@@ -5882,6 +6048,13 @@
     "mcpe_food_premium_red_wine_bottle": 128,
     "mcpe_food_coca_cola_paper_cup": 128,
     "mcpe_food_pepsi_paper_cup": 128,
+    "mcpe_food_gongfu_tea_tray": 128,
+    "mcpe_food_fridge_single_rose_gold": 128,
+    "mcpe_food_fridge_single_white": 128,
+    "mcpe_food_fridge_single_black": 128,
+    "mcpe_food_fridge_double_rose_gold": 128,
+    "mcpe_food_fridge_double_white": 128,
+    "mcpe_food_fridge_double_black": 128,
     "mcpe_food_desktop_computer": 128,
     "mcpe_food_all_in_one_computer": 128,
     "mcpe_food_silver_laptop_open": 128,
@@ -5897,6 +6070,10 @@
     "mcpe_food_ipad_air_magic_keyboard": 128,
     "mcpe_food_crt_monitor": 128,
     "mcpe_food_keyboard_mouse_set": 128,
+    "mcpe_food_dell_laptop_open": 128,
+    "mcpe_food_dell_laptop_closed": 128,
+    "mcpe_food_macbook_pro_gpt_open": 128,
+    "mcpe_food_macbook_pro_gpt_closed": 128,
     "mcpe_food_triple_tray": 128,
     "mcpe_food_prep_counter": 32,
     "mcpe_food_stove": 32,

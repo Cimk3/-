@@ -13,3 +13,13 @@ give @s mcpe_food:server_cabinet 4
 give @s mcpe_food:ipad_air_magic_keyboard 4
 give @s mcpe_food:crt_monitor 4
 give @s mcpe_food:keyboard_mouse_set 4
+give @s mcpe_food:dell_laptop_open 4
+give @s mcpe_food:dell_laptop_closed 4
+give @s mcpe_food:macbook_pro_gpt_open 4
+give @s mcpe_food:macbook_pro_gpt_closed 4
+give @s mcpe_food:fridge_single_rose_gold 4
+give @s mcpe_food:fridge_single_white 4
+give @s mcpe_food:fridge_single_black 4
+give @s mcpe_food:fridge_double_rose_gold 4
+give @s mcpe_food:fridge_double_white 4
+give @s mcpe_food:fridge_double_black 4

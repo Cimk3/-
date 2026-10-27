@@ -1,10 +1,10 @@
-# 0.5.0维护说明
+# 0.5.1维护说明
 
 ## 内容与兼容接口
 
-src/catalog.ts继续维护101种可食成品、8种展示配菜及旧配方。VesselFamily增加wine_glass，compatibleVessels对10款饮品显式允许glass和mug，premium_red_wine另允许wine_glass。原Food.vessel不改变，旧<food>_serving继续有效；新增替代组合仍使用<food>_on_<vessel>。
+src/catalog.ts继续维护102种可食成品、8种展示配菜及旧配方。VesselFamily增加wine_glass，compatibleVessels对11款饮品显式允许glass和mug，premium_red_wine另允许wine_glass。原Food.vessel不改变，旧<food>_serving继续有效；新增替代组合仍使用<food>_on_<vessel>。
 
-src/decor-catalog.ts维护12幅广告画及系列、两款纸杯、托盘、70种可托盘盛装的内容和354种桌面展示定义（原339种索引不变，追加15款设备）。餐具总数为9个可盛装器皿、4种刀叉筷勺和1个托盘，共14。纸杯是独立摆件，未加入Vessel或Food。
+src/decor-catalog.ts维护12幅广告画及系列、两款纸杯、托盘、70种可托盘盛装的内容和361种桌面展示定义（原354种索引不变，追加7种外观）。餐具总数为9个可盛装器皿、4种刀叉筷勺、1个托盘和1套茶盘，共15。纸杯是独立摆件，未加入Vessel或Food。
 
 surfaceVisuals的索引只用于即时客户端渲染；持久记录保存字符串ID，升级后按ID重新建立索引。实体不作为食物内容的唯一来源。
 
@@ -46,7 +46,7 @@ npm run package
 python tools/verify_archive.py
 ```
 
-包版本来自package.json，并同步package-lock。BP/RP的UUID保持不变。capture-compat.mjs在变更前捕获旧包基线，禁止覆盖已有文件；本次新增v0.4.3基线。
+包版本来自package.json，并同步package-lock。BP/RP的UUID保持不变。capture-compat.mjs在变更前捕获旧包基线，禁止覆盖已有文件；本次新增v0.5.0基线。
 
 package生成两个mcpack、嵌套mcaddon及source.zip，源码归档仅收录代码、测试、文档和美术源，不收录node_modules和整个工作目录。Python独立核对嵌套包、私有实体PBR、CRC及SHA-256。
 
@@ -54,10 +54,20 @@ package生成两个mcpack、嵌套mcaddon及source.zip，源码归档仅收录�
 
 ## 电子设备
 
-src/electronics-catalog.ts是15款设备的稳定ID、双语名称、模型种类、款式与固定姿态目录；不属于Food或Vessel。tableItems追加设备以接入摆放入口，surfaceVisuals将设备追加在所有旧展示定义之后。持久记录仍为version=1、kind=surface，保存实际设备ID，不记录可切换状态。
+src/electronics-catalog.ts是19款桌面设备的稳定ID、双语名称、模型种类、款式与固定姿态目录；不属于Food或Vessel。tableItems追加设备以接入摆放入口，surfaceVisuals将设备追加在所有旧展示定义之后。持久记录仍为version=1、kind=surface，保存实际设备ID，不记录可切换状态。
 
 电子设备在全部受支持顶面使用受脚本检查的展示实体，不替换支撑或空气方块。生成的同ID隐藏方块保留用于原生命令与低位迁移；物品放置在before事件取消后延迟到可写阶段，复核手持、支撑、占位、距离及背包并同步提交。
 
 build-v3.mjs从实际模型生成选择框；build-displays.mjs为各设备生成对应高度的选择形状事件。闭合本与键鼠为低矮形状，显示器和机柜使用各自高度。没有新增实体类型、全局材质、系统菜单、网络功能或运行时开合动画。
 
 emission-policy.mjs仅放行目录中设备的私有device_纹理名，校验屏幕／LED区域和G值上限24，并拒绝闭合本或其他资源发光；原有食物等资源继续严格无自发光。资产、运行时及旧版兼容测试分别验证生产文件、交互守恒和0.4.3基线。
+
+## 0.5.1接口与结构
+
+设备screenFront定义模型正面基准，openAngle仅用于静态造型说明；screenYaw根据玩家相对锚点的位置计算新放置角度。DecorRecord追加可选yaw，旧记录按direction恢复；模型、广告、无屏设备不使用全局旋转修正。旋转只在创建时计算，并在位置／角度变化时更新展示实体。原354项surfaceVisuals顺序保留，新增7项外观追加。
+
+generate-surfaces.mjs依据固定vanilla-data 1.26.52清单和审定形状族生成vanilla-surfaces.ts；每个登记ID必须明确属于完整表面、半砖或排除项，未知ID使生成失败。保持稳定API 2.0.0，不使用isSolid预发行属性。原来已支持的泥巴保留兼容判定，并在分类中注明例外。
+
+冰箱目录独立于可盛装器皿；6个库存物品对应9个私有部件方块，统一放入电子设备组。DecorRecord增加kind=appliance，按定义推导竖向部件位置；记录先发布再写部件，写方块或背包失败时还原。部件原生掉落表为空，所有正常拆除由拥有者记录统一返还一次。拆除同时清理以部件为支撑的摆件和广告画，继承创造／生存掉落模式。
+
+冰箱部件关闭活塞移动；辅助块不提供库存物品。区块未加载时跳过检查，命令放置的底座由tick建立实例，孤立上部只清除、不生成物品。茶盘是单件surface摆件，铁观音沿用双杯盛装逻辑，没有新增配方或茶盘取茶交互。

@@ -22,7 +22,7 @@ test('all original menu recipes, workbench recipes and legacy drops are byte-for
 });
 test('new creative content does not invent cooking recipes or duplicate egg tart',()=>{
   assert.equal(recipes.length,53);assert.equal(foods.filter(f=>f.key==='egg_tart').length,1);
-  assert.equal(foods.filter(f=>!f.recipe).length,53);assert.ok(displays.every(f=>!f.recipe&&!f.edible));
+  assert.equal(foods.filter(f=>!f.recipe).length,54);assert.ok(displays.every(f=>!f.recipe&&!f.edible));
   for(const f of dishes.filter(f=>!f.recipe))assert.equal(recipes.some(r=>r.key===f.key),false);
 });
 test('all meal, tableware and hotpot icons are true 128px assets',()=>{
@@ -33,7 +33,7 @@ test('all display platters omit edible/use components; cooked dishes allow full-
   for(const f of foods){const c=read(bp,`items/${f.key}.json`)['minecraft:item'].components;assert.equal(c['minecraft:food'].can_always_eat,true);}
 });
 test('every vessel combination drops the actual vessel and one copy of its food',()=>{
-  assert.equal(servings.length,318);
+  assert.equal(servings.length,320);
   for(const s of servings){const loot=read(bp,`loot_tables/blocks/${s.key}.json`);assert.deepEqual(loot.pools.map(p=>p.entries[0].name),[id(s.vessel.key),id(s.food.key)]);assert.ok(loot.pools.every(p=>p.entries[0].functions[0].count===1));}
 });
 test('vessel combinations share food textures while keeping a separate ware material',()=>{

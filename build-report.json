@@ -1,6 +1,6 @@
 {
-  "version": "0.5.0",
-  "foods": 101,
+  "version": "0.5.1",
+  "foods": 102,
   "displayDishes": 8,
   "hotpots": 2,
   "bottleProps": 3,
@@ -9,25 +9,32 @@
     "western": 23,
     "japanese": 13,
     "dessert": 13,
-    "drink": 10
+    "drink": 11
   },
-  "tableware": 14,
+  "tableware": 15,
   "advertisements": 12,
   "advertisementSizes": 36,
   "paperCups": 2,
-  "electronics": 15,
-  "entityGeometryCount": 436,
+  "electronics": 25,
+  "refrigerators": 6,
+  "refrigeratorParts": 9,
+  "surfaceClasses": {
+    "full": 683,
+    "slab": 101,
+    "excluded": 679
+  },
+  "entityGeometryCount": 443,
   "stations": 4,
   "crops": 6,
   "menuRecipes": 53,
-  "servingVariants": 318,
-  "geometryCount": 842,
-  "blockGeometryCount": 406,
-  "pbrTextureSets": 540,
-  "highDetailModels": 354,
+  "servingVariants": 320,
+  "geometryCount": 865,
+  "blockGeometryCount": 422,
+  "pbrTextureSets": 567,
+  "highDetailModels": 370,
   "maxDetailCubes": 251,
   "customDestructionParticles": 0,
   "staticStatus": "passed",
   "gameStatus": "NOT TESTED — Windows / Android / multiplayer / Vibrant Visuals",
-  "staticChecks": 1331238
+  "staticChecks": 1504446
 }

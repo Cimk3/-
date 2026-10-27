@@ -358,7 +358,14 @@
             "Geometry.g350",
             "Geometry.g351",
             "Geometry.g352",
-            "Geometry.g353"
+            "Geometry.g353",
+            "Geometry.g354",
+            "Geometry.g355",
+            "Geometry.g356",
+            "Geometry.g357",
+            "Geometry.g358",
+            "Geometry.g359",
+            "Geometry.g360"
           ]
         },
         "textures": {
@@ -716,7 +723,14 @@
             "Texture.f350",
             "Texture.f351",
             "Texture.f352",
-            "Texture.f353"
+            "Texture.f353",
+            "Texture.f354",
+            "Texture.f355",
+            "Texture.f356",
+            "Texture.f357",
+            "Texture.f358",
+            "Texture.f359",
+            "Texture.f360"
           ],
           "Array.ware": [
             "Texture.w0",
@@ -1072,7 +1086,14 @@
             "Texture.w350",
             "Texture.w351",
             "Texture.w352",
-            "Texture.w353"
+            "Texture.w353",
+            "Texture.w354",
+            "Texture.w355",
+            "Texture.w356",
+            "Texture.w357",
+            "Texture.w358",
+            "Texture.w359",
+            "Texture.w360"
           ]
         }
       },

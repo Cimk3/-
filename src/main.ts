@@ -6,7 +6,7 @@ import type { Recipe, Station } from "./catalog.js";
 import { count, MenuSessions, planCraft, planInsert, planServe } from "./inventory.js";
 import type { Slots } from "./inventory.js";
 import { surfaceHeight } from "./supports.js";
-import {handleDecorBlock,installDecor,migrateLowSurface,nativeTray} from './decor-runtime.js';
+import {handleDecorBlock,installDecor,migrateLowSurface,nativeTray,applianceTick} from './decor-runtime.js';
 import {tray} from './decor-catalog.js';
 
 const sessions = new MenuSessions();
@@ -178,6 +178,7 @@ function cropInteract(p: Player, b: Block): void {
   }
 }
 system.beforeEvents.startup.subscribe(event => {
+  event.blockComponentRegistry.registerCustomComponent('mcpe_food:appliance',{onTick({block}){applianceTick(block);}});
   event.blockComponentRegistry.registerCustomComponent("mcpe_food:kitchen", {
     onPlayerInteract({ player, block }) {
       if (!player || player.isSneaking || !debounce(player, block)) return;

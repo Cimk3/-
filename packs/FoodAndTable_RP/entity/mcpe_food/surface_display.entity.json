@@ -714,7 +714,21 @@
         "f352": "textures/entity/mcpe_food/device_crt_monitor",
         "w352": "textures/entity/mcpe_food/device_crt_monitor",
         "f353": "textures/entity/mcpe_food/device_keyboard_mouse_set",
-        "w353": "textures/entity/mcpe_food/device_keyboard_mouse_set"
+        "w353": "textures/entity/mcpe_food/device_keyboard_mouse_set",
+        "f354": "textures/entity/mcpe_food/device_dell_laptop_open",
+        "w354": "textures/entity/mcpe_food/device_dell_laptop_open",
+        "f355": "textures/entity/mcpe_food/device_dell_laptop_closed",
+        "w355": "textures/entity/mcpe_food/device_dell_laptop_closed",
+        "f356": "textures/entity/mcpe_food/device_macbook_pro_gpt_open",
+        "w356": "textures/entity/mcpe_food/device_macbook_pro_gpt_open",
+        "f357": "textures/entity/mcpe_food/device_macbook_pro_gpt_closed",
+        "w357": "textures/entity/mcpe_food/device_macbook_pro_gpt_closed",
+        "f358": "textures/entity/mcpe_food/ware_gongfu_tea_tray",
+        "w358": "textures/entity/mcpe_food/ware_gongfu_tea_tray",
+        "f359": "textures/entity/mcpe_food/food_tieguanyin",
+        "w359": "textures/entity/mcpe_food/ware_glass",
+        "f360": "textures/entity/mcpe_food/food_tieguanyin",
+        "w360": "textures/entity/mcpe_food/ware_mug"
       },
       "geometry": {
         "g0": "geometry.mcpe_food.surface.plate",
@@ -1070,7 +1084,14 @@
         "g350": "geometry.mcpe_food.surface.server_cabinet",
         "g351": "geometry.mcpe_food.surface.ipad_air_magic_keyboard",
         "g352": "geometry.mcpe_food.surface.crt_monitor",
-        "g353": "geometry.mcpe_food.surface.keyboard_mouse_set"
+        "g353": "geometry.mcpe_food.surface.keyboard_mouse_set",
+        "g354": "geometry.mcpe_food.surface.dell_laptop_open",
+        "g355": "geometry.mcpe_food.surface.dell_laptop_closed",
+        "g356": "geometry.mcpe_food.surface.macbook_pro_gpt_open",
+        "g357": "geometry.mcpe_food.surface.macbook_pro_gpt_closed",
+        "g358": "geometry.mcpe_food.surface.gongfu_tea_tray",
+        "g359": "geometry.mcpe_food.surface.tieguanyin_on_glass",
+        "g360": "geometry.mcpe_food.surface.tieguanyin_serving"
       },
       "render_controllers": [
         "controller.render.mcpe_food.surface_display_food",

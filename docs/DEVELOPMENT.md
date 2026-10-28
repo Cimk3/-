@@ -94,3 +94,8 @@ officeElectronics单独保存7项新目录，surfaceVisuals在原361项之后追
 ## 0.5.4餐厅用品
 
 服务台资源由tools/service-art.mjs生成，assets/restaurant/labels.json保存中文文字栅格源。桌号仅在实例tableNumber字段保存，缺省08；99种展示变体追加旧索引末尾。菜单使用稳定ModalFormData双下拉选择，提交重查revision、距离、支撑与空手状态。
+
+
+## 0.6.0资源与目录
+
+办公、家居和网络设备由lifestyle-catalog及lifestyle-art管理。城市广告源图与中文栅格源、配色、排版保存在assets/posters/city，生成器city-posters提供可重复生成；旧高清主图保留。optimize-release在预览生成后压紧JSON、无损重编码PNG并共享桌号几何及MER，详见docs/STORAGE.md。新增内容只通过创造栏与命令取得。

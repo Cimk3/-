@@ -1,4 +1,4 @@
-# 0.5.4 菜品与器皿索引
+# 0.6.0 菜品与器皿索引
 
 102 种可食成品，8 种不可食展示配菜，2 款静态铜锅，15 种餐具，3 款酒瓶摆件。新增内容通过创造物品栏或分组试用命令获取。
 
@@ -238,6 +238,14 @@
 | 清蒸鲜味 | mcpe_food:ad_grouper | wide |
 | 家常好味 | mcpe_food:ad_home_cooking | square |
 | 甜品时光 | mcpe_food:ad_dessert | portrait |
+| 创作工作站 | mcpe_food:ad_city_computer | wide |
+| 下一关见 | mcpe_food:ad_city_gaming | wide |
+| 定格此刻 | mcpe_food:ad_city_camera | portrait |
+| 城市声场 | mcpe_food:ad_city_music | portrait |
+| 翻开新世界 | mcpe_food:ad_city_bookshop | portrait |
+| 花开日常 | mcpe_food:ad_city_florist | square |
+| 出发吧 | mcpe_food:ad_city_travel | wide |
+| 理想居所 | mcpe_food:ad_city_home | square |
 
 ## 支撑表面
 
@@ -249,7 +257,7 @@
 
 ## 电子设备
 
-35款静态摆件；笔记本开合为独立物品，冰箱高度为1或2格。
+41款静态摆件；笔记本开合为独立物品，冰箱高度为1或2格。
 
 | 名称 | ID | 姿态 |
 |---|---|---|
@@ -282,6 +290,12 @@
 | 触屏收银机 | mcpe_food:touchscreen_register | fixed |
 | 扫码支付终端 | mcpe_food:payment_scanner | fixed |
 | 热敏小票机 | mcpe_food:receipt_printer | fixed |
+| 桌面投影仪 | mcpe_food:desktop_projector | fixed |
+| 会议电话 | mcpe_food:conference_phone | fixed |
+| 8口交换机 | mcpe_food:network_switch | fixed |
+| 四盘位NAS | mcpe_food:four_bay_nas | fixed |
+| 塔式UPS | mcpe_food:tower_ups | fixed |
+| 小型碎纸机 | mcpe_food:compact_shredder | fixed |
 | 玫瑰金单门冰箱 | mcpe_food:fridge_single_rose_gold | single |
 | 白色单门冰箱 | mcpe_food:fridge_single_white | single |
 | 黑色单门冰箱 | mcpe_food:fridge_single_black | single |
@@ -301,4 +315,32 @@
 - 服务铃 / Service Bell：mcpe_food:service_bell
 - 纸巾盒 / Tissue Box：mcpe_food:tissue_box
 
-桌号仅一个创造物品，空手设置01—99；默认08，收回重放重置。其余物品静态。电子设备35项，餐厅用品5项。
+桌号仅一个创造物品，空手设置01—99；默认08，收回重放重置。其余物品静态。电子设备41项，餐厅用品5项。
+
+
+## 0.6.0办公、家居与网络设备
+
+- 笔筒 / Pen Holder：mcpe_food:pen_holder
+- 打开笔记本 / Open Notebook：mcpe_food:notebook_open
+- 合起笔记本 / Closed Notebook：mcpe_food:notebook_closed
+- 文件叠 / Document Stack：mcpe_food:document_stack
+- 立式文件夹 / Standing Binder：mcpe_food:standing_binder
+- 订书机 / Stapler：mcpe_food:stapler
+- 胶带座 / Tape Dispenser：mcpe_food:tape_dispenser
+- 桌面收纳架 / Desk Organizer：mcpe_food:desk_organizer
+- 陶瓷空花瓶 / Ceramic Vase：mcpe_food:ceramic_vase
+- 插花花瓶 / Flower Vase：mcpe_food:flower_vase
+- 多肉盆栽 / Potted Succulent：mcpe_food:succulent_pot
+- 桌面时钟 / Table Clock：mcpe_food:table_clock
+- 风景相框 / Landscape Photo Frame：mcpe_food:landscape_frame
+- 香薰瓶 / Reed Diffuser：mcpe_food:reed_diffuser
+- 收纳盒 / Storage Box：mcpe_food:storage_box
+- 小型环形雕塑 / Ring Sculpture：mcpe_food:ring_sculpture
+- 桌面投影仪 / Desktop Projector：mcpe_food:desktop_projector
+- 会议电话 / Conference Phone：mcpe_food:conference_phone
+- 8口交换机 / Eight-Port Switch：mcpe_food:network_switch
+- 四盘位NAS / Four-Bay NAS：mcpe_food:four_bay_nas
+- 塔式UPS / Tower UPS：mcpe_food:tower_ups
+- 小型碎纸机 / Compact Shredder：mcpe_food:compact_shredder
+
+办公文具8款、居家装饰8款，电子设备总41项。以上新品只通过创造栏或命令取得，无制作配方。

@@ -27,6 +27,12 @@ give @s mcpe_food:surface_pro_keyboard 4
 give @s mcpe_food:touchscreen_register 4
 give @s mcpe_food:payment_scanner 4
 give @s mcpe_food:receipt_printer 4
+give @s mcpe_food:desktop_projector 4
+give @s mcpe_food:conference_phone 4
+give @s mcpe_food:network_switch 4
+give @s mcpe_food:four_bay_nas 4
+give @s mcpe_food:tower_ups 4
+give @s mcpe_food:compact_shredder 4
 give @s mcpe_food:fridge_single_rose_gold 4
 give @s mcpe_food:fridge_single_white 4
 give @s mcpe_food:fridge_single_black 4

@@ -1,7 +1,1 @@
-{
-  "format_version": "1.21.30",
-  "minecraft:texture_set": {
-    "color": "service_service_bell",
-    "metalness_emissive_roughness": "service_service_bell_mer"
-  }
-}
+{"format_version":"1.21.30","minecraft:texture_set":{"color":"service_service_bell","metalness_emissive_roughness":"service_service_bell_mer"}}

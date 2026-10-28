@@ -1,7 +1,1 @@
-{
-  "format_version": "1.21.30",
-  "minecraft:texture_set": {
-    "color": "food_pudding",
-    "metalness_emissive_roughness": "food_pudding_mer"
-  }
-}
+{"format_version":"1.21.30","minecraft:texture_set":{"color":"food_pudding","metalness_emissive_roughness":"food_pudding_mer"}}

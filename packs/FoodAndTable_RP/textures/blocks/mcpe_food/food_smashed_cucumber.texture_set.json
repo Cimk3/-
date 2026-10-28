@@ -1,7 +1,1 @@
-{
-  "format_version": "1.21.30",
-  "minecraft:texture_set": {
-    "color": "food_smashed_cucumber",
-    "metalness_emissive_roughness": "food_smashed_cucumber_mer"
-  }
-}
+{"format_version":"1.21.30","minecraft:texture_set":{"color":"food_smashed_cucumber","metalness_emissive_roughness":"food_smashed_cucumber_mer"}}

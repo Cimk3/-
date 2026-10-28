@@ -1,3 +1,4 @@
+import {newProps,cityAdvertisements} from '../.build/lifestyle-catalog.js';
 import {restaurantItems} from '../.build/restaurant-catalog.js';
 import {refrigerators} from '../.build/appliance-catalog.js';
 import test from 'node:test';
@@ -15,7 +16,7 @@ const read=p=>JSON.parse(readFileSync(p,'utf8')),hash=p=>createHash('sha256').up
 const geometry=d=>read(`${rp}/models/blocks/mcpe_food/${d.key}.geo.json`)['minecraft:geometry'][0];
 
 test('current release has twenty-six tabletop electronics, sixteen laptop poses and two tablet keyboard sets',()=>{
-  assert.equal(electronics.length,29);assert.equal(new Set(electronics.map(d=>d.key)).size,29);
+  assert.equal(electronics.length,35);assert.equal(new Set(electronics.map(d=>d.key)).size,35);
   const laptops=electronics.filter(d=>d.model==='laptop');assert.equal(laptops.length,16);
   for(const style of ['silver','gaming','thinkpad','macbook'])assert.deepEqual(laptops.filter(d=>d.style===style).map(d=>d.pose).sort(),['closed','open']);
   assert.equal(electronics.filter(d=>['tablet','surface'].includes(d.model)).length,2);
@@ -36,7 +37,7 @@ test('0.4.3 identifiers, package UUIDs, crops, menus, crafting, drops and old co
   assert.deepEqual(recipes.map(({key,station,inputs,output,category})=>({key,station,inputs,output,category})),old.menuRecipes);
   for(const [folder,entries]of [['loot_tables/blocks',old.loot],['recipes',old.crafting]])for(const[file,sha]of Object.entries(entries))assert.equal(hash(`${bp}/${folder}/${file}`),sha,file);
   for(const[file,states]of Object.entries(old.cropStates))assert.deepEqual(read(`${bp}/blocks/${file}`)['minecraft:block'].description.states,states);
-  for(const[file,content]of Object.entries(old.functions))if(!['tasting_new.mcfunction','electronics.mcfunction','tableware.mcfunction','tasting_all_drink.mcfunction'].includes(file))assert.equal(readFileSync(`${bp}/functions/mcpe_food/${file}`,'utf8'),content,file);
+  for(const[file,content]of Object.entries(old.functions))if(!['advertisements.mcfunction','tasting_new.mcfunction','electronics.mcfunction','tableware.mcfunction','tasting_all_drink.mcfunction'].includes(file))assert.equal(readFileSync(`${bp}/functions/mcpe_food/${file}`,'utf8'),content,file);
 });
 
 test('private electronics group, bilingual names and both trial commands contain all thirty-two items exactly once',()=>{
@@ -44,7 +45,7 @@ test('private electronics group, bilingual names and both trial commands contain
   const group=groups.find(g=>g.group_identifier.name==='mcpe_food:group_electronics');assert.ok(group);
   assert.equal(group.group_identifier.icon,id('desktop_computer'));assert.deepEqual(group.items,[...electronics,...refrigerators].map(d=>id(d.key)));
   for(const d of electronics){const i=read(`${bp}/items/${d.key}.json`)['minecraft:item'],b=read(`${bp}/blocks/${d.key}.json`)['minecraft:block'];assert.deepEqual(i.description.menu_category,{category:'items',group:'mcpe_food:group_electronics'});assert.equal(b.description.menu_category.category,'none');assert.equal(b.components['minecraft:light_emission'],undefined);const drops=read(`${bp}/loot_tables/blocks/${d.key}.json`).pools;assert.equal(drops.length,1);assert.equal(drops[0].entries[0].name,id(d.key));}
-  for(const [command,list] of [['electronics',[...electronics,...refrigerators]],['tasting_new',restaurantItems]])assert.deepEqual(readFileSync(`${bp}/functions/mcpe_food/${command}.mcfunction`,'utf8').trim().split('\n'),list.map(d=>`give @s ${id(d.key)} 4`));
+  for(const [command,list] of [['electronics',[...electronics,...refrigerators]],['tasting_new',[...newProps,...cityAdvertisements]]])assert.deepEqual(readFileSync(`${bp}/functions/mcpe_food/${command}.mcfunction`,'utf8').trim().split('\n'),list.map(d=>`give @s ${id(d.key)} 4`));
   for(const locale of ['zh_CN','en_US']){const lang=readFileSync(`${rp}/texts/${locale}.lang`,'utf8');assert.ok(lang.includes('mcpe_food:group_electronics='));for(const d of electronics)assert.ok(lang.includes(`item.mcpe_food:${d.key}.name=${locale==='zh_CN'?d.zh:d.en}`));}
 });
 
@@ -60,7 +61,7 @@ test('all complete device models stay within one block, use 128px UVs and tightl
 });
 
 test('production block and entity color/MER match source art, with emission confined to screen and LED masks',()=>{
-  for(const d of electronics){for(const suffix of ['', '_mer']){const source=`assets/electronics/${d.key}${suffix}.png`,block=`${rp}/textures/blocks/mcpe_food/device_${d.key}${suffix}.png`,entity=`${rp}/textures/entity/mcpe_food/device_${d.key}${suffix}.png`;assert.equal(hash(source),hash(block));assert.equal(hash(block),hash(entity));const image=decodeRGBA(readFileSync(source));assert.deepEqual([image.width,image.height],[128,128]);}
+  for(const d of electronics){for(const suffix of ['', '_mer']){const source=`assets/electronics/${d.key}${suffix}.png`,block=`${rp}/textures/blocks/mcpe_food/device_${d.key}${suffix}.png`,entity=`${rp}/textures/entity/mcpe_food/device_${d.key}${suffix}.png`;assert.deepEqual(decodeRGBA(readFileSync(source)),decodeRGBA(readFileSync(block)));assert.deepEqual(decodeRGBA(readFileSync(block)),decodeRGBA(readFileSync(entity)));const image=decodeRGBA(readFileSync(source));assert.deepEqual([image.width,image.height],[128,128]);}
     const mer=decodeRGBA(readFileSync(`assets/electronics/${d.key}_mer.png`));assert.ok(emissionIsValid(mer,`device_${d.key}`));
     if(d.pose==='closed')assert.ok(mer.pixels.every((v,i)=>i%4!==1||v===0));
     const icon=decodeRGBA(readFileSync(`${rp}/textures/items/mcpe_food/${d.key}.png`));assert.equal(icon.width,128);assert.ok(icon.pixels.some((v,i)=>i%4===3&&v===0));

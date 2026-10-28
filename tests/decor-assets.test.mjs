@@ -19,12 +19,12 @@ test('all fifteen tableware items are in the items group with no construction du
   for(const v of [...vessels,...cutlery,tray,teaTray]){const item=read(`${bp}/items/${v.key}.json`)['minecraft:item'],block=read(`${bp}/blocks/${v.key}.json`)['minecraft:block'];assert.deepEqual(item.description.menu_category,{category:'items',group:'mcpe_food:group_tableware'});assert.equal(block.description.menu_category.category,'none');}
 });
 test('twelve independently generated posters have thirty-six non-stretched sizes, bilingual masters and matching matte MER',()=>{
-  assert.equal(advertisements.length,12);assert.equal(advertisements.filter(a=>a.key.includes('japanese')).length,2);
+  assert.equal(advertisements.length,20);assert.equal(advertisements.filter(a=>a.key.includes('japanese')).length,2);
   for(const ad of advertisements){
     const color=decodeRGBA(readFileSync(`${rp}/textures/entity/mcpe_food/${ad.key}.png`)),mer=decodeRGBA(readFileSync(`${rp}/textures/entity/mcpe_food/${ad.key}_mer.png`));
     for(let size=0;size<3;size++){const[w,h]=adSize(ad,size);assert.equal(w/h,color.width/color.height);assert.ok(w<=6&&h<=6);}
     assert.equal(color.width,mer.width);assert.equal(color.height,mer.height);assert.ok(mer.pixels.every((v,i)=>i%4===0||i%4===1?v===0:true));
-    assert.ok(color.width>=1024&&color.height>=1024);assert.ok(readFileSync(`assets/posters/originals/${ad.key}.png`).length>100000);
+    if(ad.series==='city'){assert.ok(color.width<=256&&color.height<=256);}else assert.ok(color.width>=1024&&color.height>=1024);if(ad.series!=='city')assert.ok(readFileSync(`assets/posters/originals/${ad.key}.png`).length>100000);
   }
 });
 test('tray miniatures fit the whole scene budget and cover every plate dish including seven display platters',()=>{

@@ -1,7 +1,1 @@
-{
-  "format_version": "1.21.30",
-  "minecraft:texture_set": {
-    "color": "food_vegetables_in_superior_broth",
-    "metalness_emissive_roughness": "food_vegetables_in_superior_broth_mer"
-  }
-}
+{"format_version":"1.21.30","minecraft:texture_set":{"color":"food_vegetables_in_superior_broth","metalness_emissive_roughness":"food_vegetables_in_superior_broth_mer"}}

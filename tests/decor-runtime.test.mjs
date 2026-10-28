@@ -291,3 +291,12 @@ test('number change rejects a stale multiplayer menu; a full inventory cannot co
 test('all service props use support occupancy, obstruction, height changes and one-time drops',async()=>{
  const{restaurantItems}=await import('../.build/restaurant-catalog.js');for(const d of restaurantItems){const{dimension,player,base}=setup('minecraft:oak_slab'),r=await place(player,base,d.key);const e=entityFor(dimension,r);assert.equal(e.location.y,.5);await place(player,base,d.key);assert.equal(saved().length,1);assert.equal(player.container.count('mcpe_food:'+d.key),1);base.setPermutation({typeId:'minecraft:oak_double_slab',getAllStates:()=>({})});reconcileDecor();assert.equal(e.location.y,1);base.setPermutation({typeId:'minecraft:air',getAllStates:()=>({})});reconcileDecor();reconcileDecor();assert.equal(dimension.drops.length,1);assert.equal(dimension.drops[0].item.typeId,'mcpe_food:'+d.key);}
 });
+
+test('0.6.0 props keep four-way placement, blocking, concurrent occupancy and persisted support heights',async()=>{
+ const{newProps}=await import('../.build/lifestyle-catalog.js');for(const d of newProps){const{dimension,player,base}=setup('minecraft:oak_slab'),other=new FakePlayer(dimension);other.id='other';
+ player.container.setItem(0,new ItemStack('mcpe_food:'+d.key));other.container.setItem(0,new ItemStack('mcpe_food:'+d.key));interact(player,base);interact(other,base);await tick();assert.equal(saved().length,1);assert.equal(player.container.count('mcpe_food:'+d.key)+other.container.count('mcpe_food:'+d.key),1);
+ const r=saved()[0],e=entityFor(dimension,r);assert.equal(e.location.y,.5);loadDecorRecords();reconcileDecor();assert.equal(saved()[0].definition,r.definition);assert.equal(saved()[0].yaw,r.yaw);
+ base.setPermutation({typeId:'minecraft:oak_double_slab',getAllStates:()=>({})});reconcileDecor();assert.equal(e.location.y,1);removeDecor(saved()[0],false);
+ dimension.put('minecraft:stone',{x:0,y:1,z:0});player.container.setItem(0,new ItemStack('mcpe_food:'+d.key));interact(player,base);await tick();assert.equal(saved().length,0);assert.equal(player.container.count('mcpe_food:'+d.key),1);
+ }
+});

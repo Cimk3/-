@@ -1,7 +1,1 @@
-{
-  "format_version": "1.21.30",
-  "minecraft:texture_set": {
-    "color": "food_boiled_tofu_shreds",
-    "metalness_emissive_roughness": "food_boiled_tofu_shreds_mer"
-  }
-}
+{"format_version":"1.21.30","minecraft:texture_set":{"color":"food_boiled_tofu_shreds","metalness_emissive_roughness":"food_boiled_tofu_shreds_mer"}}

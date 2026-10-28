@@ -1,11 +1,1 @@
-{
-  "format_version": "1.21.30",
-  "minecraft:texture_set": {
-    "color": "printer_scanner",
-    "metalness_emissive_roughness": [
-      0,
-      0,
-      205
-    ]
-  }
-}
+{"format_version":"1.21.30","minecraft:texture_set":{"color":"printer_scanner","metalness_emissive_roughness":[0,0,205]}}

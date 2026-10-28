@@ -1,7 +1,1 @@
-{
-  "format_version": "1.21.30",
-  "minecraft:texture_set": {
-    "color": "food_claypot_rice",
-    "metalness_emissive_roughness": "food_claypot_rice_mer"
-  }
-}
+{"format_version":"1.21.30","minecraft:texture_set":{"color":"food_claypot_rice","metalness_emissive_roughness":"food_claypot_rice_mer"}}

@@ -1,7 +1,1 @@
-{
-  "format_version": "1.21.30",
-  "minecraft:texture_set": {
-    "color": "food_roast_chicken",
-    "metalness_emissive_roughness": "food_roast_chicken_mer"
-  }
-}
+{"format_version":"1.21.30","minecraft:texture_set":{"color":"food_roast_chicken","metalness_emissive_roughness":"food_roast_chicken_mer"}}

@@ -1,7 +1,1 @@
-{
-  "format_version": "1.21.30",
-  "minecraft:texture_set": {
-    "color": "food_wensi_tofu",
-    "metalness_emissive_roughness": "food_wensi_tofu_mer"
-  }
-}
+{"format_version":"1.21.30","minecraft:texture_set":{"color":"food_wensi_tofu","metalness_emissive_roughness":"food_wensi_tofu_mer"}}

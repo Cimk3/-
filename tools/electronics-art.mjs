@@ -1,4 +1,5 @@
 /** Original 128px UV atlases and modeled electronics; units are sixteenths of a block. */
+import {lifestyleCubes,lifestyleTexture} from './lifestyle-art.mjs';
 import {serviceCubes,serviceTexture} from './service-art.mjs';
 import {canvas,rect,text,png} from './art.mjs';
 import {modelBounds,pruneFaces} from './detail-art.mjs';
@@ -16,6 +17,7 @@ function part(x,y,z,w,h,d,role=0,overrides={},rotation,pivot){
     ...(rotation?{rotation,pivot}:{}),...(overrides.only?{faces:overrides.only}:{})};
 }
 export function electronicCubes(device){
+  if(device.model==='network')return lifestyleCubes(device.key);
   if(['register','scanner','receipt'].includes(device.model))return serviceCubes(device.key);
   const a=[],put=(...args)=>{const p=part(...args);a.push(p);return p;};
   function feet(x,z,w,d,y=.02){for(const px of[x+.35,x+w-.75])for(const pz of[z+.3,z+d-.7])put(px,y,pz,.4,.16,.4,5);}
@@ -162,6 +164,7 @@ export function electronicCubes(device){
 
 const rgb=hex=>hex.match(/\w\w/g).map(v=>parseInt(v,16));
 export function electronicTexture(device){
+  if(device.model==='network')return lifestyleTexture(device.key);
   if(['register','scanner','receipt'].includes(device.model))return serviceTexture(device.key);
   const color=canvas(128,128,[24,27,32,255]),mer=canvas(128,128,[0,0,195,255]);
   const metallic=['silver','macbook','ipad','dell','macbook_pro','air_silver','air_gray','thinkbook','studio','surface'].includes(device.style);

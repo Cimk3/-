@@ -1,5 +1,6 @@
 import {BlockPermutation,GameMode,ItemStack,system,world} from '@minecraft/server';
 import type {Block,Container,Entity,Player,PlayerInteractWithBlockBeforeEvent,Vector3} from '@minecraft/server';
+import {lifestyleItems} from './lifestyle-catalog.js';
 import {restaurantAccessories,numberKey,validTableNumber} from './restaurant-catalog.js';
 import {ActionFormData,ModalFormData} from '@minecraft/server-ui';
 import {compatibleVessels,foodById,foodByServing,id,servingKey,vesselByKey} from './catalog.js';
@@ -89,7 +90,7 @@ function visual(r:DecorRecord,type:string,part:string,index:number,position:Vect
   if(entity.getDynamicProperty('mcpe_food:part')!==part)entity.setDynamicProperty('mcpe_food:part',part);
   if(entity.getProperty('mcpe_food:index')!==index)entity.setProperty('mcpe_food:index',index);
   if(type==='mcpe_food:surface_display'){
-    const device=electronicsById.get(r.definition)??restaurantAccessories.find(d=>id(d.key)===r.definition);
+    const device=electronicsById.get(r.definition)??[...restaurantAccessories,...lifestyleItems].find(d=>id(d.key)===r.definition);
     const shape=device?device.key:r.kind==='tray'||/chopsticks|table_knife|fork|spoon/.test(r.definition)?'flat':/wine_glass|hotpot|bottle/.test(r.definition)?'tall':'medium';
     if(entity.getDynamicProperty('mcpe_food:shape')!==shape){entity.triggerEvent(`mcpe_food:shape_${shape}`);entity.setDynamicProperty('mcpe_food:shape',shape);}
   }

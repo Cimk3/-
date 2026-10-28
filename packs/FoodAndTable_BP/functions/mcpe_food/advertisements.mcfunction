@@ -10,3 +10,11 @@ give @s mcpe_food:ad_banquet 4
 give @s mcpe_food:ad_grouper 4
 give @s mcpe_food:ad_home_cooking 4
 give @s mcpe_food:ad_dessert 4
+give @s mcpe_food:ad_city_computer 4
+give @s mcpe_food:ad_city_gaming 4
+give @s mcpe_food:ad_city_camera 4
+give @s mcpe_food:ad_city_music 4
+give @s mcpe_food:ad_city_bookshop 4
+give @s mcpe_food:ad_city_florist 4
+give @s mcpe_food:ad_city_travel 4
+give @s mcpe_food:ad_city_home 4

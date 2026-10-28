@@ -24,8 +24,8 @@
 
 ```powershell
 git add .
-git commit -m "release: v0.5.4"
-git tag -a v0.5.4 -m "Food & Table 0.5.4"
+git commit -m "release: v0.6.0"
+git tag -a v0.6.0 -m "Food & Table 0.6.0"
 git push origin main --follow-tags
 ```
 

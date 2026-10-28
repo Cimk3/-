@@ -1,7 +1,1 @@
-{
-  "format_version": "1.21.30",
-  "minecraft:texture_set": {
-    "color": "food_strawberry_shake",
-    "metalness_emissive_roughness": "food_strawberry_shake_mer"
-  }
-}
+{"format_version":"1.21.30","minecraft:texture_set":{"color":"food_strawberry_shake","metalness_emissive_roughness":"food_strawberry_shake_mer"}}

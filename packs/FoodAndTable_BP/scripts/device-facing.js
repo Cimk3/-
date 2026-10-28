@@ -1,9 +1,10 @@
+import { lifestyleItems } from './lifestyle-catalog.js';
 import { restaurantAccessories } from './restaurant-catalog.js';
 import { electronicsById } from './electronics-catalog.js';
 export function cardinalYaw(value) { return ((Math.round(value / 90) * 90 + 180) % 360 + 360) % 360 - 180; }
 /** Entity model +Z faces world -Z at yaw=0. Block and poster yaw are separate. */
 export function screenYaw(definition, center, player, lookYaw) {
-    const d = electronicsById.get(definition) ?? (restaurantAccessories.some(d => 'mcpe_food:' + d.key === definition) ? { placementFront: 180 } : undefined);
+    const d = electronicsById.get(definition) ?? ([...restaurantAccessories, ...lifestyleItems.filter(d => d.front)].some(d => 'mcpe_food:' + d.key === definition) ? { placementFront: 180 } : undefined);
     if (d?.placementFront === undefined)
         return undefined;
     const dx = player.x - center.x, dz = player.z - center.z;

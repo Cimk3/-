@@ -1,5 +1,5 @@
 {
-  "version": "0.5.4",
+  "version": "0.6.0",
   "models": [
     {
       "key": "egg_fried_rice_serving",
@@ -3356,6 +3356,54 @@
       }
     },
     {
+      "key": "desktop_projector",
+      "resolution": 128,
+      "cubes": 14,
+      "slots": {
+        "ware": "device_desktop_projector"
+      }
+    },
+    {
+      "key": "conference_phone",
+      "resolution": 128,
+      "cubes": 25,
+      "slots": {
+        "ware": "device_conference_phone"
+      }
+    },
+    {
+      "key": "network_switch",
+      "resolution": 128,
+      "cubes": 25,
+      "slots": {
+        "ware": "device_network_switch"
+      }
+    },
+    {
+      "key": "four_bay_nas",
+      "resolution": 128,
+      "cubes": 33,
+      "slots": {
+        "ware": "device_four_bay_nas"
+      }
+    },
+    {
+      "key": "tower_ups",
+      "resolution": 128,
+      "cubes": 8,
+      "slots": {
+        "ware": "device_tower_ups"
+      }
+    },
+    {
+      "key": "compact_shredder",
+      "resolution": 128,
+      "cubes": 11,
+      "slots": {
+        "ware": "device_compact_shredder"
+      }
+    },
+    {
       "key": "table_number_sign",
       "resolution": 128,
       "cubes": 3,
@@ -3396,787 +3444,131 @@
       }
     },
     {
-      "key": "table_number_sign_01",
+      "key": "pen_holder",
       "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_01"
-      }
-    },
-    {
-      "key": "table_number_sign_02",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_02"
-      }
-    },
-    {
-      "key": "table_number_sign_03",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_03"
-      }
-    },
-    {
-      "key": "table_number_sign_04",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_04"
-      }
-    },
-    {
-      "key": "table_number_sign_05",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_05"
-      }
-    },
-    {
-      "key": "table_number_sign_06",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_06"
-      }
-    },
-    {
-      "key": "table_number_sign_07",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_07"
-      }
-    },
-    {
-      "key": "table_number_sign_09",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_09"
-      }
-    },
-    {
-      "key": "table_number_sign_10",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_10"
-      }
-    },
-    {
-      "key": "table_number_sign_11",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_11"
-      }
-    },
-    {
-      "key": "table_number_sign_12",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_12"
-      }
-    },
-    {
-      "key": "table_number_sign_13",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_13"
-      }
-    },
-    {
-      "key": "table_number_sign_14",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_14"
-      }
-    },
-    {
-      "key": "table_number_sign_15",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_15"
-      }
-    },
-    {
-      "key": "table_number_sign_16",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_16"
-      }
-    },
-    {
-      "key": "table_number_sign_17",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_17"
-      }
-    },
-    {
-      "key": "table_number_sign_18",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_18"
-      }
-    },
-    {
-      "key": "table_number_sign_19",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_19"
-      }
-    },
-    {
-      "key": "table_number_sign_20",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_20"
-      }
-    },
-    {
-      "key": "table_number_sign_21",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_21"
-      }
-    },
-    {
-      "key": "table_number_sign_22",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_22"
-      }
-    },
-    {
-      "key": "table_number_sign_23",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_23"
-      }
-    },
-    {
-      "key": "table_number_sign_24",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_24"
-      }
-    },
-    {
-      "key": "table_number_sign_25",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_25"
-      }
-    },
-    {
-      "key": "table_number_sign_26",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_26"
-      }
-    },
-    {
-      "key": "table_number_sign_27",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_27"
-      }
-    },
-    {
-      "key": "table_number_sign_28",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_28"
-      }
-    },
-    {
-      "key": "table_number_sign_29",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_29"
-      }
-    },
-    {
-      "key": "table_number_sign_30",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_30"
-      }
-    },
-    {
-      "key": "table_number_sign_31",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_31"
-      }
-    },
-    {
-      "key": "table_number_sign_32",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_32"
-      }
-    },
-    {
-      "key": "table_number_sign_33",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_33"
-      }
-    },
-    {
-      "key": "table_number_sign_34",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_34"
-      }
-    },
-    {
-      "key": "table_number_sign_35",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_35"
-      }
-    },
-    {
-      "key": "table_number_sign_36",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_36"
-      }
-    },
-    {
-      "key": "table_number_sign_37",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_37"
-      }
-    },
-    {
-      "key": "table_number_sign_38",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_38"
-      }
-    },
-    {
-      "key": "table_number_sign_39",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_39"
-      }
-    },
-    {
-      "key": "table_number_sign_40",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_40"
-      }
-    },
-    {
-      "key": "table_number_sign_41",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_41"
-      }
-    },
-    {
-      "key": "table_number_sign_42",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_42"
-      }
-    },
-    {
-      "key": "table_number_sign_43",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_43"
-      }
-    },
-    {
-      "key": "table_number_sign_44",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_44"
-      }
-    },
-    {
-      "key": "table_number_sign_45",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_45"
-      }
-    },
-    {
-      "key": "table_number_sign_46",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_46"
-      }
-    },
-    {
-      "key": "table_number_sign_47",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_47"
-      }
-    },
-    {
-      "key": "table_number_sign_48",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_48"
-      }
-    },
-    {
-      "key": "table_number_sign_49",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_49"
-      }
-    },
-    {
-      "key": "table_number_sign_50",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_50"
-      }
-    },
-    {
-      "key": "table_number_sign_51",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_51"
-      }
-    },
-    {
-      "key": "table_number_sign_52",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_52"
-      }
-    },
-    {
-      "key": "table_number_sign_53",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_53"
-      }
-    },
-    {
-      "key": "table_number_sign_54",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_54"
-      }
-    },
-    {
-      "key": "table_number_sign_55",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_55"
-      }
-    },
-    {
-      "key": "table_number_sign_56",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_56"
-      }
-    },
-    {
-      "key": "table_number_sign_57",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_57"
-      }
-    },
-    {
-      "key": "table_number_sign_58",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_58"
-      }
-    },
-    {
-      "key": "table_number_sign_59",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_59"
-      }
-    },
-    {
-      "key": "table_number_sign_60",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_60"
-      }
-    },
-    {
-      "key": "table_number_sign_61",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_61"
-      }
-    },
-    {
-      "key": "table_number_sign_62",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_62"
-      }
-    },
-    {
-      "key": "table_number_sign_63",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_63"
-      }
-    },
-    {
-      "key": "table_number_sign_64",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_64"
-      }
-    },
-    {
-      "key": "table_number_sign_65",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_65"
-      }
-    },
-    {
-      "key": "table_number_sign_66",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_66"
-      }
-    },
-    {
-      "key": "table_number_sign_67",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_67"
-      }
-    },
-    {
-      "key": "table_number_sign_68",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_68"
-      }
-    },
-    {
-      "key": "table_number_sign_69",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_69"
-      }
-    },
-    {
-      "key": "table_number_sign_70",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_70"
-      }
-    },
-    {
-      "key": "table_number_sign_71",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_71"
-      }
-    },
-    {
-      "key": "table_number_sign_72",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_72"
-      }
-    },
-    {
-      "key": "table_number_sign_73",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_73"
-      }
-    },
-    {
-      "key": "table_number_sign_74",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_74"
-      }
-    },
-    {
-      "key": "table_number_sign_75",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_75"
-      }
-    },
-    {
-      "key": "table_number_sign_76",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_76"
-      }
-    },
-    {
-      "key": "table_number_sign_77",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_77"
-      }
-    },
-    {
-      "key": "table_number_sign_78",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_78"
-      }
-    },
-    {
-      "key": "table_number_sign_79",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_79"
-      }
-    },
-    {
-      "key": "table_number_sign_80",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_80"
-      }
-    },
-    {
-      "key": "table_number_sign_81",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_81"
-      }
-    },
-    {
-      "key": "table_number_sign_82",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_82"
-      }
-    },
-    {
-      "key": "table_number_sign_83",
-      "resolution": 128,
-      "cubes": 3,
-      "slots": {
-        "ware": "service_table_number_sign_83"
-      }
-    },
-    {
-      "key": "table_number_sign_84",
-      "resolution": 128,
-      "cubes": 3,
+      "cubes": 36,
       "slots": {
-        "ware": "service_table_number_sign_84"
+        "ware": "lifestyle_pen_holder"
       }
     },
     {
-      "key": "table_number_sign_85",
+      "key": "notebook_open",
       "resolution": 128,
-      "cubes": 3,
+      "cubes": 5,
       "slots": {
-        "ware": "service_table_number_sign_85"
+        "ware": "lifestyle_notebook_open"
       }
     },
     {
-      "key": "table_number_sign_86",
+      "key": "notebook_closed",
       "resolution": 128,
       "cubes": 3,
       "slots": {
-        "ware": "service_table_number_sign_86"
+        "ware": "lifestyle_notebook_closed"
       }
     },
     {
-      "key": "table_number_sign_87",
+      "key": "document_stack",
       "resolution": 128,
-      "cubes": 3,
+      "cubes": 17,
       "slots": {
-        "ware": "service_table_number_sign_87"
+        "ware": "lifestyle_document_stack"
       }
     },
     {
-      "key": "table_number_sign_88",
+      "key": "standing_binder",
       "resolution": 128,
-      "cubes": 3,
+      "cubes": 5,
       "slots": {
-        "ware": "service_table_number_sign_88"
+        "ware": "lifestyle_standing_binder"
       }
     },
     {
-      "key": "table_number_sign_89",
+      "key": "stapler",
       "resolution": 128,
-      "cubes": 3,
+      "cubes": 4,
       "slots": {
-        "ware": "service_table_number_sign_89"
+        "ware": "lifestyle_stapler"
       }
     },
     {
-      "key": "table_number_sign_90",
+      "key": "tape_dispenser",
       "resolution": 128,
-      "cubes": 3,
+      "cubes": 32,
       "slots": {
-        "ware": "service_table_number_sign_90"
+        "ware": "lifestyle_tape_dispenser"
       }
     },
     {
-      "key": "table_number_sign_91",
+      "key": "desk_organizer",
       "resolution": 128,
-      "cubes": 3,
+      "cubes": 16,
       "slots": {
-        "ware": "service_table_number_sign_91"
+        "ware": "lifestyle_desk_organizer"
       }
     },
     {
-      "key": "table_number_sign_92",
+      "key": "ceramic_vase",
       "resolution": 128,
-      "cubes": 3,
+      "cubes": 132,
       "slots": {
-        "ware": "service_table_number_sign_92"
+        "ware": "lifestyle_ceramic_vase"
       }
     },
     {
-      "key": "table_number_sign_93",
+      "key": "flower_vase",
       "resolution": 128,
-      "cubes": 3,
+      "cubes": 232,
       "slots": {
-        "ware": "service_table_number_sign_93"
+        "ware": "lifestyle_flower_vase"
       }
     },
     {
-      "key": "table_number_sign_94",
+      "key": "succulent_pot",
       "resolution": 128,
-      "cubes": 3,
+      "cubes": 60,
       "slots": {
-        "ware": "service_table_number_sign_94"
+        "ware": "lifestyle_succulent_pot"
       }
     },
     {
-      "key": "table_number_sign_95",
+      "key": "table_clock",
       "resolution": 128,
       "cubes": 3,
       "slots": {
-        "ware": "service_table_number_sign_95"
+        "ware": "lifestyle_table_clock"
       }
     },
     {
-      "key": "table_number_sign_96",
+      "key": "landscape_frame",
       "resolution": 128,
-      "cubes": 3,
+      "cubes": 4,
       "slots": {
-        "ware": "service_table_number_sign_96"
+        "ware": "lifestyle_landscape_frame"
       }
     },
     {
-      "key": "table_number_sign_97",
+      "key": "reed_diffuser",
       "resolution": 128,
-      "cubes": 3,
+      "cubes": 53,
       "slots": {
-        "ware": "service_table_number_sign_97"
+        "ware": "lifestyle_reed_diffuser"
       }
     },
     {
-      "key": "table_number_sign_98",
+      "key": "storage_box",
       "resolution": 128,
       "cubes": 3,
       "slots": {
-        "ware": "service_table_number_sign_98"
+        "ware": "lifestyle_storage_box"
       }
     },
     {
-      "key": "table_number_sign_99",
+      "key": "ring_sculpture",
       "resolution": 128,
-      "cubes": 3,
+      "cubes": 25,
       "slots": {
-        "ware": "service_table_number_sign_99"
+        "ware": "lifestyle_ring_sculpture"
       }
     },
     {
@@ -6486,493 +5878,113 @@
       "resolution": 128
     },
     {
-      "key": "surface_table_number_sign_01",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_02",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_03",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_04",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_05",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_06",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_07",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_09",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_10",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_11",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_12",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_13",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_14",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_15",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_16",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_17",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_18",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_19",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_20",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_21",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_22",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_23",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_24",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_25",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_26",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_27",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_28",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_29",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_30",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_31",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_32",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_33",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_34",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_35",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_36",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_37",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_38",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_39",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_40",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_41",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_42",
-      "cubes": 3,
+      "key": "surface_pen_holder",
+      "cubes": 36,
       "resolution": 128
     },
     {
-      "key": "surface_table_number_sign_43",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_44",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_45",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_46",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_47",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_48",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_49",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_50",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_51",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_52",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_53",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_54",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_55",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_56",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_57",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_58",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_59",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_60",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_61",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_62",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_63",
-      "cubes": 3,
+      "key": "surface_notebook_open",
+      "cubes": 5,
       "resolution": 128
     },
     {
-      "key": "surface_table_number_sign_64",
+      "key": "surface_notebook_closed",
       "cubes": 3,
       "resolution": 128
     },
     {
-      "key": "surface_table_number_sign_65",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_66",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_67",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_68",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_69",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_70",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_71",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_72",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_73",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_74",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_75",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_76",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_77",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_78",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_79",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_80",
-      "cubes": 3,
-      "resolution": 128
-    },
-    {
-      "key": "surface_table_number_sign_81",
-      "cubes": 3,
+      "key": "surface_document_stack",
+      "cubes": 17,
       "resolution": 128
     },
     {
-      "key": "surface_table_number_sign_82",
-      "cubes": 3,
+      "key": "surface_standing_binder",
+      "cubes": 5,
       "resolution": 128
     },
     {
-      "key": "surface_table_number_sign_83",
-      "cubes": 3,
+      "key": "surface_stapler",
+      "cubes": 4,
       "resolution": 128
     },
     {
-      "key": "surface_table_number_sign_84",
-      "cubes": 3,
+      "key": "surface_tape_dispenser",
+      "cubes": 32,
       "resolution": 128
     },
     {
-      "key": "surface_table_number_sign_85",
-      "cubes": 3,
+      "key": "surface_desk_organizer",
+      "cubes": 16,
       "resolution": 128
     },
     {
-      "key": "surface_table_number_sign_86",
-      "cubes": 3,
+      "key": "surface_ceramic_vase",
+      "cubes": 132,
       "resolution": 128
     },
     {
-      "key": "surface_table_number_sign_87",
-      "cubes": 3,
+      "key": "surface_flower_vase",
+      "cubes": 232,
       "resolution": 128
     },
     {
-      "key": "surface_table_number_sign_88",
-      "cubes": 3,
+      "key": "surface_succulent_pot",
+      "cubes": 60,
       "resolution": 128
     },
     {
-      "key": "surface_table_number_sign_89",
+      "key": "surface_table_clock",
       "cubes": 3,
       "resolution": 128
     },
     {
-      "key": "surface_table_number_sign_90",
-      "cubes": 3,
+      "key": "surface_landscape_frame",
+      "cubes": 4,
       "resolution": 128
     },
     {
-      "key": "surface_table_number_sign_91",
-      "cubes": 3,
+      "key": "surface_reed_diffuser",
+      "cubes": 53,
       "resolution": 128
     },
     {
-      "key": "surface_table_number_sign_92",
+      "key": "surface_storage_box",
       "cubes": 3,
       "resolution": 128
     },
     {
-      "key": "surface_table_number_sign_93",
-      "cubes": 3,
+      "key": "surface_ring_sculpture",
+      "cubes": 25,
       "resolution": 128
     },
     {
-      "key": "surface_table_number_sign_94",
-      "cubes": 3,
+      "key": "surface_desktop_projector",
+      "cubes": 14,
       "resolution": 128
     },
     {
-      "key": "surface_table_number_sign_95",
-      "cubes": 3,
+      "key": "surface_conference_phone",
+      "cubes": 25,
       "resolution": 128
     },
     {
-      "key": "surface_table_number_sign_96",
-      "cubes": 3,
+      "key": "surface_network_switch",
+      "cubes": 25,
       "resolution": 128
     },
     {
-      "key": "surface_table_number_sign_97",
-      "cubes": 3,
+      "key": "surface_four_bay_nas",
+      "cubes": 33,
       "resolution": 128
     },
     {
-      "key": "surface_table_number_sign_98",
-      "cubes": 3,
+      "key": "surface_tower_ups",
+      "cubes": 8,
       "resolution": 128
     },
     {
-      "key": "surface_table_number_sign_99",
-      "cubes": 3,
+      "key": "surface_compact_shredder",
+      "cubes": 11,
       "resolution": 128
     },
     {
@@ -7384,6 +6396,46 @@
       "key": "ad_dessert",
       "cubes": 1,
       "resolution": 1024
+    },
+    {
+      "key": "ad_city_computer",
+      "cubes": 1,
+      "resolution": 256
+    },
+    {
+      "key": "ad_city_gaming",
+      "cubes": 1,
+      "resolution": 256
+    },
+    {
+      "key": "ad_city_camera",
+      "cubes": 1,
+      "resolution": 128
+    },
+    {
+      "key": "ad_city_music",
+      "cubes": 1,
+      "resolution": 128
+    },
+    {
+      "key": "ad_city_bookshop",
+      "cubes": 1,
+      "resolution": 128
+    },
+    {
+      "key": "ad_city_florist",
+      "cubes": 1,
+      "resolution": 256
+    },
+    {
+      "key": "ad_city_travel",
+      "cubes": 1,
+      "resolution": 256
+    },
+    {
+      "key": "ad_city_home",
+      "cubes": 1,
+      "resolution": 256
     }
   ],
   "iconSizes": {
@@ -7553,11 +6605,33 @@
     "mcpe_food_touchscreen_register": 128,
     "mcpe_food_payment_scanner": 128,
     "mcpe_food_receipt_printer": 128,
+    "mcpe_food_desktop_projector": 128,
+    "mcpe_food_conference_phone": 128,
+    "mcpe_food_network_switch": 128,
+    "mcpe_food_four_bay_nas": 128,
+    "mcpe_food_tower_ups": 128,
+    "mcpe_food_compact_shredder": 128,
     "mcpe_food_table_number_sign": 128,
     "mcpe_food_menu_stand": 128,
     "mcpe_food_reserved_sign": 128,
     "mcpe_food_service_bell": 128,
     "mcpe_food_tissue_box": 128,
+    "mcpe_food_pen_holder": 128,
+    "mcpe_food_notebook_open": 128,
+    "mcpe_food_notebook_closed": 128,
+    "mcpe_food_document_stack": 128,
+    "mcpe_food_standing_binder": 128,
+    "mcpe_food_stapler": 128,
+    "mcpe_food_tape_dispenser": 128,
+    "mcpe_food_desk_organizer": 128,
+    "mcpe_food_ceramic_vase": 128,
+    "mcpe_food_flower_vase": 128,
+    "mcpe_food_succulent_pot": 128,
+    "mcpe_food_table_clock": 128,
+    "mcpe_food_landscape_frame": 128,
+    "mcpe_food_reed_diffuser": 128,
+    "mcpe_food_storage_box": 128,
+    "mcpe_food_ring_sculpture": 128,
     "mcpe_food_triple_tray": 128,
     "mcpe_food_prep_counter": 32,
     "mcpe_food_stove": 32,
@@ -7598,6 +6672,15 @@
     "mcpe_food_ad_banquet": 128,
     "mcpe_food_ad_grouper": 128,
     "mcpe_food_ad_home_cooking": 128,
-    "mcpe_food_ad_dessert": 128
-  }
+    "mcpe_food_ad_dessert": 128,
+    "mcpe_food_ad_city_computer": 128,
+    "mcpe_food_ad_city_gaming": 128,
+    "mcpe_food_ad_city_camera": 128,
+    "mcpe_food_ad_city_music": 128,
+    "mcpe_food_ad_city_bookshop": 128,
+    "mcpe_food_ad_city_florist": 128,
+    "mcpe_food_ad_city_travel": 128,
+    "mcpe_food_ad_city_home": 128
+  },
+  "sharedTableGeometry": "geometry.mcpe_food.surface.table_number_sign"
 }

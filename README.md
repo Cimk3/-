@@ -1,17 +1,29 @@
-# 方寸食光 · Food & Table 0.5.4
+# 方寸食光 · Food & Table 0.6.0
 
-主要用于Minecraft基岩版国际版创造模式的料理、餐桌、餐厅广告与电子设备附加包。现有 **102种可食成品、8种展示配菜、15种餐具、12幅广告画（36种尺寸）、2款铜锅、3款酒瓶、2款品牌纸杯摆件和35款电子设备及5款餐厅用品**；四种厨具、六种作物及53个原有菜单配方保留。
+主要用于Minecraft基岩版国际版创造模式的料理、餐桌、餐厅广告与电子设备附加包。现有 **102种可食成品、8种展示配菜、15种餐具、20幅广告画（60种尺寸）、2款铜锅、3款酒瓶、2款品牌纸杯摆件和41款电子设备、5款餐厅用品、8款办公文具和8款居家装饰**；四种厨具、六种作物及53个原有菜单配方保留。
 
 > 目标为国际版正式版26.52、Windows和安卓，无需实验性选项。编译、静态资源、模拟交互与离线预览可检查工程一致性；实际客户端导入、灵动视效、触屏、真实联机和密集摆放性能尚未验证。
 
 ## 导入与升级
 
-1. 退出世界，打开 **dist/FoodAndTable-0.5.4.mcaddon**，等待两个包导入。也可分别导入行为包和资源包mcpack。
-2. 世界设置中确认两个包均启用 **0.5.4**。建议先复制旧世界作为备份。
+1. 退出世界，打开 **dist/FoodAndTable-0.6.0.mcaddon**，等待两个包导入。也可分别导入行为包和资源包mcpack。
+2. 世界设置中确认两个包均启用 **0.6.0**。建议先复制旧世界作为备份。
 3. 在创造物品栏“物品”页查找五类料理、“餐具”、“广告画”、“电子设备”和“餐厅用品”分组，或搜索具体名称。
 4. 若仍使用旧外观，完全退出Minecraft并重开，再检查世界实际启用版本。
 
 保留旧物品、方块ID、UUID、原配方、作物状态及默认盛装ID。普通模式与灵动视效使用同一色图，所有资源位于本包私有空间，不覆盖原版画、材质、模型、贴图、粒子或世界光照。
+
+## 0.6.0办公、家居与城市商业
+
+新增办公文具8款、居家装饰8款、办公网络电子设备6款和城市商业像素广告8幅，共30个创造物品。新增内容仅服务创造模式搭景，无新配方和生存获取链；设备、时钟和相框均为固定展示。
+
+在“物品”页新增“办公文具”和“居家装饰”折叠组。`/function mcpe_food/tasting_new`取得本版30个新品；`office_stationery`、`home_decor`各发放8款用品；`electronics`发放41款电子设备；`advertisements`发放20幅广告。
+
+22款摆件沿用原有完整表面、书架、上下与双层半砖规则，支持保存恢复及四向摆放；新8幅广告沿用墙面和三档尺寸操作。时钟固定10:10，投影仪不投射光束，NAS、UPS、交换机与碎纸机无实际工作功能。
+
+旧12幅高清食品海报保持原分辨率和像素。发行包采用无损PNG编码、JSON紧凑序列化、桌号几何和MER复用；具体旧版／优化旧内容／新版体积见[存储报告](docs/STORAGE.md)。
+
+[办公文具](previews/office_stationery.png) / [居家装饰](previews/home_decor.png) / [网络设备](previews/network_devices.png) / [城市广告](previews/city_advertisements.png)。普通模式和官方灵动视效仍需实机验证，所有资源保持私有空间。
 
 ## 0.5.4餐厅收银与服务台
 
@@ -19,7 +31,7 @@
 
 空手点击桌号牌，选择“修改号码”后分别设置十位和个位，允许01—99，00无效。默认08，号码随摆设保存；收回只得到通用桌号牌，重新摆放恢复08。菜单中的“收回桌号牌”在背包满时保持原状。
 
-`/function mcpe_food/tasting_new`取得本版8项；`/function mcpe_food/restaurant_accessories`取得5款餐厅用品；`/function mcpe_food/electronics`取得35款电子设备。餐厅用品位于创造物品栏“物品”页的新折叠组。
+0.5.4曾新增8款服务台摆件；现版`restaurant_accessories`仍提供5款餐厅用品，`electronics`提供41款电子设备。餐厅用品位于创造物品栏“物品”页的新折叠组。
 
 [服务台总览](previews/restaurant.png) / [细节](previews/restaurant_details.png) / [01—99桌号](previews/table_numbers.png)。
 
@@ -31,7 +43,7 @@
 
 所有电子设备使用东南西北固定方向。带屏设备按放置者位置选择最近的四向正面，不依赖玩家侧转的视角。已有0.5.1斜向记录会在加载时吸附到最近四向，位置、物品、款式与内容保留；没有yaw字段的旧摆件保留原来的四向。重新摆放按新规则选择正面，不持续跟随玩家。
 
-升级时确认行为包和资源包均启用0.5.4。若仍显示旧模型，完全退出游戏后重新载入，并检查世界实际启用的包版本。
+升级时确认行为包和资源包均启用0.6.0。若仍显示旧模型，完全退出游戏后重新载入，并检查世界实际启用的包版本。
 
 ## 0.5.1内容与功能
 
@@ -75,7 +87,7 @@
 /function mcpe_food/electronics
 ```
 
-`tasting_new`提供本版8个新增物品，`electronics`提供全部35款电子设备，`restaurant_accessories`提供5款餐厅用品，每种4份。托盘、杯具和海报仍可通过原分组命令取得。另有完整五类命令：`tasting_all_chinese`、`tasting_all_western`、`tasting_all_japanese`、`tasting_all_dessert`、`tasting_all_drink`。中餐42、西餐23、日料13、甜品13、饮品11，共102种可食成品。
+`tasting_new`提供本版30个新增物品，`electronics`提供全部41款电子设备，`restaurant_accessories`提供5款餐厅用品，每种4份。托盘、杯具和海报仍可通过原分组命令取得。另有完整五类命令：`tasting_all_chinese`、`tasting_all_western`、`tasting_all_japanese`、`tasting_all_dessert`、`tasting_all_drink`。中餐42、西餐23、日料13、甜品13、饮品11，共102种可食成品。
 
 原细分系列命令继续可用，包括tasting_cantonese、tasting_huaiyang、tasting_seafood、tasting_french、tasting_hotpot等。give可能将背包溢出的物品掉到地上，请留出空间。
 
@@ -123,13 +135,13 @@
 
 - [六款冰箱](previews/details_fridges.png) / [茶盘与铁观音](previews/details_tea.png) / [新笔记本](previews/details_new_laptops.png)
 - [屏幕画面](previews/screen_desktops.png) / [110°侧视](previews/laptop_angles.png) / [鼠标布局](previews/device_fronts.png)
-- [35款电子设备](previews/electronics.png) / [餐厅用品](previews/restaurant.png) / [设备局部](previews/details_electronics.png) / [笔记本开合款式](previews/details_laptops.png) / [背面与支架](previews/details_electronics_rear.png)
+- [41款电子设备](previews/electronics.png) / [餐厅用品](previews/restaurant.png) / [设备局部](previews/details_electronics.png) / [笔记本开合款式](previews/details_laptops.png) / [背面与支架](previews/details_electronics_rear.png)
 - [12幅广告画总览](previews/advertisements.png) / [实际UV墙面预览](previews/poster_wall.png)
 - [托盘空载与三菜](previews/triple_tray.png) / [新杯具与纸杯](previews/details.png)
 - [15种餐具](previews/tableware.png) / [102种料理](previews/menu.png) / [厨具](previews/kitchen.png)
 - [菜品目录](docs/CATALOG.md) / [维护说明](docs/DEVELOPMENT.md) / [美术资源](docs/ASSETS.md) / [升级记录](docs/CHANGELOG.md)
 
-图片为离线预览，不是游戏截图。源码归档为 `dist/FoodAndTable-source-0.5.4.zip`，包含海报主图、排版源与生成提示词。
+图片为离线预览，不是游戏截图。源码归档为 `dist/FoodAndTable-source-0.6.0.zip`，包含海报主图、排版源与生成提示词。
 
 开发需要Node.js 22.15或更新版本；普通构建直接使用已保存的海报主贴图，无需图片生成API或Python。重新排版海报才需要Pillow和可用中文字体，入口为tools/poster-layout.py。
 

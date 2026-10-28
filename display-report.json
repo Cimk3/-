@@ -1,7 +1,7 @@
 {
-  "advertisements": 12,
-  "advertisementSizes": 36,
-  "surfaceDefinitions": 474,
+  "advertisements": 20,
+  "advertisementSizes": 60,
+  "surfaceDefinitions": 496,
   "trayFoods": 70,
   "trayCubes": 65,
   "maxMiniCubes": 39,
@@ -2378,6 +2378,116 @@
       "resolution": 128
     },
     {
+      "key": "surface_pen_holder",
+      "cubes": 36,
+      "resolution": 128
+    },
+    {
+      "key": "surface_notebook_open",
+      "cubes": 5,
+      "resolution": 128
+    },
+    {
+      "key": "surface_notebook_closed",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_document_stack",
+      "cubes": 17,
+      "resolution": 128
+    },
+    {
+      "key": "surface_standing_binder",
+      "cubes": 5,
+      "resolution": 128
+    },
+    {
+      "key": "surface_stapler",
+      "cubes": 4,
+      "resolution": 128
+    },
+    {
+      "key": "surface_tape_dispenser",
+      "cubes": 32,
+      "resolution": 128
+    },
+    {
+      "key": "surface_desk_organizer",
+      "cubes": 16,
+      "resolution": 128
+    },
+    {
+      "key": "surface_ceramic_vase",
+      "cubes": 132,
+      "resolution": 128
+    },
+    {
+      "key": "surface_flower_vase",
+      "cubes": 232,
+      "resolution": 128
+    },
+    {
+      "key": "surface_succulent_pot",
+      "cubes": 60,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_clock",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_landscape_frame",
+      "cubes": 4,
+      "resolution": 128
+    },
+    {
+      "key": "surface_reed_diffuser",
+      "cubes": 53,
+      "resolution": 128
+    },
+    {
+      "key": "surface_storage_box",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_ring_sculpture",
+      "cubes": 25,
+      "resolution": 128
+    },
+    {
+      "key": "surface_desktop_projector",
+      "cubes": 14,
+      "resolution": 128
+    },
+    {
+      "key": "surface_conference_phone",
+      "cubes": 25,
+      "resolution": 128
+    },
+    {
+      "key": "surface_network_switch",
+      "cubes": 25,
+      "resolution": 128
+    },
+    {
+      "key": "surface_four_bay_nas",
+      "cubes": 33,
+      "resolution": 128
+    },
+    {
+      "key": "surface_tower_ups",
+      "cubes": 8,
+      "resolution": 128
+    },
+    {
+      "key": "surface_compact_shredder",
+      "cubes": 11,
+      "resolution": 128
+    },
+    {
       "key": "mini_kung_pao_chicken",
       "cubes": 31,
       "resolution": 128
@@ -2786,8 +2896,48 @@
       "key": "ad_dessert",
       "cubes": 1,
       "resolution": 1024
+    },
+    {
+      "key": "ad_city_computer",
+      "cubes": 1,
+      "resolution": 256
+    },
+    {
+      "key": "ad_city_gaming",
+      "cubes": 1,
+      "resolution": 256
+    },
+    {
+      "key": "ad_city_camera",
+      "cubes": 1,
+      "resolution": 128
+    },
+    {
+      "key": "ad_city_music",
+      "cubes": 1,
+      "resolution": 128
+    },
+    {
+      "key": "ad_city_bookshop",
+      "cubes": 1,
+      "resolution": 128
+    },
+    {
+      "key": "ad_city_florist",
+      "cubes": 1,
+      "resolution": 256
+    },
+    {
+      "key": "ad_city_travel",
+      "cubes": 1,
+      "resolution": 256
+    },
+    {
+      "key": "ad_city_home",
+      "cubes": 1,
+      "resolution": 256
     }
   ],
   "entityTypes": 3,
-  "entityTextureSets": 276
+  "entityTextureSets": 306
 }

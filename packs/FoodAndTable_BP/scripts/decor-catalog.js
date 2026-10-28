@@ -1,4 +1,5 @@
 import { bottleProps, cutlery, dishes, hotpots, id, servings, vesselByKey, vessels } from './catalog.js';
+import { cityAdvertisements, newProps, lifestyleItems } from './lifestyle-catalog.js';
 import { restaurantItems, restaurantAccessories, numberVisuals } from './restaurant-catalog.js';
 import { electronics, originalElectronics, newElectronics, officeElectronics } from './electronics-catalog.js';
 export const teaTray = { key: 'gongfu_tea_tray', zh: '功夫茶盘套装', en: 'Gongfu Tea Tray Set' };
@@ -19,14 +20,15 @@ export const advertisements = [
     { key: 'ad_banquet', series: 'chinese', zh: '中式盛宴', en: 'Chinese Banquet', aspect: 'wide' },
     { key: 'ad_grouper', series: 'chinese', zh: '清蒸鲜味', en: 'Steamed Grouper', aspect: 'wide' },
     { key: 'ad_home_cooking', series: 'chinese', zh: '家常好味', en: 'Chinese Bistro', aspect: 'square' },
-    { key: 'ad_dessert', series: 'dessert', zh: '甜品时光', en: 'Patisserie Moments', aspect: 'portrait' }
+    { key: 'ad_dessert', series: 'dessert', zh: '甜品时光', en: 'Patisserie Moments', aspect: 'portrait' },
+    ...cityAdvertisements
 ];
 export const adById = new Map(advertisements.map(a => [id(a.key), a]));
 export function adSize(ad, size) {
     const n = Math.max(0, Math.min(2, size)) + 1;
     return ad.aspect === 'wide' ? [n * 2, n] : ad.aspect === 'portrait' ? [n, n * 2] : [n, n];
 }
-export const tableItems = [...vessels, ...cutlery, ...hotpots, ...bottleProps, ...paperCups, tray, ...electronics, teaTray, ...restaurantAccessories];
+export const tableItems = [...vessels, ...cutlery, ...hotpots, ...bottleProps, ...paperCups, tray, ...electronics, teaTray, ...restaurantAccessories, ...lifestyleItems];
 export const tableItemById = new Map(tableItems.map(t => [id(t.key), t]));
 export const trayFoods = dishes.filter(f => vesselByKey.get(f.vessel)?.family === 'plate');
 export const surfaceVisuals = [
@@ -36,6 +38,6 @@ export const surfaceVisuals = [
     ...newElectronics.map(t => ({ key: t.key, zh: t.zh, en: t.en })), teaTray,
     ...servings.filter(s => s.food.key === 'tieguanyin').map(s => ({ key: s.key, zh: s.food.zh, en: s.food.en })),
     ...officeElectronics.map(d => ({ key: d.key, zh: d.zh, en: d.en })),
-    ...restaurantItems.map(d => ({ key: d.key, zh: d.zh, en: d.en })), ...numberVisuals.filter(d => d.number !== 8)
+    ...restaurantItems.map(d => ({ key: d.key, zh: d.zh, en: d.en })), ...numberVisuals.filter(d => d.number !== 8), ...newProps.map(d => ({ key: d.key, zh: d.zh, en: d.en }))
 ];
 export const surfaceIndex = new Map(surfaceVisuals.map((t, i) => [id(t.key), i]));

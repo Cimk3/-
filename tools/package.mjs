@@ -14,7 +14,7 @@ const outputs=new Map([
   [`FoodAndTable_BP-${version}.mcpack`,behavior],[`FoodAndTable_RP-${version}.mcpack`,resource],
   [`FoodAndTable-${version}.mcaddon`,zip([['FoodAndTable_BP.mcpack',behavior],['FoodAndTable_RP.mcpack',resource]])]
 ]);
-const sourceFiles=['package.json','package-lock.json','tsconfig.json','README.md','LICENSE',...['src','tools','tests','assets','docs','previews'].flatMap(folder=>tree(path.join(root,folder)).map(file=>path.relative(root,file)))];
+const sourceFiles=['package.json','package-lock.json','tsconfig.json','README.md','LICENSE','storage-report.json','build-report.json','validation-report.json','upgrade-report.json',...['src','tools','tests','assets','docs','previews'].flatMap(folder=>tree(path.join(root,folder)).map(file=>path.relative(root,file)))];
 outputs.set(`FoodAndTable-source-${version}.zip`,zip(sourceFiles.sort().map(file=>[file.split(path.sep).join('/'),readFileSync(path.join(root,file))])));
 const checksums=[];
 for(const[name,data]of outputs){writeFileSync(path.join(dist,name),data);checksums.push(`${createHash('sha256').update(data).digest('hex')}  ${name}`);console.log(`${name}  ${(data.length/1024).toFixed(1)} KiB`);}

@@ -46,6 +46,7 @@
       "model": "desktop",
       "style": "desktop",
       "pose": "fixed",
+      "placementFront": 180,
       "screenFront": 180,
       "selection": {
         "origin": [
@@ -67,6 +68,7 @@
       "model": "all_in_one",
       "style": "silver",
       "pose": "fixed",
+      "placementFront": 180,
       "screenFront": 180,
       "selection": {
         "origin": [
@@ -88,6 +90,7 @@
       "model": "laptop",
       "style": "silver",
       "pose": "open",
+      "placementFront": 180,
       "screenFront": 180,
       "openAngle": 110,
       "selection": {
@@ -131,6 +134,7 @@
       "model": "laptop",
       "style": "gaming",
       "pose": "open",
+      "placementFront": 180,
       "screenFront": 180,
       "openAngle": 110,
       "selection": {
@@ -174,6 +178,7 @@
       "model": "laptop",
       "style": "thinkpad",
       "pose": "open",
+      "placementFront": 180,
       "screenFront": 180,
       "openAngle": 110,
       "selection": {
@@ -217,6 +222,7 @@
       "model": "laptop",
       "style": "macbook",
       "pose": "open",
+      "placementFront": 180,
       "screenFront": 180,
       "openAngle": 110,
       "selection": {
@@ -260,6 +266,7 @@
       "model": "router",
       "style": "router",
       "pose": "fixed",
+      "placementFront": 180,
       "screenFront": 0,
       "selection": {
         "origin": [
@@ -281,6 +288,7 @@
       "model": "server",
       "style": "server",
       "pose": "fixed",
+      "placementFront": 180,
       "screenFront": 0,
       "selection": {
         "origin": [
@@ -302,18 +310,19 @@
       "model": "tablet",
       "style": "ipad",
       "pose": "fixed",
+      "placementFront": 180,
       "screenFront": 180,
       "openAngle": 110,
       "selection": {
         "origin": [
           -5.82,
           0,
-          -6.236281541769429
+          -6.304513015762628
         ],
         "size": [
           11.64,
           9.924423650577651,
-          10.756281541769429
+          10.824513015762628
         ]
       }
     },
@@ -324,6 +333,7 @@
       "model": "crt",
       "style": "crt",
       "pose": "fixed",
+      "placementFront": 180,
       "screenFront": 180,
       "selection": {
         "origin": [
@@ -366,6 +376,7 @@
       "model": "laptop",
       "style": "dell",
       "pose": "open",
+      "placementFront": 180,
       "screenFront": 180,
       "openAngle": 110,
       "selection": {
@@ -409,6 +420,7 @@
       "model": "laptop",
       "style": "macbook_pro",
       "pose": "open",
+      "placementFront": 180,
       "screenFront": 180,
       "openAngle": 110,
       "selection": {
@@ -419,7 +431,7 @@
         ],
         "size": [
           12.695,
-          8.419048887994299,
+          8.464392440185742,
           11.22690178968168
         ]
       }
@@ -442,6 +454,163 @@
           12.695,
           1.29,
           8.565000000000001
+        ]
+      }
+    },
+    {
+      "key": "macbook_air_silver_open",
+      "zh": "MacBook Air 银色（打开）",
+      "en": "Silver MacBook Air (Open)",
+      "model": "laptop",
+      "style": "air_silver",
+      "pose": "open",
+      "placementFront": 180,
+      "screenFront": 180,
+      "openAngle": 110,
+      "selection": {
+        "origin": [
+          -6.045000000000001,
+          0,
+          -6.820093732351412
+        ],
+        "size": [
+          12.095000000000002,
+          7.708515391871378,
+          10.890093732351412
+        ]
+      }
+    },
+    {
+      "key": "macbook_air_gray_open",
+      "zh": "MacBook Air 灰色（打开）",
+      "en": "Gray MacBook Air (Open)",
+      "model": "laptop",
+      "style": "air_gray",
+      "pose": "open",
+      "placementFront": 180,
+      "screenFront": 180,
+      "openAngle": 110,
+      "selection": {
+        "origin": [
+          -6.045000000000001,
+          0,
+          -6.820093732351412
+        ],
+        "size": [
+          12.095000000000002,
+          7.708515391871378,
+          10.890093732351412
+        ]
+      }
+    },
+    {
+      "key": "thinkbook16_plus_open",
+      "zh": "ThinkBook 16+（打开）",
+      "en": "ThinkBook 16+ (Open)",
+      "model": "laptop",
+      "style": "thinkbook",
+      "pose": "open",
+      "placementFront": 180,
+      "screenFront": 180,
+      "openAngle": 110,
+      "selection": {
+        "origin": [
+          -6.545000000000001,
+          0,
+          -7.025305818346813
+        ],
+        "size": [
+          13.095000000000002,
+          8.506987412151481,
+          11.995305818346813
+        ]
+      }
+    },
+    {
+      "key": "thinkbook16_plus_closed",
+      "zh": "ThinkBook 16+（合起）",
+      "en": "ThinkBook 16+ (Closed)",
+      "model": "laptop",
+      "style": "thinkbook",
+      "pose": "closed",
+      "screenFront": 0,
+      "selection": {
+        "origin": [
+          -6.545000000000001,
+          0,
+          -4.295000000000001
+        ],
+        "size": [
+          13.095000000000002,
+          1.19,
+          9.265
+        ]
+      }
+    },
+    {
+      "key": "printer_scanner",
+      "zh": "打印扫描一体机",
+      "en": "Printer and Scanner",
+      "model": "printer",
+      "style": "printer",
+      "pose": "fixed",
+      "placementFront": 180,
+      "screenFront": 0,
+      "selection": {
+        "origin": [
+          -6.12,
+          0,
+          -4.92
+        ],
+        "size": [
+          12.24,
+          6.485,
+          12.04
+        ]
+      }
+    },
+    {
+      "key": "mac_studio_set",
+      "zh": "Mac Studio 桌面套装",
+      "en": "Mac Studio Desktop Set",
+      "model": "studio",
+      "style": "studio",
+      "pose": "fixed",
+      "placementFront": 180,
+      "screenFront": 180,
+      "selection": {
+        "origin": [
+          -7.62,
+          0,
+          -4.92
+        ],
+        "size": [
+          14.440000000000001,
+          10.87,
+          10.54
+        ]
+      }
+    },
+    {
+      "key": "surface_pro_keyboard",
+      "zh": "Surface Pro 键盘套装",
+      "en": "Surface Pro with Keyboard",
+      "model": "surface",
+      "style": "surface",
+      "pose": "fixed",
+      "placementFront": 180,
+      "screenFront": 180,
+      "openAngle": 110,
+      "selection": {
+        "origin": [
+          -5.92,
+          0,
+          -6.7700000000000005
+        ],
+        "size": [
+          11.84,
+          8.42014700928497,
+          11.39
         ]
       }
     }

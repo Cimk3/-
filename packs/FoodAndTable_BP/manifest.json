@@ -2,12 +2,12 @@
   "format_version": 2,
   "header": {
     "name": "方寸食光 · Food & Table 行为包",
-    "description": "102 道料理 · 铜锅桌景 · 128px | Food & Table 0.5.2",
+    "description": "102 道料理 · 铜锅桌景 · 128px | Food & Table 0.5.3",
     "uuid": "c260f73a-480b-441e-91e2-de90849fa140",
     "version": [
       0,
       5,
-      2
+      3
     ],
     "min_engine_version": [
       1,
@@ -22,7 +22,7 @@
       "version": [
         0,
         5,
-        2
+        3
       ]
     },
     {
@@ -33,7 +33,7 @@
       "version": [
         0,
         5,
-        2
+        3
       ]
     }
   ],
@@ -43,7 +43,7 @@
       "version": [
         0,
         5,
-        2
+        3
       ]
     },
     {

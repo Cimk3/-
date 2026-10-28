@@ -1,7 +1,7 @@
 {
   "advertisements": 12,
   "advertisementSizes": 36,
-  "surfaceDefinitions": 361,
+  "surfaceDefinitions": 368,
   "trayFoods": 70,
   "trayCubes": 65,
   "maxMiniCubes": 39,
@@ -1714,7 +1714,7 @@
     },
     {
       "key": "surface_silver_laptop_open",
-      "cubes": 136,
+      "cubes": 138,
       "resolution": 128
     },
     {
@@ -1724,7 +1724,7 @@
     },
     {
       "key": "surface_gaming_laptop_open",
-      "cubes": 146,
+      "cubes": 149,
       "resolution": 128
     },
     {
@@ -1734,7 +1734,7 @@
     },
     {
       "key": "surface_thinkpad_open",
-      "cubes": 140,
+      "cubes": 142,
       "resolution": 128
     },
     {
@@ -1744,7 +1744,7 @@
     },
     {
       "key": "surface_macbook_open",
-      "cubes": 136,
+      "cubes": 138,
       "resolution": 128
     },
     {
@@ -1764,7 +1764,7 @@
     },
     {
       "key": "surface_ipad_air_magic_keyboard",
-      "cubes": 165,
+      "cubes": 168,
       "resolution": 128
     },
     {
@@ -1779,7 +1779,7 @@
     },
     {
       "key": "surface_dell_laptop_open",
-      "cubes": 150,
+      "cubes": 152,
       "resolution": 128
     },
     {
@@ -1810,6 +1810,41 @@
     {
       "key": "surface_tieguanyin_serving",
       "cubes": 67,
+      "resolution": 128
+    },
+    {
+      "key": "surface_macbook_air_silver_open",
+      "cubes": 145,
+      "resolution": 128
+    },
+    {
+      "key": "surface_macbook_air_gray_open",
+      "cubes": 145,
+      "resolution": 128
+    },
+    {
+      "key": "surface_thinkbook16_plus_open",
+      "cubes": 156,
+      "resolution": 128
+    },
+    {
+      "key": "surface_thinkbook16_plus_closed",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "surface_printer_scanner",
+      "cubes": 16,
+      "resolution": 128
+    },
+    {
+      "key": "surface_mac_studio_set",
+      "cubes": 25,
+      "resolution": 128
+    },
+    {
+      "key": "surface_surface_pro_keyboard",
+      "cubes": 170,
       "resolution": 128
     },
     {
@@ -2224,5 +2259,5 @@
     }
   ],
   "entityTypes": 3,
-  "entityTextureSets": 163
+  "entityTextureSets": 170
 }

@@ -3,7 +3,7 @@ import {electronics} from '../.build/electronics-catalog.js';
 const devices=new Map(electronics.map(d=>[`device_${d.key}`,d]));
 export function emissionIsValid(image,colorKey){
   const device=devices.get(colorKey),closed=device?.pose==='closed';
-  const screen=device&&!closed&&['desktop','all_in_one','laptop','tablet','crt'].includes(device.model);
+  const screen=device&&!closed&&['desktop','all_in_one','laptop','tablet','crt','studio','surface'].includes(device.model);
   for(let i=1;i<image.pixels.length;i+=4){
     const value=image.pixels[i];if(value===0)continue;
     if(!device||closed||image.width!==128||image.height!==128||value>24)return false;

@@ -1,17 +1,27 @@
-# 方寸食光 · Food & Table 0.5.2
+# 方寸食光 · Food & Table 0.5.3
 
-主要用于Minecraft基岩版国际版创造模式的料理、餐桌、餐厅广告与电子设备附加包。现有 **102种可食成品、8种展示配菜、15种餐具、12幅广告画（36种尺寸）、2款铜锅、3款酒瓶、2款品牌纸杯摆件和25款电子设备**；四种厨具、六种作物及53个原有菜单配方保留。
+主要用于Minecraft基岩版国际版创造模式的料理、餐桌、餐厅广告与电子设备附加包。现有 **102种可食成品、8种展示配菜、15种餐具、12幅广告画（36种尺寸）、2款铜锅、3款酒瓶、2款品牌纸杯摆件和32款电子设备**；四种厨具、六种作物及53个原有菜单配方保留。
 
 > 目标为国际版正式版26.52、Windows和安卓，无需实验性选项。编译、静态资源、模拟交互与离线预览可检查工程一致性；实际客户端导入、灵动视效、触屏、真实联机和密集摆放性能尚未验证。
 
 ## 导入与升级
 
-1. 退出世界，打开 **dist/FoodAndTable-0.5.2.mcaddon**，等待两个包导入。也可分别导入行为包和资源包mcpack。
-2. 世界设置中确认两个包均启用 **0.5.2**。建议先复制旧世界作为备份。
+1. 退出世界，打开 **dist/FoodAndTable-0.5.3.mcaddon**，等待两个包导入。也可分别导入行为包和资源包mcpack。
+2. 世界设置中确认两个包均启用 **0.5.3**。建议先复制旧世界作为备份。
 3. 在创造物品栏“物品”页查找五类料理、“餐具”、“广告画”和“电子设备”分组，或搜索具体名称。
 4. 若仍使用旧外观，完全退出Minecraft并重开，再检查世界实际启用版本。
 
 保留旧物品、方块ID、UUID、原配方、作物状态及默认盛装ID。普通模式与灵动视效使用同一色图，所有资源位于本包私有空间，不覆盖原版画、材质、模型、贴图、粒子或世界光照。
+
+## 0.5.3办公设备与屏幕修复
+
+新增银色与灰色MacBook Air（打开，macOS与VS Code）、ThinkBook16+（银色开合两款，Win11）、白黑打印扫描一体机、Mac Studio套装（macOS剪辑界面）、Surface Pro套装（Win11笔记界面），共7个物品。电脑画面、扫描盖和纸张均为静态造型。
+
+路由器以指示灯面、服务器以硬盘托架面朝向放置者最近的四向；旧摆件保持原方向，重新放置应用修复。所有设备仍固定朝向，不持续追踪玩家。
+
+屏幕与外壳采用共用水平分段边界和明确深度间隔，修正已发现的条带相交；连续UV和110°角度保持。实机闪烁、普通模式与灵动视效仍需客户端验证。
+
+[新增办公设备](previews/office_devices.png) / [新笔记本开合](previews/office_laptops.png) / [屏幕剖面](previews/screen_sections.png)。
 
 ## 0.5.2角度与朝向修复
 
@@ -19,7 +29,7 @@
 
 所有电子设备使用东南西北固定方向。带屏设备按放置者位置选择最近的四向正面，不依赖玩家侧转的视角。已有0.5.1斜向记录会在加载时吸附到最近四向，位置、物品、款式与内容保留；没有yaw字段的旧摆件保留原来的四向。重新摆放按新规则选择正面，不持续跟随玩家。
 
-升级时确认行为包和资源包均启用0.5.2。若仍显示旧模型，完全退出游戏后重新载入，并检查世界实际启用的包版本。
+升级时确认行为包和资源包均启用0.5.3。若仍显示旧模型，完全退出游戏后重新载入，并检查世界实际启用的包版本。
 
 ## 0.5.1内容与功能
 
@@ -63,7 +73,7 @@
 /function mcpe_food/electronics
 ```
 
-`tasting_new`提供本版12个新增物品，`electronics`提供全部25款电子设备，每种4份。托盘、杯具和海报仍可通过原分组命令取得。另有完整五类命令：`tasting_all_chinese`、`tasting_all_western`、`tasting_all_japanese`、`tasting_all_dessert`、`tasting_all_drink`。中餐42、西餐23、日料13、甜品13、饮品11，共102种可食成品。
+`tasting_new`提供本版7个新增物品，`electronics`提供全部32款电子设备，每种4份。托盘、杯具和海报仍可通过原分组命令取得。另有完整五类命令：`tasting_all_chinese`、`tasting_all_western`、`tasting_all_japanese`、`tasting_all_dessert`、`tasting_all_drink`。中餐42、西餐23、日料13、甜品13、饮品11，共102种可食成品。
 
 原细分系列命令继续可用，包括tasting_cantonese、tasting_huaiyang、tasting_seafood、tasting_french、tasting_hotpot等。give可能将背包溢出的物品掉到地上，请留出空间。
 
@@ -111,13 +121,13 @@
 
 - [六款冰箱](previews/details_fridges.png) / [茶盘与铁观音](previews/details_tea.png) / [新笔记本](previews/details_new_laptops.png)
 - [屏幕画面](previews/screen_desktops.png) / [110°侧视](previews/laptop_angles.png) / [鼠标布局](previews/device_fronts.png)
-- [25款电子设备](previews/electronics.png) / [设备局部](previews/details_electronics.png) / [笔记本开合款式](previews/details_laptops.png) / [背面与支架](previews/details_electronics_rear.png)
+- [32款电子设备](previews/electronics.png) / [设备局部](previews/details_electronics.png) / [笔记本开合款式](previews/details_laptops.png) / [背面与支架](previews/details_electronics_rear.png)
 - [12幅广告画总览](previews/advertisements.png) / [实际UV墙面预览](previews/poster_wall.png)
 - [托盘空载与三菜](previews/triple_tray.png) / [新杯具与纸杯](previews/details.png)
 - [15种餐具](previews/tableware.png) / [102种料理](previews/menu.png) / [厨具](previews/kitchen.png)
 - [菜品目录](docs/CATALOG.md) / [维护说明](docs/DEVELOPMENT.md) / [美术资源](docs/ASSETS.md) / [升级记录](docs/CHANGELOG.md)
 
-图片为离线预览，不是游戏截图。源码归档为 `dist/FoodAndTable-source-0.5.2.zip`，包含海报主图、排版源与生成提示词。
+图片为离线预览，不是游戏截图。源码归档为 `dist/FoodAndTable-source-0.5.3.zip`，包含海报主图、排版源与生成提示词。
 
 开发需要Node.js 22.15或更新版本；普通构建直接使用已保存的海报主贴图，无需图片生成API或Python。重新排版海报才需要Pillow和可用中文字体，入口为tools/poster-layout.py。
 

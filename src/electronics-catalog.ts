@@ -22,8 +22,18 @@ export const newElectronics = [
   {key:'macbook_pro_gpt_open',zh:'MacBook Pro · GPT（打开）',en:'MacBook Pro with GPT (Open)',model:'laptop',style:'macbook_pro',pose:'open'},
   {key:'macbook_pro_gpt_closed',zh:'MacBook Pro · GPT（合起）',en:'MacBook Pro with GPT (Closed)',model:'laptop',style:'macbook_pro',pose:'closed'}
 ] as const;
-export const electronics = [...originalElectronics,...newElectronics].map(d=>({...d,
-  screenFront:((d.model==='laptop'&&d.pose==='open')||['desktop','all_in_one','tablet','crt'].includes(d.model))?180:0,
-  openAngle:(d.model==='laptop'&&d.pose==='open')||d.model==='tablet'?110:undefined
+export const officeElectronics = [
+  {key:'macbook_air_silver_open',zh:'MacBook Air 银色（打开）',en:'Silver MacBook Air (Open)',model:'laptop',style:'air_silver',pose:'open'},
+  {key:'macbook_air_gray_open',zh:'MacBook Air 灰色（打开）',en:'Gray MacBook Air (Open)',model:'laptop',style:'air_gray',pose:'open'},
+  {key:'thinkbook16_plus_open',zh:'ThinkBook 16+（打开）',en:'ThinkBook 16+ (Open)',model:'laptop',style:'thinkbook',pose:'open'},
+  {key:'thinkbook16_plus_closed',zh:'ThinkBook 16+（合起）',en:'ThinkBook 16+ (Closed)',model:'laptop',style:'thinkbook',pose:'closed'},
+  {key:'printer_scanner',zh:'打印扫描一体机',en:'Printer and Scanner',model:'printer',style:'printer',pose:'fixed'},
+  {key:'mac_studio_set',zh:'Mac Studio 桌面套装',en:'Mac Studio Desktop Set',model:'studio',style:'studio',pose:'fixed'},
+  {key:'surface_pro_keyboard',zh:'Surface Pro 键盘套装',en:'Surface Pro with Keyboard',model:'surface',style:'surface',pose:'fixed'}
+] as const;
+export const electronics = [...originalElectronics,...newElectronics,...officeElectronics].map(d=>({...d,
+  placementFront:['keyboard'].includes(d.model)||(d.model==='laptop'&&d.pose==='closed')?undefined:180,
+  screenFront:((d.model==='laptop'&&d.pose==='open')||['desktop','all_in_one','tablet','crt','studio','surface'].includes(d.model))?180:0,
+  openAngle:(d.model==='laptop'&&d.pose==='open')||['tablet','surface'].includes(d.model)?110:undefined
 }));
 export const electronicsById = new Map<string,typeof electronics[number]>(electronics.map(d=>[`mcpe_food:${d.key}`,d]));

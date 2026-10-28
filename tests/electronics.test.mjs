@@ -3,7 +3,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync,readdirSync} from 'node:fs';
 import {createHash} from 'node:crypto';
-import {electronics,originalElectronics,newElectronics} from '../.build/electronics-catalog.js';
+import {electronics,originalElectronics,newElectronics,officeElectronics} from '../.build/electronics-catalog.js';
 import {surfaceVisuals,tray,paperCups,teaTray} from '../.build/decor-catalog.js';
 import {vessels,cutlery,hotpots,bottleProps,servings,recipes,id} from '../.build/catalog.js';
 import {decodeRGBA} from '../tools/png-inspect.mjs';
@@ -13,11 +13,11 @@ const bp='packs/FoodAndTable_BP',rp='packs/FoodAndTable_RP';
 const read=p=>JSON.parse(readFileSync(p,'utf8')),hash=p=>createHash('sha256').update(readFileSync(p)).digest('hex');
 const geometry=d=>read(`${rp}/models/blocks/mcpe_food/${d.key}.geo.json`)['minecraft:geometry'][0];
 
-test('current release has nineteen desktop electronics, twelve laptop poses and exactly one tablet keyboard set',()=>{
-  assert.equal(electronics.length,19);assert.equal(new Set(electronics.map(d=>d.key)).size,19);
-  const laptops=electronics.filter(d=>d.model==='laptop');assert.equal(laptops.length,12);
+test('current release has twenty-six tabletop electronics, sixteen laptop poses and two tablet keyboard sets',()=>{
+  assert.equal(electronics.length,26);assert.equal(new Set(electronics.map(d=>d.key)).size,26);
+  const laptops=electronics.filter(d=>d.model==='laptop');assert.equal(laptops.length,16);
   for(const style of ['silver','gaming','thinkpad','macbook'])assert.deepEqual(laptops.filter(d=>d.style===style).map(d=>d.pose).sort(),['closed','open']);
-  assert.equal(electronics.filter(d=>d.model==='tablet').length,1);
+  assert.equal(electronics.filter(d=>['tablet','surface'].includes(d.model)).length,2);
   assert.equal(electronics.find(d=>d.model==='tablet').key,'ipad_air_magic_keyboard');
   for(const d of electronics){const i=read(`${bp}/items/${d.key}.json`)['minecraft:item'];assert.equal(i.components['minecraft:food'],undefined);assert.equal(i.components['minecraft:use_animation'],undefined);assert.equal(i.components['minecraft:block_placer'].block,id(d.key));assert.ok(!recipes.some(r=>r.key===d.key));}
 });
@@ -38,12 +38,12 @@ test('0.4.3 identifiers, package UUIDs, crops, menus, crafting, drops and old co
   for(const[file,content]of Object.entries(old.functions))if(!['tasting_new.mcfunction','electronics.mcfunction','tableware.mcfunction','tasting_all_drink.mcfunction'].includes(file))assert.equal(readFileSync(`${bp}/functions/mcpe_food/${file}`,'utf8'),content,file);
 });
 
-test('private electronics group, bilingual names and both trial commands contain all twenty-five items exactly once',()=>{
+test('private electronics group, bilingual names and both trial commands contain all thirty-two items exactly once',()=>{
   const groups=read(`${bp}/item_catalog/crafting_item_catalog.json`)['minecraft:crafting_items_catalog'].categories[0].groups;
   const group=groups.find(g=>g.group_identifier.name==='mcpe_food:group_electronics');assert.ok(group);
   assert.equal(group.group_identifier.icon,id('desktop_computer'));assert.deepEqual(group.items,[...electronics,...refrigerators].map(d=>id(d.key)));
   for(const d of electronics){const i=read(`${bp}/items/${d.key}.json`)['minecraft:item'],b=read(`${bp}/blocks/${d.key}.json`)['minecraft:block'];assert.deepEqual(i.description.menu_category,{category:'items',group:'mcpe_food:group_electronics'});assert.equal(b.description.menu_category.category,'none');assert.equal(b.components['minecraft:light_emission'],undefined);const drops=read(`${bp}/loot_tables/blocks/${d.key}.json`).pools;assert.equal(drops.length,1);assert.equal(drops[0].entries[0].name,id(d.key));}
-  for(const [command,list] of [['electronics',[...electronics,...refrigerators]],['tasting_new',[...newElectronics,...refrigerators,teaTray,{key:'tieguanyin'}]]])assert.deepEqual(readFileSync(`${bp}/functions/mcpe_food/${command}.mcfunction`,'utf8').trim().split('\n'),list.map(d=>`give @s ${id(d.key)} 4`));
+  for(const [command,list] of [['electronics',[...electronics,...refrigerators]],['tasting_new',officeElectronics]])assert.deepEqual(readFileSync(`${bp}/functions/mcpe_food/${command}.mcfunction`,'utf8').trim().split('\n'),list.map(d=>`give @s ${id(d.key)} 4`));
   for(const locale of ['zh_CN','en_US']){const lang=readFileSync(`${rp}/texts/${locale}.lang`,'utf8');assert.ok(lang.includes('mcpe_food:group_electronics='));for(const d of electronics)assert.ok(lang.includes(`item.mcpe_food:${d.key}.name=${locale==='zh_CN'?d.zh:d.en}`));}
 });
 
@@ -77,7 +77,7 @@ test('device bodies and keycaps remain non-emissive and active screens non-metal
   const screens=new Set();
   for(const d of electronics){const c=decodeRGBA(readFileSync(`assets/electronics/${d.key}.png`)),m=decodeRGBA(readFileSync(`assets/electronics/${d.key}_mer.png`));
     for(let y=64;y<104;y++)for(let x=0;x<80;x++){const p=(y*128+x)*4;assert.equal(m.pixels[p],0);assert.equal(m.pixels[p+1],0);}
-    if(d.pose==='open'||['desktop','all_in_one','tablet','crt'].includes(d.model)){const bytes=[];for(let y=0;y<56;y++)for(let x=0;x<96;x++){const p=(y*128+x)*4;assert.equal(m.pixels[p],0);assert.ok(m.pixels[p+1]>0);bytes.push(...c.pixels.subarray(p,p+3));}screens.add(createHash('sha256').update(Buffer.from(bytes)).digest('hex'));}
+    if(d.pose==='open'||['desktop','all_in_one','tablet','crt','studio','surface'].includes(d.model)){const bytes=[];for(let y=0;y<56;y++)for(let x=0;x<96;x++){const p=(y*128+x)*4;assert.equal(m.pixels[p],0);assert.ok(m.pixels[p+1]>0);bytes.push(...c.pixels.subarray(p,p+3));}screens.add(createHash('sha256').update(Buffer.from(bytes)).digest('hex'));}
   }
   assert.ok(screens.size>=6);
 });

@@ -11,9 +11,11 @@ export function bakeDeviceTilts(cubes){
     const rotate=([x,y,z])=>[x,pivot[1]+(y-pivot[1])*co-(z-pivot[2])*si,pivot[2]+(y-pivot[1])*si+(z-pivot[2])*co];
     const section=[rotate([c.origin[0],c.origin[1],c.origin[2]]),rotate([c.origin[0],c.origin[1]+c.size[1],c.origin[2]]),rotate([c.origin[0],c.origin[1]+c.size[1],c.origin[2]+c.size[2]]),rotate([c.origin[0],c.origin[1],c.origin[2]+c.size[2]])];
     const bottom=Math.min(...section.map(p=>p[1])),top=Math.max(...section.map(p=>p[1]));
-    const count=Math.max(1,Math.ceil((top-bottom)*8)),step=(top-bottom)/count;
+    // All parts share the same 1/8-unit world Y grid. Independent subdivision
+    // previously let a shell strip cross a neighboring screen strip.
+    const shared=c.rotation[0]===-20,first=Math.floor(bottom*8),count=shared?Math.ceil(top*8)-first:Math.ceil((top-bottom)*8);
     return Array.from({length:count},(_,i)=>{
-      const start=bottom+i*step,end=bottom+(i+1)*step,points=section.filter(p=>p[1]>=start&&p[1]<=end);
+      const start=shared?Math.max(bottom,(first+i)/8):bottom+i*(top-bottom)/count,end=shared?Math.min(top,(first+i+1)/8):bottom+(i+1)*(top-bottom)/count,points=section.filter(p=>p[1]>=start&&p[1]<=end);
       for(let edge=0;edge<4;edge++){const a=section[edge],b=section[(edge+1)%4];for(const y of[start,end])if(Math.abs(b[1]-a[1])>1e-10){const t=(y-a[1])/(b[1]-a[1]);if(t>=0&&t<=1)points.push([a[0],y,a[2]+t*(b[2]-a[2])]);}}
       const z0=Math.min(...points.map(p=>p[2])),z1=Math.max(...points.map(p=>p[2]));
       const origin=[c.origin[0],start,z0],high=[c.origin[0]+c.size[0],end,z1];
@@ -27,8 +29,11 @@ export function bakeDeviceTilts(cubes){
         }
         return[face,next];
       }));
+      // The backward stair has narrow upward-facing treads. Leaving these
+      // absent exposes the gray lid through a dotted grid at oblique views.
+      if(c.tag==='screen')uv.up={...uv.south,uv:[uv.south.uv[0],uv.south.uv[1]],uv_size:[uv.south.uv_size[0],.001]};
       const {rotation,pivot:unusedPivot,...rest}=c;
-      return{...rest,origin,size:high.map((v,axis)=>v-origin[axis]),uv};
+      return{...rest,...(c.tag==='screen'?{faces:['south','up']}:{}),origin,size:high.map((v,axis)=>v-origin[axis]),uv};
     });
   });
 }

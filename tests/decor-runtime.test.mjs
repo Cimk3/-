@@ -117,7 +117,7 @@ test('hitting a custom display removes only its owning record and returns the co
   state.hitEntity({damagingEntity:player,hitEntity:e});state.hitEntity({damagingEntity:player,hitEntity:e});assert.equal(saved().length,0);assert.equal(dimension.drops.length,1);assert.equal(dimension.drops[0].item.typeId,'mcpe_food:pepsi_paper_cup');assert.equal(base.typeId,'minecraft:oak_slab');
 });
 
-test('all fifteen electronics sit on full blocks, bookshelves and wood/stone/copper slab heights without replacing supports',async()=>{
+test('all tabletop electronics sit on full blocks, bookshelves and wood/stone/copper slab heights without replacing supports',async()=>{
   const supports=[['minecraft:stone',{},1],['minecraft:bookshelf',{},1],['minecraft:chiseled_bookshelf',{},1],...[
     ['minecraft:oak_slab','minecraft:oak_double_slab'],['minecraft:normal_stone_slab','minecraft:normal_stone_double_slab'],['minecraft:cut_copper_slab','minecraft:double_cut_copper_slab']
   ].flatMap(([single,double])=>[[single,{'minecraft:vertical_half':'bottom'},.5],[single,{'minecraft:vertical_half':'top'},1],[double,{},1]])];
@@ -129,7 +129,7 @@ test('all fifteen electronics sit on full blocks, bookshelves and wood/stone/cop
 
 test('electronic placement preserves the four chosen directions',async()=>{
   for(const[rotation,direction,yaw]of [[0,'south',180],[90,'west',90],[180,'north',0],[270,'east',-90]]){
-    const{dimension,player,base}=setup();player.getRotation=()=>({x:0,y:rotation});const r=await place(player,base,'router');assert.equal(r.direction,direction);assert.equal(entityFor(dimension,r).rotation.y,yaw);removeDecor(r,false);
+    const{dimension,player,base}=setup();player.getRotation=()=>({x:0,y:rotation});const r=await place(player,base,'keyboard_mouse_set');assert.equal(r.direction,direction);assert.equal(entityFor(dimension,r).rotation.y,yaw);removeDecor(r,false);
   }
 });
 
@@ -170,10 +170,10 @@ test('creative electronics placement retains held inventory and support removal 
   state.breakBlock({player,block:base,cancel:false});await tick();assert.equal(saved().length,0);assert.equal(dimension.drops.length,0);assert.equal(base.typeId,'minecraft:bookshelf');
 });
 
-test('cardinal screen facing follows player position and remains frozen through movement, support changes and reload',async()=>{
-  for(const d of electronics.filter(d=>d.screenFront)){
+test('cardinal device-front facing follows player position and remains frozen through movement, support changes and reload',async()=>{
+  for(const d of electronics.filter(d=>d.placementFront!==undefined)){
     const{dimension,player,base}=setup('minecraft:oak_slab');player.location={x:3.1,y:1,z:-1.3};player.getRotation=()=>({x:0,y:143});
-    const r=await place(player,base,d.key),e=entityFor(dimension,r),normal=screenNormal(r.yaw,d.screenFront),dx=player.location.x-.5,dz=player.location.z-.5;
+    const r=await place(player,base,d.key),e=entityFor(dimension,r),normal=screenNormal(r.yaw,d.placementFront),dx=player.location.x-.5,dz=player.location.z-.5;
     assert.equal(Math.abs(r.yaw%90),0);assert.ok((normal.x*dx+normal.z*dz)/Math.hypot(dx,dz)>=Math.SQRT1_2-1e-8);assert.equal(e.rotation.y,r.yaw);
     player.location={x:-3,y:1,z:2};base.setPermutation({typeId:'minecraft:oak_double_slab',getAllStates:()=>({})});reconcileDecor();assert.equal(e.rotation.y,r.yaw);assert.equal(e.location.y,1);
     e.remove();loadDecorRecords();reconcileDecor();assert.equal(entityFor(dimension,r).rotation.y,r.yaw);removeDecor(r,false);
@@ -182,6 +182,14 @@ test('cardinal screen facing follows player position and remains frozen through 
 
 test('legacy screen records without yaw keep their stored cardinal direction after upgrade',async()=>{
   const{dimension,player,base}=setup(),r=await place(player,base,'macbook_open');delete r.yaw;r.direction='east';world.setDynamicProperty('mcpe_food:decor:'+r.uid,JSON.stringify(r));loadDecorRecords();reconcileDecor();assert.equal(saved()[0].yaw,undefined);assert.equal(entityFor(dimension,r).rotation.y,-90);
+});
+
+test('old router and server records keep their direction until replaced',async()=>{
+  for(const key of ['router','server_cabinet']){
+    const{dimension,player,base}=setup(),r=await place(player,base,key);delete r.yaw;r.direction='east';world.setDynamicProperty('mcpe_food:decor:'+r.uid,JSON.stringify(r));
+    loadDecorRecords();reconcileDecor();assert.equal(saved()[0].yaw,undefined);assert.equal(entityFor(dimension,r).rotation.y,-90);removeDecor(saved()[0],false);
+    system.currentTick+=10;player.location={x:.5,y:1,z:3};const placed=await place(player,base,key);assert.equal(placed.yaw,-180);assert.equal(entityFor(dimension,placed).rotation.y,-180);removeDecor(placed,false);
+  }
 });
 
 test('0.5.1 diagonal device records snap once on load without losing their identity or inventory',async()=>{

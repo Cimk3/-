@@ -27,10 +27,10 @@ test('four-axis screen placement never emits diagonal yaw and selects the closes
   for(const value of [-721,-179,-136,-91,-44,0,38,91,179,361]){const yaw=cardinalYaw(value);assert.equal(Math.abs(yaw%90),0);assert.equal(cardinalYaw(yaw),yaw);}
 });
 
-test('0.5.1 identifiers, recipes, drops, crop states and UUIDs survive this geometry-only patch',()=>{
-  const old=read('tests/fixtures/v0.5.1.json');for(const kind of ['items','blocks'])assert.deepEqual(readdirSync(`${bp}/${kind}`).sort().map(f=>read(`${bp}/${kind}/${f}`)[`minecraft:${kind.slice(0,-1)}`].description.identifier),old[kind]);
+test('0.5.1 identifiers, recipes, drops, crop states and UUIDs survive subsequent patches',()=>{
+  const old=read('tests/fixtures/v0.5.1.json');for(const kind of ['items','blocks'])assert.deepEqual(readdirSync(`${bp}/${kind}`).filter(f=>old[kind].includes(read(`${bp}/${kind}/${f}`)[`minecraft:${kind.slice(0,-1)}`].description.identifier)).sort().map(f=>read(`${bp}/${kind}/${f}`)[`minecraft:${kind.slice(0,-1)}`].description.identifier),old[kind]);
   for(const [pack,uuids]of Object.entries(old.uuids)){const m=read(`packs/${pack}/manifest.json`);assert.deepEqual([m.header.uuid,...m.modules.map(x=>x.uuid)],uuids);}
   for(const[folder,entries]of [['recipes',old.crafting],['loot_tables/blocks',old.loot]])for(const[file,hash]of Object.entries(entries))assert.equal(createHash('sha256').update(readFileSync(`${bp}/${folder}/${file}`)).digest('hex'),hash);
-  for(const[file,content]of Object.entries(old.functions))assert.equal(readFileSync(`${bp}/functions/mcpe_food/${file}`,'utf8'),content);
+  for(const[file,content]of Object.entries(old.functions))if(!['electronics.mcfunction','tasting_new.mcfunction'].includes(file))assert.equal(readFileSync(`${bp}/functions/mcpe_food/${file}`,'utf8'),content);
   for(const[file,states]of Object.entries(old.cropStates))assert.deepEqual(read(`${bp}/blocks/${file}`)['minecraft:block'].description.states,states);
 });

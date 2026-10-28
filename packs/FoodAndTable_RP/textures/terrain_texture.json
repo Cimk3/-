@@ -463,6 +463,27 @@
     "mcpe_food_device_macbook_pro_gpt_closed": {
       "textures": "textures/blocks/mcpe_food/device_macbook_pro_gpt_closed"
     },
+    "mcpe_food_device_macbook_air_silver_open": {
+      "textures": "textures/blocks/mcpe_food/device_macbook_air_silver_open"
+    },
+    "mcpe_food_device_macbook_air_gray_open": {
+      "textures": "textures/blocks/mcpe_food/device_macbook_air_gray_open"
+    },
+    "mcpe_food_device_thinkbook16_plus_open": {
+      "textures": "textures/blocks/mcpe_food/device_thinkbook16_plus_open"
+    },
+    "mcpe_food_device_thinkbook16_plus_closed": {
+      "textures": "textures/blocks/mcpe_food/device_thinkbook16_plus_closed"
+    },
+    "mcpe_food_device_printer_scanner": {
+      "textures": "textures/blocks/mcpe_food/device_printer_scanner"
+    },
+    "mcpe_food_device_mac_studio_set": {
+      "textures": "textures/blocks/mcpe_food/device_mac_studio_set"
+    },
+    "mcpe_food_device_surface_pro_keyboard": {
+      "textures": "textures/blocks/mcpe_food/device_surface_pro_keyboard"
+    },
     "mcpe_food_ware_triple_tray": {
       "textures": "textures/blocks/mcpe_food/ware_triple_tray"
     },

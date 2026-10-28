@@ -1,5 +1,5 @@
 {
-  "version": "0.5.2",
+  "version": "0.5.3",
   "models": [
     {
       "key": "egg_fried_rice_serving",
@@ -3142,7 +3142,7 @@
     {
       "key": "silver_laptop_open",
       "resolution": 128,
-      "cubes": 136,
+      "cubes": 138,
       "slots": {
         "ware": "device_silver_laptop_open"
       }
@@ -3158,7 +3158,7 @@
     {
       "key": "gaming_laptop_open",
       "resolution": 128,
-      "cubes": 146,
+      "cubes": 149,
       "slots": {
         "ware": "device_gaming_laptop_open"
       }
@@ -3174,7 +3174,7 @@
     {
       "key": "thinkpad_open",
       "resolution": 128,
-      "cubes": 140,
+      "cubes": 142,
       "slots": {
         "ware": "device_thinkpad_open"
       }
@@ -3190,7 +3190,7 @@
     {
       "key": "macbook_open",
       "resolution": 128,
-      "cubes": 136,
+      "cubes": 138,
       "slots": {
         "ware": "device_macbook_open"
       }
@@ -3222,7 +3222,7 @@
     {
       "key": "ipad_air_magic_keyboard",
       "resolution": 128,
-      "cubes": 165,
+      "cubes": 168,
       "slots": {
         "ware": "device_ipad_air_magic_keyboard"
       }
@@ -3246,7 +3246,7 @@
     {
       "key": "dell_laptop_open",
       "resolution": 128,
-      "cubes": 150,
+      "cubes": 152,
       "slots": {
         "ware": "device_dell_laptop_open"
       }
@@ -3273,6 +3273,62 @@
       "cubes": 10,
       "slots": {
         "ware": "device_macbook_pro_gpt_closed"
+      }
+    },
+    {
+      "key": "macbook_air_silver_open",
+      "resolution": 128,
+      "cubes": 145,
+      "slots": {
+        "ware": "device_macbook_air_silver_open"
+      }
+    },
+    {
+      "key": "macbook_air_gray_open",
+      "resolution": 128,
+      "cubes": 145,
+      "slots": {
+        "ware": "device_macbook_air_gray_open"
+      }
+    },
+    {
+      "key": "thinkbook16_plus_open",
+      "resolution": 128,
+      "cubes": 156,
+      "slots": {
+        "ware": "device_thinkbook16_plus_open"
+      }
+    },
+    {
+      "key": "thinkbook16_plus_closed",
+      "resolution": 128,
+      "cubes": 10,
+      "slots": {
+        "ware": "device_thinkbook16_plus_closed"
+      }
+    },
+    {
+      "key": "printer_scanner",
+      "resolution": 128,
+      "cubes": 16,
+      "slots": {
+        "ware": "device_printer_scanner"
+      }
+    },
+    {
+      "key": "mac_studio_set",
+      "resolution": 128,
+      "cubes": 25,
+      "slots": {
+        "ware": "device_mac_studio_set"
+      }
+    },
+    {
+      "key": "surface_pro_keyboard",
+      "resolution": 128,
+      "cubes": 170,
+      "slots": {
+        "ware": "device_surface_pro_keyboard"
       }
     },
     {
@@ -5408,7 +5464,7 @@
     },
     {
       "key": "surface_silver_laptop_open",
-      "cubes": 136,
+      "cubes": 138,
       "resolution": 128
     },
     {
@@ -5418,7 +5474,7 @@
     },
     {
       "key": "surface_gaming_laptop_open",
-      "cubes": 146,
+      "cubes": 149,
       "resolution": 128
     },
     {
@@ -5428,7 +5484,7 @@
     },
     {
       "key": "surface_thinkpad_open",
-      "cubes": 140,
+      "cubes": 142,
       "resolution": 128
     },
     {
@@ -5438,7 +5494,7 @@
     },
     {
       "key": "surface_macbook_open",
-      "cubes": 136,
+      "cubes": 138,
       "resolution": 128
     },
     {
@@ -5458,7 +5514,7 @@
     },
     {
       "key": "surface_ipad_air_magic_keyboard",
-      "cubes": 165,
+      "cubes": 168,
       "resolution": 128
     },
     {
@@ -5473,7 +5529,7 @@
     },
     {
       "key": "surface_dell_laptop_open",
-      "cubes": 150,
+      "cubes": 152,
       "resolution": 128
     },
     {
@@ -5504,6 +5560,41 @@
     {
       "key": "surface_tieguanyin_serving",
       "cubes": 67,
+      "resolution": 128
+    },
+    {
+      "key": "surface_macbook_air_silver_open",
+      "cubes": 145,
+      "resolution": 128
+    },
+    {
+      "key": "surface_macbook_air_gray_open",
+      "cubes": 145,
+      "resolution": 128
+    },
+    {
+      "key": "surface_thinkbook16_plus_open",
+      "cubes": 156,
+      "resolution": 128
+    },
+    {
+      "key": "surface_thinkbook16_plus_closed",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "surface_printer_scanner",
+      "cubes": 16,
+      "resolution": 128
+    },
+    {
+      "key": "surface_mac_studio_set",
+      "cubes": 25,
+      "resolution": 128
+    },
+    {
+      "key": "surface_surface_pro_keyboard",
+      "cubes": 170,
       "resolution": 128
     },
     {
@@ -6074,6 +6165,13 @@
     "mcpe_food_dell_laptop_closed": 128,
     "mcpe_food_macbook_pro_gpt_open": 128,
     "mcpe_food_macbook_pro_gpt_closed": 128,
+    "mcpe_food_macbook_air_silver_open": 128,
+    "mcpe_food_macbook_air_gray_open": 128,
+    "mcpe_food_thinkbook16_plus_open": 128,
+    "mcpe_food_thinkbook16_plus_closed": 128,
+    "mcpe_food_printer_scanner": 128,
+    "mcpe_food_mac_studio_set": 128,
+    "mcpe_food_surface_pro_keyboard": 128,
     "mcpe_food_triple_tray": 128,
     "mcpe_food_prep_counter": 32,
     "mcpe_food_stove": 32,

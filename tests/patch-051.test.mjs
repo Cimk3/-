@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {readFileSync,readdirSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {MinecraftBlockTypes} from '@minecraft/vanilla-data';
-import {electronics,newElectronics,originalElectronics} from '../.build/electronics-catalog.js';
+import {electronics,newElectronics,originalElectronics,officeElectronics} from '../.build/electronics-catalog.js';
 import {refrigerators,refrigeratorPartIds} from '../.build/appliance-catalog.js';
 import {teaTray,surfaceVisuals} from '../.build/decor-catalog.js';
 import {foods,recipes,teaFoods,servings,compatibleVessels} from '../.build/catalog.js';
@@ -17,13 +17,13 @@ import {decodeRGBA} from '../tools/png-inspect.mjs';
 const bp='packs/FoodAndTable_BP',rp='packs/FoodAndTable_RP',read=p=>JSON.parse(readFileSync(p,'utf8'));
 const hash=p=>createHash('sha256').update(readFileSync(p)).digest('hex');
 
-test('0.5.1 adds exactly twelve inventory items and sixteen blocks while preserving all old interfaces',()=>{
+test('0.5.1 additions and all old interfaces remain present alongside the seven office props',()=>{
   const old=read('tests/fixtures/v0.5.0.json'),expectedItems=[...newElectronics,...refrigerators,teaTray,...teaFoods].map(d=>'mcpe_food:'+d.key);
   for(const [kind,extra]of [['items',expectedItems],['blocks',[...newElectronics,teaTray].map(d=>'mcpe_food:'+d.key).concat(refrigeratorPartIds,servings.filter(s=>s.food.key==='tieguanyin').map(s=>'mcpe_food:'+s.key))]]){
     const current=readdirSync(`${bp}/${kind}`).map(f=>read(`${bp}/${kind}/${f}`)[`minecraft:${kind.slice(0,-1)}`].description.identifier);
-    assert.deepEqual(current.filter(k=>!old[kind].includes(k)).sort(),extra.sort());for(const key of old[kind])assert.ok(current.includes(key));
+    assert.deepEqual(current.filter(k=>!old[kind].includes(k)).sort(),extra.concat(officeElectronics.map(d=>'mcpe_food:'+d.key)).sort());for(const key of old[kind])assert.ok(current.includes(key));
   }
-  assert.equal(expectedItems.length,12);assert.equal(foods.length,102);assert.equal(foods.filter(f=>f.category==='drink').length,11);assert.equal(electronics.length+refrigerators.length,25);
+  assert.equal(expectedItems.length,12);assert.equal(foods.length,102);assert.equal(foods.filter(f=>f.category==='drink').length,11);assert.equal(electronics.length+refrigerators.length,32);
   for(const[pack,uuids]of Object.entries(old.uuids)){const m=read(`packs/${pack}/manifest.json`);assert.deepEqual([m.header.uuid,...m.modules.map(x=>x.uuid)],uuids);}
   for(const[folder,entries]of [['recipes',old.crafting],['loot_tables/blocks',old.loot]])for(const[file,sha]of Object.entries(entries))assert.equal(hash(`${bp}/${folder}/${file}`),sha);
   assert.deepEqual(recipes.map(({key,station,inputs,output,category})=>({key,station,inputs,output,category})),old.menuRecipes);
@@ -33,9 +33,9 @@ test('0.5.1 adds exactly twelve inventory items and sixteen blocks while preserv
 
 test('old 354 surface indices remain unchanged and new tea/desktop appearances only append',()=>{
   const oldKeys=read('tests/fixtures/v0.5.0.json').blocks.map(k=>k.slice(10));
-  assert.equal(surfaceVisuals.length,361);assert.equal(surfaceVisuals.slice(339,354).map(d=>d.key).join(),originalElectronics.map(d=>d.key).join());
+  assert.equal(surfaceVisuals.length,368);assert.equal(surfaceVisuals.slice(339,354).map(d=>d.key).join(),originalElectronics.map(d=>d.key).join());
   for(const d of surfaceVisuals.slice(0,339))assert.ok(oldKeys.includes(d.key));
-  assert.deepEqual(surfaceVisuals.slice(354).map(d=>d.key),[...newElectronics,teaTray,...servings.filter(s=>s.food.key==='tieguanyin')].map(d=>d.key));
+  assert.deepEqual(surfaceVisuals.slice(354,361).map(d=>d.key),[...newElectronics,teaTray,...servings.filter(s=>s.food.key==='tieguanyin')].map(d=>d.key));
 });
 
 test('every pinned vanilla block has an explicit surface classification and unsafe shapes stay excluded',()=>{
@@ -49,21 +49,21 @@ test('every pinned vanilla block has an explicit surface classification and unsa
 
 test('screen normals choose the nearest cardinal facing independent of look direction',()=>{
   for(const d of electronics.filter(d=>d.screenFront))for(let angle=0;angle<360;angle+=17){const t=angle*Math.PI/180,target={x:3*Math.sin(t),z:3*Math.cos(t)},yaw=screenYaw('mcpe_food:'+d.key,{x:0,z:0},target,123),normal=screenNormal(yaw,d.screenFront);assert.equal(Math.abs(yaw%90),0);assert.ok((normal.x*target.x+normal.z*target.z)/3>=Math.SQRT1_2-1e-8);}
-  for(const d of electronics.filter(d=>!d.screenFront))assert.equal(screenYaw('mcpe_food:'+d.key,{x:0,z:0},{x:2,z:3},0),undefined);
+  for(const d of electronics.filter(d=>d.placementFront===undefined))assert.equal(screenYaw('mcpe_food:'+d.key,{x:0,z:0},{x:2,z:3},0),undefined);
   assert.ok(Number.isFinite(screenYaw('mcpe_food:macbook_open',{x:0,z:0},{x:0,z:0},37)));
 });
 
-test('all six open laptops and the floating tablet have a geometric interior angle of 110 degrees',()=>{
-  const devices=electronics.filter(d=>d.openAngle);assert.equal(devices.length,7);
+test('all nine open laptops and both tablets have a geometric interior angle of 110 degrees',()=>{
+  const devices=electronics.filter(d=>d.openAngle);assert.equal(devices.length,11);
   for(const d of devices){
     const cubes=electronicCubes(d);assert.ok(Math.abs(emittedLidAngle(cubes)-110)<1e-8,d.key);
     assert.ok(cubes.filter(c=>c.tag==='screen').every(c=>!c.rotation));assert.equal(d.openAngle,110);
   }
 });
 
-test('desktop and AIO mouse lie on the user right while independent keyboard/mouse layout is retained',()=>{
+test('desktop, AIO and Mac Studio mouse lie on the user right while independent keyboard/mouse layout is retained',()=>{
   const center=(cubes,tag)=>{const parts=cubes.filter(c=>c.tag===tag);return parts.reduce((n,c)=>n+c.origin[0]+c.size[0]/2,0)/parts.length;};
-  for(const key of ['desktop_computer','all_in_one_computer']){const cubes=electronicCubes(electronics.find(d=>d.key===key));assert.ok(center(cubes,'mouse')<center(cubes,'keyboard'),key);}
+  for(const key of ['desktop_computer','all_in_one_computer','mac_studio_set']){const cubes=electronicCubes(electronics.find(d=>d.key===key));assert.ok(center(cubes,'mouse')<center(cubes,'keyboard'),key);}
   const separate=electronicCubes(electronics.find(d=>d.key==='keyboard_mouse_set'));assert.ok(center(separate,'mouse')>center(separate,'keyboard'));
 });
 

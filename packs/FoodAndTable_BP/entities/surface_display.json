@@ -11,7 +11,7 @@
           "type": "int",
           "range": [
             0,
-            360
+            367
           ],
           "default": 0,
           "client_sync": true
@@ -111,7 +111,7 @@
       },
       "mcpe_food:ipad_air_magic_keyboard": {
         "minecraft:collision_box": {
-          "width": 0.7795351927211787,
+          "width": 0.7880641269703285,
           "height": 0.6209014781611032
         }
       },
@@ -142,13 +142,55 @@
       "mcpe_food:macbook_pro_gpt_open": {
         "minecraft:collision_box": {
           "width": 0.8696127237102099,
-          "height": 0.5268155554996437
+          "height": 0.5296495275116089
         }
       },
       "mcpe_food:macbook_pro_gpt_closed": {
         "minecraft:collision_box": {
           "width": 0.7937500000000001,
           "height": 0.08125
+        }
+      },
+      "mcpe_food:macbook_air_silver_open": {
+        "minecraft:collision_box": {
+          "width": 0.8525117165439265,
+          "height": 0.4824072119919611
+        }
+      },
+      "mcpe_food:macbook_air_gray_open": {
+        "minecraft:collision_box": {
+          "width": 0.8525117165439265,
+          "height": 0.4824072119919611
+        }
+      },
+      "mcpe_food:thinkbook16_plus_open": {
+        "minecraft:collision_box": {
+          "width": 0.8781632272933516,
+          "height": 0.5323117132594676
+        }
+      },
+      "mcpe_food:thinkbook16_plus_closed": {
+        "minecraft:collision_box": {
+          "width": 0.8187500000000001,
+          "height": 0.075
+        }
+      },
+      "mcpe_food:printer_scanner": {
+        "minecraft:collision_box": {
+          "width": 0.89,
+          "height": 0.4059375
+        }
+      },
+      "mcpe_food:mac_studio_set": {
+        "minecraft:collision_box": {
+          "width": 0.9525,
+          "height": 0.6799999999999999
+        }
+      },
+      "mcpe_food:surface_pro_keyboard": {
+        "minecraft:collision_box": {
+          "width": 0.8462500000000001,
+          "height": 0.5268841880803106
         }
       }
     },
@@ -212,7 +254,14 @@
             "mcpe_food:dell_laptop_open",
             "mcpe_food:dell_laptop_closed",
             "mcpe_food:macbook_pro_gpt_open",
-            "mcpe_food:macbook_pro_gpt_closed"
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard"
           ]
         },
         "add": {
@@ -245,7 +294,14 @@
             "mcpe_food:dell_laptop_open",
             "mcpe_food:dell_laptop_closed",
             "mcpe_food:macbook_pro_gpt_open",
-            "mcpe_food:macbook_pro_gpt_closed"
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard"
           ]
         },
         "add": {
@@ -278,7 +334,14 @@
             "mcpe_food:dell_laptop_open",
             "mcpe_food:dell_laptop_closed",
             "mcpe_food:macbook_pro_gpt_open",
-            "mcpe_food:macbook_pro_gpt_closed"
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard"
           ]
         },
         "add": {
@@ -311,7 +374,14 @@
             "mcpe_food:dell_laptop_open",
             "mcpe_food:dell_laptop_closed",
             "mcpe_food:macbook_pro_gpt_open",
-            "mcpe_food:macbook_pro_gpt_closed"
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard"
           ]
         },
         "add": {
@@ -344,7 +414,14 @@
             "mcpe_food:dell_laptop_open",
             "mcpe_food:dell_laptop_closed",
             "mcpe_food:macbook_pro_gpt_open",
-            "mcpe_food:macbook_pro_gpt_closed"
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard"
           ]
         },
         "add": {
@@ -377,7 +454,14 @@
             "mcpe_food:dell_laptop_open",
             "mcpe_food:dell_laptop_closed",
             "mcpe_food:macbook_pro_gpt_open",
-            "mcpe_food:macbook_pro_gpt_closed"
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard"
           ]
         },
         "add": {
@@ -410,7 +494,14 @@
             "mcpe_food:dell_laptop_open",
             "mcpe_food:dell_laptop_closed",
             "mcpe_food:macbook_pro_gpt_open",
-            "mcpe_food:macbook_pro_gpt_closed"
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard"
           ]
         },
         "add": {
@@ -443,7 +534,14 @@
             "mcpe_food:dell_laptop_open",
             "mcpe_food:dell_laptop_closed",
             "mcpe_food:macbook_pro_gpt_open",
-            "mcpe_food:macbook_pro_gpt_closed"
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard"
           ]
         },
         "add": {
@@ -476,7 +574,14 @@
             "mcpe_food:dell_laptop_open",
             "mcpe_food:dell_laptop_closed",
             "mcpe_food:macbook_pro_gpt_open",
-            "mcpe_food:macbook_pro_gpt_closed"
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard"
           ]
         },
         "add": {
@@ -509,7 +614,14 @@
             "mcpe_food:dell_laptop_open",
             "mcpe_food:dell_laptop_closed",
             "mcpe_food:macbook_pro_gpt_open",
-            "mcpe_food:macbook_pro_gpt_closed"
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard"
           ]
         },
         "add": {
@@ -542,7 +654,14 @@
             "mcpe_food:dell_laptop_open",
             "mcpe_food:dell_laptop_closed",
             "mcpe_food:macbook_pro_gpt_open",
-            "mcpe_food:macbook_pro_gpt_closed"
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard"
           ]
         },
         "add": {
@@ -575,7 +694,14 @@
             "mcpe_food:dell_laptop_open",
             "mcpe_food:dell_laptop_closed",
             "mcpe_food:macbook_pro_gpt_open",
-            "mcpe_food:macbook_pro_gpt_closed"
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard"
           ]
         },
         "add": {
@@ -608,7 +734,14 @@
             "mcpe_food:dell_laptop_open",
             "mcpe_food:dell_laptop_closed",
             "mcpe_food:macbook_pro_gpt_open",
-            "mcpe_food:macbook_pro_gpt_closed"
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard"
           ]
         },
         "add": {
@@ -641,7 +774,14 @@
             "mcpe_food:dell_laptop_open",
             "mcpe_food:dell_laptop_closed",
             "mcpe_food:macbook_pro_gpt_open",
-            "mcpe_food:macbook_pro_gpt_closed"
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard"
           ]
         },
         "add": {
@@ -674,7 +814,14 @@
             "mcpe_food:dell_laptop_open",
             "mcpe_food:dell_laptop_closed",
             "mcpe_food:macbook_pro_gpt_open",
-            "mcpe_food:macbook_pro_gpt_closed"
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard"
           ]
         },
         "add": {
@@ -707,7 +854,14 @@
             "mcpe_food:dell_laptop_open",
             "mcpe_food:dell_laptop_closed",
             "mcpe_food:macbook_pro_gpt_open",
-            "mcpe_food:macbook_pro_gpt_closed"
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard"
           ]
         },
         "add": {
@@ -740,7 +894,14 @@
             "mcpe_food:dell_laptop_open",
             "mcpe_food:dell_laptop_closed",
             "mcpe_food:macbook_pro_gpt_open",
-            "mcpe_food:macbook_pro_gpt_closed"
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard"
           ]
         },
         "add": {
@@ -773,7 +934,14 @@
             "mcpe_food:dell_laptop_open",
             "mcpe_food:dell_laptop_closed",
             "mcpe_food:macbook_pro_gpt_open",
-            "mcpe_food:macbook_pro_gpt_closed"
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard"
           ]
         },
         "add": {
@@ -806,7 +974,14 @@
             "mcpe_food:dell_laptop_open",
             "mcpe_food:dell_laptop_closed",
             "mcpe_food:macbook_pro_gpt_open",
-            "mcpe_food:macbook_pro_gpt_closed"
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard"
           ]
         },
         "add": {
@@ -839,7 +1014,14 @@
             "mcpe_food:dell_laptop_open",
             "mcpe_food:dell_laptop_closed",
             "mcpe_food:macbook_pro_gpt_open",
-            "mcpe_food:macbook_pro_gpt_closed"
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard"
           ]
         },
         "add": {
@@ -872,7 +1054,14 @@
             "mcpe_food:dell_laptop_open",
             "mcpe_food:dell_laptop_closed",
             "mcpe_food:macbook_pro_gpt_open",
-            "mcpe_food:macbook_pro_gpt_closed"
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard"
           ]
         },
         "add": {
@@ -905,12 +1094,299 @@
             "mcpe_food:dell_laptop_open",
             "mcpe_food:dell_laptop_closed",
             "mcpe_food:macbook_pro_gpt_open",
-            "mcpe_food:macbook_pro_gpt_closed"
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard"
           ]
         },
         "add": {
           "component_groups": [
             "mcpe_food:macbook_pro_gpt_closed"
+          ]
+        }
+      },
+      "mcpe_food:shape_macbook_air_silver_open": {
+        "remove": {
+          "component_groups": [
+            "mcpe_food:flat",
+            "mcpe_food:medium",
+            "mcpe_food:tall",
+            "mcpe_food:desktop_computer",
+            "mcpe_food:all_in_one_computer",
+            "mcpe_food:silver_laptop_open",
+            "mcpe_food:silver_laptop_closed",
+            "mcpe_food:gaming_laptop_open",
+            "mcpe_food:gaming_laptop_closed",
+            "mcpe_food:thinkpad_open",
+            "mcpe_food:thinkpad_closed",
+            "mcpe_food:macbook_open",
+            "mcpe_food:macbook_closed",
+            "mcpe_food:router",
+            "mcpe_food:server_cabinet",
+            "mcpe_food:ipad_air_magic_keyboard",
+            "mcpe_food:crt_monitor",
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "mcpe_food:macbook_air_silver_open"
+          ]
+        }
+      },
+      "mcpe_food:shape_macbook_air_gray_open": {
+        "remove": {
+          "component_groups": [
+            "mcpe_food:flat",
+            "mcpe_food:medium",
+            "mcpe_food:tall",
+            "mcpe_food:desktop_computer",
+            "mcpe_food:all_in_one_computer",
+            "mcpe_food:silver_laptop_open",
+            "mcpe_food:silver_laptop_closed",
+            "mcpe_food:gaming_laptop_open",
+            "mcpe_food:gaming_laptop_closed",
+            "mcpe_food:thinkpad_open",
+            "mcpe_food:thinkpad_closed",
+            "mcpe_food:macbook_open",
+            "mcpe_food:macbook_closed",
+            "mcpe_food:router",
+            "mcpe_food:server_cabinet",
+            "mcpe_food:ipad_air_magic_keyboard",
+            "mcpe_food:crt_monitor",
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "mcpe_food:macbook_air_gray_open"
+          ]
+        }
+      },
+      "mcpe_food:shape_thinkbook16_plus_open": {
+        "remove": {
+          "component_groups": [
+            "mcpe_food:flat",
+            "mcpe_food:medium",
+            "mcpe_food:tall",
+            "mcpe_food:desktop_computer",
+            "mcpe_food:all_in_one_computer",
+            "mcpe_food:silver_laptop_open",
+            "mcpe_food:silver_laptop_closed",
+            "mcpe_food:gaming_laptop_open",
+            "mcpe_food:gaming_laptop_closed",
+            "mcpe_food:thinkpad_open",
+            "mcpe_food:thinkpad_closed",
+            "mcpe_food:macbook_open",
+            "mcpe_food:macbook_closed",
+            "mcpe_food:router",
+            "mcpe_food:server_cabinet",
+            "mcpe_food:ipad_air_magic_keyboard",
+            "mcpe_food:crt_monitor",
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "mcpe_food:thinkbook16_plus_open"
+          ]
+        }
+      },
+      "mcpe_food:shape_thinkbook16_plus_closed": {
+        "remove": {
+          "component_groups": [
+            "mcpe_food:flat",
+            "mcpe_food:medium",
+            "mcpe_food:tall",
+            "mcpe_food:desktop_computer",
+            "mcpe_food:all_in_one_computer",
+            "mcpe_food:silver_laptop_open",
+            "mcpe_food:silver_laptop_closed",
+            "mcpe_food:gaming_laptop_open",
+            "mcpe_food:gaming_laptop_closed",
+            "mcpe_food:thinkpad_open",
+            "mcpe_food:thinkpad_closed",
+            "mcpe_food:macbook_open",
+            "mcpe_food:macbook_closed",
+            "mcpe_food:router",
+            "mcpe_food:server_cabinet",
+            "mcpe_food:ipad_air_magic_keyboard",
+            "mcpe_food:crt_monitor",
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "mcpe_food:thinkbook16_plus_closed"
+          ]
+        }
+      },
+      "mcpe_food:shape_printer_scanner": {
+        "remove": {
+          "component_groups": [
+            "mcpe_food:flat",
+            "mcpe_food:medium",
+            "mcpe_food:tall",
+            "mcpe_food:desktop_computer",
+            "mcpe_food:all_in_one_computer",
+            "mcpe_food:silver_laptop_open",
+            "mcpe_food:silver_laptop_closed",
+            "mcpe_food:gaming_laptop_open",
+            "mcpe_food:gaming_laptop_closed",
+            "mcpe_food:thinkpad_open",
+            "mcpe_food:thinkpad_closed",
+            "mcpe_food:macbook_open",
+            "mcpe_food:macbook_closed",
+            "mcpe_food:router",
+            "mcpe_food:server_cabinet",
+            "mcpe_food:ipad_air_magic_keyboard",
+            "mcpe_food:crt_monitor",
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "mcpe_food:printer_scanner"
+          ]
+        }
+      },
+      "mcpe_food:shape_mac_studio_set": {
+        "remove": {
+          "component_groups": [
+            "mcpe_food:flat",
+            "mcpe_food:medium",
+            "mcpe_food:tall",
+            "mcpe_food:desktop_computer",
+            "mcpe_food:all_in_one_computer",
+            "mcpe_food:silver_laptop_open",
+            "mcpe_food:silver_laptop_closed",
+            "mcpe_food:gaming_laptop_open",
+            "mcpe_food:gaming_laptop_closed",
+            "mcpe_food:thinkpad_open",
+            "mcpe_food:thinkpad_closed",
+            "mcpe_food:macbook_open",
+            "mcpe_food:macbook_closed",
+            "mcpe_food:router",
+            "mcpe_food:server_cabinet",
+            "mcpe_food:ipad_air_magic_keyboard",
+            "mcpe_food:crt_monitor",
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "mcpe_food:mac_studio_set"
+          ]
+        }
+      },
+      "mcpe_food:shape_surface_pro_keyboard": {
+        "remove": {
+          "component_groups": [
+            "mcpe_food:flat",
+            "mcpe_food:medium",
+            "mcpe_food:tall",
+            "mcpe_food:desktop_computer",
+            "mcpe_food:all_in_one_computer",
+            "mcpe_food:silver_laptop_open",
+            "mcpe_food:silver_laptop_closed",
+            "mcpe_food:gaming_laptop_open",
+            "mcpe_food:gaming_laptop_closed",
+            "mcpe_food:thinkpad_open",
+            "mcpe_food:thinkpad_closed",
+            "mcpe_food:macbook_open",
+            "mcpe_food:macbook_closed",
+            "mcpe_food:router",
+            "mcpe_food:server_cabinet",
+            "mcpe_food:ipad_air_magic_keyboard",
+            "mcpe_food:crt_monitor",
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "mcpe_food:surface_pro_keyboard"
           ]
         }
       }

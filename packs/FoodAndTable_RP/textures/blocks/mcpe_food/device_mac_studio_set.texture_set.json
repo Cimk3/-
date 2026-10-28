@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "device_mac_studio_set",
+    "metalness_emissive_roughness": "device_mac_studio_set_mer"
+  }
+}

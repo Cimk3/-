@@ -1,4 +1,4 @@
-# 0.5.2 菜品与器皿索引
+# 0.5.3 菜品与器皿索引
 
 102 种可食成品，8 种不可食展示配菜，2 款静态铜锅，15 种餐具，3 款酒瓶摆件。新增内容通过创造物品栏或分组试用命令获取。
 
@@ -249,7 +249,7 @@
 
 ## 电子设备
 
-25款静态摆件；笔记本开合为独立物品，冰箱高度为1或2格。
+32款静态摆件；笔记本开合为独立物品，冰箱高度为1或2格。
 
 | 名称 | ID | 姿态 |
 |---|---|---|
@@ -272,6 +272,13 @@
 | 戴尔银色轻薄本（合起） | mcpe_food:dell_laptop_closed | closed |
 | MacBook Pro · GPT（打开） | mcpe_food:macbook_pro_gpt_open | open |
 | MacBook Pro · GPT（合起） | mcpe_food:macbook_pro_gpt_closed | closed |
+| MacBook Air 银色（打开） | mcpe_food:macbook_air_silver_open | open |
+| MacBook Air 灰色（打开） | mcpe_food:macbook_air_gray_open | open |
+| ThinkBook 16+（打开） | mcpe_food:thinkbook16_plus_open | open |
+| ThinkBook 16+（合起） | mcpe_food:thinkbook16_plus_closed | closed |
+| 打印扫描一体机 | mcpe_food:printer_scanner | fixed |
+| Mac Studio 桌面套装 | mcpe_food:mac_studio_set | fixed |
+| Surface Pro 键盘套装 | mcpe_food:surface_pro_keyboard | fixed |
 | 玫瑰金单门冰箱 | mcpe_food:fridge_single_rose_gold | single |
 | 白色单门冰箱 | mcpe_food:fridge_single_white | single |
 | 黑色单门冰箱 | mcpe_food:fridge_single_black | single |

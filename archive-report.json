@@ -7,16 +7,16 @@
   "packs": [
     {
       "name": "FoodAndTable_BP.mcpack",
-      "files": 1022
+      "files": 1043
     },
     {
       "name": "FoodAndTable_RP.mcpack",
-      "files": 2385
+      "files": 2455
     }
   ],
-  "totalPackFiles": 3407,
-  "pbrTextureSets": 567,
-  "customBlocksWithoutDestructionDebris": 380,
+  "totalPackFiles": 3498,
+  "pbrTextureSets": 588,
+  "customBlocksWithoutDestructionDebris": 387,
   "sourceCRC": "passed",
   "sourceArtworks": 12,
   "gameEngineTested": false

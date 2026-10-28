@@ -1,4 +1,5 @@
-import {readFileSync,readdirSync,mkdirSync,writeFileSync,copyFileSync} from 'node:fs';
+import {readFileSync,readdirSync,mkdirSync,copyFileSync} from 'node:fs';
+import {writeOutput as writeFileSync} from './fs-output.mjs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';

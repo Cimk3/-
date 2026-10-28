@@ -1,5 +1,5 @@
 import { bottleProps, cutlery, dishes, hotpots, id, servings, vesselByKey, vessels } from './catalog.js';
-import { electronics, originalElectronics, newElectronics } from './electronics-catalog.js';
+import { electronics, originalElectronics, newElectronics, officeElectronics } from './electronics-catalog.js';
 export const teaTray = { key: 'gongfu_tea_tray', zh: '功夫茶盘套装', en: 'Gongfu Tea Tray Set' };
 export const tray = { key: 'triple_tray', zh: '三菜连体托盘', en: 'Three Dish Tray' };
 export const paperCups = [
@@ -33,6 +33,7 @@ export const surfaceVisuals = [
     ...servings.filter(s => s.food.key !== 'tieguanyin').map(s => ({ key: s.key, zh: s.food.zh, en: s.food.en })),
     ...originalElectronics.map(t => ({ key: t.key, zh: t.zh, en: t.en })),
     ...newElectronics.map(t => ({ key: t.key, zh: t.zh, en: t.en })), teaTray,
-    ...servings.filter(s => s.food.key === 'tieguanyin').map(s => ({ key: s.key, zh: s.food.zh, en: s.food.en }))
+    ...servings.filter(s => s.food.key === 'tieguanyin').map(s => ({ key: s.key, zh: s.food.zh, en: s.food.en })),
+    ...officeElectronics.map(d => ({ key: d.key, zh: d.zh, en: d.en }))
 ];
 export const surfaceIndex = new Map(surfaceVisuals.map((t, i) => [id(t.key), i]));

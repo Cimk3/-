@@ -1,4 +1,4 @@
-# 0.5.2维护说明
+# 0.5.3维护说明
 
 ## 内容与兼容接口
 
@@ -54,7 +54,7 @@ package生成两个mcpack、嵌套mcaddon及source.zip，源码归档仅收录�
 
 ## 电子设备
 
-src/electronics-catalog.ts是19款桌面设备的稳定ID、双语名称、模型种类、款式与固定姿态目录；不属于Food或Vessel。tableItems追加设备以接入摆放入口，surfaceVisuals将设备追加在所有旧展示定义之后。持久记录仍为version=1、kind=surface，保存实际设备ID，不记录可切换状态。
+src/electronics-catalog.ts是26款桌面设备的稳定ID、双语名称、模型种类、款式与固定姿态目录；不属于Food或Vessel。tableItems追加设备以接入摆放入口，surfaceVisuals将设备追加在所有旧展示定义之后。持久记录仍为version=1、kind=surface，保存实际设备ID，不记录可切换状态。
 
 电子设备在全部受支持顶面使用受脚本检查的展示实体，不替换支撑或空气方块。生成的同ID隐藏方块保留用于原生命令与低位迁移；物品放置在before事件取消后延迟到可写阶段，复核手持、支撑、占位、距离及背包并同步提交。
 
@@ -79,3 +79,13 @@ generate-surfaces.mjs依据固定vanilla-data 1.26.52清单和审定形状族生
 emittedLidAngle从实际屏幕条带中段的中心坐标测量110°，回归测试另外读取最终方块与实体几何，核查顶缘向键盘后方退让。不能用源rotation参数代替发行几何检查，也不能将软件预览当作真实客户端证据。
 
 cardinalYaw只输出0、90、-90、-180。放置仍使用玩家位置确定屏幕正面；斜角位置选择最近四向。loadDecorRecords对已存电子设备数值yaw一次性吸附并递增revision，不改动位置、内容和UID；已经四向的记录不重复修改，没有yaw的旧记录保留direction。
+
+## 0.5.3接口与兼容
+
+设备placementFront单独定义放置正面；screenFront仅说明屏幕存在及方向，不再作为无屏设备的放置开关。router/server/printer同样计算持久yaw；旧路由器与服务器缺少yaw时继续按direction恢复。没有新增存档字段或持续追踪。
+
+officeElectronics单独保存7项新目录，surfaceVisuals在原361项之后追加，索引总数368，不能直接把设备插进旧列表中间。tasting_new仅发放本版7项；electronics发放32项（含6款冰箱）。
+
+新增tests/fixtures/v0.5.2.json与v0.5.2-surfaces.json作为发行前兼容基线。模型回归读取最终方块和实体JSON，检查屏幕完整UV、遮挡和深度间隔，而不仅比较源旋转或共面。倾斜支架按自身网格处理，只有屏幕、外壳等110°同组部件共用Y网格。
+
+发行目标为https://github.com/Cimk3/A-Bite-of-Time.git；每版提交、打v版本标签并创建GitHub Release，附mcaddon、两个mcpack、源码ZIP与SHA256SUMS.txt。

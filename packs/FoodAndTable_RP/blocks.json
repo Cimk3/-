@@ -1111,6 +1111,27 @@
   "mcpe_food:macbook_pro_gpt_closed": {
     "sound": "glass"
   },
+  "mcpe_food:macbook_air_silver_open": {
+    "sound": "glass"
+  },
+  "mcpe_food:macbook_air_gray_open": {
+    "sound": "glass"
+  },
+  "mcpe_food:thinkbook16_plus_open": {
+    "sound": "glass"
+  },
+  "mcpe_food:thinkbook16_plus_closed": {
+    "sound": "glass"
+  },
+  "mcpe_food:printer_scanner": {
+    "sound": "glass"
+  },
+  "mcpe_food:mac_studio_set": {
+    "sound": "glass"
+  },
+  "mcpe_food:surface_pro_keyboard": {
+    "sound": "glass"
+  },
   "mcpe_food:triple_tray": {
     "sound": "glass"
   },

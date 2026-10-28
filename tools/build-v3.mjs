@@ -1,10 +1,11 @@
 import {mkdirSync,readdirSync,readFileSync,writeFileSync,copyFileSync,rmSync,existsSync} from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {writeOutput} from './fs-output.mjs';
 import {categories,legacyCategories,previousDishes,newFoods,bottleProps,cutlery,crops,foods,displays,dishes,hotpots,id,materials,recipes,servings,stations,vessels,label} from '../.build/catalog.js';
 import {supportBlocks,placementSupports} from '../.build/supports.js';
 import {advertisements,paperCups,tray,teaTray} from '../.build/decor-catalog.js';
-import {electronics,newElectronics} from '../.build/electronics-catalog.js';
+import {electronics,newElectronics,officeElectronics} from '../.build/electronics-catalog.js';
 import {refrigerators} from '../.build/appliance-catalog.js';
 import {vanillaSurfaceClasses} from '../.build/vanilla-surfaces.js';
 import {teaTrayCubes,refrigeratorCubes,refrigeratorPart,tableTexture} from './tea-appliance-art.mjs';
@@ -19,7 +20,7 @@ import {BREAK_DUST,blockMaterial,blockTextureSet,breakDustImage,destructionParti
 import {bottleCubes,cutleryCubes,detailGeometry,foodCubes,hotpotCubes,modelBounds,paintedMER,paintedTexture,renderDetail,textureSpec,vesselCubes,pruneFaces} from './detail-art.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),BP=path.join(root,'packs/FoodAndTable_BP'),RP=path.join(root,'packs/FoodAndTable_RP');
 for(const target of[BP,RP]){if(path.relative(path.join(root,'packs'),target).startsWith('..'))throw new Error('Unsafe build path');rmSync(target,{recursive:true,force:true});mkdirSync(target,{recursive:true});}
-const write=(base,file,data)=>{const target=path.join(base,file);mkdirSync(path.dirname(target),{recursive:true});const bytes=Buffer.isBuffer(data)?data:Buffer.from(data);if(existsSync(target)&&readFileSync(target).equals(bytes))return;writeFileSync(target,bytes);};
+const write=(base,file,data)=>{const target=path.join(base,file);mkdirSync(path.dirname(target),{recursive:true});writeOutput(target,data);};
 const json=(base,file,data)=>write(base,file,JSON.stringify(data,null,2)+'\n');
 const {version}=JSON.parse(readFileSync(path.join(root,'package.json'),'utf8')),VERSION=version.split('.').map(Number),ENGINE=[1,26,20];
 const BP_UUID='c260f73a-480b-441e-91e2-de90849fa140',RP_UUID='1a31bbad-5ab0-4860-aa36-1dded1fb5689',metadata={authors:['Food & Table contributors'],license:'MIT',product_type:'addon'};
@@ -107,7 +108,7 @@ const giveFunction=(name,keys)=>write(BP,`functions/mcpe_food/${name}.mcfunction
 giveFunction('starter',[...stations,...vessels,...cutlery,tray,...paperCups].map(v=>v.key).concat(['peacock_platter','takoyaki','premium_red_wine','premium_red_wine_bottle','copper_hotpot_broth']));giveFunction('creative_ingredients',materials.filter(m=>m.creativeOnly).map(m=>m.key));
 for(const category of Object.keys(legacyCategories)){const keys=previousDishes.filter(f=>f.legacyCategory===category).map(f=>f.key);if(category==='hotpot')keys.push(...hotpots.map(p=>p.key));if(keys.length)giveFunction(`tasting_${category}`,keys);}
 for(const category of Object.keys(categories))giveFunction(`tasting_all_${category}`,[...dishes.filter(f=>f.category===category),...(category==='drink'?[...bottleProps,...paperCups]:[])].map(f=>f.key));
-giveFunction('tasting_new',[...newElectronics,...refrigerators,teaTray,{key:'tieguanyin'}].map(d=>d.key));giveFunction('electronics',[...electronics,...refrigerators].map(d=>d.key));
+giveFunction('tasting_new',officeElectronics.map(d=>d.key));giveFunction('electronics',[...electronics,...refrigerators].map(d=>d.key));
 giveFunction('advertisements',advertisements.map(a=>a.key));giveFunction('tableware',[...vessels,...cutlery,tray,teaTray].map(v=>v.key));
 mkdirSync(path.join(root,'previews'),{recursive:true});
 function sheet(keys,columns,title,file,cell=176){
@@ -135,11 +136,13 @@ sheet(foods.map(f=>f.key),8,`FOOD & TABLE ${version} - ${foods.length} MEALS`,'m
 sheet([tray.key,'wine_glass',...paperCups.map(p=>p.key),'premium_red_wine_on_wine_glass'],3,'TABLEWARE / CLOSE VIEW','details.png',300);
 sheet([...electronics,...refrigerators].map(d=>d.key),5,`ELECTRONICS ${version} / ${electronics.length+refrigerators.length} DISPLAYS`,'electronics.png',270);
 sheet(['desktop_computer','all_in_one_computer','crt_monitor','ipad_air_magic_keyboard'],2,'ELECTRONICS / ACTUAL UV CLOSE VIEW','details_electronics.png',510);
-sheet(electronics.filter(d=>d.model==='laptop').map(d=>d.key),4,'SIX LAPTOPS / OPEN AND CLOSED','details_laptops.png',370);
+sheet(electronics.filter(d=>d.model==='laptop').map(d=>d.key),4,`LAPTOPS / ${electronics.filter(d=>d.model==='laptop').length} POSES`,'details_laptops.png',370);
 sheet(['macbook_open','thinkpad_open','ipad_air_magic_keyboard','server_cabinet'],2,'ELECTRONICS / REAR AND SUPPORT DETAIL','details_electronics_rear.png',510);
 sheet(refrigerators.map(d=>d.key),3,'REFRIGERATORS / TWO HEIGHTS AND THREE FINISHES','details_fridges.png',360);
 sheet([teaTray.key,'tieguanyin'],2,'GONGFU TEA / TIEGUANYIN','details_tea.png',430);
 sheet(newElectronics.map(d=>d.key),2,'DELL TERMINAL / MACBOOK PRO GPT','details_new_laptops.png',430);
+sheet(officeElectronics.map(d=>d.key),3,`${version} / OFFICE ELECTRONICS`,'office_devices.png',430);
+sheet(officeElectronics.filter(d=>d.model==='laptop').map(d=>d.key),2,'MACBOOK AIR / THINKBOOK 16+','office_laptops.png',510);
 for(const[category,names]of Object.entries(categories))sheet(foods.filter(f=>f.category===category).map(f=>f.key),5,`${names[1].toUpperCase()} / ${version}`,`category_${category}.png`,220);
 const kitchen=canvas(880,920,[25,36,35,255]);text(kitchen,`A LITTLE KITCHEN / ${version}`,20,18,2,[233,212,166,255]);
 for(const[s,i]of stations.map((s,i)=>[s,i])){

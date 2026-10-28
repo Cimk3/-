@@ -1,8 +1,8 @@
 {
-  "version": "0.5.2",
-  "baseline": "0.5.1",
+  "version": "0.5.3",
+  "baseline": "0.5.2",
   "status": "passed",
-  "automatedTests": 155,
+  "automatedTests": 160,
   "preservedItemIds": 197,
   "preservedBlockIds": 380,
   "stableUUIDs": true,
@@ -11,11 +11,13 @@
   "legacyLootTables": 386,
   "cropStatesPreserved": true,
   "oldSurfaceIndicesPreserved": 361,
+  "surfaceVisuals": 368,
   "edibleFoods": 102,
   "tableware": 15,
-  "electronics": 25,
+  "electronics": 32,
+  "newElectronics": 7,
   "refrigerators": 6,
   "servingVariants": 320,
-  "diagonalYawMigration": "snap once to nearest cardinal; preserve UID, position and contents",
+  "oldRouterServerOrientation": "preserved; newly placed fronts follow nearest cardinal placer",
   "engineUpgradeTested": false
 }

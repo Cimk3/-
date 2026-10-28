@@ -728,7 +728,21 @@
         "f359": "textures/entity/mcpe_food/food_tieguanyin",
         "w359": "textures/entity/mcpe_food/ware_glass",
         "f360": "textures/entity/mcpe_food/food_tieguanyin",
-        "w360": "textures/entity/mcpe_food/ware_mug"
+        "w360": "textures/entity/mcpe_food/ware_mug",
+        "f361": "textures/entity/mcpe_food/device_macbook_air_silver_open",
+        "w361": "textures/entity/mcpe_food/device_macbook_air_silver_open",
+        "f362": "textures/entity/mcpe_food/device_macbook_air_gray_open",
+        "w362": "textures/entity/mcpe_food/device_macbook_air_gray_open",
+        "f363": "textures/entity/mcpe_food/device_thinkbook16_plus_open",
+        "w363": "textures/entity/mcpe_food/device_thinkbook16_plus_open",
+        "f364": "textures/entity/mcpe_food/device_thinkbook16_plus_closed",
+        "w364": "textures/entity/mcpe_food/device_thinkbook16_plus_closed",
+        "f365": "textures/entity/mcpe_food/device_printer_scanner",
+        "w365": "textures/entity/mcpe_food/device_printer_scanner",
+        "f366": "textures/entity/mcpe_food/device_mac_studio_set",
+        "w366": "textures/entity/mcpe_food/device_mac_studio_set",
+        "f367": "textures/entity/mcpe_food/device_surface_pro_keyboard",
+        "w367": "textures/entity/mcpe_food/device_surface_pro_keyboard"
       },
       "geometry": {
         "g0": "geometry.mcpe_food.surface.plate",
@@ -1091,7 +1105,14 @@
         "g357": "geometry.mcpe_food.surface.macbook_pro_gpt_closed",
         "g358": "geometry.mcpe_food.surface.gongfu_tea_tray",
         "g359": "geometry.mcpe_food.surface.tieguanyin_on_glass",
-        "g360": "geometry.mcpe_food.surface.tieguanyin_serving"
+        "g360": "geometry.mcpe_food.surface.tieguanyin_serving",
+        "g361": "geometry.mcpe_food.surface.macbook_air_silver_open",
+        "g362": "geometry.mcpe_food.surface.macbook_air_gray_open",
+        "g363": "geometry.mcpe_food.surface.thinkbook16_plus_open",
+        "g364": "geometry.mcpe_food.surface.thinkbook16_plus_closed",
+        "g365": "geometry.mcpe_food.surface.printer_scanner",
+        "g366": "geometry.mcpe_food.surface.mac_studio_set",
+        "g367": "geometry.mcpe_food.surface.surface_pro_keyboard"
       },
       "render_controllers": [
         "controller.render.mcpe_food.surface_display_food",

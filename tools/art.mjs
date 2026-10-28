@@ -1,6 +1,6 @@
 /** Hand-authored voxel geometry and pixel palettes. No CDN, AI image service or binary dependencies. */
 import { deflateSync } from 'node:zlib';
-import { writeFileSync } from 'node:fs';
+import {writeOutput} from './fs-output.mjs';
 const crcTable = Array.from({ length: 256 }, (_, n) => {
   for (let k = 0; k < 8; k++) n = (n & 1) ? 0xedb88320 ^ (n >>> 1) : n >>> 1;
   return n >>> 0;
@@ -265,4 +265,6 @@ export function render(cubes,colors,width=128,height=112,padding=7) {
   }
   return target;
 }
-export function saveImage(path,image) {writeFileSync(path,png(image.width,image.height,image.data));}
+export function saveImage(path,image) {
+  writeOutput(path,png(image.width,image.height,image.data));
+}

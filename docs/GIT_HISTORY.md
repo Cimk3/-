@@ -20,13 +20,15 @@
 
 恢复工具为 `tools/import-release-history.py`，仅允许在没有提交的仓库运行；需要本地 `dist/` 中的七份原始 mcaddon。正常后续更新直接提交修改并创建新版本标签，不再运行恢复工具。
 
-推送目标：<https://github.com/Cimk3/->，主分支为 `main`。后续发布可使用：
+推送目标：<https://github.com/Cimk3/A-Bite-of-Time>，主分支为 `main`。后续发布可使用：
 
 ```powershell
 git add .
-git commit -m "release: v0.4.4"
-git tag -a v0.4.4 -m "Food & Table 0.4.4"
+git commit -m "release: v0.5.3"
+git tag -a v0.5.3 -m "Food & Table 0.5.3"
 git push origin main --follow-tags
 ```
 
 提交与标签仅记录文件版本，不代表完成 Windows、安卓、灵动视效或真实联机验收；实际验证范围见 `docs/VALIDATION.md`。
+
+从0.5.2开始，GitHub Release同时提供mcaddon、独立mcpack、完整源码ZIP与SHA256SUMS.txt。后续每版均在新仓库发布。

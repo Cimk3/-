@@ -83,7 +83,7 @@ def verify():
         assert json.loads(source.read("package.json"))["version"] == VERSION
         assert "src/decor-runtime.ts" in source.namelist()
         assert "src/electronics-catalog.ts" in source.namelist()
-        assert len([f for f in source.namelist() if f.startswith("assets/electronics/") and f.endswith(".png")]) == 38
+        assert len([f for f in source.namelist() if f.startswith("assets/electronics/") and f.endswith(".png")]) == 2 * (build["electronics"] - build["refrigerators"])
         assert len([f for f in source.namelist() if f.startswith("assets/posters/originals/") and f.endswith(".png")]) == 12
         assert len([f for f in source.namelist() if f.startswith("assets/posters/masters/") and f.endswith(".png")]) == 12
     report = {"status": "passed", "outerCRC": "passed", "nestedCRC": "passed", "standaloneMatchesNested": True,

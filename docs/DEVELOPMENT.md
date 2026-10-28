@@ -1,5 +1,9 @@
 # 开发与发行维护说明
 
+## 0.7.1补丁维护
+
+四款补丁物品定义在src/patch-071-catalog.ts，几何／纹理在tools/patch-071-art.mjs；末尾追加展示索引，不插入0.7.0场景目录。tools/wall-geometry.mjs只变换壁挂变体和电子屏，显示层按原direction推导原生yaw，不能套用普通桌面旧正面辅助函数。模型及UV检查使用最终文件和独立旋转矩阵。0.7.2只交付建议Markdown。
+
 ## 0.7.0更新
 
 0.7.0新增scenario-catalog及scenario-art、brand-art、digital-displays生成链；根AGENTS已纳入源码包。内容修改前保存0.6.0 fixture与完整key顺序。publish-release.py使用Credential Manager在进程内读取凭据，仅发布新版本或续传同提交草稿，核对五附件服务端SHA。
@@ -7,13 +11,13 @@
 以下保留旧阶段说明，历史数量按对应版本理解。
 
 
-当前软件基线0.7.0，文档核实于2026-10-28。先按[AGENTS](../AGENTS.md)阅读[PROJECT_CONTEXT](PROJECT_CONTEXT.md)、[PROGRESS](PROGRESS.md)和[KNOWN_ISSUES](KNOWN_ISSUES.md)；架构和历史原因以这些文件为入口，本页负责操作流程。
+当前软件基线0.7.1，文档核实于2026-10-28。先按[AGENTS](../AGENTS.md)阅读[PROJECT_CONTEXT](PROJECT_CONTEXT.md)、[PROGRESS](PROGRESS.md)和[KNOWN_ISSUES](KNOWN_ISSUES.md)；架构和历史原因以这些文件为入口，本页负责操作流程。
 
 ## 环境与真源
 
 Node.js ≥22.15，TypeScript 5.9.3，固定server／server-ui 2.0.0和vanilla-data 1.26.52。普通构建只需Node及npm依赖，不运行Minecraft，也不调用图像API。Python标准库用于独立归档校验；只有重新排版旧高清海报才需Pillow和中文字体。
 
-修改src内容目录和运行逻辑、tools美术／生成源、assets原始源；不要只修packs生成文件或预览。TS严格NodeNext编译至.build，build.mjs加载build-v3.mjs，生成BP／RP、三类展示实体、PBR、图标、预览和报告，最后运行无损优化。
+修改src内容目录和运行逻辑、tools美术／生成源、assets原始源；不要只修packs生成文件或预览。TS严格NodeNext编译至.build，build.mjs加载build-v3.mjs，生成BP／RP、四类展示实体、PBR、图标、预览和报告，最后运行无损优化。
 
 生成器会删除并重建两个packs子目录，重写docs/CATALOG.md和docs/STORAGE.md，以及部分图像源产物和预览。人工上下文文档不由生成器覆盖。生成文案仍有时点常量，下次版本变更按KNOWN_ISSUES M03审查。
 

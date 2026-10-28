@@ -1,5 +1,5 @@
 {
-  "version": "0.7.0",
+  "version": "0.7.1",
   "models": [
     {
       "key": "egg_fried_rice_serving",
@@ -3598,7 +3598,7 @@
     {
       "key": "infusion_pump_stand",
       "resolution": 128,
-      "cubes": 23,
+      "cubes": 33,
       "slots": {
         "ware": "scenario_infusion_pump_stand"
       }
@@ -3817,6 +3817,38 @@
       "cubes": 5,
       "slots": {
         "ware": "scenario_document_camera"
+      }
+    },
+    {
+      "key": "supermarket_checkout",
+      "resolution": 128,
+      "cubes": 29,
+      "slots": {
+        "ware": "patch071_supermarket_checkout"
+      }
+    },
+    {
+      "key": "gpu_single_fan",
+      "resolution": 128,
+      "cubes": 60,
+      "slots": {
+        "ware": "patch071_gpu_single_fan"
+      }
+    },
+    {
+      "key": "gpu_dual_fan",
+      "resolution": 128,
+      "cubes": 99,
+      "slots": {
+        "ware": "patch071_gpu_dual_fan"
+      }
+    },
+    {
+      "key": "gpu_triple_fan",
+      "resolution": 128,
+      "cubes": 138,
+      "slots": {
+        "ware": "patch071_gpu_triple_fan"
       }
     },
     {
@@ -6308,7 +6340,7 @@
     },
     {
       "key": "surface_infusion_pump_stand",
-      "cubes": 23,
+      "cubes": 33,
       "resolution": 128
     },
     {
@@ -6479,6 +6511,26 @@
     {
       "key": "surface_table_clock_wall",
       "cubes": 2,
+      "resolution": 128
+    },
+    {
+      "key": "surface_supermarket_checkout",
+      "cubes": 29,
+      "resolution": 128
+    },
+    {
+      "key": "surface_gpu_single_fan",
+      "cubes": 60,
+      "resolution": 128
+    },
+    {
+      "key": "surface_gpu_dual_fan",
+      "cubes": 99,
+      "resolution": 128
+    },
+    {
+      "key": "surface_gpu_triple_fan",
+      "cubes": 138,
       "resolution": 128
     },
     {
@@ -7217,6 +7269,10 @@
     "mcpe_food_electronic_whiteboard": 128,
     "mcpe_food_teaching_lectern": 128,
     "mcpe_food_document_camera": 128,
+    "mcpe_food_supermarket_checkout": 128,
+    "mcpe_food_gpu_single_fan": 128,
+    "mcpe_food_gpu_dual_fan": 128,
+    "mcpe_food_gpu_triple_fan": 128,
     "mcpe_food_aed_cabinet_wall": 128,
     "mcpe_food_wall_diagnostic_station_wall": 128,
     "mcpe_food_wall_air_conditioner_wall": 128,

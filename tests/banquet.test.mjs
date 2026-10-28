@@ -1,3 +1,4 @@
+import {patch071Props} from '../.build/patch-071-catalog.js';
 import {scenarioGroups,scenarioProps,digitalScreens} from '../.build/scenario-catalog.js';
 import {lifestyleItems} from '../.build/lifestyle-catalog.js';
 import {restaurantAccessories} from '../.build/restaurant-catalog.js';
@@ -38,7 +39,7 @@ test('creative inventory has five food groups plus private tableware, advertisem
   assert.equal(groups.length,1);assert.equal(groups[0].category_name,'items');
   assert.deepEqual(groups[0].groups.map(g=>g.group_identifier.name),[...Object.keys(categories).map(k=>`mcpe_food:group_${k}`),'mcpe_food:group_tableware','mcpe_food:group_advertisements','mcpe_food:group_electronics','mcpe_food:group_restaurant_accessories','mcpe_food:group_office_stationery','mcpe_food:group_home_decor',...scenarioGroups.map(g=>'mcpe_food:group_'+g.key)]);
   const all=groups[0].groups.flatMap(g=>g.items);assert.equal(new Set(all).size,all.length);
-  assert.deepEqual([...all].sort(),[...dishes,...bottleProps,...paperCups,...vessels,...cutlery,tray,teaTray,...advertisements,...electronics,...refrigerators,...restaurantAccessories,...lifestyleItems,...scenarioProps,...digitalScreens].map(f=>id(f.key)).sort());
+  assert.deepEqual([...all].sort(),[...dishes,...bottleProps,...paperCups,...vessels,...cutlery,tray,teaTray,...advertisements,...electronics,...refrigerators,...restaurantAccessories,...lifestyleItems,...scenarioProps,...digitalScreens,...patch071Props].map(f=>id(f.key)).sort());
   for(const locale of['zh_CN','en_US']){const source=readFileSync(`${rp}/texts/${locale}.lang`,'utf8');for(const g of groups[0].groups)assert.ok(source.includes(`${g.group_identifier.name}=`));}
 });
 test('approved category counts and intentional cross-cuisine placements are exact',()=>{

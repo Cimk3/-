@@ -309,7 +309,7 @@ export function faceUV(c,name){
 export function detailGeometry(key,cubes){
   const visible=pruneFaces(cubes);
   if(visible.length>256)throw new Error(`${key}: ${visible.length} cubes exceeds 256`);
-  return {format_version:'1.12.0','minecraft:geometry':[{description:{identifier:`geometry.mcpe_food.${key}`,texture_width:128,texture_height:128,visible_bounds_width:2,visible_bounds_height:2.5,visible_bounds_offset:[0,.6,0]},bones:[{name:'root',pivot:[0,0,0],cubes:visible.map(c=>({origin:c.origin,size:c.size,...(c.rotation?{rotation:c.rotation,pivot:c.pivot}:{}),uv:Object.fromEntries((c.faces??FACE_NAMES).map(name=>[name,faceUV(c,name)]))}))}]}]};
+  return {format_version:'1.12.0','minecraft:geometry':[{description:{identifier:`geometry.mcpe_food.${key}`,texture_width:128,texture_height:128,visible_bounds_width:2,visible_bounds_height:2.5,visible_bounds_offset:[0,key==='infusion_pump_stand'?1:.6,0]},bones:[{name:'root',pivot:[0,0,0],cubes:visible.map(c=>({origin:c.origin,size:c.size,...(c.rotation?{rotation:c.rotation,pivot:c.pivot}:{}),uv:Object.fromEntries((c.faces??FACE_NAMES).map(name=>[name,faceUV(c,name)]))}))}]}]};
 }
 function faceVertices(c,name){
   const [x,y,z]=c.origin,[w,h,d]=c.size;

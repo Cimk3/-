@@ -1,3 +1,4 @@
+import {wallFacingCubes} from './wall-geometry.mjs';
 import {digitalScreens} from '../.build/scenario-catalog.js';
 import {canvas,png,blit,text,saveImage} from './art.mjs';
 import {brandImage} from './brand-art.mjs';
@@ -19,7 +20,7 @@ export function digitalDisplays({root,BP,RP,json,write,icon,item}){
   const frameCubes=[cube([-w/2,0,0],[w,h,.8]),cube([-w/2,0,.8],[.65,h,.6]),cube([w/2-.65,0,.8],[.65,h,.6]),cube([-w/2+.65,0,.8],[w-1.3,.65,.6]),cube([-w/2+.65,h-.65,.8],[w-1.3,.65,.6])];
   const food=[{origin:[-w/2+.65,.65,.86],size:[w-1.3,h-1.3,.06],uv:{south:face('food',[im.width,im.height])}}];
   const identifier=`geometry.mcpe_food.${d.key}`;
-  json(RP,`models/entity/mcpe_food/${d.key}.geo.json`,{format_version:'1.12.0','minecraft:geometry':[{description:{identifier,texture_width:im.width,texture_height:im.height,visible_bounds_width:8,visible_bounds_height:8,visible_bounds_offset:[0,2,0]},bones:[{name:'ware',pivot:[0,0,0],cubes:frameCubes},{name:'food',pivot:[0,0,0],cubes:food}]}]});
+  json(RP,`models/entity/mcpe_food/${d.key}.geo.json`,{format_version:'1.12.0','minecraft:geometry':[{description:{identifier,texture_width:im.width,texture_height:im.height,visible_bounds_width:8,visible_bounds_height:8,visible_bounds_offset:[0,2,0]},bones:[{name:'ware',pivot:[0,0,0],cubes:wallFacingCubes(frameCubes)},{name:'food',pivot:[0,0,0],cubes:wallFacingCubes([...frameCubes,...food]).slice(frameCubes.length)}]}]});
   definitions.push({geometry:identifier,food:screen,ware:frame});entities.push({key:d.key,cubes:6,resolution:im.width});
   const thumb=canvas(128,128,[29,35,43,0]),hh=d.width===d.height?116:87;
   for(let y=0;y<hh;y++)for(let x=0;x<116;x++){const at=(Math.floor(y*im.height/hh)*im.width+Math.floor(x*im.width/116))*4;thumb.data.set(im.data.subarray(at,at+4),((y+Math.floor((128-hh)/2))*128+x+6)*4);}

@@ -155,7 +155,10 @@ function visual(r, type, part, index, position) {
     }
     if (r.kind === 'ad' && entity.getProperty('mcpe_food:size') !== (r.size ?? 0))
         entity.setProperty('mcpe_food:size', r.size ?? 0);
-    const facing = r.yaw ?? yaw[r.direction] ?? 0;
+    // Wall meshes use local -Z as their visible front. Native entity yaw turns
+    // clockwise; east/west therefore invert the legacy block-facing table.
+    // Preserve the saved direction/yaw: this is only the display transform.
+    const facing = r.wallFace || r.kind === 'digital_ad' ? -(yaw[r.wallFace ?? r.direction] ?? 0) : r.yaw ?? yaw[r.direction] ?? 0;
     if (!found || !same(entity.location, position) || entity.getDynamicProperty('mcpe_food:yaw') !== facing) {
         entity.teleport(position, { rotation: { x: 0, y: facing } });
         entity.setDynamicProperty('mcpe_food:yaw', facing);

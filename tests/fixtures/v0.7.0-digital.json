@@ -1,0 +1,74 @@
+[
+  {
+    "key": "digital_template_ai_2x2",
+    "zh": "电子广告屏 · Template AI 2×2",
+    "en": "Digital Ad Screen · Template AI 2x2",
+    "brand": "template_ai",
+    "width": 2,
+    "height": 2
+  },
+  {
+    "key": "digital_luna_studio_2x2",
+    "zh": "电子广告屏 · Luna Studio（月-工作室） 2×2",
+    "en": "Digital Ad Screen · Luna Studio 2x2",
+    "brand": "luna_studio",
+    "width": 2,
+    "height": 2
+  },
+  {
+    "key": "digital_ft_computer_2x2",
+    "zh": "电子广告屏 · FT电脑 2×2",
+    "en": "Digital Ad Screen · FT Computer 2x2",
+    "brand": "ft_computer",
+    "width": 2,
+    "height": 2
+  },
+  {
+    "key": "digital_template_ai_4x4",
+    "zh": "电子广告屏 · Template AI 4×4",
+    "en": "Digital Ad Screen · Template AI 4x4",
+    "brand": "template_ai",
+    "width": 4,
+    "height": 4
+  },
+  {
+    "key": "digital_luna_studio_4x4",
+    "zh": "电子广告屏 · Luna Studio（月-工作室） 4×4",
+    "en": "Digital Ad Screen · Luna Studio 4x4",
+    "brand": "luna_studio",
+    "width": 4,
+    "height": 4
+  },
+  {
+    "key": "digital_ft_computer_4x4",
+    "zh": "电子广告屏 · FT电脑 4×4",
+    "en": "Digital Ad Screen · FT Computer 4x4",
+    "brand": "ft_computer",
+    "width": 4,
+    "height": 4
+  },
+  {
+    "key": "digital_template_ai_4x3",
+    "zh": "电子广告屏 · Template AI 4×3",
+    "en": "Digital Ad Screen · Template AI 4x3",
+    "brand": "template_ai",
+    "width": 4,
+    "height": 3
+  },
+  {
+    "key": "digital_luna_studio_4x3",
+    "zh": "电子广告屏 · Luna Studio（月-工作室） 4×3",
+    "en": "Digital Ad Screen · Luna Studio 4x3",
+    "brand": "luna_studio",
+    "width": 4,
+    "height": 3
+  },
+  {
+    "key": "digital_ft_computer_4x3",
+    "zh": "电子广告屏 · FT电脑 4×3",
+    "en": "Digital Ad Screen · FT Computer 4x3",
+    "brand": "ft_computer",
+    "width": 4,
+    "height": 3
+  }
+]

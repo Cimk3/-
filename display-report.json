@@ -1,7 +1,7 @@
 {
   "advertisements": 23,
   "advertisementSizes": 69,
-  "surfaceDefinitions": 534,
+  "surfaceDefinitions": 538,
   "trayFoods": 70,
   "trayCubes": 65,
   "maxMiniCubes": 39,
@@ -2504,7 +2504,7 @@
     },
     {
       "key": "surface_infusion_pump_stand",
-      "cubes": 23,
+      "cubes": 33,
       "resolution": 128
     },
     {
@@ -2675,6 +2675,26 @@
     {
       "key": "surface_table_clock_wall",
       "cubes": 2,
+      "resolution": 128
+    },
+    {
+      "key": "surface_supermarket_checkout",
+      "cubes": 29,
+      "resolution": 128
+    },
+    {
+      "key": "surface_gpu_single_fan",
+      "cubes": 60,
+      "resolution": 128
+    },
+    {
+      "key": "surface_gpu_dual_fan",
+      "cubes": 99,
+      "resolution": 128
+    },
+    {
+      "key": "surface_gpu_triple_fan",
+      "cubes": 138,
       "resolution": 128
     },
     {
@@ -3189,5 +3209,5 @@
     }
   ],
   "entityTypes": 4,
-  "entityTextureSets": 347
+  "entityTextureSets": 351
 }

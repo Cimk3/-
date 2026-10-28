@@ -1,4 +1,4 @@
-# 0.7.0 菜品与器皿索引
+# 0.7.1 菜品与器皿索引
 
 102 种可食成品，8 种不可食展示配菜，2 款静态铜锅，15 种餐具，3 款酒瓶摆件。新增内容通过创造物品栏或分组试用命令获取。
 
@@ -399,6 +399,13 @@
 - 壁挂电子白板 / mcpe_food:electronic_whiteboard
 - 现代教学讲台 / mcpe_food:teaching_lectern
 - 实物展台／文档摄像仪 / mcpe_food:document_camera
+
+## 0.7.1硬件新品
+
+- 超市收款机一体套装 / mcpe_food:supermarket_checkout
+- 单风扇显卡 / mcpe_food:gpu_single_fan
+- 双风扇显卡 / mcpe_food:gpu_dual_fan
+- 三风扇显卡 / mcpe_food:gpu_triple_fan
 
 ## 电子广告屏
 

@@ -1,3 +1,4 @@
+import {patch071ById} from './patch-071-catalog.js';
 import {scenarioById} from './scenario-catalog.js';
 import {lifestyleItems} from './lifestyle-catalog.js';
 import {restaurantAccessories} from './restaurant-catalog.js';
@@ -5,7 +6,7 @@ import {electronicsById} from './electronics-catalog.js';
 export function cardinalYaw(value:number):number{return ((Math.round(value/90)*90+180)%360+360)%360-180;}
 /** Entity model +Z faces world -Z at yaw=0. Block and poster yaw are separate. */
 export function screenYaw(definition:string,center:{x:number;z:number},player:{x:number;z:number},lookYaw:number):number|undefined {
-  const d=electronicsById.get(definition)??(scenarioById.has(definition)?{placementFront:180}:undefined)??([...restaurantAccessories,...lifestyleItems.filter(d=>d.front)].some(d=>'mcpe_food:'+d.key===definition)?{placementFront:180}:undefined);if(d?.placementFront===undefined)return undefined;
+  const d=electronicsById.get(definition)??patch071ById.get(definition)??(scenarioById.has(definition)?{placementFront:180}:undefined)??([...restaurantAccessories,...lifestyleItems.filter(d=>d.front)].some(d=>'mcpe_food:'+d.key===definition)?{placementFront:180}:undefined);if(d?.placementFront===undefined)return undefined;
   const dx=player.x-center.x,dz=player.z-center.z;
   const target=Math.hypot(dx,dz)<.0001?lookYaw+180:Math.atan2(-dx,dz)*180/Math.PI;
   return cardinalYaw(target-d.placementFront);

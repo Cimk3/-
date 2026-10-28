@@ -1,5 +1,5 @@
 {
-  "version": "0.7.0",
+  "version": "0.7.1",
   "foods": 102,
   "displayDishes": 8,
   "hotpots": 2,
@@ -27,21 +27,24 @@
     "stairs": 97,
     "excluded": 582
   },
-  "entityGeometryCount": 538,
+  "entityGeometryCount": 542,
   "stations": 4,
   "crops": 6,
   "menuRecipes": 53,
   "servingVariants": 320,
-  "geometryCount": 1035,
-  "blockGeometryCount": 497,
+  "geometryCount": 1043,
+  "blockGeometryCount": 501,
   "scenarioProps": 31,
+  "patch071Props": 4,
+  "electronicsCommandItems": 42,
+  "aiWorkDevices": 7,
   "digitalScreens": 9,
-  "pbrTextureSets": 1012,
-  "highDetailModels": 445,
+  "pbrTextureSets": 1024,
+  "highDetailModels": 449,
   "maxDetailCubes": 251,
   "customDestructionParticles": 0,
   "staticStatus": "passed",
   "gameStatus": "NOT TESTED — Windows / Android / multiplayer / Vibrant Visuals",
   "optimization": "lossless; see storage-report.json",
-  "staticChecks": 1688756
+  "staticChecks": 1701012
 }

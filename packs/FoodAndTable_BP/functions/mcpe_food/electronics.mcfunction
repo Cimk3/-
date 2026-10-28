@@ -39,3 +39,4 @@ give @s mcpe_food:fridge_single_black 4
 give @s mcpe_food:fridge_double_rose_gold 4
 give @s mcpe_food:fridge_double_white 4
 give @s mcpe_food:fridge_double_black 4
+give @s mcpe_food:supermarket_checkout 4

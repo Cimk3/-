@@ -1,11 +1,11 @@
 {
-  "version": "0.7.0",
-  "archive": "FoodAndTable-0.7.0.mcaddon",
-  "sha256": "56ebd0d833fb2819a3496b0ab8b9fe6ebb7fa53b36cf8ed0f4bbf2980872914b",
-  "packFiles": 4862,
+  "version": "0.7.1",
+  "archive": "FoodAndTable-0.7.1.mcaddon",
+  "sha256": "316d760082c9189d40139e51a80070126c55f478477bda29b21c810f348dccab",
+  "packFiles": 4915,
   "historyKind": "source development release",
   "fullSourceAvailable": true,
-  "automatedTests": 183,
-  "staticChecks": 1688756,
+  "automatedTests": 193,
+  "staticChecks": 1701012,
   "engineTested": false
 }

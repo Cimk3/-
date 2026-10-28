@@ -18,7 +18,7 @@ export function scenarioCubes(key,wall=false){
  case 'wall_diagnostic_station':put(-6,0,0,12,11,.7,0);for(let i=0;i<3;i++){put(-4.6+i*3.4,4,.8,1.1,4,1,1);put(-4.8+i*3.4,8,.8,1.5,1.3,1.2,2);for(let j=0;j<8;j++)put(-4.3+i*3.4,1+j*.36,.8,.35,.22,.4,1);}break;
  case 'patient_monitor':put(-4,0,-2,8,.5,4,0);put(-.6,.5,-.6,1.2,2,1.2,2);monitor(-5,2.5,0,10,6);buttons(-3,2, .6);break;
  case 'ultrasound_cart':wheels();put(-5,1.8,-4,10,2,8,0);for(const x of[-4,3])put(x,3.8,-2,1,9,1,2);put(-5,12,-4,10,.7,8,0);monitor(-4,15,-1,8,6);for(let j=0;j<3;j++)buttons(-3.6,12.75,-1+j,10);put(4.8,9,0,.6,4,1,1);break;
- case 'infusion_pump_stand':for(const z of[-4,3])put(-4,0,z,8,.5,.7,2);put(-.25,.5,-.25,.5,24,.5,2);put(-4,23,-.25,8,.35,.5,2);put(-3.5,18,-.8,2,4,1.3,3);put(-3,17.2,-.4,1,.8,.5,2);put(-2,9,-1,4,5,2,0);monitor(-1.6,11,1,3.2,2);for(let i=0;i<14;i++)put(-2.9,5+i*.8,-.4,.12,.6,.12,3);break;
+ case 'infusion_pump_stand':for(const z of[-4,3])put(-4,0,z,8,.5,.7,2);put(-.25,.5,-.25,.5,31.5,.5,2);put(-4,30.5,-.25,8,.35,.5,2);put(-3.5,25.5,-.8,2,4,1.3,3);put(-3,24.7,-.4,1,.8,.5,2);put(-2,9,-1,4,5,2,0);monitor(-1.6,11,1,3.2,2);for(let i=0;i<24;i++)put(-2.9,5+i*.8,-.4,.12,.6,.12,3);break;
  case 'ecg_machine':put(-5,0,-3.5,10,3,7,0);put(3.6,3.05,-2,.4,.5,4,2);put(-3,3.05,2,5,.03,2.4,3);panel(-4,1,3.51,5,1.5);for(let i=0;i<4;i++)put(1.5+i*.6,1,3.53,.35,.35,.1,2);put(-4,3,-2,8,.08,4,3);for(let i=0;i<9;i++)put(-3+i*.7,3.1,-1, .2,.03,1+i%3*.4,1);break;
  case 'medical_trolley':wheels();for(const y of[2,6,10]){put(-5,y,-3.5,10,.35,7,2);for(const x of[-5,4.7])put(x,y+.35,-3.5,.3,.7,7,0);}for(const x of[-5,4.7])for(const z of[-3.5,3.2])put(x,2,z,.3,9,.3,2);for(let i=0;i<3;i++)put(-3.5+i*2.4,10.4,-1.8,1.5,.6,3,3);break;
  case 'laboratory_microscope':put(-3.5,0,-3,7,.6,6,0);put(1,.6,-2,1.3,7,1.4,2);put(-2.5,4,-2,5,.4,4,1);put(-.5,6,-.7,1,2,1,2);put(-1.2,8,-1,3,1.4,2,0);put(-2,9,-.6,1.3,2,1,1);put(-2.2,11,-.8,1.7,.4,1.4,1);for(const x of[.8,2.3])put(x,3.2,-1, .6,1.3,1.3,1);break;
@@ -31,7 +31,7 @@ export function scenarioCubes(key,wall=false){
  case 'ai_inference_workstation':cabinet(12,8,10);for(let i=0;i<3;i++){put(-3,1+i*3.1,5.18,6,2.6,.2,1);vent(-2.7,1.3+i*3.1,5.4,4.5,5);}panel(-2.5,10.4,5.4,5,1);break;
  case 'ai_dual_screen_desk':put(-7,10,-4.5,14,.6,9,5);for(const x of[-6,5])for(const z of[-3.5,3])put(x,0,z,1,10,1,1);for(const x of[-6.4,.4]){put(x+2.4,10.6,-1,.5,2,.5,2);monitor(x,12.6,0,6,5);}for(let j=0;j<3;j++)for(let i=0;i<9;i++)put(-4+i*.8,10.7,1.5+j*.6,.6,.12,.4,1);put(4,10.7,2,1.2,.3,1.7,1);break;
  case 'ai_compute_rack':cabinet(27,12,10);for(let i=0;i<7;i++){put(-5.3,1+i*3.6,5.2,10.6,3.2,.2,1);vent(-4.7,1.4+i*3.6,5.42,7,5);put(4,2+i*3.6,5.43,.5,.3,.04,4);}panel(-3,26,5.43,6,.7);break;
- case 'pen_display_set':put(-5,0,-3,10,.4,6,1);const p=put(-4.5,.41,-2.5,9,.03,5,1);p.uv={up:{uv:[0,0],uv_size:[96,56],material_instance:'ware'}};put(5.5,0,-2,.3,.35,5,2);for(let i=0;i<4;i++)put(-4+i*.8,.45,2.6,.45,.05,.2,2);put(-.5,0,-3.8,1,.3,.8,1);break;
+ case 'pen_display_set':put(-5,0,-3,10,.4,6,1);const p=put(-4.5,.41,-2.5,9,.03,5,1);p.uv={up:{uv:[96,56],uv_size:[-96,-56],material_instance:'ware'}};put(5.5,0,-2,.3,.35,5,2);for(let i=0;i<4;i++)put(-4+i*.8,.45,2.6,.45,.05,.2,2);put(-.5,0,-3.8,1,.3,.8,1);break;
  case 'wall_air_conditioner':put(-7,1,0,14,5,3,0);put(-6.7,1.2,3.02,13.4,.6,.05,1);for(let i=0;i<6;i++)put(-6.2,2+i*.4,3.02,10,.1,.04,3);put(5,2.5,3.04,.5,.25,.04,2);break;
  case 'microwave_oven':cabinet(7,13,9);put(-5.8,.6,4.67,9.2,5.8,.12,1);for(let i=0;i<9;i++)for(let j=0;j<4;j++)put(-5.2+i*.9,1.2+j*1.1,4.8,.25,.25,.02,2);put(3.7,1,4.7,.4,5,.35,2);buttons(4.6,2,4.7,2);break;
  case 'front_load_washer':cabinet(12,12,10);put(-5.5,10.1,5.2,11,1.4,.1,2);verticalDisk(0,5.8,5.2,3.4,.08,1);verticalRing(0,5.8,5.3,3.9,.6,.3,2);put(3,5.1,5.65,.45,1.3,.25,1);put(3.5,10.4,5.4,1,1,.2,1);break;
@@ -47,6 +47,7 @@ export function scenarioCubes(key,wall=false){
  case 'document_camera':put(-4,0,-3,8,.4,6,0);put(2,.4,-2,.5,8,.5,2);put(-1.5,8.4,-2,4,.5,.5,2);put(-2,8,-2.5,1.7,.8,1.5,1);put(-3,.41,-1.8,5,.03,3.8,3);break;
  default:throw Error('Unknown scenario model '+key);
  }
+ if(key==='wall_air_conditioner')for(const c of a){c.origin=c.origin.map(v=>v*8/7);c.size=c.size.map(v=>v*8/7);}
  for(const c of a)for(const f of ['north','south','east','west','up','down']){c.uv??={};c.uv[f]??={uv:[98,(c.color??0)*10+60],uv_size:[28,8],material_instance:'ware'};}
  return pruneFaces(a);
 }

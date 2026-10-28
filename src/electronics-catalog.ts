@@ -1,3 +1,4 @@
+import {serviceElectronics} from './restaurant-catalog.js';
 /** Stable, static display IDs. Open/closed laptops are independent items. */
 export const originalElectronics = [
   {key:'desktop_computer',zh:'台式电脑套装',en:'Desktop Computer Set',model:'desktop',style:'desktop',pose:'fixed'},
@@ -31,7 +32,7 @@ export const officeElectronics = [
   {key:'mac_studio_set',zh:'Mac Studio 桌面套装',en:'Mac Studio Desktop Set',model:'studio',style:'studio',pose:'fixed'},
   {key:'surface_pro_keyboard',zh:'Surface Pro 键盘套装',en:'Surface Pro with Keyboard',model:'surface',style:'surface',pose:'fixed'}
 ] as const;
-export const electronics = [...originalElectronics,...newElectronics,...officeElectronics].map(d=>({...d,
+export const electronics = [...originalElectronics,...newElectronics,...officeElectronics,...serviceElectronics].map(d=>({...d,
   placementFront:['keyboard'].includes(d.model)||(d.model==='laptop'&&d.pose==='closed')?undefined:180,
   screenFront:((d.model==='laptop'&&d.pose==='open')||['desktop','all_in_one','tablet','crt','studio','surface'].includes(d.model))?180:0,
   openAngle:(d.model==='laptop'&&d.pose==='open')||['tablet','surface'].includes(d.model)?110:undefined

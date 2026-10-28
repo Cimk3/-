@@ -235,12 +235,28 @@
               "mcpe_food:printer_scanner",
               "mcpe_food:mac_studio_set",
               "mcpe_food:surface_pro_keyboard",
+              "mcpe_food:touchscreen_register",
+              "mcpe_food:payment_scanner",
+              "mcpe_food:receipt_printer",
               "mcpe_food:fridge_single_rose_gold",
               "mcpe_food:fridge_single_white",
               "mcpe_food:fridge_single_black",
               "mcpe_food:fridge_double_rose_gold",
               "mcpe_food:fridge_double_white",
               "mcpe_food:fridge_double_black"
+            ]
+          },
+          {
+            "group_identifier": {
+              "name": "mcpe_food:group_restaurant_accessories",
+              "icon": "mcpe_food:table_number_sign"
+            },
+            "items": [
+              "mcpe_food:table_number_sign",
+              "mcpe_food:menu_stand",
+              "mcpe_food:reserved_sign",
+              "mcpe_food:service_bell",
+              "mcpe_food:tissue_box"
             ]
           }
         ]

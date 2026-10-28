@@ -11,7 +11,7 @@
           "type": "int",
           "range": [
             0,
-            367
+            473
           ],
           "default": 0,
           "client_sync": true
@@ -192,6 +192,54 @@
           "width": 0.8462500000000001,
           "height": 0.5268841880803106
         }
+      },
+      "mcpe_food:touchscreen_register": {
+        "minecraft:collision_box": {
+          "width": 0.765,
+          "height": 0.635
+        }
+      },
+      "mcpe_food:payment_scanner": {
+        "minecraft:collision_box": {
+          "width": 0.39,
+          "height": 0.385
+        }
+      },
+      "mcpe_food:receipt_printer": {
+        "minecraft:collision_box": {
+          "width": 0.7275,
+          "height": 0.29750000000000004
+        }
+      },
+      "mcpe_food:table_number_sign": {
+        "minecraft:collision_box": {
+          "width": 0.64,
+          "height": 0.350625
+        }
+      },
+      "mcpe_food:menu_stand": {
+        "minecraft:collision_box": {
+          "width": 0.5775,
+          "height": 0.663125
+        }
+      },
+      "mcpe_food:reserved_sign": {
+        "minecraft:collision_box": {
+          "width": 0.64,
+          "height": 0.350625
+        }
+      },
+      "mcpe_food:service_bell": {
+        "minecraft:collision_box": {
+          "width": 0.49000000000000005,
+          "height": 0.1975
+        }
+      },
+      "mcpe_food:tissue_box": {
+        "minecraft:collision_box": {
+          "width": 0.59,
+          "height": 0.34750000000000003
+        }
       }
     },
     "components": {
@@ -261,7 +309,15 @@
             "mcpe_food:thinkbook16_plus_closed",
             "mcpe_food:printer_scanner",
             "mcpe_food:mac_studio_set",
-            "mcpe_food:surface_pro_keyboard"
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
           ]
         },
         "add": {
@@ -301,7 +357,15 @@
             "mcpe_food:thinkbook16_plus_closed",
             "mcpe_food:printer_scanner",
             "mcpe_food:mac_studio_set",
-            "mcpe_food:surface_pro_keyboard"
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
           ]
         },
         "add": {
@@ -341,7 +405,15 @@
             "mcpe_food:thinkbook16_plus_closed",
             "mcpe_food:printer_scanner",
             "mcpe_food:mac_studio_set",
-            "mcpe_food:surface_pro_keyboard"
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
           ]
         },
         "add": {
@@ -381,7 +453,15 @@
             "mcpe_food:thinkbook16_plus_closed",
             "mcpe_food:printer_scanner",
             "mcpe_food:mac_studio_set",
-            "mcpe_food:surface_pro_keyboard"
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
           ]
         },
         "add": {
@@ -421,7 +501,15 @@
             "mcpe_food:thinkbook16_plus_closed",
             "mcpe_food:printer_scanner",
             "mcpe_food:mac_studio_set",
-            "mcpe_food:surface_pro_keyboard"
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
           ]
         },
         "add": {
@@ -461,7 +549,15 @@
             "mcpe_food:thinkbook16_plus_closed",
             "mcpe_food:printer_scanner",
             "mcpe_food:mac_studio_set",
-            "mcpe_food:surface_pro_keyboard"
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
           ]
         },
         "add": {
@@ -501,7 +597,15 @@
             "mcpe_food:thinkbook16_plus_closed",
             "mcpe_food:printer_scanner",
             "mcpe_food:mac_studio_set",
-            "mcpe_food:surface_pro_keyboard"
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
           ]
         },
         "add": {
@@ -541,7 +645,15 @@
             "mcpe_food:thinkbook16_plus_closed",
             "mcpe_food:printer_scanner",
             "mcpe_food:mac_studio_set",
-            "mcpe_food:surface_pro_keyboard"
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
           ]
         },
         "add": {
@@ -581,7 +693,15 @@
             "mcpe_food:thinkbook16_plus_closed",
             "mcpe_food:printer_scanner",
             "mcpe_food:mac_studio_set",
-            "mcpe_food:surface_pro_keyboard"
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
           ]
         },
         "add": {
@@ -621,7 +741,15 @@
             "mcpe_food:thinkbook16_plus_closed",
             "mcpe_food:printer_scanner",
             "mcpe_food:mac_studio_set",
-            "mcpe_food:surface_pro_keyboard"
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
           ]
         },
         "add": {
@@ -661,7 +789,15 @@
             "mcpe_food:thinkbook16_plus_closed",
             "mcpe_food:printer_scanner",
             "mcpe_food:mac_studio_set",
-            "mcpe_food:surface_pro_keyboard"
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
           ]
         },
         "add": {
@@ -701,7 +837,15 @@
             "mcpe_food:thinkbook16_plus_closed",
             "mcpe_food:printer_scanner",
             "mcpe_food:mac_studio_set",
-            "mcpe_food:surface_pro_keyboard"
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
           ]
         },
         "add": {
@@ -741,7 +885,15 @@
             "mcpe_food:thinkbook16_plus_closed",
             "mcpe_food:printer_scanner",
             "mcpe_food:mac_studio_set",
-            "mcpe_food:surface_pro_keyboard"
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
           ]
         },
         "add": {
@@ -781,7 +933,15 @@
             "mcpe_food:thinkbook16_plus_closed",
             "mcpe_food:printer_scanner",
             "mcpe_food:mac_studio_set",
-            "mcpe_food:surface_pro_keyboard"
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
           ]
         },
         "add": {
@@ -821,7 +981,15 @@
             "mcpe_food:thinkbook16_plus_closed",
             "mcpe_food:printer_scanner",
             "mcpe_food:mac_studio_set",
-            "mcpe_food:surface_pro_keyboard"
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
           ]
         },
         "add": {
@@ -861,7 +1029,15 @@
             "mcpe_food:thinkbook16_plus_closed",
             "mcpe_food:printer_scanner",
             "mcpe_food:mac_studio_set",
-            "mcpe_food:surface_pro_keyboard"
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
           ]
         },
         "add": {
@@ -901,7 +1077,15 @@
             "mcpe_food:thinkbook16_plus_closed",
             "mcpe_food:printer_scanner",
             "mcpe_food:mac_studio_set",
-            "mcpe_food:surface_pro_keyboard"
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
           ]
         },
         "add": {
@@ -941,7 +1125,15 @@
             "mcpe_food:thinkbook16_plus_closed",
             "mcpe_food:printer_scanner",
             "mcpe_food:mac_studio_set",
-            "mcpe_food:surface_pro_keyboard"
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
           ]
         },
         "add": {
@@ -981,7 +1173,15 @@
             "mcpe_food:thinkbook16_plus_closed",
             "mcpe_food:printer_scanner",
             "mcpe_food:mac_studio_set",
-            "mcpe_food:surface_pro_keyboard"
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
           ]
         },
         "add": {
@@ -1021,7 +1221,15 @@
             "mcpe_food:thinkbook16_plus_closed",
             "mcpe_food:printer_scanner",
             "mcpe_food:mac_studio_set",
-            "mcpe_food:surface_pro_keyboard"
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
           ]
         },
         "add": {
@@ -1061,7 +1269,15 @@
             "mcpe_food:thinkbook16_plus_closed",
             "mcpe_food:printer_scanner",
             "mcpe_food:mac_studio_set",
-            "mcpe_food:surface_pro_keyboard"
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
           ]
         },
         "add": {
@@ -1101,7 +1317,15 @@
             "mcpe_food:thinkbook16_plus_closed",
             "mcpe_food:printer_scanner",
             "mcpe_food:mac_studio_set",
-            "mcpe_food:surface_pro_keyboard"
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
           ]
         },
         "add": {
@@ -1141,7 +1365,15 @@
             "mcpe_food:thinkbook16_plus_closed",
             "mcpe_food:printer_scanner",
             "mcpe_food:mac_studio_set",
-            "mcpe_food:surface_pro_keyboard"
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
           ]
         },
         "add": {
@@ -1181,7 +1413,15 @@
             "mcpe_food:thinkbook16_plus_closed",
             "mcpe_food:printer_scanner",
             "mcpe_food:mac_studio_set",
-            "mcpe_food:surface_pro_keyboard"
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
           ]
         },
         "add": {
@@ -1221,7 +1461,15 @@
             "mcpe_food:thinkbook16_plus_closed",
             "mcpe_food:printer_scanner",
             "mcpe_food:mac_studio_set",
-            "mcpe_food:surface_pro_keyboard"
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
           ]
         },
         "add": {
@@ -1261,7 +1509,15 @@
             "mcpe_food:thinkbook16_plus_closed",
             "mcpe_food:printer_scanner",
             "mcpe_food:mac_studio_set",
-            "mcpe_food:surface_pro_keyboard"
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
           ]
         },
         "add": {
@@ -1301,7 +1557,15 @@
             "mcpe_food:thinkbook16_plus_closed",
             "mcpe_food:printer_scanner",
             "mcpe_food:mac_studio_set",
-            "mcpe_food:surface_pro_keyboard"
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
           ]
         },
         "add": {
@@ -1341,7 +1605,15 @@
             "mcpe_food:thinkbook16_plus_closed",
             "mcpe_food:printer_scanner",
             "mcpe_food:mac_studio_set",
-            "mcpe_food:surface_pro_keyboard"
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
           ]
         },
         "add": {
@@ -1381,12 +1653,404 @@
             "mcpe_food:thinkbook16_plus_closed",
             "mcpe_food:printer_scanner",
             "mcpe_food:mac_studio_set",
-            "mcpe_food:surface_pro_keyboard"
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
           ]
         },
         "add": {
           "component_groups": [
             "mcpe_food:surface_pro_keyboard"
+          ]
+        }
+      },
+      "mcpe_food:shape_touchscreen_register": {
+        "remove": {
+          "component_groups": [
+            "mcpe_food:flat",
+            "mcpe_food:medium",
+            "mcpe_food:tall",
+            "mcpe_food:desktop_computer",
+            "mcpe_food:all_in_one_computer",
+            "mcpe_food:silver_laptop_open",
+            "mcpe_food:silver_laptop_closed",
+            "mcpe_food:gaming_laptop_open",
+            "mcpe_food:gaming_laptop_closed",
+            "mcpe_food:thinkpad_open",
+            "mcpe_food:thinkpad_closed",
+            "mcpe_food:macbook_open",
+            "mcpe_food:macbook_closed",
+            "mcpe_food:router",
+            "mcpe_food:server_cabinet",
+            "mcpe_food:ipad_air_magic_keyboard",
+            "mcpe_food:crt_monitor",
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "mcpe_food:touchscreen_register"
+          ]
+        }
+      },
+      "mcpe_food:shape_payment_scanner": {
+        "remove": {
+          "component_groups": [
+            "mcpe_food:flat",
+            "mcpe_food:medium",
+            "mcpe_food:tall",
+            "mcpe_food:desktop_computer",
+            "mcpe_food:all_in_one_computer",
+            "mcpe_food:silver_laptop_open",
+            "mcpe_food:silver_laptop_closed",
+            "mcpe_food:gaming_laptop_open",
+            "mcpe_food:gaming_laptop_closed",
+            "mcpe_food:thinkpad_open",
+            "mcpe_food:thinkpad_closed",
+            "mcpe_food:macbook_open",
+            "mcpe_food:macbook_closed",
+            "mcpe_food:router",
+            "mcpe_food:server_cabinet",
+            "mcpe_food:ipad_air_magic_keyboard",
+            "mcpe_food:crt_monitor",
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "mcpe_food:payment_scanner"
+          ]
+        }
+      },
+      "mcpe_food:shape_receipt_printer": {
+        "remove": {
+          "component_groups": [
+            "mcpe_food:flat",
+            "mcpe_food:medium",
+            "mcpe_food:tall",
+            "mcpe_food:desktop_computer",
+            "mcpe_food:all_in_one_computer",
+            "mcpe_food:silver_laptop_open",
+            "mcpe_food:silver_laptop_closed",
+            "mcpe_food:gaming_laptop_open",
+            "mcpe_food:gaming_laptop_closed",
+            "mcpe_food:thinkpad_open",
+            "mcpe_food:thinkpad_closed",
+            "mcpe_food:macbook_open",
+            "mcpe_food:macbook_closed",
+            "mcpe_food:router",
+            "mcpe_food:server_cabinet",
+            "mcpe_food:ipad_air_magic_keyboard",
+            "mcpe_food:crt_monitor",
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "mcpe_food:receipt_printer"
+          ]
+        }
+      },
+      "mcpe_food:shape_table_number_sign": {
+        "remove": {
+          "component_groups": [
+            "mcpe_food:flat",
+            "mcpe_food:medium",
+            "mcpe_food:tall",
+            "mcpe_food:desktop_computer",
+            "mcpe_food:all_in_one_computer",
+            "mcpe_food:silver_laptop_open",
+            "mcpe_food:silver_laptop_closed",
+            "mcpe_food:gaming_laptop_open",
+            "mcpe_food:gaming_laptop_closed",
+            "mcpe_food:thinkpad_open",
+            "mcpe_food:thinkpad_closed",
+            "mcpe_food:macbook_open",
+            "mcpe_food:macbook_closed",
+            "mcpe_food:router",
+            "mcpe_food:server_cabinet",
+            "mcpe_food:ipad_air_magic_keyboard",
+            "mcpe_food:crt_monitor",
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "mcpe_food:table_number_sign"
+          ]
+        }
+      },
+      "mcpe_food:shape_menu_stand": {
+        "remove": {
+          "component_groups": [
+            "mcpe_food:flat",
+            "mcpe_food:medium",
+            "mcpe_food:tall",
+            "mcpe_food:desktop_computer",
+            "mcpe_food:all_in_one_computer",
+            "mcpe_food:silver_laptop_open",
+            "mcpe_food:silver_laptop_closed",
+            "mcpe_food:gaming_laptop_open",
+            "mcpe_food:gaming_laptop_closed",
+            "mcpe_food:thinkpad_open",
+            "mcpe_food:thinkpad_closed",
+            "mcpe_food:macbook_open",
+            "mcpe_food:macbook_closed",
+            "mcpe_food:router",
+            "mcpe_food:server_cabinet",
+            "mcpe_food:ipad_air_magic_keyboard",
+            "mcpe_food:crt_monitor",
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "mcpe_food:menu_stand"
+          ]
+        }
+      },
+      "mcpe_food:shape_reserved_sign": {
+        "remove": {
+          "component_groups": [
+            "mcpe_food:flat",
+            "mcpe_food:medium",
+            "mcpe_food:tall",
+            "mcpe_food:desktop_computer",
+            "mcpe_food:all_in_one_computer",
+            "mcpe_food:silver_laptop_open",
+            "mcpe_food:silver_laptop_closed",
+            "mcpe_food:gaming_laptop_open",
+            "mcpe_food:gaming_laptop_closed",
+            "mcpe_food:thinkpad_open",
+            "mcpe_food:thinkpad_closed",
+            "mcpe_food:macbook_open",
+            "mcpe_food:macbook_closed",
+            "mcpe_food:router",
+            "mcpe_food:server_cabinet",
+            "mcpe_food:ipad_air_magic_keyboard",
+            "mcpe_food:crt_monitor",
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "mcpe_food:reserved_sign"
+          ]
+        }
+      },
+      "mcpe_food:shape_service_bell": {
+        "remove": {
+          "component_groups": [
+            "mcpe_food:flat",
+            "mcpe_food:medium",
+            "mcpe_food:tall",
+            "mcpe_food:desktop_computer",
+            "mcpe_food:all_in_one_computer",
+            "mcpe_food:silver_laptop_open",
+            "mcpe_food:silver_laptop_closed",
+            "mcpe_food:gaming_laptop_open",
+            "mcpe_food:gaming_laptop_closed",
+            "mcpe_food:thinkpad_open",
+            "mcpe_food:thinkpad_closed",
+            "mcpe_food:macbook_open",
+            "mcpe_food:macbook_closed",
+            "mcpe_food:router",
+            "mcpe_food:server_cabinet",
+            "mcpe_food:ipad_air_magic_keyboard",
+            "mcpe_food:crt_monitor",
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "mcpe_food:service_bell"
+          ]
+        }
+      },
+      "mcpe_food:shape_tissue_box": {
+        "remove": {
+          "component_groups": [
+            "mcpe_food:flat",
+            "mcpe_food:medium",
+            "mcpe_food:tall",
+            "mcpe_food:desktop_computer",
+            "mcpe_food:all_in_one_computer",
+            "mcpe_food:silver_laptop_open",
+            "mcpe_food:silver_laptop_closed",
+            "mcpe_food:gaming_laptop_open",
+            "mcpe_food:gaming_laptop_closed",
+            "mcpe_food:thinkpad_open",
+            "mcpe_food:thinkpad_closed",
+            "mcpe_food:macbook_open",
+            "mcpe_food:macbook_closed",
+            "mcpe_food:router",
+            "mcpe_food:server_cabinet",
+            "mcpe_food:ipad_air_magic_keyboard",
+            "mcpe_food:crt_monitor",
+            "mcpe_food:keyboard_mouse_set",
+            "mcpe_food:dell_laptop_open",
+            "mcpe_food:dell_laptop_closed",
+            "mcpe_food:macbook_pro_gpt_open",
+            "mcpe_food:macbook_pro_gpt_closed",
+            "mcpe_food:macbook_air_silver_open",
+            "mcpe_food:macbook_air_gray_open",
+            "mcpe_food:thinkbook16_plus_open",
+            "mcpe_food:thinkbook16_plus_closed",
+            "mcpe_food:printer_scanner",
+            "mcpe_food:mac_studio_set",
+            "mcpe_food:surface_pro_keyboard",
+            "mcpe_food:touchscreen_register",
+            "mcpe_food:payment_scanner",
+            "mcpe_food:receipt_printer",
+            "mcpe_food:table_number_sign",
+            "mcpe_food:menu_stand",
+            "mcpe_food:reserved_sign",
+            "mcpe_food:service_bell",
+            "mcpe_food:tissue_box"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "mcpe_food:tissue_box"
           ]
         }
       }

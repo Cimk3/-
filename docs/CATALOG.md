@@ -1,4 +1,4 @@
-# 0.5.3 菜品与器皿索引
+# 0.5.4 菜品与器皿索引
 
 102 种可食成品，8 种不可食展示配菜，2 款静态铜锅，15 种餐具，3 款酒瓶摆件。新增内容通过创造物品栏或分组试用命令获取。
 
@@ -249,7 +249,7 @@
 
 ## 电子设备
 
-32款静态摆件；笔记本开合为独立物品，冰箱高度为1或2格。
+35款静态摆件；笔记本开合为独立物品，冰箱高度为1或2格。
 
 | 名称 | ID | 姿态 |
 |---|---|---|
@@ -279,9 +279,26 @@
 | 打印扫描一体机 | mcpe_food:printer_scanner | fixed |
 | Mac Studio 桌面套装 | mcpe_food:mac_studio_set | fixed |
 | Surface Pro 键盘套装 | mcpe_food:surface_pro_keyboard | fixed |
+| 触屏收银机 | mcpe_food:touchscreen_register | fixed |
+| 扫码支付终端 | mcpe_food:payment_scanner | fixed |
+| 热敏小票机 | mcpe_food:receipt_printer | fixed |
 | 玫瑰金单门冰箱 | mcpe_food:fridge_single_rose_gold | single |
 | 白色单门冰箱 | mcpe_food:fridge_single_white | single |
 | 黑色单门冰箱 | mcpe_food:fridge_single_black | single |
 | 玫瑰金双开门冰箱 | mcpe_food:fridge_double_rose_gold | double |
 | 白色双开门冰箱 | mcpe_food:fridge_double_white | double |
 | 黑色双开门冰箱 | mcpe_food:fridge_double_black | double |
+
+
+## 餐厅用品（0.5.4）
+
+- 触屏收银机 / Touchscreen Cash Register：mcpe_food:touchscreen_register
+- 扫码支付终端 / Payment Scanner Display：mcpe_food:payment_scanner
+- 热敏小票机 / Thermal Receipt Printer：mcpe_food:receipt_printer
+- 可调桌号牌 / Adjustable Table Number Sign：mcpe_food:table_number_sign
+- 菜单立牌 / Menu Stand：mcpe_food:menu_stand
+- 预约牌 / Reserved Sign：mcpe_food:reserved_sign
+- 服务铃 / Service Bell：mcpe_food:service_bell
+- 纸巾盒 / Tissue Box：mcpe_food:tissue_box
+
+桌号仅一个创造物品，空手设置01—99；默认08，收回重放重置。其余物品静态。电子设备35项，餐厅用品5项。

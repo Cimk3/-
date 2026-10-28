@@ -89,3 +89,8 @@ officeElectronics单独保存7项新目录，surfaceVisuals在原361项之后追
 新增tests/fixtures/v0.5.2.json与v0.5.2-surfaces.json作为发行前兼容基线。模型回归读取最终方块和实体JSON，检查屏幕完整UV、遮挡和深度间隔，而不仅比较源旋转或共面。倾斜支架按自身网格处理，只有屏幕、外壳等110°同组部件共用Y网格。
 
 发行目标为https://github.com/Cimk3/A-Bite-of-Time.git；每版提交、打v版本标签并创建GitHub Release，附mcaddon、两个mcpack、源码ZIP与SHA256SUMS.txt。
+
+
+## 0.5.4餐厅用品
+
+服务台资源由tools/service-art.mjs生成，assets/restaurant/labels.json保存中文文字栅格源。桌号仅在实例tableNumber字段保存，缺省08；99种展示变体追加旧索引末尾。菜单使用稳定ModalFormData双下拉选择，提交重查revision、距离、支撑与空手状态。

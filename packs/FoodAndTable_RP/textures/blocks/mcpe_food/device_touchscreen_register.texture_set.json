@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "device_touchscreen_register",
+    "metalness_emissive_roughness": "device_touchscreen_register_mer"
+  }
+}

@@ -484,6 +484,324 @@
     "mcpe_food_device_surface_pro_keyboard": {
       "textures": "textures/blocks/mcpe_food/device_surface_pro_keyboard"
     },
+    "mcpe_food_device_touchscreen_register": {
+      "textures": "textures/blocks/mcpe_food/device_touchscreen_register"
+    },
+    "mcpe_food_device_payment_scanner": {
+      "textures": "textures/blocks/mcpe_food/device_payment_scanner"
+    },
+    "mcpe_food_device_receipt_printer": {
+      "textures": "textures/blocks/mcpe_food/device_receipt_printer"
+    },
+    "mcpe_food_service_table_number_sign": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign"
+    },
+    "mcpe_food_service_menu_stand": {
+      "textures": "textures/blocks/mcpe_food/service_menu_stand"
+    },
+    "mcpe_food_service_reserved_sign": {
+      "textures": "textures/blocks/mcpe_food/service_reserved_sign"
+    },
+    "mcpe_food_service_service_bell": {
+      "textures": "textures/blocks/mcpe_food/service_service_bell"
+    },
+    "mcpe_food_service_tissue_box": {
+      "textures": "textures/blocks/mcpe_food/service_tissue_box"
+    },
+    "mcpe_food_service_table_number_sign_01": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_01"
+    },
+    "mcpe_food_service_table_number_sign_02": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_02"
+    },
+    "mcpe_food_service_table_number_sign_03": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_03"
+    },
+    "mcpe_food_service_table_number_sign_04": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_04"
+    },
+    "mcpe_food_service_table_number_sign_05": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_05"
+    },
+    "mcpe_food_service_table_number_sign_06": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_06"
+    },
+    "mcpe_food_service_table_number_sign_07": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_07"
+    },
+    "mcpe_food_service_table_number_sign_09": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_09"
+    },
+    "mcpe_food_service_table_number_sign_10": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_10"
+    },
+    "mcpe_food_service_table_number_sign_11": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_11"
+    },
+    "mcpe_food_service_table_number_sign_12": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_12"
+    },
+    "mcpe_food_service_table_number_sign_13": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_13"
+    },
+    "mcpe_food_service_table_number_sign_14": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_14"
+    },
+    "mcpe_food_service_table_number_sign_15": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_15"
+    },
+    "mcpe_food_service_table_number_sign_16": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_16"
+    },
+    "mcpe_food_service_table_number_sign_17": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_17"
+    },
+    "mcpe_food_service_table_number_sign_18": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_18"
+    },
+    "mcpe_food_service_table_number_sign_19": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_19"
+    },
+    "mcpe_food_service_table_number_sign_20": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_20"
+    },
+    "mcpe_food_service_table_number_sign_21": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_21"
+    },
+    "mcpe_food_service_table_number_sign_22": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_22"
+    },
+    "mcpe_food_service_table_number_sign_23": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_23"
+    },
+    "mcpe_food_service_table_number_sign_24": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_24"
+    },
+    "mcpe_food_service_table_number_sign_25": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_25"
+    },
+    "mcpe_food_service_table_number_sign_26": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_26"
+    },
+    "mcpe_food_service_table_number_sign_27": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_27"
+    },
+    "mcpe_food_service_table_number_sign_28": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_28"
+    },
+    "mcpe_food_service_table_number_sign_29": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_29"
+    },
+    "mcpe_food_service_table_number_sign_30": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_30"
+    },
+    "mcpe_food_service_table_number_sign_31": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_31"
+    },
+    "mcpe_food_service_table_number_sign_32": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_32"
+    },
+    "mcpe_food_service_table_number_sign_33": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_33"
+    },
+    "mcpe_food_service_table_number_sign_34": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_34"
+    },
+    "mcpe_food_service_table_number_sign_35": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_35"
+    },
+    "mcpe_food_service_table_number_sign_36": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_36"
+    },
+    "mcpe_food_service_table_number_sign_37": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_37"
+    },
+    "mcpe_food_service_table_number_sign_38": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_38"
+    },
+    "mcpe_food_service_table_number_sign_39": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_39"
+    },
+    "mcpe_food_service_table_number_sign_40": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_40"
+    },
+    "mcpe_food_service_table_number_sign_41": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_41"
+    },
+    "mcpe_food_service_table_number_sign_42": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_42"
+    },
+    "mcpe_food_service_table_number_sign_43": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_43"
+    },
+    "mcpe_food_service_table_number_sign_44": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_44"
+    },
+    "mcpe_food_service_table_number_sign_45": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_45"
+    },
+    "mcpe_food_service_table_number_sign_46": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_46"
+    },
+    "mcpe_food_service_table_number_sign_47": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_47"
+    },
+    "mcpe_food_service_table_number_sign_48": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_48"
+    },
+    "mcpe_food_service_table_number_sign_49": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_49"
+    },
+    "mcpe_food_service_table_number_sign_50": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_50"
+    },
+    "mcpe_food_service_table_number_sign_51": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_51"
+    },
+    "mcpe_food_service_table_number_sign_52": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_52"
+    },
+    "mcpe_food_service_table_number_sign_53": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_53"
+    },
+    "mcpe_food_service_table_number_sign_54": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_54"
+    },
+    "mcpe_food_service_table_number_sign_55": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_55"
+    },
+    "mcpe_food_service_table_number_sign_56": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_56"
+    },
+    "mcpe_food_service_table_number_sign_57": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_57"
+    },
+    "mcpe_food_service_table_number_sign_58": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_58"
+    },
+    "mcpe_food_service_table_number_sign_59": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_59"
+    },
+    "mcpe_food_service_table_number_sign_60": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_60"
+    },
+    "mcpe_food_service_table_number_sign_61": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_61"
+    },
+    "mcpe_food_service_table_number_sign_62": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_62"
+    },
+    "mcpe_food_service_table_number_sign_63": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_63"
+    },
+    "mcpe_food_service_table_number_sign_64": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_64"
+    },
+    "mcpe_food_service_table_number_sign_65": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_65"
+    },
+    "mcpe_food_service_table_number_sign_66": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_66"
+    },
+    "mcpe_food_service_table_number_sign_67": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_67"
+    },
+    "mcpe_food_service_table_number_sign_68": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_68"
+    },
+    "mcpe_food_service_table_number_sign_69": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_69"
+    },
+    "mcpe_food_service_table_number_sign_70": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_70"
+    },
+    "mcpe_food_service_table_number_sign_71": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_71"
+    },
+    "mcpe_food_service_table_number_sign_72": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_72"
+    },
+    "mcpe_food_service_table_number_sign_73": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_73"
+    },
+    "mcpe_food_service_table_number_sign_74": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_74"
+    },
+    "mcpe_food_service_table_number_sign_75": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_75"
+    },
+    "mcpe_food_service_table_number_sign_76": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_76"
+    },
+    "mcpe_food_service_table_number_sign_77": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_77"
+    },
+    "mcpe_food_service_table_number_sign_78": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_78"
+    },
+    "mcpe_food_service_table_number_sign_79": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_79"
+    },
+    "mcpe_food_service_table_number_sign_80": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_80"
+    },
+    "mcpe_food_service_table_number_sign_81": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_81"
+    },
+    "mcpe_food_service_table_number_sign_82": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_82"
+    },
+    "mcpe_food_service_table_number_sign_83": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_83"
+    },
+    "mcpe_food_service_table_number_sign_84": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_84"
+    },
+    "mcpe_food_service_table_number_sign_85": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_85"
+    },
+    "mcpe_food_service_table_number_sign_86": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_86"
+    },
+    "mcpe_food_service_table_number_sign_87": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_87"
+    },
+    "mcpe_food_service_table_number_sign_88": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_88"
+    },
+    "mcpe_food_service_table_number_sign_89": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_89"
+    },
+    "mcpe_food_service_table_number_sign_90": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_90"
+    },
+    "mcpe_food_service_table_number_sign_91": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_91"
+    },
+    "mcpe_food_service_table_number_sign_92": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_92"
+    },
+    "mcpe_food_service_table_number_sign_93": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_93"
+    },
+    "mcpe_food_service_table_number_sign_94": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_94"
+    },
+    "mcpe_food_service_table_number_sign_95": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_95"
+    },
+    "mcpe_food_service_table_number_sign_96": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_96"
+    },
+    "mcpe_food_service_table_number_sign_97": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_97"
+    },
+    "mcpe_food_service_table_number_sign_98": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_98"
+    },
+    "mcpe_food_service_table_number_sign_99": {
+      "textures": "textures/blocks/mcpe_food/service_table_number_sign_99"
+    },
     "mcpe_food_ware_triple_tray": {
       "textures": "textures/blocks/mcpe_food/ware_triple_tray"
     },

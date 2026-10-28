@@ -1,5 +1,6 @@
 import { BlockPermutation, GameMode, ItemStack, system, world } from '@minecraft/server';
-import { ActionFormData } from '@minecraft/server-ui';
+import { restaurantAccessories, numberKey, validTableNumber } from './restaurant-catalog.js';
+import { ActionFormData, ModalFormData } from '@minecraft/server-ui';
 import { compatibleVessels, foodById, foodByServing, id, servingKey, vesselByKey } from './catalog.js';
 import { adById, adSize, advertisements, surfaceIndex, tableItemById, tray, trayFoods } from './decor-catalog.js';
 import { electronicsById } from './electronics-catalog.js';
@@ -115,7 +116,7 @@ function visual(r, type, part, index, position) {
     if (entity.getProperty('mcpe_food:index') !== index)
         entity.setProperty('mcpe_food:index', index);
     if (type === 'mcpe_food:surface_display') {
-        const device = electronicsById.get(r.definition);
+        const device = electronicsById.get(r.definition) ?? restaurantAccessories.find(d => id(d.key) === r.definition);
         const shape = device ? device.key : r.kind === 'tray' || /chopsticks|table_knife|fork|spoon/.test(r.definition) ? 'flat' : /wine_glass|hotpot|bottle/.test(r.definition) ? 'tall' : 'medium';
         if (entity.getDynamicProperty('mcpe_food:shape') !== shape) {
             entity.triggerEvent(`mcpe_food:shape_${shape}`);
@@ -147,7 +148,7 @@ export function synchronize(r) {
     else {
         const height = surfaceHeight(safeBlock(r)), p = { x: r.support.x + .5, y: r.support.y + height, z: r.support.z + .5 };
         if (!r.native) {
-            const index = surfaceIndex.get(r.definition);
+            const index = surfaceIndex.get(r.definition === id('table_number_sign') ? id(numberKey(validTableNumber(r.tableNumber) ? r.tableNumber : 8)) : r.definition);
             if (index === undefined)
                 throw new Error('Unknown surface visual');
             visual(r, 'mcpe_food:surface_display', 'base', index, p);
@@ -296,6 +297,60 @@ async function trayMenu(p, r) {
             next.slots[i] = null;
         }
         change(p, r, next, plan);
+    }
+    finally {
+        io.sessions.finish(p.id, token);
+    }
+}
+async function numberMenu(p, r) {
+    if (!click(p, r.uid) || !assertCurrent(p, r))
+        return;
+    const c = io.inventory(p);
+    if (!c || c.getItem(p.selectedSlotIndex))
+        return;
+    const token = io.sessions.begin(p.id);
+    if (token === undefined)
+        return;
+    const english = p.hasTag('food_english'), empty = () => !c.getItem(p.selectedSlotIndex);
+    try {
+        const choice = await new ActionFormData().title(english ? 'Table Number' : '桌号牌').button(english ? 'Change number' : '修改号码').button(english ? 'Collect sign' : '收回桌号牌').show(p);
+        if (choice.canceled || !assertCurrent(p, r) || !empty())
+            return;
+        if (choice.selection === 1) {
+            if (!io.sessions.claim(p.id, token))
+                return;
+            const plan = planInsert(io.snapshot(c).slots, r.definition, 1, new ItemStack(r.definition).maxAmount);
+            if (!plan.ok)
+                return;
+            const before = io.snapshot(c);
+            try {
+                io.commit(c, before, plan.slots);
+                removeDecor(r, false);
+            }
+            catch (error) {
+                restore(c, before);
+                throw error;
+            }
+            return;
+        }
+        if (choice.selection !== 0)
+            return;
+        const n = validTableNumber(r.tableNumber) ? r.tableNumber : 8, digits = Array.from({ length: 10 }, (_, i) => String(i));
+        const response = await new ModalFormData().title(english ? 'Table 01–99' : '桌号01—99').dropdown(english ? 'Tens' : '十位', digits, { defaultValueIndex: Math.floor(n / 10) }).dropdown(english ? 'Units' : '个位', digits, { defaultValueIndex: n % 10 }).show(p);
+        if (response.canceled || !assertCurrent(p, r) || !empty() || !io.sessions.claim(p.id, token))
+            return;
+        const [t, u] = response.formValues ?? [];
+        if (typeof t !== 'number' || typeof u !== 'number' || !Number.isInteger(t) || !Number.isInteger(u) || t < 0 || t > 9 || u < 0 || u > 9)
+            return;
+        const number = t * 10 + u;
+        if (!validTableNumber(number)) {
+            io.notify(p, '桌号必须是01至99。', 'Choose a number from 01 to 99.');
+            return;
+        }
+        const next = copy(r);
+        next.tableNumber = number;
+        next.revision++;
+        change(p, r, next, { ok: true, slots: io.snapshot(c).slots });
     }
     finally {
         io.sessions.finish(p.id, token);
@@ -637,7 +692,7 @@ export function installDecor(adapter) {
         if (!r)
             return;
         event.cancel = true;
-        run(event.player, () => r.kind === 'tray' ? trayMenu(event.player, copy(r)) : r.kind === 'ad' ? posterMenu(event.player, copy(r)) : surfaceInteract(event.player, copy(r)));
+        run(event.player, () => r.kind === 'tray' ? trayMenu(event.player, copy(r)) : r.kind === 'ad' ? posterMenu(event.player, copy(r)) : r.definition === id('table_number_sign') ? numberMenu(event.player, copy(r)) : surfaceInteract(event.player, copy(r)));
     });
     world.beforeEvents.playerBreakBlock.subscribe(event => {
         const candidates = [...records.values()].filter(r => r.dimension === event.block.dimension.id && ((r.kind === 'appliance' && applianceCells(r).some(p => same(p, event.block.location))) || (r.native && same(anchor(r), event.block.location)) || (r.kind === 'ad' && posterCells(r).some(p => same(p, event.block.location)))));

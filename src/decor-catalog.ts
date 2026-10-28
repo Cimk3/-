@@ -1,4 +1,5 @@
 import {bottleProps,cutlery,dishes,hotpots,id,servings,vesselByKey,vessels} from './catalog.js';
+import {restaurantItems,restaurantAccessories,numberVisuals} from './restaurant-catalog.js';
 import {electronics,originalElectronics,newElectronics,officeElectronics} from './electronics-catalog.js';
 export const teaTray={key:'gongfu_tea_tray',zh:'功夫茶盘套装',en:'Gongfu Tea Tray Set'};
 export const tray = {key:'triple_tray',zh:'三菜连体托盘',en:'Three Dish Tray'};
@@ -26,7 +27,7 @@ export function adSize(ad: typeof advertisements[number], size: number): [number
   const n=Math.max(0,Math.min(2,size))+1;
   return ad.aspect==='wide'?[n*2,n]:ad.aspect==='portrait'?[n,n*2]:[n,n];
 }
-export const tableItems = [...vessels,...cutlery,...hotpots,...bottleProps,...paperCups,tray,...electronics,teaTray];
+export const tableItems = [...vessels,...cutlery,...hotpots,...bottleProps,...paperCups,tray,...electronics,teaTray,...restaurantAccessories];
 export const tableItemById = new Map(tableItems.map(t=>[id(t.key),t]));
 export const trayFoods = dishes.filter(f=>vesselByKey.get(f.vessel)?.family==='plate');
 export const surfaceVisuals = [
@@ -35,6 +36,7 @@ export const surfaceVisuals = [
   ...originalElectronics.map(t=>({key:t.key,zh:t.zh,en:t.en})),
   ...newElectronics.map(t=>({key:t.key,zh:t.zh,en:t.en})),teaTray,
   ...servings.filter(s=>s.food.key==='tieguanyin').map(s=>({key:s.key,zh:s.food.zh,en:s.food.en})),
-  ...officeElectronics.map(d=>({key:d.key,zh:d.zh,en:d.en}))
+  ...officeElectronics.map(d=>({key:d.key,zh:d.zh,en:d.en})),
+  ...restaurantItems.map(d=>({key:d.key,zh:d.zh,en:d.en})),...numberVisuals.filter(d=>d.number!==8)
 ];
 export const surfaceIndex = new Map(surfaceVisuals.map((t,i)=>[id(t.key),i]));

@@ -491,6 +491,30 @@
     "mcpe_food_surface_pro_keyboard": {
       "textures": "textures/items/mcpe_food/surface_pro_keyboard"
     },
+    "mcpe_food_touchscreen_register": {
+      "textures": "textures/items/mcpe_food/touchscreen_register"
+    },
+    "mcpe_food_payment_scanner": {
+      "textures": "textures/items/mcpe_food/payment_scanner"
+    },
+    "mcpe_food_receipt_printer": {
+      "textures": "textures/items/mcpe_food/receipt_printer"
+    },
+    "mcpe_food_table_number_sign": {
+      "textures": "textures/items/mcpe_food/table_number_sign"
+    },
+    "mcpe_food_menu_stand": {
+      "textures": "textures/items/mcpe_food/menu_stand"
+    },
+    "mcpe_food_reserved_sign": {
+      "textures": "textures/items/mcpe_food/reserved_sign"
+    },
+    "mcpe_food_service_bell": {
+      "textures": "textures/items/mcpe_food/service_bell"
+    },
+    "mcpe_food_tissue_box": {
+      "textures": "textures/items/mcpe_food/tissue_box"
+    },
     "mcpe_food_triple_tray": {
       "textures": "textures/items/mcpe_food/triple_tray"
     },

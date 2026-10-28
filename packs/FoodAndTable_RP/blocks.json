@@ -1132,6 +1132,30 @@
   "mcpe_food:surface_pro_keyboard": {
     "sound": "glass"
   },
+  "mcpe_food:touchscreen_register": {
+    "sound": "glass"
+  },
+  "mcpe_food:payment_scanner": {
+    "sound": "glass"
+  },
+  "mcpe_food:receipt_printer": {
+    "sound": "glass"
+  },
+  "mcpe_food:table_number_sign": {
+    "sound": "glass"
+  },
+  "mcpe_food:menu_stand": {
+    "sound": "glass"
+  },
+  "mcpe_food:reserved_sign": {
+    "sound": "glass"
+  },
+  "mcpe_food:service_bell": {
+    "sound": "glass"
+  },
+  "mcpe_food:tissue_box": {
+    "sound": "glass"
+  },
   "mcpe_food:triple_tray": {
     "sound": "glass"
   },

@@ -271,3 +271,23 @@ test('failed refrigerator removal restores both blocks and removes transient ite
   assert.equal(saved().length,1);assert.equal(dimension.getBlock({x:0,y:1,z:0}).typeId,r.definition);assert.equal(upper.typeId,r.definition+'_upper');assert.equal(dimension.drops.filter(d=>d.entity.isValid).length,0);
   removeDecor(r,true);assert.equal(saved().length,0);assert.equal(dimension.drops.filter(d=>d.entity.isValid).length,1);
 });
+
+test('table sign persists 01/08/99, rejects 00, cancels safely and collects a generic sign',async()=>{
+ for(const n of [1,8,99]){const{dimension,player,base}=setup('minecraft:oak_slab'),r=await place(player,base,'table_number_sign'),e=entityFor(dimension,r);player.container.setItem(0,undefined);state.responses=[{selection:0},{formValues:[Math.floor(n/10),n%10]}];await useEntity(player,e);assert.equal(saved()[0].tableNumber,n);loadDecorRecords();reconcileDecor();assert.equal(saved()[0].tableNumber,n);assert.ok(e.getProperty('mcpe_food:index')>=368);removeDecor(saved()[0],false);}
+ const{dimension,player,base}=setup(),r=await place(player,base,'table_number_sign'),e=entityFor(dimension,r);player.container.setItem(0,undefined);
+ for(const responses of [[{selection:0},{formValues:[0,0]}],[{canceled:true}],[{selection:0},{canceled:true}]]){system.currentTick+=10;state.responses=responses;await useEntity(player,e);assert.equal(saved()[0].tableNumber,undefined);assert.equal(saved()[0].revision,0);}
+ system.currentTick+=10;await useEntity(player,e,1);assert.equal(saved().length,0);assert.equal(player.container.count('mcpe_food:table_number_sign'),1);
+ await place(player,base,'table_number_sign');assert.equal(saved()[0].tableNumber,undefined);
+});
+
+test('number change rejects a stale multiplayer menu; a full inventory cannot collect the sign',async()=>{
+ const{dimension,player,base}=setup(),r=await place(player,base,'table_number_sign'),e=entityFor(dimension,r),other=new FakePlayer(dimension);other.id='other';player.container.setItem(0,undefined);
+ state.responses=[{selection:0},{selection:0},{formValues:[1,2]},{formValues:[9,9]}];state.entityInteract({player,target:e,cancel:false});state.entityInteract({player:other,target:e,cancel:false});await tick();assert.equal(saved()[0].revision,1);assert.ok([12,99].includes(saved()[0].tableNumber));
+ for(let i=0;i<player.container.size;i++)player.container.setItem(i,new ItemStack('minecraft:stone',64));player.container.setItem(0,undefined);
+ // Modal is opened empty handed, then the inventory fills before confirmation.
+ const previous=state.responses;state.responses=[{selection:1}];system.currentTick+=10;state.entityInteract({player,target:e,cancel:false});flush();player.container.setItem(0,new ItemStack('minecraft:stone',64));await tick();assert.equal(saved().length,1);assert.equal(player.container.count('mcpe_food:table_number_sign'),0);
+});
+
+test('all service props use support occupancy, obstruction, height changes and one-time drops',async()=>{
+ const{restaurantItems}=await import('../.build/restaurant-catalog.js');for(const d of restaurantItems){const{dimension,player,base}=setup('minecraft:oak_slab'),r=await place(player,base,d.key);const e=entityFor(dimension,r);assert.equal(e.location.y,.5);await place(player,base,d.key);assert.equal(saved().length,1);assert.equal(player.container.count('mcpe_food:'+d.key),1);base.setPermutation({typeId:'minecraft:oak_double_slab',getAllStates:()=>({})});reconcileDecor();assert.equal(e.location.y,1);base.setPermutation({typeId:'minecraft:air',getAllStates:()=>({})});reconcileDecor();reconcileDecor();assert.equal(dimension.drops.length,1);assert.equal(dimension.drops[0].item.typeId,'mcpe_food:'+d.key);}
+});

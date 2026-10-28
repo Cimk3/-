@@ -1,0 +1,7 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:texture_set": {
+    "color": "service_table_number_sign_27",
+    "metalness_emissive_roughness": "service_table_number_sign_27_mer"
+  }
+}

@@ -1,3 +1,4 @@
+import {restaurantItems} from '../.build/restaurant-catalog.js';
 import {refrigerators} from '../.build/appliance-catalog.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -14,7 +15,7 @@ const read=p=>JSON.parse(readFileSync(p,'utf8')),hash=p=>createHash('sha256').up
 const geometry=d=>read(`${rp}/models/blocks/mcpe_food/${d.key}.geo.json`)['minecraft:geometry'][0];
 
 test('current release has twenty-six tabletop electronics, sixteen laptop poses and two tablet keyboard sets',()=>{
-  assert.equal(electronics.length,26);assert.equal(new Set(electronics.map(d=>d.key)).size,26);
+  assert.equal(electronics.length,29);assert.equal(new Set(electronics.map(d=>d.key)).size,29);
   const laptops=electronics.filter(d=>d.model==='laptop');assert.equal(laptops.length,16);
   for(const style of ['silver','gaming','thinkpad','macbook'])assert.deepEqual(laptops.filter(d=>d.style===style).map(d=>d.pose).sort(),['closed','open']);
   assert.equal(electronics.filter(d=>['tablet','surface'].includes(d.model)).length,2);
@@ -43,7 +44,7 @@ test('private electronics group, bilingual names and both trial commands contain
   const group=groups.find(g=>g.group_identifier.name==='mcpe_food:group_electronics');assert.ok(group);
   assert.equal(group.group_identifier.icon,id('desktop_computer'));assert.deepEqual(group.items,[...electronics,...refrigerators].map(d=>id(d.key)));
   for(const d of electronics){const i=read(`${bp}/items/${d.key}.json`)['minecraft:item'],b=read(`${bp}/blocks/${d.key}.json`)['minecraft:block'];assert.deepEqual(i.description.menu_category,{category:'items',group:'mcpe_food:group_electronics'});assert.equal(b.description.menu_category.category,'none');assert.equal(b.components['minecraft:light_emission'],undefined);const drops=read(`${bp}/loot_tables/blocks/${d.key}.json`).pools;assert.equal(drops.length,1);assert.equal(drops[0].entries[0].name,id(d.key));}
-  for(const [command,list] of [['electronics',[...electronics,...refrigerators]],['tasting_new',officeElectronics]])assert.deepEqual(readFileSync(`${bp}/functions/mcpe_food/${command}.mcfunction`,'utf8').trim().split('\n'),list.map(d=>`give @s ${id(d.key)} 4`));
+  for(const [command,list] of [['electronics',[...electronics,...refrigerators]],['tasting_new',restaurantItems]])assert.deepEqual(readFileSync(`${bp}/functions/mcpe_food/${command}.mcfunction`,'utf8').trim().split('\n'),list.map(d=>`give @s ${id(d.key)} 4`));
   for(const locale of ['zh_CN','en_US']){const lang=readFileSync(`${rp}/texts/${locale}.lang`,'utf8');assert.ok(lang.includes('mcpe_food:group_electronics='));for(const d of electronics)assert.ok(lang.includes(`item.mcpe_food:${d.key}.name=${locale==='zh_CN'?d.zh:d.en}`));}
 });
 

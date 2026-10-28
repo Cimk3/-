@@ -1,5 +1,5 @@
 {
-  "version": "0.5.3",
+  "version": "0.5.4",
   "models": [
     {
       "key": "egg_fried_rice_serving",
@@ -3332,6 +3332,854 @@
       }
     },
     {
+      "key": "touchscreen_register",
+      "resolution": 128,
+      "cubes": 45,
+      "slots": {
+        "ware": "device_touchscreen_register"
+      }
+    },
+    {
+      "key": "payment_scanner",
+      "resolution": 128,
+      "cubes": 4,
+      "slots": {
+        "ware": "device_payment_scanner"
+      }
+    },
+    {
+      "key": "receipt_printer",
+      "resolution": 128,
+      "cubes": 6,
+      "slots": {
+        "ware": "device_receipt_printer"
+      }
+    },
+    {
+      "key": "table_number_sign",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign"
+      }
+    },
+    {
+      "key": "menu_stand",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_menu_stand"
+      }
+    },
+    {
+      "key": "reserved_sign",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_reserved_sign"
+      }
+    },
+    {
+      "key": "service_bell",
+      "resolution": 128,
+      "cubes": 96,
+      "slots": {
+        "ware": "service_service_bell"
+      }
+    },
+    {
+      "key": "tissue_box",
+      "resolution": 128,
+      "cubes": 5,
+      "slots": {
+        "ware": "service_tissue_box"
+      }
+    },
+    {
+      "key": "table_number_sign_01",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_01"
+      }
+    },
+    {
+      "key": "table_number_sign_02",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_02"
+      }
+    },
+    {
+      "key": "table_number_sign_03",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_03"
+      }
+    },
+    {
+      "key": "table_number_sign_04",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_04"
+      }
+    },
+    {
+      "key": "table_number_sign_05",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_05"
+      }
+    },
+    {
+      "key": "table_number_sign_06",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_06"
+      }
+    },
+    {
+      "key": "table_number_sign_07",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_07"
+      }
+    },
+    {
+      "key": "table_number_sign_09",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_09"
+      }
+    },
+    {
+      "key": "table_number_sign_10",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_10"
+      }
+    },
+    {
+      "key": "table_number_sign_11",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_11"
+      }
+    },
+    {
+      "key": "table_number_sign_12",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_12"
+      }
+    },
+    {
+      "key": "table_number_sign_13",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_13"
+      }
+    },
+    {
+      "key": "table_number_sign_14",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_14"
+      }
+    },
+    {
+      "key": "table_number_sign_15",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_15"
+      }
+    },
+    {
+      "key": "table_number_sign_16",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_16"
+      }
+    },
+    {
+      "key": "table_number_sign_17",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_17"
+      }
+    },
+    {
+      "key": "table_number_sign_18",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_18"
+      }
+    },
+    {
+      "key": "table_number_sign_19",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_19"
+      }
+    },
+    {
+      "key": "table_number_sign_20",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_20"
+      }
+    },
+    {
+      "key": "table_number_sign_21",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_21"
+      }
+    },
+    {
+      "key": "table_number_sign_22",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_22"
+      }
+    },
+    {
+      "key": "table_number_sign_23",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_23"
+      }
+    },
+    {
+      "key": "table_number_sign_24",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_24"
+      }
+    },
+    {
+      "key": "table_number_sign_25",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_25"
+      }
+    },
+    {
+      "key": "table_number_sign_26",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_26"
+      }
+    },
+    {
+      "key": "table_number_sign_27",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_27"
+      }
+    },
+    {
+      "key": "table_number_sign_28",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_28"
+      }
+    },
+    {
+      "key": "table_number_sign_29",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_29"
+      }
+    },
+    {
+      "key": "table_number_sign_30",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_30"
+      }
+    },
+    {
+      "key": "table_number_sign_31",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_31"
+      }
+    },
+    {
+      "key": "table_number_sign_32",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_32"
+      }
+    },
+    {
+      "key": "table_number_sign_33",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_33"
+      }
+    },
+    {
+      "key": "table_number_sign_34",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_34"
+      }
+    },
+    {
+      "key": "table_number_sign_35",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_35"
+      }
+    },
+    {
+      "key": "table_number_sign_36",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_36"
+      }
+    },
+    {
+      "key": "table_number_sign_37",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_37"
+      }
+    },
+    {
+      "key": "table_number_sign_38",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_38"
+      }
+    },
+    {
+      "key": "table_number_sign_39",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_39"
+      }
+    },
+    {
+      "key": "table_number_sign_40",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_40"
+      }
+    },
+    {
+      "key": "table_number_sign_41",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_41"
+      }
+    },
+    {
+      "key": "table_number_sign_42",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_42"
+      }
+    },
+    {
+      "key": "table_number_sign_43",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_43"
+      }
+    },
+    {
+      "key": "table_number_sign_44",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_44"
+      }
+    },
+    {
+      "key": "table_number_sign_45",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_45"
+      }
+    },
+    {
+      "key": "table_number_sign_46",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_46"
+      }
+    },
+    {
+      "key": "table_number_sign_47",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_47"
+      }
+    },
+    {
+      "key": "table_number_sign_48",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_48"
+      }
+    },
+    {
+      "key": "table_number_sign_49",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_49"
+      }
+    },
+    {
+      "key": "table_number_sign_50",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_50"
+      }
+    },
+    {
+      "key": "table_number_sign_51",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_51"
+      }
+    },
+    {
+      "key": "table_number_sign_52",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_52"
+      }
+    },
+    {
+      "key": "table_number_sign_53",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_53"
+      }
+    },
+    {
+      "key": "table_number_sign_54",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_54"
+      }
+    },
+    {
+      "key": "table_number_sign_55",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_55"
+      }
+    },
+    {
+      "key": "table_number_sign_56",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_56"
+      }
+    },
+    {
+      "key": "table_number_sign_57",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_57"
+      }
+    },
+    {
+      "key": "table_number_sign_58",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_58"
+      }
+    },
+    {
+      "key": "table_number_sign_59",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_59"
+      }
+    },
+    {
+      "key": "table_number_sign_60",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_60"
+      }
+    },
+    {
+      "key": "table_number_sign_61",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_61"
+      }
+    },
+    {
+      "key": "table_number_sign_62",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_62"
+      }
+    },
+    {
+      "key": "table_number_sign_63",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_63"
+      }
+    },
+    {
+      "key": "table_number_sign_64",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_64"
+      }
+    },
+    {
+      "key": "table_number_sign_65",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_65"
+      }
+    },
+    {
+      "key": "table_number_sign_66",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_66"
+      }
+    },
+    {
+      "key": "table_number_sign_67",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_67"
+      }
+    },
+    {
+      "key": "table_number_sign_68",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_68"
+      }
+    },
+    {
+      "key": "table_number_sign_69",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_69"
+      }
+    },
+    {
+      "key": "table_number_sign_70",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_70"
+      }
+    },
+    {
+      "key": "table_number_sign_71",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_71"
+      }
+    },
+    {
+      "key": "table_number_sign_72",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_72"
+      }
+    },
+    {
+      "key": "table_number_sign_73",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_73"
+      }
+    },
+    {
+      "key": "table_number_sign_74",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_74"
+      }
+    },
+    {
+      "key": "table_number_sign_75",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_75"
+      }
+    },
+    {
+      "key": "table_number_sign_76",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_76"
+      }
+    },
+    {
+      "key": "table_number_sign_77",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_77"
+      }
+    },
+    {
+      "key": "table_number_sign_78",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_78"
+      }
+    },
+    {
+      "key": "table_number_sign_79",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_79"
+      }
+    },
+    {
+      "key": "table_number_sign_80",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_80"
+      }
+    },
+    {
+      "key": "table_number_sign_81",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_81"
+      }
+    },
+    {
+      "key": "table_number_sign_82",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_82"
+      }
+    },
+    {
+      "key": "table_number_sign_83",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_83"
+      }
+    },
+    {
+      "key": "table_number_sign_84",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_84"
+      }
+    },
+    {
+      "key": "table_number_sign_85",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_85"
+      }
+    },
+    {
+      "key": "table_number_sign_86",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_86"
+      }
+    },
+    {
+      "key": "table_number_sign_87",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_87"
+      }
+    },
+    {
+      "key": "table_number_sign_88",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_88"
+      }
+    },
+    {
+      "key": "table_number_sign_89",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_89"
+      }
+    },
+    {
+      "key": "table_number_sign_90",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_90"
+      }
+    },
+    {
+      "key": "table_number_sign_91",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_91"
+      }
+    },
+    {
+      "key": "table_number_sign_92",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_92"
+      }
+    },
+    {
+      "key": "table_number_sign_93",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_93"
+      }
+    },
+    {
+      "key": "table_number_sign_94",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_94"
+      }
+    },
+    {
+      "key": "table_number_sign_95",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_95"
+      }
+    },
+    {
+      "key": "table_number_sign_96",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_96"
+      }
+    },
+    {
+      "key": "table_number_sign_97",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_97"
+      }
+    },
+    {
+      "key": "table_number_sign_98",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_98"
+      }
+    },
+    {
+      "key": "table_number_sign_99",
+      "resolution": 128,
+      "cubes": 3,
+      "slots": {
+        "ware": "service_table_number_sign_99"
+      }
+    },
+    {
       "key": "triple_tray",
       "resolution": 128,
       "cubes": 65,
@@ -5598,6 +6446,536 @@
       "resolution": 128
     },
     {
+      "key": "surface_touchscreen_register",
+      "cubes": 45,
+      "resolution": 128
+    },
+    {
+      "key": "surface_payment_scanner",
+      "cubes": 4,
+      "resolution": 128
+    },
+    {
+      "key": "surface_receipt_printer",
+      "cubes": 6,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_menu_stand",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_reserved_sign",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_service_bell",
+      "cubes": 96,
+      "resolution": 128
+    },
+    {
+      "key": "surface_tissue_box",
+      "cubes": 5,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_01",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_02",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_03",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_04",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_05",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_06",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_07",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_09",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_10",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_11",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_12",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_13",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_14",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_15",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_16",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_17",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_18",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_19",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_20",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_21",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_22",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_23",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_24",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_25",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_26",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_27",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_28",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_29",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_30",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_31",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_32",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_33",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_34",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_35",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_36",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_37",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_38",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_39",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_40",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_41",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_42",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_43",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_44",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_45",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_46",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_47",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_48",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_49",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_50",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_51",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_52",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_53",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_54",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_55",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_56",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_57",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_58",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_59",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_60",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_61",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_62",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_63",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_64",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_65",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_66",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_67",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_68",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_69",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_70",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_71",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_72",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_73",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_74",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_75",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_76",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_77",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_78",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_79",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_80",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_81",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_82",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_83",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_84",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_85",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_86",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_87",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_88",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_89",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_90",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_91",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_92",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_93",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_94",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_95",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_96",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_97",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_98",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_number_sign_99",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
       "key": "mini_kung_pao_chicken",
       "cubes": 31,
       "resolution": 128
@@ -6172,6 +7550,14 @@
     "mcpe_food_printer_scanner": 128,
     "mcpe_food_mac_studio_set": 128,
     "mcpe_food_surface_pro_keyboard": 128,
+    "mcpe_food_touchscreen_register": 128,
+    "mcpe_food_payment_scanner": 128,
+    "mcpe_food_receipt_printer": 128,
+    "mcpe_food_table_number_sign": 128,
+    "mcpe_food_menu_stand": 128,
+    "mcpe_food_reserved_sign": 128,
+    "mcpe_food_service_bell": 128,
+    "mcpe_food_tissue_box": 128,
     "mcpe_food_triple_tray": 128,
     "mcpe_food_prep_counter": 32,
     "mcpe_food_stove": 32,

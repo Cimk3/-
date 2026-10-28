@@ -613,6 +613,72 @@
           11.39
         ]
       }
+    },
+    {
+      "key": "touchscreen_register",
+      "zh": "触屏收银机",
+      "en": "Touchscreen Cash Register",
+      "model": "register",
+      "style": "register",
+      "pose": "fixed",
+      "placementFront": 180,
+      "screenFront": 0,
+      "selection": {
+        "origin": [
+          -6.12,
+          0,
+          -5.12
+        ],
+        "size": [
+          12.24,
+          10.15,
+          10.55
+        ]
+      }
+    },
+    {
+      "key": "payment_scanner",
+      "zh": "扫码支付终端",
+      "en": "Payment Scanner Display",
+      "model": "scanner",
+      "style": "scanner",
+      "pose": "fixed",
+      "placementFront": 180,
+      "screenFront": 0,
+      "selection": {
+        "origin": [
+          -3.12,
+          0,
+          -3.12
+        ],
+        "size": [
+          6.24,
+          6.15,
+          6.24
+        ]
+      }
+    },
+    {
+      "key": "receipt_printer",
+      "zh": "热敏小票机",
+      "en": "Thermal Receipt Printer",
+      "model": "receipt",
+      "style": "receipt",
+      "pose": "fixed",
+      "placementFront": 180,
+      "screenFront": 0,
+      "selection": {
+        "origin": [
+          -3.62,
+          0,
+          -3.62
+        ],
+        "size": [
+          7.24,
+          4.750000000000001,
+          9.440000000000001
+        ]
+      }
     }
   ],
   "geometrySource": "tools/electronics-art.mjs",

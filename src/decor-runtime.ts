@@ -1,6 +1,7 @@
 import {BlockPermutation,GameMode,ItemStack,system,world} from '@minecraft/server';
 import type {Block,Container,Entity,Player,PlayerInteractWithBlockBeforeEvent,Vector3} from '@minecraft/server';
-import {ActionFormData} from '@minecraft/server-ui';
+import {restaurantAccessories,numberKey,validTableNumber} from './restaurant-catalog.js';
+import {ActionFormData,ModalFormData} from '@minecraft/server-ui';
 import {compatibleVessels,foodById,foodByServing,id,servingKey,vesselByKey} from './catalog.js';
 import {adById,adSize,advertisements,surfaceIndex,tableItemById,tray,trayFoods} from './decor-catalog.js';
 import type {AdKey} from './decor-catalog.js';
@@ -13,7 +14,7 @@ import {isWallSupport,surfaceHeight} from './supports.js';
 
 export interface DecorRecord {
   version:1; uid:string; revision:number; dimension:string; support:Vector3;
-  kind:'surface'|'tray'|'ad'|'appliance'; definition:string; direction:string; native:boolean; yaw?:number;
+  kind:'surface'|'tray'|'ad'|'appliance'; definition:string; direction:string; native:boolean; yaw?:number; tableNumber?:number;
   slots:(string|null)[]; art?:AdKey; size?:number;
 }
 interface Snapshot {originals:(ItemStack|undefined)[];slots:Slots}
@@ -88,7 +89,7 @@ function visual(r:DecorRecord,type:string,part:string,index:number,position:Vect
   if(entity.getDynamicProperty('mcpe_food:part')!==part)entity.setDynamicProperty('mcpe_food:part',part);
   if(entity.getProperty('mcpe_food:index')!==index)entity.setProperty('mcpe_food:index',index);
   if(type==='mcpe_food:surface_display'){
-    const device=electronicsById.get(r.definition);
+    const device=electronicsById.get(r.definition)??restaurantAccessories.find(d=>id(d.key)===r.definition);
     const shape=device?device.key:r.kind==='tray'||/chopsticks|table_knife|fork|spoon/.test(r.definition)?'flat':/wine_glass|hotpot|bottle/.test(r.definition)?'tall':'medium';
     if(entity.getDynamicProperty('mcpe_food:shape')!==shape){entity.triggerEvent(`mcpe_food:shape_${shape}`);entity.setDynamicProperty('mcpe_food:shape',shape);}
   }
@@ -106,7 +107,7 @@ export function synchronize(r:DecorRecord):void {
     visual(r,'mcpe_food:advert_display','poster',advertisements.indexOf(ad),p);wanted.add('poster');
   }else{
     const height=surfaceHeight(safeBlock(r)),p={x:r.support.x+.5,y:r.support.y+height,z:r.support.z+.5};
-    if(!r.native){const index=surfaceIndex.get(r.definition);if(index===undefined)throw new Error('Unknown surface visual');visual(r,'mcpe_food:surface_display','base',index,p);wanted.add('base');}
+    if(!r.native){const index=surfaceIndex.get(r.definition===id('table_number_sign')?id(numberKey(validTableNumber(r.tableNumber)?r.tableNumber:8)):r.definition);if(index===undefined)throw new Error('Unknown surface visual');visual(r,'mcpe_food:surface_display','base',index,p);wanted.add('base');}
     if(r.kind==='tray')for(let slot=0;slot<3;slot++){
       const key=r.slots[slot];if(!key)continue;
       const index=trayFoods.findIndex(f=>id(f.key)===key);if(index<0)throw new Error('Unknown tray food');
@@ -159,6 +160,24 @@ async function trayMenu(p:Player,r:DecorRecord):Promise<void> {
     else {const item=r.slots[i];if(!item)return;plan=planInsert(io.snapshot(c!).slots,item,1,new ItemStack(item).maxAmount);next.slots[i]=null;}
     change(p,r,next,plan);
   }finally{io.sessions.finish(p.id,token);}
+}
+async function numberMenu(p:Player,r:DecorRecord):Promise<void>{
+ if(!click(p,r.uid)||!assertCurrent(p,r))return;
+ const c=io.inventory(p);if(!c||c.getItem(p.selectedSlotIndex))return;
+ const token=io.sessions.begin(p.id);if(token===undefined)return;
+ const english=p.hasTag('food_english'),empty=()=>!c.getItem(p.selectedSlotIndex);
+ try{
+  const choice=await new ActionFormData().title(english?'Table Number':'桌号牌').button(english?'Change number':'修改号码').button(english?'Collect sign':'收回桌号牌').show(p);
+  if(choice.canceled||!assertCurrent(p,r)||!empty())return;
+  if(choice.selection===1){if(!io.sessions.claim(p.id,token))return;const plan=planInsert(io.snapshot(c).slots,r.definition,1,new ItemStack(r.definition).maxAmount);if(!plan.ok)return;const before=io.snapshot(c);try{io.commit(c,before,plan.slots);removeDecor(r,false);}catch(error){restore(c,before);throw error;}return;}
+  if(choice.selection!==0)return;
+  const n=validTableNumber(r.tableNumber)?r.tableNumber:8,digits=Array.from({length:10},(_,i)=>String(i));
+  const response=await new ModalFormData().title(english?'Table 01–99':'桌号01—99').dropdown(english?'Tens':'十位',digits,{defaultValueIndex:Math.floor(n/10)}).dropdown(english?'Units':'个位',digits,{defaultValueIndex:n%10}).show(p);
+  if(response.canceled||!assertCurrent(p,r)||!empty()||!io.sessions.claim(p.id,token))return;
+  const [t,u]=response.formValues??[];if(typeof t!=='number'||typeof u!=='number'||!Number.isInteger(t)||!Number.isInteger(u)||t<0||t>9||u<0||u>9)return;
+  const number=t*10+u;if(!validTableNumber(number)){io.notify(p,'桌号必须是01至99。','Choose a number from 01 to 99.');return;}
+  const next=copy(r);next.tableNumber=number;next.revision++;change(p,r,next,{ok:true,slots:io.snapshot(c).slots});
+ }finally{io.sessions.finish(p.id,token);}
 }
 function surfaceInteract(p:Player,r:DecorRecord):void {
   if(!click(p,r.uid)||!assertCurrent(p,r))return;const c=io.inventory(p);if(!c)return;
@@ -282,7 +301,7 @@ export function installDecor(adapter:IO):void {
   system.run(loadDecorRecords);
   world.beforeEvents.playerInteractWithEntity.subscribe(event=>{
     if(!event.target.isValid||!event.target.typeId.startsWith('mcpe_food:'))return;const owner=event.target.getDynamicProperty('mcpe_food:owner'),r=records.get(String(owner));if(!r)return;
-    event.cancel=true;run(event.player,()=>r.kind==='tray'?trayMenu(event.player,copy(r)):r.kind==='ad'?posterMenu(event.player,copy(r)):surfaceInteract(event.player,copy(r)));
+    event.cancel=true;run(event.player,()=>r.kind==='tray'?trayMenu(event.player,copy(r)):r.kind==='ad'?posterMenu(event.player,copy(r)):r.definition===id('table_number_sign')?numberMenu(event.player,copy(r)):surfaceInteract(event.player,copy(r)));
   });
   world.beforeEvents.playerBreakBlock.subscribe(event=>{
     const candidates=[...records.values()].filter(r=>r.dimension===event.block.dimension.id&&((r.kind==='appliance'&&applianceCells(r).some(p=>same(p,event.block.location)))||(r.native&&same(anchor(r),event.block.location))||(r.kind==='ad'&&posterCells(r).some(p=>same(p,event.block.location)))));

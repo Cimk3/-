@@ -1,10 +1,10 @@
 {
-  "version": "0.5.3",
-  "archive": "FoodAndTable-0.5.3.mcaddon",
-  "sha256": "684913a37817cc24ed3ebe178bbe0961a95127f94c77127c9082498a504417f5",
-  "packFiles": 3498,
+  "version": "0.5.4",
+  "archive": "FoodAndTable-0.5.4.mcaddon",
+  "sha256": "51835894da4fa90bbaefaee1bd053bc8d5fe1110e311f1c1bc7cc3b02b295983",
+  "packFiles": 4388,
   "historyKind": "source development release",
   "fullSourceAvailable": true,
-  "automatedTests": 160,
+  "automatedTests": 166,
   "engineTested": false
 }

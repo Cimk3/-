@@ -1,4 +1,4 @@
-# 0.6.0 菜品与器皿索引
+# 0.7.0 菜品与器皿索引
 
 102 种可食成品，8 种不可食展示配菜，2 款静态铜锅，15 种餐具，3 款酒瓶摆件。新增内容通过创造物品栏或分组试用命令获取。
 
@@ -246,6 +246,9 @@
 | 花开日常 | mcpe_food:ad_city_florist | square |
 | 出发吧 | mcpe_food:ad_city_travel | wide |
 | 理想居所 | mcpe_food:ad_city_home | square |
+| Template AI | mcpe_food:ad_template_ai | wide |
+| Luna Studio（月-工作室） | mcpe_food:ad_luna_studio | portrait |
+| FT电脑 | mcpe_food:ad_ft_computer | square |
 
 ## 支撑表面
 
@@ -344,3 +347,67 @@
 - 小型碎纸机 / Compact Shredder：mcpe_food:compact_shredder
 
 办公文具8款、居家装饰8款，电子设备总41项。以上新品只通过创造栏或命令取得，无制作配方。
+
+
+## 0.7.0场景设备
+
+### 医疗器械
+
+- 壁挂式AED急救箱 / mcpe_food:aed_cabinet
+- 病人监护仪 / mcpe_food:patient_monitor
+- 超声诊断推车 / mcpe_food:ultrasound_cart
+- 输液泵与支架一体组 / mcpe_food:infusion_pump_stand
+- 心电图机 / mcpe_food:ecg_machine
+- 医疗器械推车 / mcpe_food:medical_trolley
+- 实验室显微镜 / mcpe_food:laboratory_microscope
+- 壁挂诊断器械组 / mcpe_food:wall_diagnostic_station
+
+### 娱乐设备
+
+- 立式街机 / mcpe_food:arcade_cabinet
+- 游戏主机与手柄套装 / mcpe_food:game_console_set
+- 壁挂电视 / mcpe_food:flat_screen_tv
+
+### 银行设备
+
+- ATM / mcpe_food:atm_terminal
+- 点钞机 / mcpe_food:banknote_counter
+- 排队取号机 / mcpe_food:queue_ticket_kiosk
+
+### AI工作设备
+
+- AI推理工作站 / mcpe_food:ai_inference_workstation
+- 双屏AI工作台 / mcpe_food:ai_dual_screen_desk
+- AI算力机柜 / mcpe_food:ai_compute_rack
+- 数位屏与绘图笔套装 / mcpe_food:pen_display_set
+
+### 家电
+
+- 壁挂空调 / mcpe_food:wall_air_conditioner
+- 微波炉 / mcpe_food:microwave_oven
+- 滚筒洗衣机 / mcpe_food:front_load_washer
+- 柜式空调 / mcpe_food:floor_air_conditioner
+- 落地风扇 / mcpe_food:standing_fan
+- 空气净化器 / mcpe_food:air_purifier
+- 扫地机器人与基站 / mcpe_food:robot_vacuum_dock
+- 电热水壶 / mcpe_food:electric_kettle
+- 电饭煲 / mcpe_food:rice_cooker
+- 洗碗机 / mcpe_food:dishwasher
+
+### 教学设备
+
+- 壁挂电子白板 / mcpe_food:electronic_whiteboard
+- 现代教学讲台 / mcpe_food:teaching_lectern
+- 实物展台／文档摄像仪 / mcpe_food:document_camera
+
+## 电子广告屏
+
+- 电子广告屏 · Template AI 2×2 / mcpe_food:digital_template_ai_2x2
+- 电子广告屏 · Luna Studio（月-工作室） 2×2 / mcpe_food:digital_luna_studio_2x2
+- 电子广告屏 · FT电脑 2×2 / mcpe_food:digital_ft_computer_2x2
+- 电子广告屏 · Template AI 4×4 / mcpe_food:digital_template_ai_4x4
+- 电子广告屏 · Luna Studio（月-工作室） 4×4 / mcpe_food:digital_luna_studio_4x4
+- 电子广告屏 · FT电脑 4×4 / mcpe_food:digital_ft_computer_4x4
+- 电子广告屏 · Template AI 4×3 / mcpe_food:digital_template_ai_4x3
+- 电子广告屏 · Luna Studio（月-工作室） 4×3 / mcpe_food:digital_luna_studio_4x3
+- 电子广告屏 · FT电脑 4×3 / mcpe_food:digital_ft_computer_4x3

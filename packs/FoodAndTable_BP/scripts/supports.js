@@ -9,6 +9,8 @@ export function surfaceHeight(block) {
         return 0;
     if (full.has(block.typeId))
         return 1;
+    if (vanillaSurfaceClasses[block.typeId]?.kind === 'stairs')
+        return block.permutation.getAllStates()['upside_down_bit'] === true ? 1 : 0;
     if (vanillaSurfaceClasses[block.typeId]?.kind !== 'slab')
         return 0;
     const s = block.permutation.getAllStates();

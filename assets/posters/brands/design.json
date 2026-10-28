@@ -1,0 +1,42 @@
+{
+  "source": "tools/brand-art.mjs",
+  "brands": [
+    {
+      "key": "ad_template_ai",
+      "series": "brand",
+      "zh": "Template AI",
+      "en": "Template AI",
+      "aspect": "wide"
+    },
+    {
+      "key": "ad_luna_studio",
+      "series": "brand",
+      "zh": "Luna Studio（月-工作室）",
+      "en": "Luna Studio",
+      "aspect": "portrait"
+    },
+    {
+      "key": "ad_ft_computer",
+      "series": "brand",
+      "zh": "FT电脑",
+      "en": "FT Computer",
+      "aspect": "square"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://www.pentagram.com/work/cohere",
+      "principle": "Modular graphic identity and expressive shapes"
+    },
+    {
+      "url": "https://www.ibm.com/design/language/ibm-logos/rebus/",
+      "principle": "Memorable graphic symbols and typography"
+    }
+  ],
+  "original": true,
+  "digitalLayouts": [
+    "256x256",
+    "256x192"
+  ],
+  "notes": "Original compositions; no external logo, photograph or artwork copied."
+}

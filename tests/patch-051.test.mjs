@@ -1,3 +1,4 @@
+import {scenarioProps,brandAdvertisements,digitalScreens} from '../.build/scenario-catalog.js';
 import {newProps,cityAdvertisements} from '../.build/lifestyle-catalog.js';
 import {restaurantItems} from '../.build/restaurant-catalog.js';
 import {emittedLidAngle} from '../tools/device-geometry.mjs';
@@ -23,7 +24,7 @@ test('0.5.1 additions and all old interfaces remain present alongside the seven 
   const old=read('tests/fixtures/v0.5.0.json'),expectedItems=[...newElectronics,...refrigerators,teaTray,...teaFoods].map(d=>'mcpe_food:'+d.key);
   for(const [kind,extra]of [['items',expectedItems],['blocks',[...newElectronics,teaTray].map(d=>'mcpe_food:'+d.key).concat(refrigeratorPartIds,servings.filter(s=>s.food.key==='tieguanyin').map(s=>'mcpe_food:'+s.key))]]){
     const current=readdirSync(`${bp}/${kind}`).map(f=>read(`${bp}/${kind}/${f}`)[`minecraft:${kind.slice(0,-1)}`].description.identifier);
-    assert.deepEqual(current.filter(k=>!old[kind].includes(k)&&![...newProps,...cityAdvertisements].some(d=>'mcpe_food:'+d.key===k)).sort(),extra.concat(officeElectronics.map(d=>'mcpe_food:'+d.key),restaurantItems.map(d=>'mcpe_food:'+d.key)).sort());for(const key of old[kind])assert.ok(current.includes(key));
+    assert.deepEqual(current.filter(k=>!old[kind].includes(k)&&![...newProps,...cityAdvertisements,...scenarioProps,...brandAdvertisements,...digitalScreens].some(d=>'mcpe_food:'+d.key===k)).sort(),extra.concat(officeElectronics.map(d=>'mcpe_food:'+d.key),restaurantItems.map(d=>'mcpe_food:'+d.key)).sort());for(const key of old[kind])assert.ok(current.includes(key));
   }
   assert.equal(expectedItems.length,12);assert.equal(foods.length,102);assert.equal(foods.filter(f=>f.category==='drink').length,11);assert.equal(electronics.length+refrigerators.length,41);
   for(const[pack,uuids]of Object.entries(old.uuids)){const m=read(`packs/${pack}/manifest.json`);assert.deepEqual([m.header.uuid,...m.modules.map(x=>x.uuid)],uuids);}
@@ -35,7 +36,7 @@ test('0.5.1 additions and all old interfaces remain present alongside the seven 
 
 test('old 354 surface indices remain unchanged and new tea/desktop appearances only append',()=>{
   const oldKeys=read('tests/fixtures/v0.5.0.json').blocks.map(k=>k.slice(10));
-  assert.equal(surfaceVisuals.length,496);assert.equal(surfaceVisuals.slice(339,354).map(d=>d.key).join(),originalElectronics.map(d=>d.key).join());
+  assert.equal(surfaceVisuals.length,534);assert.equal(surfaceVisuals.slice(339,354).map(d=>d.key).join(),originalElectronics.map(d=>d.key).join());
   for(const d of surfaceVisuals.slice(0,339))assert.ok(oldKeys.includes(d.key));
   assert.deepEqual(surfaceVisuals.slice(354,361).map(d=>d.key),[...newElectronics,teaTray,...servings.filter(s=>s.food.key==='tieguanyin')].map(d=>d.key));
 });
@@ -77,7 +78,7 @@ test('only requested legacy screen color maps change and all other device color 
 
 test('fridges are six static items, nine quiet immovable parts, with no native loot duplication',()=>{
   assert.equal(refrigerators.length,6);assert.equal(refrigeratorPartIds.length,9);
-  for(const r of refrigerators){assert.ok(refrigeratorCubes(r).length<=256);const item=read(`${bp}/items/${r.key}.json`)['minecraft:item'];assert.equal(item.description.menu_category.group,'mcpe_food:group_electronics');assert.equal(item.components['minecraft:food'],undefined);
+  for(const r of refrigerators){assert.ok(refrigeratorCubes(r).length<=256);const item=read(`${bp}/items/${r.key}.json`)['minecraft:item'];assert.equal(item.description.menu_category.group,'mcpe_food:group_home_appliances');assert.equal(item.components['minecraft:food'],undefined);
     for(let p=0;p<r.height;p++){const key=r.key+(p?'_upper':''),b=read(`${bp}/blocks/${key}.json`)['minecraft:block'];assert.equal(b.description.menu_category.category,'none');assert.equal(b.components['minecraft:collision_box'],true);assert.deepEqual(b.components['minecraft:movable'],{movement_type:'immovable'});assert.ok(b.components['mcpe_food:appliance']);assert.equal(b.components['minecraft:destruction_particles'].particle_count,0);assert.deepEqual(read(`${bp}/loot_tables/blocks/${key}.json`).pools,[]);}
   }
   for(const finish of ['rose_gold','white','black']){const mer=decodeRGBA(readFileSync(`${rp}/textures/blocks/mcpe_food/ware_fridge_${finish}_mer.png`));assert.equal(mer.width,128);assert.ok(mer.pixels.every((v,i)=>i%4!==1||v===0));assert.equal(mer.pixels[0],finish==='rose_gold'?195:0);}

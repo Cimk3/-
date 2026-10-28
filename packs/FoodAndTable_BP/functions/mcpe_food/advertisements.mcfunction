@@ -18,3 +18,6 @@ give @s mcpe_food:ad_city_bookshop 4
 give @s mcpe_food:ad_city_florist 4
 give @s mcpe_food:ad_city_travel 4
 give @s mcpe_food:ad_city_home 4
+give @s mcpe_food:ad_template_ai 4
+give @s mcpe_food:ad_luna_studio 4
+give @s mcpe_food:ad_ft_computer 4

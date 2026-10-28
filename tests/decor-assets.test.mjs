@@ -19,17 +19,17 @@ test('all fifteen tableware items are in the items group with no construction du
   for(const v of [...vessels,...cutlery,tray,teaTray]){const item=read(`${bp}/items/${v.key}.json`)['minecraft:item'],block=read(`${bp}/blocks/${v.key}.json`)['minecraft:block'];assert.deepEqual(item.description.menu_category,{category:'items',group:'mcpe_food:group_tableware'});assert.equal(block.description.menu_category.category,'none');}
 });
 test('twelve independently generated posters have thirty-six non-stretched sizes, bilingual masters and matching matte MER',()=>{
-  assert.equal(advertisements.length,20);assert.equal(advertisements.filter(a=>a.key.includes('japanese')).length,2);
+  assert.equal(advertisements.length,23);assert.equal(advertisements.filter(a=>a.key.includes('japanese')).length,2);
   for(const ad of advertisements){
     const color=decodeRGBA(readFileSync(`${rp}/textures/entity/mcpe_food/${ad.key}.png`)),mer=decodeRGBA(readFileSync(`${rp}/textures/entity/mcpe_food/${ad.key}_mer.png`));
     for(let size=0;size<3;size++){const[w,h]=adSize(ad,size);assert.equal(w/h,color.width/color.height);assert.ok(w<=6&&h<=6);}
     assert.equal(color.width,mer.width);assert.equal(color.height,mer.height);assert.ok(mer.pixels.every((v,i)=>i%4===0||i%4===1?v===0:true));
-    if(ad.series==='city'){assert.ok(color.width<=256&&color.height<=256);}else assert.ok(color.width>=1024&&color.height>=1024);if(ad.series!=='city')assert.ok(readFileSync(`assets/posters/originals/${ad.key}.png`).length>100000);
+    if(ad.series==='city'||ad.series==='brand'){assert.ok(color.width<=256&&color.height<=256);}else assert.ok(color.width>=1024&&color.height>=1024);if(ad.series!=='city'&&ad.series!=='brand')assert.ok(readFileSync(`assets/posters/originals/${ad.key}.png`).length>100000);
   }
 });
 test('tray miniatures fit the whole scene budget and cover every plate dish including seven display platters',()=>{
   const report=read('display-report.json');assert.equal(trayFoods.length,70);assert.equal(trayFoods.filter(f=>!f.edible).length,7);assert.ok(report.trayCubes<=112);assert.ok(report.maxMiniCubes<=48);assert.ok(report.fullTrayCubeBudget<=256);
-  assert.equal(report.surfaceDefinitions,surfaceVisuals.length);assert.equal(report.entityTypes,3);
+  assert.equal(report.surfaceDefinitions,surfaceVisuals.length);assert.equal(report.entityTypes,4);
 });
 test('paper cups are separate placeable displays with private branding and one self-drop',()=>{
   for(const p of paperCups){const item=read(`${bp}/items/${p.key}.json`)['minecraft:item'];assert.equal(item.components['minecraft:food'],undefined);assert.equal(item.components['minecraft:use_animation'],undefined);assert.equal(item.components['minecraft:block_placer'].block,id(p.key));assert.equal(item.description.menu_category.group,'mcpe_food:group_drink');const drops=read(`${bp}/loot_tables/blocks/${p.key}.json`).pools;assert.equal(drops.length,1);assert.equal(drops[0].entries[0].name,id(p.key));}

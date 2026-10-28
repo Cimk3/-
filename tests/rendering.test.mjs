@@ -1,3 +1,4 @@
+import {scenarioProps,wallVariants,digitalScreens} from '../.build/scenario-catalog.js';
 import {lifestyleItems} from '../.build/lifestyle-catalog.js';
 import {restaurantAccessories} from '../.build/restaurant-catalog.js';
 import {refrigerators,refrigeratorPartIds} from '../.build/appliance-catalog.js';
@@ -23,7 +24,7 @@ test('current release declares cross-platform Vibrant Visuals compatibility with
   assert.deepEqual(read(bp,'manifest.json').dependencies.find(x=>x.uuid===m.header.uuid).version,version);
 });
 test('all new blocks disable destruction debris including all crop stages',()=>{
-  const files=readdirSync(path.join(bp,'blocks'));assert.equal(files.length,servings.length+vessels.length+cutlery.length+hotpots.length+bottleProps.length+paperCups.length+2+stations.length+crops.length+electronics.length+refrigeratorPartIds.length+restaurantAccessories.length+lifestyleItems.length);
+  const files=readdirSync(path.join(bp,'blocks'));assert.equal(files.length,servings.length+vessels.length+cutlery.length+hotpots.length+bottleProps.length+paperCups.length+2+stations.length+crops.length+electronics.length+refrigeratorPartIds.length+restaurantAccessories.length+lifestyleItems.length+scenarioProps.length);
   for(const file of files){const b=read(bp,`blocks/${file}`)['minecraft:block'];assert.deepEqual(b.components['minecraft:destruction_particles'],{texture:'mcpe_food_break_dust',tint_method:'none',particle_count:0});
     for(const p of b.permutations??[])assert.ok(!p.components['minecraft:destruction_particles']||p.components['minecraft:destruction_particles'].particle_count===0);}
 });
@@ -41,8 +42,8 @@ test('every registered custom block texture has a local valid PBR texture set',(
     assert.equal(set.metalness_emissive_roughness_subsurface,undefined);}
 });
 test('all item textures have matte non-emissive PBR data and retain alpha color maps',()=>{
-  assert.equal(Object.keys(icons()).length,dishes.length+vessels.length+cutlery.length+hotpots.length+bottleProps.length+paperCups.length+2+advertisements.length+materials.length+crops.length+stations.length+electronics.length+refrigerators.length+restaurantAccessories.length+lifestyleItems.length);
-  const detailed=new Set([...dishes,...vessels,...cutlery,...hotpots,...bottleProps,...paperCups,tray,teaTray,...advertisements,...electronics,...refrigerators,...restaurantAccessories,...lifestyleItems].map(x=>x.key));
+  assert.equal(Object.keys(icons()).length,dishes.length+vessels.length+cutlery.length+hotpots.length+bottleProps.length+paperCups.length+2+advertisements.length+materials.length+crops.length+stations.length+electronics.length+refrigerators.length+restaurantAccessories.length+lifestyleItems.length+scenarioProps.length+wallVariants.length+digitalScreens.length);
+  const detailed=new Set([...dishes,...vessels,...cutlery,...hotpots,...bottleProps,...paperCups,tray,teaTray,...advertisements,...electronics,...refrigerators,...restaurantAccessories,...lifestyleItems,...scenarioProps,...wallVariants,...digitalScreens].map(x=>x.key));
   for(const e of Object.values(icons())){const set=read(rp,`${e.textures}.texture_set.json`)['minecraft:texture_set'];assert.deepEqual(set.metalness_emissive_roughness,[0,0,205]);assert.equal(set.color,path.basename(e.textures));
     const color=image(path.join(rp,`${e.textures}.png`));assert.equal(color.width,detailed.has(set.color)?128:32);assert.ok(color.pixels.some((v,i)=>i%4===3&&v===0));}
 });

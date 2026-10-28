@@ -1,3 +1,4 @@
+import {scenarioProps,brandAdvertisements,digitalScreens} from '../.build/scenario-catalog.js';
 import {newProps,cityAdvertisements} from '../.build/lifestyle-catalog.js';
 import {restaurantItems} from '../.build/restaurant-catalog.js';
 import {refrigerators} from '../.build/appliance-catalog.js';
@@ -43,9 +44,9 @@ test('0.4.3 identifiers, package UUIDs, crops, menus, crafting, drops and old co
 test('private electronics group, bilingual names and both trial commands contain all thirty-two items exactly once',()=>{
   const groups=read(`${bp}/item_catalog/crafting_item_catalog.json`)['minecraft:crafting_items_catalog'].categories[0].groups;
   const group=groups.find(g=>g.group_identifier.name==='mcpe_food:group_electronics');assert.ok(group);
-  assert.equal(group.group_identifier.icon,id('desktop_computer'));assert.deepEqual(group.items,[...electronics,...refrigerators].map(d=>id(d.key)));
+  assert.equal(group.group_identifier.icon,id('desktop_computer'));assert.deepEqual(group.items,electronics.map(d=>id(d.key)));
   for(const d of electronics){const i=read(`${bp}/items/${d.key}.json`)['minecraft:item'],b=read(`${bp}/blocks/${d.key}.json`)['minecraft:block'];assert.deepEqual(i.description.menu_category,{category:'items',group:'mcpe_food:group_electronics'});assert.equal(b.description.menu_category.category,'none');assert.equal(b.components['minecraft:light_emission'],undefined);const drops=read(`${bp}/loot_tables/blocks/${d.key}.json`).pools;assert.equal(drops.length,1);assert.equal(drops[0].entries[0].name,id(d.key));}
-  for(const [command,list] of [['electronics',[...electronics,...refrigerators]],['tasting_new',[...newProps,...cityAdvertisements]]])assert.deepEqual(readFileSync(`${bp}/functions/mcpe_food/${command}.mcfunction`,'utf8').trim().split('\n'),list.map(d=>`give @s ${id(d.key)} 4`));
+  for(const [command,list] of [['electronics',[...electronics,...refrigerators]],['tasting_new',[...scenarioProps,...brandAdvertisements,...digitalScreens]]])assert.deepEqual(readFileSync(`${bp}/functions/mcpe_food/${command}.mcfunction`,'utf8').trim().split('\n'),list.map(d=>`give @s ${id(d.key)} 4`));
   for(const locale of ['zh_CN','en_US']){const lang=readFileSync(`${rp}/texts/${locale}.lang`,'utf8');assert.ok(lang.includes('mcpe_food:group_electronics='));for(const d of electronics)assert.ok(lang.includes(`item.mcpe_food:${d.key}.name=${locale==='zh_CN'?d.zh:d.en}`));}
 });
 

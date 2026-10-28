@@ -1,3 +1,4 @@
+import {electronics} from '../.build/electronics-catalog.js';import {refrigerators} from '../.build/appliance-catalog.js';
 import {readFileSync,appendFileSync} from 'node:fs';
 import {restaurantItems,restaurantAccessories} from '../.build/restaurant-catalog.js';
 import {canvas,text,blit,saveImage} from './art.mjs';
@@ -10,5 +11,5 @@ for(const [row,key]of ['table_number_sign','menu_stand','reserved_sign'].entries
  text(image,key.toUpperCase(),20,row*330+345,1);
 }
 saveImage('previews/restaurant_signs.png',image);
-const target='docs/CATALOG.md',content=readFileSync(target,'utf8');if(!content.includes('## 餐厅用品（0.5.4）'))appendFileSync(target,'\n\n## 餐厅用品（0.5.4）\n\n'+restaurantItems.map(d=>`- ${d.zh} / ${d.en}：mcpe_food:${d.key}`).join('\n')+'\n\n桌号仅一个创造物品，空手设置01—99；默认08，收回重放重置。其余物品静态。电子设备41项，餐厅用品5项。\n');
+const target='docs/CATALOG.md',content=readFileSync(target,'utf8');if(!content.includes('## 餐厅用品（0.5.4）'))appendFileSync(target,'\n\n## 餐厅用品（0.5.4）\n\n'+restaurantItems.map(d=>`- ${d.zh} / ${d.en}：mcpe_food:${d.key}`).join('\n')+'\n\n桌号仅一个创造物品，空手设置01—99；默认08，收回重放重置。其余物品静态。电子设备'+(electronics.length+refrigerators.length)+'项，餐厅用品'+restaurantAccessories.length+'项。\n');
 

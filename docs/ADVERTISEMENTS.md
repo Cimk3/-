@@ -1,6 +1,21 @@
-# 0.5.2独立广告画目录
+# 独立广告画目录（当前0.7.0）
 
-12幅广告画，均有小／中／大三档。每幅一个物品，不替换原版随机画。
+## 0.7.0更新
+
+0.7.0纸面广告共23幅、69种尺寸；新增Template AI横幅、Luna Studio（月-工作室）竖幅、FT电脑方幅。另有9个独立电子广告屏物品，每品牌各2×2、4×4、4×3，宽×高、单位格，画面固定；背墙逐格完整检查，左下角锚定。电子屏独立于纸面尺寸索引。
+
+| 新品牌 | 物品ID | 比例 | 世界尺寸 |
+|---|---|---|---|
+| Template AI | mcpe_food:ad_template_ai | 2:1 | 2×1／4×2／6×3 |
+| Luna Studio（月-工作室） | mcpe_food:ad_luna_studio | 1:2 | 1×2／2×4／3×6 |
+| FT电脑 | mcpe_food:ad_ft_computer | 1:1 | 1×1／2×2／3×3 |
+
+电子屏ID为mcpe_food:digital_template_ai_2x2等，品牌后缀template_ai／luna_studio／ft_computer，尺寸后缀2x2／4x4／4x3。方屏复用同品牌方形画布，4×3使用独立横向版式。屏面低强度发光，边框／背板和纸面广告均不发光。
+
+以下保留旧20幅广告的目录，历史数量按0.6.0理解。
+
+
+20幅广告画（旧12幅高清食品广告＋新8幅城市像素广告），共60种尺寸，均有小／中／大三档。每幅一个物品，不替换原版随机画。
 
 | 系列 | 中文标题 | 英文副标题 | 物品ID | 比例 | 小／中／大 |
 |---|---|---|---|---|---|
@@ -16,6 +31,16 @@
 | 中餐 | 清蒸鲜味 | Steamed Grouper | `mcpe_food:ad_grouper` | 2:1 | 2×1 / 4×2 / 6×3 |
 | 中餐 | 家常好味 | Chinese Bistro | `mcpe_food:ad_home_cooking` | 1:1 | 1×1 / 2×2 / 3×3 |
 | 甜品店 | 甜品时光 | Patisserie Moments | `mcpe_food:ad_dessert` | 1:2 | 1×2 / 2×4 / 3×6 |
+| 城市商业 | 创作工作站 | CREATE YOUR WORLD | `mcpe_food:ad_city_computer` | 2:1 | 2×1 / 4×2 / 6×3 |
+| 城市商业 | 下一关见 | NEXT LEVEL | `mcpe_food:ad_city_gaming` | 2:1 | 2×1 / 4×2 / 6×3 |
+| 城市商业 | 定格此刻 | CAPTURE THE MOMENT | `mcpe_food:ad_city_camera` | 1:2 | 1×2 / 2×4 / 3×6 |
+| 城市商业 | 城市声场 | CITY SOUND | `mcpe_food:ad_city_music` | 1:2 | 1×2 / 2×4 / 3×6 |
+| 城市商业 | 翻开新世界 | OPEN A NEW WORLD | `mcpe_food:ad_city_bookshop` | 1:2 | 1×2 / 2×4 / 3×6 |
+| 城市商业 | 花开日常 | EVERYDAY BLOOMS | `mcpe_food:ad_city_florist` | 1:1 | 1×1 / 2×2 / 3×3 |
+| 城市商业 | 出发吧 | GO EXPLORE | `mcpe_food:ad_city_travel` | 2:1 | 2×1 / 4×2 / 6×3 |
+| 城市商业 | 理想居所 | MAKE ROOM FOR LIFE | `mcpe_food:ad_city_home` | 1:1 | 1×1 / 2×2 / 3×3 |
+
+新横幅256×128、竖幅128×256、方形256×256，像素风格；旧12幅海报保持原1024／2048px画面和解码像素。
 
 ## 放置与收回
 
@@ -26,11 +51,12 @@
 ## 源文件与预览
 
 - originals：12张内置image_gen生成的原始主图。
-- masters：附中文标题、英文副标题及边框的游戏主贴图。
+- masters：20份带标题和边框的游戏主贴图；旧12幅高清图与新8幅像素图并存。
 - layout.json：排版文字和比例。
 - generation.json：生成提示词、主题和原图项目路径。
-- tools/poster-layout.py：独立中文排版脚本。
+- tools/poster-layout.py：旧12幅高清食品海报的独立中文排版脚本。
+- city：新8幅城市广告的像素绘图源、中文栅格、配色与layout；生成入口tools/city-posters.mjs。
 
 主图没有价格、真实餐厅商标或水印。各尺寸复用同一构图，普通模式与灵动视效均读取同一色图。MER为哑光非金属，无自发光。
 
-[海报总览](../previews/advertisements.png) / [实际UV墙面预览](../previews/poster_wall.png)。两者都是离线图片，不代表实际游戏画面。
+[旧12幅食品海报总览](../previews/advertisements.png) / [新8幅城市像素广告](../previews/city_advertisements.png) / [实际UV墙面预览](../previews/poster_wall.png)。这些都是离线图片，不代表实际游戏画面。

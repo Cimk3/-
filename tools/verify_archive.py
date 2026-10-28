@@ -74,13 +74,14 @@ def verify():
     assert any(dep.get("uuid") == manifests[1]["header"]["uuid"] for dep in manifests[0]["dependencies"])
     build = json.loads((ROOT / "build-report.json").read_text(encoding="utf-8"))
     assert pbr_sets == build["pbrTextureSets"]
-    assert quiet_blocks == build["servingVariants"] + build["tableware"] + build.get("paperCups", 0) + build["hotpots"] + build.get("bottleProps", 0) + build["stations"] + build["crops"] + build.get("electronics", 0) - build.get("refrigerators", 0) + build.get("refrigeratorParts", 0) + build.get("restaurantAccessories", 0) + build.get("officeStationery", 0) + build.get("homeDecor", 0)
+    assert quiet_blocks == build["servingVariants"] + build["tableware"] + build.get("paperCups", 0) + build["hotpots"] + build.get("bottleProps", 0) + build["stations"] + build["crops"] + build.get("electronics", 0) - build.get("refrigerators", 0) + build.get("refrigeratorParts", 0) + build.get("restaurantAccessories", 0) + build.get("officeStationery", 0) + build.get("homeDecor", 0) + build.get("scenarioProps", 0)
     for line in (DIST / "SHA256SUMS.txt").read_text(encoding="utf-8").splitlines():
         checksum, name = line.split("  ", 1)
         assert hashlib.sha256((DIST / name).read_bytes()).hexdigest() == checksum
     with ZipFile(DIST / f"FoodAndTable-source-{VERSION}.zip") as source:
         assert source.testzip() is None, "Source ZIP failed CRC"
         assert json.loads(source.read("package.json"))["version"] == VERSION
+        assert "AGENTS.md" in source.namelist()
         assert "src/decor-runtime.ts" in source.namelist()
         assert "src/electronics-catalog.ts" in source.namelist()
         assert len([f for f in source.namelist() if f.startswith("assets/electronics/") and f.endswith(".png")]) == 2 * (build["electronics"] - build["refrigerators"])
@@ -88,7 +89,7 @@ def verify():
         assert len([f for f in source.namelist() if f.startswith("assets/posters/masters/") and f.endswith(".png")]) == build["advertisements"]
     report = {"status": "passed", "outerCRC": "passed", "nestedCRC": "passed", "standaloneMatchesNested": True,
               "checksums": "passed", "packs": packs, "totalPackFiles": sum(p["files"] for p in packs), "pbrTextureSets": pbr_sets,
-              "customBlocksWithoutDestructionDebris": quiet_blocks, "sourceCRC": "passed", "sourceArtworks": 12, "gameEngineTested": False}
+              "customBlocksWithoutDestructionDebris": quiet_blocks, "sourceCRC": "passed", "sourceArtworks": len(list((ROOT / "assets/posters/originals").glob("*.png"))), "advertisements": build["advertisements"], "digitalScreens": build.get("digitalScreens", 0), "gameEngineTested": False}
     (ROOT / "archive-report.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     print(f"Archive validation passed: {report['totalPackFiles']} nested pack files, all CRCs and SHA-256 checksums match.")
 

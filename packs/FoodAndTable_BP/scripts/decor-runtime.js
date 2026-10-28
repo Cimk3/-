@@ -1,3 +1,4 @@
+import { scenarioById, wallById, digitalById, digitalScreens } from './scenario-catalog.js';
 import { BlockPermutation, GameMode, ItemStack, system, world } from '@minecraft/server';
 import { lifestyleItems } from './lifestyle-catalog.js';
 import { restaurantAccessories, numberKey, validTableNumber } from './restaurant-catalog.js';
@@ -27,18 +28,15 @@ catch {
 } };
 const empty = (b) => b?.typeId === 'minecraft:air';
 const isCreative = (p) => p.getGameMode() === GameMode.Creative;
-const recordForSupport = (dimension, p) => [...records.values()].find(r => r.kind !== 'ad' && r.dimension === dimension && same(r.support, p));
+const recordForSupport = (dimension, p) => [...records.values()].find(r => !isPanel(r) && r.dimension === dimension && same(r.support, p));
 const storageKey = (r) => PREFIX + r.uid;
 function save(r) { world.setDynamicProperty(storageKey(r), JSON.stringify(r)); records.set(r.uid, r); }
 function unique() { const n = Number(world.getDynamicProperty('mcpe_food:decor_serial') ?? 0) + 1; world.setDynamicProperty('mcpe_food:decor_serial', n); return `d${n}`; }
 function near(p, r) {
     if (!p.isValid || p.dimension.id !== r.dimension)
         return false;
-    if (r.kind === 'ad') {
-        const ad = advertisements.find(a => a.key === r.art);
-        if (!ad)
-            return false;
-        const [w, h] = adSize(ad, r.size ?? 0), right = rights[r.direction], normal = normals[r.direction];
+    if (isPanel(r)) {
+        const [w, h] = panelSize(r), right = rights[r.direction], normal = normals[r.direction];
         const d = { x: p.location.x - r.support.x - .5, y: p.location.y - r.support.y, z: p.location.z - r.support.z - .5 };
         const horizontal = d.x * right.x + d.z * right.z, vertical = d.y, depth = d.x * normal.x + d.z * normal.z;
         return Math.hypot(Math.max(-.5 - horizontal, 0, horizontal - (w - .5)), Math.max(-vertical, 0, vertical - h), depth) < 7;
@@ -53,7 +51,7 @@ function assertCurrent(p, r) {
 }
 /** undefined means unloaded; it must never be treated as missing support. */
 function surfaceValid(r) {
-    if (r.kind === 'ad')
+    if (isPanel(r))
         return adFits(r);
     const b = safeBlock(r);
     if (!b)
@@ -75,20 +73,55 @@ function surfaceValid(r) {
     const above = safeBlock(r, anchor(r));
     if (!above)
         return undefined;
-    return r.native ? above.typeId === id(tray.key) : empty(above);
+    if (r.native)
+        return above.typeId === id(tray.key) && !overlaps(r);
+    for (const p of occupiedCells(r)) {
+        const b = safeBlock(r, p);
+        if (!b)
+            return undefined;
+        if (!empty(b))
+            return false;
+    }
+    return !overlaps(r);
+}
+function isPanel(r) { return r.kind === 'ad' || r.kind === 'digital_ad' || !!r.wallFace; }
+function panelSize(r) {
+    if (r.kind === 'digital_ad') {
+        const d = digitalById.get(r.definition);
+        return d ? [d.width, d.height] : [0, 0];
+    }
+    if (r.kind === 'ad') {
+        const ad = advertisements.find(a => a.key === r.art);
+        return ad ? adSize(ad, r.size ?? 0) : [0, 0];
+    }
+    return [1, 1];
 }
 function posterCells(r) {
-    const ad = advertisements.find(a => a.key === r.art);
-    if (!ad)
+    const [w, h] = panelSize(r), right = rights[r.wallFace ?? r.direction];
+    if (!right)
         return [];
-    const [w, h] = adSize(ad, r.size ?? 0), right = rights[r.direction], cells = [];
+    const cells = [];
     for (let x = 0; x < w; x++)
         for (let y = 0; y < h; y++)
             cells.push(add(add(r.support, right, x), { x: 0, y: 1, z: 0 }, y));
     return cells;
 }
+function occupiedCells(r) {
+    if (isPanel(r)) {
+        const n = normals[r.wallFace ?? r.direction];
+        return n ? posterCells(r).map(p => add(p, n)) : [];
+    }
+    if (r.kind === 'appliance')
+        return applianceCells(r);
+    const count = Math.max(1, Math.ceil((scenarioById.get(r.definition)?.height ?? 1) + surfaceHeight(safeBlock(r)) - 1));
+    return Array.from({ length: count }, (_, i) => add(r.support, { x: 0, y: i + 1, z: 0 }));
+}
+function overlaps(r) {
+    const cells = occupiedCells(r);
+    return [...records.values()].some(other => other.uid !== r.uid && other.dimension === r.dimension && occupiedCells(other).some(p => cells.some(c => same(p, c))));
+}
 export function adFits(r) {
-    const cells = posterCells(r), n = normals[r.direction];
+    const cells = posterCells(r), n = normals[r.wallFace ?? r.direction];
     if (!cells.length || !n)
         return false;
     for (const p of cells) {
@@ -98,11 +131,7 @@ export function adFits(r) {
         if (!isWallSupport(wall) || !empty(front))
             return false;
     }
-    const set = new Set(cells.map(p => `${p.x},${p.y},${p.z}`));
-    for (const other of records.values())
-        if (other.kind === 'ad' && other.uid !== r.uid && other.dimension === r.dimension && other.direction === r.direction && posterCells(other).some(p => set.has(`${p.x},${p.y},${p.z}`)))
-            return false;
-    return true;
+    return !overlaps(r);
 }
 function visuals(r) { return dim(r).getEntities({ families: ['mcpe_food_display'] }).filter(e => e.getDynamicProperty('mcpe_food:owner') === r.uid); }
 function visual(r, type, part, index, position) {
@@ -116,8 +145,8 @@ function visual(r, type, part, index, position) {
         entity.setDynamicProperty('mcpe_food:part', part);
     if (entity.getProperty('mcpe_food:index') !== index)
         entity.setProperty('mcpe_food:index', index);
-    if (type === 'mcpe_food:surface_display') {
-        const device = electronicsById.get(r.definition) ?? [...restaurantAccessories, ...lifestyleItems].find(d => id(d.key) === r.definition);
+    if (type === 'mcpe_food:surface_display' && !r.wallFace) {
+        const device = electronicsById.get(r.definition) ?? scenarioById.get(r.definition) ?? [...restaurantAccessories, ...lifestyleItems].find(d => id(d.key) === r.definition);
         const shape = device ? device.key : r.kind === 'tray' || /chopsticks|table_knife|fork|spoon/.test(r.definition) ? 'flat' : /wine_glass|hotpot|bottle/.test(r.definition) ? 'tall' : 'medium';
         if (entity.getDynamicProperty('mcpe_food:shape') !== shape) {
             entity.triggerEvent(`mcpe_food:shape_${shape}`);
@@ -139,7 +168,18 @@ export function synchronize(r) {
     if (r.kind === 'appliance')
         return;
     const wanted = new Set();
-    if (r.kind === 'ad') {
+    if (r.kind === 'digital_ad') {
+        const d = digitalById.get(r.definition);
+        const n = normals[r.direction], right = rights[r.direction];
+        visual(r, 'mcpe_food:digital_ad_display', 'screen', digitalScreens.indexOf(d), add(add({ x: r.support.x + .5, y: r.support.y, z: r.support.z + .5 }, right, (d.width - 1) / 2), n, .505));
+        wanted.add('screen');
+    }
+    else if (r.wallFace) {
+        const n = normals[r.wallFace];
+        visual(r, 'mcpe_food:surface_display', 'base', surfaceIndex.get(id(wallById.get(r.definition))), add({ x: r.support.x + .5, y: r.support.y, z: r.support.z + .5 }, n, .505));
+        wanted.add('base');
+    }
+    else if (r.kind === 'ad') {
         const ad = advertisements.find(a => a.key === r.art);
         const [w] = adSize(ad, r.size ?? 0), n = normals[r.direction], right = rights[r.direction];
         const p = add(add({ x: r.support.x + .5, y: r.support.y, z: r.support.z + .5 }, right, (w - 1) / 2), n, .521);
@@ -220,7 +260,7 @@ export function removeDecor(requested, drop) {
         if (r.kind === 'appliance') {
             const cells = applianceCells(r);
             for (const child of [...records.values()])
-                if (child.uid !== r.uid && child.dimension === r.dimension && ((child.kind !== 'ad' && cells.some(p => same(p, child.support))) || (child.kind === 'ad' && posterCells(child).some(p => cells.some(c => same(p, c))))))
+                if (child.uid !== r.uid && child.dimension === r.dimension && ((child.kind !== 'ad' && cells.some(p => same(p, child.support))) || (isPanel(child) && posterCells(child).some(p => cells.some(c => same(p, c))))))
                     removeDecor(child, drop);
         }
         if (drop)
@@ -357,7 +397,62 @@ async function numberMenu(p, r) {
         io.sessions.finish(p.id, token);
     }
 }
+async function staticMenu(p, r) {
+    if (!click(p, r.uid) || !assertCurrent(p, r))
+        return;
+    const c = io.inventory(p), selected = p.selectedSlotIndex;
+    if (!c || c.getItem(selected))
+        return;
+    const token = io.sessions.begin(p.id);
+    if (token === undefined)
+        return;
+    try {
+        const response = await new ActionFormData().title('收回摆件 / Collect display').button('收回 / Collect').show(p);
+        if (response.canceled || response.selection !== 0 || p.selectedSlotIndex !== selected || c.getItem(selected) || !io.sessions.claim(p.id, token) || !assertCurrent(p, r))
+            return;
+        const before = io.snapshot(c), plan = isCreative(p) ? { ok: true, slots: before.slots } : planInsert(before.slots, r.definition, 1, new ItemStack(r.definition).maxAmount);
+        if (!plan.ok)
+            return;
+        try {
+            io.commit(c, before, plan.slots);
+            removeDecor(r, false);
+        }
+        catch (error) {
+            restore(c, before);
+            throw error;
+        }
+    }
+    finally {
+        io.sessions.finish(p.id, token);
+    }
+}
+function createWall(p, block, definition, face) {
+    if (!p.isValid || !normals[face])
+        return;
+    const c = io.inventory(p), selected = p.selectedSlotIndex;
+    if (!c || c.getItem(selected)?.typeId !== definition)
+        return;
+    const r = { version: 1, uid: unique(), revision: 0, dimension: block.dimension.id, support: { ...block.location }, kind: digitalById.has(definition) ? 'digital_ad' : 'surface', definition, direction: face, native: false, slots: [], ...(digitalById.has(definition) ? {} : { wallFace: face }) };
+    if (!near(p, r) || adFits(r) !== true)
+        return;
+    const before = io.snapshot(c), plan = isCreative(p) ? { ok: true, slots: before.slots } : planServe(before.slots, selected, definition);
+    if (!plan.ok)
+        return;
+    try {
+        save(r);
+        io.commit(c, before, plan.slots);
+        synchronize(r);
+    }
+    catch (error) {
+        restore(c, before);
+        if (records.has(r.uid))
+            removeDecor(r, false);
+        throw error;
+    }
+}
 function surfaceInteract(p, r) {
+    if (scenarioById.has(r.definition) || r.wallFace || r.kind === 'digital_ad' || ['mcpe_food:landscape_frame', 'mcpe_food:table_clock'].includes(r.definition))
+        return staticMenu(p, r);
     if (!click(p, r.uid) || !assertCurrent(p, r))
         return;
     const c = io.inventory(p);
@@ -456,14 +551,14 @@ async function posterMenu(p, r, placing = false) {
 function direction(p) { const angle = ((p.getRotation().y % 360) + 360) % 360; return angle < 45 || angle >= 315 ? 'south' : angle < 135 ? 'west' : angle < 225 ? 'north' : 'east'; }
 function createSurface(p, support, definition) {
     const height = surfaceHeight(support), c = io.inventory(p);
-    if (!height || !c || recordForSupport(support.dimension.id, support.location))
+    if (scenarioById.get(definition)?.wallOnly || !height || !c || recordForSupport(support.dimension.id, support.location))
         return;
     const target = support.dimension.getBlock(add(support.location, { x: 0, y: 1, z: 0 }));
     if (!empty(target))
         return;
     const r = { version: 1, uid: unique(), revision: 0, dimension: support.dimension.id, support: { ...support.location }, kind: definition === id(tray.key) ? 'tray' : 'surface', definition, direction: direction(p), native: definition === id(tray.key) && height === 1, slots: [null, null, null] };
     r.yaw = screenYaw(definition, { x: support.location.x + .5, z: support.location.z + .5 }, p.location, p.getRotation().y);
-    if (!near(p, r))
+    if (!near(p, r) || surfaceValid({ ...r, native: false }) !== true)
         return;
     const before = io.snapshot(c), plan = isCreative(p) ? { ok: true, slots: before.slots } : planServe(before.slots, p.selectedSlotIndex, definition);
     if (!plan.ok)
@@ -505,7 +600,7 @@ function createAppliance(p, support, definition) {
     const blocks = applianceCells(r).map(pos => safeBlock(r, pos));
     if (blocks.some(b => !empty(b)))
         return;
-    if ([...records.values()].some(other => other.kind === 'ad' && other.dimension === r.dimension && posterCells(other).some(wall => applianceCells(r).some(pos => same(pos, add(wall, normals[other.direction]))))))
+    if (overlaps(r))
         return;
     const before = io.snapshot(c), plan = isCreative(p) ? { ok: true, slots: before.slots } : planServe(before.slots, p.selectedSlotIndex, definition);
     if (!plan.ok)
@@ -581,12 +676,25 @@ export function migrateLowSurface(block) {
         throw error;
     }
 }
-function posterAt(block, face) { return [...records.values()].find(r => r.kind === 'ad' && r.dimension === block.dimension.id && r.direction === face && posterCells(r).some(p => same(p, block.location))); }
+function posterAt(block, face) { return [...records.values()].find(r => isPanel(r) && r.dimension === block.dimension.id && r.direction === face && posterCells(r).some(p => same(p, block.location))); }
 function run(p, work) { system.run(() => { Promise.resolve().then(work).catch(error => { console.warn(`[Food & Table] decor: ${String(error)}`); if (p.isValid)
     io.notify(p, '操作未完成，请重试。', 'Operation could not complete; please retry.'); }); }); }
 export function handleDecorBlock(event) {
     const p = event.player, block = event.block, face = String(event.blockFace).toLowerCase(), c = io.inventory(p), hand = c?.getItem(p.selectedSlotIndex), ad = hand && adById.get(hand.typeId);
     const poster = posterAt(block, face);
+    if (hand && (wallById.has(hand.typeId) || digitalById.has(hand.typeId)) && normals[face]) {
+        event.cancel = true;
+        if (event.isFirstEvent) {
+            const definition = hand.typeId, selected = p.selectedSlotIndex;
+            run(p, () => { if (p.selectedSlotIndex === selected && io.inventory(p)?.getItem(selected)?.typeId === definition)
+                createWall(p, block, definition, face); });
+        }
+        return true;
+    }
+    if (hand && scenarioById.get(hand.typeId)?.wallOnly) {
+        event.cancel = true;
+        return true;
+    }
     if (hand && refrigeratorById.has(hand.typeId) && face === 'up') {
         event.cancel = true;
         if (event.isFirstEvent) {
@@ -607,7 +715,7 @@ export function handleDecorBlock(event) {
     if (poster) {
         event.cancel = true;
         if (event.isFirstEvent && !hand)
-            run(p, () => posterMenu(p, copy(poster)));
+            run(p, () => poster.kind === 'ad' ? posterMenu(p, copy(poster)) : staticMenu(p, copy(poster)));
         return true;
     }
     if (block.typeId === id(tray.key)) {
@@ -696,11 +804,11 @@ export function installDecor(adapter) {
         run(event.player, () => r.kind === 'tray' ? trayMenu(event.player, copy(r)) : r.kind === 'ad' ? posterMenu(event.player, copy(r)) : r.definition === id('table_number_sign') ? numberMenu(event.player, copy(r)) : surfaceInteract(event.player, copy(r)));
     });
     world.beforeEvents.playerBreakBlock.subscribe(event => {
-        const candidates = [...records.values()].filter(r => r.dimension === event.block.dimension.id && ((r.kind === 'appliance' && applianceCells(r).some(p => same(p, event.block.location))) || (r.native && same(anchor(r), event.block.location)) || (r.kind === 'ad' && posterCells(r).some(p => same(p, event.block.location)))));
-        const supportLost = candidates.length ? [] : [...records.values()].filter(r => r.kind !== 'ad' && r.dimension === event.block.dimension.id && same(r.support, event.block.location));
+        const candidates = [...records.values()].filter(r => r.dimension === event.block.dimension.id && ((r.kind === 'appliance' && applianceCells(r).some(p => same(p, event.block.location))) || (r.native && same(anchor(r), event.block.location)) || (isPanel(r) && posterCells(r).some(p => same(p, event.block.location)))));
+        const supportLost = [...records.values()].filter(r => !candidates.some(c => c.uid === r.uid) && r.dimension === event.block.dimension.id && same(r.support, event.block.location));
         if (!candidates.length && !supportLost.length)
             return;
-        if (candidates.length)
+        if (candidates.some(r => !isPanel(r)))
             event.cancel = true;
         run(event.player, () => { for (const r of [...candidates, ...supportLost])
             if (near(event.player, r))

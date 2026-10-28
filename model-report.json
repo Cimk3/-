@@ -1,5 +1,5 @@
 {
-  "version": "0.6.0",
+  "version": "0.7.0",
   "models": [
     {
       "key": "egg_fried_rice_serving",
@@ -3572,6 +3572,310 @@
       }
     },
     {
+      "key": "aed_cabinet",
+      "resolution": 128,
+      "cubes": 6,
+      "slots": {
+        "ware": "scenario_aed_cabinet"
+      }
+    },
+    {
+      "key": "patient_monitor",
+      "resolution": 128,
+      "cubes": 8,
+      "slots": {
+        "ware": "scenario_patient_monitor"
+      }
+    },
+    {
+      "key": "ultrasound_cart",
+      "resolution": 128,
+      "cubes": 45,
+      "slots": {
+        "ware": "scenario_ultrasound_cart"
+      }
+    },
+    {
+      "key": "infusion_pump_stand",
+      "resolution": 128,
+      "cubes": 23,
+      "slots": {
+        "ware": "scenario_infusion_pump_stand"
+      }
+    },
+    {
+      "key": "ecg_machine",
+      "resolution": 128,
+      "cubes": 18,
+      "slots": {
+        "ware": "scenario_ecg_machine"
+      }
+    },
+    {
+      "key": "medical_trolley",
+      "resolution": 128,
+      "cubes": 24,
+      "slots": {
+        "ware": "scenario_medical_trolley"
+      }
+    },
+    {
+      "key": "laboratory_microscope",
+      "resolution": 128,
+      "cubes": 9,
+      "slots": {
+        "ware": "scenario_laboratory_microscope"
+      }
+    },
+    {
+      "key": "wall_diagnostic_station",
+      "resolution": 128,
+      "cubes": 31,
+      "slots": {
+        "ware": "scenario_wall_diagnostic_station"
+      }
+    },
+    {
+      "key": "arcade_cabinet",
+      "resolution": 128,
+      "cubes": 29,
+      "slots": {
+        "ware": "scenario_arcade_cabinet"
+      }
+    },
+    {
+      "key": "game_console_set",
+      "resolution": 128,
+      "cubes": 13,
+      "slots": {
+        "ware": "scenario_game_console_set"
+      }
+    },
+    {
+      "key": "flat_screen_tv",
+      "resolution": 128,
+      "cubes": 4,
+      "slots": {
+        "ware": "scenario_flat_screen_tv"
+      }
+    },
+    {
+      "key": "atm_terminal",
+      "resolution": 128,
+      "cubes": 15,
+      "slots": {
+        "ware": "scenario_atm_terminal"
+      }
+    },
+    {
+      "key": "banknote_counter",
+      "resolution": 128,
+      "cubes": 12,
+      "slots": {
+        "ware": "scenario_banknote_counter"
+      }
+    },
+    {
+      "key": "queue_ticket_kiosk",
+      "resolution": 128,
+      "cubes": 6,
+      "slots": {
+        "ware": "scenario_queue_ticket_kiosk"
+      }
+    },
+    {
+      "key": "ai_inference_workstation",
+      "resolution": 128,
+      "cubes": 21,
+      "slots": {
+        "ware": "scenario_ai_inference_workstation"
+      }
+    },
+    {
+      "key": "ai_dual_screen_desk",
+      "resolution": 128,
+      "cubes": 39,
+      "slots": {
+        "ware": "scenario_ai_dual_screen_desk"
+      }
+    },
+    {
+      "key": "ai_compute_rack",
+      "resolution": 128,
+      "cubes": 52,
+      "slots": {
+        "ware": "scenario_ai_compute_rack"
+      }
+    },
+    {
+      "key": "pen_display_set",
+      "resolution": 128,
+      "cubes": 8,
+      "slots": {
+        "ware": "scenario_pen_display_set"
+      }
+    },
+    {
+      "key": "wall_air_conditioner",
+      "resolution": 128,
+      "cubes": 9,
+      "slots": {
+        "ware": "scenario_wall_air_conditioner"
+      }
+    },
+    {
+      "key": "microwave_oven",
+      "resolution": 128,
+      "cubes": 42,
+      "slots": {
+        "ware": "scenario_microwave_oven"
+      }
+    },
+    {
+      "key": "front_load_washer",
+      "resolution": 128,
+      "cubes": 85,
+      "slots": {
+        "ware": "scenario_front_load_washer"
+      }
+    },
+    {
+      "key": "floor_air_conditioner",
+      "resolution": 128,
+      "cubes": 16,
+      "slots": {
+        "ware": "scenario_floor_air_conditioner"
+      }
+    },
+    {
+      "key": "standing_fan",
+      "resolution": 128,
+      "cubes": 115,
+      "slots": {
+        "ware": "scenario_standing_fan"
+      }
+    },
+    {
+      "key": "air_purifier",
+      "resolution": 128,
+      "cubes": 23,
+      "slots": {
+        "ware": "scenario_air_purifier"
+      }
+    },
+    {
+      "key": "robot_vacuum_dock",
+      "resolution": 128,
+      "cubes": 34,
+      "slots": {
+        "ware": "scenario_robot_vacuum_dock"
+      }
+    },
+    {
+      "key": "electric_kettle",
+      "resolution": 128,
+      "cubes": 51,
+      "slots": {
+        "ware": "scenario_electric_kettle"
+      }
+    },
+    {
+      "key": "rice_cooker",
+      "resolution": 128,
+      "cubes": 50,
+      "slots": {
+        "ware": "scenario_rice_cooker"
+      }
+    },
+    {
+      "key": "dishwasher",
+      "resolution": 128,
+      "cubes": 11,
+      "slots": {
+        "ware": "scenario_dishwasher"
+      }
+    },
+    {
+      "key": "electronic_whiteboard",
+      "resolution": 128,
+      "cubes": 4,
+      "slots": {
+        "ware": "scenario_electronic_whiteboard"
+      }
+    },
+    {
+      "key": "teaching_lectern",
+      "resolution": 128,
+      "cubes": 7,
+      "slots": {
+        "ware": "scenario_teaching_lectern"
+      }
+    },
+    {
+      "key": "document_camera",
+      "resolution": 128,
+      "cubes": 5,
+      "slots": {
+        "ware": "scenario_document_camera"
+      }
+    },
+    {
+      "key": "aed_cabinet_wall",
+      "resolution": 128,
+      "cubes": 6,
+      "slots": {
+        "ware": "scenario_aed_cabinet"
+      }
+    },
+    {
+      "key": "wall_diagnostic_station_wall",
+      "resolution": 128,
+      "cubes": 31,
+      "slots": {
+        "ware": "scenario_wall_diagnostic_station"
+      }
+    },
+    {
+      "key": "wall_air_conditioner_wall",
+      "resolution": 128,
+      "cubes": 9,
+      "slots": {
+        "ware": "scenario_wall_air_conditioner"
+      }
+    },
+    {
+      "key": "electronic_whiteboard_wall",
+      "resolution": 128,
+      "cubes": 4,
+      "slots": {
+        "ware": "scenario_electronic_whiteboard"
+      }
+    },
+    {
+      "key": "flat_screen_tv_wall",
+      "resolution": 128,
+      "cubes": 2,
+      "slots": {
+        "ware": "scenario_flat_screen_tv"
+      }
+    },
+    {
+      "key": "landscape_frame_wall",
+      "resolution": 128,
+      "cubes": 2,
+      "slots": {
+        "ware": "lifestyle_landscape_frame"
+      }
+    },
+    {
+      "key": "table_clock_wall",
+      "resolution": 128,
+      "cubes": 2,
+      "slots": {
+        "ware": "lifestyle_table_clock"
+      }
+    },
+    {
       "key": "triple_tray",
       "resolution": 128,
       "cubes": 65,
@@ -5988,6 +6292,196 @@
       "resolution": 128
     },
     {
+      "key": "surface_aed_cabinet",
+      "cubes": 6,
+      "resolution": 128
+    },
+    {
+      "key": "surface_patient_monitor",
+      "cubes": 8,
+      "resolution": 128
+    },
+    {
+      "key": "surface_ultrasound_cart",
+      "cubes": 45,
+      "resolution": 128
+    },
+    {
+      "key": "surface_infusion_pump_stand",
+      "cubes": 23,
+      "resolution": 128
+    },
+    {
+      "key": "surface_ecg_machine",
+      "cubes": 18,
+      "resolution": 128
+    },
+    {
+      "key": "surface_medical_trolley",
+      "cubes": 24,
+      "resolution": 128
+    },
+    {
+      "key": "surface_laboratory_microscope",
+      "cubes": 9,
+      "resolution": 128
+    },
+    {
+      "key": "surface_wall_diagnostic_station",
+      "cubes": 31,
+      "resolution": 128
+    },
+    {
+      "key": "surface_arcade_cabinet",
+      "cubes": 29,
+      "resolution": 128
+    },
+    {
+      "key": "surface_game_console_set",
+      "cubes": 13,
+      "resolution": 128
+    },
+    {
+      "key": "surface_flat_screen_tv",
+      "cubes": 4,
+      "resolution": 128
+    },
+    {
+      "key": "surface_atm_terminal",
+      "cubes": 15,
+      "resolution": 128
+    },
+    {
+      "key": "surface_banknote_counter",
+      "cubes": 12,
+      "resolution": 128
+    },
+    {
+      "key": "surface_queue_ticket_kiosk",
+      "cubes": 6,
+      "resolution": 128
+    },
+    {
+      "key": "surface_ai_inference_workstation",
+      "cubes": 21,
+      "resolution": 128
+    },
+    {
+      "key": "surface_ai_dual_screen_desk",
+      "cubes": 39,
+      "resolution": 128
+    },
+    {
+      "key": "surface_ai_compute_rack",
+      "cubes": 52,
+      "resolution": 128
+    },
+    {
+      "key": "surface_pen_display_set",
+      "cubes": 8,
+      "resolution": 128
+    },
+    {
+      "key": "surface_wall_air_conditioner",
+      "cubes": 9,
+      "resolution": 128
+    },
+    {
+      "key": "surface_microwave_oven",
+      "cubes": 42,
+      "resolution": 128
+    },
+    {
+      "key": "surface_front_load_washer",
+      "cubes": 85,
+      "resolution": 128
+    },
+    {
+      "key": "surface_floor_air_conditioner",
+      "cubes": 16,
+      "resolution": 128
+    },
+    {
+      "key": "surface_standing_fan",
+      "cubes": 115,
+      "resolution": 128
+    },
+    {
+      "key": "surface_air_purifier",
+      "cubes": 23,
+      "resolution": 128
+    },
+    {
+      "key": "surface_robot_vacuum_dock",
+      "cubes": 34,
+      "resolution": 128
+    },
+    {
+      "key": "surface_electric_kettle",
+      "cubes": 51,
+      "resolution": 128
+    },
+    {
+      "key": "surface_rice_cooker",
+      "cubes": 50,
+      "resolution": 128
+    },
+    {
+      "key": "surface_dishwasher",
+      "cubes": 11,
+      "resolution": 128
+    },
+    {
+      "key": "surface_electronic_whiteboard",
+      "cubes": 4,
+      "resolution": 128
+    },
+    {
+      "key": "surface_teaching_lectern",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "surface_document_camera",
+      "cubes": 5,
+      "resolution": 128
+    },
+    {
+      "key": "surface_aed_cabinet_wall",
+      "cubes": 6,
+      "resolution": 128
+    },
+    {
+      "key": "surface_wall_diagnostic_station_wall",
+      "cubes": 31,
+      "resolution": 128
+    },
+    {
+      "key": "surface_wall_air_conditioner_wall",
+      "cubes": 9,
+      "resolution": 128
+    },
+    {
+      "key": "surface_electronic_whiteboard_wall",
+      "cubes": 4,
+      "resolution": 128
+    },
+    {
+      "key": "surface_flat_screen_tv_wall",
+      "cubes": 2,
+      "resolution": 128
+    },
+    {
+      "key": "surface_landscape_frame_wall",
+      "cubes": 2,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_clock_wall",
+      "cubes": 2,
+      "resolution": 128
+    },
+    {
       "key": "mini_kung_pao_chicken",
       "cubes": 31,
       "resolution": 128
@@ -6436,6 +6930,66 @@
       "key": "ad_city_home",
       "cubes": 1,
       "resolution": 256
+    },
+    {
+      "key": "ad_template_ai",
+      "cubes": 1,
+      "resolution": 256
+    },
+    {
+      "key": "ad_luna_studio",
+      "cubes": 1,
+      "resolution": 128
+    },
+    {
+      "key": "ad_ft_computer",
+      "cubes": 1,
+      "resolution": 256
+    },
+    {
+      "key": "digital_template_ai_2x2",
+      "cubes": 6,
+      "resolution": 256
+    },
+    {
+      "key": "digital_luna_studio_2x2",
+      "cubes": 6,
+      "resolution": 256
+    },
+    {
+      "key": "digital_ft_computer_2x2",
+      "cubes": 6,
+      "resolution": 256
+    },
+    {
+      "key": "digital_template_ai_4x4",
+      "cubes": 6,
+      "resolution": 256
+    },
+    {
+      "key": "digital_luna_studio_4x4",
+      "cubes": 6,
+      "resolution": 256
+    },
+    {
+      "key": "digital_ft_computer_4x4",
+      "cubes": 6,
+      "resolution": 256
+    },
+    {
+      "key": "digital_template_ai_4x3",
+      "cubes": 6,
+      "resolution": 256
+    },
+    {
+      "key": "digital_luna_studio_4x3",
+      "cubes": 6,
+      "resolution": 256
+    },
+    {
+      "key": "digital_ft_computer_4x3",
+      "cubes": 6,
+      "resolution": 256
     }
   ],
   "iconSizes": {
@@ -6632,6 +7186,44 @@
     "mcpe_food_reed_diffuser": 128,
     "mcpe_food_storage_box": 128,
     "mcpe_food_ring_sculpture": 128,
+    "mcpe_food_aed_cabinet": 128,
+    "mcpe_food_patient_monitor": 128,
+    "mcpe_food_ultrasound_cart": 128,
+    "mcpe_food_infusion_pump_stand": 128,
+    "mcpe_food_ecg_machine": 128,
+    "mcpe_food_medical_trolley": 128,
+    "mcpe_food_laboratory_microscope": 128,
+    "mcpe_food_wall_diagnostic_station": 128,
+    "mcpe_food_arcade_cabinet": 128,
+    "mcpe_food_game_console_set": 128,
+    "mcpe_food_flat_screen_tv": 128,
+    "mcpe_food_atm_terminal": 128,
+    "mcpe_food_banknote_counter": 128,
+    "mcpe_food_queue_ticket_kiosk": 128,
+    "mcpe_food_ai_inference_workstation": 128,
+    "mcpe_food_ai_dual_screen_desk": 128,
+    "mcpe_food_ai_compute_rack": 128,
+    "mcpe_food_pen_display_set": 128,
+    "mcpe_food_wall_air_conditioner": 128,
+    "mcpe_food_microwave_oven": 128,
+    "mcpe_food_front_load_washer": 128,
+    "mcpe_food_floor_air_conditioner": 128,
+    "mcpe_food_standing_fan": 128,
+    "mcpe_food_air_purifier": 128,
+    "mcpe_food_robot_vacuum_dock": 128,
+    "mcpe_food_electric_kettle": 128,
+    "mcpe_food_rice_cooker": 128,
+    "mcpe_food_dishwasher": 128,
+    "mcpe_food_electronic_whiteboard": 128,
+    "mcpe_food_teaching_lectern": 128,
+    "mcpe_food_document_camera": 128,
+    "mcpe_food_aed_cabinet_wall": 128,
+    "mcpe_food_wall_diagnostic_station_wall": 128,
+    "mcpe_food_wall_air_conditioner_wall": 128,
+    "mcpe_food_electronic_whiteboard_wall": 128,
+    "mcpe_food_flat_screen_tv_wall": 128,
+    "mcpe_food_landscape_frame_wall": 128,
+    "mcpe_food_table_clock_wall": 128,
     "mcpe_food_triple_tray": 128,
     "mcpe_food_prep_counter": 32,
     "mcpe_food_stove": 32,
@@ -6680,7 +7272,19 @@
     "mcpe_food_ad_city_bookshop": 128,
     "mcpe_food_ad_city_florist": 128,
     "mcpe_food_ad_city_travel": 128,
-    "mcpe_food_ad_city_home": 128
+    "mcpe_food_ad_city_home": 128,
+    "mcpe_food_ad_template_ai": 128,
+    "mcpe_food_ad_luna_studio": 128,
+    "mcpe_food_ad_ft_computer": 128,
+    "mcpe_food_digital_template_ai_2x2": 128,
+    "mcpe_food_digital_luna_studio_2x2": 128,
+    "mcpe_food_digital_ft_computer_2x2": 128,
+    "mcpe_food_digital_template_ai_4x4": 128,
+    "mcpe_food_digital_luna_studio_4x4": 128,
+    "mcpe_food_digital_ft_computer_4x4": 128,
+    "mcpe_food_digital_template_ai_4x3": 128,
+    "mcpe_food_digital_luna_studio_4x3": 128,
+    "mcpe_food_digital_ft_computer_4x3": 128
   },
   "sharedTableGeometry": "geometry.mcpe_food.surface.table_number_sign"
 }

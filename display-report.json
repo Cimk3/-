@@ -1,7 +1,7 @@
 {
-  "advertisements": 20,
-  "advertisementSizes": 60,
-  "surfaceDefinitions": 496,
+  "advertisements": 23,
+  "advertisementSizes": 69,
+  "surfaceDefinitions": 534,
   "trayFoods": 70,
   "trayCubes": 65,
   "maxMiniCubes": 39,
@@ -2488,6 +2488,196 @@
       "resolution": 128
     },
     {
+      "key": "surface_aed_cabinet",
+      "cubes": 6,
+      "resolution": 128
+    },
+    {
+      "key": "surface_patient_monitor",
+      "cubes": 8,
+      "resolution": 128
+    },
+    {
+      "key": "surface_ultrasound_cart",
+      "cubes": 45,
+      "resolution": 128
+    },
+    {
+      "key": "surface_infusion_pump_stand",
+      "cubes": 23,
+      "resolution": 128
+    },
+    {
+      "key": "surface_ecg_machine",
+      "cubes": 18,
+      "resolution": 128
+    },
+    {
+      "key": "surface_medical_trolley",
+      "cubes": 24,
+      "resolution": 128
+    },
+    {
+      "key": "surface_laboratory_microscope",
+      "cubes": 9,
+      "resolution": 128
+    },
+    {
+      "key": "surface_wall_diagnostic_station",
+      "cubes": 31,
+      "resolution": 128
+    },
+    {
+      "key": "surface_arcade_cabinet",
+      "cubes": 29,
+      "resolution": 128
+    },
+    {
+      "key": "surface_game_console_set",
+      "cubes": 13,
+      "resolution": 128
+    },
+    {
+      "key": "surface_flat_screen_tv",
+      "cubes": 4,
+      "resolution": 128
+    },
+    {
+      "key": "surface_atm_terminal",
+      "cubes": 15,
+      "resolution": 128
+    },
+    {
+      "key": "surface_banknote_counter",
+      "cubes": 12,
+      "resolution": 128
+    },
+    {
+      "key": "surface_queue_ticket_kiosk",
+      "cubes": 6,
+      "resolution": 128
+    },
+    {
+      "key": "surface_ai_inference_workstation",
+      "cubes": 21,
+      "resolution": 128
+    },
+    {
+      "key": "surface_ai_dual_screen_desk",
+      "cubes": 39,
+      "resolution": 128
+    },
+    {
+      "key": "surface_ai_compute_rack",
+      "cubes": 52,
+      "resolution": 128
+    },
+    {
+      "key": "surface_pen_display_set",
+      "cubes": 8,
+      "resolution": 128
+    },
+    {
+      "key": "surface_wall_air_conditioner",
+      "cubes": 9,
+      "resolution": 128
+    },
+    {
+      "key": "surface_microwave_oven",
+      "cubes": 42,
+      "resolution": 128
+    },
+    {
+      "key": "surface_front_load_washer",
+      "cubes": 85,
+      "resolution": 128
+    },
+    {
+      "key": "surface_floor_air_conditioner",
+      "cubes": 16,
+      "resolution": 128
+    },
+    {
+      "key": "surface_standing_fan",
+      "cubes": 115,
+      "resolution": 128
+    },
+    {
+      "key": "surface_air_purifier",
+      "cubes": 23,
+      "resolution": 128
+    },
+    {
+      "key": "surface_robot_vacuum_dock",
+      "cubes": 34,
+      "resolution": 128
+    },
+    {
+      "key": "surface_electric_kettle",
+      "cubes": 51,
+      "resolution": 128
+    },
+    {
+      "key": "surface_rice_cooker",
+      "cubes": 50,
+      "resolution": 128
+    },
+    {
+      "key": "surface_dishwasher",
+      "cubes": 11,
+      "resolution": 128
+    },
+    {
+      "key": "surface_electronic_whiteboard",
+      "cubes": 4,
+      "resolution": 128
+    },
+    {
+      "key": "surface_teaching_lectern",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "surface_document_camera",
+      "cubes": 5,
+      "resolution": 128
+    },
+    {
+      "key": "surface_aed_cabinet_wall",
+      "cubes": 6,
+      "resolution": 128
+    },
+    {
+      "key": "surface_wall_diagnostic_station_wall",
+      "cubes": 31,
+      "resolution": 128
+    },
+    {
+      "key": "surface_wall_air_conditioner_wall",
+      "cubes": 9,
+      "resolution": 128
+    },
+    {
+      "key": "surface_electronic_whiteboard_wall",
+      "cubes": 4,
+      "resolution": 128
+    },
+    {
+      "key": "surface_flat_screen_tv_wall",
+      "cubes": 2,
+      "resolution": 128
+    },
+    {
+      "key": "surface_landscape_frame_wall",
+      "cubes": 2,
+      "resolution": 128
+    },
+    {
+      "key": "surface_table_clock_wall",
+      "cubes": 2,
+      "resolution": 128
+    },
+    {
       "key": "mini_kung_pao_chicken",
       "cubes": 31,
       "resolution": 128
@@ -2936,8 +3126,68 @@
       "key": "ad_city_home",
       "cubes": 1,
       "resolution": 256
+    },
+    {
+      "key": "ad_template_ai",
+      "cubes": 1,
+      "resolution": 256
+    },
+    {
+      "key": "ad_luna_studio",
+      "cubes": 1,
+      "resolution": 128
+    },
+    {
+      "key": "ad_ft_computer",
+      "cubes": 1,
+      "resolution": 256
+    },
+    {
+      "key": "digital_template_ai_2x2",
+      "cubes": 6,
+      "resolution": 256
+    },
+    {
+      "key": "digital_luna_studio_2x2",
+      "cubes": 6,
+      "resolution": 256
+    },
+    {
+      "key": "digital_ft_computer_2x2",
+      "cubes": 6,
+      "resolution": 256
+    },
+    {
+      "key": "digital_template_ai_4x4",
+      "cubes": 6,
+      "resolution": 256
+    },
+    {
+      "key": "digital_luna_studio_4x4",
+      "cubes": 6,
+      "resolution": 256
+    },
+    {
+      "key": "digital_ft_computer_4x4",
+      "cubes": 6,
+      "resolution": 256
+    },
+    {
+      "key": "digital_template_ai_4x3",
+      "cubes": 6,
+      "resolution": 256
+    },
+    {
+      "key": "digital_luna_studio_4x3",
+      "cubes": 6,
+      "resolution": 256
+    },
+    {
+      "key": "digital_ft_computer_4x3",
+      "cubes": 6,
+      "resolution": 256
     }
   ],
-  "entityTypes": 3,
-  "entityTextureSets": 306
+  "entityTypes": 4,
+  "entityTextureSets": 347
 }

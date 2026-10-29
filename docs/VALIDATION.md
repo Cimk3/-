@@ -2,6 +2,8 @@
 
 日期：2026-10-29。构建标识0.7.4-release.1，BP／RP同批次；0.7.3发行的兼容状态保存在v0.7.3两个fixture。
 
+0.7.4已正式发布：[https://github.com/Cimk3/A-Bite-of-Time/releases/tag/v0.7.4](https://github.com/Cimk3/A-Bite-of-Time/releases/tag/v0.7.4)。标签指向软件提交cd0c11dc470986988af303166ec2ccc6a7e9755f；最终归档复验通过，五个服务器附件均uploaded且SHA256与本地匹配。源码ZIP对应该提交前的发行批次，本段为发布后确认，不重打包。
+
 ## 已完成的自动验证
 
 - npm ci和最终构建通过，npm test共230项通过。覆盖23件新品和三个分组、旧560桌面／61服装／11墙屏顺序、旧ID／UUID／配方／掉落／作物及命令兼容。

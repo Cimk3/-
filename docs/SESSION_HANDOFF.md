@@ -1,6 +1,6 @@
 # 接续入口
 
-当前维护版本0.7.4。修改前先读根AGENTS、PROJECT_CONTEXT、PROGRESS和KNOWN_ISSUES，检查git状态、近期提交及实际资源；按任务阅读DEVELOPMENT和VALIDATION。
+当前正式版本0.7.4，软件提交cd0c11dc470986988af303166ec2ccc6a7e9755f，五附件与服务端SHA256已核对。修改前先读根AGENTS、PROJECT_CONTEXT、PROGRESS和KNOWN_ISSUES，检查git状态、近期提交及实际资源；按任务阅读DEVELOPMENT和VALIDATION。
 
 本版23件创造物品及两款6×5大屏的实现和实际验证状态见PROGRESS与VALIDATION。560旧桌面索引、61服装姿态及11旧墙屏顺序的兼容基线保存在v0.7.3 fixture；新增只追加。README只作为稳定项目与使用入口，版本历史在CHANGELOG与Release说明。
 

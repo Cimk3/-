@@ -1,3 +1,4 @@
+import {patch074Props,patch074WallVariants,patch074DigitalScreens,patch074Groups} from '../.build/patch-074-catalog.js';
 import {patch073Props,governmentLegacyKeys,governmentKeys} from '../.build/patch-073-catalog.js';
 import {patch072Props,clothingItems,patch072Groups} from '../.build/patch-072-catalog.js';
 import test,{afterEach} from 'node:test';import assert from 'node:assert/strict';
@@ -6,7 +7,7 @@ import {state,FakeDimension,FakePlayer,ItemStack,interact,flush,reset,system} fr
 registerHooks({resolve(s,c,next){const mock=s==='@minecraft/server'?'mock-server.mjs':s==='@minecraft/server-ui'?'mock-ui.mjs':undefined;return mock?{url:new URL(mock,import.meta.url).href,shortCircuit:true}:next(s,c);}});
 await import('../.build/main.js');
 const {removeDecor,loadDecorRecords,reconcileDecor}=await import('../.build/decor-runtime.js');
-const {surfaceVisuals}=await import('../.build/decor-catalog.js');const{wallVariants,digitalScreens}=await import('../.build/scenario-catalog.js');const{patch071Props}=await import('../.build/patch-071-catalog.js');
+const {surfaceVisuals}=await import('../.build/decor-catalog.js');const{wallVariants,legacyDigitalScreens:digitalScreens}=await import('../.build/scenario-catalog.js');const{patch071Props}=await import('../.build/patch-071-catalog.js');
 const{decodeRGBA}=await import('../tools/png-inspect.mjs');const{emissionIsValid}=await import('../tools/emission-policy.mjs');
 const read=p=>JSON.parse(readFileSync(p,'utf8')),bp='packs/FoodAndTable_BP',rp='packs/FoodAndTable_RP',geo=k=>read(`${rp}/models/blocks/mcpe_food/${k}.geo.json`)['minecraft:geometry'][0],cubes=g=>g.bones.flatMap(b=>b.cubes??[]),sha=x=>createHash('sha256').update(x).digest('hex');
 const idle=()=>new Promise(r=>setImmediate(r));async function tick(){flush();await idle();flush();await idle();}await tick();
@@ -18,12 +19,12 @@ const normals={north:[0,0,-1],south:[0,0,1],east:[1,0,0],west:[-1,0,0]},rights={
 function setup(face='south',w=1,h=1){reset();const d=new FakeDimension(),p=new FakePlayer(d),n=normals[face],r=rights[face];p.location={x:.5+n[0]*3,y:1,z:.5+n[2]*3};for(let x=0;x<w;x++)for(let y=0;y<h;y++)d.put('minecraft:stone',{x:r[0]*x,y,z:r[2]*x});return{d,p,b:d.getBlock({x:0,y:0,z:0})};}
 async function place(p,b,key,face='Up'){p.container.setItem(0,new ItemStack('mcpe_food:'+key));interact(p,b,true,face);await tick();return saved()[0];}
 test('0.7.1 appends only four public items/blocks and keeps every prior ID, UUID, recipe, drop and visual index',()=>{
- const old=read('tests/fixtures/v0.7.0.json');for(const kind of ['items','blocks']){const ids=readdirSync(`${bp}/${kind}`).map(f=>read(`${bp}/${kind}/${f}`)[`minecraft:${kind.slice(0,-1)}`].description.identifier);assert.deepEqual(ids.filter(k=>!old[kind].includes(k)&&![...patch072Props,...clothingItems,...patch073Props].some(d=>'mcpe_food:'+d.key===k)).sort(),patch071Props.map(d=>'mcpe_food:'+d.key).sort());for(const id of old[kind])assert.ok(ids.includes(id));}
- assert.deepEqual(surfaceVisuals.slice(0,534).map(d=>d.key),read('tests/fixtures/v0.7.0-surfaces.json'));assert.equal(surfaceVisuals.length,560);assert.deepEqual(digitalScreens,read('tests/fixtures/v0.7.0-digital.json'));
+ const old=read('tests/fixtures/v0.7.0.json');for(const kind of ['items','blocks']){const ids=readdirSync(`${bp}/${kind}`).map(f=>read(`${bp}/${kind}/${f}`)[`minecraft:${kind.slice(0,-1)}`].description.identifier);assert.deepEqual(ids.filter(k=>!old[kind].includes(k)&&![...patch072Props,...clothingItems,...patch073Props,...patch074Props,...patch074DigitalScreens].some(d=>'mcpe_food:'+d.key===k)).sort(),patch071Props.map(d=>'mcpe_food:'+d.key).sort());for(const id of old[kind])assert.ok(ids.includes(id));}
+ assert.deepEqual(surfaceVisuals.slice(0,534).map(d=>d.key),read('tests/fixtures/v0.7.0-surfaces.json'));assert.equal(surfaceVisuals.length,582);assert.deepEqual(digitalScreens,read('tests/fixtures/v0.7.0-digital.json'));
  for(const[pack,uuids]of Object.entries(old.uuids)){const m=read(`packs/${pack}/manifest.json`);assert.deepEqual([m.header.uuid,...m.modules.map(x=>x.uuid)],uuids);}
  for(const[folder,entries]of [['recipes',old.crafting],['loot_tables/blocks',old.loot]])for(const[f,h]of Object.entries(entries))assert.equal(sha(readFileSync(`${bp}/${folder}/${f}`)),h);
  for(const[f,states]of Object.entries(old.cropStates))assert.deepEqual(read(`${bp}/blocks/${f}`)['minecraft:block'].description.states,states);
- const lines=name=>readFileSync(`${bp}/functions/mcpe_food/${name}.mcfunction`,'utf8').trim().split('\n');assert.equal(lines('tasting_new').length,10);assert.deepEqual(lines('electronics').slice(0,41),old.functions['electronics.mcfunction'].trim().split('\n'));assert.equal(lines('electronics').length,49);assert.equal(lines('ai_work_devices').length,7);
+ const lines=name=>readFileSync(`${bp}/functions/mcpe_food/${name}.mcfunction`,'utf8').trim().split('\n');assert.equal(lines('tasting_new').length,23);assert.deepEqual(lines('electronics').slice(0,41),old.functions['electronics.mcfunction'].trim().split('\n'));assert.equal(lines('electronics').length,49);assert.equal(lines('ai_work_devices').length,7);
  const groups=read(`${bp}/item_catalog/crafting_item_catalog.json`)['minecraft:crafting_items_catalog'].categories[0].groups;assert.equal(groups.find(g=>g.group_identifier.name==='mcpe_food:group_electronics').items.length,39);assert.equal(groups.find(g=>g.group_identifier.name==='mcpe_food:group_ai_work_devices').items.length,7);
 });
 test('unrelated final geometry remains identical to the 0.7.0 release',()=>{

@@ -1,0 +1,13 @@
+{
+  "source": "tools/large-ad-art.mjs",
+  "resolution": [
+    384,
+    320
+  ],
+  "brands": [
+    "FT Computer",
+    "Apple"
+  ],
+  "original": true,
+  "notes": "Independent 6:5 pixel compositions, no copied advertisement or photo."
+}

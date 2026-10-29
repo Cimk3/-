@@ -1,7 +1,7 @@
 {
   "advertisements": 23,
   "advertisementSizes": 69,
-  "surfaceDefinitions": 560,
+  "surfaceDefinitions": 582,
   "trayFoods": 70,
   "trayCubes": 65,
   "maxMiniCubes": 39,
@@ -2808,6 +2808,116 @@
       "resolution": 128
     },
     {
+      "key": "surface_electrical_distribution_cabinet",
+      "cubes": 19,
+      "resolution": 128
+    },
+    {
+      "key": "surface_dry_type_transformer",
+      "cubes": 33,
+      "resolution": 128
+    },
+    {
+      "key": "surface_standby_generator",
+      "cubes": 20,
+      "resolution": 128
+    },
+    {
+      "key": "surface_cable_reel",
+      "cubes": 39,
+      "resolution": 128
+    },
+    {
+      "key": "surface_electrician_toolbox",
+      "cubes": 8,
+      "resolution": 128
+    },
+    {
+      "key": "surface_wall_electric_meter",
+      "cubes": 12,
+      "resolution": 128
+    },
+    {
+      "key": "surface_insulator_display",
+      "cubes": 127,
+      "resolution": 128
+    },
+    {
+      "key": "surface_field_news_camera",
+      "cubes": 25,
+      "resolution": 128
+    },
+    {
+      "key": "surface_studio_news_camera",
+      "cubes": 12,
+      "resolution": 128
+    },
+    {
+      "key": "surface_news_microphone_stand",
+      "cubes": 9,
+      "resolution": 128
+    },
+    {
+      "key": "surface_interview_audio_set",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "surface_news_teleprompter",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "surface_broadcast_control_desk",
+      "cubes": 30,
+      "resolution": 128
+    },
+    {
+      "key": "surface_news_backdrop",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "surface_riot_shield_display",
+      "cubes": 8,
+      "resolution": 128
+    },
+    {
+      "key": "surface_road_safety_barrier",
+      "cubes": 8,
+      "resolution": 128
+    },
+    {
+      "key": "surface_military_police_cabinet",
+      "cubes": 20,
+      "resolution": 128
+    },
+    {
+      "key": "surface_helmet_display",
+      "cubes": 6,
+      "resolution": 128
+    },
+    {
+      "key": "surface_communications_radio",
+      "cubes": 9,
+      "resolution": 128
+    },
+    {
+      "key": "surface_radar_equipment",
+      "cubes": 12,
+      "resolution": 128
+    },
+    {
+      "key": "surface_tactical_equipment_case",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "surface_wall_electric_meter_wall",
+      "cubes": 12,
+      "resolution": 128
+    },
+    {
       "key": "mini_kung_pao_chicken",
       "cubes": 31,
       "resolution": 128
@@ -3328,6 +3438,16 @@
       "resolution": 256
     },
     {
+      "key": "digital_ft_computer_6x5",
+      "cubes": 6,
+      "resolution": 384
+    },
+    {
+      "key": "digital_apple_6x5",
+      "cubes": 6,
+      "resolution": 384
+    },
+    {
       "key": "garment_display_tshirt_hanging_0",
       "cubes": 5,
       "resolution": 128
@@ -3634,5 +3754,5 @@
     }
   ],
   "entityTypes": 5,
-  "entityTextureSets": 384
+  "entityTextureSets": 407
 }

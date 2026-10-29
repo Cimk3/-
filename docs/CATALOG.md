@@ -1,4 +1,4 @@
-# 0.7.3 菜品与器皿索引
+# 0.7.4 菜品与器皿索引
 
 102 种可食成品，8 种不可食展示配菜，2 款静态铜锅，15 种餐具，3 款酒瓶摆件。新增内容通过创造物品栏或分组试用命令获取。
 
@@ -418,6 +418,8 @@
 - 电子广告屏 · Template AI 4×3 / mcpe_food:digital_template_ai_4x3
 - 电子广告屏 · Luna Studio（月-工作室） 4×3 / mcpe_food:digital_luna_studio_4x3
 - 电子广告屏 · FT电脑 4×3 / mcpe_food:digital_ft_computer_4x3
+- 电子广告屏 · FT电脑 6×5 / mcpe_food:digital_ft_computer_6x5
+- 电子广告屏 · Apple 6×5 / mcpe_food:digital_apple_6x5
 
 
 ## 0.7.2试用新品（21件）
@@ -459,3 +461,36 @@
 - FT游戏本（FT-Master） / mcpe_food:ft_master_open
 
 政务组迁入旧5件：ft_government_desktop、ft_government_all_in_one、ft_government_ultrabook_open、government_queue_screen、upright_archive_cabinet
+
+
+## 0.7.4 新增分类
+
+### 电气设备
+
+- 低压配电柜 / mcpe_food:electrical_distribution_cabinet
+- 干式变压器 / mcpe_food:dry_type_transformer
+- 备用发电机 / mcpe_food:standby_generator
+- 电缆卷盘 / mcpe_food:cable_reel
+- 电工工具箱 / mcpe_food:electrician_toolbox
+- 壁挂电表箱 / mcpe_food:wall_electric_meter
+- 绝缘子陈列组 / mcpe_food:insulator_display
+
+### 新闻设备
+
+- 外景摄像机与三脚架 / mcpe_food:field_news_camera
+- 演播室摄像机 / mcpe_food:studio_news_camera
+- 新闻话筒台 / mcpe_food:news_microphone_stand
+- 采访话筒与录音机套装 / mcpe_food:interview_audio_set
+- 提词器 / mcpe_food:news_teleprompter
+- 导播控制台 / mcpe_food:broadcast_control_desk
+- 新闻背景板 / mcpe_food:news_backdrop
+
+### 军警物品
+
+- 防暴盾牌展示架 / mcpe_food:riot_shield_display
+- 道路隔离路障 / mcpe_food:road_safety_barrier
+- 军警装备柜 / mcpe_food:military_police_cabinet
+- 头盔展示座 / mcpe_food:helmet_display
+- 通信电台 / mcpe_food:communications_radio
+- 雷达设备 / mcpe_food:radar_equipment
+- 战术装备箱 / mcpe_food:tactical_equipment_case

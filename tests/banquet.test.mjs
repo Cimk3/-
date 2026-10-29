@@ -1,3 +1,4 @@
+import {patch074Props,patch074WallVariants,patch074DigitalScreens,patch074Groups} from '../.build/patch-074-catalog.js';
 import {patch073Props,governmentLegacyKeys,governmentKeys} from '../.build/patch-073-catalog.js';
 import {patch072Props,clothingItems,patch072Groups} from '../.build/patch-072-catalog.js';
 import {patch071Props} from '../.build/patch-071-catalog.js';
@@ -39,9 +40,9 @@ test('old tasting commands keep exactly their original series while new complete
 test('creative inventory has five food groups plus private tableware, advertisement and electronics groups',()=>{
   const groups=read(`${bp}/item_catalog/crafting_item_catalog.json`)['minecraft:crafting_items_catalog'].categories;
   assert.equal(groups.length,1);assert.equal(groups[0].category_name,'items');
-  assert.deepEqual(groups[0].groups.map(g=>g.group_identifier.name),[...Object.keys(categories).map(k=>`mcpe_food:group_${k}`),'mcpe_food:group_tableware','mcpe_food:group_advertisements','mcpe_food:group_electronics','mcpe_food:group_restaurant_accessories','mcpe_food:group_office_stationery','mcpe_food:group_home_decor',...[...scenarioGroups,...patch072Groups].map(g=>'mcpe_food:group_'+g.key),'mcpe_food:group_government_equipment']);
+  assert.deepEqual(groups[0].groups.map(g=>g.group_identifier.name),[...Object.keys(categories).map(k=>`mcpe_food:group_${k}`),'mcpe_food:group_tableware','mcpe_food:group_advertisements','mcpe_food:group_electronics','mcpe_food:group_restaurant_accessories','mcpe_food:group_office_stationery','mcpe_food:group_home_decor',...[...scenarioGroups,...patch074Groups,...patch072Groups].map(g=>'mcpe_food:group_'+g.key),'mcpe_food:group_government_equipment']);
   const all=groups[0].groups.flatMap(g=>g.items);assert.equal(new Set(all).size,all.length);
-  assert.deepEqual([...all].sort(),[...dishes,...bottleProps,...paperCups,...vessels,...cutlery,tray,teaTray,...advertisements,...electronics,...refrigerators,...restaurantAccessories,...lifestyleItems,...scenarioProps,...digitalScreens,...patch071Props,...patch072Props,...clothingItems,...patch073Props].map(f=>id(f.key)).sort());
+  assert.deepEqual([...all].sort(),[...dishes,...bottleProps,...paperCups,...vessels,...cutlery,tray,teaTray,...advertisements,...electronics,...refrigerators,...restaurantAccessories,...lifestyleItems,...scenarioProps,...digitalScreens,...patch071Props,...patch072Props,...clothingItems,...patch073Props,...patch074Props].map(f=>id(f.key)).sort());
   for(const locale of['zh_CN','en_US']){const source=readFileSync(`${rp}/texts/${locale}.lang`,'utf8');for(const g of groups[0].groups)assert.ok(source.includes(`${g.group_identifier.name}=`));}
 });
 test('approved category counts and intentional cross-cuisine placements are exact',()=>{

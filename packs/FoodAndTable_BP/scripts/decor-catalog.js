@@ -1,3 +1,4 @@
+import { patch074Props, patch074WallVariants } from './patch-074-catalog.js';
 import { patch073Props } from './patch-073-catalog.js';
 import { patch072Props } from './patch-072-catalog.js';
 import { patch071Props } from './patch-071-catalog.js';
@@ -32,7 +33,7 @@ export function adSize(ad, size) {
     const n = Math.max(0, Math.min(2, size)) + 1;
     return ad.aspect === 'wide' ? [n * 2, n] : ad.aspect === 'portrait' ? [n, n * 2] : [n, n];
 }
-export const tableItems = [...vessels, ...cutlery, ...hotpots, ...bottleProps, ...paperCups, tray, ...electronics, teaTray, ...restaurantAccessories, ...lifestyleItems, ...scenarioProps, ...patch071Props, ...patch072Props, ...patch073Props];
+export const tableItems = [...vessels, ...cutlery, ...hotpots, ...bottleProps, ...paperCups, tray, ...electronics, teaTray, ...restaurantAccessories, ...lifestyleItems, ...scenarioProps, ...patch071Props, ...patch072Props, ...patch073Props, ...patch074Props];
 export const tableItemById = new Map(tableItems.map(t => [id(t.key), t]));
 export const trayFoods = dishes.filter(f => vesselByKey.get(f.vessel)?.family === 'plate');
 export const surfaceVisuals = [
@@ -42,6 +43,6 @@ export const surfaceVisuals = [
     ...newElectronics.map(t => ({ key: t.key, zh: t.zh, en: t.en })), teaTray,
     ...servings.filter(s => s.food.key === 'tieguanyin').map(s => ({ key: s.key, zh: s.food.zh, en: s.food.en })),
     ...officeElectronics.map(d => ({ key: d.key, zh: d.zh, en: d.en })),
-    ...restaurantItems.map(d => ({ key: d.key, zh: d.zh, en: d.en })), ...numberVisuals.filter(d => d.number !== 8), ...newProps.map(d => ({ key: d.key, zh: d.zh, en: d.en })), ...scenarioProps, ...wallVariants, ...patch071Props, ...patch072Props, ...patch073Props
+    ...restaurantItems.map(d => ({ key: d.key, zh: d.zh, en: d.en })), ...numberVisuals.filter(d => d.number !== 8), ...newProps.map(d => ({ key: d.key, zh: d.zh, en: d.en })), ...scenarioProps, ...wallVariants, ...patch071Props, ...patch072Props, ...patch073Props, ...patch074Props, ...patch074WallVariants
 ];
 export const surfaceIndex = new Map(surfaceVisuals.map((t, i) => [id(t.key), i]));

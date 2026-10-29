@@ -1,5 +1,5 @@
 {
-  "version": "0.7.3",
+  "version": "0.7.4",
   "units": "bytes",
   "baseline": {
     "version": "0.5.4",
@@ -19,13 +19,13 @@
     "merAliases": 196
   },
   "current": {
-    "beforeBytes": 273184527,
-    "bpBytes": 14685256,
-    "rpBytes": 94663993,
-    "addonBytes": 35828486,
-    "pngChecked": 1716,
-    "pngSavedBytes": 5344782,
-    "jsonSavedBytes": 157164079,
+    "beforeBytes": 276409787,
+    "bpBytes": 15644950,
+    "rpBytes": 95163222,
+    "addonBytes": 35979488,
+    "pngChecked": 1828,
+    "pngSavedBytes": 5349847,
+    "jsonSavedBytes": 158924617,
     "numberGeometryRemoved": 196,
     "merAliases": 196
   },
@@ -35,7 +35,6 @@
     "Historical recipe/drop JSON remains byte-identical.",
     "PNG cache is keyed by input SHA-256; first encoding verifies exact decoded RGBA.",
     "Block and entity MER aliases are kept in separate private directories.",
-    "Old numbered display indices remain bound; 196 redundant geometries and 196 identical MER files are removed.",
-    "Final release authorization metadata included in measured bytes; original content build identifier retained."
+    "Old numbered display indices remain bound; 196 redundant geometries and 196 identical MER files are removed."
   ]
 }

@@ -1,3 +1,21 @@
+# 0.7.2正式发行阶段
+
+2026-10-29：用户对完整0.7.2试用反馈“没问题了”，本轮朝向与统一试用获得确认，正式发行门槛已满足。保留已验收构建标识0.7.2-trial.1以便追溯；该标识不再表示发行仍待批准。具体平台、光影模式、联机和性能未单独报告，不扩大实机验收结论。
+
+以下保留开发、试用及历史记录；此前“待确认／不发布”限制已由本次用户确认解除。最终发行检查和发布结果以本页最新记录为准。
+
+---
+
+# 0.7.2维护补充
+
+当前批次0.7.2-trial.1。新增目录patch-072-catalog、建模绘图patch-072-art、服装专用clothing_display和显示方向动画。衣物不能加入tableItems或wearable；架体＋满载服装须整体核算256上限。衣物持久真源是version=1的clothing_rack.slots。
+
+壁挂／收款机缺陷见KNOWN_ISSUES K07，不沿用0.7.1矩阵测试作为实机修复证明。display_facing必须client_sync，0值保持旧路径；q.body_y_rotation参照[官方查询文档](https://github.com/MicrosoftDocs/minecraft-creator/blob/main/creator/Reference/Content/MolangReference/Examples/MolangConcepts/QueryFunctions.md)。
+
+按build→test→validate→package→verify_archive顺序完成后，交付完整试用包；两个manifest与build JSON、build_info命令标识须一致。本轮不创建正式标签或Release，待用户游戏确认。
+
+---
+
 # 开发与发行维护说明
 
 ## 0.7.1补丁维护

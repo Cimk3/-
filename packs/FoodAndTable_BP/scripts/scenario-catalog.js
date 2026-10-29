@@ -1,3 +1,4 @@
+import { patch072Props, infoScreens } from './patch-072-catalog.js';
 import { patch071Props } from './patch-071-catalog.js';
 /** 0.7.0 static creative props. IDs and append order are persistent contracts. */
 const group = (key, zh, en, rows) => ({ key, zh, en, items: rows.map(([key, zh, en, height, wallOnly]) => ({ key, zh, en, height, wallOnly: wallOnly === true })) });
@@ -22,7 +23,7 @@ export const scenarioGroups = [
     ])
 ];
 export const scenarioProps = scenarioGroups.flatMap(g => g.items.map(d => ({ ...d, group: g.key })));
-export const scenarioById = new Map([...scenarioProps, ...patch071Props].map(d => ['mcpe_food:' + d.key, d]));
+export const scenarioById = new Map([...scenarioProps, ...patch071Props, ...patch072Props].map(d => ['mcpe_food:' + d.key, d]));
 export const wallKeys = [...scenarioProps.filter(d => d.wallOnly).map(d => d.key), 'flat_screen_tv', 'landscape_frame', 'table_clock'];
 export const wallVariants = wallKeys.map(key => ({ key: key + '_wall', base: key, zh: '壁挂 ' + key, en: 'Wall ' + key }));
 export const wallById = new Map(wallKeys.map(key => ['mcpe_food:' + key, key + '_wall']));
@@ -32,5 +33,6 @@ export const brandAdvertisements = [
     { key: 'ad_ft_computer', series: 'brand', zh: 'FT电脑', en: 'FT Computer', aspect: 'square' }
 ];
 export const digitalScreens = [['2x2', 2, 2], ['4x4', 4, 4], ['4x3', 4, 3]].flatMap(([size, width, height]) => brandAdvertisements.map(ad => ({ key: `digital_${ad.key.slice(3)}_${size}`, zh: `电子广告屏 · ${ad.zh} ${width}×${height}`, en: `Digital Ad Screen · ${ad.en} ${size}`, brand: ad.key.slice(3), width, height })));
-export const digitalById = new Map(digitalScreens.map(d => ['mcpe_food:' + d.key, d]));
+export const wallScreens = [...digitalScreens, ...infoScreens];
+export const digitalById = new Map(wallScreens.map(d => ['mcpe_food:' + d.key, d]));
 export const scenarioScreens = new Set(['patient_monitor', 'ultrasound_cart', 'infusion_pump_stand', 'ecg_machine', 'arcade_cabinet', 'flat_screen_tv', 'atm_terminal', 'queue_ticket_kiosk', 'ai_inference_workstation', 'ai_dual_screen_desk', 'ai_compute_rack', 'pen_display_set', 'electronic_whiteboard', 'teaching_lectern']);

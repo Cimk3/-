@@ -1,4 +1,5 @@
-import {scenarioById,wallById,digitalById,digitalScreens} from './scenario-catalog.js';
+import {patch072ById,clothingById,rackById,clothingVisuals} from './patch-072-catalog.js';
+import {scenarioById,wallById,digitalById,wallScreens} from './scenario-catalog.js';
 import {BlockPermutation,GameMode,ItemStack,system,world} from '@minecraft/server';
 import type {Block,Container,Entity,Player,PlayerInteractWithBlockBeforeEvent,Vector3} from '@minecraft/server';
 import {lifestyleItems} from './lifestyle-catalog.js';
@@ -9,14 +10,14 @@ import {adById,adSize,advertisements,surfaceIndex,tableItemById,tray,trayFoods} 
 import type {AdKey} from './decor-catalog.js';
 import {electronicsById} from './electronics-catalog.js';
 import {refrigeratorById} from './appliance-catalog.js';
-import {screenYaw,cardinalYaw} from './device-facing.js';
+import {screenYaw,cardinalYaw,displayFacing,facingFromYaw} from './device-facing.js';
 import {MenuSessions,planInsert,planServe} from './inventory.js';
 import type {Plan,Slots} from './inventory.js';
 import {isWallSupport,surfaceHeight} from './supports.js';
 
 export interface DecorRecord {
   version:1; uid:string; revision:number; dimension:string; support:Vector3;
-  kind:'surface'|'tray'|'ad'|'appliance'|'digital_ad'; wallFace?:string; definition:string; direction:string; native:boolean; yaw?:number; tableNumber?:number;
+  kind:'surface'|'tray'|'ad'|'appliance'|'digital_ad'|'clothing_rack'; wallFace?:string; definition:string; direction:string; native:boolean; yaw?:number; tableNumber?:number;
   slots:(string|null)[]; art?:AdKey; size?:number;
 }
 interface Snapshot {originals:(ItemStack|undefined)[];slots:Slots}
@@ -108,6 +109,12 @@ function visual(r:DecorRecord,type:string,part:string,index:number,position:Vect
     if(entity.getDynamicProperty('mcpe_food:shape')!==shape){entity.triggerEvent(`mcpe_food:shape_${shape}`);entity.setDynamicProperty('mcpe_food:shape',shape);}
   }
   if(r.kind==='ad'&&entity.getProperty('mcpe_food:size')!==(r.size??0))entity.setProperty('mcpe_food:size',r.size??0);
+  // Explicit facing is display-only: saved direction, yaw and revision stay intact.
+  const explicit=!!r.wallFace||r.kind==='digital_ad'||r.definition===id('supermarket_checkout')||patch072ById.has(r.definition)||r.kind==='clothing_rack';
+  if(type!=='mcpe_food:advert_display'&&type!=='mcpe_food:tray_food_display'){
+    const code=explicit?(isPanel(r)?displayFacing(r.wallFace??r.direction):facingFromYaw(r.yaw??yaw[r.direction]??0)):0;
+    if(entity.getProperty('mcpe_food:display_facing')!==code)entity.setProperty('mcpe_food:display_facing',code);
+  }
   // Wall meshes use local -Z as their visible front. Native entity yaw turns
   // clockwise; east/west therefore invert the legacy block-facing table.
   // Preserve the saved direction/yaw: this is only the display transform.
@@ -120,7 +127,7 @@ export function synchronize(r:DecorRecord):void {
   const wanted=new Set<string>();
   if(r.kind==='digital_ad'){
     const d=digitalById.get(r.definition)!;const n=normals[r.direction]!,right=rights[r.direction]!;
-    visual(r,'mcpe_food:digital_ad_display','screen',digitalScreens.indexOf(d),add(add({x:r.support.x+.5,y:r.support.y,z:r.support.z+.5},right,(d.width-1)/2),n,.505));wanted.add('screen');
+    visual(r,'mcpe_food:digital_ad_display','screen',wallScreens.indexOf(d),add(add({x:r.support.x+.5,y:r.support.y,z:r.support.z+.5},right,(d.width-1)/2),n,.505));wanted.add('screen');
   }else if(r.wallFace){
     const n=normals[r.wallFace]!;visual(r,'mcpe_food:surface_display','base',surfaceIndex.get(id(wallById.get(r.definition)!))!,add({x:r.support.x+.5,y:r.support.y,z:r.support.z+.5},n,.505));wanted.add('base');
   }else if(r.kind==='ad'){
@@ -130,6 +137,15 @@ export function synchronize(r:DecorRecord):void {
   }else{
     const height=surfaceHeight(safeBlock(r)),p={x:r.support.x+.5,y:r.support.y+height,z:r.support.z+.5};
     if(!r.native){const index=surfaceIndex.get(r.definition===id('table_number_sign')?id(numberKey(validTableNumber(r.tableNumber)?r.tableNumber:8)):r.definition);if(index===undefined)throw new Error('Unknown surface visual');visual(r,'mcpe_food:surface_display','base',index,p);wanted.add('base');}
+    if(r.kind==='clothing_rack'){
+      const spec=rackById.get(r.definition)!;
+      for(let slot=0;slot<spec.capacity;slot++){
+        const key=r.slots[slot];if(!key)continue;
+        const index=clothingVisuals.findIndex(v=>id(v.key)===key&&v.pose===spec.pose&&v.slot===slot);
+        if(index<0)throw new Error('Unknown garment pose');
+        visual(r,'mcpe_food:clothing_display',`garment${slot}`,index,p);wanted.add(`garment${slot}`);
+      }
+    }
     if(r.kind==='tray')for(let slot=0;slot<3;slot++){
       const key=r.slots[slot];if(!key)continue;
       const index=trayFoods.findIndex(f=>id(f.key)===key);if(index<0)throw new Error('Unknown tray food');
@@ -150,6 +166,7 @@ function change(p:Player,old:DecorRecord,next:DecorRecord,plan:Plan):boolean {
 }
 function drops(r:DecorRecord):string[] {
   if(r.kind==='ad')return [id(r.art!)];
+  if(r.kind==='clothing_rack')return [r.definition,...r.slots.filter((s):s is string=>!!s)];
   if(r.kind==='tray')return [id(tray.key),...r.slots.filter((s):s is string=>!!s)];
   const serving=foodByServing.get(r.definition);return serving?[id(serving.vessel.key),id(serving.food.key)]:[r.definition];
 }
@@ -183,6 +200,37 @@ async function trayMenu(p:Player,r:DecorRecord):Promise<void> {
     change(p,r,next,plan);
   }finally{io.sessions.finish(p.id,token);}
 }
+
+/** Plans every refund before committing anything. No await occurs inside the write phase. */
+async function clothingMenu(p:Player,r:DecorRecord):Promise<void>{
+ if(!click(p,r.uid)||!assertCurrent(p,r))return;
+ const c=io.inventory(p),selected=p.selectedSlotIndex,hand=c?.getItem(selected),spec=rackById.get(r.definition);
+ if(!c||!spec)return;
+ const garment=hand&&clothingById.get(hand.typeId);
+ if(hand&&(!garment||(!spec.allowHat&&garment.style==='hat'))){io.notify(p,'此展示架不接受该物品。','This rack does not accept that item.');return;}
+ const token=io.sessions.begin(p.id);if(token===undefined)return;
+ try{
+  const form=new ActionFormData().title('服装陈列 / Clothing Display').body(hand?'选择空槽放入1件服装。':'选择服装取回，或收回整架。');
+  for(let i=0;i<spec.capacity;i++)form.button(`${i+1} · ${clothingById.get(r.slots[i]??'')?.zh??'空槽 / Empty'}`);
+  if(!hand)form.button('收回整架（返还全部服装） / Collect rack');
+  const response=await form.show(p),choice=response.selection;
+  if(response.canceled||choice===undefined||!Number.isInteger(choice)||choice<0||choice>spec.capacity||p.selectedSlotIndex!==selected||c.getItem(selected)?.typeId!==hand?.typeId||!io.sessions.claim(p.id,token)||!assertCurrent(p,r))return;
+  if(choice===spec.capacity){
+   if(hand||locks.has(r.uid))return;
+   const before=io.snapshot(c);let slots=before.slots;
+   for(const key of [...r.slots.filter((k):k is string=>!!k),...(!isCreative(p)?[r.definition]:[])]){
+    const plan=planInsert(slots,key,1,new ItemStack(key).maxAmount);
+    if(!plan.ok){io.notify(p,'背包不足，展示架与服装保持原状。','Inventory full; rack and clothing unchanged.');return;}slots=plan.slots;
+   }
+   try{io.commit(c,before,slots);removeDecor(r,false);}catch(error){restore(c,before);throw error;}return;
+  }
+  const next=copy(r);next.revision++;let plan:Plan;
+  if(hand){if(r.slots[choice])return;plan=planServe(io.snapshot(c).slots,selected,hand.typeId);next.slots[choice]=hand.typeId;}
+  else{const key=r.slots[choice];if(!key)return;plan=planInsert(io.snapshot(c).slots,key,1,new ItemStack(key).maxAmount);next.slots[choice]=null;}
+  change(p,r,next,plan);
+ }finally{io.sessions.finish(p.id,token);}
+}
+
 async function numberMenu(p:Player,r:DecorRecord):Promise<void>{
  if(!click(p,r.uid)||!assertCurrent(p,r))return;
  const c=io.inventory(p);if(!c||c.getItem(p.selectedSlotIndex))return;
@@ -217,6 +265,7 @@ function createWall(p:Player,block:Block,definition:string,face:string):void{
   try{save(r);io.commit(c,before,plan.slots);synchronize(r);}catch(error){restore(c,before);if(records.has(r.uid))removeDecor(r,false);throw error;}
 }
 function surfaceInteract(p:Player,r:DecorRecord):void|Promise<void> {
+  if(r.kind==='clothing_rack')return clothingMenu(p,r);
   if(scenarioById.has(r.definition)||r.wallFace||r.kind==='digital_ad'||['mcpe_food:landscape_frame','mcpe_food:table_clock'].includes(r.definition))return staticMenu(p,r);
   if(!click(p,r.uid)||!assertCurrent(p,r))return;const c=io.inventory(p);if(!c)return;
   const hand=c.getItem(p.selectedSlotIndex),served=foodByServing.get(r.definition),next=copy(r);next.revision++;
@@ -253,7 +302,7 @@ function direction(p:Player):string {const angle=((p.getRotation().y%360)+360)%3
 function createSurface(p:Player,support:Block,definition:string):void {
   const height=surfaceHeight(support),c=io.inventory(p);if(scenarioById.get(definition)?.wallOnly||!height||!c||recordForSupport(support.dimension.id,support.location))return;
   const target=support.dimension.getBlock(add(support.location,{x:0,y:1,z:0}));if(!empty(target))return;
-  const r:DecorRecord={version:1,uid:unique(),revision:0,dimension:support.dimension.id,support:{...support.location},kind:definition===id(tray.key)?'tray':'surface',definition,direction:direction(p),native:definition===id(tray.key)&&height===1,slots:[null,null,null]};
+  const r:DecorRecord={version:1,uid:unique(),revision:0,dimension:support.dimension.id,support:{...support.location},kind:rackById.has(definition)?'clothing_rack':definition===id(tray.key)?'tray':'surface',definition,direction:direction(p),native:definition===id(tray.key)&&height===1,slots:Array.from({length:rackById.get(definition)?.capacity??3},()=>null)};
   r.yaw=screenYaw(definition,{x:support.location.x+.5,z:support.location.z+.5},p.location,p.getRotation().y);
   if(!near(p,r)||surfaceValid({...r,native:false})!==true)return;const before=io.snapshot(c),plan=isCreative(p)?{ok:true as const,slots:before.slots}:planServe(before.slots,p.selectedSlotIndex,definition);if(!plan.ok)return;
   // Publish the owner first: an engine onPlace callback must reuse this same
@@ -301,6 +350,7 @@ function posterAt(block:Block,face:string):DecorRecord|undefined {return [...rec
 function run(p:Player,work:()=>void|Promise<void>):void {system.run(()=>{Promise.resolve().then(work).catch(error=>{console.warn(`[Food & Table] decor: ${String(error)}`);if(p.isValid)io.notify(p,'操作未完成，请重试。','Operation could not complete; please retry.');});});}
 export function handleDecorBlock(event:PlayerInteractWithBlockBeforeEvent):boolean {
   const p=event.player,block=event.block,face=String(event.blockFace).toLowerCase(),c=io.inventory(p),hand=c?.getItem(p.selectedSlotIndex),ad=hand&&adById.get(hand.typeId);
+  if(hand&&clothingById.has(hand.typeId)){event.cancel=true;return true;}
   const poster=posterAt(block,face);
   if(hand&&(wallById.has(hand.typeId)||digitalById.has(hand.typeId))&&normals[face]){
     event.cancel=true;if(event.isFirstEvent){const definition=hand.typeId,selected=p.selectedSlotIndex;run(p,()=>{if(p.selectedSlotIndex===selected&&io.inventory(p)?.getItem(selected)?.typeId===definition)createWall(p,block,definition,face);});}return true;

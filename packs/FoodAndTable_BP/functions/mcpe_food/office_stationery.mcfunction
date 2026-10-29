@@ -6,3 +6,4 @@ give @s mcpe_food:standing_binder 4
 give @s mcpe_food:stapler 4
 give @s mcpe_food:tape_dispenser 4
 give @s mcpe_food:desk_organizer 4
+give @s mcpe_food:upright_archive_cabinet 4

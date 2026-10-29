@@ -1,5 +1,6 @@
+import {informationImage} from './patch-072-art.mjs';
 import {wallFacingCubes} from './wall-geometry.mjs';
-import {digitalScreens} from '../.build/scenario-catalog.js';
+import {digitalScreens,wallScreens} from '../.build/scenario-catalog.js';
 import {canvas,png,blit,text,saveImage} from './art.mjs';
 import {brandImage} from './brand-art.mjs';
 import {blockTextureSet} from './rendering.mjs';
@@ -13,18 +14,18 @@ export function digitalDisplays({root,BP,RP,json,write,icon,item}){
   }return `textures/entity/mcpe_food/${key}`;
  };
  const frame=texture('digital_frame',canvas(128,128,[29,35,43,255]));
- for(const[i,d]of digitalScreens.entries()){
-  const im=brandImage(d.brand,256,d.width===d.height?256:192),screen=texture(`digital_content_${d.brand}_${d.width===d.height?'square':'wide'}`,im,12),w=d.width*16,h=d.height*16;
+ for(const[i,d]of wallScreens.entries()){
+  const im=i<9?brandImage(d.brand,256,d.width===d.height?256:192):informationImage(d.key),screen=texture(`digital_content_${d.brand}_${d.width===d.height?'square':d.height===1?'info':'wide'}`,im,12),w=d.width*16,h=d.height*16;
   const face=(material,uv_size)=>({uv:[0,0],uv_size,material_instance:material});
   const cube=(origin,size,material='ware')=>({origin,size,uv:Object.fromEntries(['north','south','east','west','up','down'].map(f=>[f,face(material,[1,1])]))});
   const frameCubes=[cube([-w/2,0,0],[w,h,.8]),cube([-w/2,0,.8],[.65,h,.6]),cube([w/2-.65,0,.8],[.65,h,.6]),cube([-w/2+.65,0,.8],[w-1.3,.65,.6]),cube([-w/2+.65,h-.65,.8],[w-1.3,.65,.6])];
   const food=[{origin:[-w/2+.65,.65,.86],size:[w-1.3,h-1.3,.06],uv:{south:face('food',[im.width,im.height])}}];
-  const identifier=`geometry.mcpe_food.${d.key}`;
+  const identifier=`geometry.mcpe_food.${i<9?'':'info.'}${d.key}`;
   json(RP,`models/entity/mcpe_food/${d.key}.geo.json`,{format_version:'1.12.0','minecraft:geometry':[{description:{identifier,texture_width:im.width,texture_height:im.height,visible_bounds_width:8,visible_bounds_height:8,visible_bounds_offset:[0,2,0]},bones:[{name:'ware',pivot:[0,0,0],cubes:wallFacingCubes(frameCubes)},{name:'food',pivot:[0,0,0],cubes:wallFacingCubes([...frameCubes,...food]).slice(frameCubes.length)}]}]});
   definitions.push({geometry:identifier,food:screen,ware:frame});entities.push({key:d.key,cubes:6,resolution:im.width});
   const thumb=canvas(128,128,[29,35,43,0]),hh=d.width===d.height?116:87;
   for(let y=0;y<hh;y++)for(let x=0;x<116;x++){const at=(Math.floor(y*im.height/hh)*im.width+Math.floor(x*im.width/116))*4;thumb.data.set(im.data.subarray(at,at+4),((y+Math.floor((128-hh)/2))*128+x+6)*4);}
-  icon(d.key,thumb);item(d.key,d.zh,d.en,{},'items','mcpe_food:group_advertisements');blit(gallery,im,i%3*350+45,Math.floor(i/3)*310+35);text(gallery,`${d.brand} ${d.width}X${d.height}`,i%3*350+20,Math.floor(i/3)*310+295,1);
+  icon(d.key,thumb);item(d.key,d.zh,d.en,{},'items',i<9?'mcpe_food:group_advertisements':`mcpe_food:group_${d.group}`);if(i<9){blit(gallery,im,i%3*350+45,Math.floor(i/3)*310+35);text(gallery,`${d.brand} ${d.width}X${d.height}`,i%3*350+20,Math.floor(i/3)*310+295,1);}
  }
  saveImage('previews/digital_ad_screens.png',gallery);return {definitions,entities,copied};
 }

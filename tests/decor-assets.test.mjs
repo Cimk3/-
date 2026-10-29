@@ -29,7 +29,7 @@ test('twelve independently generated posters have thirty-six non-stretched sizes
 });
 test('tray miniatures fit the whole scene budget and cover every plate dish including seven display platters',()=>{
   const report=read('display-report.json');assert.equal(trayFoods.length,70);assert.equal(trayFoods.filter(f=>!f.edible).length,7);assert.ok(report.trayCubes<=112);assert.ok(report.maxMiniCubes<=48);assert.ok(report.fullTrayCubeBudget<=256);
-  assert.equal(report.surfaceDefinitions,surfaceVisuals.length);assert.equal(report.entityTypes,4);
+  assert.equal(report.surfaceDefinitions,surfaceVisuals.length);assert.equal(report.entityTypes,5);
 });
 test('paper cups are separate placeable displays with private branding and one self-drop',()=>{
   for(const p of paperCups){const item=read(`${bp}/items/${p.key}.json`)['minecraft:item'];assert.equal(item.components['minecraft:food'],undefined);assert.equal(item.components['minecraft:use_animation'],undefined);assert.equal(item.components['minecraft:block_placer'].block,id(p.key));assert.equal(item.description.menu_category.group,'mcpe_food:group_drink');const drops=read(`${bp}/loot_tables/blocks/${p.key}.json`).pools;assert.equal(drops.length,1);assert.equal(drops[0].entries[0].name,id(p.key));}

@@ -1,5 +1,5 @@
 {
-  "version": "0.7.1",
+  "version": "0.7.2",
   "models": [
     {
       "key": "egg_fried_rice_serving",
@@ -3852,6 +3852,102 @@
       }
     },
     {
+      "key": "single_clothing_rail",
+      "resolution": 128,
+      "cubes": 10,
+      "slots": {
+        "ware": "patch072_single_clothing_rail"
+      }
+    },
+    {
+      "key": "double_clothing_shelf",
+      "resolution": 128,
+      "cubes": 8,
+      "slots": {
+        "ware": "patch072_double_clothing_shelf"
+      }
+    },
+    {
+      "key": "mannequin_display",
+      "resolution": 128,
+      "cubes": 9,
+      "slots": {
+        "ware": "patch072_mannequin_display"
+      }
+    },
+    {
+      "key": "full_length_mirror",
+      "resolution": 128,
+      "cubes": 10,
+      "slots": {
+        "ware": "patch072_full_length_mirror"
+      }
+    },
+    {
+      "key": "transit_ticket_gate",
+      "resolution": 128,
+      "cubes": 10,
+      "slots": {
+        "ware": "patch072_transit_ticket_gate"
+      }
+    },
+    {
+      "key": "platform_information_screen",
+      "resolution": 128,
+      "cubes": 2,
+      "slots": {
+        "ware": "patch072_platform_information_screen"
+      }
+    },
+    {
+      "key": "ticket_vending_machine",
+      "resolution": 128,
+      "cubes": 10,
+      "slots": {
+        "ware": "patch072_ticket_vending_machine"
+      }
+    },
+    {
+      "key": "ft_government_desktop",
+      "resolution": 128,
+      "cubes": 44,
+      "slots": {
+        "ware": "patch072_ft_government_desktop"
+      }
+    },
+    {
+      "key": "ft_government_all_in_one",
+      "resolution": 128,
+      "cubes": 36,
+      "slots": {
+        "ware": "patch072_ft_government_all_in_one"
+      }
+    },
+    {
+      "key": "ft_government_ultrabook_open",
+      "resolution": 128,
+      "cubes": 36,
+      "slots": {
+        "ware": "patch072_ft_government_ultrabook_open"
+      }
+    },
+    {
+      "key": "government_queue_screen",
+      "resolution": 128,
+      "cubes": 2,
+      "slots": {
+        "ware": "patch072_government_queue_screen"
+      }
+    },
+    {
+      "key": "upright_archive_cabinet",
+      "resolution": 128,
+      "cubes": 14,
+      "slots": {
+        "ware": "patch072_upright_archive_cabinet"
+      }
+    },
+    {
       "key": "aed_cabinet_wall",
       "resolution": 128,
       "cubes": 6,
@@ -6534,6 +6630,66 @@
       "resolution": 128
     },
     {
+      "key": "surface_single_clothing_rail",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "surface_double_clothing_shelf",
+      "cubes": 8,
+      "resolution": 128
+    },
+    {
+      "key": "surface_mannequin_display",
+      "cubes": 9,
+      "resolution": 128
+    },
+    {
+      "key": "surface_full_length_mirror",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "surface_transit_ticket_gate",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "surface_platform_information_screen",
+      "cubes": 2,
+      "resolution": 128
+    },
+    {
+      "key": "surface_ticket_vending_machine",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "surface_ft_government_desktop",
+      "cubes": 44,
+      "resolution": 128
+    },
+    {
+      "key": "surface_ft_government_all_in_one",
+      "cubes": 36,
+      "resolution": 128
+    },
+    {
+      "key": "surface_ft_government_ultrabook_open",
+      "cubes": 36,
+      "resolution": 128
+    },
+    {
+      "key": "surface_government_queue_screen",
+      "cubes": 2,
+      "resolution": 128
+    },
+    {
+      "key": "surface_upright_archive_cabinet",
+      "cubes": 14,
+      "resolution": 128
+    },
+    {
       "key": "mini_kung_pao_chicken",
       "cubes": 31,
       "resolution": 128
@@ -7042,6 +7198,321 @@
       "key": "digital_ft_computer_4x3",
       "cubes": 6,
       "resolution": 256
+    },
+    {
+      "key": "platform_information_screen",
+      "cubes": 6,
+      "resolution": 256
+    },
+    {
+      "key": "government_queue_screen",
+      "cubes": 6,
+      "resolution": 256
+    },
+    {
+      "key": "garment_display_tshirt_hanging_0",
+      "cubes": 5,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_tshirt_hanging_1",
+      "cubes": 5,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_shirt_hanging_0",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_shirt_hanging_1",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_coat_hanging_0",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_coat_hanging_1",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_trousers_hanging_0",
+      "cubes": 5,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_trousers_hanging_1",
+      "cubes": 5,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_dress_hanging_0",
+      "cubes": 13,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_dress_hanging_1",
+      "cubes": 13,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_black_hanging_0",
+      "cubes": 18,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_black_hanging_1",
+      "cubes": 18,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_navy_hanging_0",
+      "cubes": 18,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_navy_hanging_1",
+      "cubes": 18,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_light_gray_hanging_0",
+      "cubes": 18,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_light_gray_hanging_1",
+      "cubes": 18,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_tshirt_folded_0",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_tshirt_folded_1",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_tshirt_folded_2",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_tshirt_folded_3",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_shirt_folded_0",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_shirt_folded_1",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_shirt_folded_2",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_shirt_folded_3",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_coat_folded_0",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_coat_folded_1",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_coat_folded_2",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_coat_folded_3",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_trousers_folded_0",
+      "cubes": 5,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_trousers_folded_1",
+      "cubes": 5,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_trousers_folded_2",
+      "cubes": 5,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_trousers_folded_3",
+      "cubes": 5,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_dress_folded_0",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_dress_folded_1",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_dress_folded_2",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_dress_folded_3",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_hat_folded_0",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_hat_folded_1",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_hat_folded_2",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_hat_folded_3",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_black_folded_0",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_black_folded_1",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_black_folded_2",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_black_folded_3",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_navy_folded_0",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_navy_folded_1",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_navy_folded_2",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_navy_folded_3",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_light_gray_folded_0",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_light_gray_folded_1",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_light_gray_folded_2",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_light_gray_folded_3",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_tshirt_mannequin_0",
+      "cubes": 5,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_shirt_mannequin_0",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_coat_mannequin_0",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_trousers_mannequin_0",
+      "cubes": 5,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_dress_mannequin_0",
+      "cubes": 13,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_hat_mannequin_0",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_black_mannequin_0",
+      "cubes": 18,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_navy_mannequin_0",
+      "cubes": 18,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_light_gray_mannequin_0",
+      "cubes": 18,
+      "resolution": 128
     }
   ],
   "iconSizes": {
@@ -7273,6 +7744,27 @@
     "mcpe_food_gpu_single_fan": 128,
     "mcpe_food_gpu_dual_fan": 128,
     "mcpe_food_gpu_triple_fan": 128,
+    "mcpe_food_single_clothing_rail": 128,
+    "mcpe_food_double_clothing_shelf": 128,
+    "mcpe_food_mannequin_display": 128,
+    "mcpe_food_full_length_mirror": 128,
+    "mcpe_food_transit_ticket_gate": 128,
+    "mcpe_food_platform_information_screen": 128,
+    "mcpe_food_ticket_vending_machine": 128,
+    "mcpe_food_ft_government_desktop": 128,
+    "mcpe_food_ft_government_all_in_one": 128,
+    "mcpe_food_ft_government_ultrabook_open": 128,
+    "mcpe_food_government_queue_screen": 128,
+    "mcpe_food_upright_archive_cabinet": 128,
+    "mcpe_food_display_tshirt": 128,
+    "mcpe_food_display_shirt": 128,
+    "mcpe_food_display_coat": 128,
+    "mcpe_food_display_trousers": 128,
+    "mcpe_food_display_dress": 128,
+    "mcpe_food_display_hat": 128,
+    "mcpe_food_display_suit_black": 128,
+    "mcpe_food_display_suit_navy": 128,
+    "mcpe_food_display_suit_light_gray": 128,
     "mcpe_food_aed_cabinet_wall": 128,
     "mcpe_food_wall_diagnostic_station_wall": 128,
     "mcpe_food_wall_air_conditioner_wall": 128,

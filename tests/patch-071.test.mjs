@@ -1,3 +1,4 @@
+import {patch072Props,clothingItems,patch072Groups} from '../.build/patch-072-catalog.js';
 import test,{afterEach} from 'node:test';import assert from 'node:assert/strict';
 import {readFileSync,readdirSync} from 'node:fs';import {createHash} from 'node:crypto';import {registerHooks} from 'node:module';
 import {state,FakeDimension,FakePlayer,ItemStack,interact,flush,reset,system} from './mock-server.mjs';
@@ -16,13 +17,13 @@ const normals={north:[0,0,-1],south:[0,0,1],east:[1,0,0],west:[-1,0,0]},rights={
 function setup(face='south',w=1,h=1){reset();const d=new FakeDimension(),p=new FakePlayer(d),n=normals[face],r=rights[face];p.location={x:.5+n[0]*3,y:1,z:.5+n[2]*3};for(let x=0;x<w;x++)for(let y=0;y<h;y++)d.put('minecraft:stone',{x:r[0]*x,y,z:r[2]*x});return{d,p,b:d.getBlock({x:0,y:0,z:0})};}
 async function place(p,b,key,face='Up'){p.container.setItem(0,new ItemStack('mcpe_food:'+key));interact(p,b,true,face);await tick();return saved()[0];}
 test('0.7.1 appends only four public items/blocks and keeps every prior ID, UUID, recipe, drop and visual index',()=>{
- const old=read('tests/fixtures/v0.7.0.json');for(const kind of ['items','blocks']){const ids=readdirSync(`${bp}/${kind}`).map(f=>read(`${bp}/${kind}/${f}`)[`minecraft:${kind.slice(0,-1)}`].description.identifier);assert.deepEqual(ids.filter(k=>!old[kind].includes(k)).sort(),patch071Props.map(d=>'mcpe_food:'+d.key).sort());for(const id of old[kind])assert.ok(ids.includes(id));}
- assert.deepEqual(surfaceVisuals.slice(0,534).map(d=>d.key),read('tests/fixtures/v0.7.0-surfaces.json'));assert.equal(surfaceVisuals.length,538);assert.deepEqual(digitalScreens,read('tests/fixtures/v0.7.0-digital.json'));
+ const old=read('tests/fixtures/v0.7.0.json');for(const kind of ['items','blocks']){const ids=readdirSync(`${bp}/${kind}`).map(f=>read(`${bp}/${kind}/${f}`)[`minecraft:${kind.slice(0,-1)}`].description.identifier);assert.deepEqual(ids.filter(k=>!old[kind].includes(k)&&![...patch072Props,...clothingItems].some(d=>'mcpe_food:'+d.key===k)).sort(),patch071Props.map(d=>'mcpe_food:'+d.key).sort());for(const id of old[kind])assert.ok(ids.includes(id));}
+ assert.deepEqual(surfaceVisuals.slice(0,534).map(d=>d.key),read('tests/fixtures/v0.7.0-surfaces.json'));assert.equal(surfaceVisuals.length,550);assert.deepEqual(digitalScreens,read('tests/fixtures/v0.7.0-digital.json'));
  for(const[pack,uuids]of Object.entries(old.uuids)){const m=read(`packs/${pack}/manifest.json`);assert.deepEqual([m.header.uuid,...m.modules.map(x=>x.uuid)],uuids);}
  for(const[folder,entries]of [['recipes',old.crafting],['loot_tables/blocks',old.loot]])for(const[f,h]of Object.entries(entries))assert.equal(sha(readFileSync(`${bp}/${folder}/${f}`)),h);
  for(const[f,states]of Object.entries(old.cropStates))assert.deepEqual(read(`${bp}/blocks/${f}`)['minecraft:block'].description.states,states);
- const lines=name=>readFileSync(`${bp}/functions/mcpe_food/${name}.mcfunction`,'utf8').trim().split('\n');assert.equal(lines('tasting_new').length,4);assert.deepEqual(lines('electronics').slice(0,41),old.functions['electronics.mcfunction'].trim().split('\n'));assert.equal(lines('electronics').length,42);assert.equal(lines('ai_work_devices').length,7);
- const groups=read(`${bp}/item_catalog/crafting_item_catalog.json`)['minecraft:crafting_items_catalog'].categories[0].groups;assert.equal(groups.find(g=>g.group_identifier.name==='mcpe_food:group_electronics').items.length,36);assert.equal(groups.find(g=>g.group_identifier.name==='mcpe_food:group_ai_work_devices').items.length,7);
+ const lines=name=>readFileSync(`${bp}/functions/mcpe_food/${name}.mcfunction`,'utf8').trim().split('\n');assert.equal(lines('tasting_new').length,21);assert.deepEqual(lines('electronics').slice(0,41),old.functions['electronics.mcfunction'].trim().split('\n'));assert.equal(lines('electronics').length,46);assert.equal(lines('ai_work_devices').length,7);
+ const groups=read(`${bp}/item_catalog/crafting_item_catalog.json`)['minecraft:crafting_items_catalog'].categories[0].groups;assert.equal(groups.find(g=>g.group_identifier.name==='mcpe_food:group_electronics').items.length,40);assert.equal(groups.find(g=>g.group_identifier.name==='mcpe_food:group_ai_work_devices').items.length,7);
 });
 test('unrelated final geometry remains identical to the 0.7.0 release',()=>{
  const changed=new Set(['pen_display_set','infusion_pump_stand','wall_air_conditioner',...wallVariants.map(d=>d.key),...digitalScreens.map(d=>d.key)]);
@@ -41,10 +42,10 @@ test('all wall variants bake a proper half turn, put the backing at zero and pre
   near(Math.max(...now.map(c=>c.origin[2]+c.size[2])),0);assert.deepEqual(cubes(read(`${rp}/models/entity/mcpe_food/surface_${v.key}.geo.json`)['minecraft:geometry'][0]),now);
  }
 });
-test('all wall props and nine panels face outward on four walls and restore old record fields without re-placement',async()=>{
+test('wall props and nine panels publish cardinal client properties and restore unchanged records (client appearance pending)',async()=>{
  for(const face of Object.keys(normals))for(const item of [...wallVariants.map(v=>({key:v.base,width:1,height:1})),...digitalScreens]){
-  const{d,p,b}=setup(face,item.width,item.height),r=await place(p,b,item.key,face);assert.ok(r,item.key+face);const entity=d.getEntities()[0],normal=worldVector([0,0,-1],entity.rotation.y),expected=normals[face];for(let i=0;i<3;i++)near(normal[i],expected[i]);
-  const serialized=JSON.stringify(r);entity.remove();loadDecorRecords();reconcileDecor();assert.equal(JSON.stringify(saved()[0]),serialized);assert.equal(d.getEntities().length,1);for(let i=0;i<3;i++)near(worldVector([0,0,-1],d.getEntities()[0].rotation.y)[i],expected[i]);removeDecor(r,false);
+  const{d,p,b}=setup(face,item.width,item.height),r=await place(p,b,item.key,face);assert.ok(r,item.key+face);const entity=d.getEntities()[0];assert.equal(entity.getProperty('mcpe_food:display_facing'),{north:1,east:2,south:3,west:4}[face]);
+  const serialized=JSON.stringify(r);entity.remove();loadDecorRecords();reconcileDecor();assert.equal(JSON.stringify(saved()[0]),serialized);assert.equal(d.getEntities().length,1);assert.equal(d.getEntities()[0].getProperty('mcpe_food:display_facing'),{north:1,east:2,south:3,west:4}[face]);removeDecor(r,false);
  }
 });
 test('digital screen image is outside the backing with upright unmirrored UV and keeps exact size/depth',()=>{
@@ -61,8 +62,4 @@ test('graphics cards have exactly one/two/three fans, distinct length, 128px UV 
 test('all four new items place on full blocks, slabs and inverted stairs; tall stand rejects blocked upper space',async()=>{
  for(const prop of patch071Props)for(const[type,states]of [['minecraft:stone',{}],['minecraft:oak_slab',{'minecraft:vertical_half':'bottom'}],['minecraft:oak_stairs',{upside_down_bit:true}]]){const{d,p}=setup();const b=d.put(type,{x:0,y:0,z:0},states);await place(p,b,prop.key);assert.equal(saved()[0].definition,'mcpe_food:'+prop.key);removeDecor(saved()[0],false);}
  const{d,p,b}=setup();d.put('minecraft:stone',{x:0,y:2,z:0});await place(p,b,'infusion_pump_stand');assert.equal(saved().length,0);assert.equal(p.container.count('mcpe_food:infusion_pump_stand'),1);
-});
-test('0.7.2 remains a proposal only: no clothing equipment, catalog groups or wearable components are introduced',()=>{
- const doc=readFileSync('docs/UPDATE_0.7.2_PROPOSAL.md','utf8');assert.ok(doc.includes('未实施')&&doc.includes('不能穿戴'));
- const items=readdirSync(`${bp}/items`).map(f=>read(`${bp}/items/${f}`)['minecraft:item']);assert.ok(items.every(d=>!d.components['minecraft:wearable']));const groups=read(`${bp}/item_catalog/crafting_item_catalog.json`)['minecraft:crafting_items_catalog'].categories[0].groups;assert.ok(groups.every(g=>!g.group_identifier.name.includes('clothing')));
 });

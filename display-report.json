@@ -1,7 +1,7 @@
 {
   "advertisements": 23,
   "advertisementSizes": 69,
-  "surfaceDefinitions": 538,
+  "surfaceDefinitions": 550,
   "trayFoods": 70,
   "trayCubes": 65,
   "maxMiniCubes": 39,
@@ -2698,6 +2698,66 @@
       "resolution": 128
     },
     {
+      "key": "surface_single_clothing_rail",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "surface_double_clothing_shelf",
+      "cubes": 8,
+      "resolution": 128
+    },
+    {
+      "key": "surface_mannequin_display",
+      "cubes": 9,
+      "resolution": 128
+    },
+    {
+      "key": "surface_full_length_mirror",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "surface_transit_ticket_gate",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "surface_platform_information_screen",
+      "cubes": 2,
+      "resolution": 128
+    },
+    {
+      "key": "surface_ticket_vending_machine",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "surface_ft_government_desktop",
+      "cubes": 44,
+      "resolution": 128
+    },
+    {
+      "key": "surface_ft_government_all_in_one",
+      "cubes": 36,
+      "resolution": 128
+    },
+    {
+      "key": "surface_ft_government_ultrabook_open",
+      "cubes": 36,
+      "resolution": 128
+    },
+    {
+      "key": "surface_government_queue_screen",
+      "cubes": 2,
+      "resolution": 128
+    },
+    {
+      "key": "surface_upright_archive_cabinet",
+      "cubes": 14,
+      "resolution": 128
+    },
+    {
       "key": "mini_kung_pao_chicken",
       "cubes": 31,
       "resolution": 128
@@ -3206,8 +3266,323 @@
       "key": "digital_ft_computer_4x3",
       "cubes": 6,
       "resolution": 256
+    },
+    {
+      "key": "platform_information_screen",
+      "cubes": 6,
+      "resolution": 256
+    },
+    {
+      "key": "government_queue_screen",
+      "cubes": 6,
+      "resolution": 256
+    },
+    {
+      "key": "garment_display_tshirt_hanging_0",
+      "cubes": 5,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_tshirt_hanging_1",
+      "cubes": 5,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_shirt_hanging_0",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_shirt_hanging_1",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_coat_hanging_0",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_coat_hanging_1",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_trousers_hanging_0",
+      "cubes": 5,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_trousers_hanging_1",
+      "cubes": 5,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_dress_hanging_0",
+      "cubes": 13,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_dress_hanging_1",
+      "cubes": 13,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_black_hanging_0",
+      "cubes": 18,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_black_hanging_1",
+      "cubes": 18,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_navy_hanging_0",
+      "cubes": 18,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_navy_hanging_1",
+      "cubes": 18,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_light_gray_hanging_0",
+      "cubes": 18,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_light_gray_hanging_1",
+      "cubes": 18,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_tshirt_folded_0",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_tshirt_folded_1",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_tshirt_folded_2",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_tshirt_folded_3",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_shirt_folded_0",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_shirt_folded_1",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_shirt_folded_2",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_shirt_folded_3",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_coat_folded_0",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_coat_folded_1",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_coat_folded_2",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_coat_folded_3",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_trousers_folded_0",
+      "cubes": 5,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_trousers_folded_1",
+      "cubes": 5,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_trousers_folded_2",
+      "cubes": 5,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_trousers_folded_3",
+      "cubes": 5,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_dress_folded_0",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_dress_folded_1",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_dress_folded_2",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_dress_folded_3",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_hat_folded_0",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_hat_folded_1",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_hat_folded_2",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_hat_folded_3",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_black_folded_0",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_black_folded_1",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_black_folded_2",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_black_folded_3",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_navy_folded_0",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_navy_folded_1",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_navy_folded_2",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_navy_folded_3",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_light_gray_folded_0",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_light_gray_folded_1",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_light_gray_folded_2",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_light_gray_folded_3",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_tshirt_mannequin_0",
+      "cubes": 5,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_shirt_mannequin_0",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_coat_mannequin_0",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_trousers_mannequin_0",
+      "cubes": 5,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_dress_mannequin_0",
+      "cubes": 13,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_hat_mannequin_0",
+      "cubes": 3,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_black_mannequin_0",
+      "cubes": 18,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_navy_mannequin_0",
+      "cubes": 18,
+      "resolution": 128
+    },
+    {
+      "key": "garment_display_suit_light_gray_mannequin_0",
+      "cubes": 18,
+      "resolution": 128
     }
   ],
-  "entityTypes": 4,
-  "entityTextureSets": 351
+  "entityTypes": 5,
+  "entityTextureSets": 374
 }

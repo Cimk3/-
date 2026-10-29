@@ -1,9 +1,11 @@
+import {patch072Screens} from '../.build/patch-072-catalog.js';
 import {scenarioScreens} from '../.build/scenario-catalog.js';
 /** Only named electronics may emit, and only inside their screen/LED UV islands. */
 import {electronics} from '../.build/electronics-catalog.js';
 const devices=new Map(electronics.map(d=>[`device_${d.key}`,d]));
 export function emissionIsValid(image,colorKey){
-  if(colorKey.startsWith('digital_content_'))return image.width===256&&[256,192].includes(image.height)&&image.pixels.every((v,i)=>i%4!==1||v<=24);
+  if(colorKey.startsWith('digital_content_'))return image.width===256&&[256,192,128].includes(image.height)&&image.pixels.every((v,i)=>i%4!==1||v<=24);
+  if(colorKey.startsWith('patch072_'))return image.width===128&&image.height===128&&image.pixels.every((v,i)=>i%4!==1||v===0||(patch072Screens.has(colorKey.slice(9))&&v<=24&&((i-1)/4)%128<96&&Math.floor((i-1)/4/128)<56));
   if(colorKey.startsWith('patch071_'))return image.width===128&&image.height===128&&image.pixels.every((v,i)=>i%4!==1||v===0||(colorKey==='patch071_supermarket_checkout'&&v<=24&&((i-1)/4)%128<96&&Math.floor((i-1)/4/128)<56));
   if(colorKey.startsWith('scenario_'))return image.width===128&&image.height===128&&image.pixels.every((v,i)=>i%4!==1||v===0||(scenarioScreens.has(colorKey.slice(9))&&v<=24&&((i-1)/4)%128<96&&Math.floor((i-1)/4/128)<56));
   const device=devices.get(colorKey),closed=device?.pose==='closed';

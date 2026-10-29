@@ -40,3 +40,7 @@ give @s mcpe_food:fridge_double_rose_gold 4
 give @s mcpe_food:fridge_double_white 4
 give @s mcpe_food:fridge_double_black 4
 give @s mcpe_food:supermarket_checkout 4
+give @s mcpe_food:ft_government_desktop 4
+give @s mcpe_food:ft_government_all_in_one 4
+give @s mcpe_food:ft_government_ultrabook_open 4
+give @s mcpe_food:government_queue_screen 4

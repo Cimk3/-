@@ -1,4 +1,5 @@
-import { scenarioById, wallById, digitalById, digitalScreens } from './scenario-catalog.js';
+import { patch072ById, clothingById, rackById, clothingVisuals } from './patch-072-catalog.js';
+import { scenarioById, wallById, digitalById, wallScreens } from './scenario-catalog.js';
 import { BlockPermutation, GameMode, ItemStack, system, world } from '@minecraft/server';
 import { lifestyleItems } from './lifestyle-catalog.js';
 import { restaurantAccessories, numberKey, validTableNumber } from './restaurant-catalog.js';
@@ -7,7 +8,7 @@ import { compatibleVessels, foodById, foodByServing, id, servingKey, vesselByKey
 import { adById, adSize, advertisements, surfaceIndex, tableItemById, tray, trayFoods } from './decor-catalog.js';
 import { electronicsById } from './electronics-catalog.js';
 import { refrigeratorById } from './appliance-catalog.js';
-import { screenYaw, cardinalYaw } from './device-facing.js';
+import { screenYaw, cardinalYaw, displayFacing, facingFromYaw } from './device-facing.js';
 import { planInsert, planServe } from './inventory.js';
 import { isWallSupport, surfaceHeight } from './supports.js';
 let io;
@@ -155,6 +156,13 @@ function visual(r, type, part, index, position) {
     }
     if (r.kind === 'ad' && entity.getProperty('mcpe_food:size') !== (r.size ?? 0))
         entity.setProperty('mcpe_food:size', r.size ?? 0);
+    // Explicit facing is display-only: saved direction, yaw and revision stay intact.
+    const explicit = !!r.wallFace || r.kind === 'digital_ad' || r.definition === id('supermarket_checkout') || patch072ById.has(r.definition) || r.kind === 'clothing_rack';
+    if (type !== 'mcpe_food:advert_display' && type !== 'mcpe_food:tray_food_display') {
+        const code = explicit ? (isPanel(r) ? displayFacing(r.wallFace ?? r.direction) : facingFromYaw(r.yaw ?? yaw[r.direction] ?? 0)) : 0;
+        if (entity.getProperty('mcpe_food:display_facing') !== code)
+            entity.setProperty('mcpe_food:display_facing', code);
+    }
     // Wall meshes use local -Z as their visible front. Native entity yaw turns
     // clockwise; east/west therefore invert the legacy block-facing table.
     // Preserve the saved direction/yaw: this is only the display transform.
@@ -174,7 +182,7 @@ export function synchronize(r) {
     if (r.kind === 'digital_ad') {
         const d = digitalById.get(r.definition);
         const n = normals[r.direction], right = rights[r.direction];
-        visual(r, 'mcpe_food:digital_ad_display', 'screen', digitalScreens.indexOf(d), add(add({ x: r.support.x + .5, y: r.support.y, z: r.support.z + .5 }, right, (d.width - 1) / 2), n, .505));
+        visual(r, 'mcpe_food:digital_ad_display', 'screen', wallScreens.indexOf(d), add(add({ x: r.support.x + .5, y: r.support.y, z: r.support.z + .5 }, right, (d.width - 1) / 2), n, .505));
         wanted.add('screen');
     }
     else if (r.wallFace) {
@@ -197,6 +205,19 @@ export function synchronize(r) {
                 throw new Error('Unknown surface visual');
             visual(r, 'mcpe_food:surface_display', 'base', index, p);
             wanted.add('base');
+        }
+        if (r.kind === 'clothing_rack') {
+            const spec = rackById.get(r.definition);
+            for (let slot = 0; slot < spec.capacity; slot++) {
+                const key = r.slots[slot];
+                if (!key)
+                    continue;
+                const index = clothingVisuals.findIndex(v => id(v.key) === key && v.pose === spec.pose && v.slot === slot);
+                if (index < 0)
+                    throw new Error('Unknown garment pose');
+                visual(r, 'mcpe_food:clothing_display', `garment${slot}`, index, p);
+                wanted.add(`garment${slot}`);
+            }
         }
         if (r.kind === 'tray')
             for (let slot = 0; slot < 3; slot++) {
@@ -248,6 +269,8 @@ function change(p, old, next, plan) {
 function drops(r) {
     if (r.kind === 'ad')
         return [id(r.art)];
+    if (r.kind === 'clothing_rack')
+        return [r.definition, ...r.slots.filter((s) => !!s)];
     if (r.kind === 'tray')
         return [id(tray.key), ...r.slots.filter((s) => !!s)];
     const serving = foodByServing.get(r.definition);
@@ -339,6 +362,75 @@ async function trayMenu(p, r) {
                 return;
             plan = planInsert(io.snapshot(c).slots, item, 1, new ItemStack(item).maxAmount);
             next.slots[i] = null;
+        }
+        change(p, r, next, plan);
+    }
+    finally {
+        io.sessions.finish(p.id, token);
+    }
+}
+/** Plans every refund before committing anything. No await occurs inside the write phase. */
+async function clothingMenu(p, r) {
+    if (!click(p, r.uid) || !assertCurrent(p, r))
+        return;
+    const c = io.inventory(p), selected = p.selectedSlotIndex, hand = c?.getItem(selected), spec = rackById.get(r.definition);
+    if (!c || !spec)
+        return;
+    const garment = hand && clothingById.get(hand.typeId);
+    if (hand && (!garment || (!spec.allowHat && garment.style === 'hat'))) {
+        io.notify(p, '此展示架不接受该物品。', 'This rack does not accept that item.');
+        return;
+    }
+    const token = io.sessions.begin(p.id);
+    if (token === undefined)
+        return;
+    try {
+        const form = new ActionFormData().title('服装陈列 / Clothing Display').body(hand ? '选择空槽放入1件服装。' : '选择服装取回，或收回整架。');
+        for (let i = 0; i < spec.capacity; i++)
+            form.button(`${i + 1} · ${clothingById.get(r.slots[i] ?? '')?.zh ?? '空槽 / Empty'}`);
+        if (!hand)
+            form.button('收回整架（返还全部服装） / Collect rack');
+        const response = await form.show(p), choice = response.selection;
+        if (response.canceled || choice === undefined || !Number.isInteger(choice) || choice < 0 || choice > spec.capacity || p.selectedSlotIndex !== selected || c.getItem(selected)?.typeId !== hand?.typeId || !io.sessions.claim(p.id, token) || !assertCurrent(p, r))
+            return;
+        if (choice === spec.capacity) {
+            if (hand || locks.has(r.uid))
+                return;
+            const before = io.snapshot(c);
+            let slots = before.slots;
+            for (const key of [...r.slots.filter((k) => !!k), ...(!isCreative(p) ? [r.definition] : [])]) {
+                const plan = planInsert(slots, key, 1, new ItemStack(key).maxAmount);
+                if (!plan.ok) {
+                    io.notify(p, '背包不足，展示架与服装保持原状。', 'Inventory full; rack and clothing unchanged.');
+                    return;
+                }
+                slots = plan.slots;
+            }
+            try {
+                io.commit(c, before, slots);
+                removeDecor(r, false);
+            }
+            catch (error) {
+                restore(c, before);
+                throw error;
+            }
+            return;
+        }
+        const next = copy(r);
+        next.revision++;
+        let plan;
+        if (hand) {
+            if (r.slots[choice])
+                return;
+            plan = planServe(io.snapshot(c).slots, selected, hand.typeId);
+            next.slots[choice] = hand.typeId;
+        }
+        else {
+            const key = r.slots[choice];
+            if (!key)
+                return;
+            plan = planInsert(io.snapshot(c).slots, key, 1, new ItemStack(key).maxAmount);
+            next.slots[choice] = null;
         }
         change(p, r, next, plan);
     }
@@ -454,6 +546,8 @@ function createWall(p, block, definition, face) {
     }
 }
 function surfaceInteract(p, r) {
+    if (r.kind === 'clothing_rack')
+        return clothingMenu(p, r);
     if (scenarioById.has(r.definition) || r.wallFace || r.kind === 'digital_ad' || ['mcpe_food:landscape_frame', 'mcpe_food:table_clock'].includes(r.definition))
         return staticMenu(p, r);
     if (!click(p, r.uid) || !assertCurrent(p, r))
@@ -559,7 +653,7 @@ function createSurface(p, support, definition) {
     const target = support.dimension.getBlock(add(support.location, { x: 0, y: 1, z: 0 }));
     if (!empty(target))
         return;
-    const r = { version: 1, uid: unique(), revision: 0, dimension: support.dimension.id, support: { ...support.location }, kind: definition === id(tray.key) ? 'tray' : 'surface', definition, direction: direction(p), native: definition === id(tray.key) && height === 1, slots: [null, null, null] };
+    const r = { version: 1, uid: unique(), revision: 0, dimension: support.dimension.id, support: { ...support.location }, kind: rackById.has(definition) ? 'clothing_rack' : definition === id(tray.key) ? 'tray' : 'surface', definition, direction: direction(p), native: definition === id(tray.key) && height === 1, slots: Array.from({ length: rackById.get(definition)?.capacity ?? 3 }, () => null) };
     r.yaw = screenYaw(definition, { x: support.location.x + .5, z: support.location.z + .5 }, p.location, p.getRotation().y);
     if (!near(p, r) || surfaceValid({ ...r, native: false }) !== true)
         return;
@@ -684,6 +778,10 @@ function run(p, work) { system.run(() => { Promise.resolve().then(work).catch(er
     io.notify(p, '操作未完成，请重试。', 'Operation could not complete; please retry.'); }); }); }
 export function handleDecorBlock(event) {
     const p = event.player, block = event.block, face = String(event.blockFace).toLowerCase(), c = io.inventory(p), hand = c?.getItem(p.selectedSlotIndex), ad = hand && adById.get(hand.typeId);
+    if (hand && clothingById.has(hand.typeId)) {
+        event.cancel = true;
+        return true;
+    }
     const poster = posterAt(block, face);
     if (hand && (wallById.has(hand.typeId) || digitalById.has(hand.typeId)) && normals[face]) {
         event.cancel = true;

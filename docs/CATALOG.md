@@ -1,4 +1,4 @@
-# 0.7.1 菜品与器皿索引
+# 0.7.2 菜品与器皿索引
 
 102 种可食成品，8 种不可食展示配菜，2 款静态铜锅，15 种餐具，3 款酒瓶摆件。新增内容通过创造物品栏或分组试用命令获取。
 
@@ -418,3 +418,28 @@
 - 电子广告屏 · Template AI 4×3 / mcpe_food:digital_template_ai_4x3
 - 电子广告屏 · Luna Studio（月-工作室） 4×3 / mcpe_food:digital_luna_studio_4x3
 - 电子广告屏 · FT电脑 4×3 / mcpe_food:digital_ft_computer_4x3
+
+
+## 0.7.2试用新品（21件）
+
+- 单杆挂衣架 / mcpe_food:single_clothing_rail
+- 双层展示架 / mcpe_food:double_clothing_shelf
+- 人台展示架 / mcpe_food:mannequin_display
+- 全身镜 / mcpe_food:full_length_mirror
+- 检票闸机 / mcpe_food:transit_ticket_gate
+- 站台信息屏 / mcpe_food:platform_information_screen
+- 自助售票机 / mcpe_food:ticket_vending_machine
+- FT政府限定台式机套装 / mcpe_food:ft_government_desktop
+- FT政府限定一体机套装 / mcpe_food:ft_government_all_in_one
+- FT政府限定轻薄本（打开） / mcpe_food:ft_government_ultrabook_open
+- 政务叫号屏 / mcpe_food:government_queue_screen
+- 立式档案柜 / mcpe_food:upright_archive_cabinet
+- 展示服装·T恤 / mcpe_food:display_tshirt
+- 展示服装·衬衫 / mcpe_food:display_shirt
+- 展示服装·外套 / mcpe_food:display_coat
+- 展示服装·长裤 / mcpe_food:display_trousers
+- 展示服装·连衣裙 / mcpe_food:display_dress
+- 展示服装·帽子 / mcpe_food:display_hat
+- 展示正装·黑色完整西装 / mcpe_food:display_suit_black
+- 展示正装·藏蓝完整西装 / mcpe_food:display_suit_navy
+- 展示正装·浅灰完整西装 / mcpe_food:display_suit_light_gray

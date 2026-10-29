@@ -48,3 +48,4 @@ give @s mcpe_food:mushroom_platter 4
 give @s mcpe_food:greens_platter 4
 give @s mcpe_food:vermicelli_platter 4
 give @s mcpe_food:sesame_dip 4
+give @s mcpe_food:chinese_five_sauce_set 4

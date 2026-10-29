@@ -1,0 +1,19 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "mcpe_food:ft_ideabook_p1_open",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

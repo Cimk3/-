@@ -1,3 +1,4 @@
+import {patch073ById} from './patch-073-catalog.js';
 import {patch072ById,clothingById,rackById,clothingVisuals} from './patch-072-catalog.js';
 import {scenarioById,wallById,digitalById,wallScreens} from './scenario-catalog.js';
 import {BlockPermutation,GameMode,ItemStack,system,world} from '@minecraft/server';
@@ -110,7 +111,7 @@ function visual(r:DecorRecord,type:string,part:string,index:number,position:Vect
   }
   if(r.kind==='ad'&&entity.getProperty('mcpe_food:size')!==(r.size??0))entity.setProperty('mcpe_food:size',r.size??0);
   // Explicit facing is display-only: saved direction, yaw and revision stay intact.
-  const explicit=!!r.wallFace||r.kind==='digital_ad'||r.definition===id('supermarket_checkout')||patch072ById.has(r.definition)||r.kind==='clothing_rack';
+  const explicit=!!r.wallFace||r.kind==='digital_ad'||r.definition===id('supermarket_checkout')||patch072ById.has(r.definition)||patch073ById.has(r.definition)||r.kind==='clothing_rack';
   if(type!=='mcpe_food:advert_display'&&type!=='mcpe_food:tray_food_display'){
     const code=explicit?(isPanel(r)?displayFacing(r.wallFace??r.direction):facingFromYaw(r.yaw??yaw[r.direction]??0)):0;
     if(entity.getProperty('mcpe_food:display_facing')!==code)entity.setProperty('mcpe_food:display_facing',code);

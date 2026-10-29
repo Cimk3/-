@@ -1,5 +1,5 @@
 {
-  "version": "0.7.2",
+  "version": "0.7.3",
   "models": [
     {
       "key": "egg_fried_rice_serving",
@@ -3948,6 +3948,86 @@
       }
     },
     {
+      "key": "government_service_kiosk",
+      "resolution": 128,
+      "cubes": 12,
+      "slots": {
+        "ware": "patch073_government_service_kiosk"
+      }
+    },
+    {
+      "key": "government_id_reader",
+      "resolution": 128,
+      "cubes": 7,
+      "slots": {
+        "ware": "patch073_government_id_reader"
+      }
+    },
+    {
+      "key": "government_fingerprint_scanner",
+      "resolution": 128,
+      "cubes": 10,
+      "slots": {
+        "ware": "patch073_government_fingerprint_scanner"
+      }
+    },
+    {
+      "key": "government_signature_pad",
+      "resolution": 128,
+      "cubes": 6,
+      "slots": {
+        "ware": "patch073_government_signature_pad"
+      }
+    },
+    {
+      "key": "government_document_scanner",
+      "resolution": 128,
+      "cubes": 12,
+      "slots": {
+        "ware": "patch073_government_document_scanner"
+      }
+    },
+    {
+      "key": "government_stamp_set",
+      "resolution": 128,
+      "cubes": 43,
+      "slots": {
+        "ware": "patch073_government_stamp_set"
+      }
+    },
+    {
+      "key": "chinese_five_sauce_set",
+      "resolution": 128,
+      "cubes": 136,
+      "slots": {
+        "ware": "patch073_chinese_five_sauce_set"
+      }
+    },
+    {
+      "key": "ft_b1_open",
+      "resolution": 128,
+      "cubes": 60,
+      "slots": {
+        "ware": "patch073_ft_b1_open"
+      }
+    },
+    {
+      "key": "ft_ideabook_p1_open",
+      "resolution": 128,
+      "cubes": 60,
+      "slots": {
+        "ware": "patch073_ft_ideabook_p1_open"
+      }
+    },
+    {
+      "key": "ft_master_open",
+      "resolution": 128,
+      "cubes": 84,
+      "slots": {
+        "ware": "patch073_ft_master_open"
+      }
+    },
+    {
       "key": "aed_cabinet_wall",
       "resolution": 128,
       "cubes": 6,
@@ -6690,6 +6770,56 @@
       "resolution": 128
     },
     {
+      "key": "surface_government_service_kiosk",
+      "cubes": 12,
+      "resolution": 128
+    },
+    {
+      "key": "surface_government_id_reader",
+      "cubes": 7,
+      "resolution": 128
+    },
+    {
+      "key": "surface_government_fingerprint_scanner",
+      "cubes": 10,
+      "resolution": 128
+    },
+    {
+      "key": "surface_government_signature_pad",
+      "cubes": 6,
+      "resolution": 128
+    },
+    {
+      "key": "surface_government_document_scanner",
+      "cubes": 12,
+      "resolution": 128
+    },
+    {
+      "key": "surface_government_stamp_set",
+      "cubes": 43,
+      "resolution": 128
+    },
+    {
+      "key": "surface_chinese_five_sauce_set",
+      "cubes": 136,
+      "resolution": 128
+    },
+    {
+      "key": "surface_ft_b1_open",
+      "cubes": 60,
+      "resolution": 128
+    },
+    {
+      "key": "surface_ft_ideabook_p1_open",
+      "cubes": 60,
+      "resolution": 128
+    },
+    {
+      "key": "surface_ft_master_open",
+      "cubes": 84,
+      "resolution": 128
+    },
+    {
       "key": "mini_kung_pao_chicken",
       "cubes": 31,
       "resolution": 128
@@ -7756,6 +7886,16 @@
     "mcpe_food_ft_government_ultrabook_open": 128,
     "mcpe_food_government_queue_screen": 128,
     "mcpe_food_upright_archive_cabinet": 128,
+    "mcpe_food_government_service_kiosk": 128,
+    "mcpe_food_government_id_reader": 128,
+    "mcpe_food_government_fingerprint_scanner": 128,
+    "mcpe_food_government_signature_pad": 128,
+    "mcpe_food_government_document_scanner": 128,
+    "mcpe_food_government_stamp_set": 128,
+    "mcpe_food_chinese_five_sauce_set": 128,
+    "mcpe_food_ft_b1_open": 128,
+    "mcpe_food_ft_ideabook_p1_open": 128,
+    "mcpe_food_ft_master_open": 128,
     "mcpe_food_display_tshirt": 128,
     "mcpe_food_display_shirt": 128,
     "mcpe_food_display_coat": 128,

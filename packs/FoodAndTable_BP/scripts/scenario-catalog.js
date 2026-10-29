@@ -1,3 +1,4 @@
+import { patch073Props } from './patch-073-catalog.js';
 import { patch072Props, infoScreens } from './patch-072-catalog.js';
 import { patch071Props } from './patch-071-catalog.js';
 /** 0.7.0 static creative props. IDs and append order are persistent contracts. */
@@ -23,7 +24,7 @@ export const scenarioGroups = [
     ])
 ];
 export const scenarioProps = scenarioGroups.flatMap(g => g.items.map(d => ({ ...d, group: g.key })));
-export const scenarioById = new Map([...scenarioProps, ...patch071Props, ...patch072Props].map(d => ['mcpe_food:' + d.key, d]));
+export const scenarioById = new Map([...scenarioProps, ...patch071Props, ...patch072Props, ...patch073Props].map(d => ['mcpe_food:' + d.key, d]));
 export const wallKeys = [...scenarioProps.filter(d => d.wallOnly).map(d => d.key), 'flat_screen_tv', 'landscape_frame', 'table_clock'];
 export const wallVariants = wallKeys.map(key => ({ key: key + '_wall', base: key, zh: '壁挂 ' + key, en: 'Wall ' + key }));
 export const wallById = new Map(wallKeys.map(key => ['mcpe_food:' + key, key + '_wall']));

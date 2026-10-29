@@ -44,3 +44,6 @@ give @s mcpe_food:ft_government_desktop 4
 give @s mcpe_food:ft_government_all_in_one 4
 give @s mcpe_food:ft_government_ultrabook_open 4
 give @s mcpe_food:government_queue_screen 4
+give @s mcpe_food:ft_b1_open 4
+give @s mcpe_food:ft_ideabook_p1_open 4
+give @s mcpe_food:ft_master_open 4

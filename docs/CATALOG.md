@@ -1,4 +1,4 @@
-# 0.7.2 菜品与器皿索引
+# 0.7.3 菜品与器皿索引
 
 102 种可食成品，8 种不可食展示配菜，2 款静态铜锅，15 种餐具，3 款酒瓶摆件。新增内容通过创造物品栏或分组试用命令获取。
 
@@ -443,3 +443,19 @@
 - 展示正装·黑色完整西装 / mcpe_food:display_suit_black
 - 展示正装·藏蓝完整西装 / mcpe_food:display_suit_navy
 - 展示正装·浅灰完整西装 / mcpe_food:display_suit_light_gray
+
+
+## 0.7.3新品（10件）
+
+- 自助政务服务终端 / mcpe_food:government_service_kiosk
+- 身份证读卡器 / mcpe_food:government_id_reader
+- 指纹采集器 / mcpe_food:government_fingerprint_scanner
+- 电子签名板 / mcpe_food:government_signature_pad
+- 高速文档扫描仪 / mcpe_food:government_document_scanner
+- 印章与印台套装 / mcpe_food:government_stamp_set
+- 五碟小料蘸酱组合（展示） / mcpe_food:chinese_five_sauce_set
+- FT商务本（FT-B1） / mcpe_food:ft_b1_open
+- FT创作本（FT-Ideabook-P1） / mcpe_food:ft_ideabook_p1_open
+- FT游戏本（FT-Master） / mcpe_food:ft_master_open
+
+政务组迁入旧5件：ft_government_desktop、ft_government_all_in_one、ft_government_ultrabook_open、government_queue_screen、upright_archive_cabinet

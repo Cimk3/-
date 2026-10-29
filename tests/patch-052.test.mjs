@@ -31,6 +31,6 @@ test('0.5.1 identifiers, recipes, drops, crop states and UUIDs survive subsequen
   const old=read('tests/fixtures/v0.5.1.json');for(const kind of ['items','blocks'])assert.deepEqual(readdirSync(`${bp}/${kind}`).filter(f=>old[kind].includes(read(`${bp}/${kind}/${f}`)[`minecraft:${kind.slice(0,-1)}`].description.identifier)).sort().map(f=>read(`${bp}/${kind}/${f}`)[`minecraft:${kind.slice(0,-1)}`].description.identifier),old[kind]);
   for(const [pack,uuids]of Object.entries(old.uuids)){const m=read(`packs/${pack}/manifest.json`);assert.deepEqual([m.header.uuid,...m.modules.map(x=>x.uuid)],uuids);}
   for(const[folder,entries]of [['recipes',old.crafting],['loot_tables/blocks',old.loot]])for(const[file,hash]of Object.entries(entries))assert.equal(createHash('sha256').update(readFileSync(`${bp}/${folder}/${file}`)).digest('hex'),hash);
-  for(const[file,content]of Object.entries(old.functions))if(!['advertisements.mcfunction','electronics.mcfunction','tasting_new.mcfunction'].includes(file))assert.equal(readFileSync(`${bp}/functions/mcpe_food/${file}`,'utf8'),content);
+  for(const[file,content]of Object.entries(old.functions))if(!['advertisements.mcfunction','electronics.mcfunction','tasting_new.mcfunction','tasting_all_chinese.mcfunction'].includes(file))assert.equal(readFileSync(`${bp}/functions/mcpe_food/${file}`,'utf8'),content);
   for(const[file,states]of Object.entries(old.cropStates))assert.deepEqual(read(`${bp}/blocks/${file}`)['minecraft:block'].description.states,states);
 });

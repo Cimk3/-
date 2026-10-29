@@ -1,5 +1,5 @@
 {
-  "version": "0.7.2",
+  "version": "0.7.3",
   "units": "bytes",
   "baseline": {
     "version": "0.5.4",
@@ -19,13 +19,13 @@
     "merAliases": 196
   },
   "current": {
-    "beforeBytes": 270845656,
-    "bpBytes": 14242823,
-    "rpBytes": 94218863,
-    "addonBytes": 35745152,
-    "pngChecked": 1666,
-    "pngSavedBytes": 5341670,
-    "jsonSavedBytes": 155716113,
+    "beforeBytes": 273184527,
+    "bpBytes": 14685256,
+    "rpBytes": 94663993,
+    "addonBytes": 35828486,
+    "pngChecked": 1716,
+    "pngSavedBytes": 5344782,
+    "jsonSavedBytes": 157164079,
     "numberGeometryRemoved": 196,
     "merAliases": 196
   },
@@ -36,6 +36,6 @@
     "PNG cache is keyed by input SHA-256; first encoding verifies exact decoded RGBA.",
     "Block and entity MER aliases are kept in separate private directories.",
     "Old numbered display indices remain bound; 196 redundant geometries and 196 identical MER files are removed.",
-    "Release promotion metadata included in final measured bytes; accepted build identifier retained."
+    "Final release authorization metadata included in measured bytes; original content build identifier retained."
   ]
 }

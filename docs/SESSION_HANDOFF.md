@@ -1,6 +1,6 @@
 # 接续入口
 
-当前维护批次0.8.0，发布基线0.7.4。先读根AGENTS、PROJECT_CONTEXT、PROGRESS、KNOWN_ISSUES，再检查git状态与实际资源；构建及发行结果以VALIDATION为准。
+当前正式版本0.8.0，软件提交6863226915bb46e2a24a7ae54f18852a7230d0cf，五附件及服务端摘要已核验；本轮开发基线为0.7.4。下一轮内容变更前捕获0.8.0兼容基线。先读根AGENTS、PROJECT_CONTEXT、PROGRESS、KNOWN_ISSUES，再检查git状态与实际资源；构建及发行结果以VALIDATION为准。
 
 0.8.0新增实验设备8件和电子显示套装3件；批准概念原图及提示词在assets/concepts/080。普通设备单格；吸顶屏2×1，复用version=1 surface记录的可选mount字段，检查两格完整支撑和下方四格空间。旧582／61／13展示顺序保存在v0.7.4兼容fixture；新桌面追加至593。竖屏相对底座水平转45°，不是向后倾斜。
 

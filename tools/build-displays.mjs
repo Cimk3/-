@@ -1,3 +1,5 @@
+import {patch080Props} from '../.build/patch-080-catalog.js';
+import {patch080Cubes} from './patch-080-art.mjs';
 import {patch074Props} from '../.build/patch-074-catalog.js';
 import {patch074Cubes} from './patch-074-art.mjs';
 import {patch073Props} from '../.build/patch-073-catalog.js';
@@ -44,7 +46,7 @@ export function buildDisplays({root,BP,RP,json,write,icon,item,localize,modelRec
     const geometry={...original,description:{...original.description,identifier:`geometry.mcpe_food.surface.${d.key}`},bones};
     json(RP,`models/entity/mcpe_food/surface_${d.key}.geo.json`,{format_version:'1.12.0','minecraft:geometry':[geometry]});
     const food=record.slots.food??record.slots.ware,ware=record.slots.ware??food;
-    definitions.push({geometry:geometry.description.identifier,food:tex(food),ware:tex(ware)});entities.push({key:`surface_${d.key}`,cubes:cubes.length,resolution:128});
+    definitions.push({geometry:geometry.description.identifier,food:tex(food),ware:tex(ware)});entities.push({key:`surface_${d.key}`,cubes:cubes.length,resolution:original.description.texture_width});
   }
   const mini=[];
   for(const f of trayFoods){
@@ -77,7 +79,7 @@ export function buildDisplays({root,BP,RP,json,write,icon,item,localize,modelRec
     }
     json(RP,`entity/mcpe_food/${type}.entity.json`,{format_version:'1.10.0','minecraft:client_entity':{description:{identifier,materials:{default:'entity_alphatest'},textures,geometry:geometries,render_controllers:renderNames,...(poster?{animations:{size:'animation.mcpe_food.poster_size'},scripts:{animate:['size']}}:explicit?{animations:{display_facing:'animation.mcpe_food.display_facing'},scripts:{animate:[{display_facing:"q.property('mcpe_food:display_facing') > 0"}]}}:{})}}});
     const shapes={},events={};
-    const specs=[['flat',.95,.12],['medium',.65,.6],['tall',.65,.9],...(interactive?[...electronics,...restaurantAccessories,...lifestyleItems,...scenarioProps,...patch071Props,...patch072Props,...patch073Props,...patch074Props].map(d=>{const b=modelBounds('model' in d?electronicCubes(d):patch074Props.includes(d)?patch074Cubes(d.key):patch073Props.includes(d)?patch073Cubes(d.key):patch072Props.includes(d)?patch072Cubes(d.key):patch071Props.includes(d)?patch071Cubes(d.key):scenarioProps.includes(d)?scenarioCubes(d.key):lifestyleItems.includes(d)?lifestyleCubes(d.key):serviceCubes(d.key));return[d.key,Math.max(...[b.low[0],b.low[2],b.high[0],b.high[2]].map(Math.abs))/8+.015,b.high[1]/16+.01];}):[])];
+    const specs=[['flat',.95,.12],['medium',.65,.6],['tall',.65,.9],...(interactive?[...electronics,...restaurantAccessories,...lifestyleItems,...scenarioProps,...patch071Props,...patch072Props,...patch073Props,...patch074Props,...patch080Props].map(d=>{const b=modelBounds('model' in d?electronicCubes(d):patch080Props.includes(d)?patch080Cubes(d.key):patch074Props.includes(d)?patch074Cubes(d.key):patch073Props.includes(d)?patch073Cubes(d.key):patch072Props.includes(d)?patch072Cubes(d.key):patch071Props.includes(d)?patch071Cubes(d.key):scenarioProps.includes(d)?scenarioCubes(d.key):lifestyleItems.includes(d)?lifestyleCubes(d.key):serviceCubes(d.key));return[d.key,Math.max(...[b.low[0],b.low[2],b.high[0],b.high[2]].map(Math.abs))/8+.015,b.high[1]/16+.01];}):[])];
     for(const[name,width,height]of specs){shapes[`mcpe_food:${name}`]={'minecraft:collision_box':{width,height}};events[`mcpe_food:shape_${name}`]={remove:{component_groups:specs.map(([n])=>`mcpe_food:${n}`)},add:{component_groups:[`mcpe_food:${name}`]}};}
     json(BP,`entities/${type}.json`,{format_version:'1.21.0','minecraft:entity':{description:{identifier,is_spawnable:false,is_summonable:true,is_experimental:false,properties:{'mcpe_food:index':{type:'int',range:[0,max],default:0,client_sync:true},...(explicit?{'mcpe_food:display_facing':{type:'int',range:[0,4],default:0,client_sync:true}}:{}),...(poster?{'mcpe_food:size':{type:'int',range:[0,2],default:0,client_sync:true}}:{})}},component_groups:shapes,components:{'minecraft:type_family':{family:['mcpe_food_display']},'minecraft:physics':{has_gravity:false,has_collision:false},'minecraft:pushable':{is_pushable:false,is_pushable_by_piston:false},'minecraft:persistent':{},'minecraft:collision_box':{width:interactive?.65:0,height:interactive?.7:0},'minecraft:health':{value:1,max:1},'minecraft:damage_sensor':{triggers:[{cause:'all',deals_damage:false}]},'minecraft:knockback_resistance':{value:1}},events}});
   }

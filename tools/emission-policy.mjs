@@ -1,3 +1,4 @@
+import {patch080Screens} from '../.build/patch-080-catalog.js';
 import {patch074Screens} from '../.build/patch-074-catalog.js';
 import {patch073Screens} from '../.build/patch-073-catalog.js';
 import {patch072Screens} from '../.build/patch-072-catalog.js';
@@ -7,6 +8,8 @@ import {electronics} from '../.build/electronics-catalog.js';
 const devices=new Map(electronics.map(d=>[`device_${d.key}`,d]));
 export function emissionIsValid(image,colorKey){
   if(colorKey.startsWith('digital_content_'))return ((image.width===256&&[256,192,128].includes(image.height))||(['digital_content_ft_computer_6x5','digital_content_apple_6x5'].includes(colorKey)&&image.width===384&&image.height===320))&&image.pixels.every((v,i)=>i%4!==1||v<=24);
+  if(colorKey==='patch080_ceiling_screen')return image.width===256&&image.height===128&&image.pixels.every((v,i)=>i%4!==1||v<=24);
+  if(colorKey.startsWith('patch080_'))return image.width===128&&image.height===128&&image.pixels.every((v,i)=>i%4!==1||v===0||(patch080Screens.has(colorKey.slice(9))&&v<=24&&((i-1)/4)%128<96&&Math.floor((i-1)/4/128)<56));
   if(colorKey.startsWith('patch074_'))return image.width===128&&image.height===128&&image.pixels.every((v,i)=>i%4!==1||v===0||(patch074Screens.has(colorKey.slice(9))&&v<=24&&((i-1)/4)%128<96&&Math.floor((i-1)/4/128)<56));
   if(colorKey.startsWith('patch073_'))return image.width===128&&image.height===128&&image.pixels.every((v,i)=>i%4!==1||v===0||(patch073Screens.has(colorKey.slice(9))&&v<=24&&((i-1)/4)%128<96&&Math.floor((i-1)/4/128)<56));
   if(colorKey.startsWith('patch072_'))return image.width===128&&image.height===128&&image.pixels.every((v,i)=>i%4!==1||v===0||(patch072Screens.has(colorKey.slice(9))&&v<=24&&((i-1)/4)%128<96&&Math.floor((i-1)/4/128)<56));

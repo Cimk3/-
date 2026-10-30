@@ -1,3 +1,4 @@
+import {patch080Props} from '../.build/patch-080-catalog.js';
 import {patch074Props,patch074Groups} from '../.build/patch-074-catalog.js';
 import {patch073Props} from '../.build/patch-073-catalog.js';
 import {patch072Props,clothingItems,patch072Groups} from '../.build/patch-072-catalog.js';
@@ -102,7 +103,8 @@ function inspectComponents(c,context){
     for(const bone of model.bones)for(const cube of bone.cubes??[])for(const face of Object.values(cube.uv)){
       const slot=face.material_instance??'*';check(Boolean(mats[slot]??mats['*']),`unbound material slot ${slot} ${context}`);
       const dims=textureDimensions.get((mats[slot]??mats['*']).texture);
-      check(dims[0]===model.description.texture_width&&dims[1]===model.description.texture_height,`model texture dimensions ${context}`);
+      const ceilingFrame=context==='mcpe_food:ceiling_arm_display_2x1'&&slot==='ware'&&dims[0]===128&&dims[1]===128&&face.uv[0]===0&&face.uv[1]===0&&face.uv_size.every(v=>v===1);
+      check(ceilingFrame||(dims[0]===model.description.texture_width&&dims[1]===model.description.texture_height),`model texture dimensions ${context}`);
     }
   }
   if(c['minecraft:loot'])check(existsSync(path.join(bp,c['minecraft:loot'])),`missing loot ${context}`);
@@ -126,7 +128,7 @@ for(const [key,{data}]of blocks){
 const special=new Set(materials.filter(m=>m.creativeOnly).map(m=>id(m.key)));
 const creative=parse(path.join(bp,'item_catalog/crafting_item_catalog.json'))['minecraft:crafting_items_catalog'].categories;
 check(creative.length===1&&creative[0].category_name==='items','creative groups must extend items only');
-check(JSON.stringify(creative[0].groups.map(g=>g.group_identifier.name))===JSON.stringify([...Object.keys(categories).map(k=>`mcpe_food:group_${k}`),'mcpe_food:group_tableware','mcpe_food:group_advertisements','mcpe_food:group_electronics','mcpe_food:group_restaurant_accessories','mcpe_food:group_office_stationery','mcpe_food:group_home_decor',...[...scenarioGroups,...patch074Groups,...patch072Groups].map(g=>`mcpe_food:group_${g.key}`),'mcpe_food:group_government_equipment']),'creative groups missing or reordered');
+check(JSON.stringify(creative[0].groups.map(g=>g.group_identifier.name))===JSON.stringify([...Object.keys(categories).map(k=>`mcpe_food:group_${k}`),'mcpe_food:group_tableware','mcpe_food:group_advertisements','mcpe_food:group_electronics','mcpe_food:group_restaurant_accessories','mcpe_food:group_office_stationery','mcpe_food:group_home_decor',...[...scenarioGroups,...patch074Groups,...patch072Groups].map(g=>`mcpe_food:group_${g.key}`),'mcpe_food:group_government_equipment','mcpe_food:group_laboratory_equipment']),'creative groups missing or reordered');
 const grouped=new Set();
 for(const group of creative[0].groups){
   check(items.has(group.group_identifier.icon),'unknown creative group icon');
@@ -137,8 +139,8 @@ for(const group of creative[0].groups){
     check(desc.menu_category.category==='items'&&desc.menu_category.group===group.group_identifier.name,`conflicting menu group ${key}`);
   }
 }
-for(const entry of [...dishes,...bottleProps,...paperCups,...vessels,...cutlery,tray,teaTray,...advertisements,...electronics,...refrigerators,...restaurantAccessories,...lifestyleItems,...scenarioProps,...digitalScreens,...patch071Props,...patch072Props,...clothingItems,...patch073Props,...patch074Props])check(grouped.has(id(entry.key)),`ungrouped new content ${entry.key}`);
-check(grouped.size===dishes.length+bottleProps.length+paperCups.length+vessels.length+cutlery.length+2+advertisements.length+electronics.length+refrigerators.length+restaurantAccessories.length+lifestyleItems.length+scenarioProps.length+digitalScreens.length+patch071Props.length+patch072Props.length+clothingItems.length+patch073Props.length+patch074Props.length,'creative catalog contains unexpected entries');
+for(const entry of [...dishes,...bottleProps,...paperCups,...vessels,...cutlery,tray,teaTray,...advertisements,...electronics,...refrigerators,...restaurantAccessories,...lifestyleItems,...scenarioProps,...digitalScreens,...patch071Props,...patch072Props,...clothingItems,...patch073Props,...patch074Props,...patch080Props])check(grouped.has(id(entry.key)),`ungrouped new content ${entry.key}`);
+check(grouped.size===dishes.length+bottleProps.length+paperCups.length+vessels.length+cutlery.length+2+advertisements.length+electronics.length+refrigerators.length+restaurantAccessories.length+lifestyleItems.length+scenarioProps.length+digitalScreens.length+patch071Props.length+patch072Props.length+clothingItems.length+patch073Props.length+patch074Props.length+patch080Props.length,'creative catalog contains unexpected entries');
 for(const prop of bottleProps){
   const c=items.get(id(prop.key)).data['minecraft:item'].components;
   check(!c['minecraft:food']&&!c['minecraft:use_animation'],`bottle display is consumable ${prop.key}`);
@@ -195,7 +197,7 @@ for(const file of files.filter(f=>f.endsWith('.png'))){
   const bytes=readFileSync(file);check(bytes.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10])),`invalid PNG ${file}`);
   let p=8;while(p<bytes.length){const length=bytes.readUInt32BE(p),end=p+8+length;check(crc32(bytes.subarray(p+4,end))===bytes.readUInt32BE(end),`PNG checksum ${file}`);p=end+4;}
 }
-check(foods.length===102&&bottleProps.length===3&&displays.length===8&&hotpots.length===2&&cutlery.length+vessels.length+2===15&&advertisements.length===23&&scenarioProps.length===31&&patch071Props.length===4&&patch072Props.length===12&&patch073Props.length===10&&patch074Props.length===21&&patch074Groups.every(g=>g.items.length===7)&&clothingItems.length===9&&digitalScreens.length===11&&paperCups.length===2&&stations.length===4&&crops.length===6&&electronics.length===35&&refrigerators.length===6,'approved content count mismatch');
+check(foods.length===102&&bottleProps.length===3&&displays.length===8&&hotpots.length===2&&cutlery.length+vessels.length+2===15&&advertisements.length===23&&scenarioProps.length===31&&patch071Props.length===4&&patch072Props.length===12&&patch073Props.length===10&&patch074Props.length===21&&patch080Props.length===11&&patch074Groups.every(g=>g.items.length===7)&&clothingItems.length===9&&digitalScreens.length===11&&paperCups.length===2&&stations.length===4&&crops.length===6&&electronics.length===35&&refrigerators.length===6,'approved content count mismatch');
 const report={status:'passed',checks,jsonFiles:jsons.length,pngFiles:files.filter(f=>f.endsWith('.png')).length,items:items.size,blocks:blocks.size,models:models.size,edible:foods.length,displayDishes:displays.length,servingVariants:servings.length,pbrTextureSets:textureSets.length,destructionParticles:`disabled on all ${blocks.size} custom blocks; isolated neutral fallback`,vibrantVisuals:'pbr manifest and texture-set data validated; engine rendering untested',resourceIsolation:'passed — private keys, paths and IDs; no vanilla overrides',officialVanillaDefinitions:'1.26.52',engineTested:false};
 writeFileSync(path.join(root,'validation-report.json'),JSON.stringify(report,null,2)+'\n');
 const buildReport=path.join(root,'build-report.json');writeFileSync(buildReport,JSON.stringify({...parse(buildReport),staticStatus:'passed',staticChecks:checks},null,2)+'\n');

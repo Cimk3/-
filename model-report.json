@@ -1,5 +1,5 @@
 {
-  "version": "0.7.4",
+  "version": "0.8.0",
   "models": [
     {
       "key": "egg_fried_rice_serving",
@@ -4204,6 +4204,95 @@
       }
     },
     {
+      "key": "laboratory_centrifuge",
+      "resolution": 128,
+      "cubes": 19,
+      "slots": {
+        "ware": "patch080_laboratory_centrifuge"
+      }
+    },
+    {
+      "key": "laboratory_incubator",
+      "resolution": 128,
+      "cubes": 32,
+      "slots": {
+        "ware": "patch080_laboratory_incubator"
+      }
+    },
+    {
+      "key": "laboratory_cloud_storage_array",
+      "resolution": 128,
+      "cubes": 36,
+      "slots": {
+        "ware": "patch080_laboratory_cloud_storage_array"
+      }
+    },
+    {
+      "key": "open_reel_tape_recorder",
+      "resolution": 128,
+      "cubes": 46,
+      "slots": {
+        "ware": "patch080_open_reel_tape_recorder"
+      }
+    },
+    {
+      "key": "laboratory_radio_station",
+      "resolution": 128,
+      "cubes": 17,
+      "slots": {
+        "ware": "patch080_laboratory_radio_station"
+      }
+    },
+    {
+      "key": "ceiling_arm_display_2x1",
+      "resolution": 256,
+      "cubes": 7,
+      "slots": {
+        "ware": "patch080_ceiling_arm_display_2x1",
+        "food": "patch080_ceiling_screen"
+      }
+    },
+    {
+      "key": "digital_oscilloscope",
+      "resolution": 128,
+      "cubes": 11,
+      "slots": {
+        "ware": "patch080_digital_oscilloscope"
+      }
+    },
+    {
+      "key": "pipette_rack_set",
+      "resolution": 128,
+      "cubes": 42,
+      "slots": {
+        "ware": "patch080_pipette_rack_set"
+      }
+    },
+    {
+      "key": "laboratory_dual_monitor_set",
+      "resolution": 128,
+      "cubes": 41,
+      "slots": {
+        "ware": "patch080_laboratory_dual_monitor_set"
+      }
+    },
+    {
+      "key": "template_ai_triple_monitor_set",
+      "resolution": 128,
+      "cubes": 43,
+      "slots": {
+        "ware": "patch080_template_ai_triple_monitor_set"
+      }
+    },
+    {
+      "key": "portrait_paper_monitor",
+      "resolution": 128,
+      "cubes": 5,
+      "slots": {
+        "ware": "patch080_portrait_paper_monitor"
+      }
+    },
+    {
       "key": "aed_cabinet_wall",
       "resolution": 128,
       "cubes": 6,
@@ -7106,6 +7195,61 @@
       "resolution": 128
     },
     {
+      "key": "surface_laboratory_centrifuge",
+      "cubes": 19,
+      "resolution": 128
+    },
+    {
+      "key": "surface_laboratory_incubator",
+      "cubes": 32,
+      "resolution": 128
+    },
+    {
+      "key": "surface_laboratory_cloud_storage_array",
+      "cubes": 36,
+      "resolution": 128
+    },
+    {
+      "key": "surface_open_reel_tape_recorder",
+      "cubes": 46,
+      "resolution": 128
+    },
+    {
+      "key": "surface_laboratory_radio_station",
+      "cubes": 17,
+      "resolution": 128
+    },
+    {
+      "key": "surface_ceiling_arm_display_2x1",
+      "cubes": 7,
+      "resolution": 256
+    },
+    {
+      "key": "surface_digital_oscilloscope",
+      "cubes": 11,
+      "resolution": 128
+    },
+    {
+      "key": "surface_pipette_rack_set",
+      "cubes": 42,
+      "resolution": 128
+    },
+    {
+      "key": "surface_laboratory_dual_monitor_set",
+      "cubes": 41,
+      "resolution": 128
+    },
+    {
+      "key": "surface_template_ai_triple_monitor_set",
+      "cubes": 43,
+      "resolution": 128
+    },
+    {
+      "key": "surface_portrait_paper_monitor",
+      "cubes": 5,
+      "resolution": 128
+    },
+    {
       "key": "mini_kung_pao_chicken",
       "cubes": 31,
       "resolution": 128
@@ -8214,6 +8358,17 @@
     "mcpe_food_radar_equipment": 128,
     "mcpe_food_tactical_equipment_case": 128,
     "mcpe_food_wall_electric_meter_wall": 128,
+    "mcpe_food_laboratory_centrifuge": 128,
+    "mcpe_food_laboratory_incubator": 128,
+    "mcpe_food_laboratory_cloud_storage_array": 128,
+    "mcpe_food_open_reel_tape_recorder": 128,
+    "mcpe_food_laboratory_radio_station": 128,
+    "mcpe_food_ceiling_arm_display_2x1": 128,
+    "mcpe_food_digital_oscilloscope": 128,
+    "mcpe_food_pipette_rack_set": 128,
+    "mcpe_food_laboratory_dual_monitor_set": 128,
+    "mcpe_food_template_ai_triple_monitor_set": 128,
+    "mcpe_food_portrait_paper_monitor": 128,
     "mcpe_food_display_tshirt": 128,
     "mcpe_food_display_shirt": 128,
     "mcpe_food_display_coat": 128,

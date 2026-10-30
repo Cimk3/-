@@ -1,3 +1,4 @@
+import {patch080ById,ceilingDisplayKey} from './patch-080-catalog.js';
 import {patch074ById} from './patch-074-catalog.js';
 import {patch073ById} from './patch-073-catalog.js';
 import {patch072ById,clothingById,rackById,clothingVisuals} from './patch-072-catalog.js';
@@ -19,7 +20,7 @@ import {isWallSupport,surfaceHeight} from './supports.js';
 
 export interface DecorRecord {
   version:1; uid:string; revision:number; dimension:string; support:Vector3;
-  kind:'surface'|'tray'|'ad'|'appliance'|'digital_ad'|'clothing_rack'; wallFace?:string; definition:string; direction:string; native:boolean; yaw?:number; tableNumber?:number;
+  kind:'surface'|'tray'|'ad'|'appliance'|'digital_ad'|'clothing_rack'; wallFace?:string; mount?:'ceiling'; definition:string; direction:string; native:boolean; yaw?:number; tableNumber?:number;
   slots:(string|null)[]; art?:AdKey; size?:number;
 }
 interface Snapshot {originals:(ItemStack|undefined)[];slots:Slots}
@@ -40,7 +41,7 @@ const anchor=(r:DecorRecord)=>add(r.support,{x:0,y:1,z:0});
 const safeBlock=(r:DecorRecord,p=r.support):Block|undefined=>{try{return dim(r).getBlock(p);}catch{return undefined;}};
 const empty=(b:Block|undefined)=>b?.typeId==='minecraft:air';
 const isCreative=(p:Player)=>p.getGameMode()===GameMode.Creative;
-const recordForSupport=(dimension:string,p:Vector3)=>[...records.values()].find(r=>!isPanel(r)&&r.dimension===dimension&&same(r.support,p));
+const recordForSupport=(dimension:string,p:Vector3)=>[...records.values()].find(r=>!isPanel(r)&&!r.mount&&r.dimension===dimension&&same(r.support,p));
 const storageKey=(r:DecorRecord)=>PREFIX+r.uid;
 function save(r:DecorRecord):void {world.setDynamicProperty(storageKey(r),JSON.stringify(r));records.set(r.uid,r);}
 function unique():string {const n=Number(world.getDynamicProperty('mcpe_food:decor_serial')??0)+1;world.setDynamicProperty('mcpe_food:decor_serial',n);return `d${n}`;}
@@ -60,6 +61,7 @@ function assertCurrent(p:Player,r:DecorRecord):boolean {
 }
 /** undefined means unloaded; it must never be treated as missing support. */
 function surfaceValid(r:DecorRecord):boolean|undefined {
+  if(r.mount==='ceiling')return ceilingFits(r);
   if(isPanel(r))return adFits(r);
   const b=safeBlock(r);if(!b)return undefined;
   if(r.kind==='appliance'){
@@ -73,6 +75,23 @@ function surfaceValid(r:DecorRecord):boolean|undefined {
   for(const p of occupiedCells(r)){const b=safeBlock(r,p);if(!b)return undefined;if(!empty(b))return false;}
   return !overlaps(r);
 }
+export function ceilingSupports(r:DecorRecord):Vector3[]{const right=rights[r.direction];return right?[r.support,add(r.support,right)]:[];}
+function ceilingFits(r:DecorRecord):boolean|undefined {
+ if(r.definition!==id(ceilingDisplayKey)||r.kind!=='surface'||r.native)return false;
+ const support=ceilingSupports(r);if(support.length!==2)return false;
+ for(const p of support){const b=safeBlock(r,p);if(!b)return undefined;if(!isWallSupport(b))return false;}
+ for(const p of occupiedCells(r)){const b=safeBlock(r,p);if(!b)return undefined;if(!empty(b))return false;}
+ return !overlaps(r);
+}
+function createCeiling(p:Player,block:Block):void {
+ const c=io.inventory(p),selected=p.selectedSlotIndex,definition=id(ceilingDisplayKey);if(!c||c.getItem(selected)?.typeId!==definition)return;
+ const angle=screenYaw(definition,{x:block.location.x+.5,z:block.location.z+.5},p.location,p.getRotation().y)!;
+ const r:DecorRecord={version:1,uid:unique(),revision:0,dimension:block.dimension.id,support:{...block.location},kind:'surface',mount:'ceiling',definition,direction:'south',native:false,slots:[],yaw:angle};
+ // facingFromYaw is the same client contract used by the final display.
+ r.direction=({1:'north',2:'east',3:'south',4:'west'} as Record<number,string>)[facingFromYaw(angle)]!;
+ if(!near(p,r)||ceilingFits(r)!==true)return;const before=io.snapshot(c),plan=isCreative(p)?{ok:true as const,slots:before.slots}:planServe(before.slots,selected,definition);if(!plan.ok)return;
+ try{save(r);io.commit(c,before,plan.slots);synchronize(r);}catch(error){restore(c,before);if(records.has(r.uid))removeDecor(r,false);throw error;}
+}
 function isPanel(r:DecorRecord):boolean{return r.kind==='ad'||r.kind==='digital_ad'||!!r.wallFace;}
 function panelSize(r:DecorRecord):[number,number]{
   if(r.kind==='digital_ad'){const d=digitalById.get(r.definition);return d?[d.width,d.height]:[0,0];}
@@ -84,6 +103,7 @@ function posterCells(r:DecorRecord):Vector3[]{
   const cells:Vector3[]=[];for(let x=0;x<w;x++)for(let y=0;y<h;y++)cells.push(add(add(r.support,right,x),{x:0,y:1,z:0},y));return cells;
 }
 function occupiedCells(r:DecorRecord):Vector3[]{
+  if(r.mount==='ceiling')return ceilingSupports(r).flatMap(p=>[add(p,{x:0,y:-1,z:0}),add(p,{x:0,y:-2,z:0})]);
   if(isPanel(r)){const n=normals[r.wallFace??r.direction];return n?posterCells(r).map(p=>add(p,n)):[];}
   if(r.kind==='appliance')return applianceCells(r);
   const count=Math.max(1,Math.ceil((scenarioById.get(r.definition)?.height??1)+surfaceHeight(safeBlock(r))-1));
@@ -112,7 +132,7 @@ function visual(r:DecorRecord,type:string,part:string,index:number,position:Vect
   }
   if(r.kind==='ad'&&entity.getProperty('mcpe_food:size')!==(r.size??0))entity.setProperty('mcpe_food:size',r.size??0);
   // Explicit facing is display-only: saved direction, yaw and revision stay intact.
-  const explicit=!!r.wallFace||r.kind==='digital_ad'||r.definition===id('supermarket_checkout')||patch072ById.has(r.definition)||patch073ById.has(r.definition)||patch074ById.has(r.definition)||r.kind==='clothing_rack';
+  const explicit=!!r.wallFace||r.kind==='digital_ad'||r.definition===id('supermarket_checkout')||patch072ById.has(r.definition)||patch073ById.has(r.definition)||patch074ById.has(r.definition)||patch080ById.has(r.definition)||r.kind==='clothing_rack';
   if(type!=='mcpe_food:advert_display'&&type!=='mcpe_food:tray_food_display'){
     const code=explicit?(isPanel(r)?displayFacing(r.wallFace??r.direction):facingFromYaw(r.yaw??yaw[r.direction]??0)):0;
     if(entity.getProperty('mcpe_food:display_facing')!==code)entity.setProperty('mcpe_food:display_facing',code);
@@ -127,7 +147,9 @@ export function synchronize(r:DecorRecord):void {
   if(surfaceValid(r)!==true)return;
   if(r.kind==='appliance')return;
   const wanted=new Set<string>();
-  if(r.kind==='digital_ad'){
+  if(r.mount==='ceiling'){
+    const right=rights[r.direction]!;visual(r,'mcpe_food:surface_display','base',surfaceIndex.get(r.definition)!,add({x:r.support.x+.5,y:r.support.y-2,z:r.support.z+.5},right,.5));wanted.add('base');
+  }else if(r.kind==='digital_ad'){
     const d=digitalById.get(r.definition)!;const n=normals[r.direction]!,right=rights[r.direction]!;
     visual(r,'mcpe_food:digital_ad_display','screen',wallScreens.indexOf(d),add(add({x:r.support.x+.5,y:r.support.y,z:r.support.z+.5},right,(d.width-1)/2),n,.505));wanted.add('screen');
   }else if(r.wallFace){
@@ -180,7 +202,7 @@ export function removeDecor(requested:DecorRecord,drop:boolean):void {
       const cells=applianceCells(r);
       for(const child of [...records.values()])if(child.uid!==r.uid&&child.dimension===r.dimension&&((child.kind!=='ad'&&cells.some(p=>same(p,child.support)))||(isPanel(child)&&posterCells(child).some(p=>cells.some(c=>same(p,c))))))removeDecor(child,drop);
     }
-    if(drop)for(const key of drops(r))spawned.push(dim(r).spawnItem(new ItemStack(key),{x:r.support.x+.5,y:r.support.y+1,z:r.support.z+.5}));
+    if(drop)for(const key of drops(r))spawned.push(dim(r).spawnItem(new ItemStack(key),{x:r.support.x+.5,y:r.support.y+(r.mount==='ceiling'?-1:1),z:r.support.z+.5}));
     if(r.kind==='appliance')for(const[i,p]of applianceCells(r).entries()){const block=safeBlock(r,p);if(block?.typeId===(i===0?r.definition:r.definition+'_upper')){changed.push({block,permutation:block.permutation});block.setPermutation(BlockPermutation.resolve('minecraft:air'));}}
     if(r.native&&safeBlock(r,anchor(r))?.typeId===id(tray.key))safeBlock(r,anchor(r))!.setPermutation(BlockPermutation.resolve('minecraft:air'));
     world.setDynamicProperty(storageKey(r));records.delete(r.uid);for(const e of visuals(r))e.remove();
@@ -302,7 +324,7 @@ async function posterMenu(p:Player,r:DecorRecord,placing=false):Promise<void> {
 }
 function direction(p:Player):string {const angle=((p.getRotation().y%360)+360)%360;return angle<45||angle>=315?'south':angle<135?'west':angle<225?'north':'east';}
 function createSurface(p:Player,support:Block,definition:string):void {
-  const height=surfaceHeight(support),c=io.inventory(p);if(scenarioById.get(definition)?.wallOnly||!height||!c||recordForSupport(support.dimension.id,support.location))return;
+  const height=surfaceHeight(support),c=io.inventory(p);if(definition===id(ceilingDisplayKey)||scenarioById.get(definition)?.wallOnly||!height||!c||recordForSupport(support.dimension.id,support.location))return;
   const target=support.dimension.getBlock(add(support.location,{x:0,y:1,z:0}));if(!empty(target))return;
   const r:DecorRecord={version:1,uid:unique(),revision:0,dimension:support.dimension.id,support:{...support.location},kind:rackById.has(definition)?'clothing_rack':definition===id(tray.key)?'tray':'surface',definition,direction:direction(p),native:definition===id(tray.key)&&height===1,slots:Array.from({length:rackById.get(definition)?.capacity??3},()=>null)};
   r.yaw=screenYaw(definition,{x:support.location.x+.5,z:support.location.z+.5},p.location,p.getRotation().y);
@@ -352,6 +374,9 @@ function posterAt(block:Block,face:string):DecorRecord|undefined {return [...rec
 function run(p:Player,work:()=>void|Promise<void>):void {system.run(()=>{Promise.resolve().then(work).catch(error=>{console.warn(`[Food & Table] decor: ${String(error)}`);if(p.isValid)io.notify(p,'操作未完成，请重试。','Operation could not complete; please retry.');});});}
 export function handleDecorBlock(event:PlayerInteractWithBlockBeforeEvent):boolean {
   const p=event.player,block=event.block,face=String(event.blockFace).toLowerCase(),c=io.inventory(p),hand=c?.getItem(p.selectedSlotIndex),ad=hand&&adById.get(hand.typeId);
+  if(hand?.typeId===id(ceilingDisplayKey)){event.cancel=true;if(face==='down'&&event.isFirstEvent){const selected=p.selectedSlotIndex;run(p,()=>{if(p.selectedSlotIndex===selected&&io.inventory(p)?.getItem(selected)?.typeId===id(ceilingDisplayKey))createCeiling(p,block);});}return true;}
+  const ceiling=face==='down'?[...records.values()].find(r=>r.mount==='ceiling'&&r.dimension===block.dimension.id&&ceilingSupports(r).some(c=>same(c,block.location))):undefined;
+  if(ceiling){event.cancel=true;if(!hand&&event.isFirstEvent)run(p,()=>staticMenu(p,copy(ceiling)));return true;}
   if(hand&&clothingById.has(hand.typeId)){event.cancel=true;return true;}
   const poster=posterAt(block,face);
   if(hand&&(wallById.has(hand.typeId)||digitalById.has(hand.typeId))&&normals[face]){
@@ -399,7 +424,7 @@ export function installDecor(adapter:IO):void {
   });
   world.beforeEvents.playerBreakBlock.subscribe(event=>{
     const candidates=[...records.values()].filter(r=>r.dimension===event.block.dimension.id&&((r.kind==='appliance'&&applianceCells(r).some(p=>same(p,event.block.location)))||(r.native&&same(anchor(r),event.block.location))||(isPanel(r)&&posterCells(r).some(p=>same(p,event.block.location)))));
-    const supportLost=[...records.values()].filter(r=>!candidates.some(c=>c.uid===r.uid)&&r.dimension===event.block.dimension.id&&same(r.support,event.block.location));
+    const supportLost=[...records.values()].filter(r=>!candidates.some(c=>c.uid===r.uid)&&r.dimension===event.block.dimension.id&&(r.mount==='ceiling'?ceilingSupports(r).some(p=>same(p,event.block.location)):same(r.support,event.block.location)));
     if(!candidates.length&&!supportLost.length)return;if(candidates.some(r=>!isPanel(r)))event.cancel=true;
     run(event.player,()=>{for(const r of [...candidates,...supportLost])if(near(event.player,r))removeDecor(r,!isCreative(event.player));});
   });

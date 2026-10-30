@@ -1,7 +1,7 @@
 {
   "advertisements": 23,
   "advertisementSizes": 69,
-  "surfaceDefinitions": 582,
+  "surfaceDefinitions": 593,
   "trayFoods": 70,
   "trayCubes": 65,
   "maxMiniCubes": 39,
@@ -2918,6 +2918,61 @@
       "resolution": 128
     },
     {
+      "key": "surface_laboratory_centrifuge",
+      "cubes": 19,
+      "resolution": 128
+    },
+    {
+      "key": "surface_laboratory_incubator",
+      "cubes": 32,
+      "resolution": 128
+    },
+    {
+      "key": "surface_laboratory_cloud_storage_array",
+      "cubes": 36,
+      "resolution": 128
+    },
+    {
+      "key": "surface_open_reel_tape_recorder",
+      "cubes": 46,
+      "resolution": 128
+    },
+    {
+      "key": "surface_laboratory_radio_station",
+      "cubes": 17,
+      "resolution": 128
+    },
+    {
+      "key": "surface_ceiling_arm_display_2x1",
+      "cubes": 7,
+      "resolution": 256
+    },
+    {
+      "key": "surface_digital_oscilloscope",
+      "cubes": 11,
+      "resolution": 128
+    },
+    {
+      "key": "surface_pipette_rack_set",
+      "cubes": 42,
+      "resolution": 128
+    },
+    {
+      "key": "surface_laboratory_dual_monitor_set",
+      "cubes": 41,
+      "resolution": 128
+    },
+    {
+      "key": "surface_template_ai_triple_monitor_set",
+      "cubes": 43,
+      "resolution": 128
+    },
+    {
+      "key": "surface_portrait_paper_monitor",
+      "cubes": 5,
+      "resolution": 128
+    },
+    {
       "key": "mini_kung_pao_chicken",
       "cubes": 31,
       "resolution": 128
@@ -3754,5 +3809,5 @@
     }
   ],
   "entityTypes": 5,
-  "entityTextureSets": 407
+  "entityTextureSets": 419
 }

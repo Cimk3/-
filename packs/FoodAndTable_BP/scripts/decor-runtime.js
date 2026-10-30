@@ -1,3 +1,4 @@
+import { patch080ById, ceilingDisplayKey } from './patch-080-catalog.js';
 import { patch074ById } from './patch-074-catalog.js';
 import { patch073ById } from './patch-073-catalog.js';
 import { patch072ById, clothingById, rackById, clothingVisuals } from './patch-072-catalog.js';
@@ -31,7 +32,7 @@ catch {
 } };
 const empty = (b) => b?.typeId === 'minecraft:air';
 const isCreative = (p) => p.getGameMode() === GameMode.Creative;
-const recordForSupport = (dimension, p) => [...records.values()].find(r => !isPanel(r) && r.dimension === dimension && same(r.support, p));
+const recordForSupport = (dimension, p) => [...records.values()].find(r => !isPanel(r) && !r.mount && r.dimension === dimension && same(r.support, p));
 const storageKey = (r) => PREFIX + r.uid;
 function save(r) { world.setDynamicProperty(storageKey(r), JSON.stringify(r)); records.set(r.uid, r); }
 function unique() { const n = Number(world.getDynamicProperty('mcpe_food:decor_serial') ?? 0) + 1; world.setDynamicProperty('mcpe_food:decor_serial', n); return `d${n}`; }
@@ -54,6 +55,8 @@ function assertCurrent(p, r) {
 }
 /** undefined means unloaded; it must never be treated as missing support. */
 function surfaceValid(r) {
+    if (r.mount === 'ceiling')
+        return ceilingFits(r);
     if (isPanel(r))
         return adFits(r);
     const b = safeBlock(r);
@@ -87,6 +90,54 @@ function surfaceValid(r) {
     }
     return !overlaps(r);
 }
+export function ceilingSupports(r) { const right = rights[r.direction]; return right ? [r.support, add(r.support, right)] : []; }
+function ceilingFits(r) {
+    if (r.definition !== id(ceilingDisplayKey) || r.kind !== 'surface' || r.native)
+        return false;
+    const support = ceilingSupports(r);
+    if (support.length !== 2)
+        return false;
+    for (const p of support) {
+        const b = safeBlock(r, p);
+        if (!b)
+            return undefined;
+        if (!isWallSupport(b))
+            return false;
+    }
+    for (const p of occupiedCells(r)) {
+        const b = safeBlock(r, p);
+        if (!b)
+            return undefined;
+        if (!empty(b))
+            return false;
+    }
+    return !overlaps(r);
+}
+function createCeiling(p, block) {
+    const c = io.inventory(p), selected = p.selectedSlotIndex, definition = id(ceilingDisplayKey);
+    if (!c || c.getItem(selected)?.typeId !== definition)
+        return;
+    const angle = screenYaw(definition, { x: block.location.x + .5, z: block.location.z + .5 }, p.location, p.getRotation().y);
+    const r = { version: 1, uid: unique(), revision: 0, dimension: block.dimension.id, support: { ...block.location }, kind: 'surface', mount: 'ceiling', definition, direction: 'south', native: false, slots: [], yaw: angle };
+    // facingFromYaw is the same client contract used by the final display.
+    r.direction = { 1: 'north', 2: 'east', 3: 'south', 4: 'west' }[facingFromYaw(angle)];
+    if (!near(p, r) || ceilingFits(r) !== true)
+        return;
+    const before = io.snapshot(c), plan = isCreative(p) ? { ok: true, slots: before.slots } : planServe(before.slots, selected, definition);
+    if (!plan.ok)
+        return;
+    try {
+        save(r);
+        io.commit(c, before, plan.slots);
+        synchronize(r);
+    }
+    catch (error) {
+        restore(c, before);
+        if (records.has(r.uid))
+            removeDecor(r, false);
+        throw error;
+    }
+}
 function isPanel(r) { return r.kind === 'ad' || r.kind === 'digital_ad' || !!r.wallFace; }
 function panelSize(r) {
     if (r.kind === 'digital_ad') {
@@ -110,6 +161,8 @@ function posterCells(r) {
     return cells;
 }
 function occupiedCells(r) {
+    if (r.mount === 'ceiling')
+        return ceilingSupports(r).flatMap(p => [add(p, { x: 0, y: -1, z: 0 }), add(p, { x: 0, y: -2, z: 0 })]);
     if (isPanel(r)) {
         const n = normals[r.wallFace ?? r.direction];
         return n ? posterCells(r).map(p => add(p, n)) : [];
@@ -159,7 +212,7 @@ function visual(r, type, part, index, position) {
     if (r.kind === 'ad' && entity.getProperty('mcpe_food:size') !== (r.size ?? 0))
         entity.setProperty('mcpe_food:size', r.size ?? 0);
     // Explicit facing is display-only: saved direction, yaw and revision stay intact.
-    const explicit = !!r.wallFace || r.kind === 'digital_ad' || r.definition === id('supermarket_checkout') || patch072ById.has(r.definition) || patch073ById.has(r.definition) || patch074ById.has(r.definition) || r.kind === 'clothing_rack';
+    const explicit = !!r.wallFace || r.kind === 'digital_ad' || r.definition === id('supermarket_checkout') || patch072ById.has(r.definition) || patch073ById.has(r.definition) || patch074ById.has(r.definition) || patch080ById.has(r.definition) || r.kind === 'clothing_rack';
     if (type !== 'mcpe_food:advert_display' && type !== 'mcpe_food:tray_food_display') {
         const code = explicit ? (isPanel(r) ? displayFacing(r.wallFace ?? r.direction) : facingFromYaw(r.yaw ?? yaw[r.direction] ?? 0)) : 0;
         if (entity.getProperty('mcpe_food:display_facing') !== code)
@@ -181,7 +234,12 @@ export function synchronize(r) {
     if (r.kind === 'appliance')
         return;
     const wanted = new Set();
-    if (r.kind === 'digital_ad') {
+    if (r.mount === 'ceiling') {
+        const right = rights[r.direction];
+        visual(r, 'mcpe_food:surface_display', 'base', surfaceIndex.get(r.definition), add({ x: r.support.x + .5, y: r.support.y - 2, z: r.support.z + .5 }, right, .5));
+        wanted.add('base');
+    }
+    else if (r.kind === 'digital_ad') {
         const d = digitalById.get(r.definition);
         const n = normals[r.direction], right = rights[r.direction];
         visual(r, 'mcpe_food:digital_ad_display', 'screen', wallScreens.indexOf(d), add(add({ x: r.support.x + .5, y: r.support.y, z: r.support.z + .5 }, right, (d.width - 1) / 2), n, .505));
@@ -293,7 +351,7 @@ export function removeDecor(requested, drop) {
         }
         if (drop)
             for (const key of drops(r))
-                spawned.push(dim(r).spawnItem(new ItemStack(key), { x: r.support.x + .5, y: r.support.y + 1, z: r.support.z + .5 }));
+                spawned.push(dim(r).spawnItem(new ItemStack(key), { x: r.support.x + .5, y: r.support.y + (r.mount === 'ceiling' ? -1 : 1), z: r.support.z + .5 }));
         if (r.kind === 'appliance')
             for (const [i, p] of applianceCells(r).entries()) {
                 const block = safeBlock(r, p);
@@ -650,7 +708,7 @@ async function posterMenu(p, r, placing = false) {
 function direction(p) { const angle = ((p.getRotation().y % 360) + 360) % 360; return angle < 45 || angle >= 315 ? 'south' : angle < 135 ? 'west' : angle < 225 ? 'north' : 'east'; }
 function createSurface(p, support, definition) {
     const height = surfaceHeight(support), c = io.inventory(p);
-    if (scenarioById.get(definition)?.wallOnly || !height || !c || recordForSupport(support.dimension.id, support.location))
+    if (definition === id(ceilingDisplayKey) || scenarioById.get(definition)?.wallOnly || !height || !c || recordForSupport(support.dimension.id, support.location))
         return;
     const target = support.dimension.getBlock(add(support.location, { x: 0, y: 1, z: 0 }));
     if (!empty(target))
@@ -780,6 +838,22 @@ function run(p, work) { system.run(() => { Promise.resolve().then(work).catch(er
     io.notify(p, '操作未完成，请重试。', 'Operation could not complete; please retry.'); }); }); }
 export function handleDecorBlock(event) {
     const p = event.player, block = event.block, face = String(event.blockFace).toLowerCase(), c = io.inventory(p), hand = c?.getItem(p.selectedSlotIndex), ad = hand && adById.get(hand.typeId);
+    if (hand?.typeId === id(ceilingDisplayKey)) {
+        event.cancel = true;
+        if (face === 'down' && event.isFirstEvent) {
+            const selected = p.selectedSlotIndex;
+            run(p, () => { if (p.selectedSlotIndex === selected && io.inventory(p)?.getItem(selected)?.typeId === id(ceilingDisplayKey))
+                createCeiling(p, block); });
+        }
+        return true;
+    }
+    const ceiling = face === 'down' ? [...records.values()].find(r => r.mount === 'ceiling' && r.dimension === block.dimension.id && ceilingSupports(r).some(c => same(c, block.location))) : undefined;
+    if (ceiling) {
+        event.cancel = true;
+        if (!hand && event.isFirstEvent)
+            run(p, () => staticMenu(p, copy(ceiling)));
+        return true;
+    }
     if (hand && clothingById.has(hand.typeId)) {
         event.cancel = true;
         return true;
@@ -908,7 +982,7 @@ export function installDecor(adapter) {
     });
     world.beforeEvents.playerBreakBlock.subscribe(event => {
         const candidates = [...records.values()].filter(r => r.dimension === event.block.dimension.id && ((r.kind === 'appliance' && applianceCells(r).some(p => same(p, event.block.location))) || (r.native && same(anchor(r), event.block.location)) || (isPanel(r) && posterCells(r).some(p => same(p, event.block.location)))));
-        const supportLost = [...records.values()].filter(r => !candidates.some(c => c.uid === r.uid) && r.dimension === event.block.dimension.id && same(r.support, event.block.location));
+        const supportLost = [...records.values()].filter(r => !candidates.some(c => c.uid === r.uid) && r.dimension === event.block.dimension.id && (r.mount === 'ceiling' ? ceilingSupports(r).some(p => same(p, event.block.location)) : same(r.support, event.block.location)));
         if (!candidates.length && !supportLost.length)
             return;
         if (candidates.some(r => !isPanel(r)))

@@ -1,4 +1,4 @@
-# 0.7.4 菜品与器皿索引
+# 0.8.0 菜品与器皿索引
 
 102 种可食成品，8 种不可食展示配菜，2 款静态铜锅，15 种餐具，3 款酒瓶摆件。新增内容通过创造物品栏或分组试用命令获取。
 
@@ -494,3 +494,18 @@
 - 通信电台 / mcpe_food:communications_radio
 - 雷达设备 / mcpe_food:radar_equipment
 - 战术装备箱 / mcpe_food:tactical_equipment_case
+
+
+## 0.8.0实验设备与多屏
+
+- 离心机 / mcpe_food:laboratory_centrifuge
+- 恒温培养箱 / mcpe_food:laboratory_incubator
+- 云储存阵列 / mcpe_food:laboratory_cloud_storage_array
+- 开盘磁带录放机 / mcpe_food:open_reel_tape_recorder
+- 无线电台 / mcpe_food:laboratory_radio_station
+- 吸顶悬臂显示器 2×1 / mcpe_food:ceiling_arm_display_2x1
+- 数字示波器 / mcpe_food:digital_oscilloscope
+- 移液器架套装 / mcpe_food:pipette_rack_set
+- 双屏显示器套装 / mcpe_food:laboratory_dual_monitor_set
+- 三联屏工作台 / mcpe_food:template_ai_triple_monitor_set
+- 45°竖屏显示器 / mcpe_food:portrait_paper_monitor

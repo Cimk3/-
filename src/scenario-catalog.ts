@@ -1,3 +1,4 @@
+import {patch080Props} from './patch-080-catalog.js';
 import {patch074Props,patch074WallVariants,patch074DigitalScreens} from './patch-074-catalog.js';
 import {patch073Props} from './patch-073-catalog.js';
 import {patch072Props,infoScreens} from './patch-072-catalog.js';
@@ -19,7 +20,7 @@ export const scenarioGroups = [
   ['electronic_whiteboard','壁挂电子白板','Electronic Whiteboard',1,true],['teaching_lectern','现代教学讲台','Teaching Lectern',2],['document_camera','实物展台／文档摄像仪','Document Camera',1]])
 ];
 export const scenarioProps=scenarioGroups.flatMap(g=>g.items.map(d=>({...d,group:g.key})));
-export const scenarioById=new Map<string,{key:string;zh:string;en:string;height:number;wallOnly:boolean;group:string}>([...scenarioProps,...patch071Props,...patch072Props,...patch073Props,...patch074Props].map(d=>['mcpe_food:'+d.key,d]));
+export const scenarioById=new Map<string,{key:string;zh:string;en:string;height:number;wallOnly:boolean;group:string}>([...scenarioProps,...patch071Props,...patch072Props,...patch073Props,...patch074Props,...patch080Props].map(d=>['mcpe_food:'+d.key,d]));
 export const wallKeys=[...scenarioProps.filter(d=>d.wallOnly).map(d=>d.key),'flat_screen_tv','landscape_frame','table_clock'];
 export const wallVariants=wallKeys.map(key=>({key:key+'_wall',base:key,zh:'壁挂 '+key,en:'Wall '+key}));
 export const wallById=new Map([...wallKeys,...patch074WallVariants.map(d=>d.base)].map(key=>['mcpe_food:'+key,key+'_wall']));

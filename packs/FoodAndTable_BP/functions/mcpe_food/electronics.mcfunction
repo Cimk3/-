@@ -47,3 +47,6 @@ give @s mcpe_food:government_queue_screen 4
 give @s mcpe_food:ft_b1_open 4
 give @s mcpe_food:ft_ideabook_p1_open 4
 give @s mcpe_food:ft_master_open 4
+give @s mcpe_food:laboratory_dual_monitor_set 4
+give @s mcpe_food:template_ai_triple_monitor_set 4
+give @s mcpe_food:portrait_paper_monitor 4

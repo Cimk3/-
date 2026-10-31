@@ -32,7 +32,14 @@ def main():
         raise RuntimeError("Unexpected release remote")
     if git("rev-parse", tag + "^{commit}") != commit:
         raise RuntimeError("Release tag does not match HEAD")
-    if git("status", "--porcelain"):
+    # Unrelated user files outside the curated source archive may coexist here.
+    # Every tracked change and every untracked archive input must be reviewed.
+    source_inputs = ["AGENTS.md", "package.json", "package-lock.json", "tsconfig.json",
+                     "README.md", "LICENSE", "storage-report.json", "build-report.json",
+                     "validation-report.json", "upgrade-report.json",
+                     "src", "tools", "tests", "assets", "docs", "previews"]
+    if git("status", "--porcelain", "--untracked-files=no") or git(
+            "ls-files", "--others", "--exclude-standard", "--", *source_inputs):
         raise RuntimeError("Commit all reviewed release files before publishing")
     for name in ["validation-report.json", "archive-report.json"]:
         if json.loads((ROOT / name).read_text(encoding="utf-8"))["status"] != "passed":

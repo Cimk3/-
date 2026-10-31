@@ -27,7 +27,7 @@ export class FakeDimension{
   }
   spawnItem(item,loc){const e=new FakeEntity('minecraft:item',loc,this);this.drops.push({item:item.clone(),loc,entity:e});return e;}
   spawnEntity(type,loc){if(this.failSpawn)throw new Error('simulated display spawn failure');const e=new FakeEntity(type,loc,this);this.entities.push(e);return e;}
-  getEntities(){return this.entities.filter(e=>e.isValid);}
+  getEntities(query={}){return this.entities.filter(e=>e.isValid&&(!query.families||e.typeId.startsWith('mcpe_food:')&&e.typeId.endsWith('_display'))&&(!query.location||Math.hypot(e.location.x-query.location.x,e.location.y-query.location.y,e.location.z-query.location.z)<=query.maxDistance));}
 }
 let entitySerial=0;
 export class FakeEntity{

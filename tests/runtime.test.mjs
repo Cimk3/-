@@ -9,6 +9,7 @@ registerHooks({resolve(specifier,context,next){
   return mock?{url:new URL(mock,import.meta.url).href,shortCircuit:true}:next(specifier,context);
 }});
 await import('../.build/main.js');
+flush(); // Finish the empty world's startup record load before interaction tests.
 const idle=()=>new Promise(resolve=>setImmediate(resolve));
 function setup(type='mcpe_food:stove'){
   reset();const dimension=new FakeDimension(),player=new FakePlayer(dimension),block=dimension.put(type);return{dimension,player,block};

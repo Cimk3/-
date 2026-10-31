@@ -42,7 +42,7 @@ for(const target of[BP,RP]){if(path.relative(path.join(root,'packs'),target).sta
 const write=(base,file,data)=>{const target=path.join(base,file);mkdirSync(path.dirname(target),{recursive:true});writeOutput(target,data);};
 const json=(base,file,data)=>write(base,file,JSON.stringify(data,null,2)+'\n');
 const {version}=JSON.parse(readFileSync(path.join(root,'package.json'),'utf8')),VERSION=version.split('.').map(Number),ENGINE=[1,26,20];
-const BUILD_ID='0.8.0-release.1';
+const BUILD_ID='0.8.1-release.1';
 const BP_UUID='c260f73a-480b-441e-91e2-de90849fa140',RP_UUID='1a31bbad-5ab0-4860-aa36-1dded1fb5689',metadata={authors:['Food & Table contributors'],license:'MIT',product_type:'addon'};
 json(BP,'manifest.json',{format_version:2,header:{name:`方寸食光 · Food & Table BP ${BUILD_ID}`,description:`${foods.length} 道料理 · 铜锅桌景 · 128px | Food & Table ${BUILD_ID}`,uuid:BP_UUID,version:VERSION,min_engine_version:ENGINE},modules:[{type:'data',uuid:'a1aa9410-be01-43bb-bec4-806426c234fb',version:VERSION},{type:'script',language:'javascript',entry:'scripts/main.js',uuid:'851d963e-b413-4cab-af11-74e029441d0a',version:VERSION}],dependencies:[{uuid:RP_UUID,version:VERSION},{module_name:'@minecraft/server',version:'2.0.0'},{module_name:'@minecraft/server-ui',version:'2.0.0'}],metadata});
 json(RP,'manifest.json',{format_version:2,header:{name:`方寸食光 · Food & Table RP ${BUILD_ID}`,description:`Food & Table PBR | ${BUILD_ID} | 需启用同批次BP`,uuid:RP_UUID,version:VERSION,min_engine_version:ENGINE},modules:[{type:'resources',uuid:'f52c1cef-a4fd-4d0b-ae75-f66cb93d6386',version:VERSION}],capabilities:['pbr'],metadata});

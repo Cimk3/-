@@ -1,0 +1,11 @@
+{
+  "roots": [
+    "packs/FoodAndTable_RP",
+    "packs/FoodAndTable_BP/items",
+    "packs/FoodAndTable_BP/blocks",
+    "packs/FoodAndTable_BP/recipes",
+    "packs/FoodAndTable_BP/loot_tables"
+  ],
+  "files": 5738,
+  "sha256": "564ecea09aaf166cfefab7280f7dcda376af72306d614b6445a44e148215f3b7"
+}

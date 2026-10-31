@@ -1,3 +1,17 @@
+# 0.8.1 验证记录
+
+日期：2026-10-31。构建标识0.8.1-release.1。修改前捕获0.8.0内容／展示顺序／5738份资源及定义的整体摘要；旧fixture保留。软件修复、自动压力回归与实际Minecraft验收分开记录。
+
+自动压力检查：2500条存档每tick最多读取8属性；500次实体载入无inline补显、加载前不删除有效owner；3000条记录单回调最多2件、14次方块读取／2次局部查询；满载服装架一次查询5部件；保护加载阶段冰箱和破坏事件；未加载支撑、孤儿清理、重入加载和索引释放均通过。对比已发布v0.8.0同场景单回调为144216次方块读取／48次全维度实体查询。数字为mock API调用计数，不是实机profiling。
+
+npm ci恢复锁定依赖；完整构建与1,796,033项资源检查通过。首轮255项测试中仅一处历史测试仍写死0.8.0构建号，改为读取当前版本后重跑255／255通过；没有以修改历史fixture放宽验证。354物品、506方块、1218模型、1887PNG及1222组PBR保持。0.8.0的593桌面／61服装／13墙屏顺序、ID／UUID、命令和5738份资源／物品／方块／配方／掉落定义字节摘要均一致。仅包版本、批次信息和运行脚本改变；README未加更新介绍。node tools/package.mjs及python tools/verify_archive.py通过：5812个内包文件（BP1462、RP4350），CRC、独立包／内包、SHA256与源码ZIP校验均通过。通用离线预览随构建更新版本文字；没有修改游戏模型和纹理源，资源摘要单独核对，不能把预览文件字节变化当作游戏美术变化。发布文档更新后重新归档并核验，源码排除.cache和用户imgSrc。未执行真实Minecraft：截图中的进入世界失败没有详细栈，当前只能确认已修正代码中可复现的负载放大；Windows／安卓、普通／灵动视效、真实区块重载、联机与性能仍未验证。未取消watchdog，不改原版或光影资源。
+
+依据：[官方脚本性能说明](https://learn.microsoft.com/en-us/minecraft/creator/documents/scripting/script-performance?view=minecraft-bedrock-stable)与[官方调度指南](https://github.com/MicrosoftDocs/minecraft-creator/blob/main/creator/Documents/scripting/system-run-guide.md)建议避免单tick突发大批工作并分帧处理。此处使用固定稳定2.0.0的system.run／runInterval，未开启实验。
+
+---
+
+以下为历史版本记录。
+
 # 0.8.0验证记录
 
 日期：2026-10-30。构建标识0.8.0-release.1；BP／RP一致。0.7.4兼容fixture与582／61／13展示顺序在内容变更前捕获，旧fixture未覆盖。

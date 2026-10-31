@@ -1,5 +1,5 @@
 {
-  "version": "0.8.0",
+  "version": "0.8.1",
   "foods": 102,
   "displayDishes": 8,
   "hotpots": 2,
@@ -50,7 +50,7 @@
   "electronicsGroupItems": 42,
   "officeStationeryCommandItems": 9,
   "infoScreens": 2,
-  "trialBuild": "0.8.0-release.1",
+  "trialBuild": "0.8.1-release.1",
   "electronicsCommandItems": 52,
   "aiWorkDevices": 7,
   "digitalScreens": 11,

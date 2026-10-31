@@ -25,5 +25,5 @@ test('final portrait panel has an independently computed 45-degree horizontal ax
 });
 test('dual/triple screens have exactly one 30-key keyboard, one mouse, and independent correctly ordered UI islands',()=>{
  for(const[k,n]of[['laboratory_dual_monitor_set',2],['template_ai_triple_monitor_set',3]]){const c=cubes(geo(k)),screens=c.filter(c=>c.size[2]===.04).sort((a,b)=>b.origin[0]-a.origin[0]);assert.equal(screens.length,n);assert.equal(c.filter(c=>c.size[1]===.07).length,30);assert.equal(c.filter(c=>c.size[0]===1.4&&c.size[1]===.6).length,1);if(n===3)assert.deepEqual(screens.map(c=>c.uv.north.uv),[[0,28],[0,0],[48,28]]);}
- const r=read(`${bp}/mcpe_food_build.json`);assert.equal(r.build,'0.8.0-release.1');assert.deepEqual(r,read(`${rp}/mcpe_food_build.json`));
+ const r=read(`${bp}/mcpe_food_build.json`);assert.equal(r.build,`${read('package.json').version}-release.1`);assert.deepEqual(r,read(`${rp}/mcpe_food_build.json`));
 });

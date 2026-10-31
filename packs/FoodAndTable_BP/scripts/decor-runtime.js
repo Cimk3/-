@@ -16,6 +16,34 @@ import { planInsert, planServe } from './inventory.js';
 import { isWallSupport, surfaceHeight } from './supports.js';
 let io;
 const PREFIX = 'mcpe_food:decor:', records = new Map(), locks = new Set(), cooldowns = new Map();
+// Derived spatial index only; persisted v1 records remain the source of truth.
+const occupancy = new Map(), recordCells = new Map();
+const loadedEntities = new Map(), dirtyOwners = new Set();
+let loading = true, loadGeneration = 0, recordCursor = records.values();
+const cellKey = (dimension, p) => `${dimension}:${p.x},${p.y},${p.z}`;
+function forgetRecord(uid) {
+    for (const key of recordCells.get(uid) ?? []) {
+        const owners = occupancy.get(key);
+        owners?.delete(uid);
+        if (!owners?.size)
+            occupancy.delete(key);
+    }
+    recordCells.delete(uid);
+    records.delete(uid);
+    dirtyOwners.delete(uid);
+}
+function rememberRecord(r) {
+    forgetRecord(r.uid);
+    records.set(r.uid, r);
+    const keys = occupiedCells(r).map(p => cellKey(r.dimension, p));
+    recordCells.set(r.uid, keys);
+    for (const key of keys) {
+        let owners = occupancy.get(key);
+        if (!owners)
+            occupancy.set(key, owners = new Set());
+        owners.add(r.uid);
+    }
+}
 const yaw = { north: 0, east: -90, south: 180, west: 90 };
 const normals = { north: { x: 0, y: 0, z: -1 }, south: { x: 0, y: 0, z: 1 }, east: { x: 1, y: 0, z: 0 }, west: { x: -1, y: 0, z: 0 } };
 const rights = { north: { x: -1, y: 0, z: 0 }, south: { x: 1, y: 0, z: 0 }, east: { x: 0, y: 0, z: 1 }, west: { x: 0, y: 0, z: -1 } };
@@ -34,10 +62,10 @@ const empty = (b) => b?.typeId === 'minecraft:air';
 const isCreative = (p) => p.getGameMode() === GameMode.Creative;
 const recordForSupport = (dimension, p) => [...records.values()].find(r => !isPanel(r) && !r.mount && r.dimension === dimension && same(r.support, p));
 const storageKey = (r) => PREFIX + r.uid;
-function save(r) { world.setDynamicProperty(storageKey(r), JSON.stringify(r)); records.set(r.uid, r); }
+function save(r) { world.setDynamicProperty(storageKey(r), JSON.stringify(r)); rememberRecord(r); }
 function unique() { const n = Number(world.getDynamicProperty('mcpe_food:decor_serial') ?? 0) + 1; world.setDynamicProperty('mcpe_food:decor_serial', n); return `d${n}`; }
 function near(p, r) {
-    if (!p.isValid || p.dimension.id !== r.dimension)
+    if (loading || !p.isValid || p.dimension.id !== r.dimension)
         return false;
     if (isPanel(r)) {
         const [w, h] = panelSize(r), right = rights[r.direction], normal = normals[r.direction];
@@ -169,12 +197,15 @@ function occupiedCells(r) {
     }
     if (r.kind === 'appliance')
         return applianceCells(r);
-    const count = Math.max(1, Math.ceil((scenarioById.get(r.definition)?.height ?? 1) + surfaceHeight(safeBlock(r)) - 1));
+    // Catalog heights are integral; full/slab/stair tops occupy the same cells.
+    // Never read every other record's support (possibly unloaded) for an overlap test.
+    const count = Math.max(1, Math.ceil(scenarioById.get(r.definition)?.height ?? 1));
     return Array.from({ length: count }, (_, i) => add(r.support, { x: 0, y: i + 1, z: 0 }));
 }
 function overlaps(r) {
-    const cells = occupiedCells(r);
-    return [...records.values()].some(other => other.uid !== r.uid && other.dimension === r.dimension && occupiedCells(other).some(p => cells.some(c => same(p, c))));
+    return occupiedCells(r).some(p => { for (const uid of occupancy.get(cellKey(r.dimension, p)) ?? [])
+        if (uid !== r.uid)
+            return true; return false; });
 }
 export function adFits(r) {
     const cells = posterCells(r), n = normals[r.wallFace ?? r.direction];
@@ -189,10 +220,12 @@ export function adFits(r) {
     }
     return !overlaps(r);
 }
-function visuals(r) { return dim(r).getEntities({ families: ['mcpe_food_display'] }).filter(e => e.getDynamicProperty('mcpe_food:owner') === r.uid); }
-function visual(r, type, part, index, position) {
-    const existing = visuals(r).filter(e => e.getDynamicProperty('mcpe_food:part') === part && e.typeId === type);
+function visuals(r) { return dim(r).getEntities({ families: ['mcpe_food_display'], location: r.support, maxDistance: 8 }).filter(e => e.getDynamicProperty('mcpe_food:owner') === r.uid); }
+function visual(r, type, part, index, position, entities) {
+    const existing = entities.filter(e => e.isValid && e.getDynamicProperty('mcpe_food:part') === part && e.typeId === type);
     const found = existing.shift(), entity = found ?? dim(r).spawnEntity(type, position);
+    if (!found)
+        entities.push(entity);
     for (const duplicate of existing)
         duplicate.remove();
     if (entity.getDynamicProperty('mcpe_food:owner') !== r.uid)
@@ -233,28 +266,28 @@ export function synchronize(r) {
         return;
     if (r.kind === 'appliance')
         return;
-    const wanted = new Set();
+    const wanted = new Set(), entities = visuals(r);
     if (r.mount === 'ceiling') {
         const right = rights[r.direction];
-        visual(r, 'mcpe_food:surface_display', 'base', surfaceIndex.get(r.definition), add({ x: r.support.x + .5, y: r.support.y - 2, z: r.support.z + .5 }, right, .5));
+        visual(r, 'mcpe_food:surface_display', 'base', surfaceIndex.get(r.definition), add({ x: r.support.x + .5, y: r.support.y - 2, z: r.support.z + .5 }, right, .5), entities);
         wanted.add('base');
     }
     else if (r.kind === 'digital_ad') {
         const d = digitalById.get(r.definition);
         const n = normals[r.direction], right = rights[r.direction];
-        visual(r, 'mcpe_food:digital_ad_display', 'screen', wallScreens.indexOf(d), add(add({ x: r.support.x + .5, y: r.support.y, z: r.support.z + .5 }, right, (d.width - 1) / 2), n, .505));
+        visual(r, 'mcpe_food:digital_ad_display', 'screen', wallScreens.indexOf(d), add(add({ x: r.support.x + .5, y: r.support.y, z: r.support.z + .5 }, right, (d.width - 1) / 2), n, .505), entities);
         wanted.add('screen');
     }
     else if (r.wallFace) {
         const n = normals[r.wallFace];
-        visual(r, 'mcpe_food:surface_display', 'base', surfaceIndex.get(id(wallById.get(r.definition))), add({ x: r.support.x + .5, y: r.support.y, z: r.support.z + .5 }, n, .505));
+        visual(r, 'mcpe_food:surface_display', 'base', surfaceIndex.get(id(wallById.get(r.definition))), add({ x: r.support.x + .5, y: r.support.y, z: r.support.z + .5 }, n, .505), entities);
         wanted.add('base');
     }
     else if (r.kind === 'ad') {
         const ad = advertisements.find(a => a.key === r.art);
         const [w] = adSize(ad, r.size ?? 0), n = normals[r.direction], right = rights[r.direction];
         const p = add(add({ x: r.support.x + .5, y: r.support.y, z: r.support.z + .5 }, right, (w - 1) / 2), n, .521);
-        visual(r, 'mcpe_food:advert_display', 'poster', advertisements.indexOf(ad), p);
+        visual(r, 'mcpe_food:advert_display', 'poster', advertisements.indexOf(ad), p, entities);
         wanted.add('poster');
     }
     else {
@@ -263,7 +296,7 @@ export function synchronize(r) {
             const index = surfaceIndex.get(r.definition === id('table_number_sign') ? id(numberKey(validTableNumber(r.tableNumber) ? r.tableNumber : 8)) : r.definition);
             if (index === undefined)
                 throw new Error('Unknown surface visual');
-            visual(r, 'mcpe_food:surface_display', 'base', index, p);
+            visual(r, 'mcpe_food:surface_display', 'base', index, p, entities);
             wanted.add('base');
         }
         if (r.kind === 'clothing_rack') {
@@ -275,7 +308,7 @@ export function synchronize(r) {
                 const index = clothingVisuals.findIndex(v => id(v.key) === key && v.pose === spec.pose && v.slot === slot);
                 if (index < 0)
                     throw new Error('Unknown garment pose');
-                visual(r, 'mcpe_food:clothing_display', `garment${slot}`, index, p);
+                visual(r, 'mcpe_food:clothing_display', `garment${slot}`, index, p, entities);
                 wanted.add(`garment${slot}`);
             }
         }
@@ -288,12 +321,12 @@ export function synchronize(r) {
                 if (index < 0)
                     throw new Error('Unknown tray food');
                 const angle = (yaw[r.direction] ?? 0) * Math.PI / 180, offset = (slot - 1) * 4.6 / 16;
-                visual(r, 'mcpe_food:tray_food_display', `slot${slot}`, index, { x: p.x + Math.cos(angle) * offset, y: p.y, z: p.z - Math.sin(angle) * offset });
+                visual(r, 'mcpe_food:tray_food_display', `slot${slot}`, index, { x: p.x + Math.cos(angle) * offset, y: p.y, z: p.z - Math.sin(angle) * offset }, entities);
                 wanted.add(`slot${slot}`);
             }
     }
-    for (const e of visuals(r))
-        if (!wanted.has(String(e.getDynamicProperty('mcpe_food:part'))))
+    for (const e of entities)
+        if (e.isValid && !wanted.has(String(e.getDynamicProperty('mcpe_food:part'))))
             e.remove();
 }
 function restore(c, before) { before.originals.forEach((s, i) => c.setItem(i, s)); }
@@ -363,7 +396,7 @@ export function removeDecor(requested, drop) {
         if (r.native && safeBlock(r, anchor(r))?.typeId === id(tray.key))
             safeBlock(r, anchor(r)).setPermutation(BlockPermutation.resolve('minecraft:air'));
         world.setDynamicProperty(storageKey(r));
-        records.delete(r.uid);
+        forgetRecord(r.uid);
         for (const e of visuals(r))
             e.remove();
     }
@@ -772,13 +805,15 @@ function createAppliance(p, support, definition) {
         restore(c, before);
         blocks.forEach((b, i) => b.setPermutation(original[i]));
         world.setDynamicProperty(storageKey(r));
-        records.delete(r.uid);
+        forgetRecord(r.uid);
         throw error;
     }
 }
 /** Tick recovery for commands/orphan helper parts; ordinary placement publishes its owner first. */
 export function applianceTick(block) {
-    const owned = [...records.values()].find(r => r.kind === 'appliance' && r.dimension === block.dimension.id && applianceCells(r).some(p => same(p, block.location)));
+    if (loading)
+        return;
+    const owned = [...(occupancy.get(cellKey(block.dimension.id, block.location)) ?? [])].map(uid => records.get(uid)).find(r => r?.kind === 'appliance');
     if (owned) {
         if (surfaceValid(owned) === false)
             removeDecor(owned, true);
@@ -808,6 +843,8 @@ export function applianceTick(block) {
         upper.setPermutation(BlockPermutation.resolve(r.definition + '_upper', { 'minecraft:cardinal_direction': r.direction }));
 }
 export function migrateLowSurface(block) {
+    if (loading)
+        return;
     const below = block.below();
     if (!below || surfaceHeight(below) !== .5)
         return;
@@ -828,7 +865,7 @@ export function migrateLowSurface(block) {
             save(existing);
         else {
             world.setDynamicProperty(storageKey(next));
-            records.delete(next.uid);
+            forgetRecord(next.uid);
         }
         throw error;
     }
@@ -837,6 +874,11 @@ function posterAt(block, face) { return [...records.values()].find(r => isPanel(
 function run(p, work) { system.run(() => { Promise.resolve().then(work).catch(error => { console.warn(`[Food & Table] decor: ${String(error)}`); if (p.isValid)
     io.notify(p, '操作未完成，请重试。', 'Operation could not complete; please retry.'); }); }); }
 export function handleDecorBlock(event) {
+    // Do not publish new records or run vanilla interactions against a partial index.
+    if (loading) {
+        event.cancel = true;
+        return true;
+    }
     const p = event.player, block = event.block, face = String(event.blockFace).toLowerCase(), c = io.inventory(p), hand = c?.getItem(p.selectedSlotIndex), ad = hand && adById.get(hand.typeId);
     if (hand?.typeId === id(ceilingDisplayKey)) {
         event.cancel = true;
@@ -918,15 +960,25 @@ export function handleDecorBlock(event) {
     }
     return false;
 }
-let cursor = 0;
 export function reconcileDecor() {
-    const all = [...records.values()];
-    if (!all.length)
+    if (loading)
         return;
-    for (let n = 0; n < Math.min(24, all.length); n++) {
-        const r = all[cursor++ % all.length];
-        if (!records.has(r.uid))
-            continue;
+    const start = Date.now();
+    for (let n = 0; n < Math.min(2, records.size); n++) {
+        let uid = dirtyOwners.values().next().value;
+        if (uid !== undefined)
+            dirtyOwners.delete(uid);
+        let r = uid === undefined ? undefined : records.get(uid);
+        if (!r) {
+            let next = recordCursor.next();
+            if (next.done) {
+                recordCursor = records.values();
+                next = recordCursor.next();
+            }
+            r = next.value;
+        }
+        if (!r)
+            break;
         try {
             const valid = surfaceValid(r);
             if (valid === undefined)
@@ -944,34 +996,91 @@ export function reconcileDecor() {
         catch (error) {
             console.warn(`[Food & Table] display reconciliation: ${String(error)}`);
         }
+        if (Date.now() - start >= 4)
+            break;
     }
 }
 export function loadDecorRecords() {
+    const generation = ++loadGeneration, keys = world.getDynamicPropertyIds();
+    let offset = 0;
+    loading = true;
     records.clear();
-    for (const key of world.getDynamicPropertyIds().filter(k => k.startsWith(PREFIX))) {
-        try {
-            const r = JSON.parse(String(world.getDynamicProperty(key)));
-            if (r.version === 1 && r.uid && r.support) {
-                if (r.kind === 'surface' && electronicsById.has(r.definition) && Number.isFinite(r.yaw)) {
-                    const snapped = cardinalYaw(r.yaw);
-                    if (snapped !== r.yaw) {
-                        r.yaw = snapped;
-                        r.revision++;
-                        save(r);
+    occupancy.clear();
+    recordCells.clear();
+    dirtyOwners.clear();
+    recordCursor = records.values();
+    const batch = () => {
+        if (generation !== loadGeneration)
+            return;
+        const start = Date.now();
+        for (let n = 0; n < 8 && offset < keys.length; n++) {
+            const key = keys[offset++];
+            if (!key.startsWith(PREFIX))
+                continue;
+            try {
+                const r = JSON.parse(String(world.getDynamicProperty(key)));
+                if (r.version === 1 && r.uid && r.support) {
+                    if (r.kind === 'surface' && electronicsById.has(r.definition) && Number.isFinite(r.yaw)) {
+                        const snapped = cardinalYaw(r.yaw);
+                        if (snapped !== r.yaw) {
+                            r.yaw = snapped;
+                            r.revision++;
+                            world.setDynamicProperty(storageKey(r), JSON.stringify(r));
+                        }
                     }
+                    rememberRecord(r);
                 }
-                records.set(r.uid, r);
+            }
+            catch {
+                console.warn(`[Food & Table] invalid decor record ${key}`);
+            }
+            if (Date.now() - start >= 4)
+                break;
+        }
+        if (offset < keys.length)
+            system.run(batch);
+        else
+            loading = false;
+    };
+    batch();
+}
+/** entityLoad can arrive in a burst before records are ready. Never repair inline. */
+export function maintainDecor() {
+    if (loading)
+        return;
+    const start = Date.now();
+    for (let n = 0; n < 4; n++) {
+        const next = loadedEntities.entries().next();
+        if (next.done)
+            break;
+        const [uid, entity] = next.value;
+        loadedEntities.delete(uid);
+        try {
+            if (entity.isValid) {
+                const owner = entity.getDynamicProperty('mcpe_food:owner');
+                if (owner) {
+                    if (records.has(String(owner)))
+                        dirtyOwners.add(String(owner));
+                    else
+                        entity.remove();
+                }
             }
         }
-        catch {
-            console.warn(`[Food & Table] invalid decor record ${key}`);
-        }
+        catch { }
+        if (Date.now() - start >= 2)
+            break;
     }
+    reconcileDecor();
 }
 export function installDecor(adapter) {
     io = adapter;
     system.run(loadDecorRecords);
     world.beforeEvents.playerInteractWithEntity.subscribe(event => {
+        if (loading) {
+            if (event.target.typeId.startsWith('mcpe_food:'))
+                event.cancel = true;
+            return;
+        }
         if (!event.target.isValid || !event.target.typeId.startsWith('mcpe_food:'))
             return;
         const owner = event.target.getDynamicProperty('mcpe_food:owner'), r = records.get(String(owner));
@@ -981,6 +1090,10 @@ export function installDecor(adapter) {
         run(event.player, () => r.kind === 'tray' ? trayMenu(event.player, copy(r)) : r.kind === 'ad' ? posterMenu(event.player, copy(r)) : r.definition === id('table_number_sign') ? numberMenu(event.player, copy(r)) : surfaceInteract(event.player, copy(r)));
     });
     world.beforeEvents.playerBreakBlock.subscribe(event => {
+        if (loading) {
+            event.cancel = true;
+            return;
+        }
         const candidates = [...records.values()].filter(r => r.dimension === event.block.dimension.id && ((r.kind === 'appliance' && applianceCells(r).some(p => same(p, event.block.location))) || (r.native && same(anchor(r), event.block.location)) || (isPanel(r) && posterCells(r).some(p => same(p, event.block.location)))));
         const supportLost = [...records.values()].filter(r => !candidates.some(c => c.uid === r.uid) && r.dimension === event.block.dimension.id && (r.mount === 'ceiling' ? ceilingSupports(r).some(p => same(p, event.block.location)) : same(r.support, event.block.location)));
         if (!candidates.length && !supportLost.length)
@@ -992,6 +1105,8 @@ export function installDecor(adapter) {
                 removeDecor(r, !isCreative(event.player)); });
     });
     world.afterEvents.entityHitEntity.subscribe(event => {
+        if (loading)
+            return;
         if (!event.hitEntity.isValid || event.damagingEntity.typeId !== 'minecraft:player')
             return;
         const owner = event.hitEntity.getDynamicProperty('mcpe_food:owner'), r = records.get(String(owner));
@@ -1001,17 +1116,9 @@ export function installDecor(adapter) {
     world.afterEvents.entityLoad.subscribe(({ entity }) => {
         if (!entity.typeId.startsWith('mcpe_food:'))
             return;
-        system.run(() => { if (!entity.isValid)
-            return; const owner = entity.getDynamicProperty('mcpe_food:owner'), r = records.get(String(owner)); if (r) {
-            try {
-                synchronize(r);
-            }
-            catch { }
-        }
-        else if (owner && entity.isValid)
-            entity.remove(); });
+        loadedEntities.set(entity.id, entity);
     });
-    system.runInterval(reconcileDecor, 20);
+    system.runInterval(maintainDecor, 1);
     system.runInterval(() => { for (const [k, t] of cooldowns)
         if (system.currentTick - t > 200)
             cooldowns.delete(k); }, 200);

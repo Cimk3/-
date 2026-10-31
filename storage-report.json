@@ -1,5 +1,5 @@
 {
-  "version": "0.8.0",
+  "version": "0.8.1",
   "units": "bytes",
   "baseline": {
     "version": "0.5.4",
@@ -19,10 +19,10 @@
     "merAliases": 196
   },
   "current": {
-    "beforeBytes": 278416674,
-    "bpBytes": 16187785,
+    "beforeBytes": 278420184,
+    "bpBytes": 16191295,
     "rpBytes": 95489602,
-    "addonBytes": 36069150,
+    "addonBytes": 36069955,
     "pngChecked": 1887,
     "pngSavedBytes": 5352567,
     "jsonSavedBytes": 160059239,

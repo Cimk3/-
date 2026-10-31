@@ -38,7 +38,7 @@ test('explicit orientation is synchronized, subtracts client body yaw, and leave
  for(const bone of ['food','ware'])assert.ok(animation.bones[bone].rotation[1].includes('- q.body_y_rotation'));
  for(const name of ['surface_display','digital_ad_display','clothing_display']){const b=read(`${bp}/entities/${name}.json`)['minecraft:entity'];assert.deepEqual(b.description.properties['mcpe_food:display_facing'],{type:'int',range:[0,4],default:0,client_sync:true});const c=read(`${rp}/entity/mcpe_food/${name}.entity.json`)['minecraft:client_entity'].description;assert.deepEqual(c.scripts.animate,[{display_facing:"q.property('mcpe_food:display_facing') > 0"}]);}
  for(const name of ['tray_food_display','advert_display'])assert.equal(read(`${bp}/entities/${name}.json`)['minecraft:entity'].description.properties['mcpe_food:display_facing'],undefined);
- const a=read(`${bp}/mcpe_food_build.json`),b=read(`${rp}/mcpe_food_build.json`);assert.deepEqual(a,b);assert.equal(a.build,'0.8.0-release.1');for(const pack of[bp,rp])assert.ok(read(`${pack}/manifest.json`).header.name.includes(a.build));
+ const a=read(`${bp}/mcpe_food_build.json`),b=read(`${rp}/mcpe_food_build.json`);assert.deepEqual(a,b);assert.equal(a.build,`${read('package.json').version}-release.1`);for(const pack of[bp,rp])assert.ok(read(`${pack}/manifest.json`).header.name.includes(a.build));
 });
 test('all affected walls and two 2x1 information screens retain anchors and publish explicit four-way directions',async()=>{
  const normal={north:[0,-1],east:[1,0],south:[0,1],west:[-1,0]},right={north:[-1,0],east:[0,1],south:[1,0],west:[0,-1]};

@@ -1,6 +1,6 @@
 # 接续入口
 
-本轮0.8.1修复进入世界脚本负载集中，正式发行状态见PROGRESS。以0.8.0为基线，0.8.0兼容和资源摘要fixture已捕获。先读根AGENTS、PROJECT_CONTEXT、PROGRESS、KNOWN_ISSUES，核对git状态；工作区imgSrc是用户原图，不提交或归档。
+本轮0.8.1修复进入世界脚本负载集中，当前已正式发布，软件提交eaa6f267707f178c9475a023cba5d6672a789f65，五附件及服务端摘要均通过；发布状态见PROGRESS。以0.8.0为基线，0.8.0兼容和资源摘要fixture已捕获。先读根AGENTS、PROJECT_CONTEXT、PROGRESS、KNOWN_ISSUES，核对git状态；工作区imgSrc是用户原图，不提交或归档。
 
 启动属性8／tick、实体载入4／tick、记录恢复2／tick，时间预算进一步限制；全量所有权加载前禁止破坏、回收、迁移和孤儿删除。占用索引只在内存，version=1与593／61／13索引不变。README仍为稳定入口。发布授权不代表实机验收；0.8.1是否消除原世界退出尚待实机反馈。
 
